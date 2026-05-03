@@ -1214,6 +1214,8 @@ export default function QuotesClient() {
   const [search, setSearch] = useState("");
   const [selectedQuote, setSelectedQuote] = useState<Quote | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const pageSize = 20;
 
   const filtered = useMemo(() => {
     const query = search.toLowerCase().trim();
@@ -1223,6 +1225,8 @@ export default function QuotesClient() {
       return matchSearch && matchTag;
     });
   }, [search, activeTag]);
+
+  const paginated = useMemo(() => filtered.slice(0, page * pageSize), [filtered, page]);
 
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
@@ -1238,7 +1242,7 @@ export default function QuotesClient() {
   return (
     <ToolLayout {...metadata}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
-        Search famous quotes by person name, quote text, or keyword. Each quote includes source and historical date.
+        Browse {quotes.length} famous quotes. Search by person name, quote text, or keyword. Each quote includes source and historical date.
       </p>
 
       {/* Quote of the day */}
@@ -1259,40 +1263,50 @@ export default function QuotesClient() {
         <input
           type="text"
           value={search}
-          onChange={(e) => { setSearch(e.target.value); setActiveTag(null); }}
+          onChange={(e) => { setSearch(e.target.value); setActiveTag(null); setPage(1); }}
           placeholder="Search by name, quote, or keyword (e.g., courage, wisdom, life)..."
           className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
       </div>
 
-      {/* Tag cloud */}
+      {/* Tag cloud with "All" button */}
       <div className="mt-3 flex flex-wrap gap-1.5">
+        <button
+          onClick={() => { setActiveTag(null); setPage(1); }}
+          className={`rounded-full px-2.5 py-0.5 text-xs transition-colors ${
+            !activeTag && !search
+              ? "bg-blue-600 text-white"
+              : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+          }`}
+        >
+          All ({quotes.length})
+        </button>
         {allTags.filter(t => !search).slice(0, 30).map((tag) => (
           <button
             key={tag}
-            onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+            onClick={() => { setActiveTag(activeTag === tag ? null : tag); setPage(1); }}
             className={`rounded-full px-2.5 py-0.5 text-xs transition-colors ${
               activeTag === tag
                 ? "bg-blue-600 text-white"
                 : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
             }`}
           >
-            {tag}
+            {tag} ({quotes.filter(q => q.tags.includes(tag)).length})
           </button>
         ))}
       </div>
 
       {/* Results count */}
-      {search && (
+      {(search || activeTag) && (
         <div className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
           {filtered.length} quote{filtered.length !== 1 ? "s" : ""} found
         </div>
       )}
 
       {/* Quotes list */}
-      {filtered.length > 0 ? (
+      {paginated.length > 0 ? (
         <div className="mt-4 space-y-3">
-          {filtered.slice(0, 50).map((q, i) => (
+          {paginated.map((q, i) => (
             <div
               key={i}
               onClick={() => setSelectedQuote(selectedQuote === q ? null : q)}
@@ -1328,6 +1342,7 @@ export default function QuotesClient() {
                         setSearch(tag);
                         setSelectedQuote(null);
                         setActiveTag(null);
+                        setPage(1);
                       }}
                       className="rounded-full bg-blue-100 px-2 py-0.5 text-xs text-blue-600 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
                     >
@@ -1338,16 +1353,23 @@ export default function QuotesClient() {
               )}
             </div>
           ))}
-          {filtered.length > 50 && (
-            <div className="text-center text-sm text-zinc-400 dark:text-zinc-500">
-              Showing first 50 of {filtered.length} results. Refine your search to see more specific results.
-            </div>
-          )}
         </div>
       ) : (
         <div className="mt-12 text-center text-zinc-400 dark:text-zinc-500">
           <p className="text-lg">No quotes found</p>
           <p className="mt-1 text-sm">Try a different search term or tag.</p>
+        </div>
+      )}
+
+      {/* Load More button */}
+      {paginated.length < filtered.length && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => setPage(p => p + 1)}
+            className="rounded-lg border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
+          >
+            Load More ({paginated.length} of {filtered.length} shown)
+          </button>
         </div>
       )}
     </ToolLayout>
