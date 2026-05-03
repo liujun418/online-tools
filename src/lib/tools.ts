@@ -425,6 +425,15 @@ export const tools: Tool[] = [
     path: "/tools/qr-code-generator",
   },
   {
+    id: "quotes",
+    name: "Famous Quotes Directory",
+    description:
+      "Search and discover famous quotes from world-renowned figures.",
+    category: "text",
+    icon: "💬",
+    path: "/tools/quotes",
+  },
+  {
     id: "ai-tools",
     name: "Free AI Tools Directory",
     description:
