@@ -316,4 +316,85 @@ export const tools: Tool[] = [
     icon: "💵",
     path: "/tools/income-tax-calculator",
   },
+  {
+    id: "tip-calculator",
+    name: "Tip Calculator",
+    description:
+      "Calculate tip amount, split the bill, and figure out per-person cost.",
+    category: "calculator",
+    icon: "💳",
+    path: "/tools/tip-calculator",
+  },
+  {
+    id: "discount-calculator",
+    name: "Discount Calculator",
+    description:
+      "Calculate discounted price, savings amount, and discount percentage.",
+    category: "calculator",
+    icon: "🏷️",
+    path: "/tools/discount-calculator",
+  },
+  {
+    id: "pregnancy-calculator",
+    name: "Pregnancy Due Date Calculator",
+    description:
+      "Estimate your due date based on last menstrual period with trimester info.",
+    category: "calculator",
+    icon: "👶",
+    path: "/tools/pregnancy-calculator",
+  },
+  {
+    id: "random-number-generator",
+    name: "Random Number Generator",
+    description:
+      "Generate random numbers within a specified range with customizable options.",
+    category: "calculator",
+    icon: "🎲",
+    path: "/tools/random-number-generator",
+  },
+  {
+    id: "zodiac-sign",
+    name: "Zodiac Sign Finder",
+    description:
+      "Find your zodiac sign by birth date with traits and compatibility info.",
+    category: "text",
+    icon: "⭐",
+    path: "/tools/zodiac-sign",
+  },
+  {
+    id: "random-name-generator",
+    name: "Random Name Generator",
+    description:
+      "Generate random names for characters, profiles, or testing.",
+    category: "text",
+    icon: "👤",
+    path: "/tools/random-name-generator",
+  },
+  {
+    id: "fancy-text-generator",
+    name: "Fancy Text Generator",
+    description:
+      "Convert text to fancy Unicode fonts for social media bios and posts.",
+    category: "text",
+    icon: "✨",
+    path: "/tools/fancy-text-generator",
+  },
+  {
+    id: "hashtag-generator",
+    name: "Hashtag Generator",
+    description:
+      "Generate relevant hashtags for Instagram, Twitter, and TikTok.",
+    category: "text",
+    icon: "#️⃣",
+    path: "/tools/hashtag-generator",
+  },
+  {
+    id: "youtube-thumbnail",
+    name: "YouTube Thumbnail Size Tool",
+    description:
+      "YouTube thumbnail size guide and preview tool with best practice tips.",
+    category: "developer",
+    icon: "🎬",
+    path: "/tools/youtube-thumbnail",
+  },
 ];

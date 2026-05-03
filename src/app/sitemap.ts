@@ -38,6 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/roi-calculator",
     "/tools/compound-interest",
     "/tools/income-tax-calculator",
+    "/tools/tip-calculator",
+    "/tools/discount-calculator",
+    "/tools/pregnancy-calculator",
+    "/tools/random-number-generator",
+    "/tools/zodiac-sign",
+    "/tools/random-name-generator",
+    "/tools/fancy-text-generator",
+    "/tools/hashtag-generator",
+    "/tools/youtube-thumbnail",
   ];
 
   return [
