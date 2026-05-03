@@ -424,4 +424,13 @@ export const tools: Tool[] = [
     icon: "📱",
     path: "/tools/qr-code-generator",
   },
+  {
+    id: "ai-tools",
+    name: "Free AI Tools Directory",
+    description:
+      "Curated directory of the best free AI tools for writing, images, video, coding, and more.",
+    category: "developer",
+    icon: "🧭",
+    path: "/tools/ai-tools",
+  },
 ];

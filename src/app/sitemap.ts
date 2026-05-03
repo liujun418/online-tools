@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/perpetual-calendar",
     "/tools/md5-generator",
     "/tools/qr-code-generator",
+    "/tools/ai-tools",
   ];
 
   return [
