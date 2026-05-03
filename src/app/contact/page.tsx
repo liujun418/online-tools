@@ -19,10 +19,10 @@ export default function Contact() {
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
           Email:{" "}
           <a
-            href="mailto:contact@toolboxonline.com"
+            href="mailto:jzerov@live.com"
             className="text-blue-600 hover:underline"
           >
-            contact@toolboxonline.com
+            jzerov@live.com
           </a>
         </p>
       </div>
