@@ -1,8 +1,12 @@
 import { tools } from "@/lib/tools";
 import ToolCard from "@/components/ToolCard";
 
-const textTools = tools.filter((t) => t.category === "text");
-const devTools = tools.filter((t) => t.category === "developer");
+const categories = [
+  { key: "text", label: "Text Tools", id: "text-tools" },
+  { key: "developer", label: "Developer Tools", id: "developer-tools" },
+  { key: "calculator", label: "Calculators", id: "calculators" },
+  { key: "converter", label: "Converters", id: "converters" },
+];
 
 export default function Home() {
   return (
@@ -16,31 +20,26 @@ export default function Home() {
           Fast, free, and easy-to-use online tools. No signup required.
           Everything runs in your browser — your data stays private.
         </p>
+        <p className="mx-auto mt-2 text-sm text-zinc-400 dark:text-zinc-500">
+          {tools.length} tools available now, more coming soon
+        </p>
       </section>
 
-      {/* Text Tools */}
-      <section id="text-tools" className="mb-12">
-        <h2 className="mb-6 text-2xl font-semibold text-zinc-900 dark:text-white">
-          Text Tools
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {textTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
-          ))}
-        </div>
-      </section>
-
-      {/* Developer Tools */}
-      <section id="developer-tools">
-        <h2 className="mb-6 text-2xl font-semibold text-zinc-900 dark:text-white">
-          Developer Tools
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {devTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
-          ))}
-        </div>
-      </section>
+      {categories.map((cat) => {
+        const catTools = tools.filter((t) => t.category === cat.key);
+        return (
+          <section id={cat.id} key={cat.key} className="mb-12">
+            <h2 className="mb-6 text-2xl font-semibold text-zinc-900 dark:text-white">
+              {cat.label}
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {catTools.map((tool) => (
+                <ToolCard key={tool.id} tool={tool} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }

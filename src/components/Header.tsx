@@ -7,21 +7,21 @@ export default function Header() {
         <Link href="/" className="text-xl font-bold text-zinc-900 dark:text-white">
           ToolBox<span className="text-blue-600">Online</span>
         </Link>
-        <nav className="flex gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+        <nav className="flex gap-4 text-sm text-zinc-600 dark:text-zinc-400 sm:gap-6">
           <Link href="/" className="hover:text-zinc-900 dark:hover:text-white">
             Home
           </Link>
-          <Link
-            href="/#text-tools"
-            className="hover:text-zinc-900 dark:hover:text-white"
-          >
-            Text Tools
+          <Link href="/#text-tools" className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+            Text
           </Link>
-          <Link
-            href="/#developer-tools"
-            className="hover:text-zinc-900 dark:hover:text-white"
-          >
-            Dev Tools
+          <Link href="/#developer-tools" className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+            Dev
+          </Link>
+          <Link href="/#calculators" className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+            Calculators
+          </Link>
+          <Link href="/#converters" className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+            Converters
           </Link>
         </nav>
       </div>

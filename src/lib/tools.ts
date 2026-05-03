@@ -2,7 +2,7 @@ export interface Tool {
   id: string;
   name: string;
   description: string;
-  category: "text" | "developer";
+  category: "text" | "developer" | "calculator" | "converter";
   icon: string;
   path: string;
 }
@@ -88,5 +88,52 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🆔",
     path: "/tools/uuid-generator",
+  },
+  // Calculators
+  {
+    id: "password-generator",
+    name: "Password Generator",
+    description:
+      "Generate strong, secure passwords with customizable length and character options.",
+    category: "calculator",
+    icon: "🔐",
+    path: "/tools/password-generator",
+  },
+  {
+    id: "age-calculator",
+    name: "Age Calculator",
+    description:
+      "Calculate exact age in years, months, and days from any birth date.",
+    category: "calculator",
+    icon: "🎂",
+    path: "/tools/age-calculator",
+  },
+  {
+    id: "percentage-calculator",
+    name: "Percentage Calculator",
+    description:
+      "Calculate percentages, percentage change, and percentage of a number instantly.",
+    category: "calculator",
+    icon: "📊",
+    path: "/tools/percentage-calculator",
+  },
+  // Converters
+  {
+    id: "base-converter",
+    name: "Number Base Converter",
+    description:
+      "Convert numbers between binary, octal, decimal, and hexadecimal systems.",
+    category: "converter",
+    icon: "🔢",
+    path: "/tools/base-converter",
+  },
+  {
+    id: "roman-numerals",
+    name: "Roman Numeral Converter",
+    description:
+      "Convert between Roman numerals and Arabic numbers in both directions.",
+    category: "converter",
+    icon: "🏛️",
+    path: "/tools/roman-numerals",
   },
 ];
