@@ -232,7 +232,7 @@ export const tools: Tool[] = [
     description:
       "Encode or decode HTML entities and special characters safely.",
     category: "converter",
-    icon: "&lt;&gt;",
+    icon: "<>",
     path: "/tools/html-entities",
   },
   {
