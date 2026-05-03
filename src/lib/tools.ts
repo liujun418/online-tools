@@ -226,4 +226,40 @@ export const tools: Tool[] = [
     icon: "🎨",
     path: "/tools/color-converter",
   },
+  {
+    id: "html-entities",
+    name: "HTML Entity Encoder",
+    description:
+      "Encode or decode HTML entities and special characters safely.",
+    category: "converter",
+    icon: "&lt;&gt;",
+    path: "/tools/html-entities",
+  },
+  {
+    id: "json-to-csv",
+    name: "JSON to CSV Converter",
+    description:
+      "Convert JSON data to CSV format for spreadsheets and databases.",
+    category: "converter",
+    icon: "📊",
+    path: "/tools/json-to-csv",
+  },
+  {
+    id: "csv-to-json",
+    name: "CSV to JSON Converter",
+    description:
+      "Convert CSV data to JSON format for APIs and web applications.",
+    category: "converter",
+    icon: "📋",
+    path: "/tools/csv-to-json",
+  },
+  {
+    id: "image-to-base64",
+    name: "Image to Base64",
+    description:
+      "Convert images to Base64 encoded strings for embedding in code.",
+    category: "converter",
+    icon: "🖼️",
+    path: "/tools/image-to-base64",
+  },
 ];

@@ -28,6 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/base-converter",
     "/tools/roman-numerals",
     "/tools/color-converter",
+    "/tools/html-entities",
+    "/tools/json-to-csv",
+    "/tools/csv-to-json",
+    "/tools/image-to-base64",
   ];
 
   return [
