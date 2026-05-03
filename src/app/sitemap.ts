@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/fancy-text-generator",
     "/tools/hashtag-generator",
     "/tools/youtube-thumbnail",
+    "/tools/perpetual-calendar",
   ];
 
   return [

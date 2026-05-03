@@ -397,4 +397,13 @@ export const tools: Tool[] = [
     icon: "🎬",
     path: "/tools/youtube-thumbnail",
   },
+  {
+    id: "perpetual-calendar",
+    name: "Perpetual Calendar",
+    description:
+      "Interactive calendar with world holidays, week numbers, and historical events on any date.",
+    category: "calculator",
+    icon: "📅",
+    path: "/tools/perpetual-calendar",
+  },
 ];
