@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "ToolBoxOnline — Free Online Tools for Everyone",
   description:
     "Free online tools including word counter, case converter, JSON formatter, Base64 encoder, and more. No signup required.",
+  other: {
+    "google-adsense-account": "ca-pub-9954245854077897",
+  },
 };
 
 export default function RootLayout({
