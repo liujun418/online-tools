@@ -262,4 +262,58 @@ export const tools: Tool[] = [
     icon: "🖼️",
     path: "/tools/image-to-base64",
   },
+  {
+    id: "loan-calculator",
+    name: "Loan Calculator",
+    description:
+      "Calculate monthly payments, total interest, and amortization for loans.",
+    category: "calculator",
+    icon: "🏦",
+    path: "/tools/loan-calculator",
+  },
+  {
+    id: "mortgage-calculator",
+    name: "Mortgage Calculator",
+    description:
+      "Estimate your monthly mortgage payment with taxes and insurance.",
+    category: "calculator",
+    icon: "🏠",
+    path: "/tools/mortgage-calculator",
+  },
+  {
+    id: "calorie-calculator",
+    name: "Calorie Calculator",
+    description:
+      "Estimate daily calorie needs based on age, weight, height, and activity.",
+    category: "calculator",
+    icon: "🍎",
+    path: "/tools/calorie-calculator",
+  },
+  {
+    id: "roi-calculator",
+    name: "ROI Calculator",
+    description:
+      "Calculate return on investment (ROI) percentage and profit amount.",
+    category: "calculator",
+    icon: "📈",
+    path: "/tools/roi-calculator",
+  },
+  {
+    id: "compound-interest",
+    name: "Compound Interest Calculator",
+    description:
+      "See how your money grows over time with compound interest calculations.",
+    category: "calculator",
+    icon: "💰",
+    path: "/tools/compound-interest",
+  },
+  {
+    id: "income-tax-calculator",
+    name: "Income Tax Calculator",
+    description:
+      "Estimate your take-home pay after income tax deductions.",
+    category: "calculator",
+    icon: "💵",
+    path: "/tools/income-tax-calculator",
+  },
 ];

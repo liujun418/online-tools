@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/json-to-csv",
     "/tools/csv-to-json",
     "/tools/image-to-base64",
+    "/tools/loan-calculator",
+    "/tools/mortgage-calculator",
+    "/tools/calorie-calculator",
+    "/tools/roi-calculator",
+    "/tools/compound-interest",
+    "/tools/income-tax-calculator",
   ];
 
   return [
