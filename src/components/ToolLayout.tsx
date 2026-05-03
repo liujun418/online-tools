@@ -39,6 +39,21 @@ export default function ToolLayout({
           {title}
         </h1>
         <p className="mt-2 text-zinc-500 dark:text-zinc-400">{description}</p>
+        {/* JSON-LD structured data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: `${title} | ToolBoxOnline`,
+              description,
+              applicationCategory: "UtilityApplication",
+              operatingSystem: "Any",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+            }),
+          }}
+        />
       </header>
 
       {adSlot ? (

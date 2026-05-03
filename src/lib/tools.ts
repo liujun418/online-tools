@@ -45,6 +45,33 @@ export const tools: Tool[] = [
     icon: "🔗",
     path: "/tools/text-to-slug",
   },
+  {
+    id: "text-diff",
+    name: "Text Diff Checker",
+    description:
+      "Compare two texts and highlight the differences side by side.",
+    category: "text",
+    icon: "📋",
+    path: "/tools/text-diff",
+  },
+  {
+    id: "remove-duplicate-lines",
+    name: "Remove Duplicate Lines",
+    description:
+      "Remove duplicate lines from text while preserving order. Clean up your lists instantly.",
+    category: "text",
+    icon: "🧹",
+    path: "/tools/remove-duplicate-lines",
+  },
+  {
+    id: "text-repeater",
+    name: "Text Repeater",
+    description:
+      "Repeat any text or string a specified number of times instantly.",
+    category: "text",
+    icon: "🔁",
+    path: "/tools/text-repeater",
+  },
   // Developer Tools
   {
     id: "json-formatter",
@@ -89,6 +116,42 @@ export const tools: Tool[] = [
     icon: "🆔",
     path: "/tools/uuid-generator",
   },
+  {
+    id: "regex-tester",
+    name: "Regex Tester",
+    description:
+      "Test and debug regular expressions with real-time match highlighting.",
+    category: "developer",
+    icon: "🔍",
+    path: "/tools/regex-tester",
+  },
+  {
+    id: "markdown-preview",
+    name: "Markdown Preview",
+    description:
+      "Write Markdown and see a live HTML preview as you type. Free Markdown editor.",
+    category: "developer",
+    icon: "📑",
+    path: "/tools/markdown-preview",
+  },
+  {
+    id: "css-minifier",
+    name: "CSS Minifier",
+    description:
+      "Minify and beautify CSS code. Remove whitespace and comments for production.",
+    category: "developer",
+    icon: "🎨",
+    path: "/tools/css-minifier",
+  },
+  {
+    id: "unix-timestamp",
+    name: "Unix Timestamp Converter",
+    description:
+      "Convert Unix timestamps to human-readable dates and vice versa.",
+    category: "developer",
+    icon: "⏱️",
+    path: "/tools/unix-timestamp",
+  },
   // Calculators
   {
     id: "password-generator",
@@ -117,6 +180,24 @@ export const tools: Tool[] = [
     icon: "📊",
     path: "/tools/percentage-calculator",
   },
+  {
+    id: "bmi-calculator",
+    name: "BMI Calculator",
+    description:
+      "Calculate your Body Mass Index (BMI) and see your weight category.",
+    category: "calculator",
+    icon: "⚖️",
+    path: "/tools/bmi-calculator",
+  },
+  {
+    id: "unit-converter",
+    name: "Unit Converter",
+    description:
+      "Convert between length, weight, temperature, and other units easily.",
+    category: "calculator",
+    icon: "📐",
+    path: "/tools/unit-converter",
+  },
   // Converters
   {
     id: "base-converter",
@@ -135,5 +216,14 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "🏛️",
     path: "/tools/roman-numerals",
+  },
+  {
+    id: "color-converter",
+    name: "Color Converter",
+    description:
+      "Convert colors between HEX, RGB, and HSL formats with live preview.",
+    category: "converter",
+    icon: "🎨",
+    path: "/tools/color-converter",
   },
 ];
