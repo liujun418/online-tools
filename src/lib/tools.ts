@@ -406,4 +406,22 @@ export const tools: Tool[] = [
     icon: "📅",
     path: "/tools/perpetual-calendar",
   },
+  {
+    id: "md5-generator",
+    name: "MD5 Hash Generator",
+    description:
+      "Generate MD5 hash from any text input instantly. Free online MD5 generator.",
+    category: "developer",
+    icon: "🔒",
+    path: "/tools/md5-generator",
+  },
+  {
+    id: "qr-code-generator",
+    name: "QR Code Generator",
+    description:
+      "Generate QR codes from text, URLs, emails, or any string. Download as PNG.",
+    category: "developer",
+    icon: "📱",
+    path: "/tools/qr-code-generator",
+  },
 ];
