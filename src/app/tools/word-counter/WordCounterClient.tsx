@@ -7,6 +7,16 @@ const metadata = {
   title: "Word Counter",
   description:
     "Count words, characters, sentences, and paragraphs in real-time. Free online word counter tool.",
+  keywords: [
+    "word counter",
+    "character counter",
+    "word count",
+    "count words online",
+    "text statistics",
+    "reading time calculator",
+    "sentence counter",
+    "paragraph counter",
+  ],
 };
 
 export default function WordCounterClient() {

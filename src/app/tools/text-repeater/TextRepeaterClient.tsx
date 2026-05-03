@@ -7,6 +7,13 @@ const metadata = {
   title: "Text Repeater",
   description:
     "Repeat any text or string a specified number of times. Free online text repeater tool.",
+  keywords: [
+    "text repeater",
+    "repeat text online",
+    "string repeater",
+    "copy paste text multiple times",
+    "duplicate text online",
+  ],
 };
 
 export default function TextRepeaterClient() {

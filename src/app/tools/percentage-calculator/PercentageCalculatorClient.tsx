@@ -7,6 +7,14 @@ const metadata = {
   title: "Percentage Calculator",
   description:
     "Calculate percentages, percentage change, and percentage of a number. Free online percentage calculator.",
+  keywords: [
+    "percentage calculator",
+    "calculate percentage",
+    "percent change calculator",
+    "percentage of a number",
+    "what percent calculator",
+    "percentage formula",
+  ],
 };
 
 export default function PercentageCalculatorClient() {

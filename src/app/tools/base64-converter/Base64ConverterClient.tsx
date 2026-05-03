@@ -7,6 +7,14 @@ const metadata = {
   title: "Base64 Encoder/Decoder",
   description:
     "Encode and decode text to and from Base64 format. Free online Base64 tool.",
+  keywords: [
+    "base64 encoder",
+    "base64 decoder",
+    "base64 converter",
+    "encode base64 online",
+    "decode base64",
+    "base64 online tool",
+  ],
 };
 
 export default function Base64ConverterClient() {

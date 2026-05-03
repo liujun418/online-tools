@@ -7,6 +7,16 @@ const metadata = {
   title: "Unit Converter",
   description:
     "Convert between length, weight, temperature, and other units. Free online unit converter.",
+  keywords: [
+    "unit converter",
+    "length converter",
+    "weight converter",
+    "temperature converter",
+    "metric to imperial",
+    "unit conversion online",
+    "km to miles",
+    "kg to lbs",
+  ],
 };
 
 const unitData: Record<string, { units: Record<string, number> }> = {

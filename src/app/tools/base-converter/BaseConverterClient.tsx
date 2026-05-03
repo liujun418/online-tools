@@ -7,6 +7,15 @@ const metadata = {
   title: "Number Base Converter",
   description:
     "Convert numbers between binary, octal, decimal, and hexadecimal systems. Free online base converter.",
+  keywords: [
+    "number base converter",
+    "binary to decimal",
+    "hex to decimal",
+    "binary converter",
+    "hexadecimal converter",
+    "octal to decimal",
+    "base converter online",
+  ],
 };
 
 export default function BaseConverterClient() {

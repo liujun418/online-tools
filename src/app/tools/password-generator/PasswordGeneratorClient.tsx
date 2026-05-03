@@ -7,6 +7,14 @@ const metadata = {
   title: "Password Generator",
   description:
     "Generate strong, secure passwords with customizable length and character options. Free online password generator.",
+  keywords: [
+    "password generator",
+    "strong password generator",
+    "random password generator",
+    "secure password creator",
+    "generate password online",
+    "password maker",
+  ],
 };
 
 function generatePassword(length: number, options: { upper: boolean; lower: boolean; numbers: boolean; symbols: boolean }): string {

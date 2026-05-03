@@ -7,6 +7,14 @@ const metadata = {
   title: "CSS Minifier",
   description:
     "Minify and beautify CSS code. Remove whitespace and comments for production.",
+  keywords: [
+    "css minifier",
+    "css compressor",
+    "minify css online",
+    "css beautifier",
+    "css formatter",
+    "remove css whitespace",
+  ],
 };
 
 function minifyCss(css: string): string {

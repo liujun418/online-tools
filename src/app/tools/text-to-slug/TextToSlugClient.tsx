@@ -7,6 +7,14 @@ const metadata = {
   title: "Text to Slug Converter",
   description:
     "Convert any text into a clean URL-friendly slug string. Free online slug generator.",
+  keywords: [
+    "slug generator",
+    "text to slug",
+    "url slug creator",
+    "seo slug generator",
+    "url friendly converter",
+    "generate slug from title",
+  ],
 };
 
 function toSlug(text: string): string {

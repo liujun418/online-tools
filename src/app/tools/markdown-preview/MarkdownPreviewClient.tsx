@@ -7,6 +7,14 @@ const metadata = {
   title: "Markdown Preview",
   description:
     "Write Markdown and see a live HTML preview. Free online Markdown editor and previewer.",
+  keywords: [
+    "markdown editor",
+    "markdown preview",
+    "online markdown editor",
+    "markdown to html",
+    "live markdown preview",
+    "write markdown online",
+  ],
 };
 
 function simpleMarkdown(md: string): string {

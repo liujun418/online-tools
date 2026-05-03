@@ -7,6 +7,15 @@ const metadata = {
   title: "Unix Timestamp Converter",
   description:
     "Convert Unix timestamps to human-readable dates and vice versa. Free online timestamp converter.",
+  keywords: [
+    "unix timestamp converter",
+    "timestamp to date",
+    "epoch converter",
+    "unix time converter",
+    "convert timestamp",
+    "epoch to date",
+    "current unix timestamp",
+  ],
 };
 
 export default function UnixTimestampClient() {

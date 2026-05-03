@@ -7,6 +7,14 @@ const metadata = {
   title: "Text Diff Checker",
   description:
     "Compare two texts and find the differences side by side. Free online diff tool.",
+  keywords: [
+    "text diff checker",
+    "compare text online",
+    "text difference tool",
+    "diff checker",
+    "compare two texts",
+    "text comparison tool",
+  ],
 };
 
 export default function TextDiffClient() {

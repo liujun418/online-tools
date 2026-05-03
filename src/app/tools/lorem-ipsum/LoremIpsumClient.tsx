@@ -7,6 +7,14 @@ const metadata = {
   title: "Lorem Ipsum Generator",
   description:
     "Generate placeholder Lorem Ipsum text for your designs and mockups. Choose number of paragraphs.",
+  keywords: [
+    "lorem ipsum generator",
+    "placeholder text generator",
+    "lorem ipsum",
+    "dummy text generator",
+    "filler text",
+    "lipsum generator",
+  ],
 };
 
 const paragraphs = [

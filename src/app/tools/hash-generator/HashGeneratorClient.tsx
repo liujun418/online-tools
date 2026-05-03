@@ -7,6 +7,15 @@ const metadata = {
   title: "Hash Generator",
   description:
     "Generate SHA-1, SHA-256, and SHA-512 hashes from text input. Free online hash generator tool.",
+  keywords: [
+    "hash generator",
+    "sha256 generator",
+    "sha1 hash",
+    "sha512 hash",
+    "hash calculator online",
+    "text to hash",
+    "sha256 online",
+  ],
 };
 
 async function computeHash(text: string, algorithm: string): Promise<string> {

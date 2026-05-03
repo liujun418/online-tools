@@ -7,6 +7,14 @@ const metadata = {
   title: "Remove Duplicate Lines",
   description:
       "Remove duplicate lines from text while preserving order. Clean up your lists instantly.",
+  keywords: [
+    "remove duplicate lines",
+    "remove duplicates from text",
+    "deduplicate text",
+    "remove duplicate lines online",
+    "unique lines tool",
+    "text cleaner",
+  ],
 };
 
 export default function RemoveDuplicateLinesClient() {

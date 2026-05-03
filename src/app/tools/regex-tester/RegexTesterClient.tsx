@@ -7,6 +7,15 @@ const metadata = {
   title: "Regex Tester",
   description:
     "Test and debug regular expressions with real-time match highlighting. Free online regex tester.",
+  keywords: [
+    "regex tester",
+    "regular expression tester",
+    "regex tester online",
+    "test regex online",
+    "regex debugger",
+    "regular expression tester online",
+    "match pattern online",
+  ],
 };
 
 export default function RegexTesterClient() {

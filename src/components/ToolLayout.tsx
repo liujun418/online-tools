@@ -2,23 +2,51 @@ import type { Metadata } from "next";
 import AdUnit from "@/components/AdUnit";
 import { ADSENSE_CONFIG } from "@/lib/adsense";
 
+const SITE_URL = "https://www.toolboxonline.club";
+const SITE_NAME = "ToolBoxOnline";
+const OG_IMAGE = `${SITE_URL}/og-default.png`;
+
 interface ToolLayoutProps {
   children: React.ReactNode;
   title: string;
   description: string;
+  keywords: string[];
   metadata?: Metadata;
 }
 
 export function generateMetadata({
   title,
   description,
+  keywords,
   metadata,
 }: ToolLayoutProps): Metadata {
+  const fullTitle = `${title} | ${SITE_NAME}`;
   return {
-    title: `${title} | ToolBoxOnline`,
+    title: fullTitle,
     description,
+    keywords: keywords?.join(", ") ?? "",
+    authors: [{ name: SITE_NAME }],
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+    alternates: { canonical: `${SITE_URL}${metadata?.alternates?.canonical ?? ""}` },
     openGraph: {
-      title: `${title} | ToolBoxOnline`,
+      type: "website",
+      locale: "en_US",
+      url: `${SITE_URL}${metadata?.alternates?.canonical ?? ""}`,
+      title: fullTitle,
+      description,
+      siteName: SITE_NAME,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: fullTitle }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
       description,
     },
     ...(metadata ?? {}),

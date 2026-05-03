@@ -7,6 +7,14 @@ const metadata = {
   title: "BMI Calculator",
   description:
     "Calculate your Body Mass Index (BMI) and see your weight category. Free online BMI calculator.",
+  keywords: [
+    "bmi calculator",
+    "body mass index calculator",
+    "calculate bmi online",
+    "bmi calculator metric",
+    "weight category",
+    "is my bmi healthy",
+  ],
 };
 
 export default function BmiCalculatorClient() {

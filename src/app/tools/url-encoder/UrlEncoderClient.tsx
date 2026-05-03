@@ -7,6 +7,15 @@ const metadata = {
   title: "URL Encoder/Decoder",
   description:
     "Encode or decode URLs and URL components. Free online URL encoding tool.",
+  keywords: [
+    "url encoder",
+    "url decoder",
+    "url encode online",
+    "url decode online",
+    "percent encoding",
+    "encodeURIComponent",
+    "url encoding tool",
+  ],
 };
 
 export default function UrlEncoderClient() {

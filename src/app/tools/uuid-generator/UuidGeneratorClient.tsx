@@ -7,6 +7,14 @@ const metadata = {
   title: "UUID Generator",
   description:
     "Generate random UUID v4 identifiers for development. Free online UUID generator tool.",
+  keywords: [
+    "uuid generator",
+    "guid generator",
+    "uuid v4",
+    "generate uuid online",
+    "random uuid",
+    "unique identifier generator",
+  ],
 };
 
 function generateUUID(): string {

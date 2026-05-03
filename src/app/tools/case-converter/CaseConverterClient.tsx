@@ -7,6 +7,15 @@ const metadata = {
   title: "Case Converter",
   description:
     "Convert text to uppercase, lowercase, title case, or sentence case instantly. Free online case converter tool.",
+  keywords: [
+    "case converter",
+    "uppercase converter",
+    "lowercase converter",
+    "title case converter",
+    "sentence case",
+    "text case changer",
+    "convert case online",
+  ],
 };
 
 const cases: { label: string; fn: (s: string) => string }[] = [
