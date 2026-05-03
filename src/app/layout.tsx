@@ -32,11 +32,26 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+        {/* Google AdSense */}
+        <Script
+          id="adsense-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  window.adsbygoogle = window.adsbygoogle || [];
+                  window.adsbygoogle.push({});
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9954245854077897"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
         <Header />
         <main className="flex-1">{children}</main>
