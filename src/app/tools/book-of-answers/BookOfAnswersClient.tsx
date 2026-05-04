@@ -2,8 +2,23 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import { answers } from "@/lib/answers";
+import ToolLayout from "@/components/ToolLayout";
 
-// Sound effect: generate a soft "whoosh" using Web Audio API
+const metadata = {
+  title: "Book of Answers",
+  description:
+    "A digital Book of Answers for fun decision-making and psychological guidance. Focus on your question and receive a random, thoughtfully curated response.",
+  keywords: [
+    "book of answers",
+    "random answer generator",
+    "decision maker",
+    "oracle",
+    "guidance tool",
+    "fortune teller",
+  ],
+  toolId: "book-of-answers",
+};
+
 function playFlipSound() {
   try {
     const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -22,18 +37,16 @@ function playFlipSound() {
 }
 
 export default function BookOfAnswersClient() {
-  const [state, setState] = useState<"idle" | "flipping" | "revealed">("idle");
-  const [answer, setAnswer] = useState("");
-  const [displayText, setDisplayText] = useState("");
-  const [charIndex, setCharIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
   }, []);
 
@@ -43,197 +56,191 @@ export default function BookOfAnswersClient() {
   }, []);
 
   const handleReveal = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+
     const ans = getRandomAnswer();
     setSelectedAnswer(ans);
     setDisplayText("");
-    setCharIndex(0);
-    setState("flipping");
+    setIsTyping(true);
     playFlipSound();
 
-    // After flip animation completes, start typewriter
+    setIsFlipped(true);
+
     setTimeout(() => {
-      setState("revealed");
-    }, 800);
+      setIsTyping(false);
+    }, 800 + ans.length * 65);
   }, [getRandomAnswer]);
 
-  // Typewriter effect
   useEffect(() => {
-    if (state !== "revealed" || !selectedAnswer) return;
+    if (!isFlipped || !selectedAnswer) return;
 
-    if (charIndex < selectedAnswer.length) {
-      intervalRef.current = setTimeout(() => {
-        setDisplayText((prev) => prev + selectedAnswer[charIndex]);
-        setCharIndex((i) => i + 1);
-      }, 50 + Math.random() * 30);
-    }
+    timerRef.current = setTimeout(() => {
+      let idx = 0;
+
+      const typeNext = () => {
+        if (idx < selectedAnswer.length) {
+          setDisplayText(selectedAnswer.slice(0, idx + 1));
+          idx++;
+          timerRef.current = setTimeout(typeNext, 50 + Math.random() * 30);
+        }
+      };
+
+      typeNext();
+    }, 800);
 
     return () => {
-      if (intervalRef.current) clearTimeout(intervalRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [state, selectedAnswer, charIndex]);
+  }, [isFlipped, selectedAnswer]);
 
   const handleAskAgain = useCallback(() => {
-    if (intervalRef.current) clearTimeout(intervalRef.current);
-    setState("idle");
-    setDisplayText("");
-    setCharIndex(0);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setIsFlipped(false);
     setSelectedAnswer("");
+    setDisplayText("");
+    setIsTyping(false);
   }, []);
 
+  const isTypingComplete = displayText === selectedAnswer && selectedAnswer.length > 0;
+
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-12">
-      {/* Instruction text */}
-      <p className="mb-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
-        Close your eyes, silently hold your question in mind for 3–5 seconds, then open the answer.
+    <ToolLayout {...metadata}>
+      <p className="text-sm text-zinc-500 dark:text-zinc-400">
+        闭眼默念问题 3-5 秒，专注内心诉求。点击书本或按钮开启答案，获得一条随机的人生指引。
       </p>
 
-      {/* Book container */}
-      <div className="relative w-full max-w-md" style={{ perspective: "1200px" }}>
-        {/* Book */}
-        <div
-          className={`relative mx-auto cursor-pointer transition-transform duration-500 ${
-            state === "flipping" ? "[transform:rotateY(-180deg)]" : ""
-          }`}
-          style={{
-            width: "280px",
-            height: "380px",
-            transformStyle: "preserve-3d",
-            transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-          }}
-          onClick={state === "idle" ? handleReveal : undefined}
-        >
-          {/* Front cover */}
+      <div className="flex min-h-[40vh] flex-col items-center justify-center px-4 py-12">
+        {/* Book container */}
+        <div className="relative w-full max-w-md" style={{ perspective: "1200px" }}>
+          {/* Book */}
           <div
-            className="absolute inset-0 rounded-xl shadow-2xl"
             style={{
-              backfaceVisibility: "hidden",
-              background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "2rem",
+              width: "280px",
+              height: "380px",
+              margin: "0 auto",
+              transformStyle: "preserve-3d",
+              transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+              transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+              cursor: !isFlipped ? "pointer" : "default",
             }}
+            onClick={!isFlipped ? handleReveal : undefined}
           >
-            {/* Shimmer overlay on cover */}
+            {/* Front cover */}
             <div
-              className="absolute inset-0 overflow-hidden rounded-xl"
+              className="absolute inset-0 rounded-xl shadow-2xl"
               style={{
-                background:
-                  "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 55%, transparent 60%)",
-                animation: state === "idle" ? "shimmer 3s infinite" : "none",
+                backfaceVisibility: "hidden",
+                background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "2rem",
               }}
-            />
-            {/* Book title */}
-            <div className="relative z-10 text-center">
-              <div className="mb-4 text-6xl">📖</div>
-              <h2 className="text-2xl font-bold tracking-wide text-amber-100">
-                Book of Answers
-              </h2>
-              <p className="mt-3 text-sm text-zinc-400">
-                Focus on your question, then tap to reveal
-              </p>
-            </div>
-            {/* Decorative border */}
-            <div className="absolute inset-3 rounded-lg border border-amber-900/30" />
-          </div>
-
-          {/* Back (answer side) */}
-          <div
-            className="absolute inset-0 rounded-xl shadow-2xl"
-            style={{
-              backfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-              background: "linear-gradient(135deg, #fefce8 0%, #fef9c3 50%, #fef08a 100%)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "2rem",
-            }}
-          >
-            {/* Answer content */}
-            {state === "revealed" && (
+            >
+              {/* Shimmer overlay */}
+              <div
+                className="absolute inset-0 overflow-hidden rounded-xl"
+                style={{
+                  background:
+                    "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 55%, transparent 60%)",
+                  animation: !isFlipped ? "ba-shimmer 3s infinite" : "none",
+                }}
+              />
+              {/* Title */}
               <div className="relative z-10 text-center">
-                <p
-                  className="text-xl font-semibold leading-relaxed text-zinc-800"
-                  style={{
-                    animation: "breathe 3s ease-in-out infinite",
-                  }}
-                >
-                  {displayText}
-                  {charIndex < selectedAnswer.length && (
-                    <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-zinc-800" />
-                  )}
+                <div className="mb-4 text-6xl">📖</div>
+                <h2 className="text-2xl font-bold tracking-wide text-amber-100">
+                  Book of Answers
+                </h2>
+                <p className="mt-3 text-sm text-zinc-400">
+                  专注你的问题，点击揭晓答案
                 </p>
               </div>
-            )}
+              {/* Decorative border */}
+              <div className="absolute inset-3 rounded-lg border border-amber-900/30" />
+            </div>
+
+            {/* Back (answer side) */}
+            <div
+              className="absolute inset-0 rounded-xl shadow-2xl"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+                background: "linear-gradient(135deg, #fefce8 0%, #fef9c3 50%, #fef08a 100%)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "2rem",
+              }}
+            >
+              {isFlipped && (
+                <div className="relative z-10 text-center px-4">
+                  <p
+                    className="text-xl font-semibold leading-relaxed text-zinc-800"
+                    style={{
+                      animation: isTypingComplete ? "ba-breathe 3s ease-in-out infinite" : "none",
+                    }}
+                  >
+                    {displayText}
+                    {displayText.length < selectedAnswer.length && (
+                      <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-zinc-800" />
+                    )}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
+
+          {/* Glow effect */}
+          {isTypingComplete && (
+            <div
+              className="pointer-events-none absolute inset-0 rounded-xl"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(251,191,36,0.15) 0%, transparent 70%)",
+                animation: "ba-glow 2s ease-in-out infinite",
+              }}
+            />
+          )}
         </div>
 
-        {/* Glow effect behind book during reveal */}
-        {state === "revealed" && (
-          <div
-            className="pointer-events-none absolute inset-0 rounded-xl"
-            style={{
-              background:
-                "radial-gradient(ellipse at center, rgba(251,191,36,0.15) 0%, transparent 70%)",
-              animation: "glow 2s ease-in-out infinite",
-            }}
-          />
+        {/* Buttons */}
+        {!isFlipped && (
+          <button
+            onClick={handleReveal}
+            className="mt-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95"
+          >
+            开启答案
+          </button>
+        )}
+
+        {isTypingComplete && (
+          <button
+            onClick={handleAskAgain}
+            className="mt-8 rounded-full bg-gradient-to-r from-zinc-700 to-zinc-800 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95 dark:from-zinc-600 dark:to-zinc-700"
+          >
+            再问一次
+          </button>
         )}
       </div>
 
-      {/* Action buttons */}
-      {state === "idle" && (
-        <button
-          onClick={handleReveal}
-          className="mt-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95"
-        >
-          Open Your Answer
-        </button>
-      )}
-
-      {state === "revealed" && charIndex >= selectedAnswer.length && (
-        <button
-          onClick={handleAskAgain}
-          className="mt-8 rounded-full bg-gradient-to-r from-zinc-700 to-zinc-800 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95 dark:from-zinc-600 dark:to-zinc-700"
-        >
-          Ask Another Question
-        </button>
-      )}
-
-      {/* Inline keyframe animations */}
+      {/* Animations */}
       <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
+        @keyframes ba-shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
-        @keyframes breathe {
-          0%,
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.85;
-            transform: scale(1.02);
-          }
+        @keyframes ba-breathe {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.85; transform: scale(1.02); }
         }
-        @keyframes glow {
-          0%,
-          100% {
-            opacity: 0.5;
-          }
-          50% {
-            opacity: 1;
-          }
+        @keyframes ba-glow {
+          0%, 100% { opacity: 0.5; }
+          50% { opacity: 1; }
         }
       `}</style>
-    </div>
+    </ToolLayout>
   );
 }
