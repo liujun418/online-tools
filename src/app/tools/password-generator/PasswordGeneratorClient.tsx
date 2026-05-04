@@ -48,8 +48,12 @@ export default function PasswordGeneratorClient() {
     setPasswords(newPasswords);
   }, [length, options, count]);
 
-  function handleCopy(pw: string) {
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+  function handleCopy(pw: string, index: number) {
     navigator.clipboard.writeText(pw);
+    setCopiedIndex(index);
+    setTimeout(() => setCopiedIndex(null), 1500);
   }
 
   return (
@@ -120,10 +124,14 @@ export default function PasswordGeneratorClient() {
             >
               <span className="text-zinc-700 dark:text-zinc-300 break-all">{pw}</span>
               <button
-                onClick={() => handleCopy(pw)}
-                className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                onClick={() => handleCopy(pw, i)}
+                className={`ml-2 shrink-0 rounded px-3 py-1 text-xs font-medium transition-colors ${
+                  copiedIndex === i
+                    ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
+                    : "bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                }`}
               >
-                Copy
+                {copiedIndex === i ? "Copied!" : "Copy"}
               </button>
             </div>
           ))}

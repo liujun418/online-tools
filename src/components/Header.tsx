@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
         <Link href="/" className="text-xl font-bold text-zinc-900 dark:text-white">
           ToolBox<span className="text-blue-600">Online</span>
         </Link>
-        <nav className="flex gap-4 text-sm text-zinc-600 dark:text-zinc-400 sm:gap-6">
+        <nav className="flex items-center gap-4 text-sm text-zinc-600 dark:text-zinc-400 sm:gap-6">
           <Link href="/" className="hover:text-zinc-900 dark:hover:text-white">
             Home
           </Link>
@@ -23,6 +24,9 @@ export default function Header() {
           <Link href="/#converters" className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             Converters
           </Link>
+          <div className="ml-1 border-l border-zinc-200 pl-4 dark:border-zinc-800">
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
     </header>

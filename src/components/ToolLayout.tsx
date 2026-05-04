@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AdUnit from "@/components/AdUnit";
 import { ADSENSE_CONFIG } from "@/lib/adsense";
+import { tools } from "@/lib/tools";
 
 const SITE_URL = "https://www.toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 const OG_IMAGE = `${SITE_URL}/og-default.png`;
+
+const categoryMap: Record<string, { label: string; anchor: string }> = {
+  text: { label: "Text Tools", anchor: "text-tools" },
+  developer: { label: "Developer Tools", anchor: "developer-tools" },
+  calculator: { label: "Calculators", anchor: "calculators" },
+  converter: { label: "Converters", anchor: "converters" },
+};
 
 interface ToolLayoutProps {
   children: React.ReactNode;
@@ -58,10 +67,31 @@ export default function ToolLayout({
   title,
   description,
 }: ToolLayoutProps) {
+  const tool = tools.find((t) => t.name === title);
+  const category = tool ? categoryMap[tool.category] : null;
   const adSlot = ADSENSE_CONFIG.slots.toolPage;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+      {/* Breadcrumbs */}
+      <nav className="mb-6 flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-zinc-900 dark:hover:text-white">
+          Home
+        </Link>
+        <span className="text-zinc-300 dark:text-zinc-700">/</span>
+        {category && (
+          <>
+            <Link href={`/#${category.anchor}`} className="hover:text-zinc-900 dark:hover:text-white">
+              {category.label}
+            </Link>
+            <span className="text-zinc-300 dark:text-zinc-700">/</span>
+          </>
+        )}
+        <span className="truncate font-medium text-zinc-900 dark:text-white">
+          {title}
+        </span>
+      </nav>
+
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           {title}

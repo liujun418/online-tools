@@ -36,6 +36,8 @@ export default function BmiCalculatorClient() {
     return Math.round(bmiVal * 10) / 10;
   }, [weight, height, unit]);
 
+  const hasError = (weight !== "" && height !== "" && bmi === null);
+
   const category = bmi
     ? bmi < 18.5
       ? { label: "Underweight", color: "text-blue-600 dark:text-blue-400" }
@@ -45,6 +47,11 @@ export default function BmiCalculatorClient() {
           ? { label: "Overweight", color: "text-yellow-600 dark:text-yellow-400" }
           : { label: "Obese", color: "text-red-600 dark:text-red-400" }
     : null;
+
+  // BMI scale: 15 to 40 (range of 25)
+  const bmiMin = 15;
+  const bmiMax = 40;
+  const markerPosition = bmi ? Math.min(Math.max(((bmi - bmiMin) / (bmiMax - bmiMin)) * 100, 0), 100) : 0;
 
   return (
     <ToolLayout {...metadata}>
@@ -78,7 +85,9 @@ export default function BmiCalculatorClient() {
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="w-24 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+            className={`w-24 rounded-lg border bg-white px-3 py-2 text-sm transition-colors dark:bg-zinc-900 ${
+              hasError ? "border-red-300 focus:border-red-500 focus:ring-red-500/20 dark:border-red-700" : "border-zinc-300 dark:border-zinc-700"
+            } focus:outline-none focus:ring-2`}
           />
         </div>
         <div className="flex items-center gap-2">
@@ -89,10 +98,18 @@ export default function BmiCalculatorClient() {
             type="number"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
-            className="w-24 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+            className={`w-24 rounded-lg border bg-white px-3 py-2 text-sm transition-colors dark:bg-zinc-900 ${
+              hasError ? "border-red-300 focus:border-red-500 focus:ring-red-500/20 dark:border-red-700" : "border-zinc-300 dark:border-zinc-700"
+            } focus:outline-none focus:ring-2`}
           />
         </div>
       </div>
+
+      {hasError && (
+        <p className="mt-4 text-sm text-red-500 dark:text-red-400">
+          Please enter valid positive numbers for weight and height.
+        </p>
+      )}
 
       {bmi !== null && category && (
         <div className="mt-8 text-center">
@@ -100,13 +117,17 @@ export default function BmiCalculatorClient() {
           <div className={`mt-2 text-xl font-medium ${category.color}`}>
             {category.label}
           </div>
-          <div className="mx-auto mt-6 h-3 max-w-md overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
-            <div className="flex h-full">
-              <div className="w-[18.5%] bg-blue-400" />
-              <div className="w-[11.5%] bg-green-400" />
-              <div className="w-[10%] bg-yellow-400" />
-              <div className="flex-1 bg-red-400" />
+          <div className="relative mx-auto mt-6 max-w-md">
+            <div className="flex h-3 overflow-hidden rounded-full">
+              <div className="bg-blue-400" style={{ width: `${((18.5 - bmiMin) / (bmiMax - bmiMin)) * 100}%` }} />
+              <div className="bg-green-400" style={{ width: `${((25 - 18.5) / (bmiMax - bmiMin)) * 100}%` }} />
+              <div className="bg-yellow-400" style={{ width: `${((30 - 25) / (bmiMax - bmiMin)) * 100}%` }} />
+              <div className="bg-red-400" style={{ width: `${((bmiMax - 30) / (bmiMax - bmiMin)) * 100}%` }} />
             </div>
+            <div
+              className="absolute -top-1 h-5 w-0.5 bg-zinc-800 dark:bg-white"
+              style={{ left: `${markerPosition}%`, transform: "translateX(-50%)" }}
+            />
           </div>
           <div className="mx-auto mt-1 flex max-w-md justify-between text-xs text-zinc-400">
             <span>Underweight</span>
