@@ -123,28 +123,27 @@ export default function ToolLayout({
         />
       </header>
 
-      {/* Ad slot temporarily hidden for testing */}
-      {/* {adSlot ? (
-        <div style={{ height: 0, minHeight: 0, maxHeight: 90, overflow: 'hidden' }} className="mb-4 w-full">
+      {adSlot ? (
+        <div className="mb-4 w-full" style={{ maxHeight: '90px', overflow: 'hidden' }}>
           <AdUnit adSlot={adSlot} />
         </div>
       ) : (
         <div className="mb-4 flex h-8 items-center justify-center rounded-lg border border-dashed border-zinc-200 bg-zinc-50 text-xs text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-600">
           Advertisement
         </div>
-      )} */}
+      )}
 
       {children}
 
-      {/* {adSlot ? (
-        <div style={{ height: 0, minHeight: 0, maxHeight: 90, overflow: 'hidden' }} className="mt-6 w-full">
+      {adSlot ? (
+        <div className="mt-6 w-full" style={{ maxHeight: '90px', overflow: 'hidden' }}>
           <AdUnit adSlot={adSlot} />
         </div>
       ) : (
         <div className="mt-6 flex h-8 items-center justify-center rounded-lg border border-dashed border-zinc-200 bg-zinc-50 text-xs text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-600">
           Advertisement
         </div>
-      )} */}
+      )}
 
       {tool && <RelatedTools toolId={tool.id} />}
 
