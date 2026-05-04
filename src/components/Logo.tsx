@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link href="/" className="flex items-center">
       <Image
-        src="/logo3.png"
+        src="/logo.png"
         alt="ToolBoxOnline"
         width={220}
         height={55}
