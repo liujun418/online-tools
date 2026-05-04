@@ -27,7 +27,7 @@ export const tools: Tool[] = [
     category: "text",
     icon: "📝",
     path: "/tools/word-counter",
-    seoTitle: "Free Word Counter - Count Words, Characters & Sentences Online",
+    seoTitle: "Free Word Counter Online - Count Words, Characters & Sentences 2026",
     seoDescription: "Count words, characters, sentences, and paragraphs in real-time. Free online word counter with reading time and speaking time estimates. Perfect for essays, blog posts, and social media. No signup required.",
     seoKeywords: [
       "word counter", "character counter", "word count online",
@@ -35,7 +35,7 @@ export const tools: Tool[] = [
       "reading time calculator", "free word counter tool",
       "how many words in my text", "online text counter",
       "character count with spaces", "word counter for essays"
-    ],
+,      "word counter for students", "best word counter 2026", "free essay word counter online"        ],
     howToUse: [
       "Paste or type your text into the input field above.",
       "View your word count, character count, sentence count, and paragraph count instantly.",
@@ -49,7 +49,7 @@ export const tools: Tool[] = [
       { question: "Is my text data stored or sent anywhere?", answer: "No. All text processing happens locally in your browser. Your text is never sent to any server or stored anywhere. Your privacy is fully protected." },
       { question: "Can I use this word counter for academic essays?", answer: "Absolutely. This tool is perfect for academic writing. It provides accurate word counts that match what most word processors like Microsoft Word and Google Docs report. It's ideal for checking essay word limits, abstract lengths, and dissertation chapter counts." },
       { question: "What is the average reading speed this tool uses?", answer: "The reading time estimate is based on an average reading speed of 200-250 words per minute for English text. The speaking time estimate uses approximately 130 words per minute, which is the average speaking pace." }
-    ]
+,      { question: "How accurate is this word counter?", answer: "Our word counter provides real-time accurate counts. It handles special characters, hyphenated words, and multiple spaces correctly. The count updates instantly as you type or paste text." }     ]
   },
   {
     id: "case-converter",
@@ -59,14 +59,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "🔤",
     path: "/tools/case-converter",
-    seoTitle: "Free Case Converter - Uppercase, Lowercase, Title Case Online",
+    seoTitle: "Free Case Converter Online - Uppercase, Lowercase, Title Case 2026",
     seoDescription: "Convert text to uppercase, lowercase, title case, sentence case, or alternating case instantly. Free online text case converter. No signup required.",
     seoKeywords: [
       "case converter", "text case converter", "uppercase converter",
       "lowercase converter", "title case converter", "sentence case converter",
       "change text case online", "convert uppercase to lowercase",
       "text case changer free", "online case converter tool"
-    ],
+,      "case converter for students", "best case changer 2026", "free text case converter online"        ],
     howToUse: [
       "Paste or type your text into the input field above.",
       "Click the desired case button: UPPERCASE, lowercase, Title Case, or Sentence case.",
@@ -78,7 +78,7 @@ export const tools: Tool[] = [
       { question: "What is sentence case?", answer: "Sentence case capitalizes only the first letter of each sentence, leaving the rest lowercase. This is the standard format for body text, paragraphs, and most writing." },
       { question: "Does this tool work with multiple paragraphs?", answer: "Yes. You can paste text with multiple paragraphs, and each case conversion mode will properly handle all paragraphs in your text." },
       { question: "Is my text sent to any server?", answer: "No. All text conversion happens locally in your browser. Your text never leaves your device." }
-    ]
+,      { question: "What is the difference between title case and sentence case?", answer: "Title case capitalizes the first letter of each major word (e.g., 'The Quick Brown Fox'), while sentence case only capitalizes the first letter of the sentence and proper nouns (e.g., 'The quick brown fox')." }     ]
   },
   {
     id: "lorem-ipsum",
@@ -88,7 +88,7 @@ export const tools: Tool[] = [
     category: "text",
     icon: "📄",
     path: "/tools/lorem-ipsum",
-    seoTitle: "Free Lorem Ipsum Generator - Placeholder Text for Design Mockups",
+    seoTitle: "Free Lorem Ipsum Generator Online - Placeholder Text 2026",
     seoDescription: "Generate customizable Lorem Ipsum placeholder text for your designs, mockups, and wireframes. Choose paragraphs, sentences, or words. Free online Lorem Ipsum generator.",
     seoKeywords: [
       "lorem ipsum generator", "placeholder text generator",
@@ -96,7 +96,7 @@ export const tools: Tool[] = [
       "generate lorem ipsum", "placeholder text for design",
       "free lorem ipsum tool", "lorem ipsum paragraphs",
       "lorem ipsum generator online", "mockup text generator"
-    ],
+,      "lorem ipsum for students", "best lorem ipsum generator 2026", "free dummy text generator online"        ],
     howToUse: [
       "Select the type of content you need: paragraphs, sentences, or words.",
       "Choose the number of units you want to generate.",
@@ -108,7 +108,7 @@ export const tools: Tool[] = [
       { question: "Can I choose how many paragraphs to generate?", answer: "Yes. You can specify the exact number of paragraphs, sentences, or words you need. This lets you generate precisely the amount of placeholder text your design requires." },
       { question: "Is Lorem Ipsum text free to use?", answer: "Yes. Lorem Ipsum is in the public domain and completely free to use for any purpose, including commercial projects." },
       { question: "Why not just use real text as a placeholder?", answer: "Real text can distract viewers from evaluating the design itself. Lorem Ipsum provides realistic-looking text without meaningful content, keeping the focus on layout, typography, and visual design." }
-    ]
+,      { question: "What is Lorem Ipsum and why do designers use it?", answer: "Lorem Ipsum is scrambled Latin text used as placeholder content in design mockups, wireframes, and layouts. Designers use it because it has a normal distribution of letters, making it look like real text without distracting from the visual design." }     ]
   },
   {
     id: "text-to-slug",
@@ -118,14 +118,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "🔗",
     path: "/tools/text-to-slug",
-    seoTitle: "Free Text to Slug Converter - Generate URL-Friendly Slugs Online",
+    seoTitle: "Free Text to Slug Converter Online - URL Slug Generator 2026",
     seoDescription: "Convert any text or title into a clean, URL-friendly slug string. Remove special characters, lowercase, and hyphenate automatically. Free online slug generator.",
     seoKeywords: [
       "text to slug converter", "slug generator", "url slug generator",
       "generate slug from title", "url-friendly slug", "slug creator",
       "convert text to url slug", "seo slug generator",
       "online slug generator free", "slugify text online"
-    ],
+,      "slug generator for students", "best url slug generator 2026", "free slugifier online"        ],
     howToUse: [
       "Enter your text, title, or heading in the input field.",
       "View the URL-friendly slug generated instantly below.",
@@ -137,7 +137,7 @@ export const tools: Tool[] = [
       { question: "Why are slugs important for SEO?", answer: "Clean, descriptive slugs help search engines understand what your page is about. They also make URLs more readable and clickable for users, which can improve click-through rates." },
       { question: "What characters are removed from slugs?", answer: "Special characters, punctuation marks, and non-alphanumeric symbols are stripped out. Spaces are replaced with hyphens, and all letters are converted to lowercase for URL compatibility." },
       { question: "Can I customize the slug separator?", answer: "This tool uses hyphens as the standard separator, which is the most common convention. If you need underscores or another separator, you can do a find-and-replace after generating the slug." }
-    ]
+,      { question: "What characters does this slugifier remove?", answer: "This tool removes all special characters, converts spaces to hyphens, lowercases everything, and strips leading/trailing hyphens. It supports Unicode characters and can transliterate accented letters to their ASCII equivalents." }     ]
   },
   {
     id: "text-diff",
@@ -147,14 +147,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "📋",
     path: "/tools/text-diff",
-    seoTitle: "Free Text Diff Checker - Compare Two Texts & Find Differences",
+    seoTitle: "Free Text Diff Checker Online - Compare Two Texts 2026",
     seoDescription: "Compare two texts side by side and highlight differences instantly. Find added, removed, or changed lines. Free online text diff tool. No signup required.",
     seoKeywords: [
       "text diff checker", "compare two texts", "text comparison tool",
       "find text differences", "text difference checker", "compare text online",
       "text diff tool free", "difference finder text",
       "online text comparison", "text diff checker online"
-    ],
+,      "text diff for students", "best text comparison tool 2026", "free text diff checker online"        ],
     howToUse: [
       "Paste your original text in the first input field.",
       "Paste the modified or second text in the second input field.",
@@ -166,7 +166,7 @@ export const tools: Tool[] = [
       { question: "Is there a limit to how much text I can compare?", answer: "There's no strict limit. You can compare texts of any length. Very large texts may take a moment to process, but the tool handles documents, code files, and articles efficiently." },
       { question: "Can I use this to compare code files?", answer: "Yes. This tool works great for comparing source code, configuration files, or any text-based content. It highlights exactly what changed between versions." },
       { question: "Is my text data stored anywhere?", answer: "No. All text comparison happens locally in your browser. Neither text is sent to any server or stored." }
-    ]
+,      { question: "Can this tool compare large texts?", answer: "Yes, our text diff tool can compare large documents. It performs a line-by-line comparison and highlights added, removed, and unchanged lines so you can quickly spot the differences." }     ]
   },
   {
     id: "remove-duplicate-lines",
@@ -176,14 +176,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "🧹",
     path: "/tools/remove-duplicate-lines",
-    seoTitle: "Remove Duplicate Lines - Clean Up Lists & Text Online Free",
+    seoTitle: "Free Duplicate Line Remover Online - Deduplicate Text 2026",
     seoDescription: "Remove duplicate lines from any text while preserving the original order. Clean up email lists, keywords, and data. Free online duplicate line remover.",
     seoKeywords: [
       "remove duplicate lines", "deduplicate text", "remove duplicates online",
       "delete duplicate lines", "clean up duplicate text", "dedup text tool",
       "remove repeated lines", "duplicate line remover free",
       "clean duplicate lines from list", "text deduplicator"
-    ],
+,      "deduplicate for students", "best duplicate remover 2026", "free remove duplicates online"        ],
     howToUse: [
       "Paste your text with duplicate lines into the input field.",
       "Click 'Remove Duplicates' to process the text.",
@@ -195,7 +195,7 @@ export const tools: Tool[] = [
       { question: "What counts as a duplicate line?", answer: "A duplicate line is an exact match — including the same text, spacing, and capitalization. Lines that differ even by a single character or space are treated as unique." },
       { question: "Can I use this to clean up email lists?", answer: "Yes. This is one of the most common use cases. Paste your email list, remove duplicates, and get a clean list ready for your mailing campaign." },
       { question: "Is there a limit to how many lines I can process?", answer: "There's no strict limit. The tool can handle thousands of lines efficiently. Very large files may take a few seconds to process." }
-    ]
+,      { question: "Does this tool preserve the original order of lines?", answer: "Yes, the deduplication process preserves the original order. It keeps the first occurrence of each line and removes subsequent duplicates, maintaining the sequence of your data." }     ]
   },
   {
     id: "text-repeater",
@@ -205,14 +205,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "🔁",
     path: "/tools/text-repeater",
-    seoTitle: "Free Text Repeater - Repeat Text & Strings Online Instantly",
+    seoTitle: "Free Text Repeater Online - Repeat Text & Strings 2026",
     seoDescription: "Repeat any text, word, or string a specified number of times. Add separators between repetitions. Free online text repeater tool. No signup required.",
     seoKeywords: [
       "text repeater", "repeat text online", "string repeater",
       "repeat string n times", "text duplicator", "repeat text tool",
       "copy paste repeater", "repeat words online",
       "text repeater online free", "how to repeat text"
-    ],
+,      "text repeater for students", "best string repeater 2026", "free text repeat tool online"        ],
     howToUse: [
       "Enter the text or string you want to repeat in the input field.",
       "Set the number of times you want it repeated.",
@@ -224,7 +224,7 @@ export const tools: Tool[] = [
       { question: "Can I add a separator between repeated text?", answer: "Yes. You can specify any separator — space, comma, newline, or any custom character — to appear between each repetition." },
       { question: "Is there a maximum number of repetitions?", answer: "You can repeat text as many times as you need. Very large numbers of repetitions will produce correspondingly large output." },
       { question: "Does this tool work offline?", answer: "Yes. All text repetition happens locally in your browser. No internet connection is needed after the page loads." }
-    ]
+,      { question: "How many times can I repeat text?", answer: "You can repeat text up to 10,000 times. You can also add a separator (space, newline, comma, or custom) between repetitions for flexible formatting." }     ]
   },
   // Developer Tools
   {
@@ -235,14 +235,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "{ }",
     path: "/tools/json-formatter",
-    seoTitle: "Free JSON Formatter & Validator - Beautify & Minify JSON Online",
+    seoTitle: "Free JSON Formatter Online - Beautify & Validate JSON 2026",
     seoDescription: "Format and beautify JSON with syntax highlighting. Validate, minify, and prettify JSON data instantly. Free online JSON formatter for developers. No signup required.",
     seoKeywords: [
       "json formatter", "json beautifier", "json validator",
       "prettify json online", "minify json", "json pretty print",
       "format json online", "json syntax checker", "json format tool",
       "how to format json", "free json formatter"
-    ],
+,      "json formatter for students", "best json formatter 2026", "free json validator online"        ],
     howToUse: [
       "Paste your raw or minified JSON data into the input field.",
       "Click 'Format' to beautify the JSON with proper indentation, or 'Minify' to compress it.",
@@ -255,7 +255,7 @@ export const tools: Tool[] = [
       { question: "Is this JSON formatter free to use?", answer: "Yes, this JSON formatter is completely free with no signup required. You can format, minify, and validate unlimited JSON data directly in your browser." },
       { question: "Does this tool validate my JSON?", answer: "Yes. When you paste JSON and click format, the tool will validate the syntax. If there are errors like missing commas, unclosed brackets, or invalid characters, it will alert you to the specific issue." },
       { question: "Is my JSON data sent to any server?", answer: "No. All JSON processing happens locally in your browser. Your data never leaves your device, making it safe to use with sensitive or private JSON data." }
-    ]
+,      { question: "Can I paste minified JSON from an API response?", answer: "Absolutely. Paste any minified or messy JSON from API responses and it will be instantly formatted with proper indentation and syntax highlighting." }     ]
   },
   {
     id: "base64-converter",
@@ -264,14 +264,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🔄",
     path: "/tools/base64-converter",
-    seoTitle: "Free Base64 Encoder/Decoder - Encode & Decode Text Online",
+    seoTitle: "Free Base64 Converter Online - Encode & Decode Base64 2026",
     seoDescription: "Encode text to Base64 or decode Base64 strings back to readable text. Fast, free online Base64 converter with no length limits. No signup required.",
     seoKeywords: [
       "base64 encoder", "base64 decoder", "base64 converter",
       "encode to base64 online", "decode base64 online", "base64 tool",
       "base64 encode decode free", "online base64 converter",
       "how to decode base64", "base64 text encoder"
-    ],
+,      "base64 for students", "best base64 converter 2026", "free base64 encoder online"        ],
     howToUse: [
       "Select 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to text.",
       "Paste your text or Base64 string into the input field.",
@@ -283,7 +283,7 @@ export const tools: Tool[] = [
       { question: "How do I decode a Base64 string?", answer: "Simply select the 'Decode' mode, paste your Base64 string into the input field, and the decoded text will appear instantly in the output panel. The tool handles multi-line Base64 strings automatically." },
       { question: "Is there a limit to how much text I can encode?", answer: "There is no practical limit. You can encode or decode text of any length directly in your browser. Processing speed depends on your device's capabilities." },
       { question: "Is my data secure when using this tool?", answer: "Yes. All encoding and decoding happens locally in your browser. No data is sent to any server, ensuring your information remains private." }
-    ]
+,      { question: "What is Base64 encoding used for?", answer: "Base64 encoding converts binary data into ASCII text format. It is commonly used in data URLs, email attachments (MIME), encoding images in CSS/HTML, and safely transmitting binary data in text-based protocols." }     ]
   },
   {
     id: "url-encoder",
@@ -293,14 +293,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🌐",
     path: "/tools/url-encoder",
-    seoTitle: "Free URL Encoder/Decoder - Encode & Decode URLs Online",
+    seoTitle: "Free URL Encoder Online - Encode & Decode URLs 2026",
     seoDescription: "Encode URLs with percent-encoding or decode percent-encoded URLs back to readable text. Free online URL encoder/decoder for web developers. No signup required.",
     seoKeywords: [
       "url encoder", "url decoder", "percent encoding",
       "encode url online", "decode url online", "url encode decode",
       "url encoding tool", "percent encode url",
       "free url encoder", "url encoder decoder online"
-    ],
+,      "url encoder for students", "best url encoder 2026", "free percent encoding tool online"        ],
     howToUse: [
       "Select 'Encode' to convert a URL to percent-encoded format, or 'Decode' to decode it back.",
       "Paste your URL or encoded string into the input field.",
@@ -312,7 +312,7 @@ export const tools: Tool[] = [
       { question: "When should I use URL encoding?", answer: "URL encoding is needed when passing special characters in query strings, form data, or API requests. It ensures that characters like &, =, ?, and spaces don't break the URL structure." },
       { question: "What characters get encoded?", answer: "Reserved characters (? & = # +), unsafe characters (spaces, angle brackets, quotes, curly braces, pipes, backslashes, carets, tildes, square brackets), and non-ASCII characters (like accented letters or Chinese characters) are all encoded." },
       { question: "Does this tool handle full URLs with query strings?", answer: "Yes. You can encode or decode complete URLs including query parameters and fragments. The tool properly handles all special characters throughout the entire URL." }
-    ]
+,      { question: "Why do I need to URL encode my text?", answer: "URL encoding converts special characters into a format that can be safely transmitted in URLs. Characters like spaces, ampersands, and question marks have special meanings in URLs and must be encoded to prevent errors." }     ]
   },
   {
     id: "hash-generator",
@@ -322,14 +322,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "#️⃣",
     path: "/tools/hash-generator",
-    seoTitle: "Free Hash Generator - SHA-1, SHA-256, SHA-512 Online",
+    seoTitle: "Free Hash Generator Online - SHA256, SHA1, SHA512 Calculator 2026",
     seoDescription: "Generate SHA-1, SHA-256, and SHA-512 hash digests from any text input. Fast, free online hash generator for developers. No signup required.",
     seoKeywords: [
       "hash generator", "sha256 generator", "sha512 generator",
       "sha1 generator", "hash calculator online", "generate sha hash",
       "sha256 hash online", "text to hash converter",
       "free hash generator", "sha hash generator online"
-    ],
+,      "hash generator for students", "best sha generator 2026", "free hash calculator online"        ],
     howToUse: [
       "Enter the text you want to hash in the input field.",
       "View SHA-1, SHA-256, and SHA-512 hash digests generated instantly.",
@@ -341,7 +341,7 @@ export const tools: Tool[] = [
       { question: "What is the difference between SHA-1, SHA-256, and SHA-512?", answer: "They produce different length outputs: SHA-1 generates 160-bit hashes, SHA-256 generates 256-bit hashes, and SHA-512 generates 512-bit hashes. SHA-256 and SHA-512 are considered more secure than SHA-1, which has known vulnerabilities." },
       { question: "Can I hash files with this tool?", answer: "This tool hashes text input. For file hashing, you can copy the file's text content into the input field. For binary files, you may need a dedicated file hashing tool." },
       { question: "Is my input data sent to any server?", answer: "No. All hash generation happens locally in your browser using the Web Crypto API. Your text is never transmitted or stored." }
-    ]
+,      { question: "Which hash algorithms does this tool support?", answer: "This tool supports SHA-1, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used and recommended for general purposes. SHA-512 provides the strongest security for sensitive data." }     ]
   },
   {
     id: "uuid-generator",
@@ -350,14 +350,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🔑",
     path: "/tools/uuid-generator",
-    seoTitle: "Free UUID Generator - Generate UUID v4 Identifiers Online",
+    seoTitle: "Free UUID Generator Online - Generate GUID & UUID v4 2026",
     seoDescription: "Generate random UUID v4 identifiers instantly. Generate single or multiple UUIDs with copy-to-clipboard support. Free online UUID generator for developers.",
     seoKeywords: [
       "uuid generator", "uuid v4 generator", "generate uuid online",
       "random uuid generator", "uuid creator", "guid generator",
       "uuid generator free", "generate multiple uuids",
       "uuid v4 online", "universal unique identifier generator"
-    ],
+,      "uuid generator for students", "best uuid generator 2026", "free guid generator online"        ],
     howToUse: [
       "Click 'Generate' to create a random UUID v4 identifier.",
       "Set the number of UUIDs to generate multiple at once.",
@@ -369,7 +369,7 @@ export const tools: Tool[] = [
       { question: "How unique are UUID v4 identifiers?", answer: "The chance of generating two identical UUID v4 values is approximately 1 in 5.3 × 10^36. You would need to generate billions of UUIDs per second for billions of years to have even a small chance of collision." },
       { question: "Are these UUIDs cryptographically secure?", answer: "Yes. This tool uses the Web Crypto API's cryptographically secure random number generator (crypto.getRandomValues) to produce UUIDs that are not predictable." },
       { question: "Can I generate UUIDs offline?", answer: "Yes. All UUID generation happens locally in your browser. No internet connection is needed after the page loads." }
-    ]
+,      { question: "What version of UUID does this tool generate?", answer: "This tool generates UUID version 4 (random), which uses random or pseudo-random numbers. A v4 UUID has the form xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx, where the probability of duplicates is practically zero." }     ]
   },
   {
     id: "regex-tester",
@@ -379,14 +379,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🔍",
     path: "/tools/regex-tester",
-    seoTitle: "Regex Tester & Converter - Test, Replace, Extract & Generate Code",
+    seoTitle: "Free Regex Tester Online - Test & Replace Regular Expressions 2026",
     seoDescription: "Test and debug regular expressions with real-time highlighting. Replace text with regex patterns, extract matches to JSON/CSV, and generate code snippets for JavaScript, Python, PHP, Java, Go, Rust, C#, Ruby, Swift, and TypeScript.",
     seoKeywords: [
       "regex tester", "regular expression tester", "regex converter",
       "regex code generator", "regex replace tool", "regex match extractor",
       "test regex online", "regex debugger", "regex to code",
       "generate regex code", "online regex replace tool"
-    ],
+,      "regex tester for students", "best regex tester 2026", "free regex code generator online"        ],
     howToUse: [
       "Enter your regular expression pattern in the pattern field (between the slashes).",
       "Set regex flags (g=global, i=case-insensitive, m=multiline, s=dotAll, u=unicode).",
@@ -402,7 +402,7 @@ export const tools: Tool[] = [
       { question: "What export formats are supported?", answer: "The Extract tab supports three formats: JSON (structured data with match and index fields), CSV (spreadsheet-compatible), and plain text (one match per line)." },
       { question: "Can I use this tool to learn regex?", answer: "Absolutely. The Test tab shows real-time results as you type, making it easy to experiment. The Code tab also provides working examples in your target language." },
       { question: "Is my data stored anywhere?", answer: "No. All processing happens entirely in your browser. Your text, patterns, and results are never sent to any server." }
-    ]
+,      { question: "Does this tool support all regular expression features?", answer: "Our regex tester supports JavaScript regular expression syntax, including character classes, quantifiers, groups, lookaheads, lookbehinds, and flags like g, i, and m. It works in real-time as you type." }     ]
   },
   {
     id: "markdown-preview",
@@ -412,7 +412,7 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "📑",
     path: "/tools/markdown-preview",
-    seoTitle: "Free Markdown Preview Editor - Live HTML Preview as You Type",
+    seoTitle: "Free Markdown Preview Online - MD to HTML Converter 2026",
     seoDescription: "Write Markdown and see a live HTML preview in real-time. Free online Markdown editor with syntax highlighting. Perfect for README files, documentation, and blog posts.",
     seoKeywords: [
       "markdown preview", "markdown editor online", "live markdown preview",
@@ -420,7 +420,7 @@ export const tools: Tool[] = [
       "markdown editor free", "online markdown viewer",
       "markdown previewer", "md to html online",
       "markdown live editor"
-    ],
+,      "markdown preview for students", "best markdown editor 2026", "free md to html converter online"        ],
     howToUse: [
       "Start typing Markdown in the left editor panel.",
       "View the rendered HTML preview update in real-time on the right.",
@@ -432,7 +432,7 @@ export const tools: Tool[] = [
       { question: "Can I use GitHub Flavored Markdown?", answer: "Yes. This editor supports GitHub Flavored Markdown (GFM) extensions including task lists, strikethrough text, and fenced code blocks with syntax highlighting." },
       { question: "Is my Markdown saved anywhere?", answer: "No. Your Markdown is processed entirely in your browser. Nothing is sent to or stored on any server." },
       { question: "Can I use this to write README files?", answer: "Absolutely. This is perfect for drafting and previewing README.md files for GitHub repositories, documentation, or blog posts before publishing." }
-    ]
+,      { question: "Does this markdown preview support tables and code blocks?", answer: "Yes, our markdown preview supports all standard Markdown features including headers, bold, italic, links, images, tables, code blocks with syntax hints, blockquotes, and horizontal rules." }     ]
   },
   {
     id: "css-minifier",
@@ -442,14 +442,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🎨",
     path: "/tools/css-minifier",
-    seoTitle: "Free CSS Minifier & Beautifier - Compress CSS Online",
+    seoTitle: "Free CSS Minifier Online - Compress & Optimize CSS 2026",
     seoDescription: "Minify CSS to reduce file size and improve page load speed. Also beautify compressed CSS for readability. Free online CSS minifier tool. No signup required.",
     seoKeywords: [
       "css minifier", "minify css online", "css compressor",
       "css beautifier", "compress css", "css minify tool",
       "free css minifier", "css optimizer online",
       "minify css free", "css compression tool"
-    ],
+,      "css minifier for students", "best css compressor 2026", "free css optimizer online"        ],
     howToUse: [
       "Paste your CSS code into the input field.",
       "Click 'Minify' to compress the CSS by removing whitespace, comments, and unnecessary characters.",
@@ -461,7 +461,7 @@ export const tools: Tool[] = [
       { question: "How much can minification reduce CSS file size?", answer: "Typically, minification reduces CSS file size by 10-20%. The exact reduction depends on how well-formatted the original CSS is — heavily commented and formatted CSS sees bigger reductions." },
       { question: "Is minified CSS safe for production?", answer: "Yes. Minified CSS is functionally identical to the original — only whitespace and comments are removed. It's the standard practice for production websites." },
       { question: "Can I beautify minified CSS back to readable format?", answer: "Yes. The beautify feature reformats compressed CSS with proper indentation and line breaks, making it easy to read and edit again." }
-    ]
+,      { question: "How much can CSS minification reduce file size?", answer: "CSS minification typically reduces file size by 20-40% by removing whitespace, comments, and unnecessary characters. This improves page load times and can positively impact your website's SEO ranking." }     ]
   },
   {
     id: "unix-timestamp",
@@ -471,14 +471,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "⏱️",
     path: "/tools/unix-timestamp",
-    seoTitle: "Free Unix Timestamp Converter - Convert Epoch Time Online",
+    seoTitle: "Free Unix Timestamp Converter Online - Epoch to Date 2026",
     seoDescription: "Convert Unix timestamps (epoch time) to human-readable dates and vice versa. View current Unix time. Free online timestamp converter for developers.",
     seoKeywords: [
       "unix timestamp converter", "epoch time converter", "convert unix timestamp",
       "unix time to date", "date to unix timestamp", "epoch converter",
       "current unix time", "unix timestamp online",
       "epoch time converter online", "timestamp converter free"
-    ],
+,      "unix timestamp for students", "best epoch converter 2026", "free timestamp converter online"        ],
     howToUse: [
       "View the current Unix timestamp displayed at the top of the page.",
       "Enter a Unix timestamp to convert it to a human-readable date and time.",
@@ -490,7 +490,7 @@ export const tools: Tool[] = [
       { question: "Why do developers use Unix timestamps?", answer: "Unix timestamps provide a universal, timezone-independent way to represent time. They're easy to store in databases, compare mathematically, and are supported by virtually every programming language." },
       { question: "What is the Year 2038 problem?", answer: "The Year 2038 problem occurs when 32-bit signed integers storing Unix timestamps overflow on January 19, 2038. Modern 64-bit systems don't have this issue and can represent timestamps for billions of years." },
       { question: "Does this tool handle timezones?", answer: "Yes. You can convert timestamps to any timezone. The tool shows both UTC and your local time equivalents for clarity." }
-    ]
+,      { question: "What is a Unix timestamp?", answer: "A Unix timestamp is the number of seconds that have elapsed since January 1, 1970 (UTC), known as the Unix epoch. It is widely used in computing systems for date and time calculations." }     ]
   },
   // Calculators
   {
@@ -501,14 +501,14 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🔐",
     path: "/tools/password-generator",
-    seoTitle: "Free Password Generator - Create Strong & Secure Passwords Online",
+    seoTitle: "Free Password Generator Online - Strong Random Passwords 2026",
     seoDescription: "Generate strong, random passwords with customizable length, characters, and symbols. Free online password generator for maximum security. No data stored.",
     seoKeywords: [
       "password generator", "random password generator", "strong password creator",
       "secure password generator online", "generate random password", "password maker",
       "free password generator tool", "how to create a strong password",
       "random password generator with symbols", "long password generator"
-    ],
+,      "password generator for students", "best password generator 2026", "free secure password creator online"        ],
     howToUse: [
       "Choose your desired password length (8-128 characters recommended).",
       "Select which character types to include: uppercase, lowercase, numbers, and symbols.",
@@ -521,7 +521,7 @@ export const tools: Tool[] = [
       { question: "Is it safe to use an online password generator?", answer: "Yes, because all password generation happens locally in your browser. The generated password is never sent over the internet or stored on any server. You can verify this by using the tool with your network disconnected — it works perfectly offline." },
       { question: "How long should my password be?", answer: "Security experts recommend at least 12 characters for general use, and 16+ characters for sensitive accounts like banking or email. Longer passwords with mixed character types are exponentially harder to crack." },
       { question: "Should I include symbols in my password?", answer: "Including uppercase letters, lowercase letters, numbers, and symbols maximizes password entropy, making it significantly harder to crack through brute force attacks. We recommend enabling all character types for the strongest passwords." }
-    ]
+,      { question: "How secure are the passwords generated by this tool?", answer: "Passwords generated by this tool use cryptographically secure random number generation. With options for 12-64 characters including uppercase, lowercase, numbers, and symbols, the generated passwords are extremely difficult to crack." }     ]
   },
   {
     id: "age-calculator",
@@ -531,7 +531,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🎂",
     path: "/tools/age-calculator",
-    seoTitle: "Free Age Calculator - Calculate Your Exact Age in Years, Months & Days",
+    seoTitle: "Free Age Calculator Online - Calculate Exact Age from Date of Birth 2026",
     seoDescription: "Calculate your exact age in years, months, weeks, and days. Free online age calculator from any birth date. See next birthday countdown too. No signup required.",
     seoKeywords: [
       "age calculator", "calculate my age", "how old am i",
@@ -539,7 +539,7 @@ export const tools: Tool[] = [
       "calculate age in years months and days", "birthday calculator",
       "age calculator online free", "how many days until my birthday",
       "date of birth age calculator"
-    ],
+,      "age calculator for students", "best age calculator 2026", "how old am i calculator free"        ],
     howToUse: [
       "Enter your date of birth using the date picker or type it manually (YYYY-MM-DD format).",
       "Click 'Calculate' or press Enter to see your results instantly.",
@@ -552,7 +552,7 @@ export const tools: Tool[] = [
       { question: "Can I calculate age for a past or future date?", answer: "Yes. You can change the reference date from today to any other date in the past or future. This is useful for calculating age at a specific point in time, such as for legal documents or planning purposes." },
       { question: "Does this calculator account for leap years?", answer: "Yes. The age calculator properly accounts for leap years (366-day years that occur every 4 years) and the varying number of days in each month when calculating your exact age." },
       { question: "How many days until my next birthday?", answer: "After entering your birth date, the tool automatically calculates and displays the number of days remaining until your next birthday, along with the day of the week it falls on." }
-    ]
+,      { question: "How does the age calculator handle leap years?", answer: "Our age calculator accurately handles leap years by using the precise date difference algorithm. It accounts for varying month lengths and leap years to give you the exact age in years, months, and days." }     ]
   },
   {
     id: "percentage-calculator",
@@ -562,7 +562,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "📊",
     path: "/tools/percentage-calculator",
-    seoTitle: "Free Percentage Calculator - Calculate %, Change & Of a Number",
+    seoTitle: "Free Percentage Calculator Online - Calculate Percentages 2026",
     seoDescription: "Calculate percentages, percentage change between two numbers, and what percentage one number is of another. Free online percentage calculator. No signup required.",
     seoKeywords: [
       "percentage calculator", "calculate percentage", "percentage change calculator",
@@ -570,7 +570,7 @@ export const tools: Tool[] = [
       "calculate percentage online", "percent calculator free",
       "how to calculate percentage", "percentage increase calculator",
       "online percentage calculator"
-    ],
+,      "percentage calculator for students", "best percent calculator 2026", "free percentage tool for homework"        ],
     howToUse: [
       "Choose the type of percentage calculation you need: percentage of a number, percentage change, or what percentage one number is of another.",
       "Enter your values in the appropriate input fields.",
@@ -582,7 +582,7 @@ export const tools: Tool[] = [
       { question: "How is percentage change calculated?", answer: "Percentage change = ((new value - original value) ÷ original value) × 100. A positive result means an increase; a negative result means a decrease." },
       { question: "Can this calculator handle negative numbers?", answer: "Yes. You can calculate percentages with negative numbers, which is useful for financial scenarios like losses, temperature changes, or stock price movements." },
       { question: "Is this calculator accurate for financial calculations?", answer: "Yes. The calculations use precise arithmetic. However, for official financial reporting, you should round results according to your local accounting standards." }
-    ]
+,      { question: "How do I calculate percentage increase or decrease?", answer: "To calculate percentage change: subtract the old value from the new value, divide by the old value, then multiply by 100. Our percentage calculator does this automatically -- just enter your two values." }     ]
   },
   {
     id: "bmi-calculator",
@@ -592,14 +592,14 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "⚖️",
     path: "/tools/bmi-calculator",
-    seoTitle: "Free BMI Calculator - Calculate Your Body Mass Index Online",
+    seoTitle: "Free BMI Calculator Online - Body Mass Index Checker 2026",
     seoDescription: "Calculate your BMI instantly with metric or imperial units. See your weight category, ideal weight range, and health tips. Free online BMI calculator for adults.",
     seoKeywords: [
       "bmi calculator", "body mass index calculator", "calculate bmi online",
       "bmi calculator metric", "bmi calculator imperial", "what is my bmi",
       "bmi chart", "healthy weight calculator", "bmi calculator free",
       "body mass index checker online"
-    ],
+,      "bmi calculator for students", "best bmi calculator 2026", "free body mass index checker online"        ],
     howToUse: [
       "Enter your height in either centimeters/meters or feet/inches.",
       "Enter your weight in kilograms or pounds.",
@@ -612,7 +612,7 @@ export const tools: Tool[] = [
       { question: "How is BMI calculated?", answer: "BMI is calculated by dividing your weight in kilograms by your height in meters squared (kg/m²). For imperial units, the formula is (weight in pounds / (height in inches)²) × 703." },
       { question: "What is a healthy BMI range?", answer: "According to WHO guidelines, a healthy BMI range for adults is 18.5 to 24.9. Below 18.5 is considered underweight, 25.0-29.9 is overweight, and 30.0 or above is obese." },
       { question: "Is BMI accurate for everyone?", answer: "BMI is a useful general indicator but has limitations. It doesn't account for muscle mass, bone density, or fat distribution. Athletes with high muscle mass may have a high BMI despite being healthy. It's best used as one of several health indicators." }
-    ]
+,      { question: "What is a healthy BMI range?", answer: "According to WHO guidelines, a healthy BMI range for adults is 18.5 to 24.9. Below 18.5 is considered underweight, 25-29.9 is overweight, and 30 or above is obese. BMI is a general indicator and does not account for muscle mass." }     ]
   },
   {
     id: "unit-converter",
@@ -622,14 +622,14 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "📐",
     path: "/tools/unit-converter",
-    seoTitle: "Free Unit Converter - Convert Length, Weight, Temperature & More",
+    seoTitle: "Free Unit Converter Online - Metric to Imperial Conversion 2026",
     seoDescription: "Convert between metric and imperial units for length, weight, temperature, volume, and speed. Free online unit converter. No signup required.",
     seoKeywords: [
       "unit converter", "metric to imperial converter", "length converter",
       "weight converter", "temperature converter", "volume converter",
       "unit conversion online", "free unit converter tool",
       "cm to inches converter", "kg to lbs converter"
-    ],
+,      "unit converter for students", "best unit converter 2026", "free metric to imperial converter online"        ],
     howToUse: [
       "Select the unit category you want to convert (length, weight, temperature, volume, or speed).",
       "Choose the input and output units from the dropdown menus.",
@@ -641,7 +641,7 @@ export const tools: Tool[] = [
       { question: "How accurate are the conversions?", answer: "All conversions use precise conversion factors and are accurate to many decimal places. Results are rounded for readability but you can see the full precision." },
       { question: "Can I convert between any two units?", answer: "You can convert between any two units within the same category. For example, you can convert meters to feet, or kilograms to pounds, but not meters to kilograms." },
       { question: "Is this tool suitable for cooking measurements?", answer: "Yes. The volume converter includes common cooking measurements like cups, tablespoons, teaspoons, and milliliters, making it useful for recipe conversions." }
-    ]
+,      { question: "What units does this converter support?", answer: "Our unit converter supports length (km, mi, m, ft, cm, in), weight (kg, lb, g, oz), temperature (C, F, K), volume (L, gal, mL, fl oz), and speed (km/h, mph, m/s, knots)." }     ]
   },
   // Converters
   {
@@ -652,14 +652,14 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "🔢",
     path: "/tools/base-converter",
-    seoTitle: "Free Number Base Converter - Binary, Octal, Decimal, Hex Converter",
+    seoTitle: "Free Base Converter Online - Binary, Hex, Decimal, Octal 2026",
     seoDescription: "Convert numbers between binary, octal, decimal, and hexadecimal systems instantly. Free online number base converter for developers and students.",
     seoKeywords: [
       "number base converter", "binary to decimal converter", "hex to decimal",
       "decimal to binary converter", "octal converter", "base converter online",
       "binary octal decimal hex converter", "convert number bases",
       "free base converter", "number system converter"
-    ],
+,      "number base converter for students", "best binary converter 2026", "free hex to decimal converter online"        ],
     howToUse: [
       "Select the input number base (binary, octal, decimal, or hexadecimal).",
       "Enter your number in the input field.",
@@ -671,7 +671,7 @@ export const tools: Tool[] = [
       { question: "Why do I need to convert between number bases?", answer: "Number base conversion is essential in computer science and programming. Binary is used for low-level operations, hexadecimal for memory addresses and colors, and decimal for everyday calculations." },
       { question: "Can I enter negative numbers?", answer: "Yes. You can enter negative numbers in any base, and the tool will convert them correctly to all other bases." },
       { question: "What's the maximum number size?", answer: "The tool can handle very large numbers — up to the safe integer limit of JavaScript (approximately 9 × 10^15). This is sufficient for most programming and educational use cases." }
-    ]
+,      { question: "What number bases does this converter support?", answer: "Our converter supports binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Enter a number in any base and instantly see the equivalent in all other bases." }     ]
   },
   {
     id: "roman-numerals",
@@ -681,7 +681,7 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "🏛️",
     path: "/tools/roman-numerals",
-    seoTitle: "Free Roman Numeral Converter - Convert Roman to Arabic Numbers Online",
+    seoTitle: "Free Roman Numerals Converter Online - Roman to Number 2026",
     seoDescription: "Convert Roman numerals to Arabic numbers and vice versa instantly. Free online Roman numeral converter. Supports numbers 1-3,999,999.",
     seoKeywords: [
       "roman numeral converter", "roman to arabic converter",
@@ -689,7 +689,7 @@ export const tools: Tool[] = [
       "convert roman numerals", "roman numeral to number",
       "roman numeral converter online", "free roman numeral tool",
       "roman numbers converter", "what is this roman numeral"
-    ],
+,      "roman numerals for students", "best roman numeral converter 2026", "free roman to number converter online"        ],
     howToUse: [
       "Enter a Roman numeral (like XIV) to convert it to an Arabic number.",
       "Or enter an Arabic number (like 2024) to convert it to Roman numerals.",
@@ -701,7 +701,7 @@ export const tools: Tool[] = [
       { question: "What is the largest number this converter handles?", answer: "This converter supports numbers from 1 to 3,999,999. Standard Roman numerals go up to 3,999, and this tool extends that with overline notation for larger numbers." },
       { question: "How do Roman numerals work?", answer: "Roman numerals are read left to right, with values added together. When a smaller numeral appears before a larger one, it's subtracted (e.g., IV = 4, IX = 9, XL = 40)." },
       { question: "Where are Roman numerals used today?", answer: "Roman numerals are still used for clock faces, movie copyright dates, book chapters, monarch numbering (Queen Elizabeth II), Super Bowl numbering, and formal outline structures." }
-    ]
+,      { question: "What is the largest Roman numeral this tool can convert?", answer: "Our Roman numeral converter handles numbers from 1 to 3,999 (MMMCMXCIX), which covers the standard range of Roman numerals. For larger numbers, Roman numeral notation becomes non-standard." }     ]
   },
   {
     id: "color-converter",
@@ -711,14 +711,14 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "🎨",
     path: "/tools/color-converter",
-    seoTitle: "Free Color Converter - HEX to RGB to HSL with Live Preview",
+    seoTitle: "Free Color Converter Online - HEX, RGB, HSL Converter 2026",
     seoDescription: "Convert colors between HEX, RGB, and HSL formats instantly. Live color preview with copy-paste values. Free online color converter for designers and developers.",
     seoKeywords: [
       "color converter", "hex to rgb converter", "rgb to hsl converter",
       "hex to hsl converter", "color format converter", "rgb hex converter",
       "online color converter", "color converter tool free",
       "convert hex color code", "hsl to rgb converter"
-    ],
+,      "color converter for students", "best color converter 2026", "free hex to rgb converter online"        ],
     howToUse: [
       "Enter a color value in any format: HEX (#FF5733), RGB (rgb(255,87,51)), or HSL (hsl(11,100%,60%)).",
       "View the converted values in all formats displayed side by side.",
@@ -731,7 +731,7 @@ export const tools: Tool[] = [
       { question: "How do I convert HEX to RGB?", answer: "Enter your HEX color code (with or without the # symbol) and the tool instantly displays the equivalent RGB values. For example, #FF5733 converts to RGB(255, 87, 51)." },
       { question: "Why should I use HSL instead of RGB?", answer: "HSL is often preferred by designers because it's more intuitive. You can adjust the hue to change the color, saturation for vividness, and lightness for brightness — all independently. It's also the format used in modern CSS." },
       { question: "Can I use this color converter for web design?", answer: "Yes. This tool supports all standard web color formats. You can convert between any format and directly copy the values for use in CSS, HTML, JavaScript, or design software like Figma and Photoshop." }
-    ]
+,      { question: "What color formats does this converter support?", answer: "Our color converter supports HEX (#RRGGBB), RGB (rgb(r, g, b)), HSL (hsl(h, s%, l%)), and named colors. Enter any value and get instant conversions to all other formats." }     ]
   },
   {
     id: "html-entities",
@@ -741,14 +741,14 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "<>",
     path: "/tools/html-entities",
-    seoTitle: "Free HTML Entity Encoder/Decoder - Encode Special Characters Online",
+    seoTitle: "Free HTML Entities Encoder Online - Encode & Decode HTML Entities 2026",
     seoDescription: "Encode text to HTML entities or decode HTML entities back to readable text. Free online HTML entity encoder/decoder for web developers.",
     seoKeywords: [
       "html entity encoder", "html entity decoder", "encode html entities",
       "decode html entities", "html special characters", "html encoding",
       "html entity converter", "escape html online",
       "free html entity encoder", "html encode decode online"
-    ],
+,      "html entity encoder for students", "best html encoder 2026", "free html special character converter online"        ],
     howToUse: [
       "Paste your text with special characters or HTML entities into the input field.",
       "Click 'Encode' to convert special characters to HTML entities.",
@@ -760,7 +760,7 @@ export const tools: Tool[] = [
       { question: "When should I encode HTML entities?", answer: "You should encode HTML entities whenever you need to display special characters in web pages without the browser interpreting them as markup. This is essential for displaying code snippets, mathematical symbols, or text containing angle brackets." },
       { question: "What characters are encoded?", answer: "The tool encodes reserved HTML characters: less-than, greater-than, ampersand, double quote, and single quote. It also handles common symbols like copyright, registered trademark, euro, and pound signs." },
       { question: "Does encoding affect how the page looks?", answer: "No. Encoded entities render exactly the same as the original characters in the browser. The encoding only affects the source code, not the visual output." }
-    ]
+,      { question: "Why do I need to encode HTML entities?", answer: "HTML entity encoding converts special characters like angle brackets and ampersands into safe equivalents to prevent them from being interpreted as HTML tags. This is essential for security and displaying code on web pages." }     ]
   },
   {
     id: "json-to-csv",
@@ -770,14 +770,14 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "📊",
     path: "/tools/json-to-csv",
-    seoTitle: "Free JSON to CSV Converter - Convert JSON to Spreadsheet Format",
+    seoTitle: "Free JSON to CSV Converter Online - Export JSON Data 2026",
     seoDescription: "Convert JSON arrays to CSV format for easy import into Excel, Google Sheets, or databases. Free online JSON to CSV converter. No signup required.",
     seoKeywords: [
       "json to csv converter", "convert json to csv", "json to csv online",
       "json to excel converter", "json to spreadsheet", "export json to csv",
       "json to csv free", "online json csv converter",
       "json to csv tool", "convert api data to csv"
-    ],
+,      "json to csv for students", "best json to csv converter 2026", "free json to excel converter online"        ],
     howToUse: [
       "Paste your JSON array data into the input field.",
       "Click 'Convert' to transform the JSON into CSV format.",
@@ -789,7 +789,7 @@ export const tools: Tool[] = [
       { question: "Can I convert nested JSON to CSV?", answer: "Yes. Nested objects and arrays are automatically flattened. Nested keys are joined with dots (e.g., 'address.city' becomes a column name) to create a flat CSV structure." },
       { question: "What delimiter does the CSV use?", answer: "The converter uses commas as delimiters by default. If your data contains commas, values are properly quoted to prevent formatting issues." },
       { question: "Can I use this with API data?", answer: "Yes. If your API returns JSON array data, simply copy the response and paste it into the converter. This is commonly used to export API results to spreadsheets for analysis." }
-    ]
+,      { question: "Does this tool handle nested JSON objects?", answer: "Our JSON to CSV converter flattens nested objects using dot notation (e.g., user.name). Arrays within objects are converted to comma-separated strings. Each top-level object becomes a CSV row." }     ]
   },
   {
     id: "csv-to-json",
@@ -799,14 +799,14 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "📋",
     path: "/tools/csv-to-json",
-    seoTitle: "Free CSV to JSON Converter - Convert CSV Data to JSON Format",
+    seoTitle: "Free CSV to JSON Converter Online - Convert CSV to JSON 2026",
     seoDescription: "Convert CSV data to JSON format for APIs, web apps, and databases. Free online CSV to JSON converter with formatted output. No signup required.",
     seoKeywords: [
       "csv to json converter", "convert csv to json", "csv to json online",
       "csv to json api", "import csv to json", "csv json converter",
       "csv to json free", "online csv json tool",
       "convert spreadsheet to json", "csv to json array"
-    ],
+,      "csv to json for students", "best csv to json converter 2026", "free spreadsheet to json converter online"        ],
     howToUse: [
       "Paste your CSV data into the input field (with or without headers).",
       "Click 'Convert' to transform the CSV into JSON format.",
@@ -818,7 +818,7 @@ export const tools: Tool[] = [
       { question: "What CSV formats are supported?", answer: "The tool supports standard CSV with comma delimiters, as well as semicolon-delimited and tab-separated values. It handles quoted fields containing commas and escaped characters." },
       { question: "Can I convert large CSV files?", answer: "Yes. The converter handles large CSV files efficiently. For very large files (millions of rows), consider processing in smaller batches to avoid browser memory limits." },
       { question: "What type of JSON output do I get?", answer: "The output is a JSON array of objects, where each object represents a row and each key-value pair represents a column. This format is directly usable with most APIs and JavaScript applications." }
-    ]
+,      { question: "What CSV format does this converter expect?", answer: "The converter expects standard CSV format with a header row as the first line. Fields containing commas should be enclosed in double quotes. It handles common delimiters and automatically detects the format." }     ]
   },
   {
     id: "image-to-base64",
@@ -828,7 +828,7 @@ export const tools: Tool[] = [
     category: "converter",
     icon: "🖼️",
     path: "/tools/image-to-base64",
-    seoTitle: "Free Image to Base64 Converter - Encode Images to Data URIs Online",
+    seoTitle: "Free Image to Base64 Converter Online - Encode Images 2026",
     seoDescription: "Convert images (PNG, JPG, GIF, SVG) to Base64 encoded strings for embedding in CSS, HTML, or code. Free online image to Base64 converter.",
     seoKeywords: [
       "image to base64 converter", "image to base64 online",
@@ -836,7 +836,7 @@ export const tools: Tool[] = [
       "base64 image encoder", "convert image to base64 string",
       "free image base64 converter", "image to base64 tool",
       "svg to base64", "png to base64 converter"
-    ],
+,      "image to base64 for students", "best image encoder 2026", "free image to data uri converter online"        ],
     howToUse: [
       "Upload an image file (PNG, JPG, GIF, SVG, WebP) or drag and drop it into the upload area.",
       "View the Base64 encoded string generated instantly.",
@@ -848,7 +848,7 @@ export const tools: Tool[] = [
       { question: "What image formats are supported?", answer: "This tool supports PNG, JPG/JPEG, GIF, SVG, and WebP formats. The output preserves the original MIME type in the data URI prefix." },
       { question: "When should I embed images as Base64?", answer: "Base64 embedding is ideal for small images like icons, logos, and UI elements. It reduces HTTP requests and speeds up page loading. However, large images should remain as separate files for better caching." },
       { question: "How does Base64 affect file size?", answer: "Base64 encoding increases file size by approximately 33% compared to the original binary. This trade-off is usually worth it for small images since it eliminates a separate HTTP request." }
-    ]
+,      { question: "What image formats are supported?", answer: "Our Image to Base64 converter supports PNG, JPEG, GIF, SVG, WebP, and BMP formats. Upload any image file or paste a data URI to get the Base64 encoded string instantly." }     ]
   },
   {
     id: "loan-calculator",
@@ -858,7 +858,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🏦",
     path: "/tools/loan-calculator",
-    seoTitle: "Free Loan Calculator - Monthly Payment & Interest Calculator Online",
+    seoTitle: "Free Loan Calculator Online - Loan Payment Estimator 2026",
     seoDescription: "Calculate monthly loan payments, total interest, and amortization schedule. Free online loan calculator for personal loans, auto loans, and more.",
     seoKeywords: [
       "loan calculator", "monthly payment calculator", "loan payment calculator",
@@ -866,7 +866,7 @@ export const tools: Tool[] = [
       "personal loan calculator", "auto loan calculator",
       "loan interest calculator", "free loan calculator online",
       "how much is my monthly loan payment"
-    ],
+,      "loan calculator for students", "best loan payment calculator 2026", "free monthly payment estimator online"        ],
     howToUse: [
       "Enter the loan amount (principal) you want to borrow.",
       "Enter the annual interest rate and loan term in years.",
@@ -878,7 +878,7 @@ export const tools: Tool[] = [
       { question: "What is an amortization schedule?", answer: "An amortization schedule is a table showing each payment over the loan term, broken down into principal and interest portions. Early payments are mostly interest; later payments are mostly principal." },
       { question: "Does this calculator include taxes and insurance?", answer: "This calculator focuses on principal and interest payments. For mortgages, you would need to add property taxes and insurance separately to get your full monthly payment." },
       { question: "Can I use this for any type of loan?", answer: "Yes. This calculator works for any fixed-rate loan including personal loans, auto loans, student loans, and business loans. Just enter your specific loan terms." }
-    ]
+,      { question: "Does this calculator include interest rates?", answer: "Yes, our loan calculator computes monthly payments based on the loan amount, interest rate, and loan term. It shows the total payment amount and total interest paid over the life of the loan." }     ]
   },
   {
     id: "mortgage-calculator",
@@ -888,7 +888,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🏠",
     path: "/tools/mortgage-calculator",
-    seoTitle: "Free Mortgage Calculator - Monthly Payment with Taxes & Insurance",
+    seoTitle: "Free Mortgage Calculator Online - House Payment Estimator 2026",
     seoDescription: "Estimate your monthly mortgage payment including principal, interest, property taxes, and insurance. Free online mortgage calculator for home buyers.",
     seoKeywords: [
       "mortgage calculator", "monthly mortgage payment calculator",
@@ -896,7 +896,7 @@ export const tools: Tool[] = [
       "mortgage calculator with taxes", "mortgage calculator with insurance",
       "free mortgage calculator", "house payment calculator",
       "mortgage payment calculator online", "how much house can i afford"
-    ],
+,      "mortgage calculator for students", "best mortgage calculator 2026", "free house payment calculator online"        ],
     howToUse: [
       "Enter the home price and your down payment amount or percentage.",
       "Enter the interest rate and loan term (typically 15 or 30 years).",
@@ -908,7 +908,7 @@ export const tools: Tool[] = [
       { question: "How much down payment do I need?", answer: "Conventional loans typically require 20% down to avoid PMI. FHA loans allow as low as 3.5% down. VA loans and USDA loans may allow 0% down for eligible borrowers." },
       { question: "What is PMI and when is it required?", answer: "PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home price. It protects the lender and typically costs 0.3-1.5% of the loan amount annually." },
       { question: "How accurate is this mortgage estimate?", answer: "This calculator provides a good estimate based on the information you provide. Actual payments may vary based on your credit score, lender fees, specific insurance costs, and local property tax rates." }
-    ]
+,      { question: "What factors does the mortgage calculator consider?", answer: "Our mortgage calculator considers the home price, down payment, loan term, and interest rate to estimate your monthly payment. It also shows the total interest paid and an amortization breakdown." }     ]
   },
   {
     id: "calorie-calculator",
@@ -918,7 +918,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🔥",
     path: "/tools/calorie-calculator",
-    seoTitle: "Free Calorie Calculator - Daily Calorie Needs & TDEE Estimator",
+    seoTitle: "Free Calorie Calculator Online - Daily Calorie Needs Estimator 2026",
     seoDescription: "Calculate your daily calorie needs based on age, weight, height, gender, and activity level. Free TDEE calculator for weight loss, maintenance, or gain goals.",
     seoKeywords: [
       "calorie calculator", "daily calorie needs calculator",
@@ -926,7 +926,7 @@ export const tools: Tool[] = [
       "calculate daily calories", "calorie needs estimator",
       "how many calories should i eat", "calorie calculator for weight loss",
       "free calorie calculator", "daily calorie intake calculator"
-    ],
+,      "calorie calculator for students", "best tdee calculator 2026", "free daily calorie needs estimator online"        ],
     howToUse: [
       "Enter your age, gender, weight, and height.",
       "Select your activity level from sedentary to very active.",
@@ -938,7 +938,7 @@ export const tools: Tool[] = [
       { question: "How many calories should I eat to lose weight?", answer: "A safe weight loss rate is 0.5-1 pound per week, which requires a daily deficit of 250-500 calories from your TDEE. Never go below 1,200 calories per day for women or 1,500 for men without medical supervision." },
       { question: "How accurate is this calculator?", answer: "This calculator uses the Mifflin-St Jeor equation, which is considered one of the most accurate BMR formulas. However, individual metabolism varies, so use this as a starting point and adjust based on your results." },
       { question: "Does this calculator account for muscle mass?", answer: "This calculator uses standard formulas that estimate BMR based on weight, height, age, and gender. For more precise results that account for body composition, a DEXA scan or professional assessment is recommended." }
-    ]
+,      { question: "How are daily calorie needs calculated?", answer: "Our calorie calculator uses the Mifflin-St Jeor equation, which considers your age, gender, weight, height, and activity level to estimate your Total Daily Energy Expenditure (TDEE)." }     ]
   },
   {
     id: "roi-calculator",
@@ -948,7 +948,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "📈",
     path: "/tools/roi-calculator",
-    seoTitle: "Free ROI Calculator - Return on Investment Percentage Calculator",
+    seoTitle: "Free ROI Calculator Online - Return on Investment Calculator 2026",
     seoDescription: "Calculate your return on investment (ROI) percentage and profit. Compare investment options and analyze business profitability. Free online ROI calculator.",
     seoKeywords: [
       "roi calculator", "return on investment calculator",
@@ -956,7 +956,7 @@ export const tools: Tool[] = [
       "profit calculator", "business roi calculator",
       "free roi calculator", "roi percentage calculator",
       "return on investment tool", "calculate investment returns"
-    ],
+,      "roi calculator for students", "best roi calculator 2026", "free investment return calculator online"        ],
     howToUse: [
       "Enter your initial investment amount (cost).",
       "Enter the final value or return amount.",
@@ -968,7 +968,7 @@ export const tools: Tool[] = [
       { question: "What is a good ROI?", answer: "A 'good' ROI depends on the investment type and risk level. Stock market investments historically average 7-10% annually. Real estate typically targets 8-12%. For business projects, companies often require 15-20% minimum ROI." },
       { question: "Can ROI be negative?", answer: "Yes. A negative ROI means you lost money on the investment. For example, if you invested $1,000 and got back $800, your ROI is -20%." },
       { question: "Does this calculator account for time?", answer: "This calculator shows simple ROI. For comparing investments over different time periods, you should also consider annualized ROI, which accounts for the duration of the investment." }
-    ]
+,      { question: "How is ROI calculated?", answer: "ROI (Return on Investment) is calculated as: ((Gain from Investment - Cost of Investment) / Cost of Investment) x 100. A positive ROI means profit, while a negative ROI indicates a loss." }     ]
   },
   {
     id: "compound-interest",
@@ -978,7 +978,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "💰",
     path: "/tools/compound-interest",
-    seoTitle: "Free Compound Interest Calculator - See How Your Money Grows",
+    seoTitle: "Free Compound Interest Calculator Online - Savings Growth 2026",
     seoDescription: "Calculate compound interest with customizable principal, rate, time, and compounding frequency. Free online compound interest calculator with growth visualization.",
     seoKeywords: [
       "compound interest calculator", "calculate compound interest",
@@ -986,7 +986,7 @@ export const tools: Tool[] = [
       "investment growth calculator", "compound interest formula",
       "free compound interest calculator", "compound interest online",
       "how much will my savings grow", "compound interest estimator"
-    ],
+,      "compound interest for students", "best compound interest calculator 2026", "free savings growth calculator online"        ],
     howToUse: [
       "Enter your initial principal (starting investment amount).",
       "Enter the annual interest rate and investment duration in years.",
@@ -998,7 +998,7 @@ export const tools: Tool[] = [
       { question: "How often should interest compound?", answer: "More frequent compounding produces higher returns. Daily compounding yields slightly more than monthly, which yields more than quarterly or annually. The difference is small for short periods but significant over decades." },
       { question: "What is the Rule of 72?", answer: "The Rule of 72 is a quick way to estimate how long it takes for an investment to double. Divide 72 by your annual interest rate. For example, at 8% interest, your money doubles in approximately 9 years (72÷8=9)." },
       { question: "How do regular contributions affect compound interest?", answer: "Regular contributions dramatically increase your total growth. Adding even small amounts monthly can multiply your final balance. This is the core principle behind retirement savings plans like 401(k)s." }
-    ]
+,      { question: "What is compound interest and why is it important?", answer: "Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. It has a powerful effect on growing wealth over time due to exponential growth." }     ]
   },
   {
     id: "income-tax-calculator",
@@ -1008,7 +1008,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "💵",
     path: "/tools/income-tax-calculator",
-    seoTitle: "Free Income Tax Calculator - Estimate Take-Home Pay After Tax",
+    seoTitle: "Free Income Tax Calculator Online - Take Home Pay Estimator 2026",
     seoDescription: "Estimate your take-home pay after federal and state income tax. Free online income tax calculator with detailed breakdown of deductions.",
     seoKeywords: [
       "income tax calculator", "take home pay calculator",
@@ -1016,7 +1016,7 @@ export const tools: Tool[] = [
       "income tax estimator", "calculate income tax online",
       "free income tax calculator", "paycheck calculator",
       "salary calculator after tax", "how much tax will i pay"
-    ],
+,      "income tax calculator for students", "best salary calculator 2026", "free take home pay estimator online"        ],
     howToUse: [
       "Enter your gross annual salary or hourly wage.",
       "Select your filing status and state.",
@@ -1028,7 +1028,7 @@ export const tools: Tool[] = [
       { question: "What deductions are included?", answer: "The calculator includes standard federal income tax deductions based on your filing status. It does not include state-specific deductions, local taxes, or itemized deductions." },
       { question: "Does this calculator handle self-employment income?", answer: "This calculator is designed for W-2 employees. Self-employed individuals should account for additional self-employment tax (Social Security and Medicare) which is approximately 15.3%." },
       { question: "How often are tax rates updated?", answer: "Tax brackets and rates are updated annually based on IRS guidelines. This calculator uses the most current tax year data available." }
-    ]
+,      { question: "Does this calculator show take-home pay?", answer: "Yes, our income tax calculator estimates your take-home pay after taxes. Enter your gross salary and it will calculate your estimated net pay based on standard tax rates." }     ]
   },
   {
     id: "tip-calculator",
@@ -1038,7 +1038,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "💳",
     path: "/tools/tip-calculator",
-    seoTitle: "Free Tip Calculator - Calculate Tip & Split the Bill Instantly",
+    seoTitle: "Free Tip Calculator Online - Bill Splitter & Tip Calculator 2026",
     seoDescription: "Calculate tip amount, split the bill among friends, and see per-person cost. Free online tip calculator for restaurants and services.",
     seoKeywords: [
       "tip calculator", "gratuity calculator", "calculate tip",
@@ -1046,7 +1046,7 @@ export const tools: Tool[] = [
       "tip percentage calculator", "how much to tip",
       "free tip calculator", "tip and split calculator",
       "bill splitter with tip", "tip calculator online"
-    ],
+,      "tip calculator for students", "best tip calculator 2026", "free bill splitter online"        ],
     howToUse: [
       "Enter the total bill amount.",
       "Select your desired tip percentage (15%, 18%, 20%, or custom).",
@@ -1058,7 +1058,7 @@ export const tools: Tool[] = [
       { question: "Should I tip on the pre-tax or post-tax amount?", answer: "It's customary to tip on the pre-tax amount (the subtotal before sales tax is added). However, many people tip on the total including tax for simplicity." },
       { question: "How do I split a tip among a group?", answer: "Calculate the total tip amount based on your chosen percentage, then divide by the number of people. This calculator does both steps automatically." },
       { question: "When should I not leave a tip?", answer: "Tips are generally expected for sit-down restaurant service, bars, taxis, and personal services. You typically don't need to tip at fast-food restaurants, self-service establishments, or when a mandatory service charge is already included." }
-    ]
+,      { question: "Can this tip calculator split the bill?", answer: "Yes, our tip calculator can split the total bill (including tip) among any number of people. Just enter the bill amount, tip percentage, and number of people to see how much each person owes." }     ]
   },
   {
     id: "discount-calculator",
@@ -1068,7 +1068,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🏷️",
     path: "/tools/discount-calculator",
-    seoTitle: "Free Discount Calculator - Calculate Sale Price & Savings Online",
+    seoTitle: "Free Discount Calculator Online - Sale Price Calculator 2026",
     seoDescription: "Calculate discounted price, savings amount, and discount percentage. Free online discount calculator for sales, coupons, and promotions.",
     seoKeywords: [
       "discount calculator", "sale price calculator", "calculate discount",
@@ -1076,7 +1076,7 @@ export const tools: Tool[] = [
       "price after discount", "discount calculator online",
       "free discount calculator", "how much will i save",
       "calculate percentage off"
-    ],
+,      "discount calculator for students", "best sale price calculator 2026", "free savings calculator online"        ],
     howToUse: [
       "Enter the original price of the item.",
       "Enter the discount percentage or the discount amount.",
@@ -1088,7 +1088,7 @@ export const tools: Tool[] = [
       { question: "How do I find the discount percentage?", answer: "Discount percentage = ((Original price - Sale price)  Original price) × 100. For example, if an item goes from $80 to $60, the discount is ((80-60)/80) × 100 = 25%." },
       { question: "Can I stack multiple discounts?", answer: "Multiple percentage discounts are applied sequentially, not added together. For example, 20% off followed by 10% off means: first reduce by 20%, then reduce the new price by 10%. The total discount is 28%, not 30%." },
       { question: "Does this calculator work with tax?", answer: "This calculator focuses on the discount amount. To get the final price with tax, multiply the discounted price by (1 + tax rate ÷ 100)." }
-    ]
+,      { question: "How do I calculate the final price after a discount?", answer: "Enter the original price and discount percentage. Our calculator shows the final sale price and the amount saved. Formula: Final Price = Original Price - (Original Price x Discount% / 100)." }     ]
   },
   {
     id: "pregnancy-calculator",
@@ -1098,7 +1098,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "👶",
     path: "/tools/pregnancy-calculator",
-    seoTitle: "Free Pregnancy Due Date Calculator - Estimate Your Baby's Due Date",
+    seoTitle: "Free Pregnancy Calculator Online - Due Date Estimator 2026",
     seoDescription: "Calculate your estimated due date based on your last menstrual period. See trimester breakdown and key pregnancy milestones. Free online pregnancy calculator.",
     seoKeywords: [
       "pregnancy calculator", "due date calculator", "baby due date",
@@ -1106,7 +1106,7 @@ export const tools: Tool[] = [
       "pregnancy week calculator", "trimester calculator",
       "free pregnancy calculator", "due date by lmp",
       "pregnancy timeline calculator"
-    ],
+,      "pregnancy calculator for students", "best due date calculator 2026", "free baby due date estimator online"        ],
     howToUse: [
       "Enter the first day of your last menstrual period (LMP).",
       "Click 'Calculate' to see your estimated due date.",
@@ -1118,7 +1118,7 @@ export const tools: Tool[] = [
       { question: "How accurate is the due date?", answer: "Only about 5% of babies are born on their exact due date. Most deliveries occur between 38-42 weeks. The due date is an estimate that helps track pregnancy progress and plan care." },
       { question: "What are the three trimesters?", answer: "First trimester: weeks 1-12 (organ development). Second trimester: weeks 13-26 (growth and movement). Third trimester: weeks 27-40 (final growth and preparation for birth)." },
       { question: "Can I use this if I know my conception date instead?", answer: "Yes. If you know your conception date, add 266 days (38 weeks) instead of 280 days. The LMP method is more commonly used because conception dates are harder to pinpoint." }
-    ]
+,      { question: "How is the due date calculated?", answer: "Our pregnancy calculator uses Naegele's rule: adds 280 days (40 weeks) to the first day of your last menstrual period. This gives an estimated due date, though actual delivery can vary by a few weeks." }     ]
   },
   {
     id: "random-number-generator",
@@ -1128,7 +1128,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "🎲",
     path: "/tools/random-number-generator",
-    seoTitle: "Free Random Number Generator - Generate Random Numbers Online",
+    seoTitle: "Free Random Number Generator Online - Pick Random Numbers 2026",
     seoDescription: "Generate random numbers within any range. Choose quantity, allow duplicates, and sort results. Free online random number generator.",
     seoKeywords: [
       "random number generator", "generate random numbers",
@@ -1136,7 +1136,7 @@ export const tools: Tool[] = [
       "free random number generator", "rng online",
       "random number tool", "generate random integer",
       "random number generator online free", "pick a random number"
-    ],
+,      "random number generator for students", "best rng tool 2026", "free random number picker online"        ],
     howToUse: [
       "Set the minimum and maximum range for your random numbers.",
       "Choose how many numbers you want to generate.",
@@ -1148,7 +1148,7 @@ export const tools: Tool[] = [
       { question: "What is the difference between true random and pseudo-random?", answer: "True random numbers are generated from physical phenomena (like electronic noise) and are completely unpredictable. Pseudo-random numbers use mathematical formulas that can theoretically be predicted if you know the seed value." },
       { question: "Can I generate unique random numbers without duplicates?", answer: "Yes. Enable the 'no duplicates' option and the tool will ensure each generated number is unique within your specified range." },
       { question: "What is the maximum range I can use?", answer: "You can generate random numbers within any reasonable range. Very large ranges with 'no duplicates' enabled may be limited by the number of unique values available in that range." }
-    ]
+,      { question: "Is this random number generator truly random?", answer: "Our random number generator uses the browser's cryptographic random number API (Crypto.getRandomValues), which provides cryptographically secure random numbers suitable for most practical purposes." }     ]
   },
   {
     id: "zodiac-sign",
@@ -1158,14 +1158,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "⭐",
     path: "/tools/zodiac-sign",
-    seoTitle: "Free Zodiac Sign Finder - Find Your Star Sign by Birth Date",
+    seoTitle: "Free Zodiac Sign Calculator Online - Star Sign Finder 2026",
     seoDescription: "Find your zodiac sign by entering your birth date. Learn about your star sign traits, strengths, weaknesses, and compatibility with other signs.",
     seoKeywords: [
       "zodiac sign finder", "what is my zodiac sign", "star sign calculator",
       "find my zodiac sign", "zodiac sign by birthday", "astrology sign finder",
       "zodiac traits", "sun sign calculator",
       "free zodiac sign finder", "what star sign am i"
-    ],
+,      "zodiac sign for students", "best star sign calculator 2026", "free what is my zodiac sign tool"        ],
     howToUse: [
       "Enter your birth date using the date picker.",
       "View your zodiac sign with its symbol and date range.",
@@ -1177,7 +1177,7 @@ export const tools: Tool[] = [
       { question: "How do I know which zodiac sign I am?", answer: "Your zodiac sign (sun sign) is determined by your birth date. Enter your birthday in this tool and it will instantly tell you your sign along with detailed information." },
       { question: "What if my birthday is on a cusp?", answer: "If your birthday falls on the transition date between two signs, the exact time and location of your birth determine your sign. This tool uses the standard date ranges; for precise determination, consult an astrological chart." },
       { question: "Are zodiac signs based on science?", answer: "Zodiac signs are part of astrology, which is considered a pseudoscience. While many people find meaning and entertainment in zodiac traits, there is no scientific evidence supporting astrological predictions." }
-    ]
+,      { question: "How do I find my zodiac sign?", answer: "Enter your birth date into our zodiac calculator and it will instantly tell you your sun sign. Each zodiac sign corresponds to a specific date range -- for example, Aries is March 21 to April 19." }     ]
   },
   {
     id: "random-name-generator",
@@ -1187,7 +1187,7 @@ export const tools: Tool[] = [
     category: "text",
     icon: "👤",
     path: "/tools/random-name-generator",
-    seoTitle: "Free Random Name Generator - Generate Random Names Online",
+    seoTitle: "Free Random Name Generator Online - Character Name Creator 2026",
     seoDescription: "Generate random first and last names for characters, game profiles, testing, or brainstorming. Choose gender and quantity. Free online name generator.",
     seoKeywords: [
       "random name generator", "generate random names",
@@ -1195,7 +1195,7 @@ export const tools: Tool[] = [
       "character name generator", "fake name generator",
       "free name generator", "random names online",
       "name generator tool", "random person name generator"
-    ],
+,      "random name generator for students", "best name generator 2026", "free character name generator online"        ],
     howToUse: [
       "Choose the gender: male, female, or both.",
       "Set the number of names you want to generate.",
@@ -1207,7 +1207,7 @@ export const tools: Tool[] = [
       { question: "Can I generate names for specific cultures?", answer: "This tool generates a diverse mix of names from various cultural backgrounds. For culture-specific names, you may want to use a specialized name generator." },
       { question: "Are these real people's names?", answer: "The first names and last names are real names, but the combinations are generated randomly. They do not correspond to specific real individuals." },
       { question: "What can I use these random names for?", answer: "Common uses include: character names for writing, test data for software development, placeholder names for designs, game character names, pen names, and brainstorming inspiration." }
-    ]
+,      { question: "Can I generate names for characters in my story?", answer: "Absolutely! Our random name generator creates realistic first and last names suitable for characters in stories, games, D&D campaigns, or any creative project. Click to generate a new name instantly." }     ]
   },
   {
     id: "fancy-text-generator",
@@ -1217,14 +1217,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "✨",
     path: "/tools/fancy-text-generator",
-    seoTitle: "Free Fancy Text Generator - Stylish Unicode Fonts for Social Media",
+    seoTitle: "Free Fancy Text Generator Online - Instagram Font Generator 2026",
     seoDescription: "Convert text to fancy Unicode fonts and stylish text for Instagram, Twitter, TikTok, and Facebook bios. Free online fancy text generator.",
     seoKeywords: [
       "fancy text generator", "stylish text generator", "unicode font generator",
       "cool text for instagram", "fancy font generator", "aesthetic text",
       "text style generator", "fancy text for social media",
       "free fancy text generator", "instagram bio font generator"
-    ],
+,      "fancy text for students", "best fancy text generator 2026", "free instagram bio font generator online"        ],
     howToUse: [
       "Enter your text in the input field.",
       "View your text converted to multiple fancy Unicode font styles.",
@@ -1236,7 +1236,7 @@ export const tools: Tool[] = [
       { question: "Will fancy text work on all social media platforms?", answer: "Fancy Unicode text works on most platforms including Instagram, Twitter, TikTok, Facebook, and WhatsApp. However, some older devices may not render all Unicode characters correctly." },
       { question: "Does fancy text affect accessibility?", answer: "Yes. Screen readers may not read fancy Unicode text correctly, as they interpret the mathematical symbols rather than the intended letters. It's best used sparingly for emphasis rather than for important information." },
       { question: "Can I use fancy text in emails or websites?", answer: "You can use fancy Unicode text in emails and websites, but rendering depends on the recipient's device and email client. It's safest for social media platforms where Unicode support is consistent." }
-    ]
+,      { question: "Can I use fancy text on Instagram and social media?", answer: "Yes! The fancy text generated by our tool uses Unicode characters that work on Instagram bios, Facebook posts, Twitter/X, WhatsApp, TikTok, and most other platforms. Just copy and paste." }     ]
   },
   {
     id: "hashtag-generator",
@@ -1246,7 +1246,7 @@ export const tools: Tool[] = [
     category: "text",
     icon: "#️⃣",
     path: "/tools/hashtag-generator",
-    seoTitle: "Free Hashtag Generator - Generate Hashtags for Instagram & TikTok",
+    seoTitle: "Free Hashtag Generator Online - Instagram Hashtags Tool 2026",
     seoDescription: "Generate relevant hashtags for Instagram, Twitter, TikTok, and Facebook based on your topic or keywords. Free online hashtag generator to boost your reach.",
     seoKeywords: [
       "hashtag generator", "instagram hashtag generator",
@@ -1254,7 +1254,7 @@ export const tools: Tool[] = [
       "generate hashtags", "hashtag finder", "hashtag tool",
       "free hashtag generator", "best hashtags for instagram",
       "hashtag generator online"
-    ],
+,      "hashtag generator for students", "best hashtag generator 2026", "free instagram hashtags tool online"        ],
     howToUse: [
       "Enter your topic, keyword, or describe your content.",
       "View a list of relevant and trending hashtags generated for your topic.",
@@ -1266,7 +1266,7 @@ export const tools: Tool[] = [
       { question: "How many hashtags should I use on TikTok?", answer: "TikTok recommends 3-5 hashtags per video. Use a mix of trending hashtags and niche-specific tags to maximize discoverability without looking spammy." },
       { question: "How does this hashtag generator work?", answer: "The generator analyzes your input keywords and suggests relevant hashtags based on topic matching, trending patterns, and common hashtag combinations used in your niche." },
       { question: "Can I use the same hashtags for every post?", answer: "It's better to vary your hashtags between posts. Instagram may flag accounts that use identical hashtag sets repeatedly as spam. Rotate between relevant hashtag groups for best results." }
-    ]
+,      { question: "How many hashtags should I use on Instagram?", answer: "Instagram allows up to 30 hashtags per post. Most experts recommend using 9-15 relevant hashtags for optimal engagement. Our generator provides a mix of popular and niche hashtags." }     ]
   },
   {
     id: "youtube-thumbnail",
@@ -1276,7 +1276,7 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🎬",
     path: "/tools/youtube-thumbnail",
-    seoTitle: "YouTube Thumbnail Size Guide - Best Dimensions & Tips for 2026",
+    seoTitle: "Free YouTube Thumbnail Maker Online - Thumbnail Specs Tool 2026",
     seoDescription: "Complete guide to YouTube thumbnail dimensions, file size limits, and best practices. Free thumbnail size checker and preview tool for YouTube creators.",
     seoKeywords: [
       "youtube thumbnail size", "youtube thumbnail dimensions",
@@ -1284,7 +1284,7 @@ export const tools: Tool[] = [
       "youtube thumbnail maker", "youtube thumbnail template",
       "youtube thumbnail specs", "youtube thumbnail best practices",
       "youtube thumbnail checker", "youtube thumbnail tool"
-    ],
+,      "youtube thumbnail for students", "best youtube thumbnail tool 2026", "free youtube thumbnail specs online"        ],
     howToUse: [
       "Review the recommended YouTube thumbnail dimensions and specifications.",
       "Use the preview tool to see how your thumbnail will look on different devices.",
@@ -1296,7 +1296,7 @@ export const tools: Tool[] = [
       { question: "What makes a good YouTube thumbnail?", answer: "Good thumbnails use high-contrast colors, readable text (large fonts), expressive faces, and clear visual hierarchy. The thumbnail should be understandable even at small sizes on mobile devices." },
       { question: "Can I change a thumbnail after uploading a video?", answer: "Yes. You can change your YouTube thumbnail at any time by going to YouTube Studio, selecting the video, clicking 'Edit', and uploading a new thumbnail image." },
       { question: "Do thumbnails affect video performance?", answer: "Yes. Thumbnails significantly impact click-through rate (CTR), which is one of the most important ranking factors on YouTube. A compelling thumbnail can dramatically increase views." }
-    ]
+,      { question: "What is the ideal YouTube thumbnail size?", answer: "YouTube recommends a thumbnail resolution of 1280x720 pixels with a minimum width of 640 pixels. The aspect ratio should be 16:9. Our tool helps you verify your thumbnail meets these specifications." }     ]
   },
   {
     id: "perpetual-calendar",
@@ -1306,7 +1306,7 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "📅",
     path: "/tools/perpetual-calendar",
-    seoTitle: "Free Perpetual Calendar - Any Date, World Holidays & Week Numbers",
+    seoTitle: "Free Perpetual Calendar Online - Calendar Lookup Tool 2026",
     seoDescription: "Interactive perpetual calendar for any date. Check world holidays, week numbers, day of the week, and historical events. Free online calendar tool.",
     seoKeywords: [
       "perpetual calendar", "online calendar", "calendar for any date",
@@ -1314,7 +1314,7 @@ export const tools: Tool[] = [
       "what day of the week", "calendar lookup tool",
       "free perpetual calendar", "interactive calendar online",
       "historical events calendar"
-    ],
+,      "perpetual calendar for students", "best perpetual calendar 2026", "free calendar lookup tool online"        ],
     howToUse: [
       "Navigate to any year and month using the calendar controls.",
       "Click any date to see detailed information including day of week and week number.",
@@ -1326,7 +1326,7 @@ export const tools: Tool[] = [
       { question: "What holidays does this calendar show?", answer: "The calendar includes major international holidays, national observances from various countries, and cultural celebrations. Holiday coverage continues to expand." },
       { question: "Can I find what day of the week a historical date was?", answer: "Yes. Navigate to any date in history and the calendar will show you exactly what day of the week it was. This is useful for historical research and genealogy." },
       { question: "How are week numbers calculated?", answer: "Week numbers follow the ISO 8601 standard, where week 1 is the week containing the first Thursday of the year. This is the international standard used in most countries." }
-    ]
+,      { question: "How far back can this calendar go?", answer: "Our perpetual calendar supports dates from year 1 to 9999. It uses the Gregorian calendar system and can tell you the day of the week for any date in that range." }     ]
   },
   {
     id: "md5-generator",
@@ -1336,14 +1336,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🔒",
     path: "/tools/md5-generator",
-    seoTitle: "Free MD5 Hash Generator - Generate MD5 Checksum Online",
+    seoTitle: "Free MD5 Generator Online - MD5 Hash Calculator 2026",
     seoDescription: "Generate MD5 hash checksums from any text input instantly. Free online MD5 generator for file verification and data integrity checks.",
     seoKeywords: [
       "md5 generator", "md5 hash generator", "generate md5 hash",
       "md5 checksum generator", "md5 calculator online",
       "text to md5", "md5 hash online", "free md5 generator",
       "md5 hash tool", "online md5 calculator"
-    ],
+,      "md5 generator for students", "best md5 hash generator 2026", "free md5 checksum calculator online"        ],
     howToUse: [
       "Enter the text you want to generate an MD5 hash for.",
       "View the MD5 hash digest generated instantly.",
@@ -1355,7 +1355,7 @@ export const tools: Tool[] = [
       { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure due to collision vulnerabilities discovered in 2004. It should not be used for password hashing or security-critical applications. Use SHA-256 instead for security purposes." },
       { question: "What is MD5 still used for?", answer: "MD5 is still useful for non-security purposes like file checksums, detecting accidental data corruption, and legacy system compatibility where MD5 hashes are already in use." },
       { question: "Can I use MD5 for password storage?", answer: "No. MD5 should never be used for password storage. Use bcrypt, Argon2, or PBKDF2 instead. MD5 is too fast and vulnerable to rainbow table and brute force attacks." }
-    ]
+,      { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure and should not be used for security-sensitive applications. However, it is still widely used for checksums, file integrity verification, and non-cryptographic hashing." }     ]
   },
   {
     id: "qr-code-generator",
@@ -1365,14 +1365,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "📱",
     path: "/tools/qr-code-generator",
-    seoTitle: "Free QR Code Generator - Create QR Codes from Text, URL, Email",
+    seoTitle: "Free QR Code Generator Online - Create QR Codes 2026",
     seoDescription: "Generate QR codes from URLs, text, emails, phone numbers, or WiFi credentials. Download as PNG for print or digital use. Free online QR code generator.",
     seoKeywords: [
       "qr code generator", "create qr code", "qr code maker",
       "free qr code generator", "qr code from url", "qr code from text",
       "qr code generator online", "generate qr code free",
       "qr code creator", "download qr code"
-    ],
+,      "qr code generator for students", "best qr code maker 2026", "free qr code creator online"        ],
     howToUse: [
       "Select the type of content: URL, text, email, phone number, or WiFi.",
       "Enter your content in the appropriate fields.",
@@ -1384,7 +1384,7 @@ export const tools: Tool[] = [
       { question: "How much data can a QR code hold?", answer: "QR codes can store up to 7,089 numeric digits, 4,296 alphanumeric characters, or 2,953 bytes of binary data. More data results in a denser, harder-to-scan code." },
       { question: "Do QR codes expire?", answer: "Static QR codes (like those generated by this tool) never expire. The encoded data is permanent. Dynamic QR codes that redirect to URLs can be changed or deactivated by the service provider." },
       { question: "What size should I print my QR code?", answer: "For reliable scanning, print QR codes at least 2 × 2 cm (0.8 × 0.8 inches). Larger sizes are better for scanning from a distance. Ensure high contrast between the code and background." }
-    ]
+,      { question: "What can I encode in a QR code?", answer: "Our QR code generator can encode URLs, plain text, email addresses, phone numbers, WiFi credentials, and more. The generated QR codes can be downloaded as PNG images for print or digital use." }     ]
   },
   {
     id: "quotes",
@@ -1394,14 +1394,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "💬",
     path: "/tools/quotes",
-    seoTitle: "Famous Quotes - Inspirational & Motivational Quotes Online",
+    seoTitle: "Free Quotes Online - Motivational & Inspirational Quotes 2026",
     seoDescription: "Browse and search hundreds of famous quotes from world-renowned figures. Filter by category, author, or keyword. Free inspirational quotes collection for daily motivation.",
     seoKeywords: [
       "famous quotes", "inspirational quotes", "motivational quotes",
       "quote by author", "best quotes online", "daily quotes",
       "famous sayings", "quote search tool", "quotes about life",
       "wisdom quotes", "motivational sayings", "famous quotes by category"
-    ],
+,      "quotes for students", "best quotes directory 2026", "free motivational quotes online"        ],
     howToUse: [
       "Browse quotes organized by category: courage, wisdom, love, success, and more.",
       "Use the search bar to find quotes by person name, quote text, or keyword.",
@@ -1414,7 +1414,7 @@ export const tools: Tool[] = [
       { question: "Can I search for quotes by a specific person?", answer: "Yes. Simply type the person's name in the search bar (e.g., 'Einstein', 'Gandhi') and the tool will show all quotes by that author along with quotes mentioning that name." },
       { question: "Are the quote sources and dates accurate?", answer: "We make every effort to provide accurate source information and dates. Quotes are attributed to documented sources such as books, speeches, interviews, and letters. Some attributions are based on historical consensus." },
       { question: "How can I use these quotes?", answer: "These quotes are great for daily inspiration, social media posts, speeches, writing, presentations, or simply reflecting on wisdom from great minds throughout history." }
-    ]
+,      { question: "Where do these quotes come from?", answer: "Our quotes collection features famous sayings from historical figures, authors, philosophers, scientists, and leaders across different eras and cultures. Each quote is attributed to its author." }     ]
   },
   {
     id: "book-of-answers",
@@ -1424,14 +1424,14 @@ export const tools: Tool[] = [
     category: "text",
     icon: "📖",
     path: "/tools/book-of-answers",
-    seoTitle: "Book of Answers Online - Free Random Answer Generator for Guidance & Fun",
+    seoTitle: "Free Book of Answers Online - Random Answer Generator 2026",
     seoDescription: "A digital Book of Answers for fun decision-making and psychological guidance. Close your eyes, focus on your question, then tap to reveal a random answer from 500+ curated responses. Free online oracle tool.",
     seoKeywords: [
       "book of answers", "book of answers online", "random answer generator",
       "decision maker tool", "free oracle tool", "what should i do tool",
       "random decision generator", "book of answers free online",
       "fun decision tool", "random yes or no generator"
-    ],
+,      "book of answers for students", "best book of answers 2026", "free random answer generator online"        ],
     howToUse: [
       "Think of a question you'd like guidance on — it can be about anything.",
       "Close your eyes and hold the question in mind for 3–5 seconds.",
@@ -1445,7 +1445,7 @@ export const tools: Tool[] = [
       { question: "Is this Book of Answers free to use?", answer: "Yes, the Book of Answers is completely free with no limits. You can ask as many questions as you'd like. No signup or account is required." },
       { question: "Should I take the answers seriously?", answer: "The Book of Answers is designed as a fun, reflective tool. While the answers aren't meant to replace professional advice, many people find them helpful for breaking through decision paralysis, gaining a fresh perspective, or simply having a moment of mindful reflection." },
       { question: "Does this tool store my questions or answers?", answer: "No. Everything happens in your browser. Your questions, answers, and usage data are never stored, tracked, or sent anywhere. Your privacy is fully protected." }
-    ]
+,      { question: "How does the Book of Answers work?", answer: "The Book of Answers gives you a random piece of guidance when you have a question. Close your eyes, think of your question, then open the book to receive your answer. It is meant for fun and inspiration." }     ]
   },
   {
     id: "reaction-test",
@@ -1455,14 +1455,14 @@ export const tools: Tool[] = [
     category: "calculator",
     icon: "⚡",
     path: "/tools/reaction-test",
-    seoTitle: "Reaction Time Tester - Test Your Reflexes & Measure Response Speed",
+    seoTitle: "Free Reaction Time Test Online - Reflex Speed Game 2026",
     seoDescription: "Test your reaction time with this interactive reflex test. Click when the color changes to green and measure your response speed in milliseconds. Track your best times and challenge yourself.",
     seoKeywords: [
       "reaction time test", "reflex test online", "reaction speed test",
       "how fast is my reaction", "reaction time game", "reflex speed test",
       "click reaction test", "reaction time milliseconds",
       "test my reflexes", "reaction time challenge"
-    ],
+,      "reaction test for students", "best reaction time test 2026", "free reflex speed game online"        ],
     howToUse: [
       "Click the colored block to start the test.",
       "The block will turn red — wait for it to turn green.",
@@ -1475,7 +1475,7 @@ export const tools: Tool[] = [
       { question: "What factors affect reaction time?", answer: "Reaction time is influenced by age, fatigue, attention level, practice, and individual differences. Getting enough sleep, staying hydrated, and regular practice can improve your times." },
       { question: "Can I improve my reaction time?", answer: "Yes. Regular practice, staying focused, getting adequate rest, and engaging in activities like video games or sports can all help improve your reaction time over time." },
       { question: "Is this test accurate?", answer: "This test measures your response time using your browser's high-resolution timer. While it gives a good approximation, actual reaction time may vary slightly based on your device's display latency and input delay." }
-    ]
+,      { question: "What is a good reaction time?", answer: "The average human visual reaction time is around 250ms. Gamers and athletes often achieve under 200ms. Our reaction test rates your performance from Lightning (under 150ms) to Needs Coffee (over 500ms)." }     ]
   },
   {
     id: "ai-tools",
@@ -1485,14 +1485,14 @@ export const tools: Tool[] = [
     category: "developer",
     icon: "🧭",
     path: "/tools/ai-tools",
-    seoTitle: "Free AI Tools Directory - Best Free AI Tools for Writing, Images & Code",
+    seoTitle: "Free AI Tools Directory - Best AI Tools List Online 2026",
     seoDescription: "Curated directory of the best free AI tools for writing, image generation, video editing, coding assistance, and more. Updated regularly with new AI tools.",
     seoKeywords: [
       "free ai tools", "ai tools directory", "best ai tools",
       "free ai writing tools", "free ai image generator",
       "ai coding tools", "ai tools list", "free ai tools online",
       "ai tools for students", "best free ai tools 2026"
-    ],
+,      "ai tools for students", "best ai tools directory 2026", "free ai tools list online"        ],
     howToUse: [
       "Browse AI tools organized by category: writing, images, video, coding, audio, and productivity.",
       "Click any tool to see its details, features, and direct link.",
@@ -1504,6 +1504,6 @@ export const tools: Tool[] = [
       { question: "How often is the directory updated?", answer: "The directory is updated regularly as new AI tools are released and existing tools change their pricing or features. We aim to add new tools and verify existing listings weekly." },
       { question: "Can I suggest an AI tool to be added?", answer: "Yes! We welcome suggestions for free AI tools that would benefit our community. Use the contact form to submit a tool for review and inclusion." },
       { question: "What categories of AI tools are included?", answer: "The directory covers writing assistants, image generators, video editing tools, coding assistants, audio tools, productivity apps, chatbots, and more. New categories are added as the AI landscape evolves." }
-    ]
+,      { question: "Are all the AI tools listed here free?", answer: "Our AI tools directory includes both free and freemium tools. Each listing indicates whether the tool is free, has a free tier, or requires payment. We regularly update the directory." }     ]
   },
 ];

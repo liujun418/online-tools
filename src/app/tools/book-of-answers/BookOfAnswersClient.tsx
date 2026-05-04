@@ -105,7 +105,7 @@ export default function BookOfAnswersClient() {
 
   return (
     <ToolLayout {...metadata}>
-      <p className="text-sm text-zinc-500 dark:text-zinc-400">
+      <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
         闭眼默念问题 3-5 秒，专注内心诉求。点击书本或按钮开启答案，获得一条随机的人生指引。
       </p>
 
