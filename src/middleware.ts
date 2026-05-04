@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const ADMIN_USER = "admin";
-const ADMIN_PASSWORD = "toolbox2026";
+const ADMIN_USER = "jzerov";
+const ADMIN_PASSWORD = "T3705456";
 
 export function middleware(request: NextRequest) {
   if (!request.nextUrl.pathname.startsWith("/admin")) {
