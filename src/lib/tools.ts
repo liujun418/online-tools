@@ -373,31 +373,35 @@ export const tools: Tool[] = [
   },
   {
     id: "regex-tester",
-    name: "Regex Tester",
+    name: "Regex Tester & Converter",
     description:
-      "Test and debug regular expressions with real-time match highlighting.",
+      "Test regular expressions, replace with regex, extract matches, and generate code snippets for 10 programming languages.",
     category: "developer",
     icon: "🔍",
     path: "/tools/regex-tester",
-    seoTitle: "Free Regex Tester - Test & Debug Regular Expressions Online",
-    seoDescription: "Test and debug regular expressions with real-time match highlighting. Support for flags, groups, and replacement patterns. Free online regex tester.",
+    seoTitle: "Regex Tester & Converter - Test, Replace, Extract & Generate Code",
+    seoDescription: "Test and debug regular expressions with real-time highlighting. Replace text with regex patterns, extract matches to JSON/CSV, and generate code snippets for JavaScript, Python, PHP, Java, Go, Rust, C#, Ruby, Swift, and TypeScript.",
     seoKeywords: [
-      "regex tester", "regular expression tester", "regex debugger",
-      "test regex online", "regex checker", "regexp tester",
-      "regex match tester", "online regex tool",
-      "free regex tester", "regex pattern tester"
+      "regex tester", "regular expression tester", "regex converter",
+      "regex code generator", "regex replace tool", "regex match extractor",
+      "test regex online", "regex debugger", "regex to code",
+      "generate regex code", "online regex replace tool"
     ],
     howToUse: [
-      "Enter your regular expression pattern in the pattern field.",
-      "Set flags (global, case-insensitive, multiline) as needed.",
-      "Paste your test text in the input area below.",
-      "View matching highlights, group captures, and match details in real-time."
+      "Enter your regular expression pattern in the pattern field (between the slashes).",
+      "Set regex flags (g=global, i=case-insensitive, m=multiline, s=dotAll, u=unicode).",
+      "Switch between tabs: Test (highlight matches), Replace (search & replace), Extract (export matches as JSON/CSV/plain), and Code (generate snippets).",
+      "In the Test tab, paste your text and see all matching results with positions.",
+      "In the Replace tab, enter a replacement pattern and preview the result in real-time.",
+      "In the Extract tab, export all matched text as JSON, CSV, or plain text format.",
+      "In the Code tab, select your programming language to get ready-to-use regex code snippets."
     ],
     faq: [
-      { question: "What is a regular expression?", answer: "A regular expression (regex or regexp) is a sequence of characters that defines a search pattern. It's used for text matching, validation, search-and-replace operations, and data extraction in programming and text editors." },
-      { question: "What regex flavor does this tool use?", answer: "This tool uses JavaScript's RegExp engine, which is compatible with most modern programming languages including Python, Java, and PHP, though some advanced features may vary between implementations." },
-      { question: "Can I test capture groups?", answer: "Yes. The tool highlights all matches and displays capture group information. You can see exactly which parts of your text match each group in your pattern." },
-      { question: "What flags are supported?", answer: "The tool supports the standard JavaScript regex flags: g (global), i (case-insensitive), m (multiline), s (dotAll), and u (unicode)." }
+      { question: "What regex flavor does this tool use?", answer: "This tool uses JavaScript's RegExp engine, which is compatible with most modern programming languages. Code snippets are generated for 10 languages including JavaScript, Python, PHP, Java, Go, Rust, C#, Ruby, Swift, and TypeScript." },
+      { question: "How do I use capture groups?", answer: "Wrap the parts of your pattern you want to capture in parentheses, like (\\w+)@(\\w+).com. The Extract tab will show you all captured groups, and in the Replace tab you can reference them with $1, $2, etc." },
+      { question: "What export formats are supported?", answer: "The Extract tab supports three formats: JSON (structured data with match and index fields), CSV (spreadsheet-compatible), and plain text (one match per line)." },
+      { question: "Can I use this tool to learn regex?", answer: "Absolutely. The Test tab shows real-time results as you type, making it easy to experiment. The Code tab also provides working examples in your target language." },
+      { question: "Is my data stored anywhere?", answer: "No. All processing happens entirely in your browser. Your text, patterns, and results are never sent to any server." }
     ]
   },
   {
