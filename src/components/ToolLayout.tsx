@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdUnit from "@/components/AdUnit";
+import ShareButton from "@/components/ShareButton";
+import VisitorCounter from "@/components/VisitorCounter";
+import RelatedTools from "@/components/RelatedTools";
 import { ADSENSE_CONFIG } from "@/lib/adsense";
 import { tools } from "@/lib/tools";
 
@@ -93,10 +96,16 @@ export default function ToolLayout({
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
-          {title}
-        </h1>
-        <p className="mt-2 text-zinc-500 dark:text-zinc-400">{description}</p>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+              {title}
+            </h1>
+            <p className="mt-2 text-zinc-500 dark:text-zinc-400">{description}</p>
+          </div>
+          <ShareButton />
+        </div>
+        {tool && <VisitorCounter toolId={tool.id} />}
         {/* JSON-LD structured data for SEO */}
         <script
           type="application/ld+json"
@@ -131,6 +140,8 @@ export default function ToolLayout({
           Advertisement
         </div>
       )}
+
+      {tool && <RelatedTools toolId={tool.id} />}
 
       <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
         <h2 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
