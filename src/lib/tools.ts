@@ -1448,6 +1448,36 @@ export const tools: Tool[] = [
     ]
   },
   {
+    id: "reaction-test",
+    name: "Reaction Time Tester",
+    description:
+      "Test your reflexes! Click as fast as you can when the block turns green to measure your reaction time.",
+    category: "calculator",
+    icon: "⚡",
+    path: "/tools/reaction-test",
+    seoTitle: "Reaction Time Tester - Test Your Reflexes & Measure Response Speed",
+    seoDescription: "Test your reaction time with this interactive reflex test. Click when the color changes to green and measure your response speed in milliseconds. Track your best times and challenge yourself.",
+    seoKeywords: [
+      "reaction time test", "reflex test online", "reaction speed test",
+      "how fast is my reaction", "reaction time game", "reflex speed test",
+      "click reaction test", "reaction time milliseconds",
+      "test my reflexes", "reaction time challenge"
+    ],
+    howToUse: [
+      "Click the colored block to start the test.",
+      "The block will turn red — wait for it to turn green.",
+      "Click as soon as the block turns green!",
+      "Your reaction time in milliseconds will be displayed.",
+      "Repeat multiple times to improve and track your best time."
+    ],
+    faq: [
+      { question: "What is a good reaction time?", answer: "Average human reaction time for visual stimuli is around 250ms. Athletes and gamers often achieve times below 200ms. Elite athletes can reach reaction times as low as 150ms." },
+      { question: "What factors affect reaction time?", answer: "Reaction time is influenced by age, fatigue, attention level, practice, and individual differences. Getting enough sleep, staying hydrated, and regular practice can improve your times." },
+      { question: "Can I improve my reaction time?", answer: "Yes. Regular practice, staying focused, getting adequate rest, and engaging in activities like video games or sports can all help improve your reaction time over time." },
+      { question: "Is this test accurate?", answer: "This test measures your response time using your browser's high-resolution timer. While it gives a good approximation, actual reaction time may vary slightly based on your device's display latency and input delay." }
+    ]
+  },
+  {
     id: "ai-tools",
     name: "Free AI Tools Directory",
     description:
