@@ -1,34 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Suggestion {
-  id: number;
+  id: string;
   text: string;
-  createdAt: string;
+  created_at: string;
 }
 
 export default function AdminSuggestions() {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchSuggestions = useCallback(async () => {
+    setLoading(true);
     try {
-      const data = JSON.parse(localStorage.getItem("tb_suggestions") || "[]");
-      setSuggestions(data.reverse());
+      const res = await fetch("/api/suggestions");
+      const json = await res.json();
+      setSuggestions(json.data || []);
     } catch {
       setSuggestions([]);
+    } finally {
+      setLoading(false);
     }
   }, []);
 
-  function clearAll() {
-    localStorage.removeItem("tb_suggestions");
-    setSuggestions([]);
-  }
+  useEffect(() => {
+    fetchSuggestions();
+  }, [fetchSuggestions]);
 
-  function removeSuggestion(id: number) {
-    const updated = suggestions.filter((s) => s.id !== id);
-    localStorage.setItem("tb_suggestions", JSON.stringify(updated));
-    setSuggestions(updated);
+  async function deleteSuggestion(id: string) {
+    await fetch(`/api/suggestions/${id}`, { method: "DELETE" });
+    setSuggestions((prev) => prev.filter((s) => s.id !== id));
   }
 
   return (
@@ -39,20 +42,27 @@ export default function AdminSuggestions() {
             User Suggestions
           </h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-            Tools suggested by your visitors. Data is stored locally in this browser.
+            Tools suggested by your visitors.
           </p>
         </div>
-        {suggestions.length > 0 && (
-          <button
-            onClick={clearAll}
-            className="rounded-lg border border-red-200 px-3 py-1.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/20"
-          >
-            Clear All
-          </button>
-        )}
+        <button
+          onClick={fetchSuggestions}
+          className="rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-500 transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-blue-700 dark:hover:text-blue-400"
+        >
+          Refresh
+        </button>
       </div>
 
-      {suggestions.length === 0 ? (
+      {loading ? (
+        <div className="space-y-3">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div
+              key={i}
+              className="h-16 animate-pulse rounded-lg bg-zinc-100 dark:bg-zinc-800"
+            />
+          ))}
+        </div>
+      ) : suggestions.length === 0 ? (
         <div className="rounded-xl border border-dashed border-zinc-300 bg-zinc-50 p-12 text-center dark:border-zinc-700 dark:bg-zinc-900">
           <p className="text-zinc-500 dark:text-zinc-400">
             No suggestions yet. Share your site to start collecting feedback!
@@ -68,7 +78,7 @@ export default function AdminSuggestions() {
               <div className="flex-1">
                 <p className="text-sm text-zinc-900 dark:text-white">{s.text}</p>
                 <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">
-                  {new Date(s.createdAt).toLocaleDateString("en-US", {
+                  {new Date(s.created_at).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "short",
                     day: "numeric",
@@ -78,7 +88,7 @@ export default function AdminSuggestions() {
                 </p>
               </div>
               <button
-                onClick={() => removeSuggestion(s.id)}
+                onClick={() => deleteSuggestion(s.id)}
                 className="shrink-0 rounded p-1 text-zinc-400 hover:text-red-500"
                 aria-label="Remove"
               >

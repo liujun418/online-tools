@@ -6,25 +6,38 @@ export default function SuggestToolButton() {
   const [open, setOpen] = useState(false);
   const [suggestion, setSuggestion] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!suggestion.trim()) return;
 
-    const key = "tb_suggestions";
-    const existing = JSON.parse(localStorage.getItem(key) || "[]");
-    existing.push({
-      id: Date.now(),
-      text: suggestion.trim(),
-      createdAt: new Date().toISOString(),
-    });
-    localStorage.setItem(key, JSON.stringify(existing));
+    setLoading(true);
+    setError("");
 
-    setSubmitted(true);
-    setSuggestion("");
-    setTimeout(() => {
-      setSubmitted(false);
-      setOpen(false);
-    }, 2000);
+    try {
+      const res = await fetch("/api/suggestions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: suggestion.trim() }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to submit");
+      }
+
+      setSubmitted(true);
+      setSuggestion("");
+      setTimeout(() => {
+        setSubmitted(false);
+        setOpen(false);
+      }, 2000);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -118,6 +131,9 @@ export default function SuggestToolButton() {
                   rows={3}
                   className="mt-4 w-full rounded-lg border border-zinc-300 bg-white p-3 text-sm transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-zinc-600 dark:bg-zinc-900 dark:placeholder:text-zinc-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/20"
                 />
+                {error && (
+                  <p className="mt-2 text-xs text-red-500">{error}</p>
+                )}
                 <div className="mt-4 flex justify-end gap-3">
                   <button
                     onClick={() => setOpen(false)}
@@ -127,10 +143,10 @@ export default function SuggestToolButton() {
                   </button>
                   <button
                     onClick={handleSubmit}
-                    disabled={!suggestion.trim()}
+                    disabled={!suggestion.trim() || loading}
                     className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-40"
                   >
-                    Submit
+                    {loading ? "Submitting..." : "Submit"}
                   </button>
                 </div>
               </>
