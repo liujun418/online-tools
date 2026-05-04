@@ -15,6 +15,7 @@ const metadata = {
     "how old am I",
     "date of birth calculator",
   ],
+  toolId: "age-calculator",
 };
 
 export default function AgeCalculatorClient() {

@@ -16,6 +16,7 @@ const metadata = {
     "rgb color picker",
     "hsl color converter",
   ],
+  toolId: "color-converter",
 };
 
 function hexToRgb(hex: string): [number, number, number] | null {

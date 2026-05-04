@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import BmiCalculatorClient from "./BmiCalculatorClient";
+import BMICalculatorClient from "./BMICalculatorClient";
 
 export const metadata: Metadata = {
   title: "BMI Calculator | ToolBoxOnline",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function BmiCalculatorPage() {
-  return <BmiCalculatorClient />;
+  return <BMICalculatorClient />;
 }

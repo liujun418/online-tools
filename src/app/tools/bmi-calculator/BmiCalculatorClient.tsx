@@ -15,6 +15,7 @@ const metadata = {
     "weight category",
     "is my bmi healthy",
   ],
+  toolId: "bmi-calculator",
 };
 
 export default function BmiCalculatorClient() {

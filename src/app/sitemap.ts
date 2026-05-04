@@ -1,69 +1,28 @@
 import { MetadataRoute } from "next";
+import { tools } from "@/lib/tools";
+
+const SITE_URL = "https://www.toolboxonline.club";
+
+const categoryPriority: Record<string, number> = {
+  calculator: 0.9,
+  developer: 0.85,
+  text: 0.8,
+  converter: 0.8,
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.toolboxonline.club";
-
-  const toolPaths = [
-    "/tools/word-counter",
-    "/tools/case-converter",
-    "/tools/lorem-ipsum",
-    "/tools/text-to-slug",
-    "/tools/text-diff",
-    "/tools/remove-duplicate-lines",
-    "/tools/text-repeater",
-    "/tools/json-formatter",
-    "/tools/base64-converter",
-    "/tools/url-encoder",
-    "/tools/hash-generator",
-    "/tools/uuid-generator",
-    "/tools/regex-tester",
-    "/tools/markdown-preview",
-    "/tools/css-minifier",
-    "/tools/unix-timestamp",
-    "/tools/password-generator",
-    "/tools/age-calculator",
-    "/tools/percentage-calculator",
-    "/tools/bmi-calculator",
-    "/tools/unit-converter",
-    "/tools/base-converter",
-    "/tools/roman-numerals",
-    "/tools/color-converter",
-    "/tools/html-entities",
-    "/tools/json-to-csv",
-    "/tools/csv-to-json",
-    "/tools/image-to-base64",
-    "/tools/loan-calculator",
-    "/tools/mortgage-calculator",
-    "/tools/calorie-calculator",
-    "/tools/roi-calculator",
-    "/tools/compound-interest",
-    "/tools/income-tax-calculator",
-    "/tools/tip-calculator",
-    "/tools/discount-calculator",
-    "/tools/pregnancy-calculator",
-    "/tools/random-number-generator",
-    "/tools/zodiac-sign",
-    "/tools/random-name-generator",
-    "/tools/fancy-text-generator",
-    "/tools/hashtag-generator",
-    "/tools/youtube-thumbnail",
-    "/tools/perpetual-calendar",
-    "/tools/md5-generator",
-    "/tools/qr-code-generator",
-    "/tools/quotes",
-    "/tools/ai-tools",
-  ];
+  const toolEntries = tools.map((tool) => ({
+    url: `${SITE_URL}${tool.path}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: categoryPriority[tool.category] ?? 0.8,
+  }));
 
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
-    ...toolPaths.map((tool) => ({
-      url: `${baseUrl}${tool}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
+    { url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
+    ...toolEntries,
+    { url: `${SITE_URL}/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
+    { url: `${SITE_URL}/terms`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
+    { url: `${SITE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
   ];
 }

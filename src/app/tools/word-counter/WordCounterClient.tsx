@@ -17,6 +17,7 @@ const metadata = {
     "sentence counter",
     "paragraph counter",
   ],
+  toolId: "word-counter",
 };
 
 export default function WordCounterClient() {

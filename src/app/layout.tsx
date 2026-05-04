@@ -16,10 +16,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://www.toolboxonline.club";
+const SITE_NAME = "ToolBoxOnline";
+const OG_IMAGE = `${SITE_URL}/og-default.png`;
+
 export const metadata: Metadata = {
   title: "ToolBoxOnline — Free Online Tools for Everyone",
   description:
     "Free online tools including word counter, case converter, JSON formatter, Base64 encoder, and more. No signup required.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Free Online Tools for Everyone`,
+    description: "Free online tools for text, development, calculations, and conversions. No signup, browser-based, instant results.",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Free Online Tools for Everyone`,
+    description: "Free online tools for text, development, calculations, and conversions. No signup, browser-based, instant results.",
+    images: [OG_IMAGE],
+  },
   other: {
     "google-adsense-account": "ca-pub-9954245854077897",
   },
@@ -35,6 +54,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
+      </head>
       <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         {/* Google AdSense */}
         <Script

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import JsonFormatterClient from "./JsonFormatterClient";
+import JSONFormatterClient from "./JSONFormatterClient";
 
 export const metadata: Metadata = {
   title: "JSON Formatter | ToolBoxOnline",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function JsonFormatterPage() {
-  return <JsonFormatterClient />;
+  return <JSONFormatterClient />;
 }

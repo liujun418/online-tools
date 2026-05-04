@@ -23,6 +23,7 @@ interface ToolLayoutProps {
   title: string;
   description: string;
   keywords: string[];
+  toolId?: string;
   metadata?: Metadata;
 }
 
@@ -69,8 +70,11 @@ export default function ToolLayout({
   children,
   title,
   description,
+  toolId,
 }: ToolLayoutProps) {
-  const tool = tools.find((t) => t.name === title);
+  const tool = toolId
+    ? tools.find((t) => t.id === toolId)
+    : tools.find((t) => t.name === title);
   const category = tool ? categoryMap[tool.category] : null;
   const adSlot = ADSENSE_CONFIG.slots.toolPage;
 
@@ -143,16 +147,74 @@ export default function ToolLayout({
 
       {tool && <RelatedTools toolId={tool.id} />}
 
-      <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-        <h2 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
-          How to Use This Tool
-        </h2>
-        <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-          Enter or paste your content in the input area above. Results update
-          instantly in real-time. All processing happens locally in your browser
-          — your data never leaves your device.
-        </p>
-      </section>
+      {tool?.howToUse && tool.howToUse.length > 0 ? (
+        <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
+          <h2 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
+            How to Use This Tool
+          </h2>
+          <ol className="list-inside list-decimal space-y-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+            {tool.howToUse.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+        </section>
+      ) : (
+        <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
+          <h2 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
+            How to Use This Tool
+          </h2>
+          <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+            Enter or paste your content in the input area above. Results update
+            instantly in real-time. All processing happens locally in your browser
+            — your data never leaves your device.
+          </p>
+        </section>
+      )}
+
+      {tool?.faq && tool.faq.length > 0 && (
+        <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
+          <h2 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {tool.faq.map((item, i) => (
+              <details key={i} className="group rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900/50">
+                <summary className="cursor-pointer list-none text-sm font-medium text-zinc-900 dark:text-white">
+                  {item.question}
+                  <span className="ml-auto inline-block transition-transform group-open:rotate-180">
+                    <svg className="h-4 w-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {tool?.faq && tool.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: tool.faq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
     </div>
   );
 }

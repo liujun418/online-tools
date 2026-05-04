@@ -15,6 +15,7 @@ const metadata = {
     "decode base64",
     "base64 online tool",
   ],
+  toolId: "base64-converter",
 };
 
 export default function Base64ConverterClient() {

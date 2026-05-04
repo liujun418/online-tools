@@ -15,6 +15,7 @@ const metadata = {
     "generate password online",
     "password maker",
   ],
+  toolId: "password-generator",
 };
 
 function generatePassword(length: number, options: { upper: boolean; lower: boolean; numbers: boolean; symbols: boolean }): string {

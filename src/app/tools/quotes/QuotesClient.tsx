@@ -14,6 +14,7 @@ const metadata = {
     "quote search",
     "famous sayings",
   ],
+  toolId: "quotes",
 };
 
 interface Quote {

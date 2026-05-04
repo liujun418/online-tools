@@ -16,6 +16,7 @@ const metadata = {
     "json pretty print",
     "validate json",
   ],
+  toolId: "json-formatter",
 };
 
 export default function JsonFormatterClient() {
