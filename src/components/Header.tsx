@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
+import SuggestToolButton from "@/components/SuggestToolButton";
 
 export default function Header() {
   return (
@@ -23,7 +24,8 @@ export default function Header() {
           <Link href="/#converters" className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             Converters
           </Link>
-          <div className="ml-1 border-l border-zinc-200 pl-4 dark:border-zinc-800">
+          <div className="ml-1 flex items-center gap-3 border-l border-zinc-200 pl-4 dark:border-zinc-800">
+            <SuggestToolButton />
             <ThemeToggle />
           </div>
         </nav>
