@@ -106,7 +106,7 @@ export default function BookOfAnswersClient() {
   return (
     <ToolLayout {...metadata}>
       <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
-        闭眼默念问题 3-5 秒，专注内心诉求。点击书本或按钮开启答案，获得一条随机的人生指引。
+        Close your eyes, think of your question for 3–5 seconds, then open the book to receive your answer.
       </p>
 
       <div className="flex min-h-[40vh] flex-col items-center justify-center px-4 py-12">
@@ -154,7 +154,7 @@ export default function BookOfAnswersClient() {
                   Book of Answers
                 </h2>
                 <p className="mt-3 text-sm text-zinc-400">
-                  专注你的问题，点击揭晓答案
+                  Focus on your question, click to reveal your answer
                 </p>
               </div>
               {/* Decorative border */}
@@ -212,7 +212,7 @@ export default function BookOfAnswersClient() {
             onClick={handleReveal}
             className="mt-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95"
           >
-            开启答案
+            Reveal Answer
           </button>
         )}
 
@@ -221,7 +221,7 @@ export default function BookOfAnswersClient() {
             onClick={handleAskAgain}
             className="mt-8 rounded-full bg-gradient-to-r from-zinc-700 to-zinc-800 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95 dark:from-zinc-600 dark:to-zinc-700"
           >
-            再问一次
+            Ask Again
           </button>
         )}
       </div>
