@@ -59,6 +59,19 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-B17KH1S3VM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B17KH1S3VM');
+          `,
+        }} />
       </head>
       <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         {/* Google AdSense */}
