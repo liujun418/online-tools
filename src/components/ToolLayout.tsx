@@ -124,7 +124,7 @@ export default function ToolLayout({
       </header>
 
       {adSlot ? (
-        <div className="mb-4 w-full" style={{ maxHeight: '90px', overflow: 'hidden' }}>
+        <div className="mb-4 w-full" style={{ position: 'relative', maxHeight: '90px', overflow: 'hidden' }}>
           <AdUnit adSlot={adSlot} />
         </div>
       ) : (
@@ -136,7 +136,7 @@ export default function ToolLayout({
       {children}
 
       {adSlot ? (
-        <div className="mt-6 w-full" style={{ maxHeight: '90px', overflow: 'hidden' }}>
+        <div className="mt-6 w-full" style={{ position: 'relative', maxHeight: '90px', overflow: 'hidden' }}>
           <AdUnit adSlot={adSlot} />
         </div>
       ) : (

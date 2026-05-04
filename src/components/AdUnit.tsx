@@ -9,12 +9,6 @@ interface AdUnitProps {
   format?: "auto" | "rectangle" | "horizontal";
 }
 
-declare global {
-  interface Window {
-    adsbygoogle: any[];
-  }
-}
-
 export default function AdUnit({
   className,
   adSlot,
@@ -26,23 +20,44 @@ export default function AdUnit({
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
+    } catch {
       // AdSense script not loaded yet
     }
 
-    // After AdSense attempts to render, check if the ad is empty
-    const timer = setTimeout(() => {
+    // Poll to check if AdSense has actually populated the ad with content
+    const interval = setInterval(() => {
       const el = ref.current;
       if (!el) return;
-      // Check for AdSense error indicators: class="adsbygoogle" with no child iframe
-      const hasIframe = el.querySelector("iframe");
-      const hasAdText = el.textContent?.includes("Advertisement") || false;
-      if (!hasIframe && !hasAdText) {
-        setVisible(false);
+      const iframe = el.querySelector("iframe");
+      // If no iframe yet, keep waiting
+      if (!iframe) return;
+      // Check if iframe has real dimensions (AdSense fills it with content)
+      // An empty/unfilled ad iframe has near-zero height/width
+      const rect = iframe.getBoundingClientRect();
+      if (rect.height < 10 || rect.width < 10) {
+        // Still empty, but maybe it will fill later — keep checking
+        return;
       }
-    }, 3000);
+      // If the iframe exists but the container is tiny, AdSense didn't fill it
+      if (rect.height <= 1 && rect.width <= 1) {
+        setVisible(false);
+        clearInterval(interval);
+        return;
+      }
+      // Ad appears to be populated
+      clearInterval(interval);
+    }, 500);
 
-    return () => clearTimeout(timer);
+    // Give up after 10 seconds if still empty
+    const timeout = setTimeout(() => {
+      setVisible(false);
+      clearInterval(interval);
+    }, 10000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
   }, []);
 
   if (!visible) return null;
@@ -51,7 +66,7 @@ export default function AdUnit({
     <ins
       ref={ref}
       className={`adsbygoogle ${className ?? ""}`}
-      style={{ display: "block", maxHeight: "90px", overflow: "hidden" }}
+      style={{ display: "block" }}
       data-ad-client={ADSENSE_CONFIG.publisherId}
       data-ad-slot={adSlot}
       data-ad-format={format}
