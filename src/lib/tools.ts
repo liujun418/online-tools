@@ -25,7 +25,7 @@ export const tools: Tool[] = [
     description:
       "Count words, characters, sentences, and paragraphs in your text in real-time.",
     category: "text",
-    icon: "",
+    icon: "📝",
     path: "/tools/word-counter",
     seoTitle: "Free Word Counter - Count Words, Characters & Sentences Online",
     seoDescription: "Count words, characters, sentences, and paragraphs in real-time. Free online word counter with reading time and speaking time estimates. Perfect for essays, blog posts, and social media. No signup required.",
@@ -348,7 +348,7 @@ export const tools: Tool[] = [
     name: "UUID Generator",
     description: "Generate random UUID v4 identifiers for development.",
     category: "developer",
-    icon: "",
+    icon: "🔑",
     path: "/tools/uuid-generator",
     seoTitle: "Free UUID Generator - Generate UUID v4 Identifiers Online",
     seoDescription: "Generate random UUID v4 identifiers instantly. Generate single or multiple UUIDs with copy-to-clipboard support. Free online UUID generator for developers.",
@@ -793,7 +793,7 @@ export const tools: Tool[] = [
     description:
       "Convert CSV data to JSON format for APIs and web applications.",
     category: "converter",
-    icon: "",
+    icon: "📋",
     path: "/tools/csv-to-json",
     seoTitle: "Free CSV to JSON Converter - Convert CSV Data to JSON Format",
     seoDescription: "Convert CSV data to JSON format for APIs, web apps, and databases. Free online CSV to JSON converter with formatted output. No signup required.",
@@ -912,7 +912,7 @@ export const tools: Tool[] = [
     description:
       "Estimate daily calorie needs based on age, weight, height, and activity.",
     category: "calculator",
-    icon: "",
+    icon: "🔥",
     path: "/tools/calorie-calculator",
     seoTitle: "Free Calorie Calculator - Daily Calorie Needs & TDEE Estimator",
     seoDescription: "Calculate your daily calorie needs based on age, weight, height, gender, and activity level. Free TDEE calculator for weight loss, maintenance, or gain goals.",
