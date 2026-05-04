@@ -124,11 +124,9 @@ export default function ToolLayout({
       </header>
 
       {adSlot ? (
-        <div className="mb-4 w-full" style={{ position: 'relative', maxHeight: '90px', overflow: 'hidden' }}>
-          <AdUnit adSlot={adSlot} />
-        </div>
+        <AdUnit className="mb-6 w-full" adSlot={adSlot} />
       ) : (
-        <div className="mb-4 flex h-8 items-center justify-center rounded-lg border border-dashed border-zinc-200 bg-zinc-50 text-xs text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-600">
+        <div className="mb-6 flex min-h-[90px] items-center justify-center rounded-lg border-2 border-dashed border-zinc-200 bg-zinc-50 text-xs text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-600">
           Advertisement
         </div>
       )}
@@ -136,11 +134,9 @@ export default function ToolLayout({
       {children}
 
       {adSlot ? (
-        <div className="mt-6 w-full" style={{ position: 'relative', maxHeight: '90px', overflow: 'hidden' }}>
-          <AdUnit adSlot={adSlot} />
-        </div>
+        <AdUnit className="mt-8 w-full" adSlot={adSlot} />
       ) : (
-        <div className="mt-6 flex h-8 items-center justify-center rounded-lg border border-dashed border-zinc-200 bg-zinc-50 text-xs text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-600">
+        <div className="mt-8 flex min-h-[90px] items-center justify-center rounded-lg border-2 border-dashed border-zinc-200 bg-zinc-50 text-xs text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-600">
           Advertisement
         </div>
       )}

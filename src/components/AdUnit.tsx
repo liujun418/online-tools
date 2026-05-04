@@ -38,6 +38,7 @@ export default function AdUnit({
       data-ad-client={ADSENSE_CONFIG.publisherId}
       data-ad-slot={adSlot}
       data-ad-format={format}
+      data-full-width-responsive="true"
     />
   );
 }
