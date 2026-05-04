@@ -9,15 +9,19 @@ export default function ShareButton() {
     const url = window.location.href;
     const title = document.title;
 
-    if (navigator.share) {
+    // Use Web Share API only on mobile devices
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile && navigator.share) {
       try {
         await navigator.share({ title, url });
         return;
       } catch {
-        // User cancelled
+        // User cancelled or failed
       }
     }
 
+    // Desktop fallback: copy to clipboard
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
