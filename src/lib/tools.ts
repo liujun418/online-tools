@@ -1413,6 +1413,37 @@ export const tools: Tool[] = [
     ]
   },
   {
+    id: "book-of-answers",
+    name: "Book of Answers",
+    description:
+      "A digital Book of Answers for fun decision-making and guidance. Focus on your question and receive a random, thoughtfully curated response.",
+    category: "text",
+    icon: "📖",
+    path: "/tools/book-of-answers",
+    seoTitle: "Book of Answers Online - Free Random Answer Generator for Guidance & Fun",
+    seoDescription: "A digital Book of Answers for fun decision-making and psychological guidance. Close your eyes, focus on your question, then tap to reveal a random answer from 500+ curated responses. Free online oracle tool.",
+    seoKeywords: [
+      "book of answers", "book of answers online", "random answer generator",
+      "decision maker tool", "free oracle tool", "what should i do tool",
+      "random decision generator", "book of answers free online",
+      "fun decision tool", "random yes or no generator"
+    ],
+    howToUse: [
+      "Think of a question you'd like guidance on — it can be about anything.",
+      "Close your eyes and hold the question in mind for 3–5 seconds.",
+      "Click the book cover or press 'Open Your Answer' to reveal your answer.",
+      "Read your answer with an open mind and see how it resonates with you.",
+      "Click 'Ask Another Question' to reset and receive a new answer for a different question."
+    ],
+    faq: [
+      { question: "How does the Book of Answers work?", answer: "The Book of Answers randomly selects one response from a curated collection of 500+ answers across five categories: affirmation, denial, suggestion, healing, and humor. The selection is purely random, giving each answer an equal chance of appearing." },
+      { question: "Are the answers in the Book of Answers real?", answer: "The answers are thoughtfully curated short phrases designed to provide psychological comfort, inspiration, and perspective. They draw on the Barnum effect — vague but relatable statements that users can personally connect with and interpret for their own situations." },
+      { question: "Is this Book of Answers free to use?", answer: "Yes, the Book of Answers is completely free with no limits. You can ask as many questions as you'd like. No signup or account is required." },
+      { question: "Should I take the answers seriously?", answer: "The Book of Answers is designed as a fun, reflective tool. While the answers aren't meant to replace professional advice, many people find them helpful for breaking through decision paralysis, gaining a fresh perspective, or simply having a moment of mindful reflection." },
+      { question: "Does this tool store my questions or answers?", answer: "No. Everything happens in your browser. Your questions, answers, and usage data are never stored, tracked, or sent anywhere. Your privacy is fully protected." }
+    ]
+  },
+  {
     id: "ai-tools",
     name: "Free AI Tools Directory",
     description:

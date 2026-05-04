@@ -1,0 +1,239 @@
+"use client";
+
+import { useState, useCallback, useEffect, useRef } from "react";
+import { answers } from "@/lib/answers";
+
+// Sound effect: generate a soft "whoosh" using Web Audio API
+function playFlipSound() {
+  try {
+    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(400, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.3);
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.4);
+  } catch {}
+}
+
+export default function BookOfAnswersClient() {
+  const [state, setState] = useState<"idle" | "flipping" | "revealed">("idle");
+  const [answer, setAnswer] = useState("");
+  const [displayText, setDisplayText] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const getRandomAnswer = useCallback(() => {
+    const idx = Math.floor(Math.random() * answers.length);
+    return answers[idx];
+  }, []);
+
+  const handleReveal = useCallback(() => {
+    const ans = getRandomAnswer();
+    setSelectedAnswer(ans);
+    setDisplayText("");
+    setCharIndex(0);
+    setState("flipping");
+    playFlipSound();
+
+    // After flip animation completes, start typewriter
+    setTimeout(() => {
+      setState("revealed");
+    }, 800);
+  }, [getRandomAnswer]);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (state !== "revealed" || !selectedAnswer) return;
+
+    if (charIndex < selectedAnswer.length) {
+      intervalRef.current = setTimeout(() => {
+        setDisplayText((prev) => prev + selectedAnswer[charIndex]);
+        setCharIndex((i) => i + 1);
+      }, 50 + Math.random() * 30);
+    }
+
+    return () => {
+      if (intervalRef.current) clearTimeout(intervalRef.current);
+    };
+  }, [state, selectedAnswer, charIndex]);
+
+  const handleAskAgain = useCallback(() => {
+    if (intervalRef.current) clearTimeout(intervalRef.current);
+    setState("idle");
+    setDisplayText("");
+    setCharIndex(0);
+    setSelectedAnswer("");
+  }, []);
+
+  return (
+    <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-12">
+      {/* Instruction text */}
+      <p className="mb-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        Close your eyes, silently hold your question in mind for 3–5 seconds, then open the answer.
+      </p>
+
+      {/* Book container */}
+      <div className="relative w-full max-w-md" style={{ perspective: "1200px" }}>
+        {/* Book */}
+        <div
+          className={`relative mx-auto cursor-pointer transition-transform duration-500 ${
+            state === "flipping" ? "[transform:rotateY(-180deg)]" : ""
+          }`}
+          style={{
+            width: "280px",
+            height: "380px",
+            transformStyle: "preserve-3d",
+            transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+          onClick={state === "idle" ? handleReveal : undefined}
+        >
+          {/* Front cover */}
+          <div
+            className="absolute inset-0 rounded-xl shadow-2xl"
+            style={{
+              backfaceVisibility: "hidden",
+              background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "2rem",
+            }}
+          >
+            {/* Shimmer overlay on cover */}
+            <div
+              className="absolute inset-0 overflow-hidden rounded-xl"
+              style={{
+                background:
+                  "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 55%, transparent 60%)",
+                animation: state === "idle" ? "shimmer 3s infinite" : "none",
+              }}
+            />
+            {/* Book title */}
+            <div className="relative z-10 text-center">
+              <div className="mb-4 text-6xl">📖</div>
+              <h2 className="text-2xl font-bold tracking-wide text-amber-100">
+                Book of Answers
+              </h2>
+              <p className="mt-3 text-sm text-zinc-400">
+                Focus on your question, then tap to reveal
+              </p>
+            </div>
+            {/* Decorative border */}
+            <div className="absolute inset-3 rounded-lg border border-amber-900/30" />
+          </div>
+
+          {/* Back (answer side) */}
+          <div
+            className="absolute inset-0 rounded-xl shadow-2xl"
+            style={{
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+              background: "linear-gradient(135deg, #fefce8 0%, #fef9c3 50%, #fef08a 100%)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "2rem",
+            }}
+          >
+            {/* Answer content */}
+            {state === "revealed" && (
+              <div className="relative z-10 text-center">
+                <p
+                  className="text-xl font-semibold leading-relaxed text-zinc-800"
+                  style={{
+                    animation: "breathe 3s ease-in-out infinite",
+                  }}
+                >
+                  {displayText}
+                  {charIndex < selectedAnswer.length && (
+                    <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-zinc-800" />
+                  )}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Glow effect behind book during reveal */}
+        {state === "revealed" && (
+          <div
+            className="pointer-events-none absolute inset-0 rounded-xl"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(251,191,36,0.15) 0%, transparent 70%)",
+              animation: "glow 2s ease-in-out infinite",
+            }}
+          />
+        )}
+      </div>
+
+      {/* Action buttons */}
+      {state === "idle" && (
+        <button
+          onClick={handleReveal}
+          className="mt-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95"
+        >
+          Open Your Answer
+        </button>
+      )}
+
+      {state === "revealed" && charIndex >= selectedAnswer.length && (
+        <button
+          onClick={handleAskAgain}
+          className="mt-8 rounded-full bg-gradient-to-r from-zinc-700 to-zinc-800 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95 dark:from-zinc-600 dark:to-zinc-700"
+        >
+          Ask Another Question
+        </button>
+      )}
+
+      {/* Inline keyframe animations */}
+      <style jsx>{`
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        @keyframes breathe {
+          0%,
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.85;
+            transform: scale(1.02);
+          }
+        }
+        @keyframes glow {
+          0%,
+          100% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
