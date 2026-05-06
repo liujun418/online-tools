@@ -1537,7 +1537,7 @@ export const tools: Tool[] = [
   },
   {
     id: "life-hacks",
-    name: "Life Hacks — 100 Practical Tips",
+    name: "Life Hacks",
     description:
       "Browse 100 practical life hacks organized by category. From cleaning tricks to kitchen shortcuts, find quick solutions for everyday problems.",
     category: "text",
@@ -1567,9 +1567,9 @@ export const tools: Tool[] = [
       { question: "Are these tips suitable for renters?", answer: "Most tips are renter-friendly and use items you already have at home. Tips requiring permanent modifications are clearly noted." }
     ],
     nameTranslations: {
-      en: "Life Hacks — 100 Practical Tips",
-      es: "Trucos de Vida — 100 Consejos Prácticos",
-      ar: "حيل حياتية — 100 نصيحة عملية",
+      en: "Life Hacks",
+      es: "Trucos de Vida",
+      ar: "حيل حياتية",
     },
     descriptionTranslations: {
       en: "Browse 100 practical life hacks organized by category. From cleaning tricks to kitchen shortcuts, find quick solutions for everyday problems.",

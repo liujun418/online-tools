@@ -5,7 +5,7 @@ import { lifeHacks, categories, type LifeHack } from "@/lib/lifeHacks";
 import ToolLayout from "@/components/ToolLayout";
 
 const metadata = {
-  title: "Life Hacks — 100 Practical Tips for Everyday Problems",
+  title: "Life Hacks — Practical Tips for Everyday Problems",
   description:
     "Browse 100 practical life hacks organized by category. From cleaning tricks to kitchen shortcuts, find quick solutions for everyday problems.",
   keywords: [
@@ -103,7 +103,7 @@ export default function LifeHacksClient({
         </section>
 
         {/* Category Tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveCategory("all")}
             className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-all ${
