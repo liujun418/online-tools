@@ -65,14 +65,14 @@ function rgbToHex(r: number, g: number, b: number): string {
   return "#" + [r, g, b].map((c) => c.toString(16).padStart(2, "0")).join("");
 }
 
-export default function ColorConverterClient() {
+export default function ColorConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [hex, setHex] = useState("#3B82F6");
 
   const rgb = hexToRgb(hex) || [59, 130, 246];
   const hsl = rgbToHsl(...rgb);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <input
           type="color"

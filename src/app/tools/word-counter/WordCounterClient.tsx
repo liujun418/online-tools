@@ -20,7 +20,7 @@ const metadata = {
   toolId: "word-counter",
 };
 
-export default function WordCounterClient() {
+export default function WordCounterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
 
   const stats = useMemo(() => {
@@ -49,7 +49,7 @@ export default function WordCounterClient() {
   ];
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

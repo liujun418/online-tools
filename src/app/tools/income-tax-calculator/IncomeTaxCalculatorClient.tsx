@@ -28,7 +28,7 @@ const brackets = [
   { min: 609350, max: Infinity, rate: 0.37 },
 ];
 
-export default function IncomeTaxCalculatorClient() {
+export default function IncomeTaxCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [salary, setSalary] = useState("75000");
   const [filingStatus, setFilingStatus] = useState<"single" | "married">("single");
 
@@ -66,7 +66,7 @@ export default function IncomeTaxCalculatorClient() {
   }, [salary, filingStatus]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

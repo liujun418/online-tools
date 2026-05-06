@@ -199,7 +199,7 @@ function getZodiacSign(month: number, day: number) {
   return null;
 }
 
-export default function ZodiacSignClient() {
+export default function ZodiacSignClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
 
@@ -213,7 +213,7 @@ export default function ZodiacSignClient() {
   }, [month, day]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

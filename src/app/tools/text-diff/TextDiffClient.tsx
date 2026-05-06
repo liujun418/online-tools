@@ -17,7 +17,7 @@ const metadata = {
   ],
 };
 
-export default function TextDiffClient() {
+export default function TextDiffClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
 
@@ -41,7 +41,7 @@ export default function TextDiffClient() {
   }, [text1, text2]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">

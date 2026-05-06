@@ -49,7 +49,7 @@ function simpleMarkdown(md: string): string {
     .replace(/<\/p>\n<p>/g, "</p><p>");
 }
 
-export default function MarkdownPreviewClient() {
+export default function MarkdownPreviewClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState(
     `# Hello Markdown!\n\nThis is a **bold** and *italic* text.\n\n## Lists\n- Item one\n- Item two\n\n## Code\nUse \`inline code\` or:\n\n\`\`\`\nfunction hello() {\n  console.log("world");\n}\n\`\`\`\n\n> This is a blockquote.\n\n[Link example](https://example.com)`
   );
@@ -57,7 +57,7 @@ export default function MarkdownPreviewClient() {
   const html = useMemo(() => simpleMarkdown(input), [input]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">

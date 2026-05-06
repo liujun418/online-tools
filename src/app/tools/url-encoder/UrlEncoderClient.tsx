@@ -18,7 +18,7 @@ const metadata = {
   ],
 };
 
-export default function UrlEncoderClient() {
+export default function UrlEncoderClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [encoded, setEncoded] = useState("");
   const [decoded, setDecoded] = useState("");
@@ -44,7 +44,7 @@ export default function UrlEncoderClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <textarea
         value={input}
         onChange={(e) => {

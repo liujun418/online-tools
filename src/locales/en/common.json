@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "text": "Text",
+    "dev": "Dev",
+    "calculators": "Calculators",
+    "converters": "Converters",
+    "suggest": "Suggest a Tool",
+    "theme": "Toggle theme"
+  },
+  "footer": {
+    "copyright": "ToolBoxOnline. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Free Online Tools",
+    "heroDescription": "Fast, free, and easy-to-use online tools. No signup required. Everything runs in your browser — your data stays private.",
+    "toolsCount": "tools available now, more coming soon",
+    "searchPlaceholder": "Search tools...",
+    "noResults": "No tools found",
+    "resultsFor": "result{{s}} for \"{{query}}\""
+  },
+  "toolPage": {
+    "home": "Home",
+    "howToUse": "How to Use This Tool",
+    "faq": "Frequently Asked Questions",
+    "advertisement": "Advertisement",
+    "relatedTools": "Related Tools",
+    "share": "Share",
+    "visitors": "{{count}} visitors",
+    "copyLink": "Link copied to clipboard"
+  },
+  "categories": {
+    "text": "Text Tools",
+    "developer": "Developer Tools",
+    "calculator": "Calculators",
+    "converter": "Converters"
+  },
+  "language": {
+    "select": "Language"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "goHome": "Go Home"
+  },
+  "suggestTool": {
+    "title": "Suggest a Tool",
+    "description": "Have an idea for a tool? Let us know!",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have questions or feedback? Reach out to us.",
+    "email": "Email"
+  }
+}

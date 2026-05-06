@@ -17,7 +17,7 @@ const metadata = {
   ],
 };
 
-export default function LoanCalculatorClient() {
+export default function LoanCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [principal, setPrincipal] = useState("10000");
   const [rate, setRate] = useState("5");
   const [years, setYears] = useState("3");
@@ -34,7 +34,7 @@ export default function LoanCalculatorClient() {
   }, [principal, rate, years]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

@@ -17,7 +17,7 @@ const metadata = {
   ],
 };
 
-export default function CalorieCalculatorClient() {
+export default function CalorieCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [gender, setGender] = useState<"male" | "female">("male");
   const [age, setAge] = useState("30");
   const [weight, setWeight] = useState("70");
@@ -44,7 +44,7 @@ export default function CalorieCalculatorClient() {
   }, [gender, age, weight, height, activity]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap gap-4">
         <div className="flex gap-2">
           <button onClick={() => setGender("male")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${gender === "male" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>Male</button>

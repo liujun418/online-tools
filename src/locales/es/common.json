@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "text": "Texto",
+    "dev": "Desarrollador",
+    "calculators": "Calculadoras",
+    "converters": "Conversores",
+    "suggest": "Sugerir una Herramienta",
+    "theme": "Cambiar tema"
+  },
+  "footer": {
+    "copyright": "ToolBoxOnline. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contact": "Contacto"
+  },
+  "home": {
+    "heroTitle": "Herramientas Online Gratuitas",
+    "heroDescription": "Herramientas online rápidas, gratuitas y fáciles de usar. Sin registro. Todo se ejecuta en tu navegador — tus datos permanecen privados.",
+    "toolsCount": "herramientas disponibles, más próximamente",
+    "searchPlaceholder": "Buscar herramientas...",
+    "noResults": "No se encontraron herramientas",
+    "resultsFor": "resultado{{s}} para \"{{query}}\""
+  },
+  "toolPage": {
+    "home": "Inicio",
+    "howToUse": "Cómo Usar Esta Herramienta",
+    "faq": "Preguntas Frecuentes",
+    "advertisement": "Publicidad",
+    "relatedTools": "Herramientas Relacionadas",
+    "share": "Compartir",
+    "visitors": "{{count}} visitantes",
+    "copyLink": "Enlace copiado al portapapeles"
+  },
+  "categories": {
+    "text": "Herramientas de Texto",
+    "developer": "Herramientas de Desarrollador",
+    "calculator": "Calculadoras",
+    "converter": "Conversores"
+  },
+  "language": {
+    "select": "Idioma"
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "description": "La página que buscas no existe.",
+    "goHome": "Ir al Inicio"
+  },
+  "suggestTool": {
+    "title": "Sugerir una Herramienta",
+    "description": "¿Tienes una idea para una herramienta? ¡Dinos!",
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización"
+  },
+  "terms": {
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "description": "¿Tienes preguntas o comentarios? Escríbenos.",
+    "email": "Correo electrónico"
+  }
+}

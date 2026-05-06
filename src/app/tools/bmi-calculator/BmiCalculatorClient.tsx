@@ -18,7 +18,7 @@ const metadata = {
   toolId: "bmi-calculator",
 };
 
-export default function BmiCalculatorClient() {
+export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -55,7 +55,7 @@ export default function BmiCalculatorClient() {
   const markerPosition = bmi ? Math.min(Math.max(((bmi - bmiMin) / (bmiMax - bmiMin)) * 100, 0), 100) : 0;
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex gap-2">
           <button

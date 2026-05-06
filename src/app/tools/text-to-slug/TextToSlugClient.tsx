@@ -27,7 +27,7 @@ function toSlug(text: string): string {
     .replace(/-+$/, "");
 }
 
-export default function TextToSlugClient() {
+export default function TextToSlugClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
   const slug = toSlug(text);
   const [copied, setCopied] = useState(false);
@@ -39,7 +39,7 @@ export default function TextToSlugClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <input
         type="text"
         value={text}

@@ -18,7 +18,7 @@ const metadata = {
   ],
 };
 
-export default function ImageToBase64Client() {
+export default function ImageToBase64Client({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [base64, setBase64] = useState("");
   const [fileInfo, setFileInfo] = useState("");
   const [preview, setPreview] = useState("");
@@ -40,7 +40,7 @@ export default function ImageToBase64Client() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <label className="flex cursor-pointer items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
           <svg

@@ -18,7 +18,7 @@ const metadata = {
   toolId: "age-calculator",
 };
 
-export default function AgeCalculatorClient() {
+export default function AgeCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [birthDate, setBirthDate] = useState("");
   const [result, setResult] = useState<null | Record<string, number | string>>(null);
 
@@ -73,7 +73,7 @@ export default function AgeCalculatorClient() {
   ];
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           Date of birth:

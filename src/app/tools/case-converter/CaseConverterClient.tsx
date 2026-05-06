@@ -53,11 +53,11 @@ const cases: { label: string; fn: (s: string) => string }[] = [
   },
 ];
 
-export default function CaseConverterClient() {
+export default function CaseConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

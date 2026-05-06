@@ -16,7 +16,7 @@ const metadata = {
   ],
 };
 
-export default function TextRepeaterClient() {
+export default function TextRepeaterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [count, setCount] = useState(5);
   const [separator, setSeparator] = useState("newline");
@@ -29,7 +29,7 @@ export default function TextRepeaterClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <input
           type="text"

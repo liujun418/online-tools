@@ -176,7 +176,7 @@ function md5(string: string): string {
   return rhex(state[0]) + rhex(state[1]) + rhex(state[2]) + rhex(state[3]);
 }
 
-export default function MD5GeneratorClient() {
+export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
 
   const hash = useMemo(() => {
@@ -194,7 +194,7 @@ export default function MD5GeneratorClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
           Enter Text to Generate MD5 Hash

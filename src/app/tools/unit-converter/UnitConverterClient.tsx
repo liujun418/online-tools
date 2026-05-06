@@ -38,7 +38,7 @@ function convertTemp(value: number, from: string, to: string): number {
   return to === "Celsius" ? celsius : to === "Fahrenheit" ? celsius * 9 / 5 + 32 : celsius + 273.15;
 }
 
-export default function UnitConverterClient() {
+export default function UnitConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [cat, setCat] = useState("Length");
   const [fromUnit, setFromUnit] = useState("Meter");
   const [toUnit, setToUnit] = useState("Kilometer");
@@ -63,7 +63,7 @@ export default function UnitConverterClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <select
           value={cat}

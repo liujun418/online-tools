@@ -16,7 +16,7 @@ const metadata = {
   ],
 };
 
-export default function DiscountCalculatorClient() {
+export default function DiscountCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [mode, setMode] = useState<"percent" | "reverse">("percent");
   const [original, setOriginal] = useState("100");
   const [discount, setDiscount] = useState("20");
@@ -54,7 +54,7 @@ export default function DiscountCalculatorClient() {
   }, [mode, original, discount, salePrice]);
 
   if (!result) return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button onClick={() => setMode("percent")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "percent" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>% Off</button>
         <button onClick={() => setMode("reverse")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "reverse" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>Find Discount %</button>
@@ -67,7 +67,7 @@ export default function DiscountCalculatorClient() {
   );
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button onClick={() => setMode("percent")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "percent" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>% Off</button>
         <button onClick={() => setMode("reverse")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "reverse" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>Find Discount %</button>

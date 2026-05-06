@@ -36,7 +36,7 @@ function playFlipSound() {
   } catch {}
 }
 
-export default function BookOfAnswersClient() {
+export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [displayText, setDisplayText] = useState("");
@@ -104,7 +104,7 @@ export default function BookOfAnswersClient() {
   const isTypingComplete = displayText === selectedAnswer && selectedAnswer.length > 0;
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
         Close your eyes, think of your question for 3–5 seconds, then open the book to receive your answer.
       </p>

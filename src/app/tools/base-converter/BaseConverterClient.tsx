@@ -18,7 +18,7 @@ const metadata = {
   ],
 };
 
-export default function BaseConverterClient() {
+export default function BaseConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [base, setBase] = useState<2 | 8 | 10 | 16>(10);
   const [error, setError] = useState<string | null>(null);
@@ -43,7 +43,7 @@ export default function BaseConverterClient() {
   ];
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           Input base:

@@ -121,7 +121,7 @@ console.log(matches);`,
 
 type TabKey = "test" | "replace" | "extract" | "code";
 
-export default function RegexTesterClient() {
+export default function RegexTesterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [activeTab, setActiveTab] = useState<TabKey>("test");
   const [pattern, setPattern] = useState("");
   const [flags, setFlags] = useState("gi");
@@ -182,7 +182,7 @@ export default function RegexTesterClient() {
   };
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       {/* Pattern & flags input */}
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex flex-1 items-center gap-1">

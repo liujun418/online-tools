@@ -18,7 +18,7 @@ const metadata = {
   ],
 };
 
-export default function HtmlEntitiesClient() {
+export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [encoded, setEncoded] = useState("");
   const [decoded, setDecoded] = useState("");
@@ -46,7 +46,7 @@ export default function HtmlEntitiesClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <textarea
         value={input}
         onChange={(e) => {

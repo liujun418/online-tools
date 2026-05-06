@@ -873,7 +873,7 @@ const MONTH_NAMES = [
 ];
 const DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-export default function PerpetualCalendarClient() {
+export default function PerpetualCalendarClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth());
@@ -998,7 +998,7 @@ export default function PerpetualCalendarClient() {
   }, [selectedDate, holidays]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       {/* Controls */}
       <div className="flex flex-wrap gap-4">
         <div>

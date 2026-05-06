@@ -210,7 +210,7 @@ const styles: { name: string; fn: StyleFn }[] = [
   },
 ];
 
-export default function FancyTextGeneratorClient() {
+export default function FancyTextGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("Hello World");
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
@@ -226,7 +226,7 @@ export default function FancyTextGeneratorClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
           Enter Your Text

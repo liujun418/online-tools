@@ -17,7 +17,7 @@ const metadata = {
   ],
 };
 
-export default function RandomNumberClient() {
+export default function RandomNumberClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [min, setMin] = useState("1");
   const [max, setMax] = useState("100");
   const [count, setCount] = useState(1);
@@ -51,7 +51,7 @@ export default function RandomNumberClient() {
   }, [min, max, count, decimals, allowDuplicates, sortResult]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

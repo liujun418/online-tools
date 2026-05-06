@@ -19,7 +19,7 @@ const metadata = {
   toolId: "json-formatter",
 };
 
-export default function JsonFormatterClient() {
+export default function JsonFormatterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -55,7 +55,7 @@ export default function JsonFormatterClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button
           onClick={handleFormat}

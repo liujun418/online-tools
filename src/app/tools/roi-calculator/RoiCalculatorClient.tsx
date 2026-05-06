@@ -17,7 +17,7 @@ const metadata = {
   ],
 };
 
-export default function RoiCalculatorClient() {
+export default function RoiCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [invested, setInvested] = useState("10000");
   const [returned, setReturned] = useState("15000");
 
@@ -35,7 +35,7 @@ export default function RoiCalculatorClient() {
   }, [invested, returned]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

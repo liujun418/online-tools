@@ -28,7 +28,7 @@ const presets = [
 const sizes = [128, 256, 512];
 const corrections = ["L", "M", "Q", "H"];
 
-export default function QRCodeGeneratorClient() {
+export default function QRCodeGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("https://www.toolboxonline.club");
   const [size, setSize] = useState(256);
   const [correction, setCorrection] = useState("M");
@@ -75,7 +75,7 @@ export default function QRCodeGeneratorClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

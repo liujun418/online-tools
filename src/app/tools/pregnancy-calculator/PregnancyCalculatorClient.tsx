@@ -16,7 +16,7 @@ const metadata = {
   ],
 };
 
-export default function PregnancyCalculatorClient() {
+export default function PregnancyCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [lmp, setLmp] = useState("");
 
   const result = useMemo(() => {
@@ -72,7 +72,7 @@ export default function PregnancyCalculatorClient() {
   }, [lmp]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
           First Day of Last Menstrual Period (LMP)

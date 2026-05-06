@@ -548,7 +548,7 @@ const categories = [
   { key: "Inspiration & Creativity", label: "Creativity", icon: "🎨" },
 ];
 
-export default function QuotesClient() {
+export default function QuotesClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [search, setSearch] = useState("");
   const [selectedQuote, setSelectedQuote] = useState<Quote | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
@@ -572,7 +572,7 @@ export default function QuotesClient() {
   }, []);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
         Browse {quotes.length} famous quotes organized by category. Search by person name, quote text, or keyword. Each quote includes source and historical date.
       </p>

@@ -18,7 +18,7 @@ const metadata = {
   toolId: "base64-converter",
 };
 
-export default function Base64ConverterClient() {
+export default function Base64ConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<"encode" | "decode">("encode");
@@ -50,7 +50,7 @@ export default function Base64ConverterClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-2">
         <button
           onClick={() => {

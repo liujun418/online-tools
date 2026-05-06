@@ -55,7 +55,7 @@ function csvToJson(csv: string): string {
   return JSON.stringify(result, null, 2);
 }
 
-export default function CsvToJsonClient() {
+export default function CsvToJsonClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -75,7 +75,7 @@ export default function CsvToJsonClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <textarea
         value={input}
         onChange={(e) => {

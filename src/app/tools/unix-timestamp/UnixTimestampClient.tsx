@@ -18,7 +18,7 @@ const metadata = {
   ],
 };
 
-export default function UnixTimestampClient() {
+export default function UnixTimestampClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState(Math.floor(Date.now() / 1000).toString());
   const [now, setNow] = useState(Math.floor(Date.now() / 1000));
 
@@ -48,7 +48,7 @@ export default function UnixTimestampClient() {
   }, [input]);
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
         <div className="text-sm text-zinc-500 dark:text-zinc-400">Current Unix Timestamp</div>
         <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 font-mono">{now}</div>

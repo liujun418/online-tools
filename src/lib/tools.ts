@@ -15,6 +15,12 @@ export interface Tool {
   seoKeywords?: string[];
   howToUse?: string[];
   faq?: FAQItem[];
+  nameTranslations?: Record<string, string>;
+  descriptionTranslations?: Record<string, string>;
+  seoTitleTranslations?: Record<string, string>;
+  seoDescriptionTranslations?: Record<string, string>;
+  howToUseTranslations?: Record<string, string[]>;
+  faqTranslations?: Record<string, FAQItem[]>;
 }
 
 export const tools: Tool[] = [
@@ -1505,5 +1511,28 @@ export const tools: Tool[] = [
       { question: "Can I suggest an AI tool to be added?", answer: "Yes! We welcome suggestions for free AI tools that would benefit our community. Use the contact form to submit a tool for review and inclusion." },
       { question: "What categories of AI tools are included?", answer: "The directory covers writing assistants, image generators, video editing tools, coding assistants, audio tools, productivity apps, chatbots, and more. New categories are added as the AI landscape evolves." }
 ,      { question: "Are all the AI tools listed here free?", answer: "Our AI tools directory includes both free and freemium tools. Each listing indicates whether the tool is free, has a free tier, or requires payment. We regularly update the directory." }     ]
-  },
+  ,
+    nameTranslations: {
+      en: "Contador de Palabras",
+      es: "Contador de Palabras",
+      ar: "عداد الكلمات",
+    },
+    descriptionTranslations: {
+      en: "",
+      es: "Cuenta palabras, caracteres, oraciones y párrafos en tu texto en tiempo real.",
+      ar: "عد الكلمات والأحرف والجمل والفقرات في نصك في الوقت الفعلي.",
+    },
+    seoTitleTranslations: {
+      en: "",
+      es: "Contador de Palabras Gratis Online - Cuenta Palabras, Caracteres y Oraciones 2026",
+      ar: "عداد كلمات مجاني عبر الإنترنت - عد الكلمات والأحرف والجمل 2026",
+    },
+    seoDescriptionTranslations: {
+      en: "",
+      es: "Contador de palabras gratuito y rápido. Sin registro. Tus datos permanecen en tu navegador.",
+      ar: "عداد كلمات مجاني وسريع. بدون تسجيل. بياناتك تبقى في متصفحك.",
+    },
+    howToUseTranslations: {},
+    faqTranslations: {},
+  }
 ];

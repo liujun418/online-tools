@@ -47,7 +47,7 @@ const stateConfig: Record<Phase, { bg: string; text: string; cursor: string }> =
   },
 };
 
-export default function ReactionTestClient() {
+export default function ReactionTestClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [reactionTime, setReactionTime] = useState<number | null>(null);
   const [attempts, setAttempts] = useState<number[]>([]);
@@ -115,7 +115,7 @@ export default function ReactionTestClient() {
   };
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
         色块变红后请等待，出现"点击！"字样后立刻点击。记录你的反应时间，挑战最快记录。
       </p>

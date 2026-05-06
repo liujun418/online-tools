@@ -27,7 +27,7 @@ async function computeHash(text: string, algorithm: string): Promise<string> {
     .join("");
 }
 
-export default function HashGeneratorClient() {
+export default function HashGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
   const [hashes, setHashes] = useState<Record<string, string>>({});
 
@@ -44,7 +44,7 @@ export default function HashGeneratorClient() {
   }
 
   return (
-    <ToolLayout {...metadata}>
+    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
