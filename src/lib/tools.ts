@@ -1566,5 +1566,55 @@ export const tools: Tool[] = [
       { question: "How often is the Tip of the Day updated?", answer: "The Tip of the Day changes randomly each time you load the page. Click the 'New Tip' button to see a different random tip instantly." },
       { question: "Are these tips suitable for renters?", answer: "Most tips are renter-friendly and use items you already have at home. Tips requiring permanent modifications are clearly noted." }
     ],
+    nameTranslations: {
+      en: "Life Hacks — 100 Practical Tips",
+      es: "Trucos de Vida — 100 Consejos Prácticos",
+      ar: "حيل حياتية — 100 نصيحة عملية",
+    },
+    descriptionTranslations: {
+      en: "Browse 100 practical life hacks organized by category. From cleaning tricks to kitchen shortcuts, find quick solutions for everyday problems.",
+      es: "Explora 100 trucos prácticos organizados por categoría. Desde consejos de limpieza hasta atajos de cocina, encuentra soluciones rápidas para problemas cotidianos.",
+      ar: "تصفح 100 حيلة عملية مصنفة حسب الفئة. من نصائح التنظيف إلى اختصارات المطبخ، اعثر على حلول سريعة لمشاكل الحياة اليومية.",
+    },
+    seoTitleTranslations: {
+      en: "Free Life Hacks Online — 100 Practical Tips for Everyday Problems 2026",
+      es: "Trucos de Vida Gratis Online — 100 Consejos Prácticos para Problemas Cotidianos 2026",
+      ar: "حيل حياتية مجانية عبر الإنترنت — 100 نصيحة عملية لمشاكل الحياة اليومية 2026",
+    },
+    seoDescriptionTranslations: {
+      en: "Browse 100 practical life hacks organized by category: cleaning, kitchen, storage, laundry, home maintenance, and quick fixes. Free online tips and tricks for everyday problems.",
+      es: "Explora 100 trucos prácticos por categoría: limpieza, cocina, almacenamiento, lavandería, mantenimiento del hogar y soluciones rápidas. Consejos gratis online.",
+      ar: "تصفح 100 حيلة عملية مصنفة حسب الفئة: التنظيف والمطبخ والتخزين والغسيل وصيانة المنزل والحلول السريعة. نصائح مجانية عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Explora los trucos organizados por categoría usando la navegación por pestañas.",
+        "Usa la barra de búsqueda para encontrar consejos para un problema específico.",
+        "Consulta el Truco del Día para un consejo aleatorio útil.",
+        "Haz clic en 'Leer más' en cualquier tarjeta para ver el consejo completo.",
+      ],
+      ar: [
+        "تصفح النصائح مصنفة حسب الفئة باستخدام علامات التبويب.",
+        "استخدم شريط البحث للعثور على نصائح لمشكلة معينة.",
+        "تحقق من حيلة اليوم للحصول على نصيحة عشوائية مفيدة.",
+        "انقر على 'اقرأ المزيد' في أي بطاقة لرؤية النصيحة كاملة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuántos trucos de vida están incluidos?", answer: "Esta herramienta presenta 100 trucos prácticos organizados en 6 categorías: Limpieza, Cocina, Almacenamiento y Organización, Lavandería y Ropa, Mantenimiento del Hogar y Soluciones Rápidas." },
+        { question: "¿Son seguros estos consejos?", answer: "Todos los consejos usan artículos comunes del hogar y métodos seguros. Recomendamos probar primero en un área pequeña cuando se use cualquier solución de limpieza en superficies delicadas." },
+        { question: "¿Puedo buscar consejos específicos?", answer: "Sí. Usa la barra de búsqueda para encontrar consejos por palabra clave. La búsqueda busca tanto en títulos como en contenido." },
+        { question: "¿Con qué frecuencia se actualiza el Truco del Día?", answer: "El Truco del Día cambia aleatoriamente cada vez que cargas la página. Haz clic en el botón 'Nuevo Truco' para ver un consejo aleatorio diferente al instante." },
+        { question: "¿Son estos consejos adecuados para inquilinos?", answer: "La mayoría de los consejos son aptos para inquilinos y usan artículos que ya tienes en casa. Los consejos que requieren modificaciones permanentes se señalan claramente." }
+      ],
+      ar: [
+        { question: "كم عدد الحيل المتاحة؟", answer: "تقدم هذه الأداة 100 حيلة عملية مصنفة في 6 فئات: التنظيف والمطبخ والتخزين والتنظيم والغسيل والملابس وصيانة المنزل والحلول السريعة." },
+        { question: "هل هذه النصائح آمنة للاستخدام؟", answer: "جميع النصائح تستخدم أدوات منزلية شائعة وطرق آمنة. نوصي بالاختبار أولاً على منطقة صغيرة عند استخدام أي محلول تنظيف على الأسطح الحساسة." },
+        { question: "هل يمكنني البحث عن نصائح محددة؟", answer: "نعم. استخدم شريط البحث للعثور على النصائح حسب الكلمة المفتاحية. البحث يبحث في كل من العناوين والمحتوى." },
+        { question: "كم مرة يتم تحديث حيلة اليوم؟", answer: "تتغير حيلة اليوم عشوائياً في كل مرة تقوم فيها بتحميل الصفحة. انقر على زر 'حيلة جديدة' لرؤية نصيحة عشوائية مختلفة فوراً." },
+        { question: "هل هذه النصائح مناسبة للمستأجرين؟", answer: "معظم النصائح مناسبة للمستأجرين وتستخدم أدوات موجودة بالفعل في المنزل. النصائح التي تتطلب تعديلات دائمة موضحة بوضوح." }
+      ],
+    },
   },
 ];
