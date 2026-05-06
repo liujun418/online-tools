@@ -1534,5 +1534,37 @@ export const tools: Tool[] = [
     },
     howToUseTranslations: {},
     faqTranslations: {},
-  }
+  },
+  {
+    id: "life-hacks",
+    name: "Life Hacks — 100 Practical Tips",
+    description:
+      "Browse 100 practical life hacks organized by category. From cleaning tricks to kitchen shortcuts, find quick solutions for everyday problems.",
+    category: "text",
+    icon: "💡",
+    path: "/tools/life-hacks",
+    seoTitle: "Free Life Hacks Online — 100 Practical Tips for Everyday Problems 2026",
+    seoDescription: "Browse 100 practical life hacks organized by category: cleaning, kitchen, storage, laundry, home maintenance, and quick fixes. Free online tips and tricks for everyday problems.",
+    seoKeywords: [
+      "life hacks", "practical tips", "home tips", "cleaning hacks",
+      "kitchen tips", "cleaning tricks", "household tips",
+      "life hacks online", "home improvement tips", "everyday tips",
+      "free life hacks", "best life hacks 2026", "practical household hacks",
+      "how to clean naturally", "kitchen shortcuts", "laundry tips",
+      "organization hacks", "quick fixes", "home maintenance tips"
+    ],
+    howToUse: [
+      "Browse tips organized by category using the tab navigation.",
+      "Use the search bar to find tips for a specific problem or topic.",
+      "Check the Tip of the Day for a random helpful hack.",
+      "Click 'Read more' on any card to see the full tip details.",
+    ],
+    faq: [
+      { question: "How many life hacks are included?", answer: "This tool features 100 practical life hacks organized into 6 categories: Cleaning, Kitchen, Storage & Organization, Laundry & Clothing, Home Maintenance, and Quick Fixes." },
+      { question: "Are these tips safe to use?", answer: "All tips use common household items and safe methods. We recommend testing on a small area first when using any cleaning solution on delicate surfaces." },
+      { question: "Can I search for specific tips?", answer: "Yes. Use the search bar to find tips by keyword. The search looks through both titles and content for matching terms." },
+      { question: "How often is the Tip of the Day updated?", answer: "The Tip of the Day changes randomly each time you load the page. Click the 'New Tip' button to see a different random tip instantly." },
+      { question: "Are these tips suitable for renters?", answer: "Most tips are renter-friendly and use items you already have at home. Tips requiring permanent modifications are clearly noted." }
+    ],
+  },
 ];
