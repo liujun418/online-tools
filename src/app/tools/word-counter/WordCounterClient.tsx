@@ -20,7 +20,11 @@ const metadata = {
   toolId: "word-counter",
 };
 
-export default function WordCounterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function WordCounterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [text, setText] = useState("");
   const wc = (dict as any)?.wordCounter || {};
 
@@ -44,7 +48,9 @@ export default function WordCounterClient({ locale = "en", dict }: { locale?: st
   ];
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

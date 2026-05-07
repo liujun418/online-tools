@@ -19,7 +19,11 @@ const metadata = {
   toolId: "json-formatter",
 };
 
-export default function JsonFormatterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function JsonFormatterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [error, setError] = useState<string | null>(null);
   const jf = (dict as any)?.jsonFormatter || {};
@@ -41,7 +45,9 @@ export default function JsonFormatterClient({ locale = "en", dict }: { locale?: 
   function handleCopy() { if (formatted) navigator.clipboard.writeText(formatted); }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button onClick={handleFormat} disabled={!formatted} className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50">
           {jf.format || "Format"}

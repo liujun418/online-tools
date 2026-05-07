@@ -16,7 +16,11 @@ const metadata = {
   ],
 };
 
-export default function TextRepeaterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function TextRepeaterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [count, setCount] = useState(5);
   const [separator, setSeparator] = useState("newline");
@@ -30,7 +34,9 @@ export default function TextRepeaterClient({ locale = "en", dict }: { locale?: s
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <input
           type="text"

@@ -31,7 +31,11 @@ function generatePassword(length: number, options: { upper: boolean; lower: bool
   return Array.from(array, (n) => chars[n % chars.length]).join("");
 }
 
-export default function PasswordGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function PasswordGeneratorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [length, setLength] = useState(16);
   const [options, setOptions] = useState({ upper: true, lower: true, numbers: true, symbols: true });
   const [passwords, setPasswords] = useState<string[]>([]);
@@ -52,7 +56,9 @@ export default function PasswordGeneratorClient({ locale = "en", dict }: { local
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
           <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">

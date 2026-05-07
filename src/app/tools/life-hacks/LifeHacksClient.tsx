@@ -62,9 +62,13 @@ function loadHelpfulCounts(): Record<string, number> {
 export default function LifeHacksClient({
   locale = "en",
   dict,
+  titleOverride,
+  descriptionOverride,
 }: {
   locale?: string;
   dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
 } = {}) {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -198,7 +202,9 @@ export default function LifeHacksClient({
   const tipOfDayLocalized = getLocalizedHack(locale, tipOfDay);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="space-y-8">
         {/* Tip of the Day */}
         <section className="rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 p-6 dark:from-amber-950/30 dark:to-orange-950/30">

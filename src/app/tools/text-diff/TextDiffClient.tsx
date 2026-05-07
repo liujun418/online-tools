@@ -17,7 +17,11 @@ const metadata = {
   ],
 };
 
-export default function TextDiffClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function TextDiffClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
   const td = (dict as any)?.textDiff || {};
@@ -42,7 +46,9 @@ export default function TextDiffClient({ locale = "en", dict }: { locale?: strin
   }, [text1, text2]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">

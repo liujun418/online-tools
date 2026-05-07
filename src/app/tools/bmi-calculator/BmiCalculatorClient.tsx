@@ -18,7 +18,11 @@ const metadata = {
   toolId: "bmi-calculator",
 };
 
-export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function BmiCalculatorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -54,7 +58,9 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
   const markerPosition = bmiVal ? Math.min(Math.max(((bmiVal - bmiMin) / (bmiMax - bmiMin)) * 100, 0), 100) : 0;
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex gap-2">
           <button

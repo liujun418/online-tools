@@ -25,7 +25,11 @@ const paragraphs = [
   "Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.",
 ];
 
-export default function LoremIpsumClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function LoremIpsumClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [count, setCount] = useState(3);
   const [copied, setCopied] = useState(false);
   const li = (dict as any)?.loremIpsum || {};
@@ -39,7 +43,9 @@ export default function LoremIpsumClient({ locale = "en", dict }: { locale?: str
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {li.paragraphs || "Number of paragraphs"}:

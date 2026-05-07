@@ -121,7 +121,11 @@ console.log(matches);`,
 
 type TabKey = "test" | "replace" | "extract" | "code";
 
-export default function RegexTesterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function RegexTesterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [activeTab, setActiveTab] = useState<TabKey>("test");
   const [pattern, setPattern] = useState("");
   const [flags, setFlags] = useState("gi");
@@ -184,7 +188,9 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
   };
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       {/* Pattern & flags input */}
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex flex-1 items-center gap-1">

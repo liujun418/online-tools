@@ -18,7 +18,11 @@ const metadata = {
   ],
 };
 
-export default function BaseConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function BaseConverterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [base, setBase] = useState<2 | 8 | 10 | 16>(10);
   const [error, setError] = useState<string | null>(null);
@@ -44,7 +48,9 @@ export default function BaseConverterClient({ locale = "en", dict }: { locale?: 
   ];
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {bc.inputBase || "Input base"}:

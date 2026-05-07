@@ -27,7 +27,11 @@ async function computeHash(text: string, algorithm: string): Promise<string> {
     .join("");
 }
 
-export default function HashGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function HashGeneratorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [text, setText] = useState("");
   const [hashes, setHashes] = useState<Record<string, string>>({});
   const hg = (dict as any)?.hashGenerator || {};
@@ -51,7 +55,9 @@ export default function HashGeneratorClient({ locale = "en", dict }: { locale?: 
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

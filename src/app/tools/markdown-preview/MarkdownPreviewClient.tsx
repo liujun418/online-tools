@@ -49,7 +49,11 @@ function simpleMarkdown(md: string): string {
     .replace(/<\/p>\n<p>/g, "</p><p>");
 }
 
-export default function MarkdownPreviewClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function MarkdownPreviewClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const mp = (dict as any)?.markdownPreview || {};
 
   const defaultMarkdown = useMemo(() => {
@@ -73,7 +77,9 @@ export default function MarkdownPreviewClient({ locale = "en", dict }: { locale?
   const html = useMemo(() => simpleMarkdown(input), [input]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">

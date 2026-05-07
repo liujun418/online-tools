@@ -69,6 +69,9 @@ export default async function ToolPage({
   if (!tool) notFound();
 
   const dict = await getDictionary(locale);
+  const toolTitle = (tool as any).nameTranslations?.[locale] || tool.name;
+  const toolDescription = (tool as any).descriptionTranslations?.[locale] || tool.description;
 
-  return <PercentageCalculatorClient locale={locale as Locale} dict={dict} />;
+
+  return <PercentageCalculatorClient locale={locale as Locale} dict={dict}  titleOverride={toolTitle} descriptionOverride={toolDescription} />;
 }

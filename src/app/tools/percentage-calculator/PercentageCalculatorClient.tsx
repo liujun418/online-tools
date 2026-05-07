@@ -17,7 +17,11 @@ const metadata = {
   ],
 };
 
-export default function PercentageCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function PercentageCalculatorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [c, setC] = useState("");
@@ -25,7 +29,9 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
   const pc = (dict as any)?.percentageCalculator || {};
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="space-y-8">
         {/* What is X% of Y? */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">

@@ -18,7 +18,11 @@ const metadata = {
   toolId: "base64-converter",
 };
 
-export default function Base64ConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function Base64ConverterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<"encode" | "decode">("encode");
@@ -49,7 +53,9 @@ export default function Base64ConverterClient({ locale = "en", dict }: { locale?
   function handleCopy() { navigator.clipboard.writeText(output); }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-2">
         <button onClick={() => { setMode("encode"); setOutput(""); setError(null); }}
           className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "encode" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>

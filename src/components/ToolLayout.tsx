@@ -201,9 +201,7 @@ export default function ToolLayout({
             {t.howToUse}
           </h2>
           <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400" dir="auto">
-            Enter or paste your content in the input area above. Results update
-            instantly in real-time. All processing happens locally in your browser
-            — your data never leaves your device.
+            {getTranslation(dict, "toolPage.defaultHowToUse") || "Enter or paste your content in the input area above. Results update instantly in real-time. All processing happens locally in your browser — your data never leaves your device."}
           </p>
         </section>
       )}

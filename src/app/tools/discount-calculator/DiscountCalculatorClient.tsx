@@ -16,7 +16,11 @@ const metadata = {
   ],
 };
 
-export default function DiscountCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function DiscountCalculatorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [mode, setMode] = useState<"percent" | "reverse">("percent");
   const [original, setOriginal] = useState("100");
   const [discount, setDiscount] = useState("20");
@@ -55,7 +59,9 @@ export default function DiscountCalculatorClient({ locale = "en", dict }: { loca
   }, [mode, original, discount, salePrice]);
 
   if (!result) return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button onClick={() => setMode("percent")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "percent" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>{dc.percentOff || "% Off"}</button>
         <button onClick={() => setMode("reverse")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "reverse" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>{dc.findDiscountPercent || "Find Discount %"}</button>
@@ -68,7 +74,9 @@ export default function DiscountCalculatorClient({ locale = "en", dict }: { loca
   );
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button onClick={() => setMode("percent")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "percent" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>{dc.percentOff || "% Off"}</button>
         <button onClick={() => setMode("reverse")} className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${mode === "reverse" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"}`}>{dc.findDiscountPercent || "Find Discount %"}</button>

@@ -176,7 +176,11 @@ function md5(string: string): string {
   return rhex(state[0]) + rhex(state[1]) + rhex(state[2]) + rhex(state[3]);
 }
 
-export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function MD5GeneratorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [text, setText] = useState("");
   const md5t = (dict as any)?.md5Generator || {};
 
@@ -195,7 +199,9 @@ export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: s
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {md5t.enterText || "Enter Text to Generate MD5 Hash"}

@@ -38,7 +38,8 @@
     "lightMode": "Switch to light mode",
     "darkMode": "Switch to dark mode",
     "visitorCounter": "You are the {{count}}th person to use this tool",
-    "switchLanguage": "Switch language"
+    "switchLanguage": "Switch language",
+    "defaultHowToUse": "Enter or paste your content in the input area above. Results update instantly in real-time. All processing happens locally in your browser — your data never leaves your device."
   },
   "categories": {
     "text": "Text Tools",

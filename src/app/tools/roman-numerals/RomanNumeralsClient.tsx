@@ -49,7 +49,11 @@ function isValidRoman(s: string): boolean {
   return /^[MDCLXVI]+$/.test(s.toUpperCase()) && fromRoman(s.toUpperCase()) > 0;
 }
 
-export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function RomanNumeralsClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [arabic, setArabic] = useState("");
   const [roman, setRoman] = useState("");
   const rm = (dict as any)?.romanNumerals || {};
@@ -58,7 +62,9 @@ export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: 
   const fromRomanResult = roman && isValidRoman(roman) ? fromRoman(roman.toUpperCase()).toString() : "";
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="space-y-8">
         {/* Arabic to Roman */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">

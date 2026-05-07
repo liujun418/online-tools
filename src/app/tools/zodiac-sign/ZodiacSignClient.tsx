@@ -199,7 +199,11 @@ function getZodiacSign(month: number, day: number) {
   return null;
 }
 
-export default function ZodiacSignClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function ZodiacSignClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
   const zs = (dict as any)?.zodiacSign || {};
@@ -214,7 +218,9 @@ export default function ZodiacSignClient({ locale = "en", dict }: { locale?: str
   }, [month, day]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

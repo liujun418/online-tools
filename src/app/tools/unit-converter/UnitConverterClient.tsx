@@ -67,7 +67,11 @@ function getLocalized(locale: string, key: string, fallback: string): string {
   return unitTranslations[key]?.[locale] || fallback;
 }
 
-export default function UnitConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function UnitConverterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [cat, setCat] = useState("Length");
   const [fromUnit, setFromUnit] = useState("Meter");
   const [toUnit, setToUnit] = useState("Kilometer");
@@ -95,7 +99,9 @@ export default function UnitConverterClient({ locale = "en", dict }: { locale?: 
   const catOptions = Object.keys(unitData).concat("Temperature");
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <select
           value={cat}

@@ -21,7 +21,11 @@ function generateUUID(): string {
   return crypto.randomUUID();
 }
 
-export default function UuidGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function UuidGeneratorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [count, setCount] = useState(5);
   const [uuids, setUuids] = useState<string[]>([]);
   const ug = (dict as any)?.uuidGenerator || {};
@@ -40,7 +44,9 @@ export default function UuidGeneratorClient({ locale = "en", dict }: { locale?: 
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {ug.numberOfUuids || "Number of UUIDs:"}

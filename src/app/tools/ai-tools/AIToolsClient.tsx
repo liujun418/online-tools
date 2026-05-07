@@ -104,7 +104,11 @@ const aiTools: AITool[] = [
   { name: "MagicSchool AI", url: "https://magicschool.ai", description: "AI tools for teachers: lesson plans, rubrics, and assessments.", category: "utilities", pricing: "freemium" },
 ];
 
-export default function AIToolsClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function AIToolsClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [search, setSearch] = useState("");
   const at = (dict as any)?.aiTools || {};
@@ -127,7 +131,9 @@ export default function AIToolsClient({ locale = "en", dict }: { locale?: string
   }, [activeCategory, search]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
         {at.intro || "Curated directory of the best free AI tools. All tools listed are free to use or offer generous free tiers."}
       </p>

@@ -18,7 +18,11 @@ const metadata = {
   ],
 };
 
-export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function HtmlEntitiesClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [encoded, setEncoded] = useState("");
   const [decoded, setDecoded] = useState("");
@@ -47,7 +51,9 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <textarea
         value={input}
         onChange={(e) => {

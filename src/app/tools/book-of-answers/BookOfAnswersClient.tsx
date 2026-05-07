@@ -36,7 +36,11 @@ function playFlipSound() {
   } catch {}
 }
 
-export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function BookOfAnswersClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [displayText, setDisplayText] = useState("");
@@ -111,7 +115,9 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
   const isTypingComplete = displayText === selectedAnswer && selectedAnswer.length > 0;
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
         {instruction}
       </p>

@@ -48,7 +48,11 @@ function beautifyCss(css: string): string {
   return result.trim();
 }
 
-export default function CssMinifierClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function CssMinifierClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<"minify" | "beautify">("minify");
@@ -68,7 +72,9 @@ export default function CssMinifierClient({ locale = "en", dict }: { locale?: st
   const savings = originalSize > 0 ? (((originalSize - minifiedSize) / originalSize) * 100).toFixed(1) : 0;
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex gap-2">
         <button
           onClick={() => { setMode("minify"); setOutput(""); }}

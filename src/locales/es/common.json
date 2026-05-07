@@ -38,7 +38,8 @@
     "lightMode": "Cambiar a modo claro",
     "darkMode": "Cambiar a modo oscuro",
     "visitorCounter": "Eres la persona número {{count}} en usar esta herramienta",
-    "switchLanguage": "Cambiar idioma"
+    "switchLanguage": "Cambiar idioma",
+    "defaultHowToUse": "Ingresa o pega tu contenido en el campo de entrada de arriba. Los resultados se actualizan instantáneamente. Todo el procesamiento ocurre localmente en tu navegador — tus datos nunca salen de tu dispositivo."
   },
   "categories": {
     "text": "Herramientas de Texto",

@@ -18,7 +18,11 @@ const metadata = {
   ],
 };
 
-export default function CaseConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function CaseConverterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [text, setText] = useState("");
   const cc = (dict as any)?.caseConverter || {};
 
@@ -32,7 +36,9 @@ export default function CaseConverterClient({ locale = "en", dict }: { locale?: 
   ];
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

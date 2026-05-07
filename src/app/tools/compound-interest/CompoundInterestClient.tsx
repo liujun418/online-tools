@@ -16,7 +16,11 @@ const metadata = {
   ],
 };
 
-export default function CompoundInterestClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function CompoundInterestClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [principal, setPrincipal] = useState("10000");
   const [rate, setRate] = useState("7");
   const [years, setYears] = useState("20");
@@ -49,7 +53,9 @@ export default function CompoundInterestClient({ locale = "en", dict }: { locale
   }, [principal, rate, years, monthly, compounds]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
           [ci.initialDeposit || "Initial Deposit ($)", principal, setPrincipal] as const,

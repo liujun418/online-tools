@@ -34,7 +34,11 @@ const tips = (yt: Record<string, string>) => [
   yt.tip7 || "Test your thumbnail at small sizes to ensure readability.",
 ];
 
-export default function YouTubeThumbnailClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function YouTubeThumbnailClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [fileSize, setFileSize] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null);
@@ -67,7 +71,9 @@ export default function YouTubeThumbnailClient({ locale = "en", dict }: { locale
     : false;
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-5">
         {specs(yt).map((spec) => (
           <div

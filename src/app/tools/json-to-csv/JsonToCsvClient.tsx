@@ -34,7 +34,11 @@ function jsonToCsv(json: string): string {
   ].join("\n");
 }
 
-export default function JsonToCsvClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function JsonToCsvClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -65,7 +69,9 @@ export default function JsonToCsvClient({ locale = "en", dict }: { locale?: stri
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <textarea
         value={input}
         onChange={(e) => {

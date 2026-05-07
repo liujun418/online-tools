@@ -37,7 +37,11 @@ const hashtagDB: Record<string, string[]> = {
   motivation: ["#motivation", "#motivational", "#inspiration", "#motivationalquotes", "#success", "#mindset", "#goals", "#hustle", "#entrepreneur", "#positivity", "#determination", "#nevergiveup", "#believe", "#dream", "#workhard", "#grind", "#ambition", "#discipline", "#growth", "#selfimprovement"],
 };
 
-export default function HashtagGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function HashtagGeneratorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [count, setCount] = useState(20);
   const [copied, setCopied] = useState(false);
@@ -103,7 +107,9 @@ export default function HashtagGeneratorClient({ locale = "en", dict }: { locale
   }
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {ht.enterTopic || "Enter Your Topic or Keyword"}

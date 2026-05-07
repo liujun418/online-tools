@@ -17,7 +17,11 @@ const metadata = {
   ],
 };
 
-export default function MortgageCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function MortgageCalculatorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [price, setPrice] = useState("300000");
   const [down, setDown] = useState("60000");
   const [rate, setRate] = useState("6.5");
@@ -61,7 +65,9 @@ export default function MortgageCalculatorClient({ locale = "en", dict }: { loca
     : [];
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
           [mc.homePrice || "Home Price ($)", price, setPrice] as const,

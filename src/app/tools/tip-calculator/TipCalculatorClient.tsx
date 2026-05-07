@@ -19,7 +19,11 @@ const metadata = {
 
 const tipPresets = [10, 15, 18, 20, 25];
 
-export default function TipCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function TipCalculatorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [bill, setBill] = useState("50");
   const [tipPercent, setTipPercent] = useState("15");
   const [split, setSplit] = useState("1");
@@ -48,7 +52,9 @@ export default function TipCalculatorClient({ locale = "en", dict }: { locale?: 
   }, [bill, tipPercent, split]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

@@ -17,7 +17,11 @@ const metadata = {
   ],
 };
 
-export default function RandomNumberClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function RandomNumberClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [min, setMin] = useState("1");
   const [max, setMax] = useState("100");
   const [count, setCount] = useState(1);
@@ -52,7 +56,9 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
   }, [min, max, count, decimals, allowDuplicates, sortResult]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">

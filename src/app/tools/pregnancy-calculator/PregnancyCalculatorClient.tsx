@@ -16,7 +16,11 @@ const metadata = {
   ],
 };
 
-export default function PregnancyCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function PregnancyCalculatorClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [lmp, setLmp] = useState("");
   const pg = (dict as any)?.pregnancyCalculator || {};
 
@@ -73,7 +77,9 @@ export default function PregnancyCalculatorClient({ locale = "en", dict }: { loc
   }, [lmp]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {pg.lmpLabel || "First Day of Last Menstrual Period (LMP)"}

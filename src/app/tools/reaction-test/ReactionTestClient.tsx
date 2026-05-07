@@ -19,7 +19,11 @@ const metadata = {
 
 type Phase = "idle" | "waiting" | "ready" | "clicked" | "too-early";
 
-export default function ReactionTestClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function ReactionTestClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [reactionTime, setReactionTime] = useState<number | null>(null);
   const [attempts, setAttempts] = useState<number[]>([]);
@@ -132,7 +136,9 @@ export default function ReactionTestClient({ locale = "en", dict }: { locale?: s
   }, [phase, attempts]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
         {instructionText}
       </p>

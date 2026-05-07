@@ -65,7 +65,11 @@ function rgbToHex(r: number, g: number, b: number): string {
   return "#" + [r, g, b].map((c) => c.toString(16).padStart(2, "0")).join("");
 }
 
-export default function ColorConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function ColorConverterClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [hex, setHex] = useState("#3B82F6");
   const cc = (dict as any)?.colorConverter || {};
 
@@ -73,7 +77,9 @@ export default function ColorConverterClient({ locale = "en", dict }: { locale?:
   const hsl = rgbToHsl(...rgb);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <input
           type="color"

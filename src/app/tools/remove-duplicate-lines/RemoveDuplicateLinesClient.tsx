@@ -17,7 +17,11 @@ const metadata = {
   ],
 };
 
-export default function RemoveDuplicateLinesClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+export default function RemoveDuplicateLinesClient({ locale = "en", dict, titleOverride, descriptionOverride }: {
+  locale?: string; dict?: Record<string, unknown>;
+  titleOverride?: string;
+  descriptionOverride?: string;
+} = {}) {
   const [input, setInput] = useState("");
   const [trimLines, setTrimLines] = useState(true);
   const [ignoreCase, setIgnoreCase] = useState(false);
@@ -46,7 +50,9 @@ export default function RemoveDuplicateLinesClient({ locale = "en", dict }: { lo
   }, [input, trimLines, ignoreCase]);
 
   return (
-    <ToolLayout {...metadata} locale={locale as any} dict={dict}>
+    <ToolLayout {...metadata}
+        title={titleOverride || metadata.title}
+        description={descriptionOverride || metadata.description} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
         <label className="flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <input
