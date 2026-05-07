@@ -55,7 +55,58 @@ export const tools: Tool[] = [
       { question: "Is my text data stored or sent anywhere?", answer: "No. All text processing happens locally in your browser. Your text is never sent to any server or stored anywhere. Your privacy is fully protected." },
       { question: "Can I use this word counter for academic essays?", answer: "Absolutely. This tool is perfect for academic writing. It provides accurate word counts that match what most word processors like Microsoft Word and Google Docs report. It's ideal for checking essay word limits, abstract lengths, and dissertation chapter counts." },
       { question: "What is the average reading speed this tool uses?", answer: "The reading time estimate is based on an average reading speed of 200-250 words per minute for English text. The speaking time estimate uses approximately 130 words per minute, which is the average speaking pace." }
-,      { question: "How accurate is this word counter?", answer: "Our word counter provides real-time accurate counts. It handles special characters, hyphenated words, and multiple spaces correctly. The count updates instantly as you type or paste text." }     ]
+,      { question: "How accurate is this word counter?", answer: "Our word counter provides real-time accurate counts. It handles special characters, hyphenated words, and multiple spaces correctly. The count updates instantly as you type or paste text." }
+    ],
+    nameTranslations: {
+      es: "Contador de Palabras",
+      ar: "عداد الكلمات",
+    },
+    descriptionTranslations: {
+      es: "Cuenta palabras, caracteres, oraciones y párrafos en tu texto en tiempo real.",
+      ar: "عد الكلمات والأحرف والجمل والفقرات في نصك في الوقت الفعلي.",
+    },
+    seoTitleTranslations: {
+      es: "Contador de Palabras Gratis Online - Cuenta Palabras, Caracteres y Oraciones 2026",
+      ar: "عداد كلمات مجاني عبر الإنترنت - عد الكلمات والأحرف والجمل 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Cuenta palabras, caracteres, oraciones y párrafos en tiempo real. Contador de palabras online gratuito con estimaciones de tiempo de lectura y habla. Perfecto para ensayos, publicaciones de blog y redes sociales. Sin registro.",
+      ar: "عد الكلمات والأحرف والجمل والفقرات في الوقت الفعلي. عداد كلمات مجاني عبر الإنترنت مع تقديرات وقت القراءة والكلام. مثالي للمقالات ومنشورات المدونات ووسائل التواصل الاجتماعي. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega o escribe tu texto en el campo de entrada.",
+        "Visualiza al instante el conteo de palabras, caracteres, oraciones y párrafos.",
+        "Consulta el tiempo estimado de lectura y habla para tu contenido.",
+        "Usa las estadísticas para asegurar que tu texto cumple con los límites de palabras para ensayos, artículos o publicaciones en redes sociales.",
+        "Copia o exporta tu texto cuando estés satisfecho con el conteo.",
+      ],
+      ar: [
+        "الصق أو اكتب نصك في حقل الإدخال أعلاه.",
+        "اعرض عدد الكلمات والأحرف والجمل والفقرات فوراً.",
+        "تحقق من وقت القراءة ووقت الكلام التقديري لمحتواك.",
+        "استخدم الإحصائيات للتأكد من أن نصك يحدود الكلمات للمقالات أو المنشورات أو وسائل التواصل الاجتماعي.",
+        "انسخ أو صدر نصك عندما تكون راضياً عن العدد.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo funciona este contador de palabras?", answer: "El contador de palabras analiza tu texto en tiempo real mientras escribes o pegas. Cuenta palabras detectando espacios entre palabras, caracteres incluyendo o excluyendo espacios, oraciones identificando signos de puntuación y párrafos detectando saltos de línea. Todo el procesamiento ocurre instantáneamente en tu navegador." },
+        { question: "¿Este contador de palabras cuenta espacios y puntuación?", answer: "Sí. El conteo de caracteres incluye tanto espacios como puntuación. También puedes ver el conteo de caracteres sin espacios, lo cual es útil para plataformas con límites específicos de caracteres." },
+        { question: "¿Mis datos de texto se almacenan o envían a algún lugar?", answer: "No. Todo el procesamiento de texto ocurre localmente en tu navegador. Tu texto nunca se envía a ningún servidor ni se almacena en ningún lugar. Tu privacidad está completamente protegida." },
+        { question: "¿Puedo usar este contador de palabras para ensayos académicos?", answer: "Absolutamente. Esta herramienta es perfecta para escritura académica. Proporciona conteos de palabras precisos que coinciden con lo que reportan procesadores de texto como Microsoft Word y Google Docs. Es ideal para verificar límites de palabras de ensayos, resúmenes y conteos de capítulos de tesis." },
+        { question: "¿Cuál es la velocidad promedio de lectura que usa esta herramienta?", answer: "La estimación de tiempo de lectura se basa en una velocidad promedio de lectura de 200-250 palabras por minuto para texto en inglés. La estimación de tiempo de habla usa aproximadamente 130 palabras por minuto, que es el ritmo promedio de habla." },
+        { question: "¿Qué tan preciso es este contador de palabras?", answer: "Nuestro contador de palabras proporciona conteos precisos en tiempo real. Maneja correctamente caracteres especiales, palabras con guiones y múltiples espacios. El conteo se actualiza instantáneamente mientras escribes o pegas texto." },
+      ],
+      ar: [
+        { question: "كيف يعمل عداد الكلمات هذا؟", answer: "يحلل عداد الكلمات نصك في الوقت الفعلي أثناء الكتابة أو اللصق. يعد الكلمات عن طريق اكتشاف المسافات بينها، والأحرف بما في ذلك أو باستثناء المسافات، والجمل عن طريق تحديد علامات الترقيم، والفقرات عن طريق اكتشاف فواصل الأسطر. تتم جميع العمليات فوراً في متصفحك." },
+        { question: "هل يعد عداد الكلمات هذا المسافات وعلامات الترقيم؟", answer: "نعم. يشمل عدد الأحرف كلاً من المسافات وعلامات الترقيم. يمكنك أيضاً رؤية عدد الأحرف بدون مسافات، وهو مفيد للمنصات التي لديها حدود محددة للأحرف." },
+        { question: "هل يتم تخزين بيانات نصي أو إرسالها إلى أي مكان؟", answer: "لا. تتم جميع عمليات معالجة النص محلياً في متصفحك. لا يتم إرسال نصك أبداً إلى أي خادم أو تخزينه في أي مكان. خصوصيتك محمية بالكامل." },
+        { question: "هل يمكنني استخدام عداد الكلمات هذا للمقالات الأكاديمية؟", answer: "بالتأكيد. هذه الأداة مثالية للكتابة الأكاديمية. توفر أعداد كلمات دقيقة تطابق ما تبلغ عنه معالجات النصوص مثل Microsoft Word وGoogle Docs. مثالية للتحقق من حدود كلمات المقالات والملخصات وأعداد فصول الأطروحات." },
+        { question: "ما هي سرعة القراءة المتوسطة التي تستخدمها هذه الأداة؟", answer: "يستند تقدير وقت القراءة إلى سرعة قراءة متوسطة تبلغ 200-250 كلمة في الدقيقة للنص الإنجليزي. يستخدم تقدير وقت الكلام حوالي 130 كلمة في الدقيقة، وهو متوسط سرعة الكلام." },
+        { question: "ما مدى دقة عداد الكلمات هذا؟", answer: "يوفر عداد الكلمات لدينا أعداداً دقيقة في الوقت الفعلي. يتعامل بشكل صحيح مع الأحرف الخاصة والكلمات ذات الشرطات والمسافات المتعددة. يتحدث العدد فوراً أثناء الكتابة أو لصق النص." },
+      ],
+    },
   },
   {
     id: "case-converter",
@@ -84,7 +135,54 @@ export const tools: Tool[] = [
       { question: "What is sentence case?", answer: "Sentence case capitalizes only the first letter of each sentence, leaving the rest lowercase. This is the standard format for body text, paragraphs, and most writing." },
       { question: "Does this tool work with multiple paragraphs?", answer: "Yes. You can paste text with multiple paragraphs, and each case conversion mode will properly handle all paragraphs in your text." },
       { question: "Is my text sent to any server?", answer: "No. All text conversion happens locally in your browser. Your text never leaves your device." }
-,      { question: "What is the difference between title case and sentence case?", answer: "Title case capitalizes the first letter of each major word (e.g., 'The Quick Brown Fox'), while sentence case only capitalizes the first letter of the sentence and proper nouns (e.g., 'The quick brown fox')." }     ]
+,      { question: "What is the difference between title case and sentence case?", answer: "Title case capitalizes the first letter of each major word (e.g., 'The Quick Brown Fox'), while sentence case only capitalizes the first letter of the sentence and proper nouns (e.g., 'The quick brown fox')." }
+    ],
+    nameTranslations: {
+      es: "Conversor de Mayúsculas y Minúsculas",
+      ar: "محول حالة النص",
+    },
+    descriptionTranslations: {
+      es: "Convierte texto a mayúsculas, minúsculas, tipo título o tipo oración al instante.",
+      ar: "حول النص إلى أحرف كبيرة أو صغيرة أو حالة العنوان أو حالة الجملة فوراً.",
+    },
+    seoTitleTranslations: {
+      es: "Conversor de Mayúsculas y Minúsculas Gratis Online - Mayúsculas, Minúsculas, Título 2026",
+      ar: "محول حالة النص مجاني عبر الإنترنت - أحرف كبيرة وصغيرة وعنوان 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte texto a mayúsculas, minúsculas, tipo título, tipo oración o tipo alternante al instante. Conversor de texto online gratuito. Sin registro.",
+      ar: "حول النص إلى أحرف كبيرة أو صغيرة أو حالة العنوان أو حالة الجملة أو حالة متبادلة فوراً. محول نص مجاني عبر الإنترنت. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega o escribe tu texto en el campo de entrada.",
+        "Haz clic en el botón deseado: MAYÚSCULAS, minúsculas, Tipo Título o Tipo oración.",
+        "Visualiza el texto convertido aparecer instantáneamente en el panel de salida.",
+        "Copia el resultado a tu portapapeles con un clic.",
+      ],
+      ar: [
+        "الصق أو اكتب نصك في حقل الإدخال أعلاه.",
+        "انقر على زر الحالة المطلوب: أحرف كبيرة، صغيرة، حالة العنوان، أو حالة الجملة.",
+        "اعرض النص المحول يظهر فوراً في لوحة الإخراج.",
+        "انسخ النتيجة إلى الحافظة بنقرة واحدة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es el tipo título?", answer: "El tipo título capitaliza la primera letra de cada palabra importante en un texto. Se usa comúnmente para titulares, títulos de libros y encabezados de artículos. Las palabras menores como 'un', 'una', 'el', 'en', 'de' normalmente se dejan en minúsculas." },
+        { question: "¿Qué es el tipo oración?", answer: "El tipo oración capitaliza solo la primera letra de cada oración, dejando el resto en minúsculas. Este es el formato estándar para texto corporal, párrafos y la mayoría de la escritura." },
+        { question: "¿Esta herramienta funciona con múltiples párrafos?", answer: "Sí. Puedes pegar texto con múltiples párrafos y cada modo de conversión manejará correctamente todos los párrafos en tu texto." },
+        { question: "¿Mi texto se envía a algún servidor?", answer: "No. Toda la conversión de texto ocurre localmente en tu navegador. Tu texto nunca sale de tu dispositivo." },
+        { question: "¿Cuál es la diferencia entre tipo título y tipo oración?", answer: "El tipo título capitaliza la primera letra de cada palabra importante (por ejemplo, 'El Rápido Zorro Marrón'), mientras que el tipo oración solo capitaliza la primera letra de la oración y los nombres propios (por ejemplo, 'El rápido zorro marrón')." },
+      ],
+      ar: [
+        { question: "ما هي حالة العنوان؟", answer: "حالة العنوان تجعل الحرف الأول من كل كلمة رئيسية كبيراً في النص. تُستخدم عادةً للعناوين الرئيسية وعناوين الكتب ورؤوس المقالات. الكلمات الصغيرة مثل أدوات التعريف والتنكير تُترك عادةً بأحرف صغيرة." },
+        { question: "ما هي حالة الجملة؟", answer: "حالة الجملة تجعل الحرف الأول من كل جملة كبيراً فقط، وتبقي الباقي بأحرف صغيرة. هذا هو التنسيق القياسي للنص الأساسي والفقرات ومعظم أنواع الكتابة." },
+        { question: "هل تعمل هذه الأداة مع فقرات متعددة؟", answer: "نعم. يمكنك لصق نص يحتوي على فقرات متعددة، وسيتم التعامل مع جميع الفقرات بشكل صحيح في كل وضع تحويل." },
+        { question: "هل يتم إرسال نصي إلى أي خادم؟", answer: "لا. يتم كل تحويل النص محلياً في متصفحك. نصك لا يغادر جهازك أبداً." },
+        { question: "ما الفرق بين حالة العنوان وحالة الجملة؟", answer: "حالة العنوان تجعل الحرف الأول من كل كلمة رئيسية كبيراً (مثال: 'الثعلب البني السريع')، بينما حالة الجملة تجعل الحرف الأول من الجملة والأسماء العلمية فقط كبيرة (مثال: 'الثعلب البني السريع')." },
+      ],
+    },
   },
   {
     id: "lorem-ipsum",
@@ -114,7 +212,54 @@ export const tools: Tool[] = [
       { question: "Can I choose how many paragraphs to generate?", answer: "Yes. You can specify the exact number of paragraphs, sentences, or words you need. This lets you generate precisely the amount of placeholder text your design requires." },
       { question: "Is Lorem Ipsum text free to use?", answer: "Yes. Lorem Ipsum is in the public domain and completely free to use for any purpose, including commercial projects." },
       { question: "Why not just use real text as a placeholder?", answer: "Real text can distract viewers from evaluating the design itself. Lorem Ipsum provides realistic-looking text without meaningful content, keeping the focus on layout, typography, and visual design." }
-,      { question: "What is Lorem Ipsum and why do designers use it?", answer: "Lorem Ipsum is scrambled Latin text used as placeholder content in design mockups, wireframes, and layouts. Designers use it because it has a normal distribution of letters, making it look like real text without distracting from the visual design." }     ]
+,      { question: "What is Lorem Ipsum and why do designers use it?", answer: "Lorem Ipsum is scrambled Latin text used as placeholder content in design mockups, wireframes, and layouts. Designers use it because it has a normal distribution of letters, making it look like real text without distracting from the visual design." }
+    ],
+    nameTranslations: {
+      es: "Generador de Lorem Ipsum",
+      ar: "مولد لوريم إيبسوم",
+    },
+    descriptionTranslations: {
+      es: "Genera texto de marcador de posición para tus diseños, maquetas y wireframes.",
+      ar: "أنشئ نصاً نائباً لتصاميمك ونماذجك الأولية وإطاراتك السلكية.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Lorem Ipsum Gratis Online - Texto de Marcador de Posición 2026",
+      ar: "مولد لوريم إيبسوم مجاني عبر الإنترنت - نص نائب 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera texto de marcador de posición Lorem Ipsum personalizable para tus diseños, maquetas y wireframes. Elige párrafos, oraciones o palabras. Generador Lorem Ipsum online gratuito.",
+      ar: "أنشئ نص لوريم إيبسوم نائب قابل للتخصيص لتصاميمك ونماذجك الأولية وإطاراتك السلكية. اختر فقرات أو جمل أو كلمات. مولد لوريم إيبسوم مجاني عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Selecciona el tipo de contenido que necesitas: párrafos, oraciones o palabras.",
+        "Elige la cantidad de unidades que deseas generar.",
+        "Haz clic en 'Generar' para crear tu texto de marcador de posición Lorem Ipsum.",
+        "Copia el texto generado y pégalo en tu diseño, maqueta o wireframe.",
+      ],
+      ar: [
+        "اختر نوع المحتوى الذي تحتاجه: فقرات أو جمل أو كلمات.",
+        "اختر عدد الوحدات التي تريد إنشاؤها.",
+        "انقر على 'إنشاء' لتوليد نص لوريم إيبسوم النائب.",
+        "انسخ النص المنشأ والصقه في تصميمك أو نموذجك الأولي أو إطارك السلكي.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es Lorem Ipsum?", answer: "Lorem Ipsum es texto de marcador de posición estándar utilizado en las industrias de diseño y publicación. Deriva de un texto latino de Cicerón del año 45 a.C. Se utiliza para rellenar diseños para que los clientes puedan enfocarse en el diseño en lugar del contenido." },
+        { question: "¿Puedo elegir cuántos párrafos generar?", answer: "Sí. Puedes especificar el número exacto de párrafos, oraciones o palabras que necesitas. Esto te permite generar exactamente la cantidad de texto de marcador de posición que tu diseño requiere." },
+        { question: "¿El texto Lorem Ipsum es de uso gratuito?", answer: "Sí. Lorem Ipsum es de dominio público y completamente gratuito para usar en cualquier propósito, incluyendo proyectos comerciales." },
+        { question: "¿Por qué no usar simplemente texto real como marcador de posición?", answer: "El texto real puede distraer a los espectadores de evaluar el diseño en sí mismo. Lorem Ipsum proporciona texto con apariencia realista sin contenido significativo, manteniendo el enfoque en el diseño, la tipografía y el aspecto visual." },
+        { question: "¿Qué es Lorem Ipsum y por qué los diseñadores lo usan?", answer: "Lorem Ipsum es texto latino reorganizado utilizado como contenido de marcador de posición en maquetas de diseño, wireframes y diseños. Los diseñadores lo usan porque tiene una distribución normal de letras, lo que hace que parezca texto real sin distraer del diseño visual." },
+      ],
+      ar: [
+        { question: "ما هو لوريم إيبسوم؟", answer: "لوريم إيبسوم هو نص نائب قياسي يُستخدم في صناعات التصميم والنشر. مشتق من نص لاتيني لشيشرون من عام 45 قبل الميلاد. يُستخدم لملء التصاميم حتى يتمكن العملاء من التركيز على التصميم بدلاً من المحتوى." },
+        { question: "هل يمكنني اختيار عدد الفقرات التي سيتم إنشاؤها؟", answer: "نعم. يمكنك تحديد العدد الدقيق من الفقرات أو الجمل أو الكلمات التي تحتاجها. يتيح لك ذلك إنشاء الكمية الدقيقة من النص النائب الذي يحتاجه تصميمك." },
+        { question: "هل نص لوريم إيبسوم مجاني الاستخدام؟", answer: "نعم. لوريم إيبسوم في المجال العام ومجاني بالكامل للاستخدام لأي غرض، بما في ذلك المشاريع التجارية." },
+        { question: "لماذا لا نستخدم نصاً حقيقياً كنص نائب؟", answer: "النص الحقيقي يمكن أن يشتت انتباه المشاهدين عن تقييم التصميم نفسه. يوفر لوريم إيبسوم نصاً يبدو واقعياً بدون محتوى ذي معنى، مما يبقي التركيز على التخطيط والخطوط والتصميم البصري." },
+        { question: "ما هو لوريم إيبسوم ولماذا يستخدمه المصممون؟", answer: "لوريم إيبسوم هو نص لاتيني مُعاد ترتيبه يُستخدم كمحتوى نائب في نماذج التصميم الأولية والإطارات السلكية والتخطيطات. يستخدمه المصممون لأنه يحتوي على توزيع طبيعي للحروف مما يجعله يبدو كنص حقيقي دون تشتيت الانتباه عن التصميم البصري." },
+      ],
+    },
   },
   {
     id: "text-to-slug",
@@ -143,7 +288,54 @@ export const tools: Tool[] = [
       { question: "Why are slugs important for SEO?", answer: "Clean, descriptive slugs help search engines understand what your page is about. They also make URLs more readable and clickable for users, which can improve click-through rates." },
       { question: "What characters are removed from slugs?", answer: "Special characters, punctuation marks, and non-alphanumeric symbols are stripped out. Spaces are replaced with hyphens, and all letters are converted to lowercase for URL compatibility." },
       { question: "Can I customize the slug separator?", answer: "This tool uses hyphens as the standard separator, which is the most common convention. If you need underscores or another separator, you can do a find-and-replace after generating the slug." }
-,      { question: "What characters does this slugifier remove?", answer: "This tool removes all special characters, converts spaces to hyphens, lowercases everything, and strips leading/trailing hyphens. It supports Unicode characters and can transliterate accented letters to their ASCII equivalents." }     ]
+,      { question: "What characters does this slugifier remove?", answer: "This tool removes all special characters, converts spaces to hyphens, lowercases everything, and strips leading/trailing hyphens. It supports Unicode characters and can transliterate accented letters to their ASCII equivalents." }
+    ],
+    nameTranslations: {
+      es: "Texto a Slug",
+      ar: "تحويل النص إلى سلاغ",
+    },
+    descriptionTranslations: {
+      es: "Convierte cualquier texto en una cadena slug amigable para URLs limpias.",
+      ar: "حول أي نص إلى سلسلة سلاغ صديقة لعناوين URLs نظيفة.",
+    },
+    seoTitleTranslations: {
+      es: "Conversor de Texto a Slug Gratis Online - Generador de Slug URL 2026",
+      ar: "محول النص إلى سلاغ مجاني عبر الإنترنت - مولد سلاغ عنوان URL 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte cualquier texto o título en una cadena slug limpia y amigable para URLs. Elimina caracteres especiales, convierte a minúsculas y separa con guiones automáticamente. Generador de slug online gratuito.",
+      ar: "حول أي نص أو عنوان إلى سلسلة سلاغ نظيفة وصديقة لعناوين URLs. أزل الأحرف الخاصة وحول إلى أحرف صغيرة واستبدل بشرطات تلقائياً. مولد سلاغ مجاني عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu texto, título o encabezado en el campo de entrada.",
+        "Visualiza el slug amigable para URL generado instantáneamente abajo.",
+        "Copia el slug para usarlo en tu CMS, URL de blog o configuración de enrutamiento.",
+        "La herramienta elimina automáticamente caracteres especiales, convierte letras a minúsculas y reemplaza espacios con guiones.",
+      ],
+      ar: [
+        "أدخل نصك أو عنوانك أو رأسك في حقل الإدخال.",
+        "اعرض السلاغ الصديق لعناوين URL المُنشأ فوراً أدناه.",
+        "انسخ السلاغ لاستخدامه في نظام إدارة المحتوى أو عنوان المدونة أو إعدادات التوجيه.",
+        "تزيل الأداة تلقائياً الأحرف الخاصة وتحول الأحرف إلى صغيرة وتستبدل المسافات بشرطات.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es un slug de URL?", answer: "Un slug de URL es la parte de una URL que identifica una página específica de forma legible para humanos. Por ejemplo, en 'ejemplo.com/blog/mi-primera-publicacion', 'mi-primera-publicacion' es el slug." },
+        { question: "¿Por qué son importantes los slugs para SEO?", answer: "Los slugs limpios y descriptivos ayudan a los motores de búsqueda a entender de qué trata tu página. También hacen que las URLs sean más legibles y clicables para los usuarios, lo que puede mejorar las tasas de clics." },
+        { question: "¿Qué caracteres se eliminan de los slugs?", answer: "Se eliminan caracteres especiales, signos de puntuación y símbolos no alfanuméricos. Los espacios se reemplazan con guiones y todas las letras se convierten a minúsculas para compatibilidad con URLs." },
+        { question: "¿Puedo personalizar el separador del slug?", answer: "Esta herramienta usa guiones como separador estándar, que es la convención más común. Si necesitas guiones bajos u otro separador, puedes hacer un buscar y reemplazar después de generar el slug." },
+        { question: "¿Qué caracteres elimina este generador de slugs?", answer: "Esta herramienta elimina todos los caracteres especiales, convierte espacios en guiones, pasa todo a minúsculas y elimina guiones iniciales y finales. Soporta caracteres Unicode y puede transliterar letras acentuadas a sus equivalentes ASCII." },
+      ],
+      ar: [
+        { question: "ما هو سلاغ عنوان URL؟", answer: "سلاغ عنوان URL هو الجزء من عنوان URL الذي يحدد صفحة معينة بشكل قابل للقراءة البشرية. على سبيل المثال، في 'example.com/blog/my-first-post'، 'my-first-post' هو السلاغ." },
+        { question: "لماذا السلاغ مهمة لتحسين محركات البحث؟", answer: "تساعد السلاغ النظيفة والوصفية محركات البحث على فهم محتوى صفحتك. كما تجعل عناوين URLs أكثر قابلية للقراءة والنقر للمستخدمين مما يمكن أن يحسن معدلات النقر." },
+        { question: "ما الأحرف التي تُزال من السلاغ؟", answer: "تُزال الأحرف الخاصة وعلامات الترقيم والرموز غير الأبجدية الرقمية. تُستبدل المسافات بشرطات وتُحول جميع الأحرف إلى صغيرة لتوافق URLs." },
+        { question: "هل يمكنني تخصيص فاصل السلاغ؟", answer: "تستخدم هذه الأداة الشرطات كفاصل قياسي وهو الاتفاقية الأكثر شيوعاً. إذا كنت تحتاج إلى شرطات سفلية أو فاصل آخر يمكنك إجراء بحث واستبدال بعد إنشاء السلاغ." },
+        { question: "ما الأحرف التي تزيلها أداة إنشاء السلاغ هذه؟", answer: "تزيل هذه الأداة جميع الأحرف الخاصة وتحول المسافات إلى شرطات وتجعل كل شيء بأحرف صغيرة وتزيل الشرطات البادئة واللاحقة. تدعم أحرف Unicode ويمكنها تحويل الحروف المشكولة إلى مكافئاتها ASCII." },
+      ],
+    },
   },
   {
     id: "text-diff",
@@ -172,7 +364,54 @@ export const tools: Tool[] = [
       { question: "Is there a limit to how much text I can compare?", answer: "There's no strict limit. You can compare texts of any length. Very large texts may take a moment to process, but the tool handles documents, code files, and articles efficiently." },
       { question: "Can I use this to compare code files?", answer: "Yes. This tool works great for comparing source code, configuration files, or any text-based content. It highlights exactly what changed between versions." },
       { question: "Is my text data stored anywhere?", answer: "No. All text comparison happens locally in your browser. Neither text is sent to any server or stored." }
-,      { question: "Can this tool compare large texts?", answer: "Yes, our text diff tool can compare large documents. It performs a line-by-line comparison and highlights added, removed, and unchanged lines so you can quickly spot the differences." }     ]
+,      { question: "Can this tool compare large texts?", answer: "Yes, our text diff tool can compare large documents. It performs a line-by-line comparison and highlights added, removed, and unchanged lines so you can quickly spot the differences." }
+    ],
+    nameTranslations: {
+      es: "Comparador de Textos",
+      ar: "أداة مقارنة النصوص",
+    },
+    descriptionTranslations: {
+      es: "Compara dos textos y resalta las diferencias lado a lado.",
+      ar: "قارن بين نصين وأبرز الاختلافات جنباً إلى جنب.",
+    },
+    seoTitleTranslations: {
+      es: "Comparador de Textos Gratis Online - Compara Dos Textos 2026",
+      ar: "أداة مقارنة النصوص مجانية عبر الإنترنت - قارن نصين 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Compara dos textos lado a lado y resalta las diferencias al instante. Encuentra líneas añadidas, eliminadas o modificadas. Herramienta de comparación de textos online gratuita. Sin registro.",
+      ar: "قارن بين نصين جنباً إلى جنب وأبرز الاختلافات فوراً. اعثر على الأسطر المضافة أو المحذوفة أو المعدّلة. أداة مقارنة نصوص مجانية عبر الإنترنت. لا تتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tu texto original en el primer campo de entrada.",
+        "Pega el texto modificado o segundo texto en el segundo campo de entrada.",
+        "Haz clic en 'Comparar' para ver una comparación lado a lado.",
+        "Las líneas añadidas se resaltan en verde, las eliminadas en rojo y las sin cambios permanecen neutrales.",
+      ],
+      ar: [
+        "الصق نصك الأصلي في حقل الإدخال الأول.",
+        "الصق النص المعدّل أو النص الثاني في حقل الإدخال الثاني.",
+        "انقر على 'مقارنة' لرؤية مقارنة جنباً إلى جنب.",
+        "تُبرز الأسطر المضافة باللون الأخضر والمحذوفة بالأحمر وغير المتغيرة تبقى محايدة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo funciona la herramienta de comparación de textos?", answer: "La herramienta compara ambos textos línea por línea y carácter por carácter. Usa un algoritmo de diff para identificar adiciones, eliminaciones y modificaciones entre las dos versiones." },
+        { question: "¿Hay un límite en la cantidad de texto que puedo comparar?", answer: "No hay límite estricto. Puedes comparar textos de cualquier longitud. Los textos muy grandes pueden tardar un momento en procesarse, pero la herramienta maneja documentos, archivos de código y artículos de manera eficiente." },
+        { question: "¿Puedo usar esto para comparar archivos de código?", answer: "Sí. Esta herramienta funciona muy bien para comparar código fuente, archivos de configuración o cualquier contenido basado en texto. Resalta exactamente lo que cambió entre versiones." },
+        { question: "¿Se almacenan mis datos de texto en algún lugar?", answer: "No. Toda la comparación de textos ocurre localmente en tu navegador. Ningún texto se envía a ningún servidor ni se almacena." },
+        { question: "¿Puede esta herramienta comparar textos grandes?", answer: "Sí, nuestra herramienta de comparación de textos puede comparar documentos grandes. Realiza una comparación línea por línea y resalta las líneas añadidas, eliminadas y sin cambios para que puedas identificar rápidamente las diferencias." },
+      ],
+      ar: [
+        { question: "كيف تعمل أداة مقارنة النصوص؟", answer: "تقارن الأداة كلا النصين سطراً بسطر وحرفاً بحرف. تستخدم خوارزمية فرق لتحديد الإضافات والحذف والتعديلات بين النسختين." },
+        { question: "هل هناك حد لكمية النص التي يمكنني مقارنتها؟", answer: "لا يوجد حد صارم. يمكنك مقارنة نصوص بأي طول. النصوص الكبيرة جداً قد تستغرق لحظة للمعالجة لكن الأداة تتعامل مع المستندات وملفات الكود والمقالات بكفاءة." },
+        { question: "هل يمكنني استخدام هذا لمقارنة ملفات الكود؟", answer: "نعم. تعمل هذه الأداة بشكل ممتاز لمقارنة الكود المصدري أو ملفات الإعدادات أو أي محتوى نصي. تبرز بالضبط ما تغيّر بين النسخ." },
+        { question: "هل يتم تخزين بيانات نصي في أي مكان؟", answer: "لا. تتم جميع عمليات مقارنة النصوص محلياً في متصفحك. لا يُرسل أي نص إلى أي خادم أو يُخزّن." },
+        { question: "هل يمكن لهذه الأداة مقارنة النصوص الكبيرة؟", answer: "نعم يمكن لأداة مقارنة النصوص لدينا مقارنة المستندات الكبيرة. تجري مقارنة سطراً بسطر وتُبرز الأسطر المضافة والمحذوفة وغير المتغيرة حتى تتمكن من spotting الاختلافات بسرعة." },
+      ],
+    },
   },
   {
     id: "remove-duplicate-lines",
@@ -201,7 +440,54 @@ export const tools: Tool[] = [
       { question: "What counts as a duplicate line?", answer: "A duplicate line is an exact match — including the same text, spacing, and capitalization. Lines that differ even by a single character or space are treated as unique." },
       { question: "Can I use this to clean up email lists?", answer: "Yes. This is one of the most common use cases. Paste your email list, remove duplicates, and get a clean list ready for your mailing campaign." },
       { question: "Is there a limit to how many lines I can process?", answer: "There's no strict limit. The tool can handle thousands of lines efficiently. Very large files may take a few seconds to process." }
-,      { question: "Does this tool preserve the original order of lines?", answer: "Yes, the deduplication process preserves the original order. It keeps the first occurrence of each line and removes subsequent duplicates, maintaining the sequence of your data." }     ]
+,      { question: "Does this tool preserve the original order of lines?", answer: "Yes, the deduplication process preserves the original order. It keeps the first occurrence of each line and removes subsequent duplicates, maintaining the sequence of your data." }
+    ],
+    nameTranslations: {
+      es: "Eliminar Líneas Duplicadas",
+      ar: "إزالة الأسطر المكررة",
+    },
+    descriptionTranslations: {
+      es: "Elimina líneas duplicadas del texto manteniendo el orden. Limpia tus listas al instante.",
+      ar: "أزل الأسطر المكررة من النص مع الحفاظ على الترتيب. نظّم قوائمك فوراً.",
+    },
+    seoTitleTranslations: {
+      es: "Eliminador de Líneas Duplicadas Gratis Online - Desduplicar Texto 2026",
+      ar: "إزالة الأسطر المكررة مجاناً عبر الإنترنت - إزالة تكرار النص 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Elimina líneas duplicadas de cualquier texto manteniendo el orden original. Limpia listas de correos, palabras clave y datos. Eliminador de duplicados online gratuito.",
+      ar: "أزل الأسطر المكررة من أي نص مع الحفاظ على الترتيب الأصلي. نظّم قوائم البريد الإلكتروني والكلمات الرئيسية والبيانات. أداة إزالة تكرار مجانية عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tu texto con líneas duplicadas en el campo de entrada.",
+        "Haz clic en 'Eliminar Duplicados' para procesar el texto.",
+        "Visualiza el texto limpio con todas las líneas duplicadas eliminadas manteniendo el orden original.",
+        "Copia el resultado y úsalo en tu aplicación, hoja de cálculo o documento.",
+      ],
+      ar: [
+        "الصق نصك الذي يحتوي على أسطر مكررة في حقل الإدخال.",
+        "انقر على 'إزالة التكرار' لمعالجة النص.",
+        "اعرض النص المنظّف مع إزالة جميع الأسطر المكررة مع الحفاظ على الترتيب الأصلي.",
+        "انسخ النتيجة واستخدمها في تطبيقك أو جدول البيانات أو المستند.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Esta herramienta preserva el orden original de las líneas?", answer: "Sí. Las líneas duplicadas se eliminan manteniendo la primera aparición de cada línea en su posición original. Esto preserva el orden lógico de tu lista o texto." },
+        { question: "¿Qué cuenta como una línea duplicada?", answer: "Una línea duplicada es una coincidencia exacta — incluyendo el mismo texto, espaciado y capitalización. Las líneas que difieren aunque sea por un solo carácter o espacio se tratan como únicas." },
+        { question: "¿Puedo usar esto para limpiar listas de correo?", answer: "Sí. Este es uno de los usos más comunes. Pega tu lista de correos, elimina duplicados y obtén una lista limpia lista para tu campaña de correo." },
+        { question: "¿Hay un límite en cuántas líneas puedo procesar?", answer: "No hay límite estricto. La herramienta puede manejar miles de líneas de manera eficiente. Los archivos muy grandes pueden tardar unos segundos en procesarse." },
+        { question: "¿Esta herramienta preserva el orden original de las líneas?", answer: "Sí, el proceso de desduplicación preserva el orden original. Mantiene la primera aparición de cada línea y elimina las duplicadas posteriores, manteniendo la secuencia de tus datos." },
+      ],
+      ar: [
+        { question: "هل تحافظ هذه الأداة على الترتيب الأصلي للأسطر؟", answer: "نعم. تُزال الأسطر المكررة مع الحفاظ على التكرار الأول لكل سطر في موقعه الأصلي. هذا يحافظ على الترتيب المنطقي لقائمتك أو نصك." },
+        { question: "ما الذي يُعتبر سطراً مكرراً؟", answer: "السطر المكرر هو تطابق تام -- بما في ذلك نفس النص والمسافات والأحرف الكبيرة والصغيرة. الأسطر التي تختلف ولو بحرف واحد أو مسافة تُعامل على أنها فريدة." },
+        { question: "هل يمكنني استخدام هذا لتنظيف قوائم البريد الإلكتروني؟", answer: "نعم. هذا من أكثر الاستخدامات شيوعاً. الصق قائمة بريدك الإلكتروني وأزل التكرار واحصل على قائمة نظيفة جاهزة لحملتك البريدية." },
+        { question: "هل هناك حد لعدد الأسطر التي يمكنني معالجتها؟", answer: "لا يوجد حد صارم. يمكن للأداة التعامل مع آلاف الأسطر بكفاءة. الملفات الكبيرة جداً قد تستغرق بضع ثوانٍ للمعالجة." },
+        { question: "هل تحافظ هذه الأداة على الترتيب الأصلي للأسطر؟", answer: "نعم تحافظ عملية إزالة التكرار على الترتيب الأصلي. تحتفظ بالتكرار الأول لكل سطر وتزيل التكرارات اللاحقة مع الحفاظ على تسلسل بياناتك." },
+      ],
+    },
   },
   {
     id: "text-repeater",
@@ -230,7 +516,54 @@ export const tools: Tool[] = [
       { question: "Can I add a separator between repeated text?", answer: "Yes. You can specify any separator — space, comma, newline, or any custom character — to appear between each repetition." },
       { question: "Is there a maximum number of repetitions?", answer: "You can repeat text as many times as you need. Very large numbers of repetitions will produce correspondingly large output." },
       { question: "Does this tool work offline?", answer: "Yes. All text repetition happens locally in your browser. No internet connection is needed after the page loads." }
-,      { question: "How many times can I repeat text?", answer: "You can repeat text up to 10,000 times. You can also add a separator (space, newline, comma, or custom) between repetitions for flexible formatting." }     ]
+,      { question: "How many times can I repeat text?", answer: "You can repeat text up to 10,000 times. You can also add a separator (space, newline, comma, or custom) between repetitions for flexible formatting." }
+    ],
+    nameTranslations: {
+      es: "Repetidor de Texto",
+      ar: "مكرر النص",
+    },
+    descriptionTranslations: {
+      es: "Repite cualquier texto o cadena un número determinado de veces al instante.",
+      ar: "كرر أي نص أو سلسلة عدداً محدداً من المرات فوراً.",
+    },
+    seoTitleTranslations: {
+      es: "Repetidor de Texto Gratis Online - Repetir Texto y Cadenas 2026",
+      ar: "مكرر النص مجاني عبر الإنترنت - تكرار النصوص والسلاسل 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Repite cualquier texto, palabra o cadena un número determinado de veces. Añade separadores entre repeticiones. Repetidor de texto online gratuito. Sin registro.",
+      ar: "كرر أي نص أو كلمة أو سلسلة عدداً محدداً من المرات. أضف فواصل بين التكرارات. مكرر نص مجاني عبر الإنترنت. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa el texto o cadena que deseas repetir en el campo de entrada.",
+        "Establece el número de veces que deseas repetirlo.",
+        "Opcionalmente añade un separador entre repeticiones (como una coma, espacio o salto de línea).",
+        "Haz clic en 'Repetir' para generar la salida y copiarla a tu portapapeles.",
+      ],
+      ar: [
+        "أدخل النص أو السلسلة التي تريد تكرارها في حقل الإدخال.",
+        "حدد عدد المرات التي تريد تكرارها.",
+        "يمكنك اختيارياً إضافة فاصل بين التكرارات (مثل فاصلة أو مسافة أو سطر جديد).",
+        "انقر على 'تكرار' لإنشاء الإخراج ونسخه إلى الحافظة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Por qué necesitaría un repetidor de texto?", answer: "Los repetidores de texto son útiles para generar datos de prueba, crear texto con patrones, rellenar formularios o repetir caracteres para separadores visuales (como líneas punteadas en comentarios)." },
+        { question: "¿Puedo añadir un separador entre texto repetido?", answer: "Sí. Puedes especificar cualquier separador — espacio, coma, salto de línea o cualquier carácter personalizado — para aparecer entre cada repetición." },
+        { question: "¿Hay un número máximo de repeticiones?", answer: "Puedes repetir texto tantas veces como necesites. Números muy grandes de repeticiones producirán una salida proporcionalmente grande." },
+        { question: "¿Esta herramienta funciona sin conexión?", answer: "Sí. Toda la repetición de texto ocurre localmente en tu navegador. No se necesita conexión a internet después de cargar la página." },
+        { question: "¿Cuántas veces puedo repetir texto?", answer: "Puedes repetir texto hasta 10,000 veces. También puedes añadir un separador (espacio, salto de línea, coma o personalizado) entre repeticiones para un formato flexible." },
+      ],
+      ar: [
+        { question: "لماذا أحتاج إلى مكرر نص؟", answer: "مكررات النص مفيدة لإنشاء بيانات الاختبار أو إنشاء نص بنمط معين أو ملء النماذج أو تكرار الأحرف للفواصل البصرية (مثل الخطوط المتقطعة في التعليقات)." },
+        { question: "هل يمكنني إضافة فاصل بين النص المكرر؟", answer: "نعم. يمكنك تحديد أي فاصل -- مسافة أو فاصلة أو سطر جديد أو أي حرف مخصص -- ليظهر بين كل تكرار." },
+        { question: "هل هناك حد أقصى لعدد التكرارات؟", answer: "يمكنك تكرار النص بعدد المرات التي تحتاجها. الأعداد الكبيرة جداً من التكرارات ستنتج إخراجاً كبيراً بشكل متناسب." },
+        { question: "هل تعمل هذه الأداة بدون اتصال؟", answer: "نعم. يتم كل تكرار النص محلياً في متصفحك. لا تحتاج إلى اتصال بالإنترنت بعد تحميل الصفحة." },
+        { question: "كم مرة يمكنني تكرار النص؟", answer: "يمكنك تكرار النص حتى 10000 مرة. يمكنك أيضاً إضافة فاصل (مسافة أو سطر جديد أو فاصلة أو مخصص) بين التكرارات لتنسيق مرن." },
+      ],
+    },
   },
   // Developer Tools
   {
@@ -261,7 +594,56 @@ export const tools: Tool[] = [
       { question: "Is this JSON formatter free to use?", answer: "Yes, this JSON formatter is completely free with no signup required. You can format, minify, and validate unlimited JSON data directly in your browser." },
       { question: "Does this tool validate my JSON?", answer: "Yes. When you paste JSON and click format, the tool will validate the syntax. If there are errors like missing commas, unclosed brackets, or invalid characters, it will alert you to the specific issue." },
       { question: "Is my JSON data sent to any server?", answer: "No. All JSON processing happens locally in your browser. Your data never leaves your device, making it safe to use with sensitive or private JSON data." }
-,      { question: "Can I paste minified JSON from an API response?", answer: "Absolutely. Paste any minified or messy JSON from API responses and it will be instantly formatted with proper indentation and syntax highlighting." }     ]
+,      { question: "Can I paste minified JSON from an API response?", answer: "Absolutely. Paste any minified or messy JSON from API responses and it will be instantly formatted with proper indentation and syntax highlighting." }
+    ],
+    nameTranslations: {
+      es: "Formateador de JSON",
+      ar: "منسق JSON",
+    },
+    descriptionTranslations: {
+      es: "Formatea, minifica y valida datos JSON con resaltado de sintaxis.",
+      ar: "نسّق وصغّر وتحقق من بيانات JSON مع تمييز الصيغة.",
+    },
+    seoTitleTranslations: {
+      es: "Formateador de JSON Gratis Online - Embellecer y Validar JSON 2026",
+      ar: "منسق JSON مجاني عبر الإنترنت - تجميل والتحقق من JSON 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Formatea y embellece JSON con resaltado de sintaxis. Valida, minifica y embellece datos JSON al instante. Formateador JSON online gratuito para desarrolladores. Sin registro.",
+      ar: "نسّق وجمّل JSON مع تمييز الصيغة. تحقق وصغّر وجمّل بيانات JSON فوراً. منسق JSON مجاني عبر الإنترنت للمطورين. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tus datos JSON sin formato o minificados en el campo de entrada.",
+        "Haz clic en 'Formatear' para embellecer el JSON con indentación adecuada, o 'Minificar' para comprimirlo.",
+        "Visualiza la salida formateada con resaltado de sintaxis en el panel de resultados.",
+        "Copia el JSON formateado a tu portapapeles o descárgalo como archivo.",
+        "Si tu JSON es inválido, la herramienta resaltará el error para que puedas corregirlo.",
+      ],
+      ar: [
+        "الصق بيانات JSON الخام أو المصغّرة في حقل الإدخال.",
+        "انقر على 'تنسيق' لتجميل JSON بمسافات بادئة مناسبة أو 'تصغير' لضغطه.",
+        "اعرض الإخراج المنسّق مع تمييز الصيغة في لوحة النتائج.",
+        "انسخ JSON المنسّق إلى الحافظة أو حمّله كملف.",
+        "إذا كان JSON غير صالح ستبرز الأداة الخطأ حتى تتمكن من إصلاحه.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es el formateo de JSON?", answer: "El formateo de JSON (también llamado embellecimiento o pretty printing) es el proceso de convertir JSON minificado o compacto en una estructura legible con indentación y saltos de línea adecuados. Esto facilita mucho la lectura, depuración y comprensión de datos JSON complejos." },
+        { question: "¿Este formateador de JSON es gratuito?", answer: "Sí, este formateador de JSON es completamente gratuito sin registro requerido. Puedes formatear, minificar y validar datos JSON ilimitados directamente en tu navegador." },
+        { question: "¿Esta herramienta valida mi JSON?", answer: "Sí. Cuando pegas JSON y haces clic en formatear, la herramienta valida la sintaxis. Si hay errores como comas faltantes, corchetes sin cerrar o caracteres inválidos, te alertará sobre el problema específico." },
+        { question: "¿Mis datos JSON se envían a algún servidor?", answer: "No. Todo el procesamiento de JSON ocurre localmente en tu navegador. Tus datos nunca salen de tu dispositivo, lo que lo hace seguro para usar con datos JSON sensibles o privados." },
+        { question: "¿Puedo pegar JSON minificado de una respuesta de API?", answer: "Absolutamente. Pega cualquier JSON minificado o desordenado de respuestas de API y se formateará instantáneamente con indentación adecuada y resaltado de sintaxis." },
+      ],
+      ar: [
+        { question: "ما هو تنسيق JSON؟", answer: "تنسيق JSON (يُسمى أيضاً التجميل أو الطباعة الجميلة) هو عملية تحويل JSON المصغّر أو المضغوط إلى بنية قابلة للقراءة مع مسافات بادئة وفواصل أسطر مناسبة. هذا يسهل بشكل كبير القراءة وتصحيح الأخطاء وفهم بيانات JSON المعقدة." },
+        { question: "هل منسق JSON هذا مجاني الاستخدام؟", answer: "نعم منسق JSON هذا مجاني بالكامل ولا يتطلب تسجيل. يمكنك تنسيق وتصغير والتحقق من بيانات JSON غير محدودة مباشرة في متصفحك." },
+        { question: "هل تتحقق هذه الأداة من JSON الخاص بي؟", answer: "نعم. عند لصق JSON والنقر على تنسيق تتحقق الأداة من الصيغة. إذا كانت هناك أخطاء مثل فواصل مفقودة أو أقواس غير مغلقة أو أحرف غير صالحة فستنبهك إلى المشكلة المحددة." },
+        { question: "هل يتم إرسال بيانات JSON الخاصة بي إلى أي خادم؟", answer: "لا. تتم جميع عمليات معالجة JSON محلياً في متصفحك. بياناتك لا تغادر جهازك أبداً مما يجعله آمناً للاستخدام مع بيانات JSON الحساسة أو الخاصة." },
+        { question: "هل يمكنني لصق JSON مصغّر من استجابة API؟", answer: "بالتأكيد. الصق أي JSON مصغّر أو فوضوي من استجابات API وسيتم تنسيقه فوراً مع مسافات بادئة مناسبة وتمييز الصيغة." },
+      ],
+    },
   },
   {
     id: "base64-converter",
@@ -289,7 +671,54 @@ export const tools: Tool[] = [
       { question: "How do I decode a Base64 string?", answer: "Simply select the 'Decode' mode, paste your Base64 string into the input field, and the decoded text will appear instantly in the output panel. The tool handles multi-line Base64 strings automatically." },
       { question: "Is there a limit to how much text I can encode?", answer: "There is no practical limit. You can encode or decode text of any length directly in your browser. Processing speed depends on your device's capabilities." },
       { question: "Is my data secure when using this tool?", answer: "Yes. All encoding and decoding happens locally in your browser. No data is sent to any server, ensuring your information remains private." }
-,      { question: "What is Base64 encoding used for?", answer: "Base64 encoding converts binary data into ASCII text format. It is commonly used in data URLs, email attachments (MIME), encoding images in CSS/HTML, and safely transmitting binary data in text-based protocols." }     ]
+,      { question: "What is Base64 encoding used for?", answer: "Base64 encoding converts binary data into ASCII text format. It is commonly used in data URLs, email attachments (MIME), encoding images in CSS/HTML, and safely transmitting binary data in text-based protocols." }
+    ],
+    nameTranslations: {
+      es: "Codificador/Decodificador Base64",
+      ar: "مشفر/فك تشفير Base64",
+    },
+    descriptionTranslations: {
+      es: "Codifica y decodifica texto desde y hacia formato Base64 al instante.",
+      ar: "شفّر وفك تشفير النص من وإلى تنسيق Base64 فوراً.",
+    },
+    seoTitleTranslations: {
+      es: "Conversor Base64 Gratis Online - Codificar y Decodificar Base64 2026",
+      ar: "محول Base64 مجاني عبر الإنترنت - تشفير وفك Base64 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Codifica texto a Base64 o decodifica cadenas Base64 de vuelta a texto legible. Conversor Base64 online rápido y gratuito sin límites de longitud. Sin registro.",
+      ar: "شفّر النص إلى Base64 أو فك تشفير سلاسل Base64 إلى نص مقروء. محول Base64 سريع ومجاني عبر الإنترنت بدون حدود للطول. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Selecciona 'Codificar' para convertir texto a Base64, o 'Decodificar' para convertir Base64 de vuelta a texto.",
+        "Pega tu texto o cadena Base64 en el campo de entrada.",
+        "Visualiza el resultado convertido instantáneamente en el panel de salida.",
+        "Copia el resultado a tu portapapeles con un clic.",
+      ],
+      ar: [
+        "اختر 'تشفير' لتحويل النص إلى Base64 أو 'فك التشفير' لتحويل Base64 إلى نص.",
+        "الصق نصك أو سلسلة Base64 في حقل الإدخال.",
+        "اعرض النتيجة المحوّلة فوراً في لوحة الإخراج.",
+        "انسخ النتيجة إلى الحافظة بنقرة واحدة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es la codificación Base64?", answer: "Base64 es un método para codificar datos binarios en caracteres de texto ASCII. Se usa comúnmente para incrustar imágenes en HTML/CSS, codificar adjuntos de correo electrónico y transmitir de forma segura datos binarios sobre protocolos basados en texto como HTTP y JSON." },
+        { question: "¿Cómo decodifico una cadena Base64?", answer: "Simplemente selecciona el modo 'Decodificar', pega tu cadena Base64 en el campo de entrada y el texto decodificado aparecerá instantáneamente en el panel de salida. La herramienta maneja cadenas Base64 de múltiples líneas automáticamente." },
+        { question: "¿Hay un límite en la cantidad de texto que puedo codificar?", answer: "No hay límite práctico. Puedes codificar o decodificar texto de cualquier longitud directamente en tu navegador. La velocidad de procesamiento depende de las capacidades de tu dispositivo." },
+        { question: "¿Mis datos son seguros al usar esta herramienta?", answer: "Sí. Toda la codificación y decodificación ocurre localmente en tu navegador. No se envían datos a ningún servidor, asegurando que tu información permanezca privada." },
+        { question: "¿Para qué se usa la codificación Base64?", answer: "La codificación Base64 convierte datos binarios en formato de texto ASCII. Se usa comúnmente en URLs de datos, adjuntos de correo electrónico (MIME), codificación de imágenes en CSS/HTML y transmisión segura de datos binarios en protocolos basados en texto." },
+      ],
+      ar: [
+        { question: "ما هو تشفير Base64؟", answer: "Base64 هو طريقة لتشفير البيانات الثنائية إلى أحرف نص ASCII. يُستخدم عادةً لتضمين الصور في HTML/CSS وتشفير مرفقات البريد الإلكتروني ونقل البيانات الثنائية بأمان عبر بروتوكولات نصية مثل HTTP وJSON." },
+        { question: "كيف أفك تشفير سلسلة Base64؟", answer: "ببساطة اختر وضع 'فك التشفير' والصق سلسلة Base64 في حقل الإدخال وسيظهر النص المفكك فوراً في لوحة الإخراج. تتعامل الأداة تلقائياً مع سلاسل Base64 متعددة الأسطر." },
+        { question: "هل هناك حد لكمية النص التي يمكنني تشفيرها؟", answer: "لا يوجد حد عملي. يمكنك تشفير أو فك تشفير نص بأي طول مباشرة في متصفحك. تعتمد سرعة المعالجة على إمكانيات جهازك." },
+        { question: "هل بياناتي آمنة عند استخدام هذه الأداة؟", answer: "نعم. يتم كل التشفير وفك التشفير محلياً في متصفحك. لا تُرسل أي بيانات إلى أي خادم مما يضمن بقاء معلوماتك خاصة." },
+        { question: "ما الاستخدامات الشائعة لتشفير Base64؟", answer: "يحوّل تشفير Base64 البيانات الثنائية إلى تنسيق نص ASCII. يُستخدم عادةً في عناوين URLs ومرفقات البريد الإلكتروني (MIME) وتشفير الصور في CSS/HTML ونقل البيانات الثنائية بأمان في البروتوكولات النصية." },
+      ],
+    },
   },
   {
     id: "url-encoder",
@@ -318,7 +747,54 @@ export const tools: Tool[] = [
       { question: "When should I use URL encoding?", answer: "URL encoding is needed when passing special characters in query strings, form data, or API requests. It ensures that characters like &, =, ?, and spaces don't break the URL structure." },
       { question: "What characters get encoded?", answer: "Reserved characters (? & = # +), unsafe characters (spaces, angle brackets, quotes, curly braces, pipes, backslashes, carets, tildes, square brackets), and non-ASCII characters (like accented letters or Chinese characters) are all encoded." },
       { question: "Does this tool handle full URLs with query strings?", answer: "Yes. You can encode or decode complete URLs including query parameters and fragments. The tool properly handles all special characters throughout the entire URL." }
-,      { question: "Why do I need to URL encode my text?", answer: "URL encoding converts special characters into a format that can be safely transmitted in URLs. Characters like spaces, ampersands, and question marks have special meanings in URLs and must be encoded to prevent errors." }     ]
+,      { question: "Why do I need to URL encode my text?", answer: "URL encoding converts special characters into a format that can be safely transmitted in URLs. Characters like spaces, ampersands, and question marks have special meanings in URLs and must be encoded to prevent errors." }
+    ],
+    nameTranslations: {
+      es: "Codificador/Decodificador de URLs",
+      ar: "مشفر/فك تشفير عناوين URLs",
+    },
+    descriptionTranslations: {
+      es: "Codifica o decodifica URLs y componentes de URL para desarrollo web.",
+      ar: "شفّر أو فك تشفير عناوين URLs ومكوناتها لتطوير الويب.",
+    },
+    seoTitleTranslations: {
+      es: "Codificador de URLs Gratis Online - Codificar y Decodificar URLs 2026",
+      ar: "مشفر عناوين URLs مجاني عبر الإنترنت - تشفير وفك عناوين URLs 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Codifica URLs con codificación porcentual o decodifica URLs con codificación porcentual de vuelta a texto legible. Codificador/decodificador de URLs online gratuito para desarrolladores web. Sin registro.",
+      ar: "شفّر عناوين URLs بالتشفير النسبي أو فك تشفير عناوين URLs المشفرة نسبياً إلى نص مقروء. مشفر/فك تشفير عناوين URLs مجاني عبر الإنترنت لمطوري الويب. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Selecciona 'Codificar' para convertir una URL a formato con codificación porcentual, o 'Decodificar' para decodificarla.",
+        "Pega tu URL o cadena codificada en el campo de entrada.",
+        "Visualiza el resultado instantáneamente en el panel de salida.",
+        "Copia la URL codificada o decodificada a tu portapapeles.",
+      ],
+      ar: [
+        "اختر 'تشفير' لتحويل عنوان URL إلى تنسيق مشفر نسبياً أو 'فك التشفير' لفكه.",
+        "الصق عنوان URL أو السلسلة المشفرة في حقل الإدخال.",
+        "اعرض النتيجة فوراً في لوحة الإخراج.",
+        "انسخ عنوان URL المشفر أو المفكك إلى الحافظة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es la codificación de URLs?", answer: "La codificación de URLs (también llamada codificación porcentual) convierte caracteres especiales en URLs a un formato que puede transmitirse de forma segura por internet. Caracteres como espacios, ampersands y signos de igualdad se convierten a formato %XX." },
+        { question: "¿Cuándo debo usar codificación de URLs?", answer: "La codificación de URLs es necesaria cuando se pasan caracteres especiales en cadenas de consulta, datos de formularios o solicitudes de API. Asegura que caracteres como &, =, ? y espacios no rompan la estructura de la URL." },
+        { question: "¿Qué caracteres se codifican?", answer: "Se codifican caracteres reservados (? & = # +), caracteres inseguros (espacios, ángulos, comillas, llaves, tuberías, barras invertidas, circunflejos, tildes, corchetes) y caracteres no ASCII (como letras acentuadas o caracteres chinos)." },
+        { question: "¿Esta herramienta maneja URLs completas con cadenas de consulta?", answer: "Sí. Puedes codificar o decodificar URLs completas incluyendo parámetros de consulta y fragmentos. La herramienta maneja correctamente todos los caracteres especiales en toda la URL." },
+        { question: "¿Por qué necesito codificar mi texto en URL?", answer: "La codificación de URLs convierte caracteres especiales a un formato que puede transmitirse de forma segura en URLs. Caracteres como espacios, ampersands y signos de interrogación tienen significados especiales en URLs y deben codificarse para prevenir errores." },
+      ],
+      ar: [
+        { question: "ما هو تشفير عناوين URLs؟", answer: "تشفير عناوين URLs (يُسمى أيضاً التشفير النسبي) يحوّل الأحرف الخاصة في عناوين URLs إلى تنسيق يمكن نقله بأمان عبر الإنترنت. تُحوّل أحرف مثل المسافات وعلامات العطف وعلامات التساوي إلى تنسيق %XX." },
+        { question: "متى يجب علي استخدام تشفير عناوين URLs؟", answer: "يلزم تشفير عناوين URLs عند تمرير أحرف خاصة في سلاسل الاستعلام أو بيانات النماذج أو طلبات API. يضمن أن أحرف مثل & و = و ؟ والمسافات لا تُعطّل بنية عنوان URL." },
+        { question: "ما الأحرف التي يتم تشفيرها؟", answer: "تُشفّر الأحرف المحجوزة (? & = # +) والأحرف غير الآمنة (المسافات وزوايا الأقواس وعلامات الاقتباس والأقواس المعقوفة وأنابيب وشرطات مائلة علوية وأقواس مربعة) والأحرف غير ASCII (مثل الحروف المشكولة أو الأحرف الصينية)." },
+        { question: "هل تتعامل هذه الأداة مع عناوين URLs الكاملة مع سلاسل الاستعلام؟", answer: "نعم. يمكنك تشفير أو فك تشفير عناوين URLs كاملة بما في ذلك معاملات الاستعلام والقطع. تتعامل الأداة بشكل صحيح مع جميع الأحرف الخاصة في كامل عنوان URL." },
+        { question: "لماذا أحتاج إلى تشفير نصي في عنوان URL؟", answer: "يُحوّل تشفير عناوين URLs الأحرف الخاصة إلى تنسيق يمكن نقله بأمان في عناوين URLs. أحرف مثل المسافات وعلامات العطف وعلامات الاستفهام لها معانٍ خاصة في عناوين URLs ويجب تشفيرها لمنع الأخطاء." },
+      ],
+    },
   },
   {
     id: "hash-generator",
@@ -347,7 +823,54 @@ export const tools: Tool[] = [
       { question: "What is the difference between SHA-1, SHA-256, and SHA-512?", answer: "They produce different length outputs: SHA-1 generates 160-bit hashes, SHA-256 generates 256-bit hashes, and SHA-512 generates 512-bit hashes. SHA-256 and SHA-512 are considered more secure than SHA-1, which has known vulnerabilities." },
       { question: "Can I hash files with this tool?", answer: "This tool hashes text input. For file hashing, you can copy the file's text content into the input field. For binary files, you may need a dedicated file hashing tool." },
       { question: "Is my input data sent to any server?", answer: "No. All hash generation happens locally in your browser using the Web Crypto API. Your text is never transmitted or stored." }
-,      { question: "Which hash algorithms does this tool support?", answer: "This tool supports SHA-1, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used and recommended for general purposes. SHA-512 provides the strongest security for sensitive data." }     ]
+,      { question: "Which hash algorithms does this tool support?", answer: "This tool supports SHA-1, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used and recommended for general purposes. SHA-512 provides the strongest security for sensitive data." }
+    ],
+    nameTranslations: {
+      es: "Generador de Hash",
+      ar: "مولد التجزئة",
+    },
+    descriptionTranslations: {
+      es: "Genera hashes SHA-1, SHA-256 y SHA-512 desde cualquier texto de entrada.",
+      ar: "أنشئ تجزئات SHA-1 وSHA-256 وSHA-512 من أي نص إدخال.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Hash Gratis Online - Calculadora SHA256, SHA1, SHA512 2026",
+      ar: "مولد تجزئة مجاني عبر الإنترنت - حاسبة SHA256 وSHA1 وSHA512 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera resúmenes hash SHA-1, SHA-256 y SHA-512 desde cualquier texto. Generador de hash online rápido y gratuito para desarrolladores. Sin registro.",
+      ar: "أنشئ تجزئات SHA-1 وSHA-256 وSHA-512 من أي نص إدخال. مولد تجزئة سريع ومجاني عبر الإنترنت للمطورين. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa el texto que deseas hashear en el campo de entrada.",
+        "Visualiza los resúmenes hash SHA-1, SHA-256 y SHA-512 generados instantáneamente.",
+        "Haz clic en cualquier valor hash para copiarlo a tu portapapeles.",
+        "Usa los hashes para verificación de archivos, comprobaciones de integridad de datos o propósitos criptográficos.",
+      ],
+      ar: [
+        "أدخل النص الذي تريد تجزئته في حقل الإدخال.",
+        "اعرض تجزئات SHA-1 وSHA-256 وSHA-512 المُنشأة فوراً.",
+        "انقر على أي قيمة تجزئة لنسخها إلى الحافظة.",
+        "استخدم التجزئات للتحقق من الملفات أو فحوصات سلامة البيانات أو الأغراض التشفيرية.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es un hash criptográfico?", answer: "Un hash criptográfico es una cadena de caracteres de longitud fija generada a partir de datos de entrada usando una función matemática unidireccional. Incluso un cambio mínimo en la entrada produce un hash completamente diferente, haciéndolo útil para verificar la integridad de los datos." },
+        { question: "¿Cuál es la diferencia entre SHA-1, SHA-256 y SHA-512?", answer: "Producen salidas de diferente longitud: SHA-1 genera hashes de 160 bits, SHA-256 genera hashes de 256 bits y SHA-512 genera hashes de 512 bits. SHA-256 y SHA-512 se consideran más seguros que SHA-1, que tiene vulnerabilidades conocidas." },
+        { question: "¿Puedo hashear archivos con esta herramienta?", answer: "Esta herramienta hashea texto de entrada. Para hashear archivos, puedes copiar el contenido de texto del archivo en el campo de entrada. Para archivos binarios, puede que necesites una herramienta dedicada de hashing de archivos." },
+        { question: "¿Mis datos de entrada se envían a algún servidor?", answer: "No. Toda la generación de hash ocurre localmente en tu navegador usando la Web Crypto API. Tu texto nunca se transmite ni se almacena." },
+        { question: "¿Qué algoritmos de hash soporta esta herramienta?", answer: "Esta herramienta soporta SHA-1, SHA-256, SHA-384 y SHA-512. SHA-256 es el más utilizado y recomendado para propósitos generales. SHA-512 proporciona la mayor seguridad para datos sensibles." },
+      ],
+      ar: [
+        { question: "ما هي التجزئة التشفيرية؟", answer: "التجزئة التشفيرية هي سلسلة أحرف ذات طول ثابت تُولّد من بيانات الإدخال باستخدام دالة رياضية أحادية الاتجاه. حتى تغيير بسيط في الإدخال يُنتج تجزئة مختلفة تماماً مما يجعلها مفيدة للتحقق من سلامة البيانات." },
+        { question: "ما الفرق بين SHA-1 وSHA-256 وSHA-512؟", answer: "تُنتج مخرجات بأطوال مختلفة: SHA-1 يُولّد تجزئات 160 بت وSHA-256 يُولّد تجزئات 256 بت وSHA-512 يُولّد تجزئات 512 بت. يُعتبر SHA-256 وSHA-512 أكثر أماناً من SHA-1 الذي له ثغرات معروفة." },
+        { question: "هل يمكنني تجزئة الملفات بهذه الأداة؟", answer: "تجزئ هذه الأداة نص الإدخال. لتجزئة الملفات يمكنك نسخ محتوى النص للملف في حقل الإدخال. للملفات الثنائية قد تحتاج أداة مخصصة لتجزئة الملفات." },
+        { question: "هل تُرسل بيانات الإدخال إلى أي خادم؟", answer: "لا. يتم كل إنشاء التجزئة محلياً في متصفحك باستخدام Web Crypto API. لا يُرسل نصك أبداً أو يُخزّن." },
+        { question: "ما خوارزميات التجزئة التي تدعمها هذه الأداة؟", answer: "تدعم هذه الأداة SHA-1 وSHA-256 وSHA-384 وSHA-512. SHA-256 هو الأكثر استخداماً والموصى به للأغراض العامة. SHA-512 يوفر أقوى أمان للبيانات الحساسة." },
+      ],
+    },
   },
   {
     id: "uuid-generator",
@@ -375,7 +898,54 @@ export const tools: Tool[] = [
       { question: "How unique are UUID v4 identifiers?", answer: "The chance of generating two identical UUID v4 values is approximately 1 in 5.3 × 10^36. You would need to generate billions of UUIDs per second for billions of years to have even a small chance of collision." },
       { question: "Are these UUIDs cryptographically secure?", answer: "Yes. This tool uses the Web Crypto API's cryptographically secure random number generator (crypto.getRandomValues) to produce UUIDs that are not predictable." },
       { question: "Can I generate UUIDs offline?", answer: "Yes. All UUID generation happens locally in your browser. No internet connection is needed after the page loads." }
-,      { question: "What version of UUID does this tool generate?", answer: "This tool generates UUID version 4 (random), which uses random or pseudo-random numbers. A v4 UUID has the form xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx, where the probability of duplicates is practically zero." }     ]
+,      { question: "What version of UUID does this tool generate?", answer: "This tool generates UUID version 4 (random), which uses random or pseudo-random numbers. A v4 UUID has the form xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx, where the probability of duplicates is practically zero." }
+    ],
+    nameTranslations: {
+      es: "Generador de UUID",
+      ar: "مولد UUID",
+    },
+    descriptionTranslations: {
+      es: "Genera identificadores UUID v4 aleatorios para desarrollo.",
+      ar: "أنشئ معرفات UUID v4 عشوائية للتطوير.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de UUID Gratis Online - Generar GUID y UUID v4 2026",
+      ar: "مولد UUID مجاني عبر الإنترنت - إنشاء GUID وUUID v4 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera identificadores UUID v4 aleatorios al instante. Genera UUIDs simples o múltiples con soporte de copiar al portapapeles. Generador de UUID online gratuito para desarrolladores.",
+      ar: "أنشئ معرفات UUID v4 عشوائية فوراً. أنشئ UUID واحد أو متعدد مع دعم النسخ إلى الحافظة. مولد UUID مجاني عبر الإنترنت للمطورين.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Haz clic en 'Generar' para crear un identificador UUID v4 aleatorio.",
+        "Establece el número de UUIDs para generar varios a la vez.",
+        "Haz clic en cualquier UUID para copiarlo a tu portapapeles.",
+        "Usa UUIDs como identificadores únicos para registros de bases de datos, claves de API o tokens de sesión.",
+      ],
+      ar: [
+        "انقر على 'إنشاء' لإنشاء معرف UUID v4 عشوائي.",
+        "حدد عدد UUIDs لإنشاء عدة معرفات مرة واحدة.",
+        "انقر على أي UUID لنسخه إلى الحافظة.",
+        "استخدم UUIDs كمعرفات فريدة لسجلات قواعد البيانات أو مفاتيح API أو رموز الجلسة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es un UUID?", answer: "Un UUID (Identificador Universalmente Único) es un número de 128 bits usado para identificar información de forma única en sistemas informáticos. UUID v4, la versión más común, usa números aleatorios para generar identificadores con una probabilidad de colisión extremadamente baja." },
+        { question: "¿Qué tan únicos son los identificadores UUID v4?", answer: "La probabilidad de generar dos valores UUID v4 idénticos es aproximadamente 1 en 5.3 × 10^36. Tendrías que generar billones de UUIDs por segundo durante billones de años para tener incluso una pequeña probabilidad de colisión." },
+        { question: "¿Estos UUIDs son criptográficamente seguros?", answer: "Sí. Esta herramienta usa el generador de números aleatorios criptográficamente seguro de la Web Crypto API (crypto.getRandomValues) para producir UUIDs que no son predecibles." },
+        { question: "¿Puedo generar UUIDs sin conexión?", answer: "Sí. Toda la generación de UUID ocurre localmente en tu navegador. No se necesita conexión a internet después de cargar la página." },
+        { question: "¿Qué versión de UUID genera esta herramienta?", answer: "Esta herramienta genera UUID versión 4 (aleatorio), que usa números aleatorios o pseudoaleatorios. Un UUID v4 tiene la forma xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx, donde la probabilidad de duplicados es prácticamente cero." },
+      ],
+      ar: [
+        { question: "ما هو UUID؟", answer: "UUID (المعرّف الفريد عالمياً) هو رقم 128 بت يُستخدم لتحديد المعلومات بشكل فريد في أنظمة الكمبيوتر. UUID v4 وهو الإصدار الأكثر شيوعاً يستخدم أرقاماً عشوائية لإنشاء معرفات باحتمال تصادم منخفض للغاية." },
+        { question: "ما مدى تفرد معرفات UUID v4؟", answer: "احتمال إنشاء قيمتين UUID v4 متماثلتين هو تقريباً 1 في 5.3 × 10^36. ستحتاج إلى إنشاء مليارات المعرفات في الثانية لمليارات السنين للحصول على فرصة صغيرة حتى للتصادم." },
+        { question: "هل معرفات UUID هذه آمنة تشفيرياً؟", answer: "نعم. تستخدم هذه الأداة مولد الأرقام العشوائية الآمن تشفيرياً من Web Crypto API (crypto.getRandomValues) لإنتاج UUIDs غير قابلة للتنبؤ." },
+        { question: "هل يمكنني إنشاء UUIDs بدون اتصال؟", answer: "نعم. يتم كل إنشاء UUID محلياً في متصفحك. لا تحتاج إلى اتصال بالإنترنت بعد تحميل الصفحة." },
+        { question: "ما إصدار UUID الذي تُولّده هذه الأداة؟", answer: "تُولّد هذه الأداة الإصدار 4 من UUID (عشوائي) الذي يستخدم أرقاماً عشوائية أو شبه عشوائية. UUID v4 له الشكل xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx حيث احتمال التكرار صفر عملياً." },
+      ],
+    },
   },
   {
     id: "regex-tester",
@@ -408,7 +978,62 @@ export const tools: Tool[] = [
       { question: "What export formats are supported?", answer: "The Extract tab supports three formats: JSON (structured data with match and index fields), CSV (spreadsheet-compatible), and plain text (one match per line)." },
       { question: "Can I use this tool to learn regex?", answer: "Absolutely. The Test tab shows real-time results as you type, making it easy to experiment. The Code tab also provides working examples in your target language." },
       { question: "Is my data stored anywhere?", answer: "No. All processing happens entirely in your browser. Your text, patterns, and results are never sent to any server." }
-,      { question: "Does this tool support all regular expression features?", answer: "Our regex tester supports JavaScript regular expression syntax, including character classes, quantifiers, groups, lookaheads, lookbehinds, and flags like g, i, and m. It works in real-time as you type." }     ]
+,      { question: "Does this tool support all regular expression features?", answer: "Our regex tester supports JavaScript regular expression syntax, including character classes, quantifiers, groups, lookaheads, lookbehinds, and flags like g, i, and m. It works in real-time as you type." }
+    ],
+    nameTranslations: {
+      es: "Probador y Conversor de Regex",
+      ar: "أداة اختبار وتحويل التعبيرات المنتظمة",
+    },
+    descriptionTranslations: {
+      es: "Prueba expresiones regulares, reemplaza con regex, extrae coincidencias y genera fragmentos de código para 10 lenguajes de programación.",
+      ar: "اختبر التعبيرات المنتظمة واستبدل بنمط regex واستخرج التطابقات وأنشئ مقتطفات كود لعشر لغات برمجة.",
+    },
+    seoTitleTranslations: {
+      es: "Probador de Regex Gratis Online - Probar y Reemplazar Expresiones Regulares 2026",
+      ar: "أداة اختبار التعبيرات المنتظمة مجانية عبر الإنترنت - اختبار واستبدال التعبيرات المنتظمة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Prueba y depura expresiones regulares con resaltado en tiempo real. Reemplaza texto con patrones regex, extrae coincidencias a JSON/CSV y genera fragmentos de código para JavaScript, Python, PHP, Java, Go, Rust, C#, Ruby, Swift y TypeScript.",
+      ar: "اختبر وتصحيح التعبيرات المنتظمة مع تمييز في الوقت الفعلي. استبدل النص بأنماط regex واستخرج التطابقات إلى JSON/CSV وأنشئ مقتطفات كود لـ JavaScript وPython وPHP وJava وGo وRust وC# وRuby وSwift وTypeScript.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu patrón de expresión regular en el campo de patrón (entre las barras).",
+        "Establece las banderas regex (g=global, i=insensible a mayúsculas, m=multilínea, s=puntoTodo, u=unicode).",
+        "Cambia entre pestañas: Test (resalta coincidencias), Replace (buscar y reemplazar), Extract (exporta coincidencias como JSON/CSV/texto) y Code (genera fragmentos).",
+        "En la pestaña Test, pega tu texto y observa todos los resultados coincidentes con posiciones.",
+        "En la pestaña Replace, ingresa un patrón de reemplazo y previsualiza el resultado en tiempo real.",
+        "En la pestaña Extract, exporta todo el texto coincidente como JSON, CSV o texto plano.",
+        "En la pestaña Code, selecciona tu lenguaje de programación para obtener fragmentos de código regex listos para usar.",
+      ],
+      ar: [
+        "أدخل نمط التعبير المنتظم في حقل النمط (بين الشرطات المائلة).",
+        "عيّن رايات regex (g=عام i=غير حساس لحالة الأحرف m=متعدد الأسطر s=النقطة تطابق الكل u=يونيكود).",
+        "بدّل بين علامات التبويب: Test (إبراز التطابقات) وReplace (بحث واستبدال) وExtract (تصدير التطابقات كـ JSON/CSV/نص) وCode (إنشاء مقتطفات).",
+        "في علامة تبويب Test الصق نصك وشاهد جميع نتائج التطابق مع المواقع.",
+        "في علامة تبويب Replace أدخل نمط الاستبدال ومعاينة النتيجة في الوقت الفعلي.",
+        "في علامة تبويب Extract صدّر كل النص المتطابق كـ JSON أو CSV أو نص عادي.",
+        "في علامة تبويب Code اختر لغة البرمجة للحصول على مقتطفات كود regex جاهزة للاستخدام.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué sabor de regex usa esta herramienta?", answer: "Esta herramienta usa el motor RegExp de JavaScript, compatible con la mayoría de lenguajes de programación modernos. Los fragmentos de código se generan para 10 lenguajes incluyendo JavaScript, Python, PHP, Java, Go, Rust, C#, Ruby, Swift y TypeScript." },
+        { question: "¿Cómo uso grupos de captura?", answer: "Envuelve las partes de tu patrón que deseas capturar entre paréntesis, como (\\w+)@(\\w+).com. La pestaña Extract te mostrará todos los grupos capturados, y en la pestaña Replace puedes referenciarlos con $1, $2, etc." },
+        { question: "¿Qué formatos de exportación se soportan?", answer: "La pestaña Extract soporta tres formatos: JSON (datos estructurados con campos de coincidencia e índice), CSV (compatible con hojas de cálculo) y texto plano (una coincidencia por línea)." },
+        { question: "¿Puedo usar esta herramienta para aprender regex?", answer: "Absolutamente. La pestaña Test muestra resultados en tiempo real mientras escribes, facilitando la experimentación. La pestaña Code también proporciona ejemplos funcionales en tu lenguaje objetivo." },
+        { question: "¿Se almacenan mis datos en algún lugar?", answer: "No. Todo el procesamiento ocurre completamente en tu navegador. Tu texto, patrones y resultados nunca se envían a ningún servidor." },
+        { question: "¿Esta herramienta soporta todas las características de expresiones regulares?", answer: "Nuestro probador de regex soporta la sintaxis de expresiones regulares de JavaScript, incluyendo clases de caracteres, cuantificadores, grupos, lookaheads, lookbehinds y banderas como g, i y m. Funciona en tiempo real mientras escribes." },
+      ],
+      ar: [
+        { question: "ما نوع regex الذي تستخدمه هذه الأداة؟", answer: "تستخدم هذه الأداة محرك RegExp الخاص بـ JavaScript المتوافق مع معظم لغات البرمجة الحديثة. تُولّد مقتطفات الكود لـ 10 لغات بما فيها JavaScript وPython وPHP وJava وGo وRust وC# وRuby وSwift وTypeScript." },
+        { question: "كيف أستخدم مجموعات الالتقاط؟", answer: "لفّ الأجزاء من نمطك التي تريد التقاطها بأقواس مثل (\\w+)@(\\w+).com. ستُظهر لك علامة تبويب Extract جميع المجموعات الملتقطة وفي علامة تبويب Replace يمكنك الرجوع إليها بـ $1 و$2 الخ." },
+        { question: "ما صيغ التصدير المدعومة؟", answer: "تدعم علامة تبويب Extract ثلاثة صيغ: JSON (بيانات مهيكلة مع حقلي التطابق والفهرس) وCSV (متوافق مع جداول البيانات) ونص عادي (تطابق واحد في كل سطر)." },
+        { question: "هل يمكنني استخدام هذه الأداة لتعلم regex؟", answer: "بالتأكيد. تُظهر علامة تبويب Test نتائج في الوقت الفعلي أثناء الكتابة مما يسهل التجربة. توفر علامة تبويب Code أيضاً أمثلة عملية في لغتك المستهدفة." },
+        { question: "هل يتم تخزين بياناتي في أي مكان؟", answer: "لا. تتم جميع العمليات بالكامل في متصفحك. لا يُرسل نصك أو أنماطك أو نتائجك إلى أي خادم أبداً." },
+        { question: "هل تدعم هذه الأداة جميع ميزات التعبيرات المنتظمة؟", answer: "يدعم مختبر regex لدينا صيغة التعبيرات المنتظمة في JavaScript بما فيها فئات الأحرف والمقدّرات والمجموعات والنظرات الأمامية والخلفية والرايات مثل g وi وm. يعمل في الوقت الفعلي أثناء الكتابة." },
+      ],
+    },
   },
   {
     id: "markdown-preview",
@@ -438,7 +1063,54 @@ export const tools: Tool[] = [
       { question: "Can I use GitHub Flavored Markdown?", answer: "Yes. This editor supports GitHub Flavored Markdown (GFM) extensions including task lists, strikethrough text, and fenced code blocks with syntax highlighting." },
       { question: "Is my Markdown saved anywhere?", answer: "No. Your Markdown is processed entirely in your browser. Nothing is sent to or stored on any server." },
       { question: "Can I use this to write README files?", answer: "Absolutely. This is perfect for drafting and previewing README.md files for GitHub repositories, documentation, or blog posts before publishing." }
-,      { question: "Does this markdown preview support tables and code blocks?", answer: "Yes, our markdown preview supports all standard Markdown features including headers, bold, italic, links, images, tables, code blocks with syntax hints, blockquotes, and horizontal rules." }     ]
+,      { question: "Does this markdown preview support tables and code blocks?", answer: "Yes, our markdown preview supports all standard Markdown features including headers, bold, italic, links, images, tables, code blocks with syntax hints, blockquotes, and horizontal rules." }
+    ],
+    nameTranslations: {
+      es: "Vista Previa de Markdown",
+      ar: "معاينة Markdown",
+    },
+    descriptionTranslations: {
+      es: "Escribe Markdown y ve una vista previa HTML en vivo mientras escribes. Editor Markdown gratuito.",
+      ar: "اكتب Markdown وشاهد معاينة HTML مباشرة أثناء الكتابة. محرر Markdown مجاني.",
+    },
+    seoTitleTranslations: {
+      es: "Vista Previa de Markdown Gratis Online - Convertidor MD a HTML 2026",
+      ar: "معاينة Markdown مجانية عبر الإنترنت - محوّل MD إلى HTML 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Escribe Markdown y ve una vista previa HTML en vivo en tiempo real. Editor Markdown online gratuito con resaltado de sintaxis. Perfecto para archivos README, documentación y publicaciones de blog.",
+      ar: "اكتب Markdown وشاهد معاينة HTML مباشرة في الوقت الفعلي. محرر Markdown مجاني عبر الإنترنت مع تمييز الصيغة. مثالي لملفات README والوثائق ومنشورات المدونات.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Comienza a escribir Markdown en el panel del editor izquierdo.",
+        "Visualiza la vista previa HTML renderizada actualizarse en tiempo real a la derecha.",
+        "Usa sintaxis Markdown estándar: encabezados, listas, negrita, cursiva, enlaces, imágenes, bloques de código y tablas.",
+        "Copia el HTML renderizado o exporta tu archivo Markdown cuando termines.",
+      ],
+      ar: [
+        "ابدأ بكتابة Markdown في لوحة المحرر اليسرى.",
+        "شاهد معاينة HTML المُقدّمة تتحدث في الوقت الفعلي على اليمين.",
+        "استخدم صيغة Markdown القياسية: العناوين والقوائم والخط العريض والمائل والروابط والصور وكتل الكود والجداول.",
+        "انسخ HTML المُقدّم أو صدّر ملف Markdown عند الانتهاء.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué características de Markdown se soportan?", answer: "Este editor soporta todas las características estándar de Markdown: encabezados (H1-H6), texto en negrita y cursiva, listas (ordenadas y desordenadas), enlaces, imágenes, bloques de código (en línea y delimitados), citas, reglas horizontales y tablas." },
+        { question: "¿Puedo usar GitHub Flavored Markdown?", answer: "Sí. Este editor soporta las extensiones GitHub Flavored Markdown (GFM) incluyendo listas de tareas, texto tachado y bloques de código delimitados con resaltado de sintaxis." },
+        { question: "¿Se guarda mi Markdown en algún lugar?", answer: "No. Tu Markdown se procesa completamente en tu navegador. Nada se envía ni se almacena en ningún servidor." },
+        { question: "¿Puedo usar esto para escribir archivos README?", answer: "Absolutamente. Esto es perfecto para redactar y previsualizar archivos README.md para repositorios de GitHub, documentación o publicaciones de blog antes de publicar." },
+        { question: "¿Esta vista previa de Markdown soporta tablas y bloques de código?", answer: "Sí, nuestra vista previa de Markdown soporta todas las características estándar de Markdown incluyendo encabezados, negrita, cursiva, enlaces, imágenes, tablas, bloques de código con indicaciones de sintaxis, citas y reglas horizontales." },
+      ],
+      ar: [
+        { question: "ما ميزات Markdown المدعومة؟", answer: "يدعم هذا المحرر جميع ميزات Markdown القياسية: العناوين (H1-H6) والنص العريض والمائل والقوائم (مرتبة وغير مرتبة) والروابط والصور وكتل الكود (مضمنة ومحددة) والاقتباسات والقواعد الأفقية والجداول." },
+        { question: "هل يمكنني استخدام GitHub Flavored Markdown؟", answer: "نعم. يدعم هذا المحرر امتدادات GitHub Flavored Markdown (GFM) بما فيها قوائم المهام والنص المشطوب وكتل الكود المحددة مع تمييز الصيغة." },
+        { question: "هل يتم حفظ Markdown الخاص بي في أي مكان؟", answer: "لا. تتم معالجة Markdown بالكامل في متصفحك. لا يُرسل أو يُخزّن أي شيء على أي خادم." },
+        { question: "هل يمكنني استخدام هذا لكتابة ملفات README؟", answer: "بالتأكيد. هذا مثالي لصياغة ومعاينة ملفات README.md لمستودعات GitHub أو الوثائق أو منشورات المدونات قبل النشر." },
+        { question: "هل تدعم معاينة markdown هذه الجداول وكتل الكود؟", answer: "نعم تدعم معاينة markdown لدينا جميع ميزات Markdown القياسية بما فيها العناوين والخط العريض والمائل والروابط والصور والجداول وكتل الكود مع تلميحات الصيغة والاقتباسات والقواعد الأفقية." },
+      ],
+    },
   },
   {
     id: "css-minifier",
@@ -467,7 +1139,54 @@ export const tools: Tool[] = [
       { question: "How much can minification reduce CSS file size?", answer: "Typically, minification reduces CSS file size by 10-20%. The exact reduction depends on how well-formatted the original CSS is — heavily commented and formatted CSS sees bigger reductions." },
       { question: "Is minified CSS safe for production?", answer: "Yes. Minified CSS is functionally identical to the original — only whitespace and comments are removed. It's the standard practice for production websites." },
       { question: "Can I beautify minified CSS back to readable format?", answer: "Yes. The beautify feature reformats compressed CSS with proper indentation and line breaks, making it easy to read and edit again." }
-,      { question: "How much can CSS minification reduce file size?", answer: "CSS minification typically reduces file size by 20-40% by removing whitespace, comments, and unnecessary characters. This improves page load times and can positively impact your website's SEO ranking." }     ]
+,      { question: "How much can CSS minification reduce file size?", answer: "CSS minification typically reduces file size by 20-40% by removing whitespace, comments, and unnecessary characters. This improves page load times and can positively impact your website's SEO ranking." }
+    ],
+    nameTranslations: {
+      es: "Minificador de CSS",
+      ar: "أداة تصغير CSS",
+    },
+    descriptionTranslations: {
+      es: "Minifica y embellece código CSS. Elimina espacios en blanco y comentarios para producción.",
+      ar: "صغّر وجمّل كود CSS. أزل المسافات البيضاء والتعليقات للإنتاج.",
+    },
+    seoTitleTranslations: {
+      es: "Minificador de CSS Gratis Online - Comprimir y Optimizar CSS 2026",
+      ar: "أداة تصغير CSS مجانية عبر الإنترنت - ضغط وتحسين CSS 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Minifica CSS para reducir el tamaño del archivo y mejorar la velocidad de carga de la página. También embellece CSS comprimido para legibilidad. Herramienta de minificación CSS online gratuita. Sin registro.",
+      ar: "صغّر CSS لتقليل حجم الملف وتحسين سرعة تحميل الصفحة. كما يمكنك تجميل CSS المضغوط للقراءة. أداة تصغير CSS مجانية عبر الإنترنت. لا يتطلب تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tu código CSS en el campo de entrada.",
+        "Haz clic en 'Minificar' para comprimir el CSS eliminando espacios en blanco, comentarios y caracteres innecesarios.",
+        "Haz clic en 'Embellecer' para formatear CSS minificado de vuelta a estructura legible.",
+        "Copia el resultado para usar en tu hoja de estilos de producción.",
+      ],
+      ar: [
+        "الصق كود CSS في حقل الإدخال.",
+        "انقر على 'تصغير' لضغط CSS بإزالة المسافات البيضاء والتعليقات والأحرف غير الضرورية.",
+        "انقر على 'تجميل' لإعادة تنسيق CSS المصغّر إلى بنية قابلة للقراءة.",
+        "انسخ النتيجة لاستخدامها في ورقة الأنماط الخاصة بالإنتاج.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué hace la minificación de CSS?", answer: "La minificación de CSS elimina espacios en blanco innecesarios, comentarios, saltos de línea y código redundante para reducir el tamaño del archivo. Esto acelera los tiempos de carga de la página y reduce el uso de ancho de banda." },
+        { question: "¿Cuánto puede reducir la minificación el tamaño del archivo CSS?", answer: "Típicamente, la minificación reduce el tamaño del archivo CSS entre un 10-20%. La reducción exacta depende de qué tan bien formateado está el CSS original — el CSS muy comentado y formateado ve mayores reducciones." },
+        { question: "¿El CSS minificado es seguro para producción?", answer: "Sí. El CSS minificado es funcionalmente idéntico al original — solo se eliminan espacios en blanco y comentarios. Es la práctica estándar para sitios web de producción." },
+        { question: "¿Puedo embellecer CSS minificado de vuelta a formato legible?", answer: "Sí. La función de embellecer reformattea CSS comprimido con indentación adecuada y saltos de línea, facilitando su lectura y edición." },
+        { question: "¿Cuánto puede reducir la minificación de CSS el tamaño del archivo?", answer: "La minificación de CSS típicamente reduce el tamaño del archivo en un 20-40% eliminando espacios en blanco, comentarios y caracteres innecesarios. Esto mejora los tiempos de carga de la página y puede impactar positivamente el ranking SEO de tu sitio web." },
+      ],
+      ar: [
+        { question: "ماذا يفعل تصغير CSS؟", answer: "يزيل تصغير CSS المسافات البيضاء غير الضرورية والتعليقات وفواصل الأسطر والكود الزائد لتقليل حجم الملف. هذا يسرّع أوقات تحميل الصفحة ويقلل استخدام عرض النطاق." },
+        { question: "بكم يمكن أن يقلل التصغير حجم ملف CSS؟", answer: "عادةً يقلل التصغير حجم ملف CSS بنسبة 10-20%. يعتمد التقليل الدقيق على مدى جودة تنسيق CSS الأصلي -- CSS الذي يحتوي على تعليقات وتنسيق كثير يشاهد تقليل أكبر." },
+        { question: "هل CSS المصغّر آمن للإنتاج؟", answer: "نعم. CSS المصغّر مطابق وظيفياً للأصلي -- تُزال فقط المسافات البيضاء والتعليقات. هذه هي الممارسة القياسية لمواقع الويب الإنتاجية." },
+        { question: "هل يمكنني تجميل CSS المصغّر إلى تنسيق قابل للقراءة؟", answer: "نعم. تعيد ميزة التجميل تنسيق CSS المضغوط بمسافات بادئة مناسبة وفواصل أسطر مما يسهل قراءته وتعديله مجدداً." },
+        { question: "بكم يمكن أن يقلل تصغير CSS حجم الملف؟", answer: "يقلل تصغير CSS عادةً حجم الملف بنسبة 20-40% بإزالة المسافات البيضاء والتعليقات والأحرف غير الضرورية. هذا يحسّن أوقات تحميل الصفحة ويمكن أن يؤثر إيجابياً على تصنيف SEO لموقعك." },
+      ],
+    },
   },
   {
     id: "unix-timestamp",
@@ -496,7 +1215,54 @@ export const tools: Tool[] = [
       { question: "Why do developers use Unix timestamps?", answer: "Unix timestamps provide a universal, timezone-independent way to represent time. They're easy to store in databases, compare mathematically, and are supported by virtually every programming language." },
       { question: "What is the Year 2038 problem?", answer: "The Year 2038 problem occurs when 32-bit signed integers storing Unix timestamps overflow on January 19, 2038. Modern 64-bit systems don't have this issue and can represent timestamps for billions of years." },
       { question: "Does this tool handle timezones?", answer: "Yes. You can convert timestamps to any timezone. The tool shows both UTC and your local time equivalents for clarity." }
-,      { question: "What is a Unix timestamp?", answer: "A Unix timestamp is the number of seconds that have elapsed since January 1, 1970 (UTC), known as the Unix epoch. It is widely used in computing systems for date and time calculations." }     ]
+,      { question: "What is a Unix timestamp?", answer: "A Unix timestamp is the number of seconds that have elapsed since January 1, 1970 (UTC), known as the Unix epoch. It is widely used in computing systems for date and time calculations." }
+    ],
+    nameTranslations: {
+      es: "Convertidor de Marca de Tiempo Unix",
+      ar: "محول طابع Unix الزمني",
+    },
+    descriptionTranslations: {
+      es: "Convierte marcas de tiempo Unix a fechas legibles y viceversa.",
+      ar: "حوّل طوابع Unix الزمنية إلى تواريخ قابلة للقراءة والعكس.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de Marca de Tiempo Unix Gratis Online - Epoch a Fecha 2026",
+      ar: "محول طابع Unix الزمني مجاني عبر الإنترنت - Epoch إلى تاريخ 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte marcas de tiempo Unix (tiempo epoch) a fechas legibles y viceversa. Visualiza la hora Unix actual. Convertidor de marcas de tiempo online gratuito para desarrolladores.",
+      ar: "حوّل طوابع Unix الزمنية (وقت epoch) إلى تواريخ قابلة للقراءة والعكس. اعرض وقت Unix الحالي. محول طوابع زمنية مجاني عبر الإنترنت للمطورين.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Visualiza la marca de tiempo Unix actual mostrada en la parte superior de la página.",
+        "Ingresa una marca de tiempo Unix para convertirla a fecha y hora legible.",
+        "Ingresa una fecha y hora para convertirla a marca de tiempo Unix.",
+        "Elige tu zona horaria para ver marcas de tiempo en tu hora local.",
+      ],
+      ar: [
+        "اعرض طابع Unix الزمني الحالي المعروض في أعلى الصفحة.",
+        "أدخل طابع Unix الزمني لتحويله إلى تاريخ ووقت مقروء.",
+        "أدخل تاريخاً ووقتاً لتحويله إلى طابع Unix الزمني.",
+        "اختر منطقتك الزمنية لرؤية الطوابع الزمنية بتوقيتك المحلي.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es una marca de tiempo Unix?", answer: "Una marca de tiempo Unix (también llamada tiempo epoch o tiempo POSIX) es el número de segundos que han transcurrido desde el 1 de enero de 1970 (UTC). Es la representación de tiempo estándar utilizada por la mayoría de sistemas operativos y lenguajes de programación." },
+        { question: "¿Por qué usan los desarrolladores marcas de tiempo Unix?", answer: "Las marcas de tiempo Unix proporcionan una forma universal e independiente de zona horaria de representar el tiempo. Son fáciles de almacenar en bases de datos, comparar matemáticamente y son soportadas por prácticamente todos los lenguajes de programación." },
+        { question: "¿Qué es el problema del año 2038?", answer: "El problema del año 2038 ocurre cuando los enteros con signo de 32 bits que almacenan marcas de tiempo Unix se desbordan el 19 de enero de 2038. Los sistemas modernos de 64 bits no tienen este problema y pueden representar marcas de tiempo durante miles de millones de años." },
+        { question: "¿Esta herramienta maneja zonas horarias?", answer: "Sí. Puedes convertir marcas de tiempo a cualquier zona horaria. La herramienta muestra equivalentes tanto en UTC como en tu hora local para mayor claridad." },
+        { question: "¿Qué es una marca de tiempo Unix?", answer: "Una marca de tiempo Unix es el número de segundos que han transcurrido desde el 1 de enero de 1970 (UTC), conocido como la época Unix. Se usa ampliamente en sistemas informáticos para cálculos de fecha y hora." },
+      ],
+      ar: [
+        { question: "ما هو طابع Unix الزمني؟", answer: "طابع Unix الزمني (يُسمى أيضاً وقت epoch أو وقت POSIX) هو عدد الثواني التي انقضت منذ 1 يناير 1970 (UTC). وهو تمثيل الوقت القياسي المستخدم من قبل معظم أنظمة التشغيل ولغات البرمجة." },
+        { question: "لماذا يستخدم المطورون طوابع Unix الزمنية؟", answer: "توفر طوابع Unix الزمنية طريقة عالمية ومستقلة عن المنطقة الزمنية لتمثيل الوقت. من السهل تخزينها في قواعد البيانات ومقارنتها رياضياً وتدعمها几乎所有 لغات البرمجة." },
+        { question: "ما هي مشكلة عام 2038؟", answer: "تحدث مشكلة عام 2038 عندما تتجاوز الأعداد الصحيحة ذات الإشارة 32 بت التي تخزّن طوابع Unix الزمنية الحد الأقصى في 19 يناير 2038. الأنظمة الحديثة 64 بت لا تعاني من هذه المشكلة ويمكنها تمثيل الطوابع الزمنية لمليارات السنين." },
+        { question: "هل تتعامل هذه الأداة مع المناطق الزمنية؟", answer: "نعم. يمكنك تحويل الطوابع الزمنية إلى أي منطقة زمنية. تُظهر الأداة مكافئات UTC ووقتك المحلي للوضوح." },
+        { question: "ما هو طابع Unix الزمني؟", answer: "طابع Unix الزمني هو عدد الثواني التي انقضت منذ 1 يناير 1970 (UTC) والمعروف بحقبة Unix. يُستخدم على نطاق واسع في أنظمة الحوسبة لحسابات التاريخ والوقت." },
+      ],
+    },
   },
   // Calculators
   {
@@ -527,7 +1293,56 @@ export const tools: Tool[] = [
       { question: "Is it safe to use an online password generator?", answer: "Yes, because all password generation happens locally in your browser. The generated password is never sent over the internet or stored on any server. You can verify this by using the tool with your network disconnected — it works perfectly offline." },
       { question: "How long should my password be?", answer: "Security experts recommend at least 12 characters for general use, and 16+ characters for sensitive accounts like banking or email. Longer passwords with mixed character types are exponentially harder to crack." },
       { question: "Should I include symbols in my password?", answer: "Including uppercase letters, lowercase letters, numbers, and symbols maximizes password entropy, making it significantly harder to crack through brute force attacks. We recommend enabling all character types for the strongest passwords." }
-,      { question: "How secure are the passwords generated by this tool?", answer: "Passwords generated by this tool use cryptographically secure random number generation. With options for 12-64 characters including uppercase, lowercase, numbers, and symbols, the generated passwords are extremely difficult to crack." }     ]
+,      { question: "How secure are the passwords generated by this tool?", answer: "Passwords generated by this tool use cryptographically secure random number generation. With options for 12-64 characters including uppercase, lowercase, numbers, and symbols, the generated passwords are extremely difficult to crack." }
+    ],
+    nameTranslations: {
+      es: "Generador de Contraseñas",
+      ar: "مولد كلمات المرور",
+    },
+    descriptionTranslations: {
+      es: "Genera contraseñas fuertes y seguras con longitud y opciones de caracteres personalizables.",
+      ar: "أنشئ كلمات مرور قوية وآمنة مع خيارات طول وأحرف قابلة للتخصيص.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Contraseñas Gratis Online - Contraseñas Fuertes y Aleatorias 2026",
+      ar: "مولد كلمات مرور مجاني عبر الإنترنت - كلمات مرور قوية وعشوائية 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera contraseñas fuertes y aleatorias con longitud, caracteres y símbolos personalizables. Generador de contraseñas online gratuito para máxima seguridad. No se almacenan datos.",
+      ar: "أنشئ كلمات مرور قوية وعشوائية مع طول وأحرف ورموز قابلة للتخصيص. مولد كلمات مرور مجاني عبر الإنترنت لأقصى أمان. لا يتم تخزين أي بيانات.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Elige la longitud deseada de tu contraseña (8-128 caracteres recomendados).",
+        "Selecciona qué tipos de caracteres incluir: mayúsculas, minúsculas, números y símbolos.",
+        "Haz clic en 'Generar' para crear una contraseña segura aleatoria al instante.",
+        "Copia la contraseña a tu portapapeles usando el botón de copiar.",
+        "Usa el indicador de fuerza para verificar que tu contraseña cumple con los requisitos de seguridad.",
+      ],
+      ar: [
+        "اختر الطول المطلوب لكلمة المرور (يُنصح بـ 8-128 حرفاً).",
+        "اختر أنواع الأحرف التي تريد تضمينها: أحرف كبيرة وصغيرة وأرقام ورموز.",
+        "انقر على 'إنشاء' لإنشاء كلمة مرور آمنة عشوائية فوراً.",
+        "انسخ كلمة المرور إلى الحافظة باستخدام زر النسخ.",
+        "استخدم مؤشر القوة للتحقق من أن كلمة المرور تفي بمتطلبات الأمان.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo funciona este generador de contraseñas?", answer: "Esta herramienta usa generación de números aleatorios criptográficamente segura (crypto.getRandomValues) integrada en tu navegador. Esto produce contraseñas verdaderamente aleatorias que no son predecibles, a diferencia de los generadores pseudoaleatorios usados por herramientas menos seguras." },
+        { question: "¿Es seguro usar un generador de contraseñas online?", answer: "Sí, porque toda la generación de contraseñas ocurre localmente en tu navegador. La contraseña generada nunca se envía por internet ni se almacena en ningún servidor. Puedes verificar esto usando la herramienta con tu red desconectada — funciona perfectamente sin conexión." },
+        { question: "¿Qué tan larga debería ser mi contraseña?", answer: "Los expertos en seguridad recomiendan al menos 12 caracteres para uso general y 16+ caracteres para cuentas sensibles como banca o correo electrónico. Las contraseñas más largas con tipos de caracteres mixtos son exponencialmente más difíciles de descifrar." },
+        { question: "¿Debo incluir símbolos en mi contraseña?", answer: "Incluir letras mayúsculas, minúsculas, números y símbolos maximiza la entropía de la contraseña, haciéndola significativamente más difícil de descifrar mediante ataques de fuerza bruta. Recomendamos habilitar todos los tipos de caracteres para las contraseñas más fuertes." },
+        { question: "¿Qué tan seguras son las contraseñas generadas por esta herramienta?", answer: "Las contraseñas generadas por esta herramienta usan generación de números aleatorios criptográficamente segura. Con opciones de 12-64 caracteres incluyendo mayúsculas, minúsculas, números y símbolos, las contraseñas generadas son extremadamente difíciles de descifrar." },
+      ],
+      ar: [
+        { question: "كيف يعمل مولد كلمات المرور هذا؟", answer: "تستخدم هذه الأداة توليد أرقام عشوائية آمن تشفيرياً (crypto.getRandomValues) مدمج في متصفحك. يُنتج كلمات مرور عشوائية حقاً وغير قابلة للتنبؤ على عكس المولدات شبه العشوائية المستخدمة من قبل أدوات أقل أماناً." },
+        { question: "هل من الآمن استخدام مولد كلمات مرور عبر الإنترنت؟", answer: "نعم لأن كل إنشاء كلمات المرور يحدث محلياً في متصفحك. لا تُرسل كلمة المرور المُنشأة أبداً عبر الإنترنت أو تُخزّن على أي خادم. يمكنك التحقق من ذلك باستخدام الأداة مع فصل الشبكة -- تعمل بشكل مثالي بدون اتصال." },
+        { question: "كم يجب أن يكون طول كلمة المرور؟", answer: "يوصي خبراء الأمان بـ 12 حرفاً على الأقل للاستخدام العام و16+ حرفاً للحسابات الحساسة مثل البنوك أو البريد الإلكتروني. كلمات المرور الأطول مع أنواع أحرف مختلطة أصعب بكثير في الكسر." },
+        { question: "هل يجب علي تضمين رموز في كلمة المرور؟", answer: "تضمين الأحرف الكبيرة والصغيرة والأرقام والرموز يزيد إنتروبيا كلمة المرور إلى أقصى حد مما يجعلها أصعب بكثير في الكسر عبر هجمات القوة الغاشمة. نوصي بتمكين جميع أنواع الأحرف لأقوى كلمات المرور." },
+        { question: "ما مدى أمان كلمات المرور المُنشأة بهذه الأداة؟", answer: "تستخدم كلمات المرور المُنشأة بهذه الأداة توليد أرقام عشوائية آمن تشفيرياً. مع خيارات من 12-64 حرفاً بما فيها الأحرف الكبيرة والصغيرة والأرقام والرموز فإن كلمات المرور المُنشأة صعبة الكسر للغاية." },
+      ],
+    },
   },
   {
     id: "age-calculator",
@@ -546,6 +1361,54 @@ export const tools: Tool[] = [
       "age calculator online free", "how many days until my birthday",
       "date of birth age calculator"
 ,      "age calculator for students", "best age calculator 2026", "how old am i calculator free"        ],
+    nameTranslations: {
+      es: "Calculadora de Edad",
+      ar: "حاسبة العمر",
+    },
+    descriptionTranslations: {
+      es: "Calcula la edad exacta en años, meses y días desde cualquier fecha de nacimiento.",
+      ar: "احسب العمر بالسنوات والأشهر والأيام بدقة من أي تاريخ ميلاد.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Edad Gratis Online - Calcula Edad Exacta 2026",
+      ar: "حاسبة العمر المجانية عبر الإنترنت - احسب عمرك بدقة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula tu edad exacta en años, meses, semanas y días. Calculadora de edad gratuita desde cualquier fecha de nacimiento. Sin registro.",
+      ar: "احسب عمرك بالسنوات والأشهر والأسابيع والأيام بدقة. حاسبة عمر مجانية من أي تاريخ ميلاد. شاهد العد التنازلي لعيد ميلادك القادم.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu fecha de nacimiento usando el selector de fechas o escríbela manualmente (formato AAAA-MM-DD).",
+        "Haz clic en 'Calcular' o presiona Enter para ver los resultados al instante.",
+        "Visualiza tu edad exacta en años, meses, semanas y días.",
+        "Revisa la cuenta regresiva para tu próximo cumpleaños y descubre en qué día de la semana naciste.",
+        "Calcula la edad para cualquier otra fecha cambiando la fecha de referencia.",
+      ],
+      ar: [
+        "أدخل تاريخ ميلادك باستخدام محدد التاريخ أو اكتبه يدوياً (بصيغة YYYY-MM-DD).",
+        "انقر على 'احسب' أو اضغط Enter لرؤية النتائج فوراً.",
+        "شاهد عمرك الدقيق معروضاً بالسنوات والأشهر والأسابيع والأيام.",
+        "تحقق من العد التنازلي لعيد ميلادك القادم واعرف في أي يوم من الأسبوع وُلدت.",
+        "احسب العمر لأي تاريخ آخر بتغيير تاريخ المرجع.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo se calcula la edad?", answer: "La calculadora de edad determina la diferencia entre tu fecha de nacimiento y la fecha actual (o una fecha de referencia personalizada). Calcula el número exacto de años, meses y días, teniendo en cuenta las longitudes variables de los meses y los años bisiestos." },
+        { question: "¿Puedo calcular la edad para una fecha pasada o futura?", answer: "Sí. Puedes cambiar la fecha de referencia de hoy a cualquier otra fecha en el pasado o futuro. Esto es útil para calcular la edad en un momento específico, como para documentos legales o planificación." },
+        { question: "¿Esta calculadora tiene en cuenta los años bisiestos?", answer: "Sí. La calculadora de edad tiene en cuenta correctamente los años bisiestos (años de 366 días que ocurren cada 4 años) y el número variable de días en cada mes al calcular tu edad exacta." },
+        { question: "¿Cuántos días faltan para mi próximo cumpleaños?", answer: "Después de ingresar tu fecha de nacimiento, la herramienta calcula y muestra automáticamente el número de días restantes hasta tu próximo cumpleaños, junto con el día de la semana en que cae." },
+        { question: "¿Cómo maneja la calculadora de edad los años bisiestos?", answer: "Nuestra calculadora de edad maneja con precisión los años bisiestos utilizando un algoritmo de diferencia de fechas exacto. Tiene en cuenta las longitudes variables de los meses y los años bisiestos para darte la edad exacta en años, meses y días." },
+      ],
+      ar: [
+        { question: "كيف يتم حساب العمر؟", answer: "تحسب حاسبة العمر الفرق بين تاريخ ميلادك وتاريخ اليوم (أو تاريخ مرجعي مخصص). تحسب العدد الدقيق من السنوات والأشهر والأيام، مع مراعاة أطوال الأشهر المتفاوتة والسنوات الكبيسة." },
+        { question: "هل يمكنني حساب العمر لتاريخ سابق أو مستقبلي؟", answer: "نعم. يمكنك تغيير تاريخ المرجع من اليوم إلى أي تاريخ آخر في الماضي أو المستقبل. هذا مفيد لحساب العمر في نقطة زمنية محددة، مثل الوثائق القانونية أو التخطيط." },
+        { question: "هل تأخذ هذه الحاسبة في الاعتبار السنوات الكبيسة؟", answer: "نعم. تأخذ حاسبة العمر في الاعتبار بشكل صحيح السنوات الكبيسة (366 يوماً التي تحدث كل 4 سنوات) والعدد المتفاوت من الأيام في كل شهر عند حساب عمرك الدقيق." },
+        { question: "كم يوماً متبقي حتى عيد ميلادي القادم؟", answer: "بعد إدخال تاريخ ميلادك، تحسب الأداة تلقائياً وتعرض عدد الأيام المتبقية حتى عيد ميلادك القادم، بالإضافة إلى اليوم من الأسبوع الذي يصادفه." },
+        { question: "كيف تتعامل حاسبة العمر مع السنوات الكبيسة؟", answer: "تتعامل حاسبة العمر بدقة مع السنوات الكبيسة باستخدام خوارزمية فرق التواريخ الدقيقة. تراعي أطوال الأشهر المتفاوتة والسنوات الكبيسة لتعطيك العمر الدقيق بالسنوات والأشهر والأيام." },
+      ],
+    },
     howToUse: [
       "Enter your date of birth using the date picker or type it manually (YYYY-MM-DD format).",
       "Click 'Calculate' or press Enter to see your results instantly.",
@@ -577,6 +1440,52 @@ export const tools: Tool[] = [
       "how to calculate percentage", "percentage increase calculator",
       "online percentage calculator"
 ,      "percentage calculator for students", "best percent calculator 2026", "free percentage tool for homework"        ],
+    nameTranslations: {
+      es: "Calculadora de Porcentaje",
+      ar: "حاسبة النسبة المئوية",
+    },
+    descriptionTranslations: {
+      es: "Calcula porcentajes, cambio porcentual y porcentaje de un número al instante.",
+      ar: "احسب النسب المئوية والتغير النسبي ونسبة رقم من آخر فوراً.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Porcentaje Gratis Online - Calcula Porcentajes 2026",
+      ar: "حاسبة النسبة المئوية المجانية عبر الإنترنت - احسب النسب 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula porcentajes, cambio porcentual entre dos números y qué porcentaje representa un número de otro. Calculadora de porcentaje gratuita. Sin registro.",
+      ar: "احسب النسب المئوية والتغير بين رقمين والنسبة التي يمثلها رقم من آخر. حاسبة نسبة مئوية مجانية. بدون تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Elige el tipo de cálculo porcentual que necesitas: porcentaje de un número, cambio porcentual o qué porcentaje representa un número de otro.",
+        "Ingresa tus valores en los campos de entrada correspondientes.",
+        "Visualiza el resultado del porcentaje calculado al instante.",
+        "Usa el resultado para cálculos financieros, cómputo de calificaciones o análisis de datos.",
+      ],
+      ar: [
+        "اختر نوع حساب النسبة المئوية الذي تحتاجه: نسبة من رقم، تغير نسبي، أو النسبة التي يمثلها رقم من آخر.",
+        "أدخل قيمك في حقول الإدخال المناسبة.",
+        "شاهد نتيجة النسبة المئوية المحسوبة فوراً.",
+        "استخدم النتيجة للحسابات المالية أو حساب الدرجات أو تحليل البيانات.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo calculo el porcentaje de un número?", answer: "Para encontrar X% de un número, multiplica el número por X y divide por 100. Por ejemplo, 25% de 200 = (200 × 25) ÷ 100 = 50." },
+        { question: "¿Cómo se calcula el cambio porcentual?", answer: "Cambio porcentual = ((nuevo valor - valor original) ÷ valor original) × 100. Un resultado positivo significa un aumento; un resultado negativo significa una disminución." },
+        { question: "¿Esta calculadora maneja números negativos?", answer: "Sí. Puedes calcular porcentajes con números negativos, lo cual es útil para escenarios financieros como pérdidas, cambios de temperatura o movimientos de precios de acciones." },
+        { question: "¿Es esta calculadora precisa para cálculos financieros?", answer: "Sí. Los cálculos usan aritmética precisa. Sin embargo, para informes financieros oficiales, debes redondear los resultados según las normas contables de tu localidad." },
+        { question: "¿Cómo calculo el aumento o disminución porcentual?", answer: "Para calcular el cambio porcentual: resta el valor antiguo del nuevo, divide por el valor antiguo y multiplica por 100. Nuestra calculadora de porcentaje hace esto automáticamente, solo ingresa tus dos valores." },
+      ],
+      ar: [
+        { question: "كيف أحسب النسبة المئوية لرقم؟", answer: "لإيجاد X% من رقم، اضرب الرقم في X واقسم على 100. مثلاً: 25% من 200 = (200 × 25) ÷ 100 = 50." },
+        { question: "كيف يُحسب التغير النسبي؟", answer: "التغير النسبي = ((القيمة الجديدة - القيمة الأصلية) ÷ القيمة الأصلية) × 100. النتيجة الإيجابية تعني زيادة؛ والسلبية تعني نقصاناً." },
+        { question: "هل تتعامل هذه الحاسبة مع الأرقام السالبة؟", answer: "نعم. يمكنك حساب النسب المئوية بأرقام سالبة، وهو مفيد للسيناريوهات المالية مثل الخسائر أو تغيرات درجات الحرارة أو تحركات أسعار الأسهم." },
+        { question: "هل هذه الحاسبة دقيقة للحسابات المالية؟", answer: "نعم. تستخدم الحسابات حساباً دقيقاً. ومع ذلك، للتقارير المالية الرسمية، يجب تقريب النتائج وفقاً للمعايير المحاسبية المحلية." },
+        { question: "كيف أحسب الزيادة أو النقصان النسبي؟", answer: "لحساب التغير النسبي: اطرح القيمة القديمة من الجديدة، اقسم على القيمة القديمة، ثم اضرب في 100. حاسبة النسبة المئوية تفعل ذلك تلقائياً -- فقط أدخل قيمتيك." },
+      ],
+    },
     howToUse: [
       "Choose the type of percentage calculation you need: percentage of a number, percentage change, or what percentage one number is of another.",
       "Enter your values in the appropriate input fields.",
@@ -606,19 +1515,54 @@ export const tools: Tool[] = [
       "bmi chart", "healthy weight calculator", "bmi calculator free",
       "body mass index checker online"
 ,      "bmi calculator for students", "best bmi calculator 2026", "free body mass index checker online"        ],
-    howToUse: [
-      "Enter your height in either centimeters/meters or feet/inches.",
-      "Enter your weight in kilograms or pounds.",
-      "Click 'Calculate' to see your BMI result instantly.",
-      "View your BMI value and corresponding weight category (underweight, normal, overweight, or obese).",
-      "Check the ideal weight range for your height to understand your target."
-    ],
-    faq: [
-      { question: "What is BMI?", answer: "BMI (Body Mass Index) is a numerical value calculated from your weight and height. It's used as a screening tool to categorize whether a person is underweight, normal weight, overweight, or obese based on standard ranges established by the World Health Organization (WHO)." },
-      { question: "How is BMI calculated?", answer: "BMI is calculated by dividing your weight in kilograms by your height in meters squared (kg/m²). For imperial units, the formula is (weight in pounds / (height in inches)²) × 703." },
-      { question: "What is a healthy BMI range?", answer: "According to WHO guidelines, a healthy BMI range for adults is 18.5 to 24.9. Below 18.5 is considered underweight, 25.0-29.9 is overweight, and 30.0 or above is obese." },
-      { question: "Is BMI accurate for everyone?", answer: "BMI is a useful general indicator but has limitations. It doesn't account for muscle mass, bone density, or fat distribution. Athletes with high muscle mass may have a high BMI despite being healthy. It's best used as one of several health indicators." }
-,      { question: "What is a healthy BMI range?", answer: "According to WHO guidelines, a healthy BMI range for adults is 18.5 to 24.9. Below 18.5 is considered underweight, 25-29.9 is overweight, and 30 or above is obese. BMI is a general indicator and does not account for muscle mass." }     ]
+    nameTranslations: {
+      es: "Calculadora de IMC",
+      ar: "حاسبة مؤشر كتلة الجسم",
+    },
+    descriptionTranslations: {
+      es: "Calcula tu Índice de Masa Corporal (IMC) y conoce tu categoría de peso.",
+      ar: "احسب مؤشر كتلة الجسم (BMI) واعرف فئة وزنك.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de IMC Gratis Online - Verificador de Masa Corporal 2026",
+      ar: "حاسبة مؤشر كتلة الجسم المجانية عبر الإنترنت - تحقق من وزنك 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula tu IMC al instante con unidades métricas o imperiales. Conoce tu categoría de peso, rango de peso ideal y consejos de salud. Calculadora de IMC gratuita para adultos.",
+      ar: "احسب مؤشر كتلة جسمك فوراً بالوحدات المترية أو الإمبراطورية. اعرف فئة وزنك ونطاق الوزن المثالي ونصائح صحية. حاسبة مؤشر كتلة جسم مجانية للبالغين.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu altura en centímetros/metros o pies/pulgadas.",
+        "Ingresa tu peso en kilogramos o libras.",
+        "Haz clic en 'Calcular' para ver tu resultado de IMC al instante.",
+        "Visualiza tu valor de IMC y la categoría de peso correspondiente (bajo peso, normal, sobrepeso u obesidad).",
+        "Revisa el rango de peso ideal para tu altura para conocer tu objetivo.",
+      ],
+      ar: [
+        "أدخل طولك بالسنتيمتر/المتر أو بالقدم/البوصة.",
+        "أدخل وزنك بالكيلوجرام أو بالرطل.",
+        "انقر على 'احسب' لرؤية نتيجة مؤشر كتلة جسمك فوراً.",
+        "شاهد قيمة مؤشر كتلة الجسم وفئة الوزن المقابلة (نحافة، طبيعي، زيادة وزن، أو سمنة).",
+        "تحقق من نطاق الوزن المثالي لطولك لمعرفة هدفك.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es el IMC?", answer: "El IMC (Índice de Masa Corporal) es un valor numérico calculado a partir de tu peso y altura. Se utiliza como herramienta de detección para categorizar si una persona tiene bajo peso, peso normal, sobrepeso u obesidad según los rangos estándar establecidos por la Organización Mundial de la Salud (OMS)." },
+        { question: "¿Cómo se calcula el IMC?", answer: "El IMC se calcula dividiendo tu peso en kilogramos por tu altura en metros al cuadrado (kg/m²). Para unidades imperiales, la fórmula es (peso en libras / (altura en pulgadas)²) × 703." },
+        { question: "¿Cuál es un rango de IMC saludable?", answer: "Según las directrices de la OMS, un rango de IMC saludable para adultos es de 18.5 a 24.9. Por debajo de 18.5 se considera bajo peso, 25.0-29.9 sobrepeso y 30.0 o más obesidad." },
+        { question: "¿Es el IMC preciso para todos?", answer: "El IMC es un indicador general útil pero tiene limitaciones. No tiene en cuenta la masa muscular, la densidad ósea o la distribución de grasa. Los atletas con alta masa muscular pueden tener un IMC alto a pesar de estar sanos. Es mejor usarlo como uno de varios indicadores de salud." },
+        { question: "¿Cuál es un rango de IMC saludable?", answer: "Según las directrices de la OMS, un rango de IMC saludable para adultos es de 18.5 a 24.9. Por debajo de 18.5 se considera bajo peso, 25-29.9 sobrepeso y 30 o más obesidad. El IMC es un indicador general y no tiene en cuenta la masa muscular." },
+      ],
+      ar: [
+        { question: "ما هو مؤشر كتلة الجسم؟", answer: "مؤشر كتلة الجسم (BMI) هو قيمة رقمية تُحسب من وزنك وطولك. يُستخدم كأداة فحص لتصنيف ما إذا كان الشخص يعاني من نقص الوزن أو الوزن الطبيعي أو زيادة الوزن أو السمنة وفقاً للنطاقات القياسية التي وضعتها منظمة الصحة العالمية." },
+        { question: "كيف يُحسب مؤشر كتلة الجسم؟", answer: "يُحسب مؤشر كتلة الجسم بقسمة وزنك بالكيلوجرام على طولك بالمتر مربع (كجم/م²). للوحدات الإمبراطورية، المعادلة هي (الوزن بالرطل / (الطول بالبوصة)²) × 703." },
+        { question: "ما هو نطاق مؤشر كتلة الجسم الصحي؟", answer: "وفقاً لإرشادات منظمة الصحة العالمية، يتراوح نطاق مؤشر كتلة الجسم الصحي للبالغين بين 18.5 و 24.9. أقل من 18.5 يُعتبر نقصاً في الوزن، و25.0-29.9 زيادة في الوزن، و30.0 فأكثر سمنة." },
+        { question: "هل مؤشر كتلة الجسم دقيق للجميع؟", answer: "مؤشر كتلة الجسم مؤشر عام مفيد لكنه له قيود. لا يأخذ في الاعتبار الكتلة العضلية أو كثافة العظام أو توزيع الدهون. قد يكون لدى الرياضيين ذوي الكتلة العضلية العالية مؤشر مرتفع رغم كونهم أصحاء. من الأفضل استخدامه كأحد عدة مؤشرات صحية." },
+        { question: "ما هو نطاق مؤشر كتلة الجسم الصحي؟", answer: "وفقاً لإرشادات منظمة الصحة العالمية، يتراوح النطاق الصحي لمؤشر كتلة الجسم للبالغين بين 18.5 و 24.9. أقل من 18.5 نقص وزن، 25-29.9 زيادة وزن، و30 فأكثر سمنة. المؤشر عام ولا يراعي الكتلة العضلية." },
+      ],
+    },
   },
   {
     id: "unit-converter",
@@ -636,6 +1580,52 @@ export const tools: Tool[] = [
       "unit conversion online", "free unit converter tool",
       "cm to inches converter", "kg to lbs converter"
 ,      "unit converter for students", "best unit converter 2026", "free metric to imperial converter online"        ],
+    nameTranslations: {
+      es: "Convertidor de Unidades",
+      ar: "محول الوحدات",
+    },
+    descriptionTranslations: {
+      es: "Convierte entre unidades de longitud, peso, temperatura y otras fácilmente.",
+      ar: "حوّل بين وحدات الطول والوزن والحرارة وغيرها بسهولة.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de Unidades Gratis Online - Conversión Métrica 2026",
+      ar: "محول الوحدات المجاني عبر الإنترنت - تحويل متري وإمبراطوري 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte entre unidades métricas e imperiales para longitud, peso, temperatura, volumen y velocidad. Convertidor de unidades gratuito. Sin registro.",
+      ar: "حوّل بين الوحدات المترية والإمبراطورية للطول والوزن والحرارة والحجم والسرعة. محول وحدات مجاني. بدون تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Selecciona la categoría de unidades que deseas convertir (longitud, peso, temperatura, volumen o velocidad).",
+        "Elige las unidades de entrada y salida de los menús desplegables.",
+        "Ingresa tu valor y visualiza el resultado convertido al instante.",
+        "Usa el botón de intercambio para invertir rápidamente la dirección de conversión.",
+      ],
+      ar: [
+        "اختر فئة الوحدات التي تريد تحويلها (الطول، الوزن، الحرارة، الحجم، أو السرعة).",
+        "اختر وحدات الإدخال والإخراج من القوائم المنسدلة.",
+        "أدخل قيمتك وشاهد النتيجة المحولة فوراً.",
+        "استخدم زر التبديل لعكس اتجاه التحويل بسرعة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué categorías de unidades son compatibles?", answer: "Este convertidor admite longitud (metros, pies, pulgadas, etc.), peso (kilogramos, libras, onzas, etc.), temperatura (Celsius, Fahrenheit, Kelvin), volumen (litros, galones, tazas, etc.) y velocidad (mph, km/h, m/s)." },
+        { question: "¿Qué tan precisas son las conversiones?", answer: "Todas las conversiones utilizan factores de conversión precisos y son exactas hasta muchas cifras decimales. Los resultados se redondean para facilitar la lectura, pero puedes ver la precisión completa." },
+        { question: "¿Puedo convertir entre cualesquiera dos unidades?", answer: "Puedes convertir entre cualesquiera dos unidades dentro de la misma categoría. Por ejemplo, puedes convertir metros a pies o kilogramos a libras, pero no metros a kilogramos." },
+        { question: "¿Es esta herramienta adecuada para medidas de cocina?", answer: "Sí. El convertidor de volumen incluye medidas comunes de cocina como tazas, cucharadas, cucharaditas y mililitros, lo que lo hace útil para convertir recetas." },
+        { question: "¿Qué unidades admite este convertidor?", answer: "Nuestro convertidor de unidades admite longitud (km, mi, m, ft, cm, in), peso (kg, lb, g, oz), temperatura (C, F, K), volumen (L, gal, mL, fl oz) y velocidad (km/h, mph, m/s, nudos)." },
+      ],
+      ar: [
+        { question: "ما هي فئات الوحدات المدعومة؟", answer: "يدعم هذا المحول الطول (أمتار، أقدام، بوصات، إلخ)، الوزن (كيلوجرام، رطل، أونصة، إلخ)، الحرارة (سلسيوس، فهرنهايت، كلفن)، الحجم (لتر، جالون، كوب، إلخ) والسرعة (ميل/ساعة، كم/ساعة، م/ث)." },
+        { question: "ما مدى دقة التحويلات؟", answer: "تستخدم جميع التحويلات عوامل تحويل دقيقة وهي صحيحة حتى منازل عشرية كثيرة. يتم تقريب النتائج لسهولة القراءة لكن يمكنك رؤية الدقة الكاملة." },
+        { question: "هل يمكنني التحويل بين أي وحدتين؟", answer: "يمكنك التحويل بين أي وحدتين ضمن نفس الفئة. مثلاً يمكنك تحويل الأمتار إلى أقدام أو الكيلوجرام إلى رطل، لكن ليس الأمتار إلى كيلوجرام." },
+        { question: "هل هذه الأداة مناسبة لمقاييس الطبخ؟", answer: "نعم. يتضمن محول الحجم مقاييس طبخ شائعة مثل الأكواب والملاعق الكبيرة والصغيرة والميليلتر، مما يجعله مفيداً لتحويل الوصفات." },
+        { question: "ما الوحدات التي يدعمها هذا المحول؟", answer: "يدعم محول الوحدات لدينا الطول (كم، ميل، م، قدم، سم، بوصة)، الوزن (كجم، رطل، جم، أونصة)، الحرارة (س، ف، ك)، الحجم (لتر، جالون، مل، أونصة سائلة) والسرعة (كم/ساعة، ميل/ساعة، م/ث، عقدة)." },
+      ],
+    },
     howToUse: [
       "Select the unit category you want to convert (length, weight, temperature, volume, or speed).",
       "Choose the input and output units from the dropdown menus.",
@@ -647,7 +1637,7 @@ export const tools: Tool[] = [
       { question: "How accurate are the conversions?", answer: "All conversions use precise conversion factors and are accurate to many decimal places. Results are rounded for readability but you can see the full precision." },
       { question: "Can I convert between any two units?", answer: "You can convert between any two units within the same category. For example, you can convert meters to feet, or kilograms to pounds, but not meters to kilograms." },
       { question: "Is this tool suitable for cooking measurements?", answer: "Yes. The volume converter includes common cooking measurements like cups, tablespoons, teaspoons, and milliliters, making it useful for recipe conversions." }
-,      { question: "What units does this converter support?", answer: "Our unit converter supports length (km, mi, m, ft, cm, in), weight (kg, lb, g, oz), temperature (C, F, K), volume (L, gal, mL, fl oz), and speed (km/h, mph, m/s, knots)." }     ]
+,      { question: "What units does this converter support?", answer: "Our unit converter supports length (km, mi, m, ft, cm, in), weight (kg, lb, g, oz), temperature (C, F, K), volume (L, gal, mL, fl oz), and speed (km/h, mph, m/s, knots)." }     ],
   },
   // Converters
   {
@@ -666,6 +1656,52 @@ export const tools: Tool[] = [
       "binary octal decimal hex converter", "convert number bases",
       "free base converter", "number system converter"
 ,      "number base converter for students", "best binary converter 2026", "free hex to decimal converter online"        ],
+    nameTranslations: {
+      es: "Convertidor de Bases Numéricas",
+      ar: "محول الأنظمة العددية",
+    },
+    descriptionTranslations: {
+      es: "Convierte números entre los sistemas binario, octal, decimal y hexadecimal.",
+      ar: "حوّل الأرقام بين الأنظمة الثنائية والثمانية والعشرية والست عشرية.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de Bases Gratis Online - Binario, Hex, Decimal 2026",
+      ar: "محول الأنظمة العددية المجاني عبر الإنترنت - ثنائي وسداسي عشري 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte números entre los sistemas binario, octal, decimal y hexadecimal al instante. Convertidor de bases numéricas gratuito para desarrolladores y estudiantes.",
+      ar: "حوّل الأرقام بين الأنظمة الثنائية والثمانية والعشرية والست عشرية فوراً. محول أنظمة عددية مجاني للمطورين والطلاب.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Selecciona la base numérica de entrada (binaria, octal, decimal o hexadecimal).",
+        "Ingresa tu número en el campo de entrada.",
+        "Visualiza el número convertido a todas las demás bases al instante.",
+        "Usa la herramienta para programación, redes o estudios de informática.",
+      ],
+      ar: [
+        "اختر النظام العددي للإدخال (ثنائي، ثماني، عشري، أو سداسي عشري).",
+        "أدخل رقمك في حقل الإدخال.",
+        "شاهد الرقم محولاً إلى جميع الأنظمة الأخرى فوراً.",
+        "استخدم الأداة للبرمجة أو الشبكات أو دراسات علوم الحاسوب.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué son las bases numéricas?", answer: "Las bases numéricas son diferentes sistemas para representar números. El binario (base 2) usa dígitos 0-1, el octal (base 8) usa 0-7, el decimal (base 10) usa 0-9 y el hexadecimal (base 16) usa 0-9 y A-F." },
+        { question: "¿Por qué necesito convertir entre bases numéricas?", answer: "La conversión de bases es esencial en informática y programación. El binario se usa para operaciones de bajo nivel, el hexadecimal para direcciones de memoria y colores, y el decimal para cálculos cotidianos." },
+        { question: "¿Puedo ingresar números negativos?", answer: "Sí. Puedes ingresar números negativos en cualquier base y la herramienta los convertirá correctamente a todas las demás bases." },
+        { question: "¿Cuál es el tamaño máximo de número?", answer: "La herramienta puede manejar números muy grandes, hasta el límite de enteros seguros de JavaScript (aproximadamente 9 × 10^15). Esto es suficiente para la mayoría de los casos de uso educativos y de programación." },
+        { question: "¿Qué bases numéricas admite este convertidor?", answer: "Nuestro convertidor admite binario (base 2), octal (base 8), decimal (base 10) y hexadecimal (base 16). Ingresa un número en cualquier base y ve el equivalente en todas las demás bases al instante." },
+      ],
+      ar: [
+        { question: "ما هي الأنظمة العددية؟", answer: "الأنظمة العددية هي طرق مختلفة لتمثيل الأرقام. النظام الثنائي (الأساس 2) يستخدم الأرقام 0-1، والثماني (الأساس 8) يستخدم 0-7، والعشري (الأساس 10) يستخدم 0-9، والست عشري (الأساس 16) يستخدم 0-9 و A-F." },
+        { question: "لماذا أحتاج للتحويل بين الأنظمة العددية؟", answer: "تحويل الأنظمة العددية أساسي في علوم الحاسوب والبرمجة. يُستخدم الثنائي للعمليات منخفضة المستوى، والست عشري لعناوين الذاكرة والألوان، والعشري للحسابات اليومية." },
+        { question: "هل يمكنني إدخال أرقام سالبة؟", answer: "نعم. يمكنك إدخال أرقام سالبة بأي نظام وستقوم الأداة بتحويلها بشكل صحيح إلى جميع الأنظمة الأخرى." },
+        { question: "ما هو أقصى حجم للرقم؟", answer: "يمكن للأداة التعامل مع أرقام كبيرة جداً حتى حد الأعداد الآمنة في جافاسكريبت (تقريباً 9 × 10^15). هذا يكفي لمعظم حالات الاستخدام البرمجية والتعليمية." },
+        { question: "ما الأنظمة العددية التي يدعمها هذا المحول؟", answer: "يدعم محولنا النظام الثنائي (الأساس 2) والثماني (الأساس 8) والعشري (الأساس 10) والست عشري (الأساس 16). أدخل رقماً بأي نظام وشاهد المكافئ في جميع الأنظمة الأخرى فوراً." },
+      ],
+    },
     howToUse: [
       "Select the input number base (binary, octal, decimal, or hexadecimal).",
       "Enter your number in the input field.",
@@ -677,7 +1713,7 @@ export const tools: Tool[] = [
       { question: "Why do I need to convert between number bases?", answer: "Number base conversion is essential in computer science and programming. Binary is used for low-level operations, hexadecimal for memory addresses and colors, and decimal for everyday calculations." },
       { question: "Can I enter negative numbers?", answer: "Yes. You can enter negative numbers in any base, and the tool will convert them correctly to all other bases." },
       { question: "What's the maximum number size?", answer: "The tool can handle very large numbers — up to the safe integer limit of JavaScript (approximately 9 × 10^15). This is sufficient for most programming and educational use cases." }
-,      { question: "What number bases does this converter support?", answer: "Our converter supports binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Enter a number in any base and instantly see the equivalent in all other bases." }     ]
+,      { question: "What number bases does this converter support?", answer: "Our converter supports binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Enter a number in any base and instantly see the equivalent in all other bases." }     ],
   },
   {
     id: "roman-numerals",
@@ -696,6 +1732,52 @@ export const tools: Tool[] = [
       "roman numeral converter online", "free roman numeral tool",
       "roman numbers converter", "what is this roman numeral"
 ,      "roman numerals for students", "best roman numeral converter 2026", "free roman to number converter online"        ],
+    nameTranslations: {
+      es: "Convertidor de Números Romanos",
+      ar: "محول الأرقام الرومانية",
+    },
+    descriptionTranslations: {
+      es: "Convierte entre números romanos y arábigos en ambas direcciones.",
+      ar: "حوّل بين الأرقام الرومانية والعربية في كلا الاتجاهين.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de Números Romanos Gratis Online - Romano a Número 2026",
+      ar: "محول الأرقام الرومانية المجاني عبر الإنترنت - روماني إلى رقم 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte números romanos a arábigos y viceversa al instante. Convertidor de números romanos gratuito. Admite números del 1 al 3.999.999.",
+      ar: "حوّل الأرقام الرومانية إلى عربية والعكس فوراً. محول أرقام رومانية مجاني. يدعم الأرقام من 1 إلى 3,999,999.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa un número romano (como XIV) para convertirlo a un número arábigo.",
+        "O ingresa un número arábigo (como 2024) para convertirlo a números romanos.",
+        "Visualiza el resultado de la conversión al instante.",
+        "Úsalo para fechas, esferas de reloj, numeración de esquemas o investigación histórica.",
+      ],
+      ar: [
+        "أدخل رقماً رومانياً (مثل XIV) لتحويله إلى رقم عربي.",
+        "أو أدخل رقماً عربياً (مثل 2024) لتحويله إلى أرقام رومانية.",
+        "شاهد نتيجة التحويل فوراً.",
+        "استخدمه للتواريخ أو وجوه الساعات أو ترقيم المخططات أو البحث التاريخي.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué son los números romanos?", answer: "Los números romanos son un sistema numérico originario de la antigua Roma, que usa combinaciones de letras: I (1), V (5), X (10), L (50), C (100), D (500) y M (1000)." },
+        { question: "¿Cuál es el número más grande que maneja este convertidor?", answer: "Este convertidor admite números del 1 al 3.999.999. Los números romanos estándar llegan hasta 3.999, y esta herramienta lo extiende con notación de barra superior para números más grandes." },
+        { question: "¿Cómo funcionan los números romanos?", answer: "Los números romanos se leen de izquierda a derecha, sumando los valores. Cuando un numeral menor aparece antes de uno mayor, se resta (por ejemplo, IV = 4, IX = 9, XL = 40)." },
+        { question: "¿Dónde se usan los números romanos hoy?", answer: "Los números romanos aún se usan para esferas de reloj, fechas de derechos de autor de películas, capítulos de libros, numeración de monarcas (Reina Isabel II), numeración del Super Bowl y estructuras de esquemas formales." },
+        { question: "¿Cuál es el número romano más grande que esta herramienta puede convertir?", answer: "Nuestro convertidor de números romanos maneja números del 1 al 3.999 (MMMCMXCIX), que cubre el rango estándar de los números romanos. Para números más grandes, la notación de números romanos se vuelve no estándar." },
+      ],
+      ar: [
+        { question: "ما هي الأرقام الرومانية؟", answer: "الأرقام الرومانية هي نظام عددي نشأ في روما القديمة، يستخدم مجموعات من الحروف: I (1)، V (5)، X (10)، L (50)، C (100)، D (500)، و M (1000)." },
+        { question: "ما أكبر رقم يتعامل معه هذا المحول؟", answer: "يدعم هذا المحول الأرقام من 1 إلى 3,999,999. الأرقام الرومانية القياسية تصل إلى 3,999، وهذه الأداة توسع ذلك بترميز الخط العلوي للأرقام الأكبر." },
+        { question: "كيف تعمل الأرقام الرومانية؟", answer: "تُقرأ الأرقام الرومانية من اليسار إلى اليمين مع جمع القيم. عندما يظهر رقم أصغر قبل رقم أكبر، يتم طرحه (مثلاً IV = 4، IX = 9، XL = 40)." },
+        { question: "أين تُستخدم الأرقام الرومانية اليوم؟", answer: "لا تزال الأرقام الرومانية تُستخدم لوجوه الساعات وتواريخ حقوق النشر للأفلام وفصول الكتب وترقيم الملوك (الملكة إليزابيث الثانية) وترقيم السوبر بول وهياكل المخططات الرسمية." },
+        { question: "ما أكبر رقم روماني يمكن لهذه الأداة تحويله؟", answer: "يُعامِل محول الأرقام الرومانية لدينا الأرقام من 1 إلى 3,999 (MMMCMXCIX)، وهو يغطي النطاق القياسي للأرقام الرومانية. للأرقام الأكبر، تصبح كتابة الأرقام الرومانية غير قياسية." },
+      ],
+    },
     howToUse: [
       "Enter a Roman numeral (like XIV) to convert it to an Arabic number.",
       "Or enter an Arabic number (like 2024) to convert it to Roman numerals.",
@@ -725,6 +1807,54 @@ export const tools: Tool[] = [
       "online color converter", "color converter tool free",
       "convert hex color code", "hsl to rgb converter"
 ,      "color converter for students", "best color converter 2026", "free hex to rgb converter online"        ],
+    nameTranslations: {
+      es: "Convertidor de Colores",
+      ar: "محول الألوان",
+    },
+    descriptionTranslations: {
+      es: "Convierte colores entre formatos HEX, RGB y HSL con vista previa en vivo.",
+      ar: "حوّل الألوان بين صيغ HEX و RGB و HSL مع معاينة مباشرة.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de Colores Gratis Online - HEX, RGB, HSL 2026",
+      ar: "محول الألوان المجاني عبر الإنترنت - HEX و RGB و HSL 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte colores entre formatos HEX, RGB y HSL al instante. Vista previa en vivo con valores para copiar y pegar. Convertidor de colores gratuito para diseñadores y desarrolladores.",
+      ar: "حوّل الألوان بين صيغ HEX و RGB و HSL فوراً. معاينة مباشرة مع قيم للنسخ واللصق. محول ألوان مجاني للمصممين والمطورين.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa un valor de color en cualquier formato: HEX (#FF5733), RGB (rgb(255,87,51)) o HSL (hsl(11,100%,60%)).",
+        "Visualiza los valores convertidos en todos los formatos mostrados lado a lado.",
+        "Ve la vista previa del color actualizarse en tiempo real mientras escribes.",
+        "Haz clic en cualquier valor para copiarlo al portapapeles.",
+        "Usa el selector de color para elegir un color visualmente y obtener todos los valores de formato.",
+      ],
+      ar: [
+        "أدخل قيمة لون بأي صيغة: HEX (#FF5733) أو RGB (rgb(255,87,51)) أو HSL (hsl(11,100%,60%)).",
+        "شاهد القيم المحوّلة في جميع الصيغ معروضة جنباً إلى جنب.",
+        "شاهد معاينة اللون المباشرة تتحدث في الوقت الفعلي أثناء الكتابة.",
+        "انقر على أي قيمة لنسخها إلى الحافظة.",
+        "استخدم منتقي الألوان لاختيار لون بصرياً والحصول على جميع قيم الصيغ.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué son los formatos de color HEX, RGB y HSL?", answer: "HEX representa los colores como un código hexadecimal de 6 dígitos (por ejemplo, #FF5733). RGB usa valores de rojo, verde y azul de 0-255. HSL representa los colores como matiz (0-360°), saturación (0-100%) y luminosidad (0-100%), lo cual es más intuitivo para los humanos." },
+        { question: "¿Cómo convierto HEX a RGB?", answer: "Ingresa tu código de color HEX (con o sin el símbolo #) y la herramienta muestra al instante los valores RGB equivalentes. Por ejemplo, #FF5733 se convierte a RGB(255, 87, 51)." },
+        { question: "¿Por qué debería usar HSL en lugar de RGB?", answer: "HSL es preferido por los diseñadores porque es más intuitivo. Puedes ajustar el matiz para cambiar el color, la saturación para la viveza y la luminosidad para el brillo, todo de forma independiente. También es el formato usado en CSS moderno." },
+        { question: "¿Puedo usar este convertidor de colores para diseño web?", answer: "Sí. Esta herramienta admite todos los formatos de color web estándar. Puedes convertir entre cualquier formato y copiar directamente los valores para usar en CSS, HTML, JavaScript o software de diseño como Figma y Photoshop." },
+        { question: "¿Qué formatos de color admite este convertidor?", answer: "Nuestro convertidor de colores admite HEX (#RRGGBB), RGB (rgb(r, g, b)), HSL (hsl(h, s%, l%)) y colores con nombre. Ingresa cualquier valor y obtén conversiones instantáneas a todos los demás formatos." },
+      ],
+      ar: [
+        { question: "ما هي صيغ الألوان HEX و RGB و HSL؟", answer: "يمثل HEX الألوان كرمز سداسي عشري من 6 أرقام (مثل #FF5733). يستخدم RGB قيم الأحمر والأخضر والأزرق من 0-255. يمثل HSL الألوان بالتدرج (0-360°) والتشبع (0-100%) والإضاءة (0-100%)، وهو أكثر سهولة للفهم البشري." },
+        { question: "كيف أحول HEX إلى RGB؟", answer: "أدخل رمز لون HEX (مع أو بدون رمز #) وتعرض الأداة فوراً قيم RGB المكافئة. مثلاً #FF5733 يتحول إلى RGB(255, 87, 51)." },
+        { question: "لماذا يجب استخدام HSL بدلاً من RGB؟", answer: "يفضل المصممون HSL لأنه أكثر سهولة. يمكنك ضبط التدرج لتغيير اللون والتشبع للحيوية والإضاءة للسطوع، كل ذلك بشكل مستقل. وهو أيضاً الصيغة المستخدمة في CSS الحديث." },
+        { question: "هل يمكنني استخدام محول الألوان هذا لتصميم الويب؟", answer: "نعم. تدعم هذه الأداة جميع صيغ ألوان الويب القياسية. يمكنك التحويل بين أي صيغة ونسخ القيم مباشرة للاستخدام في CSS أو HTML أو JavaScript أو برامج التصميم مثل Figma و Photoshop." },
+        { question: "ما صيغ الألوان التي يدعمها هذا المحول؟", answer: "يدعم محول الألوان لدينا HEX (#RRGGBB) و RGB (rgb(r, g, b)) و HSL (hsl(h, s%, l%)) والألوان المسماة. أدخل أي قيمة واحصل على تحويلات فورية لجميع الصيغ الأخرى." },
+      ],
+    },
     howToUse: [
       "Enter a color value in any format: HEX (#FF5733), RGB (rgb(255,87,51)), or HSL (hsl(11,100%,60%)).",
       "View the converted values in all formats displayed side by side.",
@@ -755,6 +1885,52 @@ export const tools: Tool[] = [
       "html entity converter", "escape html online",
       "free html entity encoder", "html encode decode online"
 ,      "html entity encoder for students", "best html encoder 2026", "free html special character converter online"        ],
+    nameTranslations: {
+      es: "Codificador de Entidades HTML",
+      ar: "مشفّر كيانات HTML",
+    },
+    descriptionTranslations: {
+      es: "Codifica o decodifica entidades HTML y caracteres especiales de forma segura.",
+      ar: "شفّر أو فك تشفير كيانات HTML والأحرف الخاصة بأمان.",
+    },
+    seoTitleTranslations: {
+      es: "Codificador de Entidades HTML Gratis Online - Codificar y Decodificar 2026",
+      ar: "مشفّر كيانات HTML المجاني عبر الإنترنت - تشفير وفك الكيانات 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Codifica texto a entidades HTML o decodifica entidades HTML de vuelta a texto legible. Codificador/decodificador de entidades HTML gratuito para desarrolladores web.",
+      ar: "شفّر النص إلى كيانات HTML أو فك تشفير كيانات HTML إلى نص مقروء. مشفر/فك تشفير كيانات HTML مجاني لمطوري الويب.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tu texto con caracteres especiales o entidades HTML en el campo de entrada.",
+        "Haz clic en 'Codificar' para convertir caracteres especiales a entidades HTML.",
+        "Haz clic en 'Decodificar' para convertir entidades HTML de vuelta a caracteres legibles.",
+        "Copia el resultado para usarlo en tu HTML, plantillas o contenido web.",
+      ],
+      ar: [
+        "الصق نصك ذي الأحرف الخاصة أو كيانات HTML في حقل الإدخال.",
+        "انقر على 'تشفير' لتحويل الأحرف الخاصة إلى كيانات HTML.",
+        "انقر على 'فك التشفير' لتحويل كيانات HTML إلى أحرف مقروءة.",
+        "انسخ النتيجة لاستخدامها في HTML أو القوالب أو محتوى الويب.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué son las entidades HTML?", answer: "Las entidades HTML son códigos especiales usados para mostrar caracteres reservados en HTML. Por ejemplo, < es &lt;, > es &gt;, y & es &amp;. Evitan que el navegador interprete estos caracteres como etiquetas HTML." },
+        { question: "¿Cuándo debo codificar entidades HTML?", answer: "Debes codificar entidades HTML siempre que necesites mostrar caracteres especiales en páginas web sin que el navegador los interprete como marcado. Esto es esencial para mostrar fragmentos de código, símbolos matemáticos o texto que contenga ángulos." },
+        { question: "¿Qué caracteres se codifican?", answer: "La herramienta codifica caracteres HTML reservados: menor que, mayor que, ampersand, comillas dobles y comillas simples. También maneja símbolos comunes como copyright, marca registrada, euro y libra." },
+        { question: "¿La codificación afecta cómo se ve la página?", answer: "No. Las entidades codificadas se renderizan exactamente igual que los caracteres originales en el navegador. La codificación solo afecta el código fuente, no la salida visual." },
+        { question: "¿Por qué necesito codificar entidades HTML?", answer: "La codificación de entidades HTML convierte caracteres especiales como ángulos y ampersands en equivalentes seguros para evitar que se interpreten como etiquetas HTML. Esto es esencial para la seguridad y mostrar código en páginas web." },
+      ],
+      ar: [
+        { question: "ما هي كيانات HTML؟", answer: "كيانات HTML هي رموز خاصة تُستخدم لعرض الأحرف المحجوزة في HTML. مثلاً < هي &lt; و > هي &gt; و & هي &amp;. تمنع المتصفح من تفسير هذه الأحرف كوسوم HTML." },
+        { question: "متى يجب تشفير كيانات HTML؟", answer: "يجب تشفير كيانات HTML كلما احتجت لعرض أحرف خاصة في صفحات الويب دون أن يفسرها المتصفح كترميز. هذا أساسي لعرض مقتطفات الكود أو الرموز الرياضية أو النص الذي يحتوي على زوايا." },
+        { question: "ما الأحرف التي يتم تشفيرها؟", answer: "تشفّر الأداة أحرف HTML المحجوزة: أقل من، أكبر من، علامة العطف، علامتي التنصيص المزدوجة والمفردة. كما تتعامل مع رموز شائعة مثل حقوق النشر والعلامة التجارية المسجلة واليورو والجنيه." },
+        { question: "هل يؤثر التشفير على مظهر الصفحة؟", answer: "لا. تظهر الكيانات المشفرة تماماً مثل الأحرف الأصلية في المتصفح. يؤثر التشفير فقط على الكود المصدري وليس المظهر المرئي." },
+        { question: "لماذا أحتاج لتشفير كيانات HTML؟", answer: "يحول تشفير كيانات HTML الأحرف الخاصة مثل الزوايا وعلامة العطف إلى بدائل آمنة لمنع تفسيرها كوسوم HTML. هذا أساسي للأمان وعرض الكود على صفحات الويب." },
+      ],
+    },
     howToUse: [
       "Paste your text with special characters or HTML entities into the input field.",
       "Click 'Encode' to convert special characters to HTML entities.",
@@ -784,6 +1960,52 @@ export const tools: Tool[] = [
       "json to csv free", "online json csv converter",
       "json to csv tool", "convert api data to csv"
 ,      "json to csv for students", "best json to csv converter 2026", "free json to excel converter online"        ],
+    nameTranslations: {
+      es: "Convertidor de JSON a CSV",
+      ar: "محول JSON إلى CSV",
+    },
+    descriptionTranslations: {
+      es: "Convierte datos JSON a formato CSV para hojas de cálculo y bases de datos.",
+      ar: "حوّل بيانات JSON إلى صيغة CSV للجداول وقواعد البيانات.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de JSON a CSV Gratis Online - Exportar Datos JSON 2026",
+      ar: "محول JSON إلى CSV المجاني عبر الإنترنت - تصدير بيانات JSON 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte arrays JSON a formato CSV para importar fácilmente en Excel, Google Sheets o bases de datos. Convertidor de JSON a CSV gratuito. Sin registro.",
+      ar: "حوّل مصفوفات JSON إلى صيغة CSV للاستيراد السهل في Excel أو Google Sheets أو قواعد البيانات. محول JSON إلى CSV مجاني. بدون تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tus datos de array JSON en el campo de entrada.",
+        "Haz clic en 'Convertir' para transformar el JSON a formato CSV.",
+        "Previsualiza la salida CSV y verifica la alineación de columnas.",
+        "Copia los datos CSV para pegarlos en Excel, Google Sheets o guardarlos como archivo .csv.",
+      ],
+      ar: [
+        "الصق بيانات مصفوفة JSON في حقل الإدخال.",
+        "انقر على 'تحويل' لتحويل JSON إلى صيغة CSV.",
+        "عاين مخرجات CSV وتحقق من محاذاة الأعمدة.",
+        "انسخ بيانات CSV للصقها في Excel أو Google Sheets أو حفظها كملف .csv.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿En qué formato debe estar mi JSON?", answer: "Tu JSON debe ser un array de objetos donde cada objeto representa una fila. Por ejemplo: [{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]. Los objetos anidados se aplanan en columnas." },
+        { question: "¿Puedo convertir JSON anidado a CSV?", answer: "Sí. Los objetos y arrays anidados se aplanan automáticamente. Las claves anidadas se unen con puntos (por ejemplo, 'address.city' se convierte en un nombre de columna) para crear una estructura CSV plana." },
+        { question: "¿Qué delimitador usa el CSV?", answer: "El convertidor usa comas como delimitadores por defecto. Si tus datos contienen comas, los valores se citan correctamente para evitar problemas de formato." },
+        { question: "¿Puedo usar esto con datos de API?", answer: "Sí. Si tu API devuelve datos de array JSON, simplemente copia la respuesta y pégala en el convertidor. Esto se usa comúnmente para exportar resultados de API a hojas de cálculo para análisis." },
+        { question: "¿Esta herramienta maneja objetos JSON anidados?", answer: "Nuestro convertidor de JSON a CSV aplana los objetos anidados usando notación de puntos (por ejemplo, user.name). Los arrays dentro de objetos se convierten a cadenas separadas por comas. Cada objeto de nivel superior se convierte en una fila CSV." },
+      ],
+      ar: [
+        { question: "ما الصيغة التي يجب أن يكون عليها JSON؟", answer: "يجب أن يكون JSON مصفوفة من الكائنات حيث يمثل كل كائناً صفاً. مثلاً: [{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]. الكائنات المتداخلة تُسطح إلى أعمدة." },
+        { question: "هل يمكنني تحويل JSON المتداخل إلى CSV؟", answer: "نعم. الكائنات والمصفوفات المتداخلة تُسطح تلقائياً. المفاتيح المتداخلة تُربط بنقاط (مثلاً 'address.city' يصبح اسم عمود) لإنشاء بنية CSV مسطحة." },
+        { question: "ما الفاصل الذي يستخدمه CSV؟", answer: "يستخدم المحول الفواصل كفواصل افتراضياً. إذا كانت بياناتك تحتوي على فواصل، تُوضع القيم بين علامتي تنصيص لمنع مشاكل التنسيق." },
+        { question: "هل يمكنني استخدام هذا مع بيانات API؟", answer: "نعم. إذا أرجعت API بيانات مصفوفة JSON، ببساطة انسخ الرد والصقه في المحول. يُستخدم هذا عادةً لتصدير نتائج API إلى جداول البيانات للتحليل." },
+        { question: "هل تتعامل هذه الأداة مع كائنات JSON المتداخلة؟", answer: "يُسطّح محول JSON إلى CSV لدينا الكائنات المتداخلة باستخدام ترقيم النقاط (مثلاً user.name). المصفوفات داخل الكائنات تُحوّل إلى سلاسل مفصولة بفواصل. كل كائن من المستوى الأعلى يصبح صفاً في CSV." },
+      ],
+    },
     howToUse: [
       "Paste your JSON array data into the input field.",
       "Click 'Convert' to transform the JSON into CSV format.",
@@ -813,6 +2035,52 @@ export const tools: Tool[] = [
       "csv to json free", "online csv json tool",
       "convert spreadsheet to json", "csv to json array"
 ,      "csv to json for students", "best csv to json converter 2026", "free spreadsheet to json converter online"        ],
+    nameTranslations: {
+      es: "Convertidor de CSV a JSON",
+      ar: "محول CSV إلى JSON",
+    },
+    descriptionTranslations: {
+      es: "Convierte datos CSV a formato JSON para APIs y aplicaciones web.",
+      ar: "حوّل بيانات CSV إلى صيغة JSON للبرمجة وتطبيقات الويب.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de CSV a JSON Gratis Online - Convertir CSV a JSON 2026",
+      ar: "محول CSV إلى JSON المجاني عبر الإنترنت - تحويل CSV إلى JSON 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte datos CSV a formato JSON para APIs, aplicaciones web y bases de datos. Convertidor de CSV a JSON gratuito con salida formateada. Sin registro.",
+      ar: "حوّل بيانات CSV إلى صيغة JSON للبرمجة وتطبيقات الويب وقواعد البيانات. محول CSV إلى JSON مجاني مع إخراج منسق. بدون تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Pega tus datos CSV en el campo de entrada (con o sin encabezados).",
+        "Haz clic en 'Convertir' para transformar el CSV a formato JSON.",
+        "Visualiza la salida JSON formateada con estructura adecuada.",
+        "Copia los datos JSON para usarlos en tu API, aplicación o base de datos.",
+      ],
+      ar: [
+        "الصق بيانات CSV في حقل الإدخال (مع أو بدون رؤوس).",
+        "انقر على 'تحويل' لتحويل CSV إلى صيغة JSON.",
+        "شاهد إخراج JSON المنسق بالبنية المناسبة.",
+        "انسخ بيانات JSON لاستخدامها في API أو تطبيقك أو قاعدة البيانات.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿La primera fila necesita ser encabezados?", answer: "El convertidor puede funcionar con o sin encabezados. Si la primera fila parece nombres de columnas, se usará como claves JSON. De lo contrario, se generan claves numéricas (0, 1, 2...)." },
+        { question: "¿Qué formatos CSV son compatibles?", answer: "La herramienta admite CSV estándar con delimitadores de coma, así como valores delimitados por punto y coma y separados por tabulaciones. Maneja campos entre comillas que contienen comas y caracteres escapados." },
+        { question: "¿Puedo convertir archivos CSV grandes?", answer: "Sí. El convertidor maneja archivos CSV grandes de manera eficiente. Para archivos muy grandes (millones de filas), considera procesar en lotes más pequeños para evitar límites de memoria del navegador." },
+        { question: "¿Qué tipo de salida JSON obtengo?", answer: "La salida es un array JSON de objetos, donde cada objeto representa una fila y cada par clave-valor representa una columna. Este formato es directamente utilizable con la mayoría de las APIs y aplicaciones JavaScript." },
+        { question: "¿Qué formato CSV espera este convertidor?", answer: "El convertidor espera formato CSV estándar con una fila de encabezados como primera línea. Los campos que contienen comas deben estar entre comillas dobles. Maneja delimitadores comunes y detecta el formato automáticamente." },
+      ],
+      ar: [
+        { question: "هل يجب أن يكون الصف الأول عناوين؟", answer: "يمكن للمحول العمل مع أو بدون عناوين. إذا بدا الصف الأول كأسماء أعمدة، فسيُستخدم كمفاتيح JSON. خلاف ذلك، تُولد مفاتيح رقمية (0، 1، 2...)." },
+        { question: "ما صيغ CSV المدعومة؟", answer: "تدعم الأداة CSV القياسي بفاصلات، بالإضافة إلى القيم المفصولة بفاصلة منقوطة وبعلامات تبويب. تتعامل مع الحقول المقتبسة التي تحتوي على فواصل والأحرف المُفلتة." },
+        { question: "هل يمكنني تحويل ملفات CSV الكبيرة؟", answer: "نعم. يتعامل المحول مع ملفات CSV الكبيرة بكفاءة. للملفات الكبيرة جداً (ملايين الصفوف)، فكر في المعالجة على دفعات أصغر لتجنب حدود ذاكرة المتصفح." },
+        { question: "ما نوع إخراج JSON الذي أحصل عليه؟", answer: "الإخراج هو مصفوفة JSON من الكائنات، حيث يمثل كل كائناً صفاً وكل زوج مفتاح-قيمة يمثل عموداً. هذا الصيغة قابلة للاستخدام مباشرة مع معظم APIs وتطبيقات JavaScript." },
+        { question: "ما صيغة CSV التي يتوقعها هذا المحول؟", answer: "يتوقع المحول صيغة CSV قياسية مع صف عناوين كسطر أول. الحقول التي تحتوي على فواصل يجب أن تكون بين علامتي تنصيص مزدوجتين. يتعامل مع الفواصل الشائعة ويكتشف الصيغة تلقائياً." },
+      ],
+    },
     howToUse: [
       "Paste your CSV data into the input field (with or without headers).",
       "Click 'Convert' to transform the CSV into JSON format.",
@@ -843,6 +2111,52 @@ export const tools: Tool[] = [
       "free image base64 converter", "image to base64 tool",
       "svg to base64", "png to base64 converter"
 ,      "image to base64 for students", "best image encoder 2026", "free image to data uri converter online"        ],
+    nameTranslations: {
+      es: "Imagen a Base64",
+      ar: "تحويل الصورة إلى Base64",
+    },
+    descriptionTranslations: {
+      es: "Convierte imágenes a cadenas codificadas en Base64 para incrustar en código.",
+      ar: "حوّل الصور إلى سلاسل مشفرة بـ Base64 للتضمين في الكود.",
+    },
+    seoTitleTranslations: {
+      es: "Convertidor de Imagen a Base64 Gratis Online - Codificar Imágenes 2026",
+      ar: "محول الصورة إلى Base64 المجاني عبر الإنترنت - تشفير الصور 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte imágenes (PNG, JPG, GIF, SVG) a cadenas codificadas en Base64 para incrustar en CSS, HTML o código. Convertidor de imagen a Base64 gratuito.",
+      ar: "حوّل الصور (PNG، JPG، GIF، SVG) إلى سلاسل مشفرة بـ Base64 للتضمين في CSS أو HTML أو كود. محول صورة إلى Base64 مجاني.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Sube un archivo de imagen (PNG, JPG, GIF, SVG, WebP) o arrástralo y suéltalo en el área de carga.",
+        "Visualiza la cadena codificada en Base64 generada al instante.",
+        "Copia el URI de datos completo (incluyendo prefijo) para incrustar en HTML o CSS.",
+        "Copia solo la cadena Base64 si necesitas construir el URI de datos manualmente.",
+      ],
+      ar: [
+        "ارفع ملف صورة (PNG، JPG، GIF، SVG، WebP) أو اسحبه وأفلته في منطقة الرفع.",
+        "شاهد السلسلة المشفرة بـ Base64 المولدة فوراً.",
+        "انسخ URI البيانات الكامل (بما في ذلك البادئة) للتضمين في HTML أو CSS.",
+        "انسخ سلسلة Base64 فقط إذا كنت تحتاج لبناء URI البيانات يدوياً.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es la codificación de imágenes en Base64?", answer: "La codificación de imágenes en Base64 convierte un archivo de imagen en una cadena de texto que se puede incrustar directamente en HTML, CSS o JavaScript. Esto elimina la necesidad de archivos de imagen separados y solicitudes HTTP." },
+        { question: "¿Qué formatos de imagen son compatibles?", answer: "Esta herramienta admite formatos PNG, JPG/JPEG, GIF, SVG y WebP. La salida conserva el tipo MIME original en el prefijo del URI de datos." },
+        { question: "¿Cuándo debo incrustar imágenes como Base64?", answer: "La incrustación en Base64 es ideal para imágenes pequeñas como iconos, logotipos y elementos de interfaz. Reduce las solicitudes HTTP y acelera la carga de la página. Sin embargo, las imágenes grandes deben permanecer como archivos separados para un mejor almacenamiento en caché." },
+        { question: "¿Cómo afecta Base64 al tamaño del archivo?", answer: "La codificación Base64 aumenta el tamaño del archivo aproximadamente un 33% en comparación con el binario original. Esta compensación suele valer la pena para imágenes pequeñas ya que elimina una solicitud HTTP separada." },
+        { question: "¿Qué formatos de imagen son compatibles?", answer: "Nuestro convertidor de Imagen a Base64 admite formatos PNG, JPEG, GIF, SVG, WebP y BMP. Sube cualquier archivo de imagen o pega un URI de datos para obtener la cadena codificada en Base64 al instante." },
+      ],
+      ar: [
+        { question: "ما هو تشفير الصور بـ Base64؟", answer: "تشفير الصور بـ Base64 يحوّل ملف صورة إلى سلسلة نصية يمكن تضمينها مباشرة في HTML أو CSS أو JavaScript. هذا يلغي الحاجة لملفات صور منفصلة وطلبات HTTP." },
+        { question: "ما صيغ الصور المدعومة؟", answer: "تدعم هذه الأداة صيغ PNG و JPG/JPEG و GIF و SVG و WebP. المخرجات تحافظ على نوع MIME الأصلي في بادئة URI البيانات." },
+        { question: "متى يجب تضمين الصور كـ Base64؟", answer: "التضمين بـ Base64 مثالي للصور الصغيرة مثل الأيقونات والشعارات وعناصر الواجهة. يقلل طلبات HTTP ويسرع تحميل الصفحة. ومع ذلك، يجب أن تبقى الصور الكبيرة كملفات منفصلة لتحسين التخزين المؤقت." },
+        { question: "كيف يؤثر Base64 على حجم الملف؟", answer: "يزيد تشفير Base64 حجم الملف بنحو 33% مقارنة بالثنائي الأصلي. هذه المقايضة عادة ما تستحق ذلك للصور الصغيرة لأنها تلغي طلب HTTP منفصل." },
+        { question: "ما صيغ الصور المدعومة؟", answer: "يدعم محول الصورة إلى Base64 لدينا صيغ PNG و JPEG و GIF و SVG و WebP و BMP. ارفع أي ملف صورة أو الصق URI بيانات للحصول على السلسلة المشفرة بـ Base64 فوراً." },
+      ],
+    },
     howToUse: [
       "Upload an image file (PNG, JPG, GIF, SVG, WebP) or drag and drop it into the upload area.",
       "View the Base64 encoded string generated instantly.",
@@ -873,6 +2187,52 @@ export const tools: Tool[] = [
       "loan interest calculator", "free loan calculator online",
       "how much is my monthly loan payment"
 ,      "loan calculator for students", "best loan payment calculator 2026", "free monthly payment estimator online"        ],
+    nameTranslations: {
+      es: "Calculadora de Préstamos",
+      ar: "حاسبة القروض",
+    },
+    descriptionTranslations: {
+      es: "Calcula pagos mensuales, interés total y amortización para préstamos.",
+      ar: "احسب الدفعات الشهرية وإجمالي الفائدة وجدول السداد للقروض.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Préstamos Gratis Online - Estimador de Pagos 2026",
+      ar: "حاسبة القروض المجانية عبر الإنترنت - تقدير الدفعات الشهرية 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula pagos mensuales de préstamos, interés total y programa de amortización. Calculadora de préstamos gratuita para préstamos personales, automotrices y más.",
+      ar: "احسب الدفعات الشهرية للقروض وإجمالي الفائدة وجدول السداد. حاسبة قروض مجانية للقروض الشخصية وقروض السيارات والمزيد.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa el monto del préstamo (capital) que deseas solicitar.",
+        "Ingresa la tasa de interés anual y el plazo del préstamo en años.",
+        "Haz clic en 'Calcular' para ver tu pago mensual, interés total y costo total.",
+        "Revisa el programa de amortización para ver cómo se divide cada pago entre capital e interés.",
+      ],
+      ar: [
+        "أدخل مبلغ القرض (الرأسمال) الذي تريد اقتراضه.",
+        "أدخل معدل الفائدة السنوية ومدة القرض بالسنوات.",
+        "انقر على 'احسب' لرؤية دفعتك الشهرية وإجمالي الفائدة والتكلفة الإجمالية.",
+        "راجع جدول السداد لمعرفة كيفية تقسيم كل دفعة بين الرأسمال والفائدة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo se calcula el pago mensual del préstamo?", answer: "Pago mensual = P × (r(1+r)^n) / ((1+r)^n - 1), donde P es el capital, r es la tasa de interés mensual y n es el número de pagos. Esta es la fórmula estándar de amortización utilizada por los bancos." },
+        { question: "¿Qué es un programa de amortización?", answer: "Un programa de amortización es una tabla que muestra cada pago durante el plazo del préstamo, dividido en porciones de capital e interés. Los pagos iniciales son principalmente interés; los pagos posteriores son principalmente capital." },
+        { question: "¿Esta calculadora incluye impuestos y seguros?", answer: "Esta calculadora se enfoca en pagos de capital e interés. Para hipotecas, necesitarías agregar impuestos sobre la propiedad y seguros por separado para obtener tu pago mensual completo." },
+        { question: "¿Puedo usar esto para cualquier tipo de préstamo?", answer: "Sí. Esta calculadora funciona para cualquier préstamo a tasa fija, incluyendo préstamos personales, automotrices, estudiantiles y comerciales. Solo ingresa los términos específicos de tu préstamo." },
+        { question: "¿Esta calculadora incluye tasas de interés?", answer: "Sí, nuestra calculadora de préstamos computa los pagos mensuales basándose en el monto del préstamo, la tasa de interés y el plazo. Muestra el monto total del pago y el interés total pagado durante la vida del préstamo." },
+      ],
+      ar: [
+        { question: "كيف تُحسب الدفعة الشهرية للقرض؟", answer: "الدفعة الشهرية = P × (r(1+r)^n) / ((1+r)^n - 1)، حيث P هو الرأسمال، r هو معدل الفائدة الشهري، و n هو عدد الدفعات. هذه هي معادلة السداد القياسية المستخدمة من البنوك." },
+        { question: "ما هو جدول السداد؟", answer: "جدول السداد هو جدول يُظهر كل دفعة خلال مدة القرض، مقسمة إلى أجزاء رأسمال وفائدة. الدفعات الأولى تكون معظمها فائدة؛ والدفعات اللاحقة تكون معظمها رأسمال." },
+        { question: "هل تتضمن هذه الحاسبة الضرائب والتأمين؟", answer: "تركز هذه الحاسبة على دفعات الرأسمال والفائدة. للرهون العقارية، ستحتاج لإضافة ضرائب العقار والتأمين بشكل منفصل للحصول على دفعتك الشهرية الكاملة." },
+        { question: "هل يمكنني استخدام هذا لأي نوع من القروض؟", answer: "نعم. تعمل هذه الحاسبة لأي قرض بمعدل فائدة ثابت بما في ذلك القروض الشخصية وقروض السيارات والقروض الطلابية وقروض الأعمال. فقط أدخل شروط قرضك المحددة." },
+        { question: "هل تتضمن هذه الحاسبة معدلات الفائدة؟", answer: "نعم، تحسب حاسبة القروض لدينا الدفعات الشهرية بناءً على مبلغ القرض ومعدل الفائدة ومدة القرض. تُظهر إجمالي مبلغ الدفع وإجمالي الفائدة المدفوعة خلال عمر القرض." },
+      ],
+    },
     howToUse: [
       "Enter the loan amount (principal) you want to borrow.",
       "Enter the annual interest rate and loan term in years.",
@@ -903,6 +2263,52 @@ export const tools: Tool[] = [
       "free mortgage calculator", "house payment calculator",
       "mortgage payment calculator online", "how much house can i afford"
 ,      "mortgage calculator for students", "best mortgage calculator 2026", "free house payment calculator online"        ],
+    nameTranslations: {
+      es: "Calculadora de Hipoteca",
+      ar: "حاسبة الرهن العقاري",
+    },
+    descriptionTranslations: {
+      es: "Estima tu pago mensual de hipoteca con impuestos y seguros.",
+      ar: "قدّر دفعتك الشهرية للرهان العقاري مع الضرائب والتأمين.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Hipoteca Gratis Online - Estimador de Pago 2026",
+      ar: "حاسبة الرهن العقاري المجانية عبر الإنترنت - تقدير الدفعات 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Estima tu pago mensual de hipoteca incluyendo capital, interés, impuestos sobre la propiedad y seguros. Calculadora de hipoteca gratuita para compradores de vivienda.",
+      ar: "قدّر دفعتك الشهرية للرهان العقاري شاملة الرأسمال والفائدة وضرائب العقار والتأمين. حاسبة رهان عقاري مجانية لمشتري المنازل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa el precio de la vivienda y tu monto o porcentaje de pago inicial.",
+        "Ingresa la tasa de interés y el plazo del préstamo (típicamente 15 o 30 años).",
+        "Agrega estimaciones de impuestos sobre la propiedad y seguro de hogar para una imagen completa.",
+        "Visualiza tu pago mensual total de hipoteca desglosado por componente.",
+      ],
+      ar: [
+        "أدخل سعر المنزل ومبلغ أو نسبة الدفعة الأولى.",
+        "أدخل معدل الفائدة ومدة القرض (عادة 15 أو 30 سنة).",
+        "أضف تقديرات ضرائب العقار وتأمين homeowners للصورة الكاملة.",
+        "شاهد دفعتك الشهرية الإجمالية للرهان العقاري مفصلة حسب المكون.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué se incluye en un pago de hipoteca?", answer: "Un pago completo de hipoteca (PITI) incluye Principal (pago del préstamo), Interés (costo del préstamo), Impuestos (impuestos sobre la propiedad) y Seguro (seguro de hogar). Algunas hipotecas también incluyen PMI (seguro hipotecario privado)." },
+        { question: "¿Cuánto pago inicial necesito?", answer: "Los préstamos convencionales típicamente requieren 20% de pago inicial para evitar PMI. Los préstamos FHA permiten tan solo 3.5% de pago inicial. Los préstamos VA y USDA pueden permitir 0% de pago inicial para prestatarios elegibles." },
+        { question: "¿Qué es PMI y cuándo se requiere?", answer: "PMI (Seguro Hipotecario Privado) se requiere cuando tu pago inicial es menor al 20% del precio de la vivienda. Protege al prestamista y típicamente cuesta entre 0.3-1.5% del monto del préstamo anualmente." },
+        { question: "¿Qué tan precisa es esta estimación de hipoteca?", answer: "Esta calculadora proporciona una buena estimación basada en la información que proporcionas. Los pagos reales pueden variar según tu puntaje crediticio, tarifas del prestamista, costos específicos de seguro y tasas locales de impuestos sobre la propiedad." },
+        { question: "¿Qué factores considera la calculadora de hipoteca?", answer: "Nuestra calculadora de hipoteca considera el precio de la vivienda, el pago inicial, el plazo del préstamo y la tasa de interés para estimar tu pago mensual. También muestra el interés total pagado y un desglose de amortización." },
+      ],
+      ar: [
+        { question: "ما الذي يتضمنه دفع الرهن العقاري؟", answer: "الدفعة الكاملة للرهان العقاري (PITI) تتضمن الرأسمال (سداد القرض) والفائدة (تكلفة الاقتراض) والضرائب (ضرائب العقار) والتأمين (تأمين المنازل). بعض الرهانات تتضمن أيضاً PMI (تأمين الرهن العقاري الخاص)." },
+        { question: "كم دفعة أولى أحتاج؟", answer: "القروض التقليدية تتطلب عادة 20% دفعة أولى لتجنب PMI. قروض FHA تسمح بأقل من 3.5% دفعة أولى. قروض VA و USDA قد تسمح بـ 0% دفعة أولى للمقترضين المؤهلين." },
+        { question: "ما هو PMI ومتى يُطلب؟", answer: "PMI (تأمين الرهن العقاري الخاص) يُطلب عندما تكون دفعتك الأولى أقل من 20% من سعر المنزل. يحمي المقرض وعادة يكلف 0.3-1.5% من مبلغ القرض سنوياً." },
+        { question: "ما مدى دقة تقدير الرهن العقاري هذا؟", answer: "توفر هذه الحاسبة تقديراً جيداً بناءً على المعلومات التي تقدمها. قد تختلف الدفعات الفعلية بناءً على درجة الائتمان ورسوم المقرض وتكاليف التأمين المحددة ومعدلات الضرائب المحلية." },
+        { question: "ما العوامل التي تراعيها حاسبة الرهن العقاري؟", answer: "تراعي حاسبة الرهن العقاري لدينا سعر المنزل والدفعة الأولى ومدة القرض ومعدل الفائدة لتقدير دفعتك الشهرية. تُظهر أيضاً إجمالي الفائدة المدفوعة وتقسيم السداد." },
+      ],
+    },
     howToUse: [
       "Enter the home price and your down payment amount or percentage.",
       "Enter the interest rate and loan term (typically 15 or 30 years).",
@@ -933,6 +2339,52 @@ export const tools: Tool[] = [
       "how many calories should i eat", "calorie calculator for weight loss",
       "free calorie calculator", "daily calorie intake calculator"
 ,      "calorie calculator for students", "best tdee calculator 2026", "free daily calorie needs estimator online"        ],
+    nameTranslations: {
+      es: "Calculadora de Calorías",
+      ar: "حاسبة السعرات الحرارية",
+    },
+    descriptionTranslations: {
+      es: "Estima tus necesidades calóricas diarias según edad, peso, altura y actividad.",
+      ar: "قدّر احتياجاتك اليومية من السعرات بناءً على العمر والوزن والطول والنشاط.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Calorías Gratis Online - Estimador Calórico Diario 2026",
+      ar: "حاسبة السعرات الحرارية المجانية عبر الإنترنت - تقدير السعرات اليومية 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula tus necesidades calóricas diarias según edad, peso, altura, género y nivel de actividad. Calculadora TDEE gratuita para objetivos de pérdida, mantenimiento o ganancia de peso.",
+      ar: "احسب احتياجاتك اليومية من السعرات بناءً على العمر والوزن والطول والجنس ومستوى النشاط. حاسبة TDEE مجانية لأهداف خسارة أو الحفاظ أو زيادة الوزن.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu edad, género, peso y altura.",
+        "Selecciona tu nivel de actividad de sedentario a muy activo.",
+        "Elige tu objetivo: perder peso, mantener o ganar peso.",
+        "Visualiza tu ingesta calórica diaria recomendada y desglose de macronutrientes.",
+      ],
+      ar: [
+        "أدخل عمرك وجنسك ووزنك وطولك.",
+        "اختر مستوى نشاطك من خامل إلى نشط جداً.",
+        "اختر هدفك: خسارة الوزن أو الحفاظ أو زيادة الوزن.",
+        "شاهد استهلاكك اليومي الموصى به من السعرات وتقسيم المغذيات الكبرى.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es el TDEE?", answer: "TDEE (Gasto Energético Diario Total) es el número total de calorías que tu cuerpo quema en un día, incluyendo tu tasa metabólica basal (BMR) y la actividad física. Es la base para determinar tus necesidades calóricas." },
+        { question: "¿Cuántas calorías debo comer para perder peso?", answer: "Una tasa segura de pérdida de peso es de 0.5-1 libra por semana, lo que requiere un déficit diario de 250-500 calorías de tu TDEE. Nunca bajes de 1,200 calorías diarias para mujeres o 1,500 para hombres sin supervisión médica." },
+        { question: "¿Qué tan precisa es esta calculadora?", answer: "Esta calculadora usa la ecuación de Mifflin-St Jeor, que se considera una de las fórmulas de BMR más precisas. Sin embargo, el metabolismo individual varía, así que úsala como punto de partida y ajusta según tus resultados." },
+        { question: "¿Esta calculadora tiene en cuenta la masa muscular?", answer: "Esta calculadora usa fórmulas estándar que estiman el BMR según peso, altura, edad y género. Para resultados más precisos que tengan en cuenta la composición corporal, se recomienda un escaneo DEXA o evaluación profesional." },
+        { question: "¿Cómo se calculan las necesidades calóricas diarias?", answer: "Nuestra calculadora de calorías usa la ecuación de Mifflin-St Jeor, que considera tu edad, género, peso, altura y nivel de actividad para estimar tu Gasto Energético Diario Total (TDEE)." },
+      ],
+      ar: [
+        { question: "ما هو TDEE؟", answer: "TDEE (إجمالي الإنفاق اليومي من الطاقة) هو العدد الإجمالي للسعرات التي يحرقها جسمك في يوم واحد، بما في ذلك معدل الأيض الأساسي (BMR) والنشاط البدني. هو الأساس لتحديد احتياجاتك من السعرات." },
+        { question: "كم سعرة يجب أن أتناول لخسارة الوزن؟", answer: "معدل خسارة الوزن الآمن هو 0.5-1 رطل أسبوعياً، مما يتطلب عجزاً يومياً من 250-500 سعرة من TDEE. لا تنزل أبداً عن 1200 سعرة يومياً للنساء أو 1500 للرجال بدون إشراف طبي." },
+        { question: "ما مدى دقة هذه الحاسبة؟", answer: "تستخدم هذه الحاسبة معادلة Mifflin-St Jeor، التي تُعتبر من أدق معادلات BMR. ومع ذلك، يختلف الأيض الفردي، لذا استخدمها كنقطة انطلاق وعدّل بناءً على نتائجك." },
+        { question: "هل تأخذ هذه الحاسبة في الاعتبار الكتلة العضلية؟", answer: "تستخدم هذه الحاسبة معادلات قياسية تقدر BMR بناءً على الوزن والطول والعمر والجنس. لنتائج أدق تراعي تكوين الجسم، يُنصح بفحص DEXA أو تقييم احترافي." },
+        { question: "كيف تُحسب الاحتياجات اليومية من السعرات؟", answer: "تستخدم حاسبة السعرات لدينا معادلة Mifflin-St Jeor التي تراعي عمرك وجنسك ووزنك وطولك ومستوى نشاطك لتقدير إجمالي إنفاقك اليومي من الطاقة (TDEE)." },
+      ],
+    },
     howToUse: [
       "Enter your age, gender, weight, and height.",
       "Select your activity level from sedentary to very active.",
@@ -963,6 +2415,52 @@ export const tools: Tool[] = [
       "free roi calculator", "roi percentage calculator",
       "return on investment tool", "calculate investment returns"
 ,      "roi calculator for students", "best roi calculator 2026", "free investment return calculator online"        ],
+    nameTranslations: {
+      es: "Calculadora de ROI",
+      ar: "حاسبة العائد على الاستثمار",
+    },
+    descriptionTranslations: {
+      es: "Calcula el porcentaje de retorno de inversión (ROI) y la ganancia.",
+      ar: "احسب نسبة العائد على الاستثمار (ROI) ومبلغ الربح.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de ROI Gratis Online - Retorno de Inversión 2026",
+      ar: "حاسبة العائد على الاستثمار المجانية عبر الإنترنت - ROI 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula tu porcentaje de retorno de inversión (ROI) y ganancia. Compara opciones de inversión y analiza la rentabilidad del negocio. Calculadora de ROI gratuita.",
+      ar: "احسب نسبة العائد على الاستثمار (ROI) والربح. قارن خيارات الاستثمار وحلل ربحية الأعمال. حاسبة ROI مجانية.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu monto de inversión inicial (costo).",
+        "Ingresa el valor final o monto de retorno.",
+        "Haz clic en 'Calcular' para ver tu porcentaje de ROI y ganancia neta.",
+        "Usa el resultado para comparar oportunidades de inversión o evaluar decisiones empresariales.",
+      ],
+      ar: [
+        "أدخل مبلغ استثمارك الأولي (التكلفة).",
+        "أدخل القيمة النهائية أو مبلغ العائد.",
+        "انقر على 'احسب' لرؤية نسبة ROI وصافي الربح.",
+        "استخدم النتيجة لمقارنة فرص الاستثمار أو تقييم قرارات الأعمال.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es el ROI?", answer: "ROI (Retorno de Inversión) mide la rentabilidad de una inversión. Se calcula como ((valor final - costo inicial) ÷ costo inicial) × 100, expresado como porcentaje." },
+        { question: "¿Cuál es un buen ROI?", answer: "Un 'buen' ROI depende del tipo de inversión y el nivel de riesgo. Las inversiones en el mercado de valores históricamente promedian 7-10% anual. Bienes raíces típicamente apuntan a 8-12%. Para proyectos empresariales, las empresas a menudo requieren un ROI mínimo de 15-20%." },
+        { question: "¿Puede el ROI ser negativo?", answer: "Sí. Un ROI negativo significa que perdiste dinero en la inversión. Por ejemplo, si invertiste $1,000 y recuperaste $800, tu ROI es -20%." },
+        { question: "¿Esta calculadora tiene en cuenta el tiempo?", answer: "Esta calculadora muestra ROI simple. Para comparar inversiones en diferentes períodos de tiempo, también debes considerar el ROI anualizado, que tiene en cuenta la duración de la inversión." },
+        { question: "¿Cómo se calcula el ROI?", answer: "ROI (Retorno de Inversión) se calcula como: ((Ganancia de la Inversión - Costo de la Inversión) / Costo de la Inversión) x 100. Un ROI positivo significa ganancia, mientras que un ROI negativo indica pérdida." },
+      ],
+      ar: [
+        { question: "ما هو ROI؟", answer: "ROI (العائد على الاستثمار) يقيس ربحية الاستثمار. يُحسب كالتالي: ((القيمة النهائية - التكلفة الأولية) ÷ التكلفة الأولية) × 100، ويُعبّر عنه كنسبة مئوية." },
+        { question: "ما هو ROI الجيد؟", answer: "يعتمد ROI 'الجيد' على نوع الاستثمار ومستوى المخاطرة. استثمارات سوق الأسهم تتراوح تاريخياً بين 7-10% سنوياً. العقارات عادة تستهدف 8-12%. لمشاريع الأعمال، غالباً ما تتطلب الشركات ROI أدنى من 15-20%." },
+        { question: "هل يمكن أن يكون ROI سالباً؟", answer: "نعم. ROI السلبي يعني أنك خسرت مالاً في الاستثمار. مثلاً، إذا استثمرت 1000 دولار واستعدت 800 دولار، فإن ROI هو -20%." },
+        { question: "هل تأخذ هذه الحاسبة في الاعتبار الوقت؟", answer: "تعرض هذه الحاسبة ROI بسيط. لمقارنة الاستثمارات عبر فترات زمنية مختلفة، يجب أيضاً النظر في ROI السنوي الذي يراعي مدة الاستثمار." },
+        { question: "كيف يُحسب ROI؟", answer: "يُحسب ROI (العائد على الاستثمار) كالتالي: ((العائد من الاستثمار - تكلفة الاستثمار) / تكلفة الاستثمار) × 100. ROI الإيجابي يعني ربحاً، بينما ROI السلبي يشير إلى خسارة." },
+      ],
+    },
     howToUse: [
       "Enter your initial investment amount (cost).",
       "Enter the final value or return amount.",
@@ -993,6 +2491,52 @@ export const tools: Tool[] = [
       "free compound interest calculator", "compound interest online",
       "how much will my savings grow", "compound interest estimator"
 ,      "compound interest for students", "best compound interest calculator 2026", "free savings growth calculator online"        ],
+    nameTranslations: {
+      es: "Calculadora de Interés Compuesto",
+      ar: "حاسبة الفائدة المركبة",
+    },
+    descriptionTranslations: {
+      es: "Mira cómo crece tu dinero con el tiempo con cálculos de interés compuesto.",
+      ar: "شاهد كيف ينمو أموالك مع مرور الوقت بحسابات الفائدة المركبة.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Interés Compuesto Gratis Online - Crecimiento 2026",
+      ar: "حاسبة الفائدة المركبة المجانية عبر الإنترنت - نمو المدخرات 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula el interés compuesto con principal, tasa, tiempo y frecuencia de capitalización personalizables. Calculadora de interés compuesto gratuita con visualización de crecimiento.",
+      ar: "احسب الفائدة المركبة مع رأس مال ومدة ومعدل وتكرار تركيب مخصص. حاسبة فائدة مركبة مجانية مع عرض مرئي للنمو.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu capital inicial (monto de inversión inicial).",
+        "Ingresa la tasa de interés anual y la duración de la inversión en años.",
+        "Elige la frecuencia de capitalización (diaria, mensual, trimestral o anual).",
+        "Agrega contribuciones regulares para ver cómo aceleran tu crecimiento.",
+      ],
+      ar: [
+        "أدخل رأس مالك الأولي (مبلغ الاستثمار المبدئي).",
+        "أدخل معدل الفائدة السنوية ومدة الاستثمار بالسنوات.",
+        "اختر تكرار التركيب (يومي، شهري، ربع سنوي، أو سنوي).",
+        "أضف مساهمات منتظمة لترى كيف تسرع نموك.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es el interés compuesto?", answer: "El interés compuesto es el interés calculado tanto sobre el capital inicial como sobre el interés acumulado de períodos anteriores. A menudo se le llama 'interés sobre interés' y es la fuerza más poderosa para hacer crecer la riqueza con el tiempo." },
+        { question: "¿Con qué frecuencia debería componerse el interés?", answer: "Una composición más frecuente produce mayores rendimientos. La composición diaria produce ligeramente más que la mensual, que produce más que la trimestral o anual. La diferencia es pequeña para períodos cortos pero significativa a lo largo de décadas." },
+        { question: "¿Qué es la Regla de 72?", answer: "La Regla de 72 es una forma rápida de estimar cuánto tiempo tarda una inversión en duplicarse. Divide 72 entre tu tasa de interés anual. Por ejemplo, con un interés del 8%, tu dinero se duplica en aproximadamente 9 años (72÷8=9)." },
+        { question: "¿Cómo afectan las contribuciones regulares al interés compuesto?", answer: "Las contribuciones regulares aumentan dramáticamente tu crecimiento total. Agregar incluso pequeñas cantidades mensualmente puede multiplicar tu saldo final. Este es el principio fundamental detrás de los planes de ahorro para la jubilación como los 401(k)." },
+        { question: "¿Qué es el interés compuesto y por qué es importante?", answer: "El interés compuesto es el interés calculado tanto sobre el capital inicial como sobre el interés acumulado de períodos anteriores. Tiene un efecto poderoso en el crecimiento de la riqueza con el tiempo debido al crecimiento exponencial." },
+      ],
+      ar: [
+        { question: "ما هي الفائدة المركبة؟", answer: "الفائدة المركبة هي الفائدة المحتسبة على كل من رأس المال الأولي والفائدة المتراكمة من الفترات السابقة. غالباً ما تُسمى 'فائدة على فائدة' وهي أقوى قوة لتنمية الثروة مع مرور الوقت." },
+        { question: "كم مرة يجب أن تُركب الفائدة؟", answer: "التركيب الأكثر تكراراً ينتج عوائد أعلى. التركيب اليومي ينتج أكثر قليلاً من الشهري، الذي ينتج أكثر من الربع سنوي أو السنوي. الفرق صغير للفترات القصيرة لكنه كبير على مدى عقود." },
+        { question: "ما هي قاعدة 72؟", answer: "قاعدة 72 هي طريقة سريعة لتقدير المدة التي يستغرقها الاستثمار ليتضاعف. اقسم 72 على معدل فائدتك السنوية. مثلاً، بفائدة 8%، يتضاعف أموالك في حوالي 9 سنوات (72÷8=9)." },
+        { question: "كيف تؤثر المساهمات المنتظمة على الفائدة المركبة؟", answer: "تزيد المساهمات المنتظمة نموك الإجمالي بشكل كبير. إضافة مبالغ صغيرة شهرياً يمكن أن تضاعف رصيدك النهائي. هذا هو المبدأ الأساسي وراء خطط التقاعد مثل 401(k)." },
+        { question: "ما هي الفائدة المركبة ولماذا هي مهمة؟", answer: "الفائدة المركبة هي الفائدة المحتسبة على كل من رأس المال الأولي والفائدة المتراكمة من الفترات السابقة. لها تأثير قوي على تنمية الثروة مع مرور الوقت بسبب النمو الأسي." },
+      ],
+    },
     howToUse: [
       "Enter your initial principal (starting investment amount).",
       "Enter the annual interest rate and investment duration in years.",
@@ -1023,6 +2567,52 @@ export const tools: Tool[] = [
       "free income tax calculator", "paycheck calculator",
       "salary calculator after tax", "how much tax will i pay"
 ,      "income tax calculator for students", "best salary calculator 2026", "free take home pay estimator online"        ],
+    nameTranslations: {
+      es: "Calculadora de Impuesto sobre la Renta",
+      ar: "حاسبة ضريبة الدخل",
+    },
+    descriptionTranslations: {
+      es: "Estima tu salario neto después de deducciones de impuestos sobre la renta.",
+      ar: "قدّر صافي راتبك بعد خصومات ضريبة الدخل.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Impuesto Gratis Online - Estimador de Salario Neto 2026",
+      ar: "حاسبة ضريبة الدخل المجانية عبر الإنترنت - تقدير صافي الراتب 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Estima tu salario neto después de impuestos federales y estatales. Calculadora de impuestos gratuita con desglose detallado de deducciones.",
+      ar: "قدّر صافي راتبك بعد الضرائب الفيدرالية وحالة. حاسبة ضريبة دخل مجانية مع تفصيل مفصل للخصومات.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu salario anual bruto o pago por hora.",
+        "Selecciona tu estado civil y estado.",
+        "Agrega cualquier deducción o fuente de ingresos adicional.",
+        "Visualiza tu salario neto estimado con un desglose detallado de impuestos.",
+      ],
+      ar: [
+        "أدخل إجمالي راتبك السنوي أو أجرك بالساعة.",
+        "اختر حالتك الضريبية والولاية.",
+        "أضف أي خصومات أو مصادر دخل إضافية.",
+        "شاهد صافي راتبك المقدر مع تفصيل مفصل للضرائب.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué tan precisa es esta estimación de impuestos?", answer: "Esta calculadora proporciona una estimación general basada en las actuales tablas impositivas y deducciones estándar. Los impuestos reales pueden variar según deducciones específicas, créditos e impuestos locales no incluidos en este cálculo." },
+        { question: "¿Qué deducciones se incluyen?", answer: "La calculadora incluye deducciones estándar de impuesto federal sobre la renta según tu estado civil. No incluye deducciones específicas del estado, impuestos locales ni deducciones detalladas." },
+        { question: "¿Esta calculadora maneja ingresos por cuenta propia?", answer: "Esta calculadora está diseñada para empleados W-2. Los trabajadores por cuenta propia deben tener en cuenta el impuesto adicional por trabajo por cuenta propia (Seguro Social y Medicare) que es aproximadamente 15.3%." },
+        { question: "¿Con qué frecuencia se actualizan las tasas impositivas?", answer: "Las tablas y tasas impositivas se actualizan anualmente según las directrices del IRS. Esta calculadora utiliza los datos del año fiscal más reciente disponible." },
+        { question: "¿Esta calculadora muestra el salario neto?", answer: "Sí, nuestra calculadora de impuestos sobre la renta estima tu salario neto después de impuestos. Ingresa tu salario bruto y calculará tu salario neto estimado basado en tasas impositivas estándar." },
+      ],
+      ar: [
+        { question: "ما مدى دقة تقدير ضريبة الدخل هذا؟", answer: "توفر هذه الحاسبة تقديراً عاماً بناءً على شرائح الضرائب الحالية والخصومات القياسية. قد تختلف الضرائب الفعلية بناءً على خصومات وائتمانات محددة وضرائب محلية غير مشمولة في هذا الحساب." },
+        { question: "ما الخصومات المشمولة؟", answer: "تتضمن الحاسبة الخصومات القياسية لضريبة الدخل الفيدرالية بناءً على حالتك الضريبية. لا تشمل خصومات محددة للولاية أو الضرائب المحلية أو الخصومات المفصلة." },
+        { question: "هل تتعامل هذه الحاسبة مع الدخل الذاتي؟", answer: "هذه الحاسبة مصممة لموظفي W-2. العاملون لحسابهم الخاص يجب أن يحسبوا ضريبة العمل الذاتي الإضافية (الضمان الاجتماعي والرعاية الصحية) وهي حوالي 15.3%." },
+        { question: "كم مرة يتم تحديث معدلات الضرائب؟", answer: "يتم تحديث شرائح ومعدلات الضرائب سنوياً بناءً على إرشادات IRS. تستخدم هذه الحاسبة أحدث بيانات السنة الضريبية المتاحة." },
+        { question: "هل تُظهر هذه الحاسبة صافي الراتب؟", answer: "نعم، تُقدّر حاسبة ضريبة الدخل لدينا صافي راتبك بعد الضرائب. أدخل إجمالي راتبك وستحسب صافي راتبك المقدر بناءً على معدلات الضرائب القياسية." },
+      ],
+    },
     howToUse: [
       "Enter your gross annual salary or hourly wage.",
       "Select your filing status and state.",
@@ -1124,7 +2714,53 @@ export const tools: Tool[] = [
       { question: "How accurate is the due date?", answer: "Only about 5% of babies are born on their exact due date. Most deliveries occur between 38-42 weeks. The due date is an estimate that helps track pregnancy progress and plan care." },
       { question: "What are the three trimesters?", answer: "First trimester: weeks 1-12 (organ development). Second trimester: weeks 13-26 (growth and movement). Third trimester: weeks 27-40 (final growth and preparation for birth)." },
       { question: "Can I use this if I know my conception date instead?", answer: "Yes. If you know your conception date, add 266 days (38 weeks) instead of 280 days. The LMP method is more commonly used because conception dates are harder to pinpoint." }
-,      { question: "How is the due date calculated?", answer: "Our pregnancy calculator uses Naegele's rule: adds 280 days (40 weeks) to the first day of your last menstrual period. This gives an estimated due date, though actual delivery can vary by a few weeks." }     ]
+,      { question: "How is the due date calculated?", answer: "Our pregnancy calculator uses Naegele's rule: adds 280 days (40 weeks) to the first day of your last menstrual period. This gives an estimated due date, though actual delivery can vary by a few weeks." }     ],
+    nameTranslations: {
+      es: "Calculadora de Fecha de Embarazo",
+      ar: "حاسبة موعد الحمل",
+    },
+    descriptionTranslations: {
+      es: "Estima tu fecha de parto según el último período menstrual con información de trimestres.",
+      ar: "قدّري موعد ولادتك بناءً على آخر دورة شهرية مع معلومات الأشهر.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Embarazo Gratis Online - Estimador de Fecha de Parto 2026",
+      ar: "حاسبة الحمل مجانية عبر الإنترنت - مقدّر موعد الولادة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calcula tu fecha de parto estimada según tu último período menstrual. Consulta el desglose por trimestre y hitos clave del embarazo. Calculadora de embarazo online gratuita.",
+      ar: "احسبي موعد ولادتك التقديري بناءً على آخر دورة شهرية. شاهدي تفصيل الأشهر والمحطات المهمة في الحمل. حاسبة حمل مجانية عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa el primer día de tu último período menstrual (LMP).",
+        "Haz clic en 'Calcular' para ver tu fecha de parto estimada.",
+        "Visualiza tu semana actual de embarazo e información del trimestre.",
+        "Consulta hitos clave y fechas importantes durante tu embarazo.",
+      ],
+      ar: [
+        "أدخلي اليوم الأول من آخر دورة شهرية.",
+        "انقر على 'احسب' لرؤية موعد ولادتك التقديري.",
+        "اعرضي أسبوعك الحالي من الحمل ومعلومات الأشهر.",
+        "شاهدي المحطات المهمة والتواريخ الهامة خلال حملك.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo se calcula la fecha de parto?", answer: "La fecha de parto se calcula usando la regla de Naegele: suma 280 días (40 semanas) al primer día de tu último período menstrual. Este es el método estándar utilizado por profesionales de salud en todo el mundo." },
+        { question: "¿Qué tan precisa es la fecha de parto?", answer: "Solo alrededor del 5% de los bebés nacen en su fecha de parto exacta. La mayoría de partos ocurren entre las 38-42 semanas. La fecha de parto es una estimación que ayuda a seguir el progreso del embarazo y planificar la atención." },
+        { question: "¿Cuáles son los tres trimestres?", answer: "Primer trimestre: semanas 1-12 (desarrollo de órganos). Segundo trimestre: semanas 13-26 (crecimiento y movimiento). Tercer trimestre: semanas 27-40 (crecimiento final y preparación para el parto)." },
+        { question: "¿Puedo usar esto si conozco mi fecha de concepción?", answer: "Sí. Si conoces tu fecha de concepción, suma 266 días (38 semanas) en lugar de 280 días. El método LMP se usa más comúnmente porque las fechas de concepción son más difíciles de precisar." },
+        { question: "¿Cómo se calcula la fecha de parto?", answer: "Nuestra calculadora de embarazo usa la regla de Naegele: suma 280 días (40 semanas) al primer día de tu último período menstrual. Esto da una fecha de parto estimada, aunque el parto real puede variar unas semanas." },
+      ],
+      ar: [
+        { question: "كيف يُحسب موعد الولادة؟", answer: "يُحسب موعد الولادة باستخدام قاعدة Naegele: إضافة 280 يوماً (40 أسبوعاً) إلى اليوم الأول من آخر دورة شهرية. هذه هي الطريقة القياسية المستخدمة من قبل مقدمي الرعاية الصحية حول العالم." },
+        { question: "ما مدى دقة موعد الولادة؟", answer: "حوالي 5٪ فقط من الأطفال يولدون في موعد ولادتهم بالضبط. تحدث معظم الولادات بين الأسبوعين 38-42. موعد الولادة تقدير يساعد في تتبع تقدم الحمل وتخطيط الرعاية." },
+        { question: "ما هي الأشهر الثلاثة؟", answer: "الأول: الأسابيع 1-12 (تطور الأعضاء). الثاني: الأسابيع 13-26 (النمو والحركة). الثالث: الأسابيع 27-40 (النمو النهائي والاستعداد للولادة)." },
+        { question: "هل يمكنني استخدام هذا إذا كنت أعرف تاريخ الحمل؟", answer: "نعم. إذا كنتِ تعرفين تاريخ الحمل فأضيفي 266 يوماً (38 أسبوعاً) بدلاً من 280 يوماً. تُستخدم طريقة آخر دورة شهرية بشكل أكثر شيوعاً لأن تواريخ الحمل أصعب في التحديد." },
+        { question: "كيف يُحسب موعد الولادة؟", answer: "تستخدم حاسبة الحمل لدينا قاعدة Naegele: تضيف 280 يوماً (40 أسبوعاً) إلى اليوم الأول من آخر دورة شهرية. هذا يعطي موعد ولادة تقديري رغم أن الولادة الفعلية قد تختلف ببضعة أسابيع." },
+      ],
+    },
   },
   {
     id: "random-number-generator",
@@ -1154,7 +2790,53 @@ export const tools: Tool[] = [
       { question: "What is the difference between true random and pseudo-random?", answer: "True random numbers are generated from physical phenomena (like electronic noise) and are completely unpredictable. Pseudo-random numbers use mathematical formulas that can theoretically be predicted if you know the seed value." },
       { question: "Can I generate unique random numbers without duplicates?", answer: "Yes. Enable the 'no duplicates' option and the tool will ensure each generated number is unique within your specified range." },
       { question: "What is the maximum range I can use?", answer: "You can generate random numbers within any reasonable range. Very large ranges with 'no duplicates' enabled may be limited by the number of unique values available in that range." }
-,      { question: "Is this random number generator truly random?", answer: "Our random number generator uses the browser's cryptographic random number API (Crypto.getRandomValues), which provides cryptographically secure random numbers suitable for most practical purposes." }     ]
+,      { question: "Is this random number generator truly random?", answer: "Our random number generator uses the browser's cryptographic random number API (Crypto.getRandomValues), which provides cryptographically secure random numbers suitable for most practical purposes." }     ],
+    nameTranslations: {
+      es: "Generador de Números Aleatorios",
+      ar: "مولد الأرقام العشوائية",
+    },
+    descriptionTranslations: {
+      es: "Genera números aleatorios dentro de un rango especificado con opciones personalizables.",
+      ar: "أنشئ أرقاماً عشوائية ضمن نطاق محدد مع خيارات قابلة للتخصيص.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Números Aleatorios Gratis Online - Elegir Números al Azar 2026",
+      ar: "مولد الأرقام العشوائية مجاني عبر الإنترنت - اختيار أرقام عشوائية 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera números aleatorios dentro de cualquier rango. Elige cantidad, permite duplicados y ordena resultados. Generador de números aleatorios online gratuito.",
+      ar: "أنشئ أرقاماً عشوائية ضمن أي نطاق. اختر الكمية واسمح بالتكرارات ورتّب النتائج. مولد أرقام عشوائية مجاني عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Establece el rango mínimo y máximo para tus números aleatorios.",
+        "Elige cuántos números deseas generar.",
+        "Opcionalmente permite o no permite números duplicados.",
+        "Haz clic en 'Generar' y copia los resultados.",
+      ],
+      ar: [
+        "حدد النطاق الأدنى والأقصى لأرقامك العشوائية.",
+        "اختر عدد الأرقام التي تريد إنشاؤها.",
+        "اختر السماح أو عدم السماح بالأرقام المكررة.",
+        "انقر على 'إنشاء' وانسخ النتائج.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo se generan los números aleatorios?", answer: "Esta herramienta usa el generador de números aleatorios criptográficamente seguro del navegador (crypto.getRandomValues) para verdadera aleatoriedad, no algoritmos pseudoaleatorios predecibles." },
+        { question: "¿Cuál es la diferencia entre verdadero aleatorio y pseudoaleatorio?", answer: "Los números verdaderamente aleatorios se generan a partir de fenómenos físicos (como ruido electrónico) y son completamente impredecibles. Los números pseudoaleatorios usan fórmulas matemáticas que teóricamente pueden predecirse si conoces el valor semilla." },
+        { question: "¿Puedo generar números aleatorios únicos sin duplicados?", answer: "Sí. Habilita la opción 'sin duplicados' y la herramienta asegurará que cada número generado sea único dentro de tu rango especificado." },
+        { question: "¿Cuál es el rango máximo que puedo usar?", answer: "Puedes generar números aleatorios dentro de cualquier rango razonable. Rangos muy grandes con 'sin duplicados' habilitado pueden estar limitados por el número de valores únicos disponibles en ese rango." },
+        { question: "¿Es este generador de números aleatorios verdaderamente aleatorio?", answer: "Nuestro generador de números aleatorios usa la API de números aleatorios criptográficos del navegador (Crypto.getRandomValues), que proporciona números aleatorios criptográficamente seguros adecuados para la mayoría de propósitos prácticos." },
+      ],
+      ar: [
+        { question: "كيف يتم إنشاء الأرقام العشوائية؟", answer: "تستخدم هذه الأداة مولد الأرقام العشوائية الآمن تشفيرياً في المتصفح (crypto.getRandomValues) لعشوائية حقيقية وليس خوارزميات عشوائية زائفة قابلة للتنبؤ." },
+        { question: "ما الفرق بين العشوائي الحقيقي والعشوائي الزائف؟", answer: "تُولّد الأرقام العشوائية الحقيقية من ظواهر فيزيائية (مثل الضوضاء الإلكترونية) وهي غير قابلة للتنبؤ تماماً. تستخدم الأرقام العشوائية الزائفة صيغاً رياضية يمكن نظرياً التنبؤ بها إذا عرفت القيمة الأولية." },
+        { question: "هل يمكنني إنشاء أرقام عشوائية فريدة بدون تكرارات؟", answer: "نعم. فعّل خيار 'بدون تكرارات' وستضمن الأداة أن كل رقم مُنشأ فريد ضمن النطاق المحدد." },
+        { question: "ما هو النطاق الأقصى الذي يمكنني استخدامه؟", answer: "يمكنك إنشاء أرقام عشوائية ضمن أي نطاق معقول. النطاقات الكبيرة جداً مع تفعيل 'بدون تكرارات' قد تكون محدودة بعدد القيم الفريدة المتاحة في ذلك النطاق." },
+        { question: "هل مولد الأرقام العشوائية هذا عشوائي حقاً؟", answer: "يستخدم مولد الأرقام العشوائية لدينا واجهة الأرقام العشوائية التشفيرية للمتصفح (Crypto.getRandomValues) التي توفر أرقاماً عشوائية آمنة تشفيرياً مناسبة لمعظم الأغراض العملية." },
+      ],
+    },
   },
   {
     id: "zodiac-sign",
@@ -1183,7 +2865,53 @@ export const tools: Tool[] = [
       { question: "How do I know which zodiac sign I am?", answer: "Your zodiac sign (sun sign) is determined by your birth date. Enter your birthday in this tool and it will instantly tell you your sign along with detailed information." },
       { question: "What if my birthday is on a cusp?", answer: "If your birthday falls on the transition date between two signs, the exact time and location of your birth determine your sign. This tool uses the standard date ranges; for precise determination, consult an astrological chart." },
       { question: "Are zodiac signs based on science?", answer: "Zodiac signs are part of astrology, which is considered a pseudoscience. While many people find meaning and entertainment in zodiac traits, there is no scientific evidence supporting astrological predictions." }
-,      { question: "How do I find my zodiac sign?", answer: "Enter your birth date into our zodiac calculator and it will instantly tell you your sun sign. Each zodiac sign corresponds to a specific date range -- for example, Aries is March 21 to April 19." }     ]
+,      { question: "How do I find my zodiac sign?", answer: "Enter your birth date into our zodiac calculator and it will instantly tell you your sun sign. Each zodiac sign corresponds to a specific date range -- for example, Aries is March 21 to April 19." }     ],
+    nameTranslations: {
+      es: "Buscador de Signo Zodiacal",
+      ar: "مكتشف الأبراج",
+    },
+    descriptionTranslations: {
+      es: "Encuentra tu signo zodiacal por fecha de nacimiento con rasgos e información de compatibilidad.",
+      ar: "اعرف برجك حسب تاريخ الميلاد مع الصفات ومعلومات التوافق.",
+    },
+    seoTitleTranslations: {
+      es: "Calculadora de Signo Zodiacal Gratis Online - Buscador de Signo Estelar 2026",
+      ar: "حاسبة البرج مجانية عبر الإنترنت - مكتشف الأبراج 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Encuentra tu signo zodiacal ingresando tu fecha de nacimiento. Aprende sobre los rasgos de tu signo, fortalezas, debilidades y compatibilidad con otros signos.",
+      ar: "اعرف برجك بإدخال تاريخ ميلادك. تعرّف على صفات برجك ونقاط القوة والضعف والتوافق مع الأبراج الأخرى.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu fecha de nacimiento usando el selector de fechas.",
+        "Visualiza tu signo zodiacal con su símbolo y rango de fechas.",
+        "Lee sobre los rasgos de personalidad, fortalezas y debilidades de tu signo.",
+        "Consulta la compatibilidad con otros signos zodiacales.",
+      ],
+      ar: [
+        "أدخل تاريخ ميلادك باستخدام منتقي التاريخ.",
+        "اعرض برجك مع رمزه والفترة الزمنية الخاصة به.",
+        "اقرأ عن صفات شخصيتك ونقاط قوتك وضعفك الخاصة ببرجك.",
+        "تحقق من التوافق مع الأبراج الأخرى.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuáles son los 12 signos zodiacales?", answer: "Los 12 signos zodiacales son: Aries, Tauro, Géminis, Cáncer, Leo, Virgo, Libra, Escorpio, Sagitario, Capricornio, Acuario y Piscis. Cada signo cubre aproximadamente un mes del año." },
+        { question: "¿Cómo sé qué signo zodiacal soy?", answer: "Tu signo zodiacal (signo solar) está determinado por tu fecha de nacimiento. Ingresa tu cumpleaños en esta herramienta y te dirá instantáneamente tu signo junto con información detallada." },
+        { question: "¿Qué pasa si mi cumpleaños está en una cúspide?", answer: "Si tu cumpleaños cae en la fecha de transición entre dos signos, la hora y ubicación exactas de tu nacimiento determinan tu signo. Esta herramienta usa rangos de fechas estándar; para una determinación precisa, consulta una carta astrológica." },
+        { question: "¿Los signos zodiacales se basan en la ciencia?", answer: "Los signos zodiacales son parte de la astrología, que se considera una pseudociencia. Aunque muchas personas encuentran significado y entretenimiento en los rasgos zodiacales, no hay evidencia científica que respalde las predicciones astrológicas." },
+        { question: "¿Cómo encuentro mi signo zodiacal?", answer: "Ingresa tu fecha de nacimiento en nuestra calculadora zodiacal y te dirá instantáneamente tu signo solar. Cada signo zodiacal corresponde a un rango de fechas específico — por ejemplo, Aries es del 21 de marzo al 19 de abril." },
+      ],
+      ar: [
+        { question: "ما هي الأبراج الـ 12؟", answer: "الأبراج الـ 12 هي: الحمل والثور والجواب والسرطان والأسد والعذراء والميزان والعقرب والقوس والجدي والدلو والحوت. كل برج يغطي حوالي شهر من السنة." },
+        { question: "كيف أعرف ما هو برجي؟", answer: "يتم تحديد برجك (البرج الشمسي) حسب تاريخ ميلادك. أدخل تاريخ ميلادك في هذه الأداة وستخبرك فوراً ببرجك مع معلومات مفصلة." },
+        { question: "ماذا لو كان تاريخ ميلادي على الحدود بين برجين؟", answer: "إذا وقع تاريخ ميلادك على تاريخ الانتقال بين برجين فإن الوقت والمكان الدقيقين لميلادك يحددان برجك. تستخدم هذه الأداة النطاقات الزمنية القياسية؛ للتحديد الدقيق استشر خريطة فلكية." },
+        { question: "هل الأبراج مبنية على العلم؟", answer: "الأبراج جزء من علم التنجيم الذي يُعتبر علماً زائفاً. بينما يجد الكثير من الناس معنى وترفيه في صفات الأبراج لا يوجد دليل علمي يدعم التنبؤات الفلكية." },
+        { question: "كيف أجد برجي؟", answer: "أدخل تاريخ ميلادك في حاسبة الأبراج لدينا وستخبرك فوراً ببرجك الشمسي. كل برج يتوافق مع نطاق تاريخي محدد -- على سبيل المثال الحمل من 21 مارس إلى 19 أبريل." },
+      ],
+    },
   },
   {
     id: "random-name-generator",
@@ -1213,7 +2941,53 @@ export const tools: Tool[] = [
       { question: "Can I generate names for specific cultures?", answer: "This tool generates a diverse mix of names from various cultural backgrounds. For culture-specific names, you may want to use a specialized name generator." },
       { question: "Are these real people's names?", answer: "The first names and last names are real names, but the combinations are generated randomly. They do not correspond to specific real individuals." },
       { question: "What can I use these random names for?", answer: "Common uses include: character names for writing, test data for software development, placeholder names for designs, game character names, pen names, and brainstorming inspiration." }
-,      { question: "Can I generate names for characters in my story?", answer: "Absolutely! Our random name generator creates realistic first and last names suitable for characters in stories, games, D&D campaigns, or any creative project. Click to generate a new name instantly." }     ]
+,      { question: "Can I generate names for characters in my story?", answer: "Absolutely! Our random name generator creates realistic first and last names suitable for characters in stories, games, D&D campaigns, or any creative project. Click to generate a new name instantly." }     ],
+    nameTranslations: {
+      es: "Generador de Nombres Aleatorios",
+      ar: "مولد الأسماء العشوائية",
+    },
+    descriptionTranslations: {
+      es: "Genera nombres aleatorios para personajes, perfiles o pruebas.",
+      ar: "أنشئ أسماء عشوائية للشخصيات أو الملفات الشخصية أو الاختبار.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Nombres Aleatorios Gratis Online - Creador de Nombres de Personajes 2026",
+      ar: "مولد الأسماء العشوائية مجاني عبر الإنترنت - مبتكر أسماء الشخصيات 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera nombres y apellidos aleatorios para personajes, perfiles de juegos, pruebas o lluvia de ideas. Elige género y cantidad. Generador de nombres online gratuito.",
+      ar: "أنشئ أسماء أولية وعائلية عشوائية للشخصيات وملفات الألعاب والاختبار أو العصف الذهني. اختر الجنس والكمية. مولد أسماء مجاني عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Elige el género: masculino, femenino o ambos.",
+        "Establece la cantidad de nombres que deseas generar.",
+        "Haz clic en 'Generar' para crear nombres aleatorios al instante.",
+        "Copia cualquier nombre para usarlo en tu proyecto, historia o datos de prueba.",
+      ],
+      ar: [
+        "اختر الجنس: ذكر أو أنثى أو كلاهما.",
+        "حدد عدد الأسماء التي تريد إنشاؤها.",
+        "انقر على 'إنشاء' لتوليد أسماء عشوائية فوراً.",
+        "انسخ أي اسم لاستخدامه في مشروعك أو قصتك أو بيانات الاختبار.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿De dónde vienen los nombres?", answer: "Los nombres provienen de una base de datos curada de nombres comunes y apellidos de diversas culturas y orígenes. Las combinaciones se generan aleatoriamente para crear parejas de nombres únicas." },
+        { question: "¿Puedo generar nombres para culturas específicas?", answer: "Esta herramienta genera una mezcla diversa de nombres de diversos orígenes culturales. Para nombres específicos de una cultura, es posible que desees usar un generador de nombres especializado." },
+        { question: "¿Son nombres de personas reales?", answer: "Los nombres y apellidos son nombres reales, pero las combinaciones se generan aleatoriamente. No corresponden a individuos reales específicos." },
+        { question: "¿Para qué puedo usar estos nombres aleatorios?", answer: "Los usos comunes incluyen: nombres de personajes para escritura, datos de prueba para desarrollo de software, nombres de marcador de posición para diseños, nombres de personajes de juegos, seudónimos e inspiración para lluvia de ideas." },
+        { question: "¿Puedo generar nombres para personajes en mi historia?", answer: "¡Absolutamente! Nuestro generador de nombres aleatorios crea nombres realistas adecuados para personajes en historias, juegos, campañas de D&D o cualquier proyecto creativo. Haz clic para generar un nuevo nombre al instante." },
+      ],
+      ar: [
+        { question: "من أين تأتي الأسماء؟", answer: "الأسماء مستمدة من قاعدة بيانات منتقاة من الأسماء الأولى الشائعة وألقاب العائلة من ثقافات وخلفيات متنوعة. يتم إنشاء التركيبات عشوائياً لإنشاء اقترانات أسماء فريدة." },
+        { question: "هل يمكنني إنشاء أسماء لثقافات محددة؟", answer: "تنشئ هذه الأداة مزيجاً متنوعاً من الأسماء من خلفيات ثقافية متنوعة. للحصول على أسماء محددة الثقافة قد ترغب في استخدام مولد أسماء متخصص." },
+        { question: "هل هذه أسماء أشخاص حقيقيين؟", answer: "الأسماء الأولى وألقاب العائلة أسماء حقيقية لكن التركيبات يتم إنشاؤها عشوائياً. لا تتوافق مع أشخاص حقيقيين محددين." },
+        { question: "ماذا يمكنني أن أفعل بهذه الأسماء العشوائية؟", answer: "الاستخدامات الشائعة تشمل: أسماء الشخصيات للكتابة وبيانات الاختبار لتطوير البرمجيات وأسماء نائبة للتصاميم وأسماء شخصيات الألعاب والأسماء المستوحاة وإلهام العصف الذهني." },
+        { question: "هل يمكنني إنشاء أسماء لشخصيات في قصتي؟", answer: "بالتأكيد! ينشئ مولد الأسماء العشوائية لدينا أسماء أولية وعائلية واقعية مناسبة للشخصيات في القصص أو الألعاب أو حملات D&D أو أي مشروع إبداعي. انقر لتوليد اسم جديد فوراً." },
+      ],
+    },
   },
   {
     id: "fancy-text-generator",
@@ -1242,7 +3016,53 @@ export const tools: Tool[] = [
       { question: "Will fancy text work on all social media platforms?", answer: "Fancy Unicode text works on most platforms including Instagram, Twitter, TikTok, Facebook, and WhatsApp. However, some older devices may not render all Unicode characters correctly." },
       { question: "Does fancy text affect accessibility?", answer: "Yes. Screen readers may not read fancy Unicode text correctly, as they interpret the mathematical symbols rather than the intended letters. It's best used sparingly for emphasis rather than for important information." },
       { question: "Can I use fancy text in emails or websites?", answer: "You can use fancy Unicode text in emails and websites, but rendering depends on the recipient's device and email client. It's safest for social media platforms where Unicode support is consistent." }
-,      { question: "Can I use fancy text on Instagram and social media?", answer: "Yes! The fancy text generated by our tool uses Unicode characters that work on Instagram bios, Facebook posts, Twitter/X, WhatsApp, TikTok, and most other platforms. Just copy and paste." }     ]
+,      { question: "Can I use fancy text on Instagram and social media?", answer: "Yes! The fancy text generated by our tool uses Unicode characters that work on Instagram bios, Facebook posts, Twitter/X, WhatsApp, TikTok, and most other platforms. Just copy and paste." }     ],
+    nameTranslations: {
+      es: "Generador de Texto Elegante",
+      ar: "مولد النصوص المزخرفة",
+    },
+    descriptionTranslations: {
+      es: "Convierte texto a fuentes Unicode elegantes para biografías y publicaciones en redes sociales.",
+      ar: "حول النص إلى خطوط يونيكود مزخرفة لسير الذات والمنشورات على وسائل التواصل الاجتماعي.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Texto Elegante Gratis Online - Generador de Fuentes para Instagram 2026",
+      ar: "مولد النصوص المزخرفة مجاني عبر الإنترنت - مولد خطوط Instagram 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Convierte texto a fuentes Unicode elegantes y texto con estilo para biografías de Instagram, Twitter, TikTok y Facebook. Generador de texto elegante online gratuito.",
+      ar: "حول النص إلى خطوط يونيكود مزخرفة ونصوص أنيقة لسير Instagram وTwitter وTikTok وFacebook. مولد نصوص مزخرفة مجاني عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu texto en el campo de entrada.",
+        "Visualiza tu texto convertido a múltiples estilos de fuentes Unicode elegantes.",
+        "Haz clic en cualquier estilo para copiarlo al portapapeles.",
+        "Pega el texto elegante en tu biografía de redes sociales, publicación o mensaje.",
+      ],
+      ar: [
+        "أدخل نصك في حقل الإدخال.",
+        "اعرض نصك محولاً إلى أنماط خطوط يونيكود مزخرفة متعددة.",
+        "انقر على أي نمط لنسخه إلى الحافظة.",
+        "الصق النص المزخرف في سيرتك الذاتية أو منشورك أو رسالتك على وسائل التواصل الاجتماعي.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo funciona el generador de texto elegante?", answer: "La herramienta mapea cada letra de tu texto a caracteres Unicode especiales que parecen versiones estilizadas de letras normales. Estas no son fuentes reales — son símbolos alfanuméricos matemáticos que la mayoría de las plataformas muestran correctamente." },
+        { question: "¿Funcionará el texto elegante en todas las plataformas de redes sociales?", answer: "El texto Unicode elegante funciona en la mayoría de las plataformas incluyendo Instagram, Twitter, TikTok, Facebook y WhatsApp. Sin embargo, algunos dispositivos más antiguos pueden no renderizar todos los caracteres Unicode correctamente." },
+        { question: "¿El texto elegante afecta la accesibilidad?", answer: "Sí. Los lectores de pantalla pueden no leer correctamente el texto Unicode elegante, ya que interpretan los símbolos matemáticos en lugar de las letras previstas. Es mejor usarlo con moderación para énfasis en lugar de para información importante." },
+        { question: "¿Puedo usar texto elegante en correos electrónicos o sitios web?", answer: "Puedes usar texto Unicode elegante en correos electrónicos y sitios web, pero la representación depende del dispositivo del destinatario y del cliente de correo. Es más seguro para plataformas de redes sociales donde el soporte Unicode es consistente." },
+        { question: "¿Puedo usar texto elegante en Instagram y redes sociales?", answer: "¡Sí! El texto elegante generado por nuestra herramienta usa caracteres Unicode que funcionan en biografías de Instagram, publicaciones de Facebook, Twitter/X, WhatsApp, TikTok y la mayoría de las demás plataformas. Solo copia y pega." },
+      ],
+      ar: [
+        { question: "كيف يعمل مولد النصوص المزخرفة؟", answer: "تقوم الأداة بتعيين كل حرف من نصك إلى أحرف يونيكود خاصة تبدو كنسخ منسقة من الحروف العادية. هذه ليست خطوطاً حقيقية — إنها رموز أبجدية رقمية رياضية تُعرض بشكل صحيح على معظم المنصات." },
+        { question: "هل سيعمل النص المزخرف على جميع منصات التواصل الاجتماعي؟", answer: "يعمل نص يونيكود المزخرف على معظم المنصات بما في ذلك Instagram وTwitter وTikTok وFacebook وWhatsApp. ومع ذلك قد لا تعرض بعض الأجهزة القديمة جميع أحرف يونيكود بشكل صحيح." },
+        { question: "هل يؤثر النص المزخرف على إمكانية الوصول؟", answer: "نعم. قد لا تقرأ قارئات الشاشة النص المزخرف بشكل صحيح لأنها تفسر الرموز الرياضية بدلاً من الحروف المقصودة. من الأفضل استخدامه باعتدال للتأكيد بدلاً من المعلومات المهمة." },
+        { question: "هل يمكنني استخدام النص المزخرف في رسائل البريد الإلكتروني أو المواقع؟", answer: "يمكنك استخدام نص يونيكود المزخرف في رسائل البريد الإلكتروني والمواقع لكن العرض يعتمد على جهاز المستلم وعميل البريد الإلكتروني. الأكثر أماناً لمنصات التواصل الاجتماعي حيث دعم يونيكود متسق." },
+        { question: "هل يمكنني استخدام النص المزخرف على Instagram ووسائل التواصل الاجتماعي؟", answer: "نعم! يستخدم النص المزخرف المُنشأ بأداتنا أحرف يونيكود تعمل على سير Instagram ومنشورات Facebook وTwitter/X وWhatsApp وTikTok ومعظم المنصات الأخرى. فقط انسخ والصق." },
+      ],
+    },
   },
   {
     id: "hashtag-generator",
@@ -1272,7 +3092,53 @@ export const tools: Tool[] = [
       { question: "How many hashtags should I use on TikTok?", answer: "TikTok recommends 3-5 hashtags per video. Use a mix of trending hashtags and niche-specific tags to maximize discoverability without looking spammy." },
       { question: "How does this hashtag generator work?", answer: "The generator analyzes your input keywords and suggests relevant hashtags based on topic matching, trending patterns, and common hashtag combinations used in your niche." },
       { question: "Can I use the same hashtags for every post?", answer: "It's better to vary your hashtags between posts. Instagram may flag accounts that use identical hashtag sets repeatedly as spam. Rotate between relevant hashtag groups for best results." }
-,      { question: "How many hashtags should I use on Instagram?", answer: "Instagram allows up to 30 hashtags per post. Most experts recommend using 9-15 relevant hashtags for optimal engagement. Our generator provides a mix of popular and niche hashtags." }     ]
+,      { question: "How many hashtags should I use on Instagram?", answer: "Instagram allows up to 30 hashtags per post. Most experts recommend using 9-15 relevant hashtags for optimal engagement. Our generator provides a mix of popular and niche hashtags." }     ],
+    nameTranslations: {
+      es: "Generador de Hashtags",
+      ar: "مولد الهاشتاقات",
+    },
+    descriptionTranslations: {
+      es: "Genera hashtags relevantes para Instagram, Twitter y TikTok.",
+      ar: "أنشئ هاشتاقات ذات صلة لـ Instagram وTwitter وTikTok.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Hashtags Gratis Online - Herramienta de Hashtags para Instagram 2026",
+      ar: "مولد الهاشتاقات مجاني عبر الإنترنت - أداة هاشتاقات Instagram 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera hashtags relevantes para Instagram, Twitter, TikTok y Facebook según tu tema o palabras clave. Generador de hashtags online gratuito para aumentar tu alcance.",
+      ar: "أنشئ هاشتاقات ذات صلة لـ Instagram وTwitter وTikTok وFacebook بناءً على موضوعك أو كلماتك المفتاحية. مولد هاشتاقات مجاني عبر الإنترنت لزيادة وصولك.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa tu tema, palabra clave o describe tu contenido.",
+        "Visualiza una lista de hashtags relevantes y en tendencia generados para tu tema.",
+        "Copia todos los hashtags o selecciona específicos para usar.",
+        "Pega los hashtags en tu publicación de redes sociales para aumentar la descubribilidad.",
+      ],
+      ar: [
+        "أدخل موضوعك أو كلمتك المفتاحية أو صف محتواك.",
+        "اعرض قائمة بالهاشتاقات ذات الصلة والرائجة المُنشأة لموضوعك.",
+        "انسخ جميع الهاشتاقات أو اختر محددة للاستخدام.",
+        "الصق الهاشتاقات في منشورك على وسائل التواصل الاجتماعي لزيادة الاكتشاف.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuántos hashtags debo usar en Instagram?", answer: "Instagram permite hasta 30 hashtags por publicación. Las investigaciones sugieren que 15-20 hashtags bien elegidos tienen mejor rendimiento. Usa una mezcla de hashtags populares, de nicho y de marca para un alcance óptimo." },
+        { question: "¿Cuántos hashtags debo usar en TikTok?", answer: "TikTok recomienda 3-5 hashtags por video. Usa una mezcla de hashtags en tendencia y etiquetas específicas de nicho para maximizar la descubribilidad sin parecer spam." },
+        { question: "¿Cómo funciona este generador de hashtags?", answer: "El generador analiza tus palabras clave de entrada y sugiere hashtags relevantes basados en coincidencia de temas, patrones en tendencia y combinaciones comunes de hashtags usadas en tu nicho." },
+        { question: "¿Puedo usar los mismos hashtags para cada publicación?", answer: "Es mejor variar tus hashtags entre publicaciones. Instagram puede marcar cuentas que usan conjuntos idénticos de hashtags repetidamente como spam. Rota entre grupos de hashtags relevantes para mejores resultados." },
+        { question: "¿Cuántos hashtags debo usar en Instagram?", answer: "Instagram permite hasta 30 hashtags por publicación. La mayoría de expertos recomienda usar 9-15 hashtags relevantes para un engagement óptimo. Nuestro generador proporciona una mezcla de hashtags populares y de nicho." },
+      ],
+      ar: [
+        { question: "كم هاشتاج يجب أن أستخدم على Instagram؟", answer: "يسمح Instagram بما يصل إلى 30 هاشتاج لكل منشور. تشير الأبحاث إلى أن 15-20 هاشتاج مختارة بعناية تحقق أفضل أداء. استخدم مزيجاً من الهاشتاقات الشائعة والمتخصصة والعلامة التجارية لأفضل وصول." },
+        { question: "كم هاشتاج يجب أن أستخدم على TikTok؟", answer: "يوصي TikTok بـ 3-5 هاشتاج لكل فيديو. استخدم مزيجاً من الهاشتاقات الرائجة والعلامات المتخصصة لزيادة الاكتشاف دون أن تبدو كمحتوى مزعج." },
+        { question: "كيف يعمل مولد الهاشتاقات هذا؟", answer: "يحلل المولد كلماتك المفتاحية المقترحة ويقترح هاشتاقات ذات صلة بناءً على تطابق الموضوع وأنماط الرواج وتركيبات الهاشتاقات الشائعة المستخدمة في مجالك." },
+        { question: "هل يمكنني استخدام نفس الهاشتاقات لكل منشور؟", answer: "من الأفضل تنويع هاشتاقاتك بين المنشورات. قد يُعلّم Instagram الحسابات التي تستخدم مجموعات هاشتاقات متطابقة بشكل متكرر كمحتوى مزعج. تناوب بين مجموعات الهاشتاقات ذات الصلة لأفضل النتائج." },
+        { question: "كم هاشتاج يجب أن أستخدم على Instagram؟", answer: "يسمح Instagram بما يصل إلى 30 هاشتاج لكل منشور. يوصي معظم الخبراء باستخدام 9-15 هاشتاج ذا صلة لأفضل تفاعل. يوفر مولدنا مزيجاً من الهاشتاقات الشائعة والمتخصصة." },
+      ],
+    },
   },
   {
     id: "youtube-thumbnail",
@@ -1302,7 +3168,53 @@ export const tools: Tool[] = [
       { question: "What makes a good YouTube thumbnail?", answer: "Good thumbnails use high-contrast colors, readable text (large fonts), expressive faces, and clear visual hierarchy. The thumbnail should be understandable even at small sizes on mobile devices." },
       { question: "Can I change a thumbnail after uploading a video?", answer: "Yes. You can change your YouTube thumbnail at any time by going to YouTube Studio, selecting the video, clicking 'Edit', and uploading a new thumbnail image." },
       { question: "Do thumbnails affect video performance?", answer: "Yes. Thumbnails significantly impact click-through rate (CTR), which is one of the most important ranking factors on YouTube. A compelling thumbnail can dramatically increase views." }
-,      { question: "What is the ideal YouTube thumbnail size?", answer: "YouTube recommends a thumbnail resolution of 1280x720 pixels with a minimum width of 640 pixels. The aspect ratio should be 16:9. Our tool helps you verify your thumbnail meets these specifications." }     ]
+,      { question: "What is the ideal YouTube thumbnail size?", answer: "YouTube recommends a thumbnail resolution of 1280x720 pixels with a minimum width of 640 pixels. The aspect ratio should be 16:9. Our tool helps you verify your thumbnail meets these specifications." }     ],
+    nameTranslations: {
+      es: "Herramienta de Tamaño de Miniatura de YouTube",
+      ar: "أداة حجم صورة YouTube المصغرة",
+    },
+    descriptionTranslations: {
+      es: "Guía de tamaño de miniaturas de YouTube y herramienta de vista previa con consejos de mejores prácticas.",
+      ar: "دليل حجم الصور المصغرة لـ YouTube وأداة معاينة مع نصائح أفضل الممارسات.",
+    },
+    seoTitleTranslations: {
+      es: "Creador de Miniaturas de YouTube Gratis Online - Herramienta de Especificaciones 2026",
+      ar: "أداة الصور المصغرة لـ YouTube مجانية عبر الإنترنت - أداة مواصفات الصور المصغرة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Guía completa de dimensiones de miniaturas de YouTube, límites de tamaño de archivo y mejores prácticas. Herramienta gratuita de verificación de tamaño de miniaturas y vista previa para creadores de YouTube.",
+      ar: "دليل شامل لأبعاد الصور المصغرة لـ YouTube وحدود حجم الملفات وأفضل الممارسات. أداة مجانية للتحقق من حجم الصور المصغرة ومعاينتها لمنشئي محتوى YouTube.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Revisa las dimensiones y especificaciones recomendadas para miniaturas de YouTube.",
+        "Usa la herramienta de vista previa para ver cómo se verá tu miniatura en diferentes dispositivos.",
+        "Sigue los consejos de mejores prácticas para crear miniaturas clicables.",
+        "Asegúrate de que tu imagen cumpla con los requisitos de YouTube antes de subirla.",
+      ],
+      ar: [
+        "راجع الأبعاد والمواصفات الموصى بها للصور المصغرة لـ YouTube.",
+        "استخدم أداة المعاينة لمعرفة كيف ستبدو صورتك المصغرة على أجهزة مختلفة.",
+        "اتبع نصائح أفضل الممارسات لإنشاء صور مصغرة جذابة للنقر.",
+        "تأكد من أن صورتك تلبي متطلبات YouTube قبل الرفع.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuál es el tamaño ideal de miniatura de YouTube?", answer: "El tamaño recomendado de miniatura de YouTube es 1280 × 720 píxeles (relación de aspecto 16:9), con un ancho mínimo de 640 píxeles. El archivo debe ser menor de 2MB y en formato JPG, PNG, GIF o BMP." },
+        { question: "¿Qué hace una buena miniatura de YouTube?", answer: "Las buenas miniaturas usan colores de alto contraste, texto legible (fuentes grandes), rostros expresivos y jerarquía visual clara. La miniatura debe ser comprensible incluso en tamaños pequeños en dispositivos móviles." },
+        { question: "¿Puedo cambiar una miniatura después de subir un video?", answer: "Sí. Puedes cambiar tu miniatura de YouTube en cualquier momento yendo a YouTube Studio, seleccionando el video, haciendo clic en 'Editar' y subiendo una nueva imagen de miniatura." },
+        { question: "¿Las miniaturas afectan el rendimiento del video?", answer: "Sí. Las miniaturas impactan significativamente la tasa de clics (CTR), que es uno de los factores de clasificación más importantes en YouTube. Una miniatura atractiva puede aumentar dramáticamente las vistas." },
+        { question: "¿Cuál es el tamaño ideal de miniatura de YouTube?", answer: "YouTube recomienda una resolución de miniatura de 1280x720 píxeles con un ancho mínimo de 640 píxeles. La relación de aspecto debe ser 16:9. Nuestra herramienta te ayuda a verificar que tu miniatura cumpla con estas especificaciones." },
+      ],
+      ar: [
+        { question: "ما هو الحجم المثالي للصورة المصغرة لـ YouTube؟", answer: "الحجم الموصى به للصورة المصغرة لـ YouTube هو 1280 × 720 بكسل (نسبة عرض إلى ارتفاع 16:9) بعرض أدنى 640 بكسل. يجب أن يكون حجم الملف أقل من 2 ميجابايت وبصيغة JPG أو PNG أو GIF أو BMP." },
+        { question: "ما الذي يجعل الصورة المصغرة جيدة لـ YouTube؟", answer: "تستخدم الصور المصغرة الجيدة ألواناً عالية التباين ونصاً قابلاً للقراءة (خطوط كبيرة) ووجوهاً معبرة وتسلسلاً هرمياً بصرياً واضحاً. يجب أن تكون الصورة المصغرة مفهومة حتى بالأحجام الصغيرة على الأجهزة المحمولة." },
+        { question: "هل يمكنني تغيير صورة مصغرة بعد رفع فيديو؟", answer: "نعم. يمكنك تغيير صورتك المصغرة لـ YouTube في أي وقت بالذهاب إلى YouTube Studio واختيار الفيديو والنقر على 'تحرير' ورفع صورة مصغرة جديدة." },
+        { question: "هل تؤثر الصور المصغرة على أداء الفيديو؟", answer: "نعم. تؤثر الصور المصغرة بشكل كبير على معدل النقر إلى الظهور (CTR) وهو من أهم عوامل الترتيب على YouTube. يمكن للصورة المصغرة الجذابة أن تزيد المشاهدات بشكل كبير." },
+        { question: "ما هو الحجم المثالي للصورة المصغرة لـ YouTube؟", answer: "يوصي YouTube بدقة صورة مصغرة 1280x720 بكسل بعرض أدنى 640 بكسل. يجب أن تكون نسبة العرض إلى الارتفاع 16:9. تساعدك أداتنا على التحقق من أن صورتك المصغرة تلبي هذه المواصفات." },
+      ],
+    },
   },
   {
     id: "perpetual-calendar",
@@ -1332,7 +3244,53 @@ export const tools: Tool[] = [
       { question: "What holidays does this calendar show?", answer: "The calendar includes major international holidays, national observances from various countries, and cultural celebrations. Holiday coverage continues to expand." },
       { question: "Can I find what day of the week a historical date was?", answer: "Yes. Navigate to any date in history and the calendar will show you exactly what day of the week it was. This is useful for historical research and genealogy." },
       { question: "How are week numbers calculated?", answer: "Week numbers follow the ISO 8601 standard, where week 1 is the week containing the first Thursday of the year. This is the international standard used in most countries." }
-,      { question: "How far back can this calendar go?", answer: "Our perpetual calendar supports dates from year 1 to 9999. It uses the Gregorian calendar system and can tell you the day of the week for any date in that range." }     ]
+,      { question: "How far back can this calendar go?", answer: "Our perpetual calendar supports dates from year 1 to 9999. It uses the Gregorian calendar system and can tell you the day of the week for any date in that range." }     ],
+    nameTranslations: {
+      es: "Calendario Perpetuo",
+      ar: "التقويم الدائم",
+    },
+    descriptionTranslations: {
+      es: "Calendario interactivo con feriados mundiales, números de semana y eventos históricos en cualquier fecha.",
+      ar: "تقويم تفاعلي مع العطل العالمية وأرقام الأسابيع والأحداث التاريخية في أي تاريخ.",
+    },
+    seoTitleTranslations: {
+      es: "Calendario Perpetuo Gratis Online - Herramienta de Consulta de Calendario 2026",
+      ar: "التقويم الدائم مجاني عبر الإنترنت - أداة بحث في التقويم 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Calendario perpetuo interactivo para cualquier fecha. Consulta feriados mundiales, números de semana, día de la semana y eventos históricos. Herramienta de calendario online gratuita.",
+      ar: "تقويم دائم تفاعلي لأي تاريخ. تحقق من العطل العالمية وأرقام الأسابيع ويوم الأسبوع والأحداث التاريخية. أداة تقويم مجانية عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Navega a cualquier año y mes usando los controles del calendario.",
+        "Haz clic en cualquier fecha para ver información detallada incluyendo día de la semana y número de semana.",
+        "Las fechas resaltadas muestran feriados mundiales y observancias.",
+        "Usa la función de búsqueda para encontrar fechas o feriados específicos.",
+      ],
+      ar: [
+        "تنقّل إلى أي سنة وشهر باستخدام عناصر التحكم في التقويم.",
+        "انقر على أي تاريخ لرؤية معلومات مفصلة بما في ذلك يوم الأسبوع ورقم الأسبوع.",
+        "التواريخ المميزة تُظهر العطل العالمية والمناسبات.",
+        "استخدم ميزة البحث للعثور على تواريخ أو عطل محددة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es un calendario perpetuo?", answer: "Un calendario perpetuo es un calendario que puede mostrar cualquier fecha a través de cualquier año, pasado o futuro. A diferencia de los calendarios anuales que muestran solo un año, un calendario perpetuo te permite explorar fechas a lo largo de siglos." },
+        { question: "¿Qué feriados muestra este calendario?", answer: "El calendario incluye feriados internacionales principales, observancias nacionales de varios países y celebraciones culturales. La cobertura de feriados continúa expandiéndose." },
+        { question: "¿Puedo encontrar qué día de la semana fue una fecha histórica?", answer: "Sí. Navega a cualquier fecha en la historia y el calendario te mostrará exactamente qué día de la semana fue. Esto es útil para investigación histórica y genealogía." },
+        { question: "¿Cómo se calculan los números de semana?", answer: "Los números de semana siguen el estándar ISO 8601, donde la semana 1 es la semana que contiene el primer jueves del año. Este es el estándar internacional utilizado en la mayoría de los países." },
+        { question: "¿Hasta dónde puede retroceder este calendario?", answer: "Nuestro calendario perpetuo soporta fechas desde el año 1 hasta el 9999. Usa el sistema de calendario gregoriano y puede decirte qué día de la semana fue cualquier fecha en ese rango." },
+      ],
+      ar: [
+        { question: "ما هو التقويم الدائم؟", answer: "التقويم الدائم هو تقويم يمكنه عرض أي تاريخ عبر أي سنة ماضية أو مستقبلية. على عكس التقويمات السنوية التي تُظهر سنة واحدة فقط يتيح لك التقويم الدائم استكشاف التواريخ عبر القرون." },
+        { question: "ما العطل التي يُظهرها هذا التقويم؟", answer: "يشمل التقويم العطل الدولية الرئيسية والمناسبات الوطنية من دول مختلفة والاحتفالات الثقافية. تتوسع تغطية العطل باستمرار." },
+        { question: "هل يمكنني معرفة يوم الأسبوع لتاريخ تاريخي؟", answer: "نعم. تنقّل إلى أي تاريخ في التاريخ وسيُظهر لك التقويم بالضبط ما هو يوم الأسبوع. هذا مفيد للبحث التاريخي وعلم الأنساب." },
+        { question: "كيف تُحسب أرقام الأسابيع؟", answer: "تتبع أرقام الأسابيع المعيار ISO 8601 حيث الأسبوع 1 هو الأسبوع الذي يحتوي على أول خميس من السنة. هذا هو المعيار الدولي المستخدم في معظم الدول." },
+        { question: "إلى أي مدى يمكن أن يعود هذا التقويم؟", answer: "يدعم تقويمنا الدائم التواريخ من السنة 1 إلى 9999. يستخدم نظام التقويم الغريغوري ويمكنه إخبارك بيوم الأسبوع لأي تاريخ في ذلك النطاق." },
+      ],
+    },
   },
   {
     id: "md5-generator",
@@ -1361,7 +3319,53 @@ export const tools: Tool[] = [
       { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure due to collision vulnerabilities discovered in 2004. It should not be used for password hashing or security-critical applications. Use SHA-256 instead for security purposes." },
       { question: "What is MD5 still used for?", answer: "MD5 is still useful for non-security purposes like file checksums, detecting accidental data corruption, and legacy system compatibility where MD5 hashes are already in use." },
       { question: "Can I use MD5 for password storage?", answer: "No. MD5 should never be used for password storage. Use bcrypt, Argon2, or PBKDF2 instead. MD5 is too fast and vulnerable to rainbow table and brute force attacks." }
-,      { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure and should not be used for security-sensitive applications. However, it is still widely used for checksums, file integrity verification, and non-cryptographic hashing." }     ]
+,      { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure and should not be used for security-sensitive applications. However, it is still widely used for checksums, file integrity verification, and non-cryptographic hashing." }     ],
+    nameTranslations: {
+      es: "Generador de Hash MD5",
+      ar: "مولد تجزئة MD5",
+    },
+    descriptionTranslations: {
+      es: "Genera hash MD5 de cualquier texto al instante. Generador MD5 online gratuito.",
+      ar: "أنشئ تجزئة MD5 من أي نص فوراً. مولد MD5 مجاني عبر الإنترنت.",
+    },
+    seoTitleTranslations: {
+      es: "Generador MD5 Gratis Online - Calculadora de Hash MD5 2026",
+      ar: "مولد MD5 مجاني عبر الإنترنت - حاسبة تجزئة MD5 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera checksums de hash MD5 de cualquier texto al instante. Generador MD5 online gratuito para verificación de archivos y controles de integridad de datos.",
+      ar: "أنشئ مجموعات تجزئة MD5 من أي نص فوراً. مولد MD5 مجاني عبر الإنترنت للتحقق من الملفات وفحوصات سلامة البيانات.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Ingresa el texto para el que deseas generar un hash MD5.",
+        "Visualiza el hash MD5 generado instantáneamente.",
+        "Haz clic en el hash para copiarlo al portapapeles.",
+        "Usa el hash para verificación de archivos, controles de integridad de datos o compatibilidad con sistemas heredados.",
+      ],
+      ar: [
+        "أدخل النص الذي تريد إنشاء تجزئة MD5 له.",
+        "اعرض تجزئة MD5 المُنشأة فوراً.",
+        "انقر على التجزئة لنسخها إلى الحافظة.",
+        "استخدم التجزئة للتحقق من الملفات وفحوصات سلامة البيانات أو التوافق مع الأنظمة القديمة.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué es un hash MD5?", answer: "MD5 (Algoritmo de Resumen de Mensaje 5) produce un valor hash de 128 bits (32 caracteres hexadecimales) a partir de datos de entrada. Se usa comúnmente para verificación de integridad de archivos y checksums." },
+        { question: "¿MD5 sigue siendo seguro?", answer: "MD5 ya no se considera criptográficamente seguro debido a vulnerabilidades de colisión descubiertas en 2004. No debe usarse para hashing de contraseñas ni aplicaciones críticas de seguridad. Usa SHA-256 en su lugar para fines de seguridad." },
+        { question: "¿Para qué se sigue usando MD5?", answer: "MD5 sigue siendo útil para propósitos no relacionados con seguridad como checksums de archivos, detección de corrupción accidental de datos y compatibilidad con sistemas heredados donde ya se usan hashes MD5." },
+        { question: "¿Puedo usar MD5 para almacenamiento de contraseñas?", answer: "No. MD5 nunca debe usarse para almacenamiento de contraseñas. Usa bcrypt, Argon2 o PBKDF2 en su lugar. MD5 es demasiado rápido y vulnerable a ataques de tabla arcoíris y fuerza bruta." },
+        { question: "¿MD5 sigue siendo seguro?", answer: "MD5 ya no se considera criptográficamente seguro y no debe usarse para aplicaciones sensibles a la seguridad. Sin embargo, sigue siendo ampliamente utilizado para checksums, verificación de integridad de archivos y hashing no criptográfico." },
+      ],
+      ar: [
+        { question: "ما هي تجزئة MD5؟", answer: "MD5 (خوارزمية ملخص الرسالة 5) تُنتج قيمة تجزئة 128 بت (32 حرفاً سداسي عشرياً) من بيانات الإدخال. تُستخدم عادةً للتحقق من سلامة الملفات والمجموعات الاختبارية." },
+        { question: "هل MD5 لا يزال آمناً؟", answer: "لم يعد MD5 يُعتبر آمناً تشفيرياً بسبب ثغرات التصادم المكتشفة في 2004. لا ينبغي استخدامه لتجزئة كلمات المرور أو التطبيقات الحساسة أمنياً. استخدم SHA-256 بدلاً من ذلك لأغراض الأمان." },
+        { question: "ماذا يُستخدم MD5 حالياً؟", answer: "MD5 لا يزال مفيداً للأغراض غير الأمنية مثل مجموعات الملفات واكتشاف تلف البيانات العرضي والتوافق مع الأنظمة القديمة حيث تُستخدم تجزئات MD5 بالفعل." },
+        { question: "هل يمكنني استخدام MD5 لتخزين كلمات المرور؟", answer: "لا. لا يجب أبداً استخدام MD5 لتخزين كلمات المرور. استخدم bcrypt أو Argon2 أو PBKDF2 بدلاً من ذلك. MD5 سريع جداً وعرضة لهجمات جدول قوس قزح والهجمات بالقوة الغاشمة." },
+        { question: "هل MD5 لا يزال آمناً؟", answer: "لم يعد MD5 يُعتبر آمناً تشفيرياً ولا ينبغي استخدامه للتطبيقات الحساسة أمنياً. ومع ذلك لا يزال يُستخدم على نطاق واسع للمجموعات الاختبارية والتحقق من سلامة الملفات والتجزئة غير التشفيرية." },
+      ],
+    },
   },
   {
     id: "qr-code-generator",
@@ -1390,7 +3394,53 @@ export const tools: Tool[] = [
       { question: "How much data can a QR code hold?", answer: "QR codes can store up to 7,089 numeric digits, 4,296 alphanumeric characters, or 2,953 bytes of binary data. More data results in a denser, harder-to-scan code." },
       { question: "Do QR codes expire?", answer: "Static QR codes (like those generated by this tool) never expire. The encoded data is permanent. Dynamic QR codes that redirect to URLs can be changed or deactivated by the service provider." },
       { question: "What size should I print my QR code?", answer: "For reliable scanning, print QR codes at least 2 × 2 cm (0.8 × 0.8 inches). Larger sizes are better for scanning from a distance. Ensure high contrast between the code and background." }
-,      { question: "What can I encode in a QR code?", answer: "Our QR code generator can encode URLs, plain text, email addresses, phone numbers, WiFi credentials, and more. The generated QR codes can be downloaded as PNG images for print or digital use." }     ]
+,      { question: "What can I encode in a QR code?", answer: "Our QR code generator can encode URLs, plain text, email addresses, phone numbers, WiFi credentials, and more. The generated QR codes can be downloaded as PNG images for print or digital use." }     ],
+    nameTranslations: {
+      es: "Generador de Códigos QR",
+      ar: "مولد رموز QR",
+    },
+    descriptionTranslations: {
+      es: "Genera códigos QR a partir de textos, URLs, correos electrónicos o cualquier cadena. Descarga como PNG.",
+      ar: "أنشئ رموز QR من نصوص أو عناوين URLs أو بريد إلكتروني أو أي سلسلة. حمّل بصيغة PNG.",
+    },
+    seoTitleTranslations: {
+      es: "Generador de Códigos QR Gratis Online - Crear Códigos QR 2026",
+      ar: "مولد رموز QR مجاني عبر الإنترنت - إنشاء رموز QR 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Genera códigos QR a partir de URLs, textos, correos electrónicos, números de teléfono o credenciales WiFi. Descarga como PNG para uso impreso o digital. Generador de códigos QR online gratuito.",
+      ar: "أنشئ رموز QR من عناوين URLs ونصوص وبريد إلكتروني وأرقام هوية أو بيانات WiFi. حمّل بصيغة PNG للاستخدام المطبوع أو الرقمي. مولد رموز QR مجاني عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Selecciona el tipo de contenido: URL, texto, correo electrónico, número de teléfono o WiFi.",
+        "Ingresa tu contenido en los campos correspondientes.",
+        "Visualiza el código QR generado instantáneamente con una vista previa en vivo.",
+        "Descarga el código QR como imagen PNG para imprimir o uso digital.",
+      ],
+      ar: [
+        "اختر نوع المحتوى: عنوان URL أو نص أو بريد إلكتروني أو رقم هاتف أو WiFi.",
+        "أدخل محتوىك في الحقول المناسبة.",
+        "اعرض رمز QR المُنشأ فوراً مع معاينة مباشرة.",
+        "حمّل رمز QR كصورة PNG للطباعة أو الاستخدام الرقمي.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Qué puedo codificar en un código QR?", answer: "Los códigos QR pueden codificar URLs, texto plano, direcciones de correo electrónico, números de teléfono, mensajes SMS, credenciales WiFi, vCards (información de contacto) y más. El uso más común es codificar URLs de sitios web." },
+        { question: "¿Cuántos datos puede almacenar un código QR?", answer: "Los códigos QR pueden almacenar hasta 7.089 dígitos numéricos, 4.296 caracteres alfanuméricos o 2.953 bytes de datos binarios. Más datos resulta en un código más denso y difícil de escanear." },
+        { question: "¿Caducan los códigos QR?", answer: "Los códigos QR estáticos (como los generados por esta herramienta) nunca caducan. Los datos codificados son permanentes. Los códigos QR dinámicos que redirigen a URLs pueden ser cambiados o desactivados por el proveedor del servicio." },
+        { question: "¿Qué tamaño debo imprimir mi código QR?", answer: "Para un escaneo confiable, imprime códigos QR de al menos 2 × 2 cm (0.8 × 0.8 pulgadas). Tamaños más grandes son mejores para escanear a distancia. Asegura alto contraste entre el código y el fondo." },
+        { question: "¿Qué puedo codificar en un código QR?", answer: "Nuestro generador de códigos QR puede codificar URLs, texto plano, direcciones de correo electrónico, números de teléfono, credenciales WiFi y más. Los códigos QR generados se pueden descargar como imágenes PNG para imprimir o uso digital." },
+      ],
+      ar: [
+        { question: "ماذا يمكنني ترميزه في رمز QR؟", answer: "يمكن لرموز QR ترميز عناوين URLs والنصوص العادية وعناوين البريد الإلكتروني وأرقام الهاتف ورسائل SMS وبيانات اعتماد WiFi وبطاقات vCards (معلومات الاتصال) والمزيد. الاستخدام الأكثر شيوعاً هو ترميز عناوين مواقع الويب." },
+        { question: "كم كمية البيانات التي يمكن أن يحملها رمز QR؟", answer: "يمكن لرموز QR تخزين ما يصل إلى 7089 رقماً رقمياً و4296 حرفاً أبجدياً رقمياً أو 2953 بايت من البيانات الثنائية. المزيد من البيانات ينتج رمزاً أكثر كثافة وأصعب في المسح." },
+        { question: "هل تنتهي صلاحية رموز QR؟", answer: "رموز QR الثابتة (مثل تلك المُنشأة بهذه الأداة) لا تنتهي صلاحيتها أبداً. البيانات المشفرة دائمة. رموز QR الديناميكية التي تعيد التوجيه إلى عناوين URLs يمكن تغييرها أو إيقافها من قبل مقدم الخدمة." },
+        { question: "ما الحجم الذي يجب أن أطبع به رمز QR؟", answer: "للمسح الموثوق اطبع رموز QR بحجم 2 × 2 سم على الأقل (0.8 × 0.8 بوصة). الأحجام الأكبر أفضل للمسح من مسافة. تأكد من تباين عالٍ بين الرمز والخلفية." },
+        { question: "ماذا يمكنني ترميزه في رمز QR؟", answer: "يمكن لمولد رموز QR لدينا ترميز عناوين URLs والنصوص العادية وعناوين البريد الإلكتروني وأرقام الهواتف وبيانات WiFi والمزيد. يمكن تنزيل رموز QR المُنشأة كصور PNG للطباعة أو الاستخدام الرقمي." },
+      ],
+    },
   },
   {
     id: "quotes",
@@ -1420,7 +3470,55 @@ export const tools: Tool[] = [
       { question: "Can I search for quotes by a specific person?", answer: "Yes. Simply type the person's name in the search bar (e.g., 'Einstein', 'Gandhi') and the tool will show all quotes by that author along with quotes mentioning that name." },
       { question: "Are the quote sources and dates accurate?", answer: "We make every effort to provide accurate source information and dates. Quotes are attributed to documented sources such as books, speeches, interviews, and letters. Some attributions are based on historical consensus." },
       { question: "How can I use these quotes?", answer: "These quotes are great for daily inspiration, social media posts, speeches, writing, presentations, or simply reflecting on wisdom from great minds throughout history." }
-,      { question: "Where do these quotes come from?", answer: "Our quotes collection features famous sayings from historical figures, authors, philosophers, scientists, and leaders across different eras and cultures. Each quote is attributed to its author." }     ]
+,      { question: "Where do these quotes come from?", answer: "Our quotes collection features famous sayings from historical figures, authors, philosophers, scientists, and leaders across different eras and cultures. Each quote is attributed to its author." }     ],
+    nameTranslations: {
+      es: "Directorio de Citas Famosas",
+      ar: "دليل الاقتباسات الشهيرة",
+    },
+    descriptionTranslations: {
+      es: "Busca y descubre citas famosas de figuras de renombre mundial.",
+      ar: "ابحث واكتشف اقتباسات شهيرة من شخصيات عالمية مشهورة.",
+    },
+    seoTitleTranslations: {
+      es: "Citas Gratis Online - Citas Motivacionales e Inspiradoras 2026",
+      ar: "اقتباسات مجانية عبر الإنترنت - اقتباسات تحفيزية وملهمة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Explora y busca cientos de citas famosas de figuras de renombre mundial. Filtra por categoría, autor o palabra clave. Colección de citas inspiradoras gratuita para motivación diaria.",
+      ar: "تصفح وابحث في مئات الاقتباسات الشهيرة من شخصيات عالمية مشهورة. فلتر حسب الفئة أو المؤلف أو الكلمة المفتاحية. مجموعة اقتباسات ملهمة مجانية للتحفيز اليومي.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Explora citas organizadas por categoría: coraje, sabiduría, amor, éxito y más.",
+        "Usa la barra de búsqueda para encontrar citas por nombre de persona, texto de cita o palabra clave.",
+        "Haz clic en la Cita del Día para inspiración diaria.",
+        "Haz clic en cualquier cita para ver sus detalles completos incluyendo fuente, fecha y etiquetas.",
+        "Haz clic en cualquier etiqueta para descubrir citas relacionadas sobre el mismo tema.",
+      ],
+      ar: [
+        "تصفح الاقتباسات المنظمة حسب الفئة: الشجاعة والحكمة والحب والنجاح والمزيد.",
+        "استخدم شريط البحث للعثور على اقتباسات باسم الشخص أو نص الاقتباس أو الكلمة المفتاحية.",
+        "انقر على اقتباس اليوم للإلهام اليومي.",
+        "انقر على أي اقتباس لرؤية تفاصيله الكاملة بما في ذلك المصدر والتاريخ والعلامات.",
+        "انقر على أي علامة لاكتشاف اقتباسات متعلقة بنفس الموضوع.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuántas citas hay en esta colección?", answer: "Esta colección presenta más de 500 citas famosas de figuras de renombre mundial incluyendo filósofos, líderes, científicos, artistas y escritores. Las citas están organizadas por tema para facilitar la navegación." },
+        { question: "¿Puedo buscar citas de una persona específica?", answer: "Sí. Simplemente escribe el nombre de la persona en la barra de búsqueda (por ejemplo, 'Einstein', 'Gandhi') y la herramienta mostrará todas las citas de ese autor junto con citas que mencionen ese nombre." },
+        { question: "¿Son precisas las fuentes y fechas de las citas?", answer: "Hacemos todo lo posible para proporcionar información precisa de fuentes y fechas. Las citas se atribuyen a fuentes documentadas como libros, discursos, entrevistas y cartas. Algunas atribuciones se basan en consenso histórico." },
+        { question: "¿Cómo puedo usar estas citas?", answer: "Estas citas son geniales para inspiración diaria, publicaciones en redes sociales, discursos, escritos, presentaciones o simplemente reflexionar sobre la sabiduría de grandes mentes a lo largo de la historia." },
+        { question: "¿De dónde vienen estas citas?", answer: "Nuestra colección de citas presenta dichos famosos de figuras históricas, autores, filósofos, científicos y líderes de diferentes épocas y culturas. Cada cita está atribuida a su autor." },
+      ],
+      ar: [
+        { question: "كم اقتباساً في هذه المجموعة؟", answer: "تضم هذه المجموعة أكثر من 500 اقتباس شهير من شخصيات عالمية مشهورة بما في ذلك الفلاسفة والقادة والعلماء والفنانون والكتاب. الاقتباسات منظمة حسب الموضوع لسهولة التصفح." },
+        { question: "هل يمكنني البحث عن اقتباسات لشخص معين؟", answer: "نعم. ببساطة اكتب اسم الشخص في شريط البحث (مثال: 'أينشتاين'، 'غاندي') وستعرض الأداة جميع الاقتباسات لهذا المؤلف مع الاقتباسات التي تذكر هذا الاسم." },
+        { question: "هل مصادر الاقتباسات والتواريخ دقيقة؟", answer: "نبذل قصارى جهدنا لتقديم معلومات دقيقة عن المصادر والتواريخ. تُنسب الاقتباسات إلى مصادر موثقة مثل الكتب والخطابات والمقابلات والرسائل. بعض النسب مبنية على إجماع تاريخي." },
+        { question: "كيف يمكنني استخدام هذه الاقتباسات؟", answer: "هذه الاقتباسات رائعة للإلهام اليومي ومنشورات وسائل التواصل الاجتماعي والخطابات والكتابة والعروض التقديمية أو ببساطة التأمل في حكمة العقول العظيمة عبر التاريخ." },
+        { question: "من أين تأتي هذه الاقتباسات؟", answer: "تضم مجموعتنا من الاقتباسات أقوالاً شهيرة من شخصيات تاريخية ومؤلفين وفلاسفة وعلماء وقادة من عصور وثقافات مختلفة. كل اقتباس منسوب إلى مؤلفه." },
+      ],
+    },
   },
   {
     id: "book-of-answers",
@@ -1451,7 +3549,55 @@ export const tools: Tool[] = [
       { question: "Is this Book of Answers free to use?", answer: "Yes, the Book of Answers is completely free with no limits. You can ask as many questions as you'd like. No signup or account is required." },
       { question: "Should I take the answers seriously?", answer: "The Book of Answers is designed as a fun, reflective tool. While the answers aren't meant to replace professional advice, many people find them helpful for breaking through decision paralysis, gaining a fresh perspective, or simply having a moment of mindful reflection." },
       { question: "Does this tool store my questions or answers?", answer: "No. Everything happens in your browser. Your questions, answers, and usage data are never stored, tracked, or sent anywhere. Your privacy is fully protected." }
-,      { question: "How does the Book of Answers work?", answer: "The Book of Answers gives you a random piece of guidance when you have a question. Close your eyes, think of your question, then open the book to receive your answer. It is meant for fun and inspiration." }     ]
+,      { question: "How does the Book of Answers work?", answer: "The Book of Answers gives you a random piece of guidance when you have a question. Close your eyes, think of your question, then open the book to receive your answer. It is meant for fun and inspiration." }     ],
+    nameTranslations: {
+      es: "Libro de las Respuestas",
+      ar: "كتاب الإجابات",
+    },
+    descriptionTranslations: {
+      es: "Un Libro de las Respuestas digital para tomar decisiones divertidas y obtener orientación. Concéntrate en tu pregunta y recibe una respuesta aleatoria y cuidadosamente seleccionada.",
+      ar: "كتاب إجابات رقمي لاتخاذ قرارات ممتعة والحصول على الإرشاد. ركّز على سؤالك واحصل على إجابة عشوائية منتقاة بعناية.",
+    },
+    seoTitleTranslations: {
+      es: "Libro de las Respuestas Gratis Online - Generador de Respuestas Aleatorias 2026",
+      ar: "كتاب الإجابات مجاني عبر الإنترنت - مولد إجابات عشوائية 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Un Libro de las Respuestas digital para tomar decisiones divertidas y orientación psicológica. Cierra los ojos, concéntrate en tu pregunta y toca para revelar una respuesta aleatoria de más de 500 respuestas curadas. Herramienta de oráculo online gratuita.",
+      ar: "كتاب إجابات رقمي لاتخاذ قرارات ممتعة وإرشاد نفسي. أغمض عينيك وركّز على سؤالك ثم اضغط لكشف إجابة عشوائية من أكثر من 500 إجابة منتقاة. أداة العرافة المجانية عبر الإنترنت.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Piensa en una pregunta sobre la que te gustaría orientación — puede ser sobre cualquier cosa.",
+        "Cierra los ojos y mantén la pregunta en mente durante 3-5 segundos.",
+        "Haz clic en la portada del libro o presiona 'Abre tu Respuesta' para revelar tu respuesta.",
+        "Lee tu respuesta con mente abierta y observa cómo resuena contigo.",
+        "Haz clic en 'Haz Otra Pregunta' para reiniciar y recibir una nueva respuesta para una pregunta diferente.",
+      ],
+      ar: [
+        "فكّر في سؤال تريد إرشاداً بشأنه — يمكن أن يكون عن أي شيء.",
+        "أغمض عينيك واحتفظ بالسؤال في ذهنك لمدة 3-5 ثوانٍ.",
+        "انقر على غلاف الكتاب أو اضغط على 'افتح إجابتك' لكشف إجابتك.",
+        "اقرأ إجابتك بعقل منفتح وانظر كيف تتوافق معك.",
+        "انقر على 'اسأل سؤالاً آخر' لإعادة التعيين والحصول على إجابة جديدة لسؤال مختلف.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cómo funciona el Libro de las Respuestas?", answer: "El Libro de las Respuestas selecciona aleatoriamente una respuesta de una colección curada de más de 500 respuestas en cinco categorías: afirmación, negación, sugerencia, curación y humor. La selección es puramente aleatoria, dando a cada respuesta la misma probabilidad de aparecer." },
+        { question: "¿Son reales las respuestas del Libro de las Respuestas?", answer: "Las respuestas son frases cortas cuidadosamente seleccionadas diseñadas para proporcionar comodidad psicológica, inspiración y perspectiva. Se basan en el efecto Forer — declaraciones vagas pero identificables con las que los usuarios pueden conectarse personalmente e interpretar para sus propias situaciones." },
+        { question: "¿Es gratuito el uso del Libro de las Respuestas?", answer: "Sí, el Libro de las Respuestas es completamente gratuito sin límites. Puedes hacer todas las preguntas que desees. No se requiere registro ni cuenta." },
+        { question: "¿Debo tomar las respuestas en serio?", answer: "El Libro de las Respuestas está diseñado como una herramienta divertida y reflexiva. Aunque las respuestas no pretenden reemplazar el asesoramiento profesional, muchas personas las encuentran útiles para superar la parálisis de decisión, obtener una nueva perspectiva o simplemente tener un momento de reflexión consciente." },
+        { question: "¿Esta herramienta almacena mis preguntas o respuestas?", answer: "No. Todo ocurre en tu navegador. Tus preguntas, respuestas y datos de uso nunca se almacenan, rastrean ni se envían a ningún lugar. Tu privacidad está completamente protegida." },
+      ],
+      ar: [
+        { question: "كيف يعمل كتاب الإجابات؟", answer: "يختار كتاب الإجابات عشوائياً إجابة واحدة من مجموعة منتقاة من أكثر من 500 إجابة عبر خمس فئات: التأكيد والنفي والاقتراح والشفاء والفكاهة. الاختيار عشوائي تماماً مما يمنح كل إجابة فرصة متساوية للظهور." },
+        { question: "هل الإجابات في كتاب الإجابات حقيقية؟", answer: "الإجابات عبارات قصيرة منتقاة بعناية مصممة لتوفير الراحة النفسية والإلهام والمنظور. تعتمد على تأثير بارنوم — عبارات غامضة لكن يمكن ربطها شخصياً يمكن للمستخدمين التواصل معها وتفسيرها لمواقفهم الخاصة." },
+        { question: "هل كتاب الإجابات هذا مجاني للاستخدام؟", answer: "نعم، كتاب الإجابات مجاني تماماً بدون حدود. يمكنك طرح أي عدد من الأسئلة. لا يتطلب تسجيل أو حساب." },
+        { question: "هل يجب أن آخذ الإجابات على محمل الجد؟", answer: "صُمم كتاب الإجابات كأداة ممتعة وتأملية. بينما لا تهدف الإجابات لاستبدال المشورة المهنية يجد الكثير من الناس أنها مفيدة لتجاوز شلل القرار أو الحصول على منظور جديد أو مجرد لحظة من التأمل الواعي." },
+        { question: "هل تخزّن هذه الأداة أسئلتي أو إجاباتي؟", answer: "لا. كل شيء يحدث في متصفحك. لا يتم تخزين أو تتبع أو إرسال أسئلتك وإجاباتك وبيانات الاستخدام إلى أي مكان. خصوصيتك محمية بالكامل." },
+      ],
+    },
   },
   {
     id: "reaction-test",
@@ -1481,7 +3627,55 @@ export const tools: Tool[] = [
       { question: "What factors affect reaction time?", answer: "Reaction time is influenced by age, fatigue, attention level, practice, and individual differences. Getting enough sleep, staying hydrated, and regular practice can improve your times." },
       { question: "Can I improve my reaction time?", answer: "Yes. Regular practice, staying focused, getting adequate rest, and engaging in activities like video games or sports can all help improve your reaction time over time." },
       { question: "Is this test accurate?", answer: "This test measures your response time using your browser's high-resolution timer. While it gives a good approximation, actual reaction time may vary slightly based on your device's display latency and input delay." }
-,      { question: "What is a good reaction time?", answer: "The average human visual reaction time is around 250ms. Gamers and athletes often achieve under 200ms. Our reaction test rates your performance from Lightning (under 150ms) to Needs Coffee (over 500ms)." }     ]
+,      { question: "What is a good reaction time?", answer: "The average human visual reaction time is around 250ms. Gamers and athletes often achieve under 200ms. Our reaction test rates your performance from Lightning (under 150ms) to Needs Coffee (over 500ms)." }     ],
+    nameTranslations: {
+      es: "Probador de Tiempo de Reacción",
+      ar: "اختبار زمن رد الفعل",
+    },
+    descriptionTranslations: {
+      es: "¡Pon a prueba tus reflejos! Haz clic lo más rápido posible cuando el bloque se vuelva verde para medir tu tiempo de reacción.",
+      ar: "اختبر ردود أفعالك! انقر بأسرع ما يمكن عندما يتحول المربع إلى الأخضر لقياس زمن رد فعلك.",
+    },
+    seoTitleTranslations: {
+      es: "Prueba de Tiempo de Reacción Gratis Online - Juego de Velocidad de Reflejos 2026",
+      ar: "اختبار زمن رد الفعل مجاني عبر الإنترنت - لعبة سرعة الاستجابة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Prueba tu tiempo de reacción con este test interactivo de reflejos. Haz clic cuando el color cambie a verde y mide tu velocidad de respuesta en milisegundos. Rastrea tus mejores tiempos y desafíate.",
+      ar: "اختبر زمن رد فعلك مع هذا الاختبار التفاعلي. انقر عندما يتغير اللون إلى الأخضر وقس سرعة استجابتك بالمللي ثانية. تتبع أفضل أوقاتك وتحدَّ نفسك.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Haz clic en el bloque de color para iniciar la prueba.",
+        "El bloque se volverá rojo — espera a que se vuelva verde.",
+        "¡Haz clic tan pronto como el bloque se vuelva verde!",
+        "Se mostrará tu tiempo de reacción en milisegundos.",
+        "Repite varias veces para mejorar y rastrear tu mejor tiempo.",
+      ],
+      ar: [
+        "انقر على المربع الملون لبدء الاختبار.",
+        "سيصبح المربع أحمر — انتظر حتى يتحول إلى الأخضر.",
+        "انقر بمجرد أن يتحول المربع إلى الأخضر!",
+        "سيظهر زمن رد فعلك بالمللي ثانية.",
+        "كرر عدة مرات للتحسن وتتبع أفضل وقتك.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuál es un buen tiempo de reacción?", answer: "El tiempo promedio de reacción humana para estímulos visuales es de alrededor de 250ms. Atletas y gamers suelen lograr tiempos por debajo de 200ms. Atletas de élite pueden alcanzar tiempos tan bajos como 150ms." },
+        { question: "¿Qué factores afectan el tiempo de reacción?", answer: "El tiempo de reacción está influenciado por la edad, la fatiga, el nivel de atención, la práctica y diferencias individuales. Dormir lo suficiente, mantenerse hidratado y practicar regularmente puede mejorar tus tiempos." },
+        { question: "¿Puedo mejorar mi tiempo de reacción?", answer: "Sí. La práctica regular, mantenerse enfocado, descansar adecuadamente y participar en actividades como videojuegos o deportes pueden ayudar a mejorar tu tiempo de reacción con el tiempo." },
+        { question: "¿Es precisa esta prueba?", answer: "Esta prueba mide tu tiempo de respuesta usando el temporizador de alta resolución de tu navegador. Aunque da una buena aproximación, el tiempo real puede variar ligeramente según la latencia de pantalla y el retardo de entrada de tu dispositivo." },
+        { question: "¿Cuál es un buen tiempo de reacción?", answer: "El tiempo promedio de reacción visual humana es de alrededor de 250ms. Gamers y atletas suelen lograr menos de 200ms. Nuestra prueba califica tu rendimiento desde Relámpago (menos de 150ms) hasta Necesita Café (más de 500ms)." },
+      ],
+      ar: [
+        { question: "ما هو زمن رد الفعل الجيد؟", answer: "متوسط زمن رد الفعل البشري للمحفزات البصرية حوالي 250 مللي ثانية. يحقق الرياضيون واللاعبون عادةً أوقاتاً أقل من 200 مللي ثانية. يمكن للرياضيين النخبويين الوصول إلى أزمنة منخفضة تصل إلى 150 مللي ثانية." },
+        { question: "ما العوامل التي تؤثر على زمن رد الفعل؟", answer: "يتأثر زمن رد الفعل بالعمر والتعب ومستوى الانتباه والممارسة والفروق الفردية. الحصول على قسط كافٍ من النوم والبقاء رطباً والممارسة المنتظمة يمكن أن تحسّن أوقاتك." },
+        { question: "هل يمكنني تحسين زمن رد فعلي؟", answer: "نعم. الممارسة المنتظمة والبقاء مركزاً والحصول على قسط كافٍ من الراحة والمشاركة في أنشطة مثل ألعاب الفيديو أو الرياضة يمكن أن تساعد جميعها في تحسين زمن رد فعلك مع مرور الوقت." },
+        { question: "هل هذا الاختبار دقيق؟", answer: "يقيس هذا الاختبار وقت استجابتك باستخدام مؤقت الدقة العالية في متصفحك. بينما يعطي تقديراً جيداً، قد يختلف زمن رد الفعل الفعلي قليلاً بناءً على تأخير الشاشة وتأخير الإدخال في جهازك." },
+        { question: "ما هو زمن رد الفعل الجيد؟", answer: "متوسط زمن رد الفعل البصري البشري حوالي 250 مللي ثانية. يحقق اللاعبون والرياضيون عادةً أقل من 200 مللي ثانية. يقيّم اختبارنا أداءك من برق (أقل من 150 مللي ثانية) إلى يحتاج قهوة (أكثر من 500 مللي ثانية)." },
+      ],
+    },
   },
   {
     id: "ai-tools",
@@ -1510,30 +3704,51 @@ export const tools: Tool[] = [
       { question: "How often is the directory updated?", answer: "The directory is updated regularly as new AI tools are released and existing tools change their pricing or features. We aim to add new tools and verify existing listings weekly." },
       { question: "Can I suggest an AI tool to be added?", answer: "Yes! We welcome suggestions for free AI tools that would benefit our community. Use the contact form to submit a tool for review and inclusion." },
       { question: "What categories of AI tools are included?", answer: "The directory covers writing assistants, image generators, video editing tools, coding assistants, audio tools, productivity apps, chatbots, and more. New categories are added as the AI landscape evolves." }
-,      { question: "Are all the AI tools listed here free?", answer: "Our AI tools directory includes both free and freemium tools. Each listing indicates whether the tool is free, has a free tier, or requires payment. We regularly update the directory." }     ]
-  ,
+,      { question: "Are all the AI tools listed here free?", answer: "Our AI tools directory includes both free and freemium tools. Each listing indicates whether the tool is free, has a free tier, or requires payment. We regularly update the directory." }     ],
     nameTranslations: {
-      en: "Contador de Palabras",
-      es: "Contador de Palabras",
-      ar: "عداد الكلمات",
+      es: "Directorio de Herramientas de IA Gratuitas",
+      ar: "دليل أدوات الذكاء الاصطناعي المجانية",
     },
     descriptionTranslations: {
-      en: "",
-      es: "Cuenta palabras, caracteres, oraciones y párrafos en tu texto en tiempo real.",
-      ar: "عد الكلمات والأحرف والجمل والفقرات في نصك في الوقت الفعلي.",
+      es: "Directorio curado de las mejores herramientas de IA gratuitas para escritura, imágenes, video, programación y más.",
+      ar: "دليل مختار لأفضل أدوات الذكاء الاصطناعي المجانية للكتابة والصور والفيديو والبرمجة والمزيد.",
     },
     seoTitleTranslations: {
-      en: "",
-      es: "Contador de Palabras Gratis Online - Cuenta Palabras, Caracteres y Oraciones 2026",
-      ar: "عداد كلمات مجاني عبر الإنترنت - عد الكلمات والأحرف والجمل 2026",
+      es: "Directorio de Herramientas de IA Gratis - Mejor Lista de Herramientas IA Online 2026",
+      ar: "دليل أدوات الذكاء الاصطناعي المجانية - أفضل قائمة أدوات الذكاء الاصطناعي عبر الإنترنت 2026",
     },
     seoDescriptionTranslations: {
-      en: "",
-      es: "Contador de palabras gratuito y rápido. Sin registro. Tus datos permanecen en tu navegador.",
-      ar: "عداد كلمات مجاني وسريع. بدون تسجيل. بياناتك تبقى في متصفحك.",
+      es: "Directorio curado de las mejores herramientas de IA gratuitas para escritura, generación de imágenes, edición de video, asistencia en programación y más. Actualizado regularmente con nuevas herramientas de IA.",
+      ar: "دليل مختار لأفضل أدوات الذكاء الاصطناعي المجانية للكتابة وإنشاء الصور وتحرير الفيديو والمساعدة في البرمجة والمزيد. يتم التحديث بانتظام بأدوات ذكاء اصطناعي جديدة.",
     },
-    howToUseTranslations: {},
-    faqTranslations: {},
+    howToUseTranslations: {
+      es: [
+        "Explora herramientas de IA organizadas por categoría: escritura, imágenes, video, programación, audio y productividad.",
+        "Haz clic en cualquier herramienta para ver sus detalles, características y enlace directo.",
+        "Usa el filtro para reducir herramientas por categoría o caso de uso.",
+        "Marca esta página para ver las últimas adiciones a la colección de herramientas de IA gratuitas.",
+      ],
+      ar: [
+        "تصفح أدوات الذكاء الاصطناعي مصنفة حسب الفئة: الكتابة والصور والفيديو والبرمجة والصوتية والإنتاجية.",
+        "انقر على أي أداة لرؤية تفاصيلها وميزاتها والرابط المباشر.",
+        "استخدم الفلتر لتضييق الأدوات حسب الفئة أو حالة الاستخدام.",
+        "أضف هذه الصفحة إلى المفضلة لآخر الإضافات إلى مجموعة أدوات الذكاء الاصطناعي المجانية.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Son realmente gratuitas todas las herramientas en este directorio?", answer: "Sí. Cada herramienta listada en este directorio ofrece un plan gratuito o es completamente gratuita. Algunas herramientas pueden tener funciones premium, pero la versión gratuita proporciona funcionalidad sustancial." },
+        { question: "¿Con qué frecuencia se actualiza el directorio?", answer: "El directorio se actualiza regularmente a medida que se lanzan nuevas herramientas de IA y las existentes cambian sus precios o funciones. Nuestro objetivo es agregar nuevas herramientas y verificar las existentes semanalmente." },
+        { question: "¿Puedo sugerir una herramienta de IA para agregar?", answer: "¡Sí! Aceptamos sugerencias de herramientas de IA gratuitas que beneficien a nuestra comunidad. Usa el formulario de contacto para enviar una herramienta para revisión e inclusión." },
+        { question: "¿Qué categorías de herramientas de IA están incluidas?", answer: "El directorio cubre asistentes de escritura, generadores de imágenes, herramientas de edición de video, asistentes de programación, herramientas de audio, aplicaciones de productividad, chatbots y más. Se agregan nuevas categorías a medida que evoluciona el panorama de la IA." },
+      ],
+      ar: [
+        { question: "هل جميع الأدوات في هذا الدليل مجانية حقاً؟", answer: "نعم. كل أداة مدرجة في هذا الدليل تقدم خطة مجانية أو مجانية بالكامل. قد تحتوي بعض الأدوات على ميزات مدفوعة لكن النسخة المجانية توفر وظائف جوهرية." },
+        { question: "كم مرة يتم تحديث الدليل؟", answer: "يتم تحديث الدليل بانتظام مع إصدار أدوات ذكاء اصطناعي جديدة وتغيير الأدوات الحالية لأسعارها أو ميزاتها. نهدف إلى إضافة أدوات جديدة والتحقق من القوائم الحالية أسبوعياً." },
+        { question: "هل يمكنني اقتراح أداة ذكاء اصطناعي لإضافتها؟", answer: "نعم! نرحب باقتراحات أدوات الذكاء الاصطناعي المجانية التي تفيد مجتمعنا. استخدم نموذج الاتصال لإرسال أداة للمراجعة والإدراج." },
+        { question: "ما فئات أدوات الذكاء الاصطناعي المدرجة؟", answer: "يغطي الدليل مساعدي الكتابة ومولّدات الصور وأدوات تحرير الفيديو ومساعدي البرمجة والأدوات الصوتية وتطبيقات الإنتاجية وروبوتات الدردشة والمزيد. تُضاف فئات جديدة مع تطور مشهد الذكاء الاصطناعي." },
+      ],
+    },
   },
   {
     id: "life-hacks",
