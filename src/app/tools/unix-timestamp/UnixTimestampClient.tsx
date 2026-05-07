@@ -21,6 +21,7 @@ const metadata = {
 export default function UnixTimestampClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [input, setInput] = useState(Math.floor(Date.now() / 1000).toString());
   const [now, setNow] = useState(Math.floor(Date.now() / 1000));
+  const ut = (dict as any)?.unixTimestamp || {};
 
   useEffect(() => {
     const interval = setInterval(() => setNow(Math.floor(Date.now() / 1000)), 1000);
@@ -37,7 +38,7 @@ export default function UnixTimestampClient({ locale = "en", dict }: { locale?: 
       utc: d.toUTCString(),
       local: d.toLocaleString(),
       iso: d.toISOString(),
-      relative: getRelativeTime(d),
+      relative: getRelativeTime(d, ut),
     };
   }, [input]);
 
@@ -50,7 +51,7 @@ export default function UnixTimestampClient({ locale = "en", dict }: { locale?: 
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="text-sm text-zinc-500 dark:text-zinc-400">Current Unix Timestamp</div>
+        <div className="text-sm text-zinc-500 dark:text-zinc-400">{ut.currentTimestamp || "Current Unix Timestamp"}</div>
         <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 font-mono">{now}</div>
       </div>
 
@@ -58,21 +59,21 @@ export default function UnixTimestampClient({ locale = "en", dict }: { locale?: 
         {/* Timestamp to Date */}
         <div>
           <h3 className="mb-3 font-medium text-zinc-700 dark:text-zinc-300">
-            Timestamp → Date
+            {ut.timestampToDate || "Timestamp → Date"}
           </h3>
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter Unix timestamp..."
+            placeholder={ut.placeholder || "Enter Unix timestamp..."}
             className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900"
           />
           {dateResult && (
             <div className="mt-3 space-y-2 rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <div><span className="text-zinc-500 dark:text-zinc-400">UTC: </span><span className="font-mono">{dateResult.utc}</span></div>
-              <div><span className="text-zinc-500 dark:text-zinc-400">Local: </span><span className="font-mono">{dateResult.local}</span></div>
-              <div><span className="text-zinc-500 dark:text-zinc-400">ISO: </span><span className="font-mono">{dateResult.iso}</span></div>
-              <div><span className="text-zinc-500 dark:text-zinc-400">Relative: </span><span className="text-blue-600 dark:text-blue-400">{dateResult.relative}</span></div>
+              <div><span className="text-zinc-500 dark:text-zinc-400">{ut.utcLabel || "UTC"}: </span><span className="font-mono">{dateResult.utc}</span></div>
+              <div><span className="text-zinc-500 dark:text-zinc-400">{ut.localLabel || "Local"}: </span><span className="font-mono">{dateResult.local}</span></div>
+              <div><span className="text-zinc-500 dark:text-zinc-400">{ut.isoLabel || "ISO"}: </span><span className="font-mono">{dateResult.iso}</span></div>
+              <div><span className="text-zinc-500 dark:text-zinc-400">{ut.relativeLabel || "Relative"}: </span><span className="text-blue-600 dark:text-blue-400">{dateResult.relative}</span></div>
             </div>
           )}
         </div>
@@ -80,7 +81,7 @@ export default function UnixTimestampClient({ locale = "en", dict }: { locale?: 
         {/* Date to Timestamp */}
         <div>
           <h3 className="mb-3 font-medium text-zinc-700 dark:text-zinc-300">
-            Date → Timestamp
+            {ut.dateToTimestamp || "Date → Timestamp"}
           </h3>
           <input
             type="datetime-local"
@@ -101,7 +102,7 @@ export default function UnixTimestampClient({ locale = "en", dict }: { locale?: 
   );
 }
 
-function getRelativeTime(date: Date): string {
+function getRelativeTime(date: Date, t: Record<string, string>): string {
   const now = new Date();
   const diff = date.getTime() - now.getTime();
   const abs = Math.abs(diff);
@@ -110,8 +111,13 @@ function getRelativeTime(date: Date): string {
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  if (seconds < 60) return diff > 0 ? "just now" : "just now";
-  if (minutes < 60) return diff > 0 ? `in ${minutes} minute${minutes > 1 ? "s" : ""}` : `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
-  if (hours < 24) return diff > 0 ? `in ${hours} hour${hours > 1 ? "s" : ""}` : `${hours} hour${hours > 1 ? "s" : ""} ago`;
-  return diff > 0 ? `in ${days} day${days > 1 ? "s" : ""}` : `${days} day${days > 1 ? "s" : ""} ago`;
+  const fmt = (key: string, count: number) => {
+    const template = t[key] || "";
+    return template.replace("{{count}}", String(count)).replace("{{s}}", count > 1 ? "s" : "");
+  };
+
+  if (seconds < 60) return t.justNow || "just now";
+  if (minutes < 60) return diff > 0 ? fmt("inMinutes", minutes) : fmt("minutesAgo", minutes);
+  if (hours < 24) return diff > 0 ? fmt("inHours", hours) : fmt("hoursAgo", hours);
+  return diff > 0 ? fmt("inDays", days) : fmt("daysAgo", days);
 }

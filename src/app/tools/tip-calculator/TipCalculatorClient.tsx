@@ -23,6 +23,7 @@ export default function TipCalculatorClient({ locale = "en", dict }: { locale?: 
   const [bill, setBill] = useState("50");
   const [tipPercent, setTipPercent] = useState("15");
   const [split, setSplit] = useState("1");
+  const tc = (dict as any)?.tipCalculator || {};
 
   const result = useMemo(() => {
     const b = parseFloat(bill);
@@ -51,7 +52,7 @@ export default function TipCalculatorClient({ locale = "en", dict }: { locale?: 
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Bill Amount ($)
+            {tc.billAmount || "Bill Amount ($)"}
           </label>
           <input
             type="number"
@@ -62,7 +63,7 @@ export default function TipCalculatorClient({ locale = "en", dict }: { locale?: 
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Tip Percentage (%)
+            {tc.tipPercentage || "Tip Percentage (%)"}
           </label>
           <div className="flex gap-2">
             <input
@@ -90,7 +91,7 @@ export default function TipCalculatorClient({ locale = "en", dict }: { locale?: 
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Split Between
+            {tc.splitBetween || "Split Between"}
           </label>
           <input
             type="number"
@@ -106,25 +107,25 @@ export default function TipCalculatorClient({ locale = "en", dict }: { locale?: 
       {result && (
         <>
           <div className="mt-6 rounded-lg bg-blue-600 p-6 text-center text-white">
-            <div className="text-sm opacity-80">Total with Tip</div>
+            <div className="text-sm opacity-80">{tc.totalWithTip || "Total with Tip"}</div>
             <div className="text-4xl font-bold">${result.total.toLocaleString()}</div>
           </div>
 
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-center dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="text-xs text-zinc-500 dark:text-zinc-400">Bill</div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400">{tc.bill || "Bill"}</div>
               <div className="text-sm font-bold">${result.bill.toLocaleString()}</div>
             </div>
             <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-center dark:border-red-800 dark:bg-red-950">
-              <div className="text-xs text-red-500 dark:text-red-400">Tip Amount</div>
+              <div className="text-xs text-red-500 dark:text-red-400">{tc.tipAmount || "Tip Amount"}</div>
               <div className="text-sm font-bold">${result.tipAmount.toLocaleString()}</div>
             </div>
             <div className="rounded-lg border border-green-200 bg-green-50 p-3 text-center dark:border-green-800 dark:bg-green-950">
-              <div className="text-xs text-green-500 dark:text-green-400">Per Person</div>
+              <div className="text-xs text-green-500 dark:text-green-400">{tc.perPerson || "Per Person"}</div>
               <div className="text-sm font-bold">${result.perPerson.toLocaleString()}</div>
             </div>
             <div className="rounded-lg border border-green-200 bg-green-50 p-3 text-center dark:border-green-800 dark:bg-green-950">
-              <div className="text-xs text-green-500 dark:text-green-400">Tip Per Person</div>
+              <div className="text-xs text-green-500 dark:text-green-400">{tc.tipPerPerson || "Tip Per Person"}</div>
               <div className="text-sm font-bold">${result.tipPerPerson.toLocaleString()}</div>
             </div>
           </div>

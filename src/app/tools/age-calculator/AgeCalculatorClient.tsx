@@ -21,6 +21,7 @@ const metadata = {
 export default function AgeCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [birthDate, setBirthDate] = useState("");
   const [result, setResult] = useState<null | Record<string, number | string>>(null);
+  const ac = (dict as any)?.ageCalculator || {};
 
   function calculateAge() {
     if (!birthDate) return;
@@ -62,21 +63,23 @@ export default function AgeCalculatorClient({ locale = "en", dict }: { locale?: 
     });
   }
 
+  const inDaysText = (ac.inDays || "in {{days}} days").replace("{{days}}", String(result?.nextBirthday || 0));
+
   const statItems = [
-    { label: "Years", value: result?.years },
-    { label: "Months", value: result?.months },
-    { label: "Days", value: result?.days },
-    { label: "Total days", value: result?.totalDays?.toLocaleString() },
-    { label: "Total weeks", value: result?.totalWeeks?.toLocaleString() },
-    { label: "Total hours", value: result?.totalHours?.toLocaleString() },
-    { label: "Next birthday", value: result ? `in ${result.nextBirthday} days` : null },
+    { label: ac.years || "Years", value: result?.years },
+    { label: ac.months || "Months", value: result?.months },
+    { label: ac.days || "Days", value: result?.days },
+    { label: ac.totalDays || "Total days", value: result?.totalDays?.toLocaleString() },
+    { label: ac.totalWeeks || "Total weeks", value: result?.totalWeeks?.toLocaleString() },
+    { label: ac.totalHours || "Total hours", value: result?.totalHours?.toLocaleString() },
+    { label: ac.nextBirthday || "Next birthday", value: result ? inDaysText : null },
   ];
 
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Date of birth:
+          {ac.dob || "Date of birth"}:
         </label>
         <input
           type="date"
@@ -92,13 +95,13 @@ export default function AgeCalculatorClient({ locale = "en", dict }: { locale?: 
           disabled={!birthDate}
           className="rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
-          Calculate
+          {ac.calculate || "Calculate"}
         </button>
       </div>
 
       {result && (
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
-          {statItems.map((item) => (
+          {statItems.map((item) =>
             item.value !== undefined && item.value !== null ? (
               <div
                 key={item.label}
@@ -112,7 +115,7 @@ export default function AgeCalculatorClient({ locale = "en", dict }: { locale?: 
                 </div>
               </div>
             ) : null
-          ))}
+          )}
         </div>
       )}
     </ToolLayout>

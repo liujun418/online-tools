@@ -165,16 +165,18 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
     return matches.map((m) => m.match).join("\n");
   }, [matches, exportFormat]);
 
+  const rt = (dict as any)?.regexTester || {};
+
   const codeSnippet = useMemo(() => {
     const fn = CODE_SNIPPETS[codeLang];
     return fn ? fn(pattern, flags) : "";
   }, [codeLang, pattern, flags]);
 
   const tabs: { key: TabKey; label: string }[] = [
-    { key: "test", label: "Test" },
-    { key: "replace", label: "Replace" },
-    { key: "extract", label: "Extract" },
-    { key: "code", label: "Code" },
+    { key: "test", label: rt.tab_test || "Test" },
+    { key: "replace", label: rt.tab_replace || "Replace" },
+    { key: "extract", label: rt.tab_extract || "Extract" },
+    { key: "code", label: rt.tab_code || "Code" },
   ];
 
   const copyToClipboard = (content: string) => {
@@ -191,7 +193,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
             type="text"
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
-            placeholder="Enter regex pattern..."
+            placeholder={rt.patternPlaceholder || "Enter regex pattern..."}
             className="flex-1 rounded-lg border border-zinc-300 bg-white px-3 py-2 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
           />
           <span className="text-zinc-400">/</span>
@@ -199,7 +201,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
             type="text"
             value={flags}
             onChange={(e) => setFlags(e.target.value)}
-            placeholder="flags"
+            placeholder={rt.flagsPlaceholder || "flags"}
             className="w-16 rounded-lg border border-zinc-300 bg-white px-2 py-2 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900"
           />
         </div>
@@ -235,7 +237,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
           {matches.length > 0 && (
             <div className="mb-3">
               <p className="mb-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {matches.length} match{matches.length !== 1 ? "es" : ""} found
+                {rt.matchesFound?.replace("{{count}}", String(matches.length)).replace("{{es}}", matches.length !== 1 ? "es" : "") || `${matches.length} match${matches.length !== 1 ? "es" : ""} found`}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {matches.slice(0, 100).map((m, i) => (
@@ -249,7 +251,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
                 ))}
                 {matches.length > 100 && (
                   <span className="rounded bg-zinc-100 px-2 py-1 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-                    +{matches.length - 100} more
+                    +{rt.more?.replace("{{count}}", String(matches.length - 100)) || `+${matches.length - 100} more`}
                   </span>
                 )}
               </div>
@@ -258,7 +260,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Enter text to test against..."
+            placeholder={rt.testPlaceholder || "Enter text to test against..."}
             className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
             rows={14}
           />
@@ -270,25 +272,25 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
         <div className="mt-4 space-y-4">
           <div>
             <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-              Replacement pattern
+              {rt.replacementPattern || "Replacement pattern"}
             </label>
             <input
               type="text"
               value={replacePattern}
               onChange={(e) => setReplacePattern(e.target.value)}
-              placeholder="$1, $2, $&, etc."
+              placeholder={rt.replacePlaceholder || "$1, $2, $&, etc."}
               className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
             />
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
               <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                Original text
+                {rt.originalText || "Original text"}
               </label>
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder="Enter text..."
+                placeholder={rt.enterText || "Enter text..."}
                 className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
                 rows={10}
               />
@@ -296,21 +298,21 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
             <div>
               <div className="mb-1 flex items-center justify-between">
                 <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                  Result
+                  {rt.result || "Result"}
                 </label>
                 {replacedText && (
                   <button
                     onClick={() => copyToClipboard(replacedText)}
                     className="text-xs text-amber-600 hover:text-amber-700 dark:text-amber-400"
                   >
-                    Copy
+                    {rt.copy || "Copy"}
                   </button>
                 )}
               </div>
               <textarea
                 readOnly
                 value={replacedText}
-                placeholder="Result will appear here..."
+                placeholder={rt.resultPlaceholder || "Result will appear here..."}
                 className="w-full rounded-lg border border-zinc-300 bg-zinc-50 p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
                 rows={10}
               />
@@ -325,7 +327,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Enter text to extract matches from..."
+            placeholder={rt.extractPlaceholder || "Enter text to extract matches from..."}
             className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
             rows={6}
           />
@@ -334,7 +336,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
             <>
               {/* Export format selector */}
               <div className="flex items-center gap-3">
-                <span className="text-sm text-zinc-600 dark:text-zinc-400">Export as:</span>
+                <span className="text-sm text-zinc-600 dark:text-zinc-400">{rt.exportAs || "Export as:"}</span>
                 {(["json", "csv", "plain"] as const).map((fmt) => (
                   <button
                     key={fmt}
@@ -352,7 +354,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
                   onClick={() => copyToClipboard(exportedText)}
                   className="ml-auto text-xs text-amber-600 hover:text-amber-700 dark:text-amber-400"
                 >
-                  Copy to clipboard
+                  {rt.copyToClipboard || "Copy to clipboard"}
                 </button>
               </div>
 
@@ -391,7 +393,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
                 onClick={() => copyToClipboard(codeSnippet)}
                 className="absolute right-3 top-3 text-xs text-amber-600 hover:text-amber-700 dark:text-amber-400"
               >
-                Copy
+                {rt.copy || "Copy"}
               </button>
               <pre className="max-h-64 overflow-auto rounded-lg bg-zinc-900 p-4 font-mono text-xs text-zinc-100">
                 {codeSnippet}
@@ -399,7 +401,7 @@ export default function RegexTesterClient({ locale = "en", dict }: { locale?: st
             </div>
           ) : (
             <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
-              Enter a regex pattern above to generate code snippets
+              {rt.enterPattern || "Enter a regex pattern above to generate code snippets"}
             </p>
           )}
         </div>

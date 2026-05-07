@@ -42,6 +42,8 @@ export default function HomeClient({
     : tools;
 
   const dir = localeDir[locale];
+  const toolsLabel = home.tools || "tools";
+  const clearSearchLabel = home.clearSearch || "Clear search";
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6" dir={dir}>
@@ -54,7 +56,7 @@ export default function HomeClient({
           {home.heroDescription || "Fast, free, and easy-to-use online tools."}
         </p>
         <p className="mx-auto mt-2 text-sm text-zinc-400 dark:text-zinc-500">
-          {tools.length} {home.toolsCount || "tools available now"}
+          {tools.length} {home.toolsCount || `${toolsLabel} available now`}
         </p>
 
         {/* Search */}
@@ -83,7 +85,7 @@ export default function HomeClient({
             <button
               onClick={() => setSearch("")}
               className="absolute end-3 top-1/2 -translate-y-1/2 rounded text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
-              aria-label="Clear search"
+              aria-label={clearSearchLabel}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +111,7 @@ export default function HomeClient({
         <section>
           <h2 className="mb-6 text-2xl font-semibold text-zinc-900 dark:text-white">
             {filteredTools.length > 0
-              ? `${filteredTools.length} ${home.resultsFor?.replace("{{s}}", filteredTools.length !== 1 ? "s" : "").replace("{{query}}", search) || `results for "${search}"`}`
+              ? `${filteredTools.length} ${home.resultsFor?.replace("{{s}}", filteredTools.length !== 1 ? "s" : "").replace("{{query}}", search) || `${filteredTools.length} ${toolsLabel}`}`
               : home.noResults || "No tools found"}
           </h2>
           {filteredTools.length > 0 && (
@@ -128,7 +130,7 @@ export default function HomeClient({
               <h2 className="mb-6 flex items-baseline gap-3 text-2xl font-semibold text-zinc-900 dark:text-white">
                 {cat.label}
                 <span className="text-sm font-normal text-zinc-400 dark:text-zinc-500">
-                  {catTools.length} tool{catTools.length !== 1 ? "s" : ""}
+                  {catTools.length} {toolsLabel}
                 </span>
               </h2>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

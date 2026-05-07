@@ -50,9 +50,25 @@ function simpleMarkdown(md: string): string {
 }
 
 export default function MarkdownPreviewClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
-  const [input, setInput] = useState(
-    `# Hello Markdown!\n\nThis is a **bold** and *italic* text.\n\n## Lists\n- Item one\n- Item two\n\n## Code\nUse \`inline code\` or:\n\n\`\`\`\nfunction hello() {\n  console.log("world");\n}\n\`\`\`\n\n> This is a blockquote.\n\n[Link example](https://example.com)`
-  );
+  const mp = (dict as any)?.markdownPreview || {};
+
+  const defaultMarkdown = useMemo(() => {
+    const t = {
+      heading: mp.defaultHeading || "Hello Markdown!",
+      boldItalic: mp.defaultBoldItalic || "This is a **bold** and *italic* text.",
+      listsHeading: mp.defaultListsHeading || "Lists",
+      list1: mp.defaultList1 || "Item one",
+      list2: mp.defaultList2 || "Item two",
+      codeHeading: mp.defaultCodeHeading || "Code",
+      codeInline: mp.defaultCodeInline || "Use `inline code` or:",
+      codeBlock: mp.defaultCodeBlock || 'function hello() {\n  console.log("world");\n}',
+      blockquote: mp.defaultBlockquote || "This is a blockquote.",
+      link: mp.defaultLink || "Link example",
+    };
+    return `# ${t.heading}\n\n${t.boldItalic}\n\n## ${t.listsHeading}\n- ${t.list1}\n- ${t.list2}\n\n## ${t.codeHeading}\n${t.codeInline}\n\n\`\`\`\n${t.codeBlock}\n\`\`\`\n\n> ${t.blockquote}\n\n[${t.link}](https://example.com)`;
+  }, [mp]);
+
+  const [input, setInput] = useState(defaultMarkdown);
 
   const html = useMemo(() => simpleMarkdown(input), [input]);
 
@@ -61,7 +77,7 @@ export default function MarkdownPreviewClient({ locale = "en", dict }: { locale?
       <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Markdown
+            {mp.editor || "Markdown"}
           </label>
           <textarea
             value={input}
@@ -72,7 +88,7 @@ export default function MarkdownPreviewClient({ locale = "en", dict }: { locale?
         </div>
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Preview
+            {mp.preview || "Preview"}
           </label>
           <div
             className="rounded-lg border border-zinc-200 bg-white p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900 prose"

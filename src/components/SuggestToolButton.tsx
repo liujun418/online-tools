@@ -2,12 +2,27 @@
 
 import { useState } from "react";
 
-export default function SuggestToolButton() {
+export default function SuggestToolButton({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> }) {
   const [open, setOpen] = useState(false);
   const [suggestion, setSuggestion] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const t = {
+    buttonLabel: ((dict as any)?.suggestTool as any)?.buttonLabel || "Suggest",
+    ariaLabel: ((dict as any)?.suggestTool as any)?.ariaLabel || "Suggest a tool",
+    title: ((dict as any)?.suggestTool as any)?.title || "Suggest a Tool",
+    prompt: ((dict as any)?.suggestTool as any)?.prompt || "What online tool would you like to see on our site?",
+    placeholder: ((dict as any)?.suggestTool as any)?.placeholder || "e.g., Color Palette Generator, Text to Emoji Converter...",
+    cancel: ((dict as any)?.suggestTool as any)?.cancel || "Cancel",
+    submit: ((dict as any)?.suggestTool as any)?.submit || "Submit",
+    submitting: ((dict as any)?.suggestTool as any)?.submitting || "Submitting...",
+    success: ((dict as any)?.suggestTool as any)?.success || "Thanks for your suggestion!",
+    successDesc: ((dict as any)?.suggestTool as any)?.successDesc || "We'll review it and consider adding the tool.",
+    error: ((dict as any)?.suggestTool as any)?.error || "Something went wrong. Please try again.",
+    close: ((dict as any)?.suggestTool as any)?.close || "Close",
+  };
 
   async function handleSubmit() {
     if (!suggestion.trim()) return;
@@ -24,7 +39,7 @@ export default function SuggestToolButton() {
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Failed to submit");
+        throw new Error(data.error || t.error);
       }
 
       setSubmitted(true);
@@ -34,7 +49,7 @@ export default function SuggestToolButton() {
         setOpen(false);
       }, 2000);
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError(t.error);
     } finally {
       setLoading(false);
     }
@@ -45,7 +60,7 @@ export default function SuggestToolButton() {
       <button
         onClick={() => setOpen(true)}
         className="flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-500 transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-blue-700 dark:hover:text-blue-400"
-        aria-label="Suggest a tool"
+        aria-label={t.ariaLabel}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +75,7 @@ export default function SuggestToolButton() {
         >
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </svg>
-        Suggest
+        {t.buttonLabel}
       </button>
 
       {open && (
@@ -88,22 +103,22 @@ export default function SuggestToolButton() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
-                  Thanks for your suggestion!
+                  {t.success}
                 </h3>
                 <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                  We'll review it and consider adding the tool.
+                  {t.successDesc}
                 </p>
               </div>
             ) : (
               <>
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
-                    Suggest a Tool
+                    {t.title}
                   </h3>
                   <button
                     onClick={() => setOpen(false)}
                     className="rounded p-1 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
-                    aria-label="Close"
+                    aria-label={t.close}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,12 +137,12 @@ export default function SuggestToolButton() {
                   </button>
                 </div>
                 <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-                  What online tool would you like to see on our site?
+                  {t.prompt}
                 </p>
                 <textarea
                   value={suggestion}
                   onChange={(e) => setSuggestion(e.target.value)}
-                  placeholder="e.g., Color Palette Generator, Text to Emoji Converter..."
+                  placeholder={t.placeholder}
                   rows={3}
                   className="mt-4 w-full rounded-lg border border-zinc-300 bg-white p-3 text-sm transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-zinc-600 dark:bg-zinc-900 dark:placeholder:text-zinc-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/20"
                 />
@@ -139,14 +154,14 @@ export default function SuggestToolButton() {
                     onClick={() => setOpen(false)}
                     className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
                   >
-                    Cancel
+                    {t.cancel}
                   </button>
                   <button
                     onClick={handleSubmit}
                     disabled={!suggestion.trim() || loading}
                     className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-40"
                   >
-                    {loading ? "Submitting..." : "Submit"}
+                    {loading ? t.submitting : t.submit}
                   </button>
                 </div>
               </>

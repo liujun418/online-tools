@@ -554,6 +554,7 @@ export default function QuotesClient({ locale = "en", dict }: { locale?: string;
   const [activeCategory, setActiveCategory] = useState("all");
   const [page, setPage] = useState(1);
   const pageSize = 20;
+  const q = (dict as any)?.quotes || {};
 
   const filtered = useMemo(() => {
     const query = search.toLowerCase().trim();
@@ -580,7 +581,7 @@ export default function QuotesClient({ locale = "en", dict }: { locale?: string;
       {/* Quote of the day */}
       <div className="mt-4 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-950 dark:to-purple-950">
         <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-          Quote of the Day
+          {q.quoteOfTheDay || "Quote of the Day"}
         </div>
         <p className="text-lg font-medium italic text-zinc-800 dark:text-zinc-200">
           "{todayQuote.text}"
@@ -596,7 +597,7 @@ export default function QuotesClient({ locale = "en", dict }: { locale?: string;
           type="text"
           value={search}
           onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-          placeholder="Search by name, quote, or keyword (e.g., courage, wisdom, life)..."
+          placeholder={q.searchPlaceholder || "Search by name, quote, or keyword (e.g., courage, wisdom, life)..."}
           className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
       </div>
@@ -628,7 +629,7 @@ export default function QuotesClient({ locale = "en", dict }: { locale?: string;
       {/* Results count */}
       {(search || activeCategory !== "all") && (
         <div className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-          {filtered.length} quote{filtered.length !== 1 ? "s" : ""} found
+          {filtered.length} {q.quotesLabel || "quote"}{filtered.length !== 1 ? (q.pluralSuffix || "s") : ""} {q.found || "found"}
         </div>
       )}
 
@@ -688,8 +689,8 @@ export default function QuotesClient({ locale = "en", dict }: { locale?: string;
         </div>
       ) : (
         <div className="mt-12 text-center text-zinc-400 dark:text-zinc-500">
-          <p className="text-lg">No quotes found</p>
-          <p className="mt-1 text-sm">Try a different search term or category.</p>
+          <p className="text-lg">{q.noQuotesFound || "No quotes found"}</p>
+          <p className="mt-1 text-sm">{q.tryDifferent || "Try a different search term or category."}</p>
         </div>
       )}
 
@@ -700,7 +701,7 @@ export default function QuotesClient({ locale = "en", dict }: { locale?: string;
             onClick={() => setPage(p => p + 1)}
             className="rounded-lg border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
           >
-            Load More ({paginated.length} of {filtered.length} shown)
+            {q.loadMore || "Load More"} ({paginated.length} {q.of || "of"} {filtered.length} {q.shown || "shown"})
           </button>
         </div>
       )}

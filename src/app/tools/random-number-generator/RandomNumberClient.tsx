@@ -25,6 +25,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
   const [allowDuplicates, setAllowDuplicates] = useState(true);
   const [sortResult, setSortResult] = useState(false);
   const [numbers, setNumbers] = useState<number[]>([]);
+  const rn = (dict as any)?.randomNumberGenerator || {};
 
   const handleGenerate = useCallback(() => {
     const lo = parseFloat(min);
@@ -55,7 +56,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Minimum
+            {rn.minimum || "Minimum"}
           </label>
           <input
             type="number"
@@ -66,7 +67,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Maximum
+            {rn.maximum || "Maximum"}
           </label>
           <input
             type="number"
@@ -77,7 +78,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Quantity
+            {rn.quantity || "Quantity"}
           </label>
           <input
             type="number"
@@ -90,7 +91,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Decimal Places
+            {rn.decimalPlaces || "Decimal Places"}
           </label>
           <input
             type="number"
@@ -111,7 +112,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
             onChange={(e) => setAllowDuplicates(e.target.checked)}
             className="h-4 w-4 rounded border-zinc-300 text-blue-600"
           />
-          Allow Duplicates
+          {rn.allowDuplicates || "Allow Duplicates"}
         </label>
         <label className="flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <input
@@ -120,7 +121,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
             onChange={(e) => setSortResult(e.target.checked)}
             className="h-4 w-4 rounded border-zinc-300 text-blue-600"
           />
-          Sort Results
+          {rn.sortResults || "Sort Results"}
         </label>
       </div>
 
@@ -128,7 +129,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
         onClick={handleGenerate}
         className="mt-6 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
       >
-        Generate
+        {rn.generate || "Generate"}
       </button>
 
       {numbers.length > 0 && (
@@ -147,7 +148,7 @@ export default function RandomNumberClient({ locale = "en", dict }: { locale?: s
             onClick={() => navigator.clipboard.writeText(numbers.join(", "))}
             className="mt-3 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
           >
-            Copy All
+            {rn.copyAll || "Copy All"}
           </button>
         </div>
       )}

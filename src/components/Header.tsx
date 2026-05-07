@@ -55,7 +55,7 @@ export default function Header({
             <button
               onClick={() => setShowLang(!showLang)}
               className="rounded px-2 py-1 hover:text-zinc-900 dark:hover:text-white"
-              aria-label="Switch language"
+              aria-label={((dict as any)?.toolPage as any)?.switchLanguage || "Switch language"}
             >
               {localeNames[locale as Locale] || "English"}
               <svg className="ms-1 inline-block h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,8 +95,8 @@ export default function Header({
             {nav.converters}
           </Link>
           <div className="ms-1 flex items-center gap-3 border-s border-zinc-200 ps-3 dark:border-zinc-800">
-            <SuggestToolButton />
-            <ThemeToggle />
+            <SuggestToolButton locale={locale} dict={dict} />
+            <ThemeToggle locale={locale} dict={dict} />
           </div>
         </nav>
       </div>

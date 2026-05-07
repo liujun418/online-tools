@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function VisitorCounter({ toolId }: { toolId: string }) {
+export default function VisitorCounter({ toolId, locale = "en", dict }: { toolId: string; locale?: string; dict?: Record<string, unknown> }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -18,13 +18,12 @@ export default function VisitorCounter({ toolId }: { toolId: string }) {
 
   if (count === 0) return null;
 
+  const counterText = ((dict as any)?.toolPage as any)?.visitorCounter;
+  const text = counterText ? counterText.replace("{{count}}", String(count)) : `You are the ${count.toLocaleString()}th person to use this tool`;
+
   return (
     <p className="mt-3 text-xs text-zinc-400 dark:text-zinc-500">
-      You are the{" "}
-      <span className="font-semibold text-zinc-600 dark:text-zinc-300">
-        {count.toLocaleString()}
-      </span>
-      th person to use this tool
+      {text}
     </p>
   );
 }

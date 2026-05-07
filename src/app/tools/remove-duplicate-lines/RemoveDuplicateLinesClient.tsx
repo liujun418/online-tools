@@ -21,6 +21,7 @@ export default function RemoveDuplicateLinesClient({ locale = "en", dict }: { lo
   const [input, setInput] = useState("");
   const [trimLines, setTrimLines] = useState(true);
   const [ignoreCase, setIgnoreCase] = useState(false);
+  const rdl = (dict as any)?.removeDuplicateLines || {};
 
   const { result, removed } = useMemo(() => {
     if (!input) return { result: "", removed: 0 };
@@ -54,7 +55,7 @@ export default function RemoveDuplicateLinesClient({ locale = "en", dict }: { lo
             onChange={(e) => setTrimLines(e.target.checked)}
             className="h-4 w-4 rounded border-zinc-300 text-blue-600"
           />
-          Trim whitespace
+          {rdl.trimWhitespace || "Trim whitespace"}
         </label>
         <label className="flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <input
@@ -63,14 +64,14 @@ export default function RemoveDuplicateLinesClient({ locale = "en", dict }: { lo
             onChange={(e) => setIgnoreCase(e.target.checked)}
             className="h-4 w-4 rounded border-zinc-300 text-blue-600"
           />
-          Ignore case
+          {rdl.ignoreCase || "Ignore case"}
         </label>
       </div>
 
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Paste text with duplicate lines..."
+        placeholder={rdl.placeholder || "Paste text with duplicate lines..."}
         className="mt-4 w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900"
         rows={12}
       />
@@ -79,13 +80,13 @@ export default function RemoveDuplicateLinesClient({ locale = "en", dict }: { lo
         <div className="mt-4">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-sm text-green-600 dark:text-green-400">
-              Removed {removed} duplicate line{removed !== 1 ? "s" : ""}
+              {rdl.removed?.replace("{{count}}", String(removed)).replace("{{s}}", removed !== 1 ? "s" : "") || `Removed ${removed} duplicate line${removed !== 1 ? "s" : ""}`}
             </span>
             <button
               onClick={() => navigator.clipboard.writeText(result)}
               className="rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             >
-              Copy
+              {rdl.copy || "Copy"}
             </button>
           </div>
           <textarea

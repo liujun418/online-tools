@@ -59,6 +59,7 @@ export default function CsvToJsonClient({ locale = "en", dict }: { locale?: stri
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const c2j = (dict as any)?.csvToJson || {};
 
   const handleConvert = useCallback(() => {
     try {
@@ -83,13 +84,13 @@ export default function CsvToJsonClient({ locale = "en", dict }: { locale?: stri
           setOutput("");
           setError(null);
         }}
-        placeholder="Paste CSV data here, e.g.\nname,age\nAlice,30\nBob,25"
+        placeholder={c2j.placeholder || "Paste CSV data here, e.g.\nname,age\nAlice,30\nBob,25"}
         className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         rows={12}
       />
       {error && (
         <div className="mt-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950 dark:text-red-400">
-          Error: {error}
+          {c2j.error || "Error"}: {error}
         </div>
       )}
       <div className="mt-4 flex gap-2">
@@ -98,20 +99,20 @@ export default function CsvToJsonClient({ locale = "en", dict }: { locale?: stri
           disabled={!input.trim()}
           className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
-          Convert to JSON
+          {c2j.convert || "Convert to JSON"}
         </button>
       </div>
       {output && (
         <div className="mt-4">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-sm text-green-600 dark:text-green-400">
-              Converted successfully
+              {c2j.converted || "Converted successfully"}
             </span>
             <button
               onClick={handleCopy}
               className="rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
             >
-              Copy
+              {c2j.copy || "Copy"}
             </button>
           </div>
           <pre className="whitespace-pre-wrap rounded-lg border border-zinc-200 bg-zinc-50 p-4 font-mono text-sm dark:border-zinc-800 dark:bg-zinc-900">

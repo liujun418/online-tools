@@ -874,6 +874,7 @@ const MONTH_NAMES = [
 const DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 export default function PerpetualCalendarClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
+const pc = (dict as any)?.perpetualCalendar || {};
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth());
@@ -1003,7 +1004,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
       <div className="flex flex-wrap gap-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Year
+            {pc.year || "Year"}
           </label>
           <select
             value={year}
@@ -1017,7 +1018,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Month
+            {pc.month || "Month"}
           </label>
           <select
             value={month}
@@ -1031,7 +1032,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Country
+            {pc.country || "Country"}
           </label>
           <select
             value={country}
@@ -1075,7 +1076,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
           onClick={() => { setYear(now.getFullYear()); setMonth(now.getMonth()); }}
           className="rounded-lg bg-blue-600 px-3 py-1 text-xs font-medium text-white transition-colors hover:bg-blue-700"
         >
-          Today
+          {pc.today || "Today"}
         </button>
       </div>
 
@@ -1091,7 +1092,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
               }}
               className="rounded-lg bg-zinc-200 px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             >
-              ← Prev
+              ← {pc.prev || "Prev"}
             </button>
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">
               {MONTH_NAMES[month]} {year}
@@ -1103,14 +1104,14 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
               }}
               className="rounded-lg bg-zinc-200 px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             >
-              Next →
+              {pc.next || "Next"} →
             </button>
           </div>
 
           <div className="w-full">
             {/* Day headers */}
             <div className="grid grid-cols-8 gap-0 border-b border-zinc-200 dark:border-zinc-700">
-              <div className="p-2 text-center text-xs font-medium text-zinc-400">Wk</div>
+              <div className="p-2 text-center text-xs font-medium text-zinc-400">{pc.week || "Wk"}</div>
               {DAY_NAMES.map((d) => (
                 <div key={d} className="p-2 text-center text-xs font-medium text-zinc-500 dark:text-zinc-400">
                   {d}
@@ -1180,16 +1181,16 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
       {/* Legend */}
       <div className="mt-3 flex flex-wrap gap-4 text-xs text-zinc-500 dark:text-zinc-400">
         <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-red-500" /> Public Holiday
+          <span className="h-2 w-2 rounded-full bg-red-500" /> {pc.publicHoliday || "Public Holiday"}
         </span>
         <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-orange-400" /> Observance
+          <span className="h-2 w-2 rounded-full bg-orange-400" /> {pc.observance || "Observance"}
         </span>
         <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-blue-600" /> Today
+          <span className="h-2 w-2 rounded-full bg-blue-600" /> {pc.todayLegend || "Today"}
         </span>
         <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-amber-200 dark:bg-amber-800" /> Weekend
+          <span className="h-2 w-2 rounded-full bg-amber-200 dark:bg-amber-800" /> {pc.weekend || "Weekend"}
         </span>
       </div>
 
@@ -1207,8 +1208,8 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
                 })}
               </h3>
               <div className="mt-1 flex gap-3 text-sm text-zinc-500 dark:text-zinc-400">
-                <span>Week {selectedDateInfo.weekNumber}</span>
-                <span>Day {selectedDateInfo.dayOfYear} of {year}</span>
+                <span>{pc.weekPrefix || "Week"} {selectedDateInfo.weekNumber}</span>
+                <span>{pc.dayOfYear || "Day"} {selectedDateInfo.dayOfYear} {pc.of || "of"} {year}</span>
               </div>
             </div>
             <button
@@ -1228,7 +1229,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
               }`}
             >
               <div className="text-sm font-semibold text-zinc-900 dark:text-white">
-                {selectedDateInfo.holiday.type === "public" ? "🔴 Public Holiday" : "🟠 Observance"}
+                {selectedDateInfo.holiday.type === "public" ? `🔴 ${pc.publicHoliday || "Public Holiday"}` : `🟠 ${pc.observance || "Observance"}`}
               </div>
               <div className="text-lg font-bold text-zinc-900 dark:text-white">
                 {selectedDateInfo.holiday.name}
@@ -1238,7 +1239,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
 
           <div>
             <h4 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-              On This Day in History
+              {pc.onThisDay || "On This Day in History"}
             </h4>
             {selectedDateInfo.events.length > 0 ? (
               <ul className="space-y-2">
@@ -1252,7 +1253,7 @@ export default function PerpetualCalendarClient({ locale = "en", dict }: { local
                 ))}
               </ul>
             ) : (
-              <p className="text-sm text-zinc-400">No recorded events for this date.</p>
+              <p className="text-sm text-zinc-400">{pc.noEvents || "No recorded events for this date."}</p>
             )}
           </div>
         </div>

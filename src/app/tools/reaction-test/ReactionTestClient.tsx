@@ -19,34 +19,6 @@ const metadata = {
 
 type Phase = "idle" | "waiting" | "ready" | "clicked" | "too-early";
 
-const stateConfig: Record<Phase, { bg: string; text: string; cursor: string }> = {
-  idle: {
-    bg: "bg-blue-500",
-    text: "点击开始",
-    cursor: "cursor-pointer",
-  },
-  waiting: {
-    bg: "bg-red-500",
-    text: "等待变绿…",
-    cursor: "cursor-not-allowed",
-  },
-  ready: {
-    bg: "bg-green-500",
-    text: "点击！",
-    cursor: "cursor-pointer",
-  },
-  clicked: {
-    bg: "bg-amber-500",
-    text: "",
-    cursor: "cursor-pointer",
-  },
-  "too-early": {
-    bg: "bg-orange-500",
-    text: "太快了！别着急",
-    cursor: "cursor-pointer",
-  },
-};
-
 export default function ReactionTestClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [reactionTime, setReactionTime] = useState<number | null>(null);
@@ -63,22 +35,79 @@ export default function ReactionTestClient({ locale = "en", dict }: { locale?: s
     };
   }, []);
 
+  const rt = (dict as any)?.reactionTest || {};
+  const startText = rt.start || "Click to Start";
+  const waitingText = rt.waiting || "Wait for green…";
+  const goText = rt.go || "Click!";
+  const tooEarlyText = rt.tooEarly || "Too early! Be patient.";
+  const tryAgainText = rt.tryAgain || "Click to try again";
+  const instructionText = rt.instruction || "Wait for the red block to turn green, then click as fast as you can. Record your reaction time and challenge your best time.";
+  const attemptsLabel = rt.attempts || "Attempts";
+  const bestTimeLabel = rt.bestTime || "Best Time";
+  const avgTimeLabel = rt.avgTime || "Average Time";
+  const historyLabel = rt.history || "History";
+
+  const ratingMap: Record<string, string> = {
+    lightning: rt.rating_lightning || "Lightning fast",
+    superfast: rt.rating_superfast || "Super fast",
+    excellent: rt.rating_excellent || "Excellent",
+    good: rt.rating_good || "Good",
+    average: rt.rating_average || "Average",
+    slow: rt.rating_slow || "A bit slow",
+    sleepy: rt.rating_sleepy || "Need more coffee",
+  };
+
+  const getRating = (ms: number): string => {
+    if (ms < 150) return `⚡ ${ratingMap.lightning}`;
+    if (ms < 200) return `🔥 ${ratingMap.superfast}`;
+    if (ms < 250) return `💪 ${ratingMap.excellent}`;
+    if (ms < 300) return `👍 ${ratingMap.good}`;
+    if (ms < 400) return `👌 ${ratingMap.average}`;
+    if (ms < 500) return `😴 ${ratingMap.slow}`;
+    return `🐢 ${ratingMap.sleepy}`;
+  };
+
+  const stateConfig: Record<Phase, { bg: string; text: string; cursor: string }> = {
+    idle: {
+      bg: "bg-blue-500",
+      text: startText,
+      cursor: "cursor-pointer",
+    },
+    waiting: {
+      bg: "bg-red-500",
+      text: waitingText,
+      cursor: "cursor-not-allowed",
+    },
+    ready: {
+      bg: "bg-green-500",
+      text: goText,
+      cursor: "cursor-pointer",
+    },
+    clicked: {
+      bg: "bg-amber-500",
+      text: "",
+      cursor: "cursor-pointer",
+    },
+    "too-early": {
+      bg: "bg-orange-500",
+      text: tooEarlyText,
+      cursor: "cursor-pointer",
+    },
+  };
+
   const handleClick = useCallback(() => {
     if (phase === "idle") {
-      // Start waiting
       setPhase("waiting");
       setReactionTime(null);
-      const delay = 2000 + Math.random() * 3000; // 2-5 seconds
+      const delay = 2000 + Math.random() * 3000;
       timerRef.current = setTimeout(() => {
         startTimeRef.current = performance.now();
         setPhase("ready");
       }, delay);
     } else if (phase === "waiting") {
-      // Clicked too early
       if (timerRef.current) clearTimeout(timerRef.current);
       setPhase("too-early");
     } else if (phase === "ready") {
-      // Record reaction time
       const elapsed = Math.round(performance.now() - startTimeRef.current);
       setReactionTime(elapsed);
       setPhase("clicked");
@@ -90,7 +119,6 @@ export default function ReactionTestClient({ locale = "en", dict }: { locale?: s
         return Math.round(sum / newAttempts.length);
       });
     } else if (phase === "too-early") {
-      // Restart
       setPhase("waiting");
       setReactionTime(null);
       const delay = 2000 + Math.random() * 3000;
@@ -99,28 +127,16 @@ export default function ReactionTestClient({ locale = "en", dict }: { locale?: s
         setPhase("ready");
       }, delay);
     } else if (phase === "clicked") {
-      // Reset for another round
       setPhase("idle");
     }
   }, [phase, attempts]);
 
-  const getRating = (ms: number): string => {
-    if (ms < 150) return "⚡ 闪电反应";
-    if (ms < 200) return "🔥 极快";
-    if (ms < 250) return "💪 优秀";
-    if (ms < 300) return "👍 不错";
-    if (ms < 400) return "👌 平均水平";
-    if (ms < 500) return "😴 稍慢";
-    return "🐢 需要提神";
-  };
-
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
-        色块变红后请等待，出现"点击！"字样后立刻点击。记录你的反应时间，挑战最快记录。
+        {instructionText}
       </p>
 
-      {/* Main clickable block */}
       <div
         className={`mt-6 flex w-full select-none items-center justify-center rounded-2xl py-24 text-center transition-colors duration-100 ${stateConfig[phase].bg} ${stateConfig[phase].cursor}`}
         onClick={handleClick}
@@ -134,28 +150,27 @@ export default function ReactionTestClient({ locale = "en", dict }: { locale?: s
           <div className="text-white">
             <div className="text-6xl font-bold">{reactionTime}ms</div>
             <div className="mt-3 text-xl font-medium">{getRating(reactionTime)}</div>
-            <div className="mt-6 text-sm opacity-80">点击再试一次</div>
+            <div className="mt-6 text-sm opacity-80">{tryAgainText}</div>
           </div>
         ) : (
           <div className="text-3xl font-bold text-white">{stateConfig[phase].text}</div>
         )}
       </div>
 
-      {/* Stats */}
       {attempts.length > 0 && (
         <div className="mt-6 grid grid-cols-3 gap-4">
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-700 dark:bg-zinc-900">
-            <div className="text-sm text-zinc-500 dark:text-zinc-400">尝试次数</div>
+            <div className="text-sm text-zinc-500 dark:text-zinc-400">{attemptsLabel}</div>
             <div className="text-2xl font-bold">{attempts.length}</div>
           </div>
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-700 dark:bg-zinc-900">
-            <div className="text-sm text-zinc-500 dark:text-zinc-400">最快反应</div>
+            <div className="text-sm text-zinc-500 dark:text-zinc-400">{bestTimeLabel}</div>
             <div className="text-2xl font-bold text-green-600 dark:text-green-400">
               {bestTime}ms
             </div>
           </div>
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-700 dark:bg-zinc-900">
-            <div className="text-sm text-zinc-500 dark:text-zinc-400">平均反应</div>
+            <div className="text-sm text-zinc-500 dark:text-zinc-400">{avgTimeLabel}</div>
             <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
               {avgTime}ms
             </div>
@@ -163,11 +178,10 @@ export default function ReactionTestClient({ locale = "en", dict }: { locale?: s
         </div>
       )}
 
-      {/* Recent attempts list */}
       {attempts.length > 1 && (
         <div className="mt-6">
           <h3 className="mb-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            历史记录
+            {historyLabel}
           </h3>
           <div className="flex flex-wrap gap-2">
             {attempts.map((t, i) => (

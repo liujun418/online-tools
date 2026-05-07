@@ -20,6 +20,7 @@ const metadata = {
 export default function RoiCalculatorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [invested, setInvested] = useState("10000");
   const [returned, setReturned] = useState("15000");
+  const rc = (dict as any)?.roiCalculator || {};
 
   const result = useMemo(() => {
     const i = parseFloat(invested);
@@ -39,7 +40,7 @@ export default function RoiCalculatorClient({ locale = "en", dict }: { locale?: 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Amount Invested ($)
+            {rc.amountInvested || "Amount Invested ($)"}
           </label>
           <input
             type="number"
@@ -50,7 +51,7 @@ export default function RoiCalculatorClient({ locale = "en", dict }: { locale?: 
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Amount Returned ($)
+            {rc.amountReturned || "Amount Returned ($)"}
           </label>
           <input
             type="number"
@@ -64,13 +65,13 @@ export default function RoiCalculatorClient({ locale = "en", dict }: { locale?: 
       {result && (
         <div className="mt-6 grid grid-cols-2 gap-4">
           <div className={`rounded-lg border p-6 text-center ${result.isPositive ? "border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950" : "border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-950"}`}>
-            <div className="text-sm opacity-80">Profit / Loss</div>
+            <div className="text-sm opacity-80">{rc.profitLoss || "Profit / Loss"}</div>
             <div className={`text-3xl font-bold ${result.isPositive ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}>
               {result.isPositive ? "+" : ""}${result.profit.toLocaleString()}
             </div>
           </div>
           <div className={`rounded-lg border p-6 text-center ${result.isPositive ? "border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950" : "border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-950"}`}>
-            <div className="text-sm opacity-80">ROI</div>
+            <div className="text-sm opacity-80">{rc.roi || "ROI"}</div>
             <div className={`text-3xl font-bold ${result.isPositive ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}>
               {result.isPositive ? "+" : ""}{result.roi}%
             </div>

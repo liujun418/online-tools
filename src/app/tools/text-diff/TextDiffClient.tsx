@@ -20,6 +20,7 @@ const metadata = {
 export default function TextDiffClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
+  const td = (dict as any)?.textDiff || {};
 
   const { added, removed, same } = useMemo(() => {
     const lines1 = text1.split("\n");
@@ -45,24 +46,24 @@ export default function TextDiffClient({ locale = "en", dict }: { locale?: strin
       <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Original Text
+            {td.originalText || "Original Text"}
           </label>
           <textarea
             value={text1}
             onChange={(e) => setText1(e.target.value)}
-            placeholder="Paste original text here..."
+            placeholder={td.originalPlaceholder || "Paste original text here..."}
             className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900"
             rows={14}
           />
         </div>
         <div>
           <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Modified Text
+            {td.modifiedText || "Modified Text"}
           </label>
           <textarea
             value={text2}
             onChange={(e) => setText2(e.target.value)}
-            placeholder="Paste modified text here..."
+            placeholder={td.modifiedPlaceholder || "Paste modified text here..."}
             className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900"
             rows={14}
           />
@@ -72,7 +73,7 @@ export default function TextDiffClient({ locale = "en", dict }: { locale?: strin
       {text1 && text2 && (
         <div className="mt-6">
           <h3 className="mb-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Differences ({added.length} added, {removed.length} removed)
+            {(td.differences || "{{added}} added, {{removed}} removed").replace("{{added}}", String(added.length)).replace("{{removed}}", String(removed.length))}
           </h3>
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 font-mono text-sm dark:border-zinc-800 dark:bg-zinc-900">
             {removed.map((line, i) => (
@@ -86,7 +87,7 @@ export default function TextDiffClient({ locale = "en", dict }: { locale?: strin
               </div>
             ))}
             {added.length === 0 && removed.length === 0 && (
-              <div className="text-green-600 dark:text-green-400">Texts are identical!</div>
+              <div className="text-green-600 dark:text-green-400">{td.identical || "Texts are identical!"}</div>
             )}
           </div>
         </div>

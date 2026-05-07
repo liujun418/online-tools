@@ -33,19 +33,13 @@ function generatePassword(length: number, options: { upper: boolean; lower: bool
 
 export default function PasswordGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [length, setLength] = useState(16);
-  const [options, setOptions] = useState({
-    upper: true,
-    lower: true,
-    numbers: true,
-    symbols: true,
-  });
+  const [options, setOptions] = useState({ upper: true, lower: true, numbers: true, symbols: true });
   const [passwords, setPasswords] = useState<string[]>([]);
   const [count, setCount] = useState(5);
+  const pg = (dict as any)?.passwordGenerator || {};
 
   const handleGenerate = useCallback(() => {
-    const newPasswords = Array.from({ length: count }, () =>
-      generatePassword(length, options)
-    );
+    const newPasswords = Array.from({ length: count }, () => generatePassword(length, options));
     setPasswords(newPasswords);
   }, [length, options, count]);
 
@@ -62,7 +56,7 @@ export default function PasswordGeneratorClient({ locale = "en", dict }: { local
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
           <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Length:
+            {pg.length || "Length"}:
           </label>
           <input
             type="number"
@@ -75,7 +69,7 @@ export default function PasswordGeneratorClient({ locale = "en", dict }: { local
         </div>
         <div className="flex items-center gap-2">
           <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Count:
+            {pg.count || "Count"}:
           </label>
           <input
             type="number"
@@ -91,10 +85,10 @@ export default function PasswordGeneratorClient({ locale = "en", dict }: { local
       <div className="mt-4 flex flex-wrap gap-4">
         {(
           [
-            ["upper", "A-Z"],
-            ["lower", "a-z"],
-            ["numbers", "0-9"],
-            ["symbols", "!@#$"],
+            ["upper", pg.uppercase || "A-Z"],
+            ["lower", pg.lowercase || "a-z"],
+            ["numbers", pg.numbers || "0-9"],
+            ["symbols", pg.symbols || "!@#$"],
           ] as [keyof typeof options, string][]
         ).map(([key, label]) => (
           <label key={key} className="flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300">
@@ -113,7 +107,7 @@ export default function PasswordGeneratorClient({ locale = "en", dict }: { local
         onClick={handleGenerate}
         className="mt-6 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
       >
-        Generate Passwords
+        {pg.generate || "Generate Passwords"}
       </button>
 
       {passwords.length > 0 && (
@@ -132,7 +126,7 @@ export default function PasswordGeneratorClient({ locale = "en", dict }: { local
                     : "bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
                 }`}
               >
-                {copiedIndex === i ? "Copied!" : "Copy"}
+                {copiedIndex === i ? (pg.copied || "Copied!") : (pg.copy || "Copy")}
               </button>
             </div>
           ))}

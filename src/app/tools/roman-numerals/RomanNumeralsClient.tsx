@@ -52,6 +52,7 @@ function isValidRoman(s: string): boolean {
 export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [arabic, setArabic] = useState("");
   const [roman, setRoman] = useState("");
+  const rm = (dict as any)?.romanNumerals || {};
 
   const toRomanResult = arabic && Number(arabic) > 0 && Number(arabic) <= 3999 ? toRoman(Number(arabic)) : "";
   const fromRomanResult = roman && isValidRoman(roman) ? fromRoman(roman.toUpperCase()).toString() : "";
@@ -62,7 +63,7 @@ export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: 
         {/* Arabic to Roman */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
           <h3 className="mb-4 font-medium text-zinc-700 dark:text-zinc-300">
-            Arabic Number → Roman Numeral
+            {rm.arabicToRoman || "Arabic Number → Roman Numeral"}
           </h3>
           <div className="flex items-center gap-3">
             <input
@@ -73,13 +74,13 @@ export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: 
               onChange={(e) => {
                 setArabic(e.target.value);
               }}
-              placeholder="Enter 1-3999"
+              placeholder={rm.arabicPlaceholder || "Enter 1-3999"}
               className="w-32 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
             />
             <span className="text-zinc-500 dark:text-zinc-400">→</span>
             <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
               {toRomanResult || (
-                <span className="text-base font-normal text-zinc-400 italic">Roman numeral</span>
+                <span className="text-base font-normal text-zinc-400 italic">{rm.romanNumeral || "Roman numeral"}</span>
               )}
             </span>
           </div>
@@ -88,20 +89,20 @@ export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: 
         {/* Roman to Arabic */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
           <h3 className="mb-4 font-medium text-zinc-700 dark:text-zinc-300">
-            Roman Numeral → Arabic Number
+            {rm.romanToArabic || "Roman Numeral → Arabic Number"}
           </h3>
           <div className="flex items-center gap-3">
             <input
               type="text"
               value={roman}
               onChange={(e) => setRoman(e.target.value)}
-              placeholder="e.g. MMXXIV"
+              placeholder={rm.romanPlaceholder || "e.g. MMXXIV"}
               className="w-32 rounded-lg border border-zinc-300 bg-white px-3 py-2 font-mono text-sm uppercase dark:border-zinc-700 dark:bg-zinc-900"
             />
             <span className="text-zinc-500 dark:text-zinc-400">→</span>
             <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
               {fromRomanResult || (
-                <span className="text-base font-normal text-zinc-400 italic">Arabic number</span>
+                <span className="text-base font-normal text-zinc-400 italic">{rm.arabicNumber || "Arabic number"}</span>
               )}
             </span>
           </div>
@@ -110,7 +111,7 @@ export default function RomanNumeralsClient({ locale = "en", dict }: { locale?: 
         {/* Common Roman numerals reference */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
           <h3 className="mb-4 font-medium text-zinc-700 dark:text-zinc-300">
-            Common Roman Numerals
+            {rm.commonNumerals || "Common Roman Numerals"}
           </h3>
           <div className="grid grid-cols-3 gap-2 text-sm sm:grid-cols-6">
             {[

@@ -21,6 +21,7 @@ export default function LoanCalculatorClient({ locale = "en", dict }: { locale?:
   const [principal, setPrincipal] = useState("10000");
   const [rate, setRate] = useState("5");
   const [years, setYears] = useState("3");
+  const lc = (dict as any)?.loanCalculator || {};
 
   const result = useMemo(() => {
     const p = parseFloat(principal);
@@ -38,7 +39,7 @@ export default function LoanCalculatorClient({ locale = "en", dict }: { locale?:
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Loan Amount ($)
+            {lc.loanAmount || "Loan Amount ($)"}
           </label>
           <input
             type="number"
@@ -49,7 +50,7 @@ export default function LoanCalculatorClient({ locale = "en", dict }: { locale?:
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Annual Rate (%)
+            {lc.annualRate || "Annual Rate (%)"}
           </label>
           <input
             type="number"
@@ -60,7 +61,7 @@ export default function LoanCalculatorClient({ locale = "en", dict }: { locale?:
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Term (Years)
+            {lc.termYears || "Term (Years)"}
           </label>
           <input
             type="number"
@@ -74,15 +75,15 @@ export default function LoanCalculatorClient({ locale = "en", dict }: { locale?:
       {result && (
         <div className="mt-6 grid grid-cols-3 gap-4">
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">Monthly Payment</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">{lc.monthlyPayment || "Monthly Payment"}</div>
             <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">${result.monthly.toLocaleString()}</div>
           </div>
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">Total Payment</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">{lc.totalPayment || "Total Payment"}</div>
             <div className="text-2xl font-bold text-green-600 dark:text-green-400">${result.total.toLocaleString()}</div>
           </div>
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">Total Interest</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">{lc.totalInterest || "Total Interest"}</div>
             <div className="text-2xl font-bold text-red-600 dark:text-red-400">${result.interest.toLocaleString()}</div>
           </div>
         </div>

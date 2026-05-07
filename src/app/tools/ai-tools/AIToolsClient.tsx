@@ -17,19 +17,6 @@ const metadata = {
   ],
 };
 
-const categories = [
-  { key: "all", label: "All", icon: "📋" },
-  { key: "chatbot", label: "Chatbots", icon: "🤖" },
-  { key: "image", label: "Image", icon: "🎨" },
-  { key: "video", label: "Video", icon: "🎬" },
-  { key: "audio", label: "Audio", icon: "🎵" },
-  { key: "coding", label: "Coding", icon: "💻" },
-  { key: "writing", label: "Writing", icon: "✍️" },
-  { key: "productivity", label: "Productivity", icon: "📊" },
-  { key: "research", label: "Research", icon: "🔍" },
-  { key: "utilities", label: "Utilities", icon: "🛠️" },
-];
-
 interface AITool {
   name: string;
   url: string;
@@ -120,6 +107,15 @@ const aiTools: AITool[] = [
 export default function AIToolsClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [search, setSearch] = useState("");
+  const at = (dict as any)?.aiTools || {};
+
+  const catKeys = ["all", "chatbot", "image", "video", "audio", "coding", "writing", "productivity", "research", "utilities"] as const;
+  const catIcons = ["📋", "🤖", "🎨", "🎬", "🎵", "💻", "✍️", "📊", "🔍", "🛠️"] as const;
+  const categories = catKeys.map((key, i) => ({
+    key,
+    label: (at as any)[`cat_${key}`] || key.charAt(0).toUpperCase() + key.slice(1),
+    icon: catIcons[i],
+  }));
 
   const filtered = useMemo(() => {
     const query = search.toLowerCase().trim();
@@ -133,7 +129,7 @@ export default function AIToolsClient({ locale = "en", dict }: { locale?: string
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <p className="text-sm text-zinc-500 dark:text-zinc-400">
-        Curated directory of the best free AI tools. All tools listed are free to use or offer generous free tiers.
+        {at.intro || "Curated directory of the best free AI tools. All tools listed are free to use or offer generous free tiers."}
       </p>
 
       {/* Search */}
@@ -142,7 +138,7 @@ export default function AIToolsClient({ locale = "en", dict }: { locale?: string
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search AI tools..."
+          placeholder={at.searchPlaceholder || "Search AI tools..."}
           className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
       </div>
@@ -174,7 +170,7 @@ export default function AIToolsClient({ locale = "en", dict }: { locale?: string
       {/* Results count */}
       {search && (
         <div className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
-          {filtered.length} tool{filtered.length !== 1 ? "s" : ""} found
+          {at.searchResults?.replace("{{count}}", String(filtered.length)).replace("{{s}}", filtered.length !== 1 ? "s" : "") || `${filtered.length} tool${filtered.length !== 1 ? "s" : ""} found`}
         </div>
       )}
 
@@ -202,14 +198,14 @@ export default function AIToolsClient({ locale = "en", dict }: { locale?: string
                       : "bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300"
                   }`}
                 >
-                  {tool.pricing === "free" ? "Free" : tool.pricing === "free-tier" ? "Free Tier" : "Freemium"}
+                  {tool.pricing === "free" ? (at.free || "Free") : tool.pricing === "free-tier" ? (at.freeTier || "Free Tier") : (at.freemium || "Freemium")}
                 </span>
               </div>
               <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
                 {tool.description}
               </p>
               <div className="mt-1 flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400">
-                <span>Visit</span>
+                <span>{at.visit || "Visit"}</span>
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </div>
             </a>
@@ -217,8 +213,8 @@ export default function AIToolsClient({ locale = "en", dict }: { locale?: string
         </div>
       ) : (
         <div className="mt-12 text-center text-zinc-400 dark:text-zinc-500">
-          <p className="text-lg">No AI tools found</p>
-          <p className="mt-1 text-sm">Try adjusting your search or category filter.</p>
+          <p className="text-lg">{at.noResultsTitle || "No AI tools found"}</p>
+          <p className="mt-1 text-sm">{at.noResultsDesc || "Try adjusting your search or category filter."}</p>
         </div>
       )}
     </ToolLayout>

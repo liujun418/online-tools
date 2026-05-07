@@ -41,6 +41,7 @@ export default function HashtagGeneratorClient({ locale = "en", dict }: { locale
   const [input, setInput] = useState("");
   const [count, setCount] = useState(20);
   const [copied, setCopied] = useState(false);
+  const ht = (dict as any)?.hashtagGenerator || {};
 
   const hashtags = useMemo(() => {
     if (!input.trim()) return [];
@@ -105,13 +106,13 @@ export default function HashtagGeneratorClient({ locale = "en", dict }: { locale
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Enter Your Topic or Keyword
+          {ht.enterTopic || "Enter Your Topic or Keyword"}
         </label>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="e.g., travel, food, fitness, coffee"
+          placeholder={ht.placeholder || "e.g., travel, food, fitness, coffee"}
           className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
         />
       </div>
@@ -119,7 +120,7 @@ export default function HashtagGeneratorClient({ locale = "en", dict }: { locale
       <div className="mt-4 flex items-center gap-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Number of Hashtags
+            {ht.numberOfHashtags || "Number of Hashtags"}
           </label>
           <select
             value={count}
@@ -157,10 +158,10 @@ export default function HashtagGeneratorClient({ locale = "en", dict }: { locale
                   : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
-              {copied ? "Copied!" : "Copy All"}
+              {copied ? (ht.copied || "Copied!") : (ht.copyAll || "Copy All")}
             </button>
             <div className="text-sm text-zinc-500 dark:text-zinc-400">
-              {hashtags.length} hashtags · {hashtagString.length} characters
+              {ht.hashtagsCount?.replace("{{count}}", String(hashtags.length)).replace("{{chars}}", String(hashtagString.length)) || `${hashtags.length} hashtags · ${hashtagString.length} characters`}
             </div>
           </div>
         </>

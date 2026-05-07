@@ -213,6 +213,21 @@ const styles: { name: string; fn: StyleFn }[] = [
 export default function FancyTextGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("Hello World");
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const ft = (dict as any)?.fancyTextGenerator || {};
+
+  const styleNames: (keyof typeof ft)[] = [
+    "style_bold", "style_italic", "style_boldItalic", "style_script",
+    "style_boldScript", "style_doubleStruck", "style_fraktur", "style_boldFraktur",
+    "style_monospace", "style_sansSerif", "style_sansSerifBold", "style_circled",
+    "style_squared", "style_upsideDown", "style_strikethrough", "style_underline",
+  ];
+
+  const styleNamesFallback = [
+    "Bold", "Italic", "Bold Italic", "Script (Cursive)",
+    "Bold Script", "Double-Struck", "Fraktur", "Bold Fraktur",
+    "Monospace", "Sans-Serif", "Sans-Serif Bold", "Circled",
+    "Squared", "Upside Down", "Strikethrough", "Underline",
+  ];
 
   const results = useMemo(() => {
     if (!text) return [];
@@ -229,12 +244,12 @@ export default function FancyTextGeneratorClient({ locale = "en", dict }: { loca
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Enter Your Text
+          {ft.enterText || "Enter Your Text"}
         </label>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Type something..."
+          placeholder={ft.placeholder || "Type something..."}
           rows={3}
           className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
         />
@@ -248,7 +263,7 @@ export default function FancyTextGeneratorClient({ locale = "en", dict }: { loca
               className="flex items-center justify-between gap-4 rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900"
             >
               <div className="min-w-0 flex-1">
-                <div className="text-xs text-zinc-400 dark:text-zinc-500">{r.name}</div>
+                <div className="text-xs text-zinc-400 dark:text-zinc-500">{ft[styleNames[i]] || styleNamesFallback[i]}</div>
                 <div className="break-all text-lg text-zinc-900 dark:text-white">{r.result}</div>
               </div>
               <button
@@ -259,7 +274,7 @@ export default function FancyTextGeneratorClient({ locale = "en", dict }: { loca
                     : "bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
                 }`}
               >
-                {copiedIndex === i ? "Copied!" : "Copy"}
+                {copiedIndex === i ? (ft.copied || "Copied!") : (ft.copy || "Copy")}
               </button>
             </div>
           ))}

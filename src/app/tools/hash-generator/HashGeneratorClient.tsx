@@ -30,6 +30,13 @@ async function computeHash(text: string, algorithm: string): Promise<string> {
 export default function HashGeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
   const [hashes, setHashes] = useState<Record<string, string>>({});
+  const hg = (dict as any)?.hashGenerator || {};
+
+  const algorithmLabels: Record<string, string> = {
+    "SHA-1": hg.sha1 || "SHA-1",
+    "SHA-256": hg.sha256 || "SHA-256",
+    "SHA-512": hg.sha512 || "SHA-512",
+  };
 
   async function handleGenerate() {
     if (!text) return;
@@ -48,7 +55,7 @@ export default function HashGeneratorClient({ locale = "en", dict }: { locale?: 
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Enter text to hash..."
+        placeholder={hg.placeholder || "Enter text to hash..."}
         className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         rows={4}
       />
@@ -57,20 +64,20 @@ export default function HashGeneratorClient({ locale = "en", dict }: { locale?: 
         disabled={!text}
         className="mt-4 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
       >
-        Generate Hashes
+        {hg.generate || "Generate Hashes"}
       </button>
 
       {Object.entries(hashes).map(([algo, hash]) => (
         <div key={algo} className="mt-4">
           <div className="flex items-center justify-between">
             <label className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              {algo}
+              {algorithmLabels[algo] || algo}
             </label>
             <button
               onClick={() => handleCopy(hash)}
               className="rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             >
-              Copy
+              {hg.copy || "Copy"}
             </button>
           </div>
           <div className="mt-1 rounded-lg border border-zinc-200 bg-zinc-50 p-3 font-mono text-xs break-all dark:border-zinc-800 dark:bg-zinc-900">

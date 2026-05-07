@@ -23,6 +23,7 @@ export default function ImageToBase64Client({ locale = "en", dict }: { locale?: 
   const [fileInfo, setFileInfo] = useState("");
   const [preview, setPreview] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+  const i64 = (dict as any)?.imageToBase64 || {};
 
   const handleFile = useCallback((file: File) => {
     setFileInfo(`${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
@@ -57,7 +58,7 @@ export default function ImageToBase64Client({ locale = "en", dict }: { locale?: 
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m0 0l4 4"
             />
           </svg>
-          Choose Image
+          {i64.chooseImage || "Choose Image"}
           <input
             ref={fileRef}
             type="file"
@@ -80,7 +81,7 @@ export default function ImageToBase64Client({ locale = "en", dict }: { locale?: 
         <>
           <div className="mt-6">
             <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              Preview
+              {i64.preview || "Preview"}
             </label>
             <img
               src={preview}
@@ -92,13 +93,13 @@ export default function ImageToBase64Client({ locale = "en", dict }: { locale?: 
           <div className="mt-4">
             <div className="mb-2 flex items-center justify-between">
               <label className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-                Base64 String ({base64.length.toLocaleString()} characters)
+                {i64.base64String?.replace("{{count}}", base64.length.toLocaleString()) || `Base64 String (${base64.length.toLocaleString()} characters)`}
               </label>
               <button
                 onClick={handleCopy}
                 className="rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               >
-                Copy
+                {i64.copy || "Copy"}
               </button>
             </div>
             <textarea

@@ -22,6 +22,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
   const [input, setInput] = useState("");
   const [encoded, setEncoded] = useState("");
   const [decoded, setDecoded] = useState("");
+  const he = (dict as any)?.htmlEntities || {};
 
   function handleEncode() {
     setEncoded(
@@ -54,7 +55,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
           setEncoded("");
           setDecoded("");
         }}
-        placeholder="Enter text with special characters to encode/decode..."
+        placeholder={he.placeholder || "Enter text with special characters to encode/decode..."}
         className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         rows={8}
       />
@@ -64,14 +65,14 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
           disabled={!input.trim()}
           className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
-          Encode
+          {he.encode || "Encode"}
         </button>
         <button
           onClick={handleDecode}
           disabled={!input.trim()}
           className="rounded-lg bg-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-300 disabled:opacity-50 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
         >
-          Decode
+          {he.decode || "Decode"}
         </button>
       </div>
 
@@ -79,7 +80,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
         {encoded && (
           <div>
             <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              Encoded
+              {he.encoded || "Encoded"}
             </label>
             <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900">
               <code className="whitespace-pre-wrap break-all font-mono text-sm">
@@ -89,7 +90,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
                 onClick={() => navigator.clipboard.writeText(encoded)}
                 className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               >
-                Copy
+                {he.copy || "Copy"}
               </button>
             </div>
           </div>
@@ -97,7 +98,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
         {decoded && (
           <div>
             <label className="mb-2 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              Decoded
+              {he.decoded || "Decoded"}
             </label>
             <div className="flex items-center justify-between rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900">
               <code className="whitespace-pre-wrap break-all font-mono text-sm">
@@ -107,7 +108,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict }: { locale?: s
                 onClick={() => navigator.clipboard.writeText(decoded)}
                 className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               >
-                Copy
+                {he.copy || "Copy"}
               </button>
             </div>
           </div>

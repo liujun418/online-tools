@@ -24,6 +24,7 @@ export default function MortgageCalculatorClient({ locale = "en", dict }: { loca
   const [years, setYears] = useState("30");
   const [tax, setTax] = useState("3000");
   const [insurance, setInsurance] = useState("1200");
+  const mc = (dict as any)?.mortgageCalculator || {};
 
   const result = useMemo(() => {
     const p = parseFloat(price) - parseFloat(down);
@@ -52,10 +53,10 @@ export default function MortgageCalculatorClient({ locale = "en", dict }: { loca
 
   const items = result
     ? [
-        { label: "Loan Amount", value: `$${result.loanAmount.toLocaleString()}` },
-        { label: "Principal & Interest", value: `$${result.principalAndInterest.toLocaleString()}` },
-        { label: "Property Tax", value: `$${result.monthlyTax.toLocaleString()}/mo` },
-        { label: "Home Insurance", value: `$${result.monthlyInsurance.toLocaleString()}/mo` },
+        { label: mc.loanAmount || "Loan Amount", value: `$${result.loanAmount.toLocaleString()}` },
+        { label: mc.principalInterest || "Principal & Interest", value: `$${result.principalAndInterest.toLocaleString()}` },
+        { label: mc.propertyTax || "Property Tax", value: `$${result.monthlyTax.toLocaleString()}${mc.perMonth || "/mo"}` },
+        { label: mc.homeInsurance || "Home Insurance", value: `$${result.monthlyInsurance.toLocaleString()}${mc.perMonth || "/mo"}` },
       ]
     : [];
 
@@ -63,12 +64,12 @@ export default function MortgageCalculatorClient({ locale = "en", dict }: { loca
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          ["Home Price ($)", price, setPrice] as const,
-          ["Down Payment ($)", down, setDown] as const,
-          ["Interest Rate (%)", rate, setRate] as const,
-          ["Loan Term (Years)", years, setYears] as const,
-          ["Annual Property Tax ($)", tax, setTax] as const,
-          ["Annual Insurance ($)", insurance, setInsurance] as const,
+          [mc.homePrice || "Home Price ($)", price, setPrice] as const,
+          [mc.downPayment || "Down Payment ($)", down, setDown] as const,
+          [mc.interestRate || "Interest Rate (%)", rate, setRate] as const,
+          [mc.loanTerm || "Loan Term (Years)", years, setYears] as const,
+          [mc.annualPropertyTax || "Annual Property Tax ($)", tax, setTax] as const,
+          [mc.annualInsurance || "Annual Insurance ($)", insurance, setInsurance] as const,
         ].map(([label, value, setter]) => (
           <div key={label as string}>
             <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
@@ -87,7 +88,7 @@ export default function MortgageCalculatorClient({ locale = "en", dict }: { loca
       {result && (
         <>
           <div className="mt-6 rounded-lg bg-blue-600 p-6 text-center text-white">
-            <div className="text-sm opacity-80">Estimated Monthly Payment</div>
+            <div className="text-sm opacity-80">{mc.monthlyPayment || "Estimated Monthly Payment"}</div>
             <div className="text-4xl font-bold">${result.total.toLocaleString()}</div>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">

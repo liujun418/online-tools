@@ -50,6 +50,13 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
     };
   }, []);
 
+  const boa = (dict as any)?.bookOfAnswers || {};
+  const instruction = boa.instruction || "Close your eyes, think of your question for 3–5 seconds, then open the book to receive your answer.";
+  const bookTitle = boa.title || "Book of Answers";
+  const bookSubtitle = boa.subtitle || "Focus on your question, click to reveal your answer";
+  const revealLabel = boa.reveal || "Reveal Answer";
+  const askAgainLabel = boa.askAgain || "Ask Again";
+
   const getRandomAnswer = useCallback(() => {
     const idx = Math.floor(Math.random() * answers.length);
     return answers[idx];
@@ -106,13 +113,11 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
-        Close your eyes, think of your question for 3–5 seconds, then open the book to receive your answer.
+        {instruction}
       </p>
 
       <div className="flex min-h-[40vh] flex-col items-center justify-center px-4 py-12">
-        {/* Book container */}
         <div className="relative w-full max-w-md" style={{ perspective: "1200px" }}>
-          {/* Book */}
           <div
             style={{
               width: "280px",
@@ -125,7 +130,6 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
             }}
             onClick={!isFlipped ? handleReveal : undefined}
           >
-            {/* Front cover */}
             <div
               className="absolute inset-0 rounded-xl shadow-2xl"
               style={{
@@ -138,7 +142,6 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
                 padding: "2rem",
               }}
             >
-              {/* Shimmer overlay */}
               <div
                 className="absolute inset-0 overflow-hidden rounded-xl"
                 style={{
@@ -147,21 +150,18 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
                   animation: !isFlipped ? "ba-shimmer 3s infinite" : "none",
                 }}
               />
-              {/* Title */}
               <div className="relative z-10 text-center">
                 <div className="mb-4 text-6xl">📖</div>
                 <h2 className="text-2xl font-bold tracking-wide text-amber-100">
-                  Book of Answers
+                  {bookTitle}
                 </h2>
                 <p className="mt-3 text-sm text-zinc-400">
-                  Focus on your question, click to reveal your answer
+                  {bookSubtitle}
                 </p>
               </div>
-              {/* Decorative border */}
               <div className="absolute inset-3 rounded-lg border border-amber-900/30" />
             </div>
 
-            {/* Back (answer side) */}
             <div
               className="absolute inset-0 rounded-xl shadow-2xl"
               style={{
@@ -193,7 +193,6 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
             </div>
           </div>
 
-          {/* Glow effect */}
           {isTypingComplete && (
             <div
               className="pointer-events-none absolute inset-0 rounded-xl"
@@ -206,13 +205,12 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
           )}
         </div>
 
-        {/* Buttons */}
         {!isFlipped && (
           <button
             onClick={handleReveal}
             className="mt-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95"
           >
-            Reveal Answer
+            {revealLabel}
           </button>
         )}
 
@@ -221,12 +219,11 @@ export default function BookOfAnswersClient({ locale = "en", dict }: { locale?: 
             onClick={handleAskAgain}
             className="mt-8 rounded-full bg-gradient-to-r from-zinc-700 to-zinc-800 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 active:scale-95 dark:from-zinc-600 dark:to-zinc-700"
           >
-            Ask Again
+            {askAgainLabel}
           </button>
         )}
       </div>
 
-      {/* Animations */}
       <style jsx>{`
         @keyframes ba-shimmer {
           0% { transform: translateX(-100%); }

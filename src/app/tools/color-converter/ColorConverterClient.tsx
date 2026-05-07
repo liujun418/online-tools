@@ -67,6 +67,7 @@ function rgbToHex(r: number, g: number, b: number): string {
 
 export default function ColorConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [hex, setHex] = useState("#3B82F6");
+  const cc = (dict as any)?.colorConverter || {};
 
   const rgb = hexToRgb(hex) || [59, 130, 246];
   const hsl = rgbToHsl(...rgb);
@@ -99,19 +100,19 @@ export default function ColorConverterClient({ locale = "en", dict }: { locale?:
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
           <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            HEX
+            {cc.hex || "HEX"}
           </div>
           <div className="font-mono text-lg text-zinc-700 dark:text-zinc-300">{hex.toUpperCase()}</div>
         </div>
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
           <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            RGB
+            {cc.rgb || "RGB"}
           </div>
           <div className="font-mono text-lg text-zinc-700 dark:text-zinc-300">rgb({rgb.join(", ")})</div>
         </div>
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
           <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-            HSL
+            {cc.hsl || "HSL"}
           </div>
           <div className="font-mono text-lg text-zinc-700 dark:text-zinc-300">hsl({hsl.join(", ")})</div>
         </div>
@@ -124,7 +125,7 @@ export default function ColorConverterClient({ locale = "en", dict }: { locale?:
             onClick={() => navigator.clipboard.writeText(val)}
             className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
           >
-            Copy {val.slice(0, 8)}...
+            {cc.copy || "Copy"} {val.slice(0, 8)}...
           </button>
         ))}
       </div>

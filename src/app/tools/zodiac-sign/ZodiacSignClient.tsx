@@ -202,6 +202,7 @@ function getZodiacSign(month: number, day: number) {
 export default function ZodiacSignClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
+  const zs = (dict as any)?.zodiacSign || {};
 
   const sign = useMemo(() => {
     const m = parseInt(month);
@@ -217,14 +218,14 @@ export default function ZodiacSignClient({ locale = "en", dict }: { locale?: str
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Birth Month
+            {zs.birthMonth || "Birth Month"}
           </label>
           <select
             value={month}
             onChange={(e) => setMonth(e.target.value)}
             className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
           >
-            <option value="">Select</option>
+            <option value="">{zs.select || "Select"}</option>
             {Array.from({ length: 12 }, (_, i) => (
               <option key={i + 1} value={i + 1}>
                 {new Date(2024, i).toLocaleString("en-US", { month: "long" })}
@@ -234,7 +235,7 @@ export default function ZodiacSignClient({ locale = "en", dict }: { locale?: str
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Birth Day
+            {zs.birthDay || "Birth Day"}
           </label>
           <input
             type="number"
@@ -257,34 +258,34 @@ export default function ZodiacSignClient({ locale = "en", dict }: { locale?: str
 
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-center dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="text-xs text-zinc-500 dark:text-zinc-400">Element</div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400">{zs.element || "Element"}</div>
               <div className="text-sm font-bold">{sign.element}</div>
             </div>
             <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-center dark:border-blue-800 dark:bg-blue-950">
-              <div className="text-xs text-blue-500 dark:text-blue-400">Quality</div>
+              <div className="text-xs text-blue-500 dark:text-blue-400">{zs.quality || "Quality"}</div>
               <div className="text-sm font-bold">{sign.quality}</div>
             </div>
             <div className="rounded-lg border border-green-200 bg-green-50 p-3 text-center dark:border-green-800 dark:bg-green-950">
-              <div className="text-xs text-green-500 dark:text-green-400">Ruler</div>
+              <div className="text-xs text-green-500 dark:text-green-400">{zs.ruler || "Ruler"}</div>
               <div className="text-sm font-bold">{sign.ruler}</div>
             </div>
             <div className="rounded-lg border border-purple-200 bg-purple-50 p-3 text-center dark:border-purple-800 dark:bg-purple-950">
-              <div className="text-xs text-purple-500 dark:text-purple-400">Compatible With</div>
+              <div className="text-xs text-purple-500 dark:text-purple-400">{zs.compatibleWith || "Compatible With"}</div>
               <div className="text-xs font-bold">{sign.compatible}</div>
             </div>
           </div>
 
           <div className="mt-4 rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
-            <h3 className="mb-2 font-semibold text-zinc-900 dark:text-white">Personality</h3>
+            <h3 className="mb-2 font-semibold text-zinc-900 dark:text-white">{zs.personality || "Personality"}</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">{sign.traits}</p>
           </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950">
-              <h3 className="mb-2 font-semibold text-green-700 dark:text-green-300">Strengths</h3>
+              <h3 className="mb-2 font-semibold text-green-700 dark:text-green-300">{zs.strengths || "Strengths"}</h3>
               <p className="text-sm text-green-600 dark:text-green-400">{sign.strengths}</p>
             </div>
             <div className="rounded-lg border border-red-200 bg-red-50 p-4 dark:border-red-800 dark:bg-red-950">
-              <h3 className="mb-2 font-semibold text-red-700 dark:text-red-300">Weaknesses</h3>
+              <h3 className="mb-2 font-semibold text-red-700 dark:text-red-300">{zs.weaknesses || "Weaknesses"}</h3>
               <p className="text-sm text-red-600 dark:text-red-400">{sign.weaknesses}</p>
             </div>
           </div>

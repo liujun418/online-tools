@@ -55,6 +55,7 @@ export default function RandomNameGeneratorClient({ locale = "en", dict }: { loc
   const [origin, setOrigin] = useState("english");
   const [count, setCount] = useState(5);
   const [names, setNames] = useState<string[]>([]);
+  const rng = (dict as any)?.randomNameGenerator || {};
 
   const handleGenerate = useCallback(() => {
     const data = nameData[origin];
@@ -82,37 +83,37 @@ export default function RandomNameGeneratorClient({ locale = "en", dict }: { loc
       <div className="grid gap-4 sm:grid-cols-4">
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Gender
+            {rng.gender || "Gender"}
           </label>
           <select
             value={gender}
             onChange={(e) => setGender(e.target.value as "male" | "female" | "random")}
             className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="random">Random</option>
+            <option value="male">{rng.male || "Male"}</option>
+            <option value="female">{rng.female || "Female"}</option>
+            <option value="random">{rng.random || "Random"}</option>
           </select>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Origin
+            {rng.origin || "Origin"}
           </label>
           <select
             value={origin}
             onChange={(e) => setOrigin(e.target.value)}
             className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
           >
-            <option value="english">English</option>
-            <option value="italian">Italian</option>
-            <option value="spanish">Spanish</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
+            <option value="english">{rng.english || "English"}</option>
+            <option value="italian">{rng.italian || "Italian"}</option>
+            <option value="spanish">{rng.spanish || "Spanish"}</option>
+            <option value="french">{rng.french || "French"}</option>
+            <option value="german">{rng.german || "German"}</option>
           </select>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Count
+            {rng.count || "Count"}
           </label>
           <input
             type="number"
@@ -128,7 +129,7 @@ export default function RandomNameGeneratorClient({ locale = "en", dict }: { loc
             onClick={handleGenerate}
             className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
           >
-            Generate
+            {rng.generate || "Generate"}
           </button>
         </div>
       </div>
@@ -137,13 +138,13 @@ export default function RandomNameGeneratorClient({ locale = "en", dict }: { loc
         <div className="mt-6">
           <div className="mb-3 flex items-center justify-between">
             <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
-              Generated Names
+              {rng.generatedNames || "Generated Names"}
             </h3>
             <button
               onClick={handleCopyAll}
               className="rounded-lg bg-zinc-200 px-4 py-1.5 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
             >
-              Copy All
+              {rng.copyAll || "Copy All"}
             </button>
           </div>
           <div className="space-y-2">
@@ -157,7 +158,7 @@ export default function RandomNameGeneratorClient({ locale = "en", dict }: { loc
                   onClick={() => handleCopy(name)}
                   className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
                 >
-                  Copy
+                  {rng.copy || "Copy"}
                 </button>
               </div>
             ))}

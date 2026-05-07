@@ -178,6 +178,7 @@ function md5(string: string): string {
 
 export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [text, setText] = useState("");
+  const md5t = (dict as any)?.md5Generator || {};
 
   const hash = useMemo(() => {
     if (!text) return "";
@@ -197,12 +198,12 @@ export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: s
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div>
         <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Enter Text to Generate MD5 Hash
+          {md5t.enterText || "Enter Text to Generate MD5 Hash"}
         </label>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Type or paste text here..."
+          placeholder={md5t.placeholder || "Type or paste text here..."}
           rows={4}
           className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
         />
@@ -212,19 +213,19 @@ export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: s
         <div className="mt-6">
           <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950">
             <div className="mb-2 flex items-center justify-between">
-              <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">MD5 Hash</span>
+              <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">{md5t.md5Hash || "MD5 Hash"}</span>
               <div className="flex gap-2">
                 <button
                   onClick={() => handleCopyFormat("lower")}
                   className="rounded bg-blue-200 px-3 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-300 dark:hover:bg-blue-700"
                 >
-                  Copy Lowercase
+                  {md5t.copyLowercase || "Copy Lowercase"}
                 </button>
                 <button
                   onClick={() => handleCopyFormat("upper")}
                   className="rounded bg-blue-200 px-3 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-300 dark:hover:bg-blue-700"
                 >
-                  Copy Uppercase
+                  {md5t.copyUppercase || "Copy Uppercase"}
                 </button>
               </div>
             </div>
@@ -235,25 +236,25 @@ export default function MD5GeneratorClient({ locale = "en", dict }: { locale?: s
 
           <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="text-xs text-zinc-500 dark:text-zinc-400">Hash Length</div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400">{md5t.hashLength || "Hash Length"}</div>
               <div className="text-2xl font-bold text-zinc-900 dark:text-white">32</div>
-              <div className="text-xs text-zinc-400">hex characters</div>
+              <div className="text-xs text-zinc-400">{md5t.hexChars || "hex characters"}</div>
             </div>
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="text-xs text-zinc-500 dark:text-zinc-400">Bit Length</div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400">{md5t.bitLength || "Bit Length"}</div>
               <div className="text-2xl font-bold text-zinc-900 dark:text-white">128</div>
-              <div className="text-xs text-zinc-400">bits</div>
+              <div className="text-xs text-zinc-400">{md5t.bits || "bits"}</div>
             </div>
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="text-xs text-zinc-500 dark:text-zinc-400">Input Length</div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400">{md5t.inputLength || "Input Length"}</div>
               <div className="text-2xl font-bold text-zinc-900 dark:text-white">{text.length}</div>
-              <div className="text-xs text-zinc-400">characters</div>
+              <div className="text-xs text-zinc-400">{md5t.characters || "characters"}</div>
             </div>
           </div>
 
           <div className="mt-4 rounded-lg border border-yellow-200 bg-yellow-50 p-3 dark:border-yellow-800 dark:bg-yellow-950">
             <p className="text-xs text-yellow-700 dark:text-yellow-300">
-              ⚠️ MD5 is a cryptographic hash function but is no longer considered secure for password storage or digital signatures. Use it for checksums and file integrity verification only.
+              {md5t.warning || "MD5 is a cryptographic hash function but is no longer considered secure for password storage or digital signatures. Use it for checksums and file integrity verification only."}
             </p>
           </div>
         </div>

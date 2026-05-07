@@ -22,6 +22,7 @@ export default function CompoundInterestClient({ locale = "en", dict }: { locale
   const [years, setYears] = useState("20");
   const [monthly, setMonthly] = useState("100");
   const [compounds, setCompounds] = useState("12");
+  const ci = (dict as any)?.compoundInterest || {};
 
   const result = useMemo(() => {
     const p = parseFloat(principal);
@@ -51,11 +52,11 @@ export default function CompoundInterestClient({ locale = "en", dict }: { locale
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          ["Initial Deposit ($)", principal, setPrincipal] as const,
-          ["Annual Rate (%)", rate, setRate] as const,
-          ["Time (Years)", years, setYears] as const,
-          ["Monthly Contribution ($)", monthly, setMonthly] as const,
-          ["Compounding Frequency", compounds, setCompounds] as const,
+          [ci.initialDeposit || "Initial Deposit ($)", principal, setPrincipal] as const,
+          [ci.annualRate || "Annual Rate (%)", rate, setRate] as const,
+          [ci.timeYears || "Time (Years)", years, setYears] as const,
+          [ci.monthlyContribution || "Monthly Contribution ($)", monthly, setMonthly] as const,
+          [ci.compoundingFrequency || "Compounding Frequency", compounds, setCompounds] as const,
         ].map(([label, value, setter], i) => (
           <div key={label}>
             <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
@@ -67,10 +68,10 @@ export default function CompoundInterestClient({ locale = "en", dict }: { locale
                 onChange={(e) => (setter as (v: string) => void)(e.target.value)}
                 className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               >
-                <option value="1">Annually</option>
-                <option value="4">Quarterly</option>
-                <option value="12">Monthly</option>
-                <option value="365">Daily</option>
+                <option value="1">{ci.annually || "Annually"}</option>
+                <option value="4">{ci.quarterly || "Quarterly"}</option>
+                <option value="12">{ci.monthly || "Monthly"}</option>
+                <option value="365">{ci.daily || "Daily"}</option>
               </select>
             ) : (
               <input
@@ -87,15 +88,15 @@ export default function CompoundInterestClient({ locale = "en", dict }: { locale
       {result && (
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-center dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">Total Contributions</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">{ci.totalContributions || "Total Contributions"}</div>
             <div className="text-xl font-bold text-zinc-900 dark:text-white">${result.totalContributions.toLocaleString()}</div>
           </div>
           <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 text-center dark:border-blue-800 dark:bg-blue-950">
-            <div className="text-xs text-blue-600 dark:text-blue-400">Interest Earned</div>
+            <div className="text-xs text-blue-600 dark:text-blue-400">{ci.interestEarned || "Interest Earned"}</div>
             <div className="text-xl font-bold text-blue-700 dark:text-blue-300">${result.totalInterest.toLocaleString()}</div>
           </div>
           <div className="rounded-lg border border-green-200 bg-green-50 p-4 text-center dark:border-green-800 dark:bg-green-950">
-            <div className="text-xs text-green-600 dark:text-green-400">Future Value</div>
+            <div className="text-xs text-green-600 dark:text-green-400">{ci.futureValue || "Future Value"}</div>
             <div className="text-2xl font-bold text-green-700 dark:text-green-300">${result.totalAmount.toLocaleString()}</div>
           </div>
         </div>

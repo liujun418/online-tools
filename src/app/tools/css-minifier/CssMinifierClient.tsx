@@ -52,6 +52,7 @@ export default function CssMinifierClient({ locale = "en", dict }: { locale?: st
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<"minify" | "beautify">("minify");
+  const cm = (dict as any)?.cssMinifier || {};
 
   function handleProcess() {
     if (!input.trim()) return;
@@ -75,7 +76,7 @@ export default function CssMinifierClient({ locale = "en", dict }: { locale?: st
             mode === "minify" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
           }`}
         >
-          Minify
+          {cm.minify || "Minify"}
         </button>
         <button
           onClick={() => { setMode("beautify"); setOutput(""); }}
@@ -83,14 +84,14 @@ export default function CssMinifierClient({ locale = "en", dict }: { locale?: st
             mode === "beautify" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
           }`}
         >
-          Beautify
+          {cm.beautify || "Beautify"}
         </button>
       </div>
 
       <textarea
         value={input}
         onChange={(e) => { setInput(e.target.value); setOutput(""); }}
-        placeholder="Paste your CSS here..."
+        placeholder={cm.placeholder || "Paste your CSS here..."}
         className="mt-4 w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         rows={12}
       />
@@ -101,7 +102,7 @@ export default function CssMinifierClient({ locale = "en", dict }: { locale?: st
           disabled={!input.trim()}
           className="rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
-          {mode === "minify" ? "Minify" : "Beautify"}
+          {mode === "minify" ? cm.minify || "Minify" : cm.beautify || "Beautify"}
         </button>
       </div>
 
@@ -109,13 +110,13 @@ export default function CssMinifierClient({ locale = "en", dict }: { locale?: st
         <div className="mt-4">
           {mode === "minify" && (
             <div className="mb-2 text-sm text-green-600 dark:text-green-400">
-              Reduced from {originalSize.toLocaleString()}B to {minifiedSize.toLocaleString()}B ({savings}% smaller)
+              {cm.reduced || `Reduced from ${originalSize.toLocaleString()}B to ${minifiedSize.toLocaleString()}B (${savings}% smaller)`}
             </div>
           )}
           <div className="flex items-center justify-between">
-            <label className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Result</label>
+            <label className="text-sm font-medium text-zinc-500 dark:text-zinc-400">{cm.result || "Result"}</label>
             <button onClick={handleCopy} className="rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700">
-              Copy
+              {cm.copy || "Copy"}
             </button>
           </div>
           <textarea

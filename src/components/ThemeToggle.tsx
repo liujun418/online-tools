@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> }) {
   const [dark, setDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -29,11 +29,14 @@ export default function ThemeToggle() {
 
   if (!mounted) return <div className="h-8 w-8" />;
 
+  const lightMode = ((dict as any)?.toolPage as any)?.lightMode || "Switch to light mode";
+  const darkMode = ((dict as any)?.toolPage as any)?.darkMode || "Switch to dark mode";
+
   return (
     <button
       onClick={toggle}
       className="rounded-lg p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white"
-      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={dark ? lightMode : darkMode}
     >
       {dark ? (
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

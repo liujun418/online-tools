@@ -22,6 +22,7 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
   const [b, setB] = useState("");
   const [c, setC] = useState("");
   const [d, setD] = useState("");
+  const pc = (dict as any)?.percentageCalculator || {};
 
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
@@ -29,10 +30,10 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
         {/* What is X% of Y? */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
           <h3 className="mb-4 font-medium text-zinc-700 dark:text-zinc-300">
-            What is X% of Y?
+            {pc.whatIsXOfY || "What is X% of Y?"}
           </h3>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">What is</span>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">{pc.whatIs || "What is"}</span>
             <input
               type="number"
               value={a}
@@ -40,7 +41,7 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
               className="w-24 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               placeholder="X"
             />
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">% of</span>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">% {pc.of || "of"}</span>
             <input
               type="number"
               value={b}
@@ -60,7 +61,7 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
         {/* X is what % of Y? */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
           <h3 className="mb-4 font-medium text-zinc-700 dark:text-zinc-300">
-            X is what percent of Y?
+            {pc.xIsWhatPercentOfY || "X is what percent of Y?"}
           </h3>
           <div className="flex flex-wrap items-center gap-3">
             <input
@@ -70,7 +71,7 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
               className="w-24 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               placeholder="X"
             />
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">is what % of</span>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">{pc.isWhatPercentOf || "is what % of"}</span>
             <input
               type="number"
               value={b}
@@ -90,10 +91,10 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
         {/* % change from X to Y */}
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
           <h3 className="mb-4 font-medium text-zinc-700 dark:text-zinc-300">
-            Percentage change from X to Y
+            {pc.percentChange || "Percentage change from X to Y"}
           </h3>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">From</span>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">{pc.from || "From"}</span>
             <input
               type="number"
               value={c}
@@ -101,7 +102,7 @@ export default function PercentageCalculatorClient({ locale = "en", dict }: { lo
               className="w-24 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               placeholder="X"
             />
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">to</span>
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">{pc.to || "to"}</span>
             <input
               type="number"
               value={d}

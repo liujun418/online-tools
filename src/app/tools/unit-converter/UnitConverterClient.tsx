@@ -38,11 +38,41 @@ function convertTemp(value: number, from: string, to: string): number {
   return to === "Celsius" ? celsius : to === "Fahrenheit" ? celsius * 9 / 5 + 32 : celsius + 273.15;
 }
 
+const unitTranslations: Record<string, Record<string, string>> = {
+  Length: { es: "Longitud", ar: "الطول" },
+  Weight: { es: "Peso", ar: "الوزن" },
+  Speed: { es: "Velocidad", ar: "السرعة" },
+  Temperature: { es: "Temperatura", ar: "درجة الحرارة" },
+  Meter: { es: "Metro", ar: "متر" },
+  Kilometer: { es: "Kilómetro", ar: "كيلومتر" },
+  Centimeter: { es: "Centímetro", ar: "سنتيمتر" },
+  Millimeter: { es: "Milímetro", ar: "مليمتر" },
+  Mile: { es: "Milla", ar: "ميل" },
+  Yard: { es: "Yarda", ar: "ياردة" },
+  Foot: { es: "Pie", ar: "قدم" },
+  Inch: { es: "Pulgada", ar: "بوصة" },
+  Kilogram: { es: "Kilogramo", ar: "كيلوغرام" },
+  Gram: { es: "Gramo", ar: "غرام" },
+  Milligram: { es: "Miligramo", ar: "ملليغرام" },
+  Pound: { es: "Libra", ar: "رطل" },
+  Ounce: { es: "Onza", ar: "أونصة" },
+  Ton: { es: "Tonelada", ar: "طن" },
+  Knot: { es: "Nudo", ar: "عقدة" },
+  Celsius: { es: "Celsius", ar: "سيليزيوس" },
+  Fahrenheit: { es: "Fahrenheit", ar: "فهرنهايت" },
+  Kelvin: { es: "Kelvin", ar: "كلفن" },
+};
+
+function getLocalized(locale: string, key: string, fallback: string): string {
+  return unitTranslations[key]?.[locale] || fallback;
+}
+
 export default function UnitConverterClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [cat, setCat] = useState("Length");
   const [fromUnit, setFromUnit] = useState("Meter");
   const [toUnit, setToUnit] = useState("Kilometer");
   const [value, setValue] = useState("1");
+  const uc = (dict as any)?.unitConverter || {};
 
   const unitList = cat === "Temperature" ? tempUnits : Object.keys(unitData[cat]?.units || {});
 
@@ -62,6 +92,8 @@ export default function UnitConverterClient({ locale = "en", dict }: { locale?: 
     setToUnit(units[1] || units[0]);
   }
 
+  const catOptions = Object.keys(unitData).concat("Temperature");
+
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex flex-wrap items-center gap-4">
@@ -70,8 +102,8 @@ export default function UnitConverterClient({ locale = "en", dict }: { locale?: 
           onChange={(e) => handleCatChange(e.target.value)}
           className="rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
         >
-          {Object.keys(unitData).concat("Temperature").map((c) => (
-            <option key={c}>{c}</option>
+          {catOptions.map((c) => (
+            <option key={c}>{getLocalized(locale, c, uc[c.toLowerCase()] || c)}</option>
           ))}
         </select>
       </div>
@@ -88,7 +120,7 @@ export default function UnitConverterClient({ locale = "en", dict }: { locale?: 
           onChange={(e) => setFromUnit(e.target.value)}
           className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
         >
-          {unitList.map((u) => <option key={u}>{u}</option>)}
+          {unitList.map((u) => <option key={u}>{getLocalized(locale, u, u)}</option>)}
         </select>
         <span className="text-zinc-400">→</span>
         <select
@@ -96,7 +128,7 @@ export default function UnitConverterClient({ locale = "en", dict }: { locale?: 
           onChange={(e) => setToUnit(e.target.value)}
           className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
         >
-          {unitList.map((u) => <option key={u}>{u}</option>)}
+          {unitList.map((u) => <option key={u}>{getLocalized(locale, u, u)}</option>)}
         </select>
       </div>
 
@@ -106,7 +138,7 @@ export default function UnitConverterClient({ locale = "en", dict }: { locale?: 
             {result % 1 === 0 ? result : parseFloat(result.toFixed(6))}
           </div>
           <div className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-            {value} {fromUnit} = {parseFloat(result.toFixed(6))} {toUnit}
+            {value} {getLocalized(locale, fromUnit, fromUnit)} = {parseFloat(result.toFixed(6))} {getLocalized(locale, toUnit, toUnit)}
           </div>
         </div>
       )}

@@ -28,6 +28,7 @@ const paragraphs = [
 export default function LoremIpsumClient({ locale = "en", dict }: { locale?: string; dict?: Record<string, unknown> } = {}) {
   const [count, setCount] = useState(3);
   const [copied, setCopied] = useState(false);
+  const li = (dict as any)?.loremIpsum || {};
 
   const result = paragraphs.slice(0, count).join("\n\n");
 
@@ -41,7 +42,7 @@ export default function LoremIpsumClient({ locale = "en", dict }: { locale?: str
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Number of paragraphs:
+          {li.paragraphs || "Number of paragraphs"}:
         </label>
         <input
           type="number"
@@ -55,7 +56,7 @@ export default function LoremIpsumClient({ locale = "en", dict }: { locale?: str
           onClick={handleCopy}
           className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
         >
-          {copied ? "Copied!" : "Copy"}
+          {copied ? (li.copied || "Copied!") : (li.copy || "Copy")}
         </button>
       </div>
       <div className="mt-6 rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">

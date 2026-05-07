@@ -22,31 +22,32 @@ export default function BaseConverterClient({ locale = "en", dict }: { locale?: 
   const [input, setInput] = useState("");
   const [base, setBase] = useState<2 | 8 | 10 | 16>(10);
   const [error, setError] = useState<string | null>(null);
+  const bc = (dict as any)?.baseConverter || {};
 
   const num = input.trim() ? parseInt(input, base) : NaN;
 
   const results = [
-    { label: "Binary (Base 2)", value: Number.isNaN(num) ? "" : num.toString(2) },
-    { label: "Octal (Base 8)", value: Number.isNaN(num) ? "" : num.toString(8) },
-    { label: "Decimal (Base 10)", value: Number.isNaN(num) ? "" : num.toString(10) },
+    { label: bc.label_binary || "Binary (Base 2)", value: Number.isNaN(num) ? "" : num.toString(2) },
+    { label: bc.label_octal || "Octal (Base 8)", value: Number.isNaN(num) ? "" : num.toString(8) },
+    { label: bc.label_decimal || "Decimal (Base 10)", value: Number.isNaN(num) ? "" : num.toString(10) },
     {
-      label: "Hexadecimal (Base 16)",
+      label: bc.label_hexadecimal || "Hexadecimal (Base 16)",
       value: Number.isNaN(num) ? "" : num.toString(16).toUpperCase(),
     },
   ];
 
   const bases: { label: string; value: 2 | 8 | 10 | 16 }[] = [
-    { label: "Binary", value: 2 },
-    { label: "Decimal", value: 10 },
-    { label: "Hexadecimal", value: 16 },
-    { label: "Octal", value: 8 },
+    { label: bc.binary || "Binary", value: 2 },
+    { label: bc.decimal || "Decimal", value: 10 },
+    { label: bc.hexadecimal || "Hexadecimal", value: 16 },
+    { label: bc.octal || "Octal", value: 8 },
   ];
 
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
       <div className="flex items-center gap-4">
         <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Input base:
+          {bc.inputBase || "Input base"}:
         </label>
         <select
           value={base}
@@ -72,7 +73,7 @@ export default function BaseConverterClient({ locale = "en", dict }: { locale?: 
           setInput(e.target.value);
           setError(null);
         }}
-        placeholder={`Enter a ${bases.find((b) => b.value === base)?.label} number...`}
+        placeholder={bc.placeholder || `Enter a ${bases.find((b) => b.value === base)?.label} number...`}
         className="mt-4 w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
       />
 
@@ -93,7 +94,7 @@ export default function BaseConverterClient({ locale = "en", dict }: { locale?: 
             </div>
             <div className="font-mono text-sm text-zinc-700 dark:text-zinc-300 break-all">
               {r.value || (
-                <span className="text-zinc-400 italic">Result will appear here</span>
+                <span className="text-zinc-400 italic">{bc.emptyState || "Result will appear here"}</span>
               )}
             </div>
           </div>

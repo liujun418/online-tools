@@ -147,7 +147,7 @@ export default function ToolLayout({
           </div>
           <ShareButton locale={locale} dict={dict} />
         </div>
-        {tool && <VisitorCounter toolId={tool.id} />}
+        {tool && <VisitorCounter toolId={tool.id} locale={locale} dict={dict} />}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -22,37 +22,36 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
+  const bmi = (dict as any)?.bmiCalculator || {};
 
-  const bmi = useMemo(() => {
+  const bmiVal = useMemo(() => {
     const w = parseFloat(weight);
     const h = parseFloat(height);
     if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) return null;
-
-    let bmiVal: number;
+    let val: number;
     if (unit === "metric") {
-      bmiVal = w / ((h / 100) ** 2);
+      val = w / ((h / 100) ** 2);
     } else {
-      bmiVal = (w / (h ** 2)) * 703;
+      val = (w / (h ** 2)) * 703;
     }
-    return Math.round(bmiVal * 10) / 10;
+    return Math.round(val * 10) / 10;
   }, [weight, height, unit]);
 
-  const hasError = (weight !== "" && height !== "" && bmi === null);
+  const hasError = weight !== "" && height !== "" && bmiVal === null;
 
-  const category = bmi
-    ? bmi < 18.5
-      ? { label: "Underweight", color: "text-blue-600 dark:text-blue-400" }
-      : bmi < 25
-        ? { label: "Normal weight", color: "text-green-600 dark:text-green-400" }
-        : bmi < 30
-          ? { label: "Overweight", color: "text-yellow-600 dark:text-yellow-400" }
-          : { label: "Obese", color: "text-red-600 dark:text-red-400" }
-    : null;
+  const getCategory = () => {
+    if (!bmiVal) return null;
+    if (bmiVal < 18.5) return { label: bmi.underweightLabel || "Underweight", color: "text-blue-600 dark:text-blue-400" };
+    if (bmiVal < 25) return { label: bmi.normalLabel || "Normal", color: "text-green-600 dark:text-green-400" };
+    if (bmiVal < 30) return { label: bmi.overweightLabel || "Overweight", color: "text-yellow-600 dark:text-yellow-400" };
+    return { label: bmi.obeseLabel || "Obese", color: "text-red-600 dark:text-red-400" };
+  };
 
-  // BMI scale: 15 to 40 (range of 25)
+  const category = getCategory();
+
   const bmiMin = 15;
   const bmiMax = 40;
-  const markerPosition = bmi ? Math.min(Math.max(((bmi - bmiMin) / (bmiMax - bmiMin)) * 100, 0), 100) : 0;
+  const markerPosition = bmiVal ? Math.min(Math.max(((bmiVal - bmiMin) / (bmiMax - bmiMin)) * 100, 0), 100) : 0;
 
   return (
     <ToolLayout {...metadata} locale={locale as any} dict={dict}>
@@ -64,7 +63,7 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
               unit === "metric" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
             }`}
           >
-            Metric (kg/cm)
+            {bmi.metric || "Metric (kg/cm)"}
           </button>
           <button
             onClick={() => { setUnit("imperial"); setWeight(""); setHeight(""); }}
@@ -72,7 +71,7 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
               unit === "imperial" ? "bg-blue-600 text-white" : "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
             }`}
           >
-            Imperial (lb/in)
+            {bmi.imperial || "Imperial (lb/in)"}
           </button>
         </div>
       </div>
@@ -80,7 +79,7 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
       <div className="mt-6 flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
           <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Weight ({unit === "metric" ? "kg" : "lb"}):
+            {bmi.weight || "Weight"} ({unit === "metric" ? "kg" : "lb"}):
           </label>
           <input
             type="number"
@@ -93,7 +92,7 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
         </div>
         <div className="flex items-center gap-2">
           <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Height ({unit === "metric" ? "cm" : "in"}):
+            {bmi.height || "Height"} ({unit === "metric" ? "cm" : "in"}):
           </label>
           <input
             type="number"
@@ -108,13 +107,13 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
 
       {hasError && (
         <p className="mt-4 text-sm text-red-500 dark:text-red-400">
-          Please enter valid positive numbers for weight and height.
+          {bmi.error || "Please enter valid positive numbers for weight and height."}
         </p>
       )}
 
-      {bmi !== null && category && (
+      {bmiVal !== null && category && (
         <div className="mt-8 text-center">
-          <div className="text-6xl font-bold">{bmi}</div>
+          <div className="text-6xl font-bold">{bmiVal}</div>
           <div className={`mt-2 text-xl font-medium ${category.color}`}>
             {category.label}
           </div>
@@ -131,10 +130,10 @@ export default function BmiCalculatorClient({ locale = "en", dict }: { locale?: 
             />
           </div>
           <div className="mx-auto mt-1 flex max-w-md justify-between text-xs text-zinc-400">
-            <span>Underweight</span>
-            <span>Normal</span>
-            <span>Overweight</span>
-            <span>Obese</span>
+            <span>{bmi.underweightLabel || "Underweight"}</span>
+            <span>{bmi.normalLabel || "Normal"}</span>
+            <span>{bmi.overweightLabel || "Overweight"}</span>
+            <span>{bmi.obeseLabel || "Obese"}</span>
           </div>
         </div>
       )}

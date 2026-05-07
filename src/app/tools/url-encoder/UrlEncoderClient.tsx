@@ -23,6 +23,7 @@ export default function UrlEncoderClient({ locale = "en", dict }: { locale?: str
   const [encoded, setEncoded] = useState("");
   const [decoded, setDecoded] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const ue = (dict as any)?.urlEncoder || {};
 
   function handleEncode() {
     if (input.trim()) {
@@ -53,7 +54,7 @@ export default function UrlEncoderClient({ locale = "en", dict }: { locale?: str
           setDecoded("");
           setError(null);
         }}
-        placeholder="Enter URL or text to encode/decode..."
+        placeholder={ue.placeholder || "Enter URL or text to encode/decode..."}
         className="w-full rounded-lg border border-zinc-300 bg-white p-4 font-mono text-sm dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         rows={6}
       />
@@ -63,20 +64,20 @@ export default function UrlEncoderClient({ locale = "en", dict }: { locale?: str
           disabled={!input.trim()}
           className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
-          Encode
+          {ue.encode || "Encode"}
         </button>
         <button
           onClick={handleDecode}
           disabled={!input.trim()}
           className="rounded-lg bg-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-300 disabled:opacity-50 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
         >
-          Decode
+          {ue.decode || "Decode"}
         </button>
       </div>
 
       {error && (
         <div className="mt-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950 dark:text-red-400">
-          Error: {error}
+          {ue.error || "Error"}: {error}
         </div>
       )}
 
@@ -84,7 +85,7 @@ export default function UrlEncoderClient({ locale = "en", dict }: { locale?: str
         {encoded && (
           <div>
             <label className="mb-1 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              Encoded
+              {ue.encoded || "Encoded"}
             </label>
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 font-mono text-sm break-all dark:border-zinc-800 dark:bg-zinc-900">
               {encoded}
@@ -94,7 +95,7 @@ export default function UrlEncoderClient({ locale = "en", dict }: { locale?: str
         {decoded && (
           <div>
             <label className="mb-1 block text-sm font-medium text-zinc-500 dark:text-zinc-400">
-              Decoded
+              {ue.decoded || "Decoded"}
             </label>
             <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 font-mono text-sm break-all dark:border-zinc-800 dark:bg-zinc-900">
               {decoded}
