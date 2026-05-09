@@ -48,7 +48,7 @@ export default function HomeClient({
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6" dir={dir}>
       {/* Hero */}
-      <section className="mb-12 text-center">
+      <section className="mb-8 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
           {home.heroTitle || "Free Online Tools"}
         </h1>
@@ -105,6 +105,22 @@ export default function HomeClient({
           )}
         </div>
       </section>
+
+      {/* AI ToolBox Promo Banner */}
+      <a
+        href="https://ai.toolboxonline.club"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mb-12 flex cursor-pointer items-center justify-between rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-5 text-white shadow-lg transition-all hover:shadow-xl sm:px-10"
+      >
+        <div className="text-start">
+          <p className="text-lg font-bold sm:text-xl">✨ AI ToolBox — AI-Powered Photo & Document Tools</p>
+          <p className="mt-1 text-sm text-white/80">Background removal, avatar generation, photo restoration, PDF to Word — all in one place</p>
+        </div>
+        <span className="ml-4 shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm hover:bg-white/30">
+          Try Now →
+        </span>
+      </a>
 
       {/* Filtered Results */}
       {query ? (
