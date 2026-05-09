@@ -1,8 +1,5 @@
 import { notFound } from "next/navigation";
 import { isValidLocale, getDictionary } from "@/lib/i18n";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ToolLayout from "@/components/ToolLayout";
 
 export default async function AboutPage({
   params,
@@ -16,9 +13,7 @@ export default async function AboutPage({
   const about = (dict as any).about || {};
 
   return (
-    <>
-      <Header locale={locale} dict={dict} />
-      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
           {about.title || "About ToolBoxOnline"}
         </h1>
@@ -105,7 +100,5 @@ export default async function AboutPage({
           </ul>
         </section>
       </div>
-      <Footer locale={locale} dict={dict} />
-    </>
   );
 }

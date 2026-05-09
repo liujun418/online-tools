@@ -1,7 +1,5 @@
 import { notFound } from "next/navigation";
 import { isValidLocale, getDictionary } from "@/lib/i18n";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const LAST_UPDATED = "May 9, 2026";
 
@@ -166,9 +164,7 @@ export default async function PrivacyPage({
   const c = content[locale] || content.en;
 
   return (
-    <>
-      <Header locale={locale} dict={dict} />
-      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
           {privacy.title || "Privacy Policy"}
         </h1>
@@ -187,7 +183,5 @@ export default async function PrivacyPage({
           ))}
         </div>
       </div>
-      <Footer locale={locale} dict={dict} />
-    </>
   );
 }
