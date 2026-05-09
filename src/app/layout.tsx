@@ -3,8 +3,6 @@ import Script from "next/script";
 import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
-import KofiWidget from "@/components/KofiWidget";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,33 +78,7 @@ export default function RootLayout({
           `,
         }} />
       </head>
-      <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-        <Script
-          id="adsense-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  window.adsbygoogle = window.adsbygoogle || [];
-                  window.adsbygoogle.push({});
-                } catch(e) {}
-              })();
-            `,
-          }}
-        />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9954245854077897"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        {children}
-        <KofiWidget />
-        <Suspense fallback={null}>
-          <GoogleAnalytics />
-        </Suspense>
-      </body>
+      {children}
     </html>
   );
 }
