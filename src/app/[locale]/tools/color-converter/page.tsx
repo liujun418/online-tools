@@ -4,7 +4,7 @@ import ColorConverterClient from "@/app/tools/color-converter/ColorConverterClie
 import { tools } from "@/lib/tools";
 import { isValidLocale, getDictionary, Locale } from "@/lib/i18n";
 
-const SITE_URL = "https://www.toolboxonline.club";
+const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 const OG_IMAGE = `${SITE_URL}/og-default.png`;
 const TOOL_ID = "color-converter";

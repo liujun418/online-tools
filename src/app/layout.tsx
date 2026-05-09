@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://www.toolboxonline.club";
+const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 
 export const metadata: Metadata = {

@@ -4,7 +4,7 @@ import ImageToBase64Client from "@/app/tools/image-to-base64/ImageToBase64Client
 import { tools } from "@/lib/tools";
 import { isValidLocale, getDictionary, Locale } from "@/lib/i18n";
 
-const SITE_URL = "https://www.toolboxonline.club";
+const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 const OG_IMAGE = `${SITE_URL}/og-default.png`;
 const TOOL_ID = "image-to-base64";

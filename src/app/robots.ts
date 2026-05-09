@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.toolboxonline.club/sitemap.xml",
+    sitemap: "https://toolboxonline.club/sitemap.xml",
   };
 }

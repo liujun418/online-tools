@@ -7,10 +7,10 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 export function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
-  // 301 redirect: non-www → www (SEO-friendly)
-  if (host === "toolboxonline.club") {
+  // 301 redirect: www → naked domain (preferred)
+  if (host === "www.toolboxonline.club") {
     const url = request.nextUrl.clone();
-    url.host = "www.toolboxonline.club";
+    url.host = "toolboxonline.club";
     url.protocol = "https";
     return NextResponse.redirect(url, 301);
   }

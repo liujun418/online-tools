@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { tools } from "@/lib/tools";
 
-const SITE_URL = "https://www.toolboxonline.club";
+const SITE_URL = "https://toolboxonline.club";
 const LOCALES = ["en", "es", "ar"];
 
 const categoryPriority: Record<string, number> = {

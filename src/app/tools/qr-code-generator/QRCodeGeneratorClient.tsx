@@ -25,7 +25,7 @@ export default function QRCodeGeneratorClient({ locale = "en", dict, titleOverri
   titleOverride?: string;
   descriptionOverride?: string;
 } = {}) {
-  const [text, setText] = useState("https://www.toolboxonline.club");
+  const [text, setText] = useState("https://toolboxonline.club");
   const [size, setSize] = useState(256);
   const [correction, setCorrection] = useState("M");
   const [fgColor, setFgColor] = useState("#000000");

@@ -26,7 +26,7 @@ const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
 });
 
-const SITE_URL = "https://www.toolboxonline.club";
+const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 
 export async function generateStaticParams() {

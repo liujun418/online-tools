@@ -8,7 +8,7 @@ import { ADSENSE_CONFIG } from "@/lib/adsense";
 import { tools } from "@/lib/tools";
 import { Locale, localeDir } from "@/lib/i18n";
 
-const SITE_URL = "https://www.toolboxonline.club";
+const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 const OG_IMAGE = `${SITE_URL}/og-default.png`;
 
