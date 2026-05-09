@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+import { redirect } from "next/navigation";
 import "@/app/globals.css";
 
 const geistSans = Geist({

@@ -1,7 +1,5 @@
-import HomeClient from "./[locale]/HomeClient";
-import { getDictionary } from "@/lib/i18n";
+import { redirect } from "next/navigation";
 
-export default async function RootPage() {
-  const dict = await getDictionary("en");
-  return <HomeClient locale="en" dict={dict} />;
+export default function RootPage() {
+  redirect("/en");
 }
