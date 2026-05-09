@@ -27,6 +27,15 @@ export default function Footer({
             &copy; {new Date().getFullYear()} {f.copyright}
           </p>
           <div className="flex gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+            <a
+              href="https://ai.toolboxonline.club"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-900 dark:hover:text-white"
+              title="AI-powered tools: avatar generator, photo restorer, PDF converter"
+            >
+              AI Tools ✨
+            </a>
             <Link href={`/${locale}/privacy`} className="hover:text-zinc-900 dark:hover:text-white">
               {f.privacy}
             </Link>

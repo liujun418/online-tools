@@ -95,6 +95,15 @@ export default function Header({
             {nav.converters}
           </Link>
           <div className="ms-1 flex items-center gap-3 border-s border-zinc-200 ps-3 dark:border-zinc-800">
+            <a
+              href="https://ai.toolboxonline.club"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
+              title="AI-powered tools: avatar generator, photo restorer, and more"
+            >
+              AI Tools ✨
+            </a>
             <SuggestToolButton locale={locale} dict={dict} />
             <ThemeToggle locale={locale} dict={dict} />
           </div>

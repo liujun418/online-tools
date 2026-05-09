@@ -62,5 +62,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // AI ToolBox sibling site pages
+  const aiToolBase = "https://ai.toolboxonline.club";
+  const aiToolPages = [
+    { path: "", priority: 0.9 },
+    { path: "/about", priority: 0.6 },
+    { path: "/contact", priority: 0.5 },
+    { path: "/pricing", priority: 0.8 },
+    { path: "/tools/background-remover", priority: 0.8 },
+    { path: "/tools/avatar-generator", priority: 0.8 },
+    { path: "/tools/watermark-remover", priority: 0.7 },
+    { path: "/tools/photo-restorer", priority: 0.7 },
+    { path: "/tools/pdf-to-word", priority: 0.7 },
+  ];
+  for (const page of aiToolPages) {
+    entries.push({
+      url: `${aiToolBase}${page.path}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: page.priority,
+    });
+  }
+
   return entries;
 }
