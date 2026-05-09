@@ -477,15 +477,13 @@ export const tools: Tool[] = [
         { question: "¿Esta herramienta preserva el orden original de las líneas?", answer: "Sí. Las líneas duplicadas se eliminan manteniendo la primera aparición de cada línea en su posición original. Esto preserva el orden lógico de tu lista o texto." },
         { question: "¿Qué cuenta como una línea duplicada?", answer: "Una línea duplicada es una coincidencia exacta — incluyendo el mismo texto, espaciado y capitalización. Las líneas que difieren aunque sea por un solo carácter o espacio se tratan como únicas." },
         { question: "¿Puedo usar esto para limpiar listas de correo?", answer: "Sí. Este es uno de los usos más comunes. Pega tu lista de correos, elimina duplicados y obtén una lista limpia lista para tu campaña de correo." },
-        { question: "¿Hay un límite en cuántas líneas puedo procesar?", answer: "No hay límite estricto. La herramienta puede manejar miles de líneas de manera eficiente. Los archivos muy grandes pueden tardar unos segundos en procesarse." },
-        { question: "¿Esta herramienta preserva el orden original de las líneas?", answer: "Sí, el proceso de desduplicación preserva el orden original. Mantiene la primera aparición de cada línea y elimina las duplicadas posteriores, manteniendo la secuencia de tus datos." },
+        { question: "¿Hay un límite en cuántas líneas puedo procesar?", answer: "No hay límite estricto. La herramienta puede manejar miles de líneas de manera eficiente. Los archivos muy grandes pueden tardar unos segundos en procesarse." }
       ],
       ar: [
         { question: "هل تحافظ هذه الأداة على الترتيب الأصلي للأسطر؟", answer: "نعم. تُزال الأسطر المكررة مع الحفاظ على التكرار الأول لكل سطر في موقعه الأصلي. هذا يحافظ على الترتيب المنطقي لقائمتك أو نصك." },
         { question: "ما الذي يُعتبر سطراً مكرراً؟", answer: "السطر المكرر هو تطابق تام -- بما في ذلك نفس النص والمسافات والأحرف الكبيرة والصغيرة. الأسطر التي تختلف ولو بحرف واحد أو مسافة تُعامل على أنها فريدة." },
         { question: "هل يمكنني استخدام هذا لتنظيف قوائم البريد الإلكتروني؟", answer: "نعم. هذا من أكثر الاستخدامات شيوعاً. الصق قائمة بريدك الإلكتروني وأزل التكرار واحصل على قائمة نظيفة جاهزة لحملتك البريدية." },
-        { question: "هل هناك حد لعدد الأسطر التي يمكنني معالجتها؟", answer: "لا يوجد حد صارم. يمكن للأداة التعامل مع آلاف الأسطر بكفاءة. الملفات الكبيرة جداً قد تستغرق بضع ثوانٍ للمعالجة." },
-        { question: "هل تحافظ هذه الأداة على الترتيب الأصلي للأسطر؟", answer: "نعم تحافظ عملية إزالة التكرار على الترتيب الأصلي. تحتفظ بالتكرار الأول لكل سطر وتزيل التكرارات اللاحقة مع الحفاظ على تسلسل بياناتك." },
+        { question: "هل هناك حد لعدد الأسطر التي يمكنني معالجتها؟", answer: "لا يوجد حد صارم. يمكن للأداة التعامل مع آلاف الأسطر بكفاءة. الملفات الكبيرة جداً قد تستغرق بضع ثوانٍ للمعالجة." }
       ],
     },
   },
@@ -1215,7 +1213,6 @@ export const tools: Tool[] = [
       { question: "Why do developers use Unix timestamps?", answer: "Unix timestamps provide a universal, timezone-independent way to represent time. They're easy to store in databases, compare mathematically, and are supported by virtually every programming language." },
       { question: "What is the Year 2038 problem?", answer: "The Year 2038 problem occurs when 32-bit signed integers storing Unix timestamps overflow on January 19, 2038. Modern 64-bit systems don't have this issue and can represent timestamps for billions of years." },
       { question: "Does this tool handle timezones?", answer: "Yes. You can convert timestamps to any timezone. The tool shows both UTC and your local time equivalents for clarity." }
-,      { question: "What is a Unix timestamp?", answer: "A Unix timestamp is the number of seconds that have elapsed since January 1, 1970 (UTC), known as the Unix epoch. It is widely used in computing systems for date and time calculations." }
     ],
     nameTranslations: {
       es: "Convertidor de Marca de Tiempo Unix",
@@ -1252,15 +1249,13 @@ export const tools: Tool[] = [
         { question: "¿Qué es una marca de tiempo Unix?", answer: "Una marca de tiempo Unix (también llamada tiempo epoch o tiempo POSIX) es el número de segundos que han transcurrido desde el 1 de enero de 1970 (UTC). Es la representación de tiempo estándar utilizada por la mayoría de sistemas operativos y lenguajes de programación." },
         { question: "¿Por qué usan los desarrolladores marcas de tiempo Unix?", answer: "Las marcas de tiempo Unix proporcionan una forma universal e independiente de zona horaria de representar el tiempo. Son fáciles de almacenar en bases de datos, comparar matemáticamente y son soportadas por prácticamente todos los lenguajes de programación." },
         { question: "¿Qué es el problema del año 2038?", answer: "El problema del año 2038 ocurre cuando los enteros con signo de 32 bits que almacenan marcas de tiempo Unix se desbordan el 19 de enero de 2038. Los sistemas modernos de 64 bits no tienen este problema y pueden representar marcas de tiempo durante miles de millones de años." },
-        { question: "¿Esta herramienta maneja zonas horarias?", answer: "Sí. Puedes convertir marcas de tiempo a cualquier zona horaria. La herramienta muestra equivalentes tanto en UTC como en tu hora local para mayor claridad." },
-        { question: "¿Qué es una marca de tiempo Unix?", answer: "Una marca de tiempo Unix es el número de segundos que han transcurrido desde el 1 de enero de 1970 (UTC), conocido como la época Unix. Se usa ampliamente en sistemas informáticos para cálculos de fecha y hora." },
+        { question: "¿Esta herramienta maneja zonas horarias?", answer: "Sí. Puedes convertir marcas de tiempo a cualquier zona horaria. La herramienta muestra equivalentes tanto en UTC como en tu hora local para mayor claridad." }
       ],
       ar: [
         { question: "ما هو طابع Unix الزمني؟", answer: "طابع Unix الزمني (يُسمى أيضاً وقت epoch أو وقت POSIX) هو عدد الثواني التي انقضت منذ 1 يناير 1970 (UTC). وهو تمثيل الوقت القياسي المستخدم من قبل معظم أنظمة التشغيل ولغات البرمجة." },
         { question: "لماذا يستخدم المطورون طوابع Unix الزمنية؟", answer: "توفر طوابع Unix الزمنية طريقة عالمية ومستقلة عن المنطقة الزمنية لتمثيل الوقت. من السهل تخزينها في قواعد البيانات ومقارنتها رياضياً وتدعمها几乎所有 لغات البرمجة." },
         { question: "ما هي مشكلة عام 2038؟", answer: "تحدث مشكلة عام 2038 عندما تتجاوز الأعداد الصحيحة ذات الإشارة 32 بت التي تخزّن طوابع Unix الزمنية الحد الأقصى في 19 يناير 2038. الأنظمة الحديثة 64 بت لا تعاني من هذه المشكلة ويمكنها تمثيل الطوابع الزمنية لمليارات السنين." },
-        { question: "هل تتعامل هذه الأداة مع المناطق الزمنية؟", answer: "نعم. يمكنك تحويل الطوابع الزمنية إلى أي منطقة زمنية. تُظهر الأداة مكافئات UTC ووقتك المحلي للوضوح." },
-        { question: "ما هو طابع Unix الزمني؟", answer: "طابع Unix الزمني هو عدد الثواني التي انقضت منذ 1 يناير 1970 (UTC) والمعروف بحقبة Unix. يُستخدم على نطاق واسع في أنظمة الحوسبة لحسابات التاريخ والوقت." },
+        { question: "هل تتعامل هذه الأداة مع المناطق الزمنية؟", answer: "نعم. يمكنك تحويل الطوابع الزمنية إلى أي منطقة زمنية. تُظهر الأداة مكافئات UTC ووقتك المحلي للوضوح." }
       ],
     },
   },
@@ -1552,15 +1547,13 @@ export const tools: Tool[] = [
         { question: "¿Qué es el IMC?", answer: "El IMC (Índice de Masa Corporal) es un valor numérico calculado a partir de tu peso y altura. Se utiliza como herramienta de detección para categorizar si una persona tiene bajo peso, peso normal, sobrepeso u obesidad según los rangos estándar establecidos por la Organización Mundial de la Salud (OMS)." },
         { question: "¿Cómo se calcula el IMC?", answer: "El IMC se calcula dividiendo tu peso en kilogramos por tu altura en metros al cuadrado (kg/m²). Para unidades imperiales, la fórmula es (peso en libras / (altura en pulgadas)²) × 703." },
         { question: "¿Cuál es un rango de IMC saludable?", answer: "Según las directrices de la OMS, un rango de IMC saludable para adultos es de 18.5 a 24.9. Por debajo de 18.5 se considera bajo peso, 25.0-29.9 sobrepeso y 30.0 o más obesidad." },
-        { question: "¿Es el IMC preciso para todos?", answer: "El IMC es un indicador general útil pero tiene limitaciones. No tiene en cuenta la masa muscular, la densidad ósea o la distribución de grasa. Los atletas con alta masa muscular pueden tener un IMC alto a pesar de estar sanos. Es mejor usarlo como uno de varios indicadores de salud." },
-        { question: "¿Cuál es un rango de IMC saludable?", answer: "Según las directrices de la OMS, un rango de IMC saludable para adultos es de 18.5 a 24.9. Por debajo de 18.5 se considera bajo peso, 25-29.9 sobrepeso y 30 o más obesidad. El IMC es un indicador general y no tiene en cuenta la masa muscular." },
+        { question: "¿Es el IMC preciso para todos?", answer: "El IMC es un indicador general útil pero tiene limitaciones. No tiene en cuenta la masa muscular, la densidad ósea o la distribución de grasa. Los atletas con alta masa muscular pueden tener un IMC alto a pesar de estar sanos. Es mejor usarlo como uno de varios indicadores de salud." }
       ],
       ar: [
         { question: "ما هو مؤشر كتلة الجسم؟", answer: "مؤشر كتلة الجسم (BMI) هو قيمة رقمية تُحسب من وزنك وطولك. يُستخدم كأداة فحص لتصنيف ما إذا كان الشخص يعاني من نقص الوزن أو الوزن الطبيعي أو زيادة الوزن أو السمنة وفقاً للنطاقات القياسية التي وضعتها منظمة الصحة العالمية." },
         { question: "كيف يُحسب مؤشر كتلة الجسم؟", answer: "يُحسب مؤشر كتلة الجسم بقسمة وزنك بالكيلوجرام على طولك بالمتر مربع (كجم/م²). للوحدات الإمبراطورية، المعادلة هي (الوزن بالرطل / (الطول بالبوصة)²) × 703." },
         { question: "ما هو نطاق مؤشر كتلة الجسم الصحي؟", answer: "وفقاً لإرشادات منظمة الصحة العالمية، يتراوح نطاق مؤشر كتلة الجسم الصحي للبالغين بين 18.5 و 24.9. أقل من 18.5 يُعتبر نقصاً في الوزن، و25.0-29.9 زيادة في الوزن، و30.0 فأكثر سمنة." },
-        { question: "هل مؤشر كتلة الجسم دقيق للجميع؟", answer: "مؤشر كتلة الجسم مؤشر عام مفيد لكنه له قيود. لا يأخذ في الاعتبار الكتلة العضلية أو كثافة العظام أو توزيع الدهون. قد يكون لدى الرياضيين ذوي الكتلة العضلية العالية مؤشر مرتفع رغم كونهم أصحاء. من الأفضل استخدامه كأحد عدة مؤشرات صحية." },
-        { question: "ما هو نطاق مؤشر كتلة الجسم الصحي؟", answer: "وفقاً لإرشادات منظمة الصحة العالمية، يتراوح النطاق الصحي لمؤشر كتلة الجسم للبالغين بين 18.5 و 24.9. أقل من 18.5 نقص وزن، 25-29.9 زيادة وزن، و30 فأكثر سمنة. المؤشر عام ولا يراعي الكتلة العضلية." },
+        { question: "هل مؤشر كتلة الجسم دقيق للجميع؟", answer: "مؤشر كتلة الجسم مؤشر عام مفيد لكنه له قيود. لا يأخذ في الاعتبار الكتلة العضلية أو كثافة العظام أو توزيع الدهون. قد يكون لدى الرياضيين ذوي الكتلة العضلية العالية مؤشر مرتفع رغم كونهم أصحاء. من الأفضل استخدامه كأحد عدة مؤشرات صحية." }
       ],
     },
   },
@@ -2146,15 +2139,13 @@ export const tools: Tool[] = [
         { question: "¿Qué es la codificación de imágenes en Base64?", answer: "La codificación de imágenes en Base64 convierte un archivo de imagen en una cadena de texto que se puede incrustar directamente en HTML, CSS o JavaScript. Esto elimina la necesidad de archivos de imagen separados y solicitudes HTTP." },
         { question: "¿Qué formatos de imagen son compatibles?", answer: "Esta herramienta admite formatos PNG, JPG/JPEG, GIF, SVG y WebP. La salida conserva el tipo MIME original en el prefijo del URI de datos." },
         { question: "¿Cuándo debo incrustar imágenes como Base64?", answer: "La incrustación en Base64 es ideal para imágenes pequeñas como iconos, logotipos y elementos de interfaz. Reduce las solicitudes HTTP y acelera la carga de la página. Sin embargo, las imágenes grandes deben permanecer como archivos separados para un mejor almacenamiento en caché." },
-        { question: "¿Cómo afecta Base64 al tamaño del archivo?", answer: "La codificación Base64 aumenta el tamaño del archivo aproximadamente un 33% en comparación con el binario original. Esta compensación suele valer la pena para imágenes pequeñas ya que elimina una solicitud HTTP separada." },
-        { question: "¿Qué formatos de imagen son compatibles?", answer: "Nuestro convertidor de Imagen a Base64 admite formatos PNG, JPEG, GIF, SVG, WebP y BMP. Sube cualquier archivo de imagen o pega un URI de datos para obtener la cadena codificada en Base64 al instante." },
+        { question: "¿Cómo afecta Base64 al tamaño del archivo?", answer: "La codificación Base64 aumenta el tamaño del archivo aproximadamente un 33% en comparación con el binario original. Esta compensación suele valer la pena para imágenes pequeñas ya que elimina una solicitud HTTP separada." }
       ],
       ar: [
         { question: "ما هو تشفير الصور بـ Base64؟", answer: "تشفير الصور بـ Base64 يحوّل ملف صورة إلى سلسلة نصية يمكن تضمينها مباشرة في HTML أو CSS أو JavaScript. هذا يلغي الحاجة لملفات صور منفصلة وطلبات HTTP." },
         { question: "ما صيغ الصور المدعومة؟", answer: "تدعم هذه الأداة صيغ PNG و JPG/JPEG و GIF و SVG و WebP. المخرجات تحافظ على نوع MIME الأصلي في بادئة URI البيانات." },
         { question: "متى يجب تضمين الصور كـ Base64؟", answer: "التضمين بـ Base64 مثالي للصور الصغيرة مثل الأيقونات والشعارات وعناصر الواجهة. يقلل طلبات HTTP ويسرع تحميل الصفحة. ومع ذلك، يجب أن تبقى الصور الكبيرة كملفات منفصلة لتحسين التخزين المؤقت." },
-        { question: "كيف يؤثر Base64 على حجم الملف؟", answer: "يزيد تشفير Base64 حجم الملف بنحو 33% مقارنة بالثنائي الأصلي. هذه المقايضة عادة ما تستحق ذلك للصور الصغيرة لأنها تلغي طلب HTTP منفصل." },
-        { question: "ما صيغ الصور المدعومة؟", answer: "يدعم محول الصورة إلى Base64 لدينا صيغ PNG و JPEG و GIF و SVG و WebP و BMP. ارفع أي ملف صورة أو الصق URI بيانات للحصول على السلسلة المشفرة بـ Base64 فوراً." },
+        { question: "كيف يؤثر Base64 على حجم الملف؟", answer: "يزيد تشفير Base64 حجم الملف بنحو 33% مقارنة بالثنائي الأصلي. هذه المقايضة عادة ما تستحق ذلك للصور الصغيرة لأنها تلغي طلب HTTP منفصل." }
       ],
     },
     howToUse: [
@@ -2168,7 +2159,7 @@ export const tools: Tool[] = [
       { question: "What image formats are supported?", answer: "This tool supports PNG, JPG/JPEG, GIF, SVG, and WebP formats. The output preserves the original MIME type in the data URI prefix." },
       { question: "When should I embed images as Base64?", answer: "Base64 embedding is ideal for small images like icons, logos, and UI elements. It reduces HTTP requests and speeds up page loading. However, large images should remain as separate files for better caching." },
       { question: "How does Base64 affect file size?", answer: "Base64 encoding increases file size by approximately 33% compared to the original binary. This trade-off is usually worth it for small images since it eliminates a separate HTTP request." }
-,      { question: "What image formats are supported?", answer: "Our Image to Base64 converter supports PNG, JPEG, GIF, SVG, WebP, and BMP formats. Upload any image file or paste a data URI to get the Base64 encoded string instantly." }     ]
+    ],
   },
   {
     id: "loan-calculator",
@@ -2714,7 +2705,7 @@ export const tools: Tool[] = [
       { question: "How accurate is the due date?", answer: "Only about 5% of babies are born on their exact due date. Most deliveries occur between 38-42 weeks. The due date is an estimate that helps track pregnancy progress and plan care." },
       { question: "What are the three trimesters?", answer: "First trimester: weeks 1-12 (organ development). Second trimester: weeks 13-26 (growth and movement). Third trimester: weeks 27-40 (final growth and preparation for birth)." },
       { question: "Can I use this if I know my conception date instead?", answer: "Yes. If you know your conception date, add 266 days (38 weeks) instead of 280 days. The LMP method is more commonly used because conception dates are harder to pinpoint." }
-,      { question: "How is the due date calculated?", answer: "Our pregnancy calculator uses Naegele's rule: adds 280 days (40 weeks) to the first day of your last menstrual period. This gives an estimated due date, though actual delivery can vary by a few weeks." }     ],
+    ],
     nameTranslations: {
       es: "Calculadora de Fecha de Embarazo",
       ar: "حاسبة موعد الحمل",
@@ -2750,15 +2741,13 @@ export const tools: Tool[] = [
         { question: "¿Cómo se calcula la fecha de parto?", answer: "La fecha de parto se calcula usando la regla de Naegele: suma 280 días (40 semanas) al primer día de tu último período menstrual. Este es el método estándar utilizado por profesionales de salud en todo el mundo." },
         { question: "¿Qué tan precisa es la fecha de parto?", answer: "Solo alrededor del 5% de los bebés nacen en su fecha de parto exacta. La mayoría de partos ocurren entre las 38-42 semanas. La fecha de parto es una estimación que ayuda a seguir el progreso del embarazo y planificar la atención." },
         { question: "¿Cuáles son los tres trimestres?", answer: "Primer trimestre: semanas 1-12 (desarrollo de órganos). Segundo trimestre: semanas 13-26 (crecimiento y movimiento). Tercer trimestre: semanas 27-40 (crecimiento final y preparación para el parto)." },
-        { question: "¿Puedo usar esto si conozco mi fecha de concepción?", answer: "Sí. Si conoces tu fecha de concepción, suma 266 días (38 semanas) en lugar de 280 días. El método LMP se usa más comúnmente porque las fechas de concepción son más difíciles de precisar." },
-        { question: "¿Cómo se calcula la fecha de parto?", answer: "Nuestra calculadora de embarazo usa la regla de Naegele: suma 280 días (40 semanas) al primer día de tu último período menstrual. Esto da una fecha de parto estimada, aunque el parto real puede variar unas semanas." },
+        { question: "¿Puedo usar esto si conozco mi fecha de concepción?", answer: "Sí. Si conoces tu fecha de concepción, suma 266 días (38 semanas) en lugar de 280 días. El método LMP se usa más comúnmente porque las fechas de concepción son más difíciles de precisar." }
       ],
       ar: [
         { question: "كيف يُحسب موعد الولادة؟", answer: "يُحسب موعد الولادة باستخدام قاعدة Naegele: إضافة 280 يوماً (40 أسبوعاً) إلى اليوم الأول من آخر دورة شهرية. هذه هي الطريقة القياسية المستخدمة من قبل مقدمي الرعاية الصحية حول العالم." },
         { question: "ما مدى دقة موعد الولادة؟", answer: "حوالي 5٪ فقط من الأطفال يولدون في موعد ولادتهم بالضبط. تحدث معظم الولادات بين الأسبوعين 38-42. موعد الولادة تقدير يساعد في تتبع تقدم الحمل وتخطيط الرعاية." },
         { question: "ما هي الأشهر الثلاثة؟", answer: "الأول: الأسابيع 1-12 (تطور الأعضاء). الثاني: الأسابيع 13-26 (النمو والحركة). الثالث: الأسابيع 27-40 (النمو النهائي والاستعداد للولادة)." },
-        { question: "هل يمكنني استخدام هذا إذا كنت أعرف تاريخ الحمل؟", answer: "نعم. إذا كنتِ تعرفين تاريخ الحمل فأضيفي 266 يوماً (38 أسبوعاً) بدلاً من 280 يوماً. تُستخدم طريقة آخر دورة شهرية بشكل أكثر شيوعاً لأن تواريخ الحمل أصعب في التحديد." },
-        { question: "كيف يُحسب موعد الولادة؟", answer: "تستخدم حاسبة الحمل لدينا قاعدة Naegele: تضيف 280 يوماً (40 أسبوعاً) إلى اليوم الأول من آخر دورة شهرية. هذا يعطي موعد ولادة تقديري رغم أن الولادة الفعلية قد تختلف ببضعة أسابيع." },
+        { question: "هل يمكنني استخدام هذا إذا كنت أعرف تاريخ الحمل؟", answer: "نعم. إذا كنتِ تعرفين تاريخ الحمل فأضيفي 266 يوماً (38 أسبوعاً) بدلاً من 280 يوماً. تُستخدم طريقة آخر دورة شهرية بشكل أكثر شيوعاً لأن تواريخ الحمل أصعب في التحديد." }
       ],
     },
   },
@@ -3092,7 +3081,7 @@ export const tools: Tool[] = [
       { question: "How many hashtags should I use on TikTok?", answer: "TikTok recommends 3-5 hashtags per video. Use a mix of trending hashtags and niche-specific tags to maximize discoverability without looking spammy." },
       { question: "How does this hashtag generator work?", answer: "The generator analyzes your input keywords and suggests relevant hashtags based on topic matching, trending patterns, and common hashtag combinations used in your niche." },
       { question: "Can I use the same hashtags for every post?", answer: "It's better to vary your hashtags between posts. Instagram may flag accounts that use identical hashtag sets repeatedly as spam. Rotate between relevant hashtag groups for best results." }
-,      { question: "How many hashtags should I use on Instagram?", answer: "Instagram allows up to 30 hashtags per post. Most experts recommend using 9-15 relevant hashtags for optimal engagement. Our generator provides a mix of popular and niche hashtags." }     ],
+    ],
     nameTranslations: {
       es: "Generador de Hashtags",
       ar: "مولد الهاشتاقات",
@@ -3128,15 +3117,13 @@ export const tools: Tool[] = [
         { question: "¿Cuántos hashtags debo usar en Instagram?", answer: "Instagram permite hasta 30 hashtags por publicación. Las investigaciones sugieren que 15-20 hashtags bien elegidos tienen mejor rendimiento. Usa una mezcla de hashtags populares, de nicho y de marca para un alcance óptimo." },
         { question: "¿Cuántos hashtags debo usar en TikTok?", answer: "TikTok recomienda 3-5 hashtags por video. Usa una mezcla de hashtags en tendencia y etiquetas específicas de nicho para maximizar la descubribilidad sin parecer spam." },
         { question: "¿Cómo funciona este generador de hashtags?", answer: "El generador analiza tus palabras clave de entrada y sugiere hashtags relevantes basados en coincidencia de temas, patrones en tendencia y combinaciones comunes de hashtags usadas en tu nicho." },
-        { question: "¿Puedo usar los mismos hashtags para cada publicación?", answer: "Es mejor variar tus hashtags entre publicaciones. Instagram puede marcar cuentas que usan conjuntos idénticos de hashtags repetidamente como spam. Rota entre grupos de hashtags relevantes para mejores resultados." },
-        { question: "¿Cuántos hashtags debo usar en Instagram?", answer: "Instagram permite hasta 30 hashtags por publicación. La mayoría de expertos recomienda usar 9-15 hashtags relevantes para un engagement óptimo. Nuestro generador proporciona una mezcla de hashtags populares y de nicho." },
+        { question: "¿Puedo usar los mismos hashtags para cada publicación?", answer: "Es mejor variar tus hashtags entre publicaciones. Instagram puede marcar cuentas que usan conjuntos idénticos de hashtags repetidamente como spam. Rota entre grupos de hashtags relevantes para mejores resultados." }
       ],
       ar: [
         { question: "كم هاشتاج يجب أن أستخدم على Instagram؟", answer: "يسمح Instagram بما يصل إلى 30 هاشتاج لكل منشور. تشير الأبحاث إلى أن 15-20 هاشتاج مختارة بعناية تحقق أفضل أداء. استخدم مزيجاً من الهاشتاقات الشائعة والمتخصصة والعلامة التجارية لأفضل وصول." },
         { question: "كم هاشتاج يجب أن أستخدم على TikTok؟", answer: "يوصي TikTok بـ 3-5 هاشتاج لكل فيديو. استخدم مزيجاً من الهاشتاقات الرائجة والعلامات المتخصصة لزيادة الاكتشاف دون أن تبدو كمحتوى مزعج." },
         { question: "كيف يعمل مولد الهاشتاقات هذا؟", answer: "يحلل المولد كلماتك المفتاحية المقترحة ويقترح هاشتاقات ذات صلة بناءً على تطابق الموضوع وأنماط الرواج وتركيبات الهاشتاقات الشائعة المستخدمة في مجالك." },
-        { question: "هل يمكنني استخدام نفس الهاشتاقات لكل منشور؟", answer: "من الأفضل تنويع هاشتاقاتك بين المنشورات. قد يُعلّم Instagram الحسابات التي تستخدم مجموعات هاشتاقات متطابقة بشكل متكرر كمحتوى مزعج. تناوب بين مجموعات الهاشتاقات ذات الصلة لأفضل النتائج." },
-        { question: "كم هاشتاج يجب أن أستخدم على Instagram؟", answer: "يسمح Instagram بما يصل إلى 30 هاشتاج لكل منشور. يوصي معظم الخبراء باستخدام 9-15 هاشتاج ذا صلة لأفضل تفاعل. يوفر مولدنا مزيجاً من الهاشتاقات الشائعة والمتخصصة." },
+        { question: "هل يمكنني استخدام نفس الهاشتاقات لكل منشور؟", answer: "من الأفضل تنويع هاشتاقاتك بين المنشورات. قد يُعلّم Instagram الحسابات التي تستخدم مجموعات هاشتاقات متطابقة بشكل متكرر كمحتوى مزعج. تناوب بين مجموعات الهاشتاقات ذات الصلة لأفضل النتائج." }
       ],
     },
   },
@@ -3168,7 +3155,7 @@ export const tools: Tool[] = [
       { question: "What makes a good YouTube thumbnail?", answer: "Good thumbnails use high-contrast colors, readable text (large fonts), expressive faces, and clear visual hierarchy. The thumbnail should be understandable even at small sizes on mobile devices." },
       { question: "Can I change a thumbnail after uploading a video?", answer: "Yes. You can change your YouTube thumbnail at any time by going to YouTube Studio, selecting the video, clicking 'Edit', and uploading a new thumbnail image." },
       { question: "Do thumbnails affect video performance?", answer: "Yes. Thumbnails significantly impact click-through rate (CTR), which is one of the most important ranking factors on YouTube. A compelling thumbnail can dramatically increase views." }
-,      { question: "What is the ideal YouTube thumbnail size?", answer: "YouTube recommends a thumbnail resolution of 1280x720 pixels with a minimum width of 640 pixels. The aspect ratio should be 16:9. Our tool helps you verify your thumbnail meets these specifications." }     ],
+    ],
     nameTranslations: {
       es: "Herramienta de Tamaño de Miniatura de YouTube",
       ar: "أداة حجم صورة YouTube المصغرة",
@@ -3204,15 +3191,13 @@ export const tools: Tool[] = [
         { question: "¿Cuál es el tamaño ideal de miniatura de YouTube?", answer: "El tamaño recomendado de miniatura de YouTube es 1280 × 720 píxeles (relación de aspecto 16:9), con un ancho mínimo de 640 píxeles. El archivo debe ser menor de 2MB y en formato JPG, PNG, GIF o BMP." },
         { question: "¿Qué hace una buena miniatura de YouTube?", answer: "Las buenas miniaturas usan colores de alto contraste, texto legible (fuentes grandes), rostros expresivos y jerarquía visual clara. La miniatura debe ser comprensible incluso en tamaños pequeños en dispositivos móviles." },
         { question: "¿Puedo cambiar una miniatura después de subir un video?", answer: "Sí. Puedes cambiar tu miniatura de YouTube en cualquier momento yendo a YouTube Studio, seleccionando el video, haciendo clic en 'Editar' y subiendo una nueva imagen de miniatura." },
-        { question: "¿Las miniaturas afectan el rendimiento del video?", answer: "Sí. Las miniaturas impactan significativamente la tasa de clics (CTR), que es uno de los factores de clasificación más importantes en YouTube. Una miniatura atractiva puede aumentar dramáticamente las vistas." },
-        { question: "¿Cuál es el tamaño ideal de miniatura de YouTube?", answer: "YouTube recomienda una resolución de miniatura de 1280x720 píxeles con un ancho mínimo de 640 píxeles. La relación de aspecto debe ser 16:9. Nuestra herramienta te ayuda a verificar que tu miniatura cumpla con estas especificaciones." },
+        { question: "¿Las miniaturas afectan el rendimiento del video?", answer: "Sí. Las miniaturas impactan significativamente la tasa de clics (CTR), que es uno de los factores de clasificación más importantes en YouTube. Una miniatura atractiva puede aumentar dramáticamente las vistas." }
       ],
       ar: [
         { question: "ما هو الحجم المثالي للصورة المصغرة لـ YouTube؟", answer: "الحجم الموصى به للصورة المصغرة لـ YouTube هو 1280 × 720 بكسل (نسبة عرض إلى ارتفاع 16:9) بعرض أدنى 640 بكسل. يجب أن يكون حجم الملف أقل من 2 ميجابايت وبصيغة JPG أو PNG أو GIF أو BMP." },
         { question: "ما الذي يجعل الصورة المصغرة جيدة لـ YouTube؟", answer: "تستخدم الصور المصغرة الجيدة ألواناً عالية التباين ونصاً قابلاً للقراءة (خطوط كبيرة) ووجوهاً معبرة وتسلسلاً هرمياً بصرياً واضحاً. يجب أن تكون الصورة المصغرة مفهومة حتى بالأحجام الصغيرة على الأجهزة المحمولة." },
         { question: "هل يمكنني تغيير صورة مصغرة بعد رفع فيديو؟", answer: "نعم. يمكنك تغيير صورتك المصغرة لـ YouTube في أي وقت بالذهاب إلى YouTube Studio واختيار الفيديو والنقر على 'تحرير' ورفع صورة مصغرة جديدة." },
-        { question: "هل تؤثر الصور المصغرة على أداء الفيديو؟", answer: "نعم. تؤثر الصور المصغرة بشكل كبير على معدل النقر إلى الظهور (CTR) وهو من أهم عوامل الترتيب على YouTube. يمكن للصورة المصغرة الجذابة أن تزيد المشاهدات بشكل كبير." },
-        { question: "ما هو الحجم المثالي للصورة المصغرة لـ YouTube؟", answer: "يوصي YouTube بدقة صورة مصغرة 1280x720 بكسل بعرض أدنى 640 بكسل. يجب أن تكون نسبة العرض إلى الارتفاع 16:9. تساعدك أداتنا على التحقق من أن صورتك المصغرة تلبي هذه المواصفات." },
+        { question: "هل تؤثر الصور المصغرة على أداء الفيديو؟", answer: "نعم. تؤثر الصور المصغرة بشكل كبير على معدل النقر إلى الظهور (CTR) وهو من أهم عوامل الترتيب على YouTube. يمكن للصورة المصغرة الجذابة أن تزيد المشاهدات بشكل كبير." }
       ],
     },
   },
@@ -3319,7 +3304,7 @@ export const tools: Tool[] = [
       { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure due to collision vulnerabilities discovered in 2004. It should not be used for password hashing or security-critical applications. Use SHA-256 instead for security purposes." },
       { question: "What is MD5 still used for?", answer: "MD5 is still useful for non-security purposes like file checksums, detecting accidental data corruption, and legacy system compatibility where MD5 hashes are already in use." },
       { question: "Can I use MD5 for password storage?", answer: "No. MD5 should never be used for password storage. Use bcrypt, Argon2, or PBKDF2 instead. MD5 is too fast and vulnerable to rainbow table and brute force attacks." }
-,      { question: "Is MD5 still secure?", answer: "MD5 is no longer considered cryptographically secure and should not be used for security-sensitive applications. However, it is still widely used for checksums, file integrity verification, and non-cryptographic hashing." }     ],
+    ],
     nameTranslations: {
       es: "Generador de Hash MD5",
       ar: "مولد تجزئة MD5",
@@ -3355,15 +3340,13 @@ export const tools: Tool[] = [
         { question: "¿Qué es un hash MD5?", answer: "MD5 (Algoritmo de Resumen de Mensaje 5) produce un valor hash de 128 bits (32 caracteres hexadecimales) a partir de datos de entrada. Se usa comúnmente para verificación de integridad de archivos y checksums." },
         { question: "¿MD5 sigue siendo seguro?", answer: "MD5 ya no se considera criptográficamente seguro debido a vulnerabilidades de colisión descubiertas en 2004. No debe usarse para hashing de contraseñas ni aplicaciones críticas de seguridad. Usa SHA-256 en su lugar para fines de seguridad." },
         { question: "¿Para qué se sigue usando MD5?", answer: "MD5 sigue siendo útil para propósitos no relacionados con seguridad como checksums de archivos, detección de corrupción accidental de datos y compatibilidad con sistemas heredados donde ya se usan hashes MD5." },
-        { question: "¿Puedo usar MD5 para almacenamiento de contraseñas?", answer: "No. MD5 nunca debe usarse para almacenamiento de contraseñas. Usa bcrypt, Argon2 o PBKDF2 en su lugar. MD5 es demasiado rápido y vulnerable a ataques de tabla arcoíris y fuerza bruta." },
-        { question: "¿MD5 sigue siendo seguro?", answer: "MD5 ya no se considera criptográficamente seguro y no debe usarse para aplicaciones sensibles a la seguridad. Sin embargo, sigue siendo ampliamente utilizado para checksums, verificación de integridad de archivos y hashing no criptográfico." },
+        { question: "¿Puedo usar MD5 para almacenamiento de contraseñas?", answer: "No. MD5 nunca debe usarse para almacenamiento de contraseñas. Usa bcrypt, Argon2 o PBKDF2 en su lugar. MD5 es demasiado rápido y vulnerable a ataques de tabla arcoíris y fuerza bruta." }
       ],
       ar: [
         { question: "ما هي تجزئة MD5؟", answer: "MD5 (خوارزمية ملخص الرسالة 5) تُنتج قيمة تجزئة 128 بت (32 حرفاً سداسي عشرياً) من بيانات الإدخال. تُستخدم عادةً للتحقق من سلامة الملفات والمجموعات الاختبارية." },
         { question: "هل MD5 لا يزال آمناً؟", answer: "لم يعد MD5 يُعتبر آمناً تشفيرياً بسبب ثغرات التصادم المكتشفة في 2004. لا ينبغي استخدامه لتجزئة كلمات المرور أو التطبيقات الحساسة أمنياً. استخدم SHA-256 بدلاً من ذلك لأغراض الأمان." },
         { question: "ماذا يُستخدم MD5 حالياً؟", answer: "MD5 لا يزال مفيداً للأغراض غير الأمنية مثل مجموعات الملفات واكتشاف تلف البيانات العرضي والتوافق مع الأنظمة القديمة حيث تُستخدم تجزئات MD5 بالفعل." },
-        { question: "هل يمكنني استخدام MD5 لتخزين كلمات المرور؟", answer: "لا. لا يجب أبداً استخدام MD5 لتخزين كلمات المرور. استخدم bcrypt أو Argon2 أو PBKDF2 بدلاً من ذلك. MD5 سريع جداً وعرضة لهجمات جدول قوس قزح والهجمات بالقوة الغاشمة." },
-        { question: "هل MD5 لا يزال آمناً؟", answer: "لم يعد MD5 يُعتبر آمناً تشفيرياً ولا ينبغي استخدامه للتطبيقات الحساسة أمنياً. ومع ذلك لا يزال يُستخدم على نطاق واسع للمجموعات الاختبارية والتحقق من سلامة الملفات والتجزئة غير التشفيرية." },
+        { question: "هل يمكنني استخدام MD5 لتخزين كلمات المرور؟", answer: "لا. لا يجب أبداً استخدام MD5 لتخزين كلمات المرور. استخدم bcrypt أو Argon2 أو PBKDF2 بدلاً من ذلك. MD5 سريع جداً وعرضة لهجمات جدول قوس قزح والهجمات بالقوة الغاشمة." }
       ],
     },
   },
@@ -3394,7 +3377,7 @@ export const tools: Tool[] = [
       { question: "How much data can a QR code hold?", answer: "QR codes can store up to 7,089 numeric digits, 4,296 alphanumeric characters, or 2,953 bytes of binary data. More data results in a denser, harder-to-scan code." },
       { question: "Do QR codes expire?", answer: "Static QR codes (like those generated by this tool) never expire. The encoded data is permanent. Dynamic QR codes that redirect to URLs can be changed or deactivated by the service provider." },
       { question: "What size should I print my QR code?", answer: "For reliable scanning, print QR codes at least 2 × 2 cm (0.8 × 0.8 inches). Larger sizes are better for scanning from a distance. Ensure high contrast between the code and background." }
-,      { question: "What can I encode in a QR code?", answer: "Our QR code generator can encode URLs, plain text, email addresses, phone numbers, WiFi credentials, and more. The generated QR codes can be downloaded as PNG images for print or digital use." }     ],
+    ],
     nameTranslations: {
       es: "Generador de Códigos QR",
       ar: "مولد رموز QR",
@@ -3431,14 +3414,12 @@ export const tools: Tool[] = [
         { question: "¿Cuántos datos puede almacenar un código QR?", answer: "Los códigos QR pueden almacenar hasta 7.089 dígitos numéricos, 4.296 caracteres alfanuméricos o 2.953 bytes de datos binarios. Más datos resulta en un código más denso y difícil de escanear." },
         { question: "¿Caducan los códigos QR?", answer: "Los códigos QR estáticos (como los generados por esta herramienta) nunca caducan. Los datos codificados son permanentes. Los códigos QR dinámicos que redirigen a URLs pueden ser cambiados o desactivados por el proveedor del servicio." },
         { question: "¿Qué tamaño debo imprimir mi código QR?", answer: "Para un escaneo confiable, imprime códigos QR de al menos 2 × 2 cm (0.8 × 0.8 pulgadas). Tamaños más grandes son mejores para escanear a distancia. Asegura alto contraste entre el código y el fondo." },
-        { question: "¿Qué puedo codificar en un código QR?", answer: "Nuestro generador de códigos QR puede codificar URLs, texto plano, direcciones de correo electrónico, números de teléfono, credenciales WiFi y más. Los códigos QR generados se pueden descargar como imágenes PNG para imprimir o uso digital." },
       ],
       ar: [
         { question: "ماذا يمكنني ترميزه في رمز QR؟", answer: "يمكن لرموز QR ترميز عناوين URLs والنصوص العادية وعناوين البريد الإلكتروني وأرقام الهاتف ورسائل SMS وبيانات اعتماد WiFi وبطاقات vCards (معلومات الاتصال) والمزيد. الاستخدام الأكثر شيوعاً هو ترميز عناوين مواقع الويب." },
         { question: "كم كمية البيانات التي يمكن أن يحملها رمز QR؟", answer: "يمكن لرموز QR تخزين ما يصل إلى 7089 رقماً رقمياً و4296 حرفاً أبجدياً رقمياً أو 2953 بايت من البيانات الثنائية. المزيد من البيانات ينتج رمزاً أكثر كثافة وأصعب في المسح." },
         { question: "هل تنتهي صلاحية رموز QR؟", answer: "رموز QR الثابتة (مثل تلك المُنشأة بهذه الأداة) لا تنتهي صلاحيتها أبداً. البيانات المشفرة دائمة. رموز QR الديناميكية التي تعيد التوجيه إلى عناوين URLs يمكن تغييرها أو إيقافها من قبل مقدم الخدمة." },
         { question: "ما الحجم الذي يجب أن أطبع به رمز QR؟", answer: "للمسح الموثوق اطبع رموز QR بحجم 2 × 2 سم على الأقل (0.8 × 0.8 بوصة). الأحجام الأكبر أفضل للمسح من مسافة. تأكد من تباين عالٍ بين الرمز والخلفية." },
-        { question: "ماذا يمكنني ترميزه في رمز QR؟", answer: "يمكن لمولد رموز QR لدينا ترميز عناوين URLs والنصوص العادية وعناوين البريد الإلكتروني وأرقام الهواتف وبيانات WiFi والمزيد. يمكن تنزيل رموز QR المُنشأة كصور PNG للطباعة أو الاستخدام الرقمي." },
       ],
     },
   },
@@ -3549,7 +3530,7 @@ export const tools: Tool[] = [
       { question: "Is this Book of Answers free to use?", answer: "Yes, the Book of Answers is completely free with no limits. You can ask as many questions as you'd like. No signup or account is required." },
       { question: "Should I take the answers seriously?", answer: "The Book of Answers is designed as a fun, reflective tool. While the answers aren't meant to replace professional advice, many people find them helpful for breaking through decision paralysis, gaining a fresh perspective, or simply having a moment of mindful reflection." },
       { question: "Does this tool store my questions or answers?", answer: "No. Everything happens in your browser. Your questions, answers, and usage data are never stored, tracked, or sent anywhere. Your privacy is fully protected." }
-,      { question: "How does the Book of Answers work?", answer: "The Book of Answers gives you a random piece of guidance when you have a question. Close your eyes, think of your question, then open the book to receive your answer. It is meant for fun and inspiration." }     ],
+    ],
     nameTranslations: {
       es: "Libro de las Respuestas",
       ar: "كتاب الإجابات",
@@ -3627,7 +3608,7 @@ export const tools: Tool[] = [
       { question: "What factors affect reaction time?", answer: "Reaction time is influenced by age, fatigue, attention level, practice, and individual differences. Getting enough sleep, staying hydrated, and regular practice can improve your times." },
       { question: "Can I improve my reaction time?", answer: "Yes. Regular practice, staying focused, getting adequate rest, and engaging in activities like video games or sports can all help improve your reaction time over time." },
       { question: "Is this test accurate?", answer: "This test measures your response time using your browser's high-resolution timer. While it gives a good approximation, actual reaction time may vary slightly based on your device's display latency and input delay." }
-,      { question: "What is a good reaction time?", answer: "The average human visual reaction time is around 250ms. Gamers and athletes often achieve under 200ms. Our reaction test rates your performance from Lightning (under 150ms) to Needs Coffee (over 500ms)." }     ],
+    ],
     nameTranslations: {
       es: "Probador de Tiempo de Reacción",
       ar: "اختبار زمن رد الفعل",
@@ -3665,15 +3646,13 @@ export const tools: Tool[] = [
         { question: "¿Cuál es un buen tiempo de reacción?", answer: "El tiempo promedio de reacción humana para estímulos visuales es de alrededor de 250ms. Atletas y gamers suelen lograr tiempos por debajo de 200ms. Atletas de élite pueden alcanzar tiempos tan bajos como 150ms." },
         { question: "¿Qué factores afectan el tiempo de reacción?", answer: "El tiempo de reacción está influenciado por la edad, la fatiga, el nivel de atención, la práctica y diferencias individuales. Dormir lo suficiente, mantenerse hidratado y practicar regularmente puede mejorar tus tiempos." },
         { question: "¿Puedo mejorar mi tiempo de reacción?", answer: "Sí. La práctica regular, mantenerse enfocado, descansar adecuadamente y participar en actividades como videojuegos o deportes pueden ayudar a mejorar tu tiempo de reacción con el tiempo." },
-        { question: "¿Es precisa esta prueba?", answer: "Esta prueba mide tu tiempo de respuesta usando el temporizador de alta resolución de tu navegador. Aunque da una buena aproximación, el tiempo real puede variar ligeramente según la latencia de pantalla y el retardo de entrada de tu dispositivo." },
-        { question: "¿Cuál es un buen tiempo de reacción?", answer: "El tiempo promedio de reacción visual humana es de alrededor de 250ms. Gamers y atletas suelen lograr menos de 200ms. Nuestra prueba califica tu rendimiento desde Relámpago (menos de 150ms) hasta Necesita Café (más de 500ms)." },
+        { question: "¿Es precisa esta prueba?", answer: "Esta prueba mide tu tiempo de respuesta usando el temporizador de alta resolución de tu navegador. Aunque da una buena aproximación, el tiempo real puede variar ligeramente según la latencia de pantalla y el retardo de entrada de tu dispositivo." }
       ],
       ar: [
         { question: "ما هو زمن رد الفعل الجيد؟", answer: "متوسط زمن رد الفعل البشري للمحفزات البصرية حوالي 250 مللي ثانية. يحقق الرياضيون واللاعبون عادةً أوقاتاً أقل من 200 مللي ثانية. يمكن للرياضيين النخبويين الوصول إلى أزمنة منخفضة تصل إلى 150 مللي ثانية." },
         { question: "ما العوامل التي تؤثر على زمن رد الفعل؟", answer: "يتأثر زمن رد الفعل بالعمر والتعب ومستوى الانتباه والممارسة والفروق الفردية. الحصول على قسط كافٍ من النوم والبقاء رطباً والممارسة المنتظمة يمكن أن تحسّن أوقاتك." },
         { question: "هل يمكنني تحسين زمن رد فعلي؟", answer: "نعم. الممارسة المنتظمة والبقاء مركزاً والحصول على قسط كافٍ من الراحة والمشاركة في أنشطة مثل ألعاب الفيديو أو الرياضة يمكن أن تساعد جميعها في تحسين زمن رد فعلك مع مرور الوقت." },
-        { question: "هل هذا الاختبار دقيق؟", answer: "يقيس هذا الاختبار وقت استجابتك باستخدام مؤقت الدقة العالية في متصفحك. بينما يعطي تقديراً جيداً، قد يختلف زمن رد الفعل الفعلي قليلاً بناءً على تأخير الشاشة وتأخير الإدخال في جهازك." },
-        { question: "ما هو زمن رد الفعل الجيد؟", answer: "متوسط زمن رد الفعل البصري البشري حوالي 250 مللي ثانية. يحقق اللاعبون والرياضيون عادةً أقل من 200 مللي ثانية. يقيّم اختبارنا أداءك من برق (أقل من 150 مللي ثانية) إلى يحتاج قهوة (أكثر من 500 مللي ثانية)." },
+        { question: "هل هذا الاختبار دقيق؟", answer: "يقيس هذا الاختبار وقت استجابتك باستخدام مؤقت الدقة العالية في متصفحك. بينما يعطي تقديراً جيداً، قد يختلف زمن رد الفعل الفعلي قليلاً بناءً على تأخير الشاشة وتأخير الإدخال في جهازك." }
       ],
     },
   },

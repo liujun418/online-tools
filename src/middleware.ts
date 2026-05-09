@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const ADMIN_USER = "jzerov";
-const ADMIN_PASSWORD = "T3705456";
+const ADMIN_USER = process.env.ADMIN_USER || "admin";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
 
 export function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
