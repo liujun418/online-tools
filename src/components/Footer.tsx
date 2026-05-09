@@ -4,6 +4,7 @@ function getFooter(dict: Record<string, unknown> | undefined) {
   const f = (dict as any)?.footer || {};
   return {
     copyright: (f.copyright as string) || "ToolBoxOnline. All rights reserved.",
+    about: (f.about as string) || "About",
     privacy: (f.privacy as string) || "Privacy Policy",
     terms: (f.terms as string) || "Terms of Service",
     contact: (f.contact as string) || "Contact",
@@ -36,6 +37,9 @@ export default function Footer({
             >
               AI Tools ✨
             </a>
+            <Link href={`/${locale}/about`} className="hover:text-zinc-900 dark:hover:text-white">
+              {f.about}
+            </Link>
             <Link href={`/${locale}/privacy`} className="hover:text-zinc-900 dark:hover:text-white">
               {f.privacy}
             </Link>

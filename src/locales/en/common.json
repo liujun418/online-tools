@@ -10,6 +10,7 @@
   },
   "footer": {
     "copyright": "ToolBoxOnline. All rights reserved.",
+    "about": "About",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "contact": "Contact"
@@ -82,6 +83,39 @@
     "title": "Contact Us",
     "description": "Have questions or feedback? Reach out to us.",
     "email": "Email"
+  },
+  "about": {
+    "title": "About ToolBoxOnline",
+    "subtitle": "Your free, private online toolkit",
+    "mission": "Our Mission",
+    "missionText": "ToolBoxOnline provides fast, free, and privacy-friendly online tools that anyone can use without an account. All tools run entirely in your browser — no data is sent to servers, no tracking beyond basic analytics, and no content hidden behind paywalls.",
+    "features": [
+      {
+        "title": "50+ Free Tools",
+        "text": "Text utilities, developer tools, calculators, and converters — everything you need in one place."
+      },
+      {
+        "title": "Privacy First",
+        "text": "All data is processed locally in your browser. Nothing is uploaded to or stored on any server."
+      },
+      {
+        "title": "No Account Required",
+        "text": "Open the site and start using any tool immediately. No registration, no login, no personal data required."
+      },
+      {
+        "title": "Multi-Language",
+        "text": "Available in English, Spanish, and Arabic with full RTL support."
+      }
+    ],
+    "aboutProject": "About This Project",
+    "projectText": "ToolBoxOnline is a personal project built and maintained by one person. It started as a collection of small utilities and grew into a comprehensive toolkit. The site is monetized through Google AdSense to cover hosting costs — no subscriptions, no premium tiers, no paywalls.",
+    "techStack": "Built With",
+    "techText": "This site is built with Next.js and deployed on Vercel's edge network for fast loading worldwide. The UI uses Tailwind CSS for responsive design that works on desktop, tablet, and mobile devices. All tool logic runs client-side using vanilla JavaScript and modern browser APIs.",
+    "commitment": [
+      "We will keep all tools free and accessible",
+      "We will not collect or sell personal data",
+      "We will continue adding new tools regularly"
+    ]
   },
   "bookOfAnswers": {
     "instruction": "Close your eyes, think of your question for 3–5 seconds, then open the book to receive your answer.",

@@ -12,7 +12,8 @@
     "copyright": "ToolBoxOnline. Todos los derechos reservados.",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "about": "Acerca de"
   },
   "home": {
     "heroTitle": "Herramientas Online Gratuitas",
@@ -82,6 +83,27 @@
     "title": "Contáctanos",
     "description": "¿Tienes preguntas o comentarios? Escríbenos.",
     "email": "Correo electrónico"
+  },
+  "about": {
+    "title": "Acerca de ToolBoxOnline",
+    "subtitle": "Tu caja de herramientas online, gratuita y privada",
+    "mission": "Nuestra Misión",
+    "missionText": "ToolBoxOnline ofrece herramientas online rápidas, gratuitas y respetuosas con la privacidad que cualquiera puede usar sin una cuenta. Todas las herramientas funcionan completamente en tu navegador — no se envían datos a servidores, no hay rastreo más allá de analíticas básicas, y ningún contenido oculto detrás de muros de pago.",
+    "features": [
+      { "title": "Más de 50 Herramientas Gratuitas", "text": "Utilidades de texto, herramientas de desarrollo, calculadoras y conversores — todo lo que necesitas en un solo lugar." },
+      { "title": "Privacidad Primero", "text": "Todos los datos se procesan localmente en tu navegador. Nada se sube ni se almacena en ningún servidor." },
+      { "title": "Sin Cuenta Requerida", "text": "Abre el sitio y empieza a usar cualquier herramienta inmediatamente. Sin registro, sin inicio de sesión, sin datos personales." },
+      { "title": "Multilingüe", "text": "Disponible en inglés, español y árabe con soporte completo de RTL." }
+    ],
+    "aboutProject": "Sobre este Proyecto",
+    "projectText": "ToolBoxOnline es un proyecto personal creado y mantenido por una sola persona. Empezó como una colección de pequeñas utilidades y creció hasta convertirse en una caja de herramientas completa. El sitio se monetiza a través de Google AdSense para cubrir los costes de alojamiento — sin suscripciones, sin niveles premium, sin muros de pago.",
+    "techStack": "Construido Con",
+    "techText": "Este sitio está construido con Next.js y desplegado en la red perimetral de Vercel para una carga rápida en todo el mundo. La interfaz usa Tailwind CSS para un diseño responsivo que funciona en escritorio, tableta y dispositivos móviles. Toda la lógica de las herramientas se ejecuta del lado del cliente usando JavaScript vanilla y APIs modernas del navegador.",
+    "commitment": [
+      "Mantendremos todas las herramientas gratuitas y accesibles",
+      "No recogeremos ni venderemos datos personales",
+      "Seguiremos añadiendo nuevas herramientas regularmente"
+    ]
   },
   "bookOfAnswers": {
     "instruction": "Cierra los ojos, piensa en tu pregunta durante 3-5 segundos, luego abre el libro para recibir tu respuesta.",
