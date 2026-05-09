@@ -3,8 +3,11 @@ import Script from "next/script";
 import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import KofiWidget from "@/components/KofiWidget";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { getDictionary } from "@/lib/i18n";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,11 +53,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const dict = await getDictionary("en");
+
   return (
     <html
       lang="en"
@@ -101,7 +106,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        {children}
+        <Header locale="en" dict={dict} />
+        <main className="flex-1">{children}</main>
+        <Footer locale="en" dict={dict} />
         <KofiWidget />
         <Suspense fallback={null}>
           <GoogleAnalytics />
