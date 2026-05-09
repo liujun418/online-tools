@@ -9,7 +9,7 @@ export default function Logo() {
         alt="ToolBoxOnline"
         width={220}
         height={55}
-        className="h-8 w-auto"
+        className="h-10 w-auto"
         priority
       />
     </Link>
