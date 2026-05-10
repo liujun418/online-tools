@@ -76,31 +76,6 @@ export async function GET(): Promise<Response> {
     }
   }
 
-  // AI ToolBox crosslink
-  const aiBase = "https://ai.toolboxonline.club/en";
-  const aiPages: [string, string, string][] = [
-    ["", "1.0", "daily"],
-    ["/about", "0.6", "monthly"],
-    ["/pricing", "0.8", "monthly"],
-    ["/dashboard", "0.7", "monthly"],
-    ["/login", "0.4", "monthly"],
-    ["/signup", "0.5", "monthly"],
-    ["/privacy", "0.3", "monthly"],
-    ["/terms", "0.3", "monthly"],
-    ["/contact", "0.5", "monthly"],
-    ["/tools/background-remover", "0.8", "weekly"],
-    ["/tools/watermark-remover", "0.7", "weekly"],
-    ["/tools/photo-restorer", "0.7", "weekly"],
-    ["/tools/avatar-generator", "0.8", "weekly"],
-    ["/tools/pdf-to-word", "0.7", "weekly"],
-    ["/tools/image-upscaler", "0.8", "weekly"],
-    ["/tools/style-transfer", "0.8", "weekly"],
-    ["/tools/text-polish", "0.8", "weekly"],
-  ];
-  for (const [path, priority, freq] of aiPages) {
-    parts.push(urlEl(`${aiBase}${path}`, priority, freq, now, null));
-  }
-
   const body = `<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${parts.join("")}</urlset>`;
 
   return new Response(body, {
