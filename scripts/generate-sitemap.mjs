@@ -27,29 +27,17 @@ let xml = '<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns=
 
 for (const l of LOCALES) {
   // Home
-  xml += `<url><loc>${esc(SITE)}/${l}</loc><lastmod>${lm}</lastmod><priority>1.0</priority><changefreq>weekly</changefreq>`;
-  for (const ol of LOCALES) {
-    if (ol !== l) xml += `<xhtml:link rel="alternate" hreflang="${ol}" href="${esc(SITE)}/${ol}"/>`;
-  }
-  xml += `</url>`;
+  xml += `<url><loc>${esc(SITE)}/${l}</loc><lastmod>${lm}</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>`;
 
   // Tools
   for (const t of tools) {
     const p = catPri[t.category] || "0.8";
-    xml += `<url><loc>${esc(SITE)}/${l}/tools/${t.id}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>monthly</changefreq>`;
-    for (const ol of LOCALES) {
-      if (ol !== l) xml += `<xhtml:link rel="alternate" hreflang="${ol}" href="${esc(SITE)}/${ol}/tools/${t.id}"/>`;
-    }
-    xml += `</url>`;
+    xml += `<url><loc>${esc(SITE)}/${l}/tools/${t.id}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>monthly</changefreq></url>`;
   }
 
   // Static pages
   for (const pg of ["about", "privacy", "terms", "contact"]) {
-    xml += `<url><loc>${esc(SITE)}/${l}/${pg}</loc><lastmod>${lm}</lastmod><priority>0.3</priority><changefreq>monthly</changefreq>`;
-    for (const ol of LOCALES) {
-      if (ol !== l) xml += `<xhtml:link rel="alternate" hreflang="${ol}" href="${esc(SITE)}/${ol}/${pg}"/>`;
-    }
-    xml += `</url>`;
+    xml += `<url><loc>${esc(SITE)}/${l}/${pg}</loc><lastmod>${lm}</lastmod><priority>0.3</priority><changefreq>monthly</changefreq></url>`;
   }
 }
 
