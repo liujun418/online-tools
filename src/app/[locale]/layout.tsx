@@ -67,6 +67,7 @@ export async function generateMetadata({
     },
     alternates: {
       languages: {
+        "x-default": `${SITE_URL}/en`,
         en: `${SITE_URL}/en`,
         es: `${SITE_URL}/es`,
         ar: `${SITE_URL}/ar`,
@@ -78,7 +79,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   params,
   children,
 }: {
