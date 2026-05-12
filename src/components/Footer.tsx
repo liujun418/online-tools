@@ -27,7 +27,7 @@ export default function Footer({
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             &copy; {new Date().getFullYear()} {f.copyright}
           </p>
-          <div className="flex gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
             <a
               href="https://ai.toolboxonline.club"
               target="_blank"
