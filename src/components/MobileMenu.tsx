@@ -130,6 +130,9 @@ export default function MobileMenu({ locale = "en", dict }: MobileMenuProps) {
               className="rounded-lg px-3 py-2 text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
             >
               {localeNames[locale as Locale] || "English"}
+              <svg className="ms-1 inline-block h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
             {showLang && (
               <div
