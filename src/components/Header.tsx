@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
 import SuggestToolButton from "@/components/SuggestToolButton";
 import { locales, localeNames, Locale } from "@/lib/i18n";
+import MobileMenu from "@/components/MobileMenu";
 
 function getNav(dict: Record<string, unknown> | undefined) {
   const nav = (dict as any)?.nav || {};
@@ -49,7 +50,7 @@ export default function Header({
     <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <Logo />
-        <nav className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400 sm:gap-5">
+        <nav className="hidden items-center gap-3 text-sm text-zinc-600 md:flex dark:text-zinc-400 sm:gap-5">
           {/* Language Switcher */}
           <div className="relative">
             <button
@@ -108,6 +109,9 @@ export default function Header({
             <ThemeToggle locale={locale} dict={dict} />
           </div>
         </nav>
+
+        {/* Mobile menu */}
+        <MobileMenu locale={locale} dict={dict} />
       </div>
     </header>
   );

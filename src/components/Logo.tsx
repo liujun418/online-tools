@@ -17,7 +17,7 @@ export default function Logo() {
   }, []);
 
   return (
-    <Link href="/" className="flex items-center">
+    <Link href="/" className="flex shrink-0 items-center">
       {!dark ? (
         <Image
           src="/logo.png"

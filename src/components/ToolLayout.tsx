@@ -119,7 +119,7 @@ export default function ToolLayout({
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6" dir={dir}>
       {/* Breadcrumbs */}
-      <nav className="mb-6 flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400" aria-label="Breadcrumb">
+      <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400" aria-label="Breadcrumb">
         <Link href={`/${locale}`} className="hover:text-zinc-900 dark:hover:text-white">
           {t.home}
         </Link>

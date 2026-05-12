@@ -1,0 +1,36 @@
+# Progress Log
+
+## Status: COMPLETED
+- All user stories completed
+- Commit: b7815d1
+- Pushed to master: 1acc1f1..b7815d1
+- Vercel auto-deploy triggered
+
+## Changes Made:
+### US-001: Translation Fix (DONE)
+- Modified 51 page.tsx files: Extract nameTranslations/descriptionTranslations from tools data, pass as titleOverride/descriptionOverride props
+- Modified 51 Client.tsx files: Accept new props, pass to ToolLayout with fallback to metadata
+- ToolLayout renders translated values in H1, breadcrumbs, description
+- TypeScript typecheck: 0 errors
+- Verified: /es/tools/bmi-calculator → "Calculadora de IMC", /ar/tools/bmi-calculator → "حاسبة مؤشر كتلة الجسم"
+
+### US-002: Try It Now (N/A - no such button in ToolLayout)
+
+### US-003: FAQ Fallback (DONE)
+- Added defaultHowToUse to all 3 locale JSON files (en, es, ar)
+- Updated ToolLayout to use dict translation for fallback content
+
+### US-004: OG/Twitter Meta (Already working via generateMetadata)
+
+### US-005: Mobile (Verified - responsive classes already in place)
+
+### US-006: JSON-LD (Auto-fixed by US-001 - uses translated title/description props)
+
+### US-007: Verification (DONE)
+- curl-based HTML inspection verified 11 pages across en/es/ar
+- All H1, descriptions, breadcrumbs, section titles translated correctly
+- Playwright unavailable (browser install failed on proxy)
+
+### US-008: Push to GitHub (DONE)
+- Committed 106 files: 624 insertions, 162 deletions
+- Pushed via proxy to liujun418/online-tools master

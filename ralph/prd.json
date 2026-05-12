@@ -1,0 +1,129 @@
+{
+  "project": "ToolBoxOnline",
+  "branchName": "ralph/site-translation-seo-fix",
+  "description": "Fix entire site translation issues, optimize pages for SEO with long-tail keywords, fix style misalignment and mobile compatibility, verify with Webapp Testing",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Batch fix: Pass translated title/description from page.tsx to all 50 Client components",
+      "description": "As a site owner, I need every tool detail page to display translated H1 titles and descriptions in the correct language. Currently, all 50 Client components pass hardcoded English metadata to ToolLayout. Fix: modify each page.tsx to extract nameTranslations/descriptionTranslations from tools data and pass as titleOverride/descriptionOverride props; modify each Client component to accept these props and pass to ToolLayout instead of hardcoded metadata.title/description.",
+      "acceptanceCriteria": [
+        "All 50 page.tsx files: add titleOverride/descriptionOverride props derived from (tool.nameTranslations?.[locale] || tool.name) and (tool.descriptionTranslations?.[locale] || tool.description)",
+        "All 50 Client.tsx files: accept titleOverride/descriptionOverride optional props and pass to <ToolLayout title={titleOverride || metadata.title} description={descriptionOverride || metadata.description}>",
+        "ToolLayout renders the passed title/description in H1, breadcrumbs, and description (already does this)",
+        "Visually verify on /es/tools/bmi-calculator: H1 shows translated title, description shows translated text",
+        "Visually verify on /ar/tools/bmi-calculator: H1 shows Arabic title, description shows Arabic text, RTL layout correct",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "This is a batch operation across 50 files. Use a script approach: read each file, apply regex/string replacement, write back. The pattern is consistent across all tools. Tools data already has complete translations in tools.ts."
+    },
+    {
+      "id": "US-002",
+      "title": "Add Try It Now button translation in ToolLayout",
+      "description": "As a non-English user, I need the 'Try it now' button text in ToolLayout to be translated. Currently hardcoded English.",
+      "acceptanceCriteria": [
+        "ToolLayout 'Try it now' button text uses dict: getTranslation(dict, 'toolPage.tryItNow') with fallback",
+        "Verify /es/tools/bmi-calculator shows Spanish button text",
+        "Verify /ar/tools/bmi-calculator shows Arabic button text",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "Check if ToolLayout has a 'Try it now' button or if it's in individual components. If in ToolLayout, add to t object."
+    },
+    {
+      "id": "US-003",
+      "title": "Fix ToolLayout hardcoded FAQ content for tools without faqTranslations",
+      "description": "As a non-English user, when a tool doesn't have faqTranslations, the fallback FAQ content should still be localized. Currently shows hardcoded English.",
+      "acceptanceCriteria": [
+        "ToolLayout fallback how-to-use content (when tool.howToUse is missing) uses dict translations with proper fallback",
+        "ToolLayout FAQ default content uses dict for section labels",
+        "Verify tools without FAQ translations still show translated section headers",
+        "Typecheck passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": "The fallback content at lines 203-207 of ToolLayout is hardcoded English. Move these defaults to common.json under toolPage namespace."
+    },
+    {
+      "id": "US-004",
+      "title": "Add Open Graph and Twitter Card translations for tool pages",
+      "description": "As a site owner, I need social sharing previews to show translated titles and descriptions per locale. Currently OG/Twitter meta uses translated data from generateMetadata but the page.tsx files may not all have this correctly wired up.",
+      "acceptanceCriteria": [
+        "Verify all 50 page.tsx generateMetadata functions use seoTitleTranslations[locale] and seoDescriptionTranslations[locale]",
+        "Open Graph locale attribute set correctly (en_US, es_ES, ar_SA)",
+        "Canonical and alternate URLs include locale prefix",
+        "Spot check 3 tools in each locale: og:title and og:description match locale language",
+        "Typecheck passes"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": "Most page.tsx files were generated with the correct pattern already. Verify consistency. Tools data already has seoTitleTranslations and seoDescriptionTranslations."
+    },
+    {
+      "id": "US-005",
+      "title": "Fix mobile responsive layout issues across site",
+      "description": "As a mobile user, I need the site to display correctly on small screens. Issues to check: header nav overlap, tool page content overflow, form inputs too narrow, button text overflow.",
+      "acceptanceCriteria": [
+        "Header: nav items stack properly on screens <640px, language switcher doesn't overlap",
+        "ToolLayout: H1 title wraps correctly, doesn't overflow on narrow screens",
+        "All calculator forms: input fields and buttons don't overflow on <400px width",
+        "ToolCard grid on homepage: switches to single column on mobile (already uses sm:grid-cols-2 or similar)",
+        "Verify with Chrome DevTools mobile emulation at 375px and 414px widths",
+        "Typecheck passes",
+        "Verify in browser using Webapp Testing skill"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": "Use Webapp Testing skill screenshots to verify. Check: Header, BMI page, Age Calculator, Life Hacks, homepage at 375px width."
+    },
+    {
+      "id": "US-006",
+      "title": "Add structured data (JSON-LD) translations for SEO",
+      "description": "As a site owner, I need JSON-LD structured data to include translated names and descriptions for each locale, so search engines index translated content correctly.",
+      "acceptanceCriteria": [
+        "ToolLayout WebApplication schema uses translated name and description from props",
+        "FAQ schema in ToolLayout uses translated FAQ questions and answers",
+        "Homepage includes WebSite schema with translated name",
+        "Verify with Google Rich Results Test tool format (valid JSON-LD structure)",
+        "Typecheck passes"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": "ToolLayout already includes JSON-LD for WebApplication and FAQPage. Ensure name/description in the schema use the translated values, not hardcoded English."
+    },
+    {
+      "id": "US-007",
+      "title": "Complete Webapp Testing verification across all locales",
+      "description": "As a QA tester, I need automated browser verification that all 3 locales (en, es, ar) render correctly on key pages: homepage, BMI Calculator, Age Calculator, Life Hacks.",
+      "acceptanceCriteria": [
+        "Screenshot of /en/tools/bmi-calculator: verify English text correct",
+        "Screenshot of /es/tools/bmi-calculator: verify Spanish text visible (not English)",
+        "Screenshot of /ar/tools/bmi-calculator: verify Arabic text visible, RTL layout correct",
+        "Screenshot of /es/: homepage categories and tool cards in Spanish",
+        "Screenshot of /ar/: homepage in Arabic, RTL direction",
+        "Console log check: no JavaScript errors on any page",
+        "Verify in browser using Webapp Testing skill"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": "Use Webapp Testing skill. Launch browser, navigate to each URL, take screenshots, check console logs. Report any remaining untranslated text."
+    },
+    {
+      "id": "US-008",
+      "title": "Push to GitHub and trigger Vercel deployment",
+      "description": "As a developer, I need the changes deployed to production so the fixes are live.",
+      "acceptanceCriteria": [
+        "All changes committed with descriptive message",
+        "Push to GitHub using proxy (http://127.0.0.1:17890)",
+        "Verify push succeeded",
+        "Trigger Vercel deployment or verify auto-deploy started"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": "Use git -c http.proxy=http://127.0.0.1:17890 -c https.proxy=http://127.0.0.1:17890 push. PAT available in memory."
+    }
+  ]
+}

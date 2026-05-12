@@ -1,0 +1,189 @@
+{
+  "project": "AI ToolBox Online",
+  "branchName": "ralph/ai-site-init",
+  "description": "Build ai.toolboxonline.club — AI-powered online tools with freemium credit-based billing. Next.js frontend + FastAPI backend + Replicate API + Stripe.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Initialize Next.js frontend project on Vercel",
+      "description": "As a developer, I need a fresh Next.js project configured with Tailwind CSS, TypeScript, and the same design system as the main site (toolboxonline.club), deployed to Vercel with ai.toolboxonline.club domain.",
+      "acceptanceCriteria": [
+        "Next.js project created with TypeScript + Tailwind + App Router",
+        "Design tokens match main site (colors, fonts, spacing)",
+        "Deployed to Vercel successfully",
+        "CNAME ai.toolboxonline.club configured in Cloudflare",
+        "Health check page / returns 200",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Set up FastAPI backend service",
+      "description": "As a developer, I need a FastAPI backend deployed on Render/Railway with PostgreSQL database, S3/R2 storage config, and Replicate API integration.",
+      "acceptanceCriteria": [
+        "FastAPI project with PostgreSQL (SQLAlchemy)",
+        "Replicate API client integrated and tested",
+        "S3/R2 storage client integrated for file uploads",
+        "Deployed on Render or Railway",
+        "Health endpoint /api/health returns 200",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "User authentication system",
+      "description": "As a user, I need to sign up, log in, and manage my account so I can use AI tools and track my credits.",
+      "acceptanceCriteria": [
+        "Sign up with email + password",
+        "Login/logout functionality",
+        "Google OAuth login",
+        "Password reset via email",
+        "User profile page showing credit balance",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Credit system + Stripe payment",
+      "description": "As a developer, I need a credit system with Stripe integration so users can purchase credits and spend them on AI tools.",
+      "acceptanceCriteria": [
+        "Credit balance stored in user table",
+        "Stripe checkout for credit packages ($4.99/50, $9.99/100mo, $24.99/500mo)",
+        "Stripe webhook handler for payment confirmation",
+        "Credit deduction on tool usage",
+        "Credit history/transaction log page",
+        "Free tier: 5 credits/month auto-allocated",
+        "Typecheck passes",
+        "Verify Stripe test mode payment flow"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Build AI Avatar Generator tool page",
+      "description": "As a user, I want to upload a photo and get cartoon/anime style avatars so I can use them for profiles.",
+      "acceptanceCriteria": [
+        "Upload photo page with drag-and-drop",
+        "Style selection (cartoon, anime, professional)",
+        "Calls Replicate API via backend",
+        "Shows processing status/progress",
+        "Displays 1-4 generated avatar results",
+        "Download button for results",
+        "Deducts 5 credits on generation",
+        "SEO meta tags configured",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Build Background Remover tool page",
+      "description": "As a user, I want to remove the background from my photos with one click.",
+      "acceptanceCriteria": [
+        "Upload photo page",
+        "One-click background removal via Replicate rembg",
+        "Preview before/after with slider",
+        "Options: transparent, white, custom color background",
+        "Download result as PNG",
+        "Deducts 2 credits",
+        "SEO meta tags configured",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Build Watermark Remover tool page",
+      "description": "As a user, I want to remove watermarks and unwanted text from my photos.",
+      "acceptanceCriteria": [
+        "Upload photo page",
+        "Brush tool to paint over watermark area",
+        "Calls Replicate LaMa inpainting model",
+        "Preview before/after",
+        "Download result",
+        "Deducts 3 credits",
+        "SEO meta tags configured",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Build Photo Restorer tool page",
+      "description": "As a user, I want to restore and colorize old, blurry, or damaged photos.",
+      "acceptanceCriteria": [
+        "Upload photo page",
+        "Options: restore only, colorize only, restore + colorize",
+        "Calls Replicate GFPGAN/CodeFormer model",
+        "Preview before/after with slider",
+        "Download result",
+        "Deducts 5 credits",
+        "SEO meta tags configured",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Build PDF to Word Converter tool page",
+      "description": "As a user, I want to convert PDF documents to editable Word files.",
+      "acceptanceCriteria": [
+        "Upload PDF page with drag-and-drop",
+        "File size limit: 20MB",
+        "Backend converts via pdf2docx (no external API)",
+        "Shows page count and credit cost (1pt for ≤10 pages, 2pt for >10)",
+        "Download .docx result",
+        "Deducts credits accordingly",
+        "Error handling for password-protected/corrupt PDFs",
+        "SEO meta tags configured",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "Homepage + tool listing + main site cross-link",
+      "description": "As a visitor, I want a landing page that showcases all available AI tools, with clear pricing and a link back to the main toolboxonline.club site.",
+      "acceptanceCriteria": [
+        "Homepage with hero section, tool grid, pricing section, FAQ",
+        "Each tool card shows icon, name, description, credit cost",
+        "Pricing table with Free/Basic/Pro/single-purchase options",
+        "Footer with link to main site toolboxonline.club",
+        "SEO meta tags + JSON-LD structured data",
+        "Responsive design (mobile-first)",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
