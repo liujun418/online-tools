@@ -124,7 +124,7 @@ export default async function LocaleLayout({
           `,
         }} />
       </head>
-      <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <body className="flex min-h-dvh flex-col overflow-x-hidden bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <Script
           id="adsense-init"
           strategy="afterInteractive"

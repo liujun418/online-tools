@@ -138,12 +138,12 @@ export default function ToolLayout({
       </nav>
 
       <header className="mb-8">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+            <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
               {title}
             </h1>
-            <p className="mt-2 text-zinc-500 dark:text-zinc-400">{description}</p>
+            <p className="mt-2 text-sm sm:text-base text-zinc-500 dark:text-zinc-400">{description}</p>
           </div>
           <ShareButton locale={locale} dict={dict} />
         </div>
