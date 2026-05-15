@@ -15,30 +15,45 @@ declare global {
   }
 }
 
+let globalPushed = false;
+
 export default function AdUnit({
   className,
   adSlot,
   format = "auto",
 }: AdUnitProps) {
-  const ref = useRef<HTMLModElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Only push once globally — the layout script handles initial load,
+    // and for SPA navigations we push once per new page render.
+    const el = containerRef.current;
+    if (!el) return;
+    const ins = el.querySelector("ins");
+    if (!ins || ins.querySelector("iframe")) return; // already has an ad
+
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      if (!globalPushed) {
+        globalPushed = true;
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        // Reset after a tick so next navigation can push again
+        setTimeout(() => { globalPushed = false; }, 100);
+      }
     } catch {
-      // AdSense script not loaded yet
+      // AdSense not loaded
     }
   }, []);
 
   return (
-    <ins
-      ref={ref}
-      className={`adsbygoogle ${className ?? ""}`}
-      style={{ display: "block" }}
-      data-ad-client={ADSENSE_CONFIG.publisherId}
-      data-ad-slot={adSlot}
-      data-ad-format={format}
-      data-full-width-responsive="true"
-    />
+    <div ref={containerRef}>
+      <ins
+        className={`adsbygoogle ${className ?? ""}`}
+        style={{ display: "block" }}
+        data-ad-client={ADSENSE_CONFIG.publisherId}
+        data-ad-slot={adSlot}
+        data-ad-format={format}
+        data-full-width-responsive="true"
+      />
+    </div>
   );
 }
