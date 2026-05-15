@@ -137,12 +137,7 @@ export default function NasaApodClient({
   const downloadImage = () => {
     const url = current?.hdurl || current?.url;
     if (!url) return;
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `nasa-apod-${current!.date}.jpg`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (

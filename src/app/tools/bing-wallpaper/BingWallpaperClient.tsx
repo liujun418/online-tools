@@ -110,13 +110,7 @@ export default function BingWallpaperClient({
   const downloadImage = () => {
     if (!current) return;
     const url = getImageUrl(current, resolution);
-    const filename = `bing-wallpaper-${current.startdate}-${resolution}.jpg`;
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
