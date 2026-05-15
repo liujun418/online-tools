@@ -72,6 +72,11 @@ export default function BingWallpaperClient({
       if (!res.ok) throw new Error("Failed to fetch");
       const data = await res.json();
       if (data.images?.length) {
+        // Detect if we got the same batch as before (Bing caps at its archive limit)
+        const firstDate = data.images[0]?.startdate;
+        const lastDate = data.images[data.images.length - 1]?.startdate;
+        const isSame = idx > 0 && images.length > 0 && images[0].startdate === firstDate;
+        if (isSame) { setHasMore(false); return; }
         setImages(data.images);
         setCurrentIdx(0);
         idxRef.current = idx;
