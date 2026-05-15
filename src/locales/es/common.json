@@ -743,6 +743,18 @@
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
   },
+  "petWallpaper": {
+    "loading": "Cargando...",
+    "clickTab": "¡Haz clic en una pestaña para cargar!",
+    "refresh": "Actualizar",
+    "fullscreen": "Pantalla Completa",
+    "download": "Descargar",
+    "poweredBy": "Powered by",
+    "disclaimer": "Imágenes de APIs de terceros para uso no comercial.",
+    "referralText": "¿Te gustan los animales? ¡Prueba más herramientas!",
+    "tryBing": "Bing 4K Fondos",
+    "tryNasa": "NASA APOD"
+  },
   "ipLookup": {
     "loading": "Consultando tu IP...",
     "copyAll": "Copiar Todo",

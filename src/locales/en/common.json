@@ -755,6 +755,18 @@
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
   },
+  "petWallpaper": {
+    "loading": "Loading...",
+    "clickTab": "Click a tab above to load a cute pet!",
+    "refresh": "Refresh",
+    "fullscreen": "Fullscreen",
+    "download": "Download",
+    "poweredBy": "Powered by",
+    "disclaimer": "Images are provided by third-party APIs for non-commercial use. No copyright ownership claimed.",
+    "referralText": "Love animals? Try our other free tools!",
+    "tryBing": "Bing 4K Wallpaper",
+    "tryNasa": "NASA APOD"
+  },
   "ipLookup": {
     "loading": "Looking up your IP...",
     "copyAll": "Copy All Info",
