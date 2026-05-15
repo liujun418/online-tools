@@ -15,8 +15,6 @@ declare global {
   }
 }
 
-let globalPushed = false;
-
 export default function AdUnit({
   className,
   adSlot,
@@ -25,23 +23,35 @@ export default function AdUnit({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Only push once globally — the layout script handles initial load,
-    // and for SPA navigations we push once per new page render.
     const el = containerRef.current;
     if (!el) return;
-    const ins = el.querySelector("ins");
-    if (!ins || ins.querySelector("iframe")) return; // already has an ad
 
-    try {
-      if (!globalPushed) {
-        globalPushed = true;
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        // Reset after a tick so next navigation can push again
-        setTimeout(() => { globalPushed = false; }, 100);
+    const ins = el.querySelector("ins");
+    if (!ins) return;
+
+    // Already has an ad loaded
+    if (ins.querySelector("iframe")) return;
+
+    let attempts = 0;
+    const maxAttempts = 10;
+
+    const tryPush = () => {
+      attempts++;
+      if (window.adsbygoogle) {
+        try {
+          window.adsbygoogle.push({});
+        } catch (e: any) {
+          // "already have ads" — fine, no-op
+          if (e?.message?.includes("already have ads")) return;
+        }
+      } else if (attempts < maxAttempts) {
+        setTimeout(tryPush, 300);
       }
-    } catch {
-      // AdSense not loaded
-    }
+    };
+
+    // Small delay to ensure DOM is settled after navigation
+    const t = setTimeout(tryPush, 200);
+    return () => clearTimeout(t);
   }, []);
 
   return (
