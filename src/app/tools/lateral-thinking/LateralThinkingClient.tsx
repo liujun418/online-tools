@@ -31,17 +31,11 @@ interface ApiPuzzle {
   reveal?: string;
 }
 
-const CATEGORIES: { id: Category; gradient: string; icon: string }[] = [
-  { id: "classic", gradient: "from-indigo-900 via-slate-800 to-slate-900", icon: "🔍" },
-  { id: "horror", gradient: "from-red-950 via-zinc-900 to-black", icon: "🕯️" },
-  { id: "brain-hole", gradient: "from-purple-900 via-fuchsia-900 to-indigo-900", icon: "🌀" },
+const CATEGORIES: { id: Category; bgImage: string; gradient: string; icon: string }[] = [
+  { id: "classic",    bgImage: "/lateral-thinking/classic.webp",    gradient: "from-indigo-900/80 via-slate-800/85 to-slate-900/80", icon: "🔍" },
+  { id: "horror",     bgImage: "/lateral-thinking/horror.webp",     gradient: "from-red-950/80 via-zinc-900/85 to-black/80",        icon: "🕯️" },
+  { id: "brain-hole", bgImage: "/lateral-thinking/brainhole.webp",  gradient: "from-purple-900/80 via-fuchsia-900/85 to-indigo-900/80", icon: "🌀" },
 ];
-
-const CATEGORY_GRADIENTS: Record<Category, string> = {
-  "classic": "from-indigo-900/90 via-slate-800/95 to-slate-900/90",
-  "horror": "from-red-950/90 via-zinc-900/95 to-black/90",
-  "brain-hole": "from-purple-900/90 via-fuchsia-900/90 to-indigo-900/90",
-};
 
 const CATEGORY_BORDERS: Record<Category, string> = {
   "classic": "border-amber-500/30",
@@ -184,9 +178,8 @@ export default function LateralThinkingClient({
 
   const handleReveal = () => setRevealed(true);
 
-  const gradient = CATEGORY_GRADIENTS[category];
+  const catCfg = CATEGORIES.find((c) => c.id === category)!;
   const borderColor = CATEGORY_BORDERS[category];
-  const catInfo = CATEGORIES.find((c) => c.id === category);
 
   return (
     <ToolLayout
@@ -218,10 +211,17 @@ export default function LateralThinkingClient({
       </div>
 
       {/* Scenario card */}
-      <div className={`relative overflow-hidden rounded-2xl border ${borderColor} bg-gradient-to-br ${gradient}`}>
+      <div className={`relative overflow-hidden rounded-2xl border ${borderColor}`}>
+        {/* Background image + gradient overlay */}
+        <img
+          src={catCfg.bgImage}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-br ${catCfg.gradient}`} />
         {/* Loading */}
         {loading && (
-          <div className="flex flex-col items-center justify-center px-6 py-20">
+          <div className="relative flex flex-col items-center justify-center px-6 py-20">
             <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/40 border-t-white" />
             <p className="mt-4 text-sm text-white/60">{t.loading || "Generating puzzle..."}</p>
           </div>
@@ -229,12 +229,10 @@ export default function LateralThinkingClient({
 
         {/* Puzzle content */}
         {!loading && puzzle && (
-          <div className="px-6 py-8 sm:px-8 sm:py-10">
-            {catInfo && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-white/70 backdrop-blur-sm">
-                {catInfo.icon} {(t.categories as any)?.[category] || category}
-              </span>
-            )}
+          <div className="relative px-6 py-8 sm:px-8 sm:py-10">
+            <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-white/70 backdrop-blur-sm">
+              {catCfg.icon} {(t.categories as any)?.[category] || category}
+            </span>
 
             <p className="mt-4 text-lg leading-relaxed text-white sm:text-xl">
               {puzzle.scenario}
