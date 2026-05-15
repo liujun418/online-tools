@@ -743,6 +743,18 @@
     "copyAll": "نسخ الكل",
     "copy": "نسخ"
   },
+  "bingWallpaper": {
+    "loading": "جارٍ تحميل الخلفيات...",
+    "prev": "السابق",
+    "next": "التالي",
+    "random": "عشوائي",
+    "download": "تحميل",
+    "recentDays": "آخر 7 أيام",
+    "bingCopyright": "الخلفيات مقدمة من Bing.com",
+    "referralText": "أعجبتك هذه الخلفية؟ جرب أدوات الذكاء الاصطناعي لإنشاء صورك المذهلة!",
+    "tryAiImage": "مولد الصور بالذكاء الاصطناعي",
+    "tryBgRemover": "مزيل الخلفيات"
+  },
   "lateralThinking": {
     "categories": {
       "classic": "غموض كلاسيكي",

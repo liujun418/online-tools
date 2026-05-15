@@ -3904,4 +3904,96 @@ export const tools: Tool[] = [
       ],
     },
   },
+  {
+    id: "bing-wallpaper",
+    name: "Bing 4K Daily Wallpaper",
+    description:
+      "Download stunning Bing daily wallpapers in 4K, Full HD, and mobile resolutions. Browse 7-day history and one-click download. Free, no signup.",
+    category: "text",
+    icon: "🖼️",
+    path: "/tools/bing-wallpaper",
+    seoTitle: "Free Bing 4K Daily Wallpaper Download — HD & Mobile 2026",
+    seoDescription: "Download stunning Bing daily wallpapers in 4K UHD, Full HD 1080p, and mobile portrait. Browse 7-day history, random wallpapers, one-click download. Free, no signup required.",
+    seoKeywords: [
+      "bing wallpaper", "4k wallpaper download", "daily wallpaper",
+      "bing daily image", "hd wallpaper free", "mobile wallpaper",
+      "bing background", "wallpaper of the day",
+    ],
+    howToUse: [
+      "Browse the daily Bing wallpaper displayed in the main card.",
+      "Switch between 4K UHD, 1920×1080 Full HD, and Mobile Portrait resolutions.",
+      "Click Previous/Next to browse the 7-day wallpaper history.",
+      "Click Random to discover a surprise wallpaper from the past week.",
+      "Click Download to save the wallpaper directly to your device.",
+    ],
+    faq: [
+      { question: "Where do these wallpapers come from?", answer: "All wallpapers are from the official Bing Homepage Image Archive API. Bing selects a new stunning image every day from photographers worldwide." },
+      { question: "Are these wallpapers really free to download?", answer: "Yes, absolutely free. Bing provides these images for personal use as desktop and mobile backgrounds. We simply make them easier to browse and download." },
+      { question: "What resolutions are available?", answer: "4K UHD (3840×2160), Full HD (1920×1080), and Mobile Portrait (1080×1920). Choose the resolution that fits your screen best." },
+      { question: "Can I use these wallpapers commercially?", answer: "Bing wallpapers are provided for personal use only. For commercial use, please check the individual photographer's copyright and licensing terms." },
+    ],
+    nameTranslations: {
+      en: "Bing 4K Daily Wallpaper",
+      es: "Fondo de Pantalla Diario Bing 4K",
+      ar: "خلفية بينغ اليومية بدقة 4K",
+    },
+    descriptionTranslations: {
+      en: "Download stunning Bing daily wallpapers in 4K, Full HD, and mobile resolutions. Free, no signup.",
+      es: "Descarga fondos de pantalla diarios de Bing en 4K, Full HD y móvil. Gratis, sin registro.",
+      ar: "حمّل خلفيات بينغ اليومية بدقة 4K و Full HD و mobile. مجاني بدون تسجيل.",
+    },
+    seoTitleTranslations: {
+      en: "Free Bing 4K Daily Wallpaper Download — HD & Mobile 2026",
+      es: "Fondo de Pantalla Diario Bing 4K Gratis — HD y Móvil 2026",
+      ar: "تحميل خلفية بينغ اليومية بدقة 4K مجاناً — HD و mobile 2026",
+    },
+    seoDescriptionTranslations: {
+      en: "Download stunning Bing daily wallpapers in 4K UHD, Full HD 1080p, and mobile portrait. Free, no signup required.",
+      es: "Descarga fondos de pantalla diarios de Bing en 4K UHD, Full HD 1080p y formato vertical móvil. Gratis, sin registro.",
+      ar: "حمّل خلفيات بينغ اليومية بدقة 4K UHD و Full HD 1080p و portrait للجوال. مجاني، لا يتطلب التسجيل.",
+    },
+    howToUseTranslations: {
+      en: [
+        "Browse the daily Bing wallpaper displayed in the main card.",
+        "Switch between 4K UHD, 1920×1080 Full HD, and Mobile Portrait resolutions.",
+        "Click Previous/Next to browse the 7-day wallpaper history.",
+        "Click Random to discover a surprise wallpaper.",
+        "Click Download to save directly to your device.",
+      ],
+      es: [
+        "Explora el fondo de pantalla diario de Bing en la tarjeta principal.",
+        "Cambia entre resoluciones 4K, Full HD y Móvil.",
+        "Usa Anterior/Siguiente para ver el historial de 7 días.",
+        "Haz clic en Aleatorio para un fondo sorpresa.",
+        "Descarga directamente a tu dispositivo.",
+      ],
+      ar: [
+        "تصفح خلفية بينغ اليومية في البطاقة الرئيسية.",
+        "بدّل بين دقة 4K و Full HD و mobile.",
+        "استخدم السابق/التالي لتصفح تاريخ 7 أيام.",
+        "انقر على عشوائي لاكتشاف خلفية مفاجئة.",
+        "حمّل مباشرة إلى جهازك.",
+      ],
+    },
+    faqTranslations: {
+      en: [
+        { question: "Where do these wallpapers come from?", answer: "All wallpapers are from the official Bing Homepage Image Archive API, updated daily with new stunning photography." },
+        { question: "Are these wallpapers free to download?", answer: "Yes, absolutely free for personal use as desktop and mobile backgrounds." },
+        { question: "What resolutions are available?", answer: "4K UHD (3840×2160), Full HD (1920×1080), and Mobile Portrait (1080×1920)." },
+        { question: "Can I use these wallpapers commercially?", answer: "For personal use only. Check the photographer's copyright for commercial licensing." },
+      ],
+      es: [
+        { question: "¿De dónde vienen estos fondos?", answer: "Del archivo oficial de Bing Homepage Image API, actualizado diariamente." },
+        { question: "¿Son gratis para descargar?", answer: "Sí, totalmente gratis para uso personal como fondos de escritorio y móvil." },
+        { question: "¿Qué resoluciones hay?", answer: "4K UHD, Full HD 1080p, y Mobile Portrait." },
+        { question: "¿Uso comercial?", answer: "Solo para uso personal. Verifique los derechos del fotógrafo para uso comercial." },
+      ],
+      ar: [
+        { question: "من أين تأتي هذه الخلفيات؟", answer: "من أرشيف Bing الرسمي، يتم تحديثها يومياً." },
+        { question: "هل هي مجانية للتحميل؟", answer: "نعم، مجانية تماماً للاستخدام الشخصي." },
+        { question: "ما الدقات المتاحة؟", answer: "4K UHD و Full HD 1080p و Mobile Portrait." },
+        { question: "هل يمكن استخدامها تجارياً؟", answer: "للاستخدام الشخصي فقط. تحقق من حقوق المصور للاستخدام التجاري." },
+      ],
+    },
+  },
 ];

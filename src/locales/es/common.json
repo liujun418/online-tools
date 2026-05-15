@@ -743,6 +743,18 @@
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
   },
+  "bingWallpaper": {
+    "loading": "Cargando fondos...",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "random": "Aleatorio",
+    "download": "Descargar",
+    "recentDays": "Últimos 7 Días",
+    "bingCopyright": "Fondos proporcionados por Bing.com",
+    "referralText": "¿Te gusta este fondo? ¡Prueba nuestras herramientas IA para crear tus propias imágenes!",
+    "tryAiImage": "Generador de Imágenes IA",
+    "tryBgRemover": "Eliminador de Fondos"
+  },
   "lateralThinking": {
     "categories": {
       "classic": "Misterio Clásico",
