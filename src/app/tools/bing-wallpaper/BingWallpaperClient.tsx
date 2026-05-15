@@ -151,7 +151,7 @@ export default function BingWallpaperClient({
           <div className="flex flex-col items-center py-20">
             <p className="text-sm text-red-500">{error}</p>
             <button
-              onClick={fetchImages}
+              onClick={() => fetchImages()}
               className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
             >
               {tp.tryAgain || "Try Again"}
