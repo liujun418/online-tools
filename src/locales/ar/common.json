@@ -743,6 +743,19 @@
     "copyAll": "نسخ الكل",
     "copy": "نسخ"
   },
+  "nasaApod": {
+    "loading": "جارٍ تحميل الصورة الفلكية...",
+    "prevDay": "السابق",
+    "nextDay": "التالي",
+    "random": "عشوائي",
+    "download": "تحميل HD",
+    "watchVideo": "شاهد الفيديو على NASA",
+    "recentDays": "آخر 7 أيام",
+    "poweredBy": "Powered by NASA APOD",
+    "referralText": "ملهم من الكون؟ أنشئ صورك المذهلة مع أدوات الذكاء الاصطناعي المجانية!",
+    "tryAiImage": "مولد الصور بالذكاء الاصطناعي",
+    "tryBing": "خلفيات Bing 4K"
+  },
   "bingWallpaper": {
     "loading": "جارٍ تحميل الخلفيات...",
     "prev": "السابق",

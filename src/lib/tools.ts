@@ -3996,4 +3996,78 @@ export const tools: Tool[] = [
       ],
     },
   },
+  {
+    id: "nasa-apod",
+    name: "NASA Astronomy Picture of the Day",
+    description:
+      "Explore the cosmos with NASA's daily astronomy picture. Browse history, random discoveries, HD downloads. Powered by NASA APOD.",
+    category: "text",
+    icon: "🔭",
+    path: "/tools/nasa-apod",
+    seoTitle: "Free NASA Astronomy Picture of the Day — Daily Space Photos 2026",
+    seoDescription: "Explore the universe with NASA's daily astronomy picture. Browse historical space photos, random discoveries, and download HD images. Powered by NASA APOD. Free, no signup required.",
+    seoKeywords: [
+      "nasa apod", "astronomy picture of the day", "nasa daily image",
+      "space photo", "hubble telescope image", "nasa picture",
+      "astronomy photo", "galaxy wallpaper", "nebula image",
+    ],
+    howToUse: [
+      "View today's NASA Astronomy Picture of the Day in the main card.",
+      "Click Previous/Next to browse daily astronomy photos by date.",
+      "Click Random to discover a random APOD from NASA's archive.",
+      "For images, click Download HD to save the full-resolution version.",
+      "Browse the 7-day history thumbnails below for quick access.",
+    ],
+    faq: [
+      { question: "What is NASA APOD?", answer: "NASA's Astronomy Picture of the Day is a daily image or photograph of our fascinating universe, along with a brief explanation written by a professional astronomer." },
+      { question: "Are NASA images free to use?", answer: "NASA images are generally not copyrighted and may be used for educational or informational purposes. Always check the specific image copyright — some APOD images are from external photographers who retain rights." },
+      { question: "How far back does the APOD archive go?", answer: "NASA APOD has been publishing daily since June 16, 1995. That's over 30 years of astronomy images to explore." },
+      { question: "What if today's APOD is a video?", answer: "Some days feature astronomy-related videos instead of images. These are embedded directly from YouTube and you can watch them on this page." },
+    ],
+    nameTranslations: {
+      en: "NASA Astronomy Picture of the Day",
+      es: "NASA Imagen Astronómica del Día",
+      ar: "صورة ناسا الفلكية اليومية",
+    },
+    descriptionTranslations: {
+      en: "Explore the cosmos with NASA's daily astronomy picture. Free, no signup. Powered by NASA APOD.",
+      es: "Explora el cosmos con la imagen astronómica diaria de NASA. Gratis, sin registro.",
+      ar: "استكشف الكون مع صورة ناسا الفلكية اليومية. مجاني، بدون تسجيل.",
+    },
+    seoTitleTranslations: {
+      en: "Free NASA Astronomy Picture of the Day — Daily Space Photos 2026",
+      es: "NASA Imagen Astronómica del Día Gratis — Fotos Espaciales 2026",
+      ar: "صورة ناسا الفلكية اليومية مجاناً — صور فضائية يومية 2026",
+    },
+    seoDescriptionTranslations: {
+      en: "Explore the universe with NASA's daily astronomy picture. Browse space photos, random discoveries, HD downloads. Free, no signup.",
+      es: "Explora el universo con la imagen astronómica diaria de NASA. Navega por fotos espaciales y descarga en HD. Gratis.",
+      ar: "استكشف الكون مع صورة ناسا الفلكية اليومية. تصفح الصور الفضائية وحمّلها بدقة عالية. مجاني.",
+    },
+    howToUseTranslations: {
+      en: ["View today's APOD in the main card.", "Use Previous/Next to browse by date.", "Click Random for a surprise.", "Download HD for full resolution.", "Browse history thumbnails below."],
+      es: ["Ve la APOD de hoy.", "Usa Anterior/Siguiente por fecha.", "Aleatorio para sorpresa.", "Descarga HD.", "Historial abajo."],
+      ar: ["اعرض صورة اليوم.", "السابق/التالي للتصفح.", "عشوائي للمفاجأة.", "حمّل بدقة HD.", "التاريخ أدناه."],
+    },
+    faqTranslations: {
+      en: [
+        { question: "What is NASA APOD?", answer: "NASA's Astronomy Picture of the Day features a daily image of our universe with an astronomer's explanation." },
+        { question: "Are NASA images free?", answer: "NASA images are generally not copyrighted for educational use. Check individual photographer copyrights." },
+        { question: "How far back does it go?", answer: "The APOD archive goes back to June 16, 1995 — over 30 years of daily astronomy images." },
+        { question: "What about video APODs?", answer: "Some days feature astronomy videos embedded from YouTube." },
+      ],
+      es: [
+        { question: "¿Qué es NASA APOD?", answer: "Imagen Astronómica del Día de NASA — una foto diaria del universo con explicación astronómica." },
+        { question: "¿Son gratis las imágenes?", answer: "Generalmente sin copyright para uso educativo. Verifique los derechos del fotógrafo individual." },
+        { question: "¿Hasta cuándo llega el archivo?", answer: "Desde el 16 de junio de 1995 — más de 30 años de imágenes diarias." },
+        { question: "¿Y los APODs de video?", answer: "Algunos días presentan videos astronómicos incrustados de YouTube." },
+      ],
+      ar: [
+        { question: "ما هي صورة ناسا الفلكية اليومية؟", answer: "صورة يومية للكون مع شرح فلكي من عالم فلك محترف." },
+        { question: "هل صور ناسا مجانية؟", answer: "بشكل عام غير محمية بحقوق النشر للاستخدام التعليمي. تحقق من حقوق المصور." },
+        { question: "كم يمتد الأرشيف؟", answer: "يعود إلى 16 يونيو 1995 — أكثر من 30 عاماً من الصور اليومية." },
+        { question: "ماذا عن الفيديوهات؟", answer: "بعض الأيام تقدم فيديوهات فلكية من YouTube." },
+      ],
+    },
+  },
 ];

@@ -755,6 +755,19 @@
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
   },
+  "nasaApod": {
+    "loading": "Loading astronomy picture...",
+    "prevDay": "Previous",
+    "nextDay": "Next",
+    "random": "Random",
+    "download": "Download HD",
+    "watchVideo": "Watch Video on NASA",
+    "recentDays": "Recent 7 Days",
+    "poweredBy": "Powered by NASA APOD",
+    "referralText": "Inspired by the cosmos? Create your own stunning images with our free AI tools!",
+    "tryAiImage": "AI Image Generator",
+    "tryBing": "Bing 4K Wallpaper"
+  },
   "bingWallpaper": {
     "loading": "Loading wallpapers...",
     "prev": "Previous",

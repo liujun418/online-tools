@@ -743,6 +743,19 @@
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
   },
+  "nasaApod": {
+    "loading": "Cargando imagen astronómica...",
+    "prevDay": "Anterior",
+    "nextDay": "Siguiente",
+    "random": "Aleatorio",
+    "download": "Descargar HD",
+    "watchVideo": "Ver Video en NASA",
+    "recentDays": "Últimos 7 Días",
+    "poweredBy": "Powered by NASA APOD",
+    "referralText": "¿Inspirado por el cosmos? ¡Crea tus propias imágenes con nuestras herramientas IA gratuitas!",
+    "tryAiImage": "Generador de Imágenes IA",
+    "tryBing": "Bing 4K Fondos"
+  },
   "bingWallpaper": {
     "loading": "Cargando fondos...",
     "prev": "Anterior",
