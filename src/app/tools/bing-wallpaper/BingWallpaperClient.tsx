@@ -94,7 +94,8 @@ export default function BingWallpaperClient({
       if (!res.ok) throw new Error("Failed to fetch");
       const data = await res.json();
       if (data.images?.length) {
-        setImages((prev) => [...prev, ...data.images]);
+        setImages(data.images);
+        setCurrentIdx(0);
         setPage(nextPage);
         setHasMore(data.images.length >= 8);
       } else {
