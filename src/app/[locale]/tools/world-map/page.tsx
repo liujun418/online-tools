@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import WorldMapWrapper from "@/app/tools/world-map/WorldMapWrapper";
 import { tools } from "@/lib/tools";
 import { isValidLocale, getDictionary, Locale } from "@/lib/i18n";
-
-const WorldMapClient = dynamic(() => import("@/app/tools/world-map/WorldMapClient"), { ssr: false });
 
 const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
@@ -38,5 +36,5 @@ export default async function ToolPage({ params }: { params: Promise<{ locale: s
   const tool = tools.find((t) => t.id === TOOL_ID)!;
   const toolTitle = (tool as any).nameTranslations?.[locale] || tool.name;
   const toolDescription = (tool as any).descriptionTranslations?.[locale] || tool.description;
-  return <WorldMapClient locale={locale as Locale} dict={dict} titleOverride={toolTitle} descriptionOverride={toolDescription} />;
+  return <WorldMapWrapper locale={locale as Locale} dict={dict} titleOverride={toolTitle} descriptionOverride={toolDescription} />;
 }
