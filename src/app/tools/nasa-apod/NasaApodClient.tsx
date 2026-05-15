@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
-const PROXY_API = "https://ai-toolbox-api-production.up.railway.app/api/nasa-apod";
+const NASA_API = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 
 const metadata = {
   title: "NASA Astronomy Picture of the Day",
@@ -69,7 +69,7 @@ export default function NasaApodClient({
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(PROXY_API);
+      const res = await fetch(NASA_API);
       if (!res.ok) throw new Error("API failed");
       const data: ApodData = await res.json();
       setToday(data);
@@ -88,7 +88,7 @@ export default function NasaApodClient({
       const start = new Date();
       start.setDate(start.getDate() - 7);
       const res = await fetch(
-        `${PROXY_API}?start_date=${start.toISOString().slice(0, 10)}&end_date=${end.toISOString().slice(0, 10)}`
+        `${NASA_API}&start_date=${start.toISOString().slice(0, 10)}&end_date=${end.toISOString().slice(0, 10)}`
       );
       if (!res.ok) return;
       const data: ApodData[] = await res.json();
@@ -108,7 +108,7 @@ export default function NasaApodClient({
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(`${PROXY_API}?date=${dateStr}`);
+      const res = await fetch(`${NASA_API}&date=${dateStr}`);
       if (!res.ok) throw new Error("Not found");
       const data: ApodData = await res.json();
       setCurrent(data);
@@ -123,7 +123,7 @@ export default function NasaApodClient({
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(`${PROXY_API}?count=1`);
+      const res = await fetch(`${NASA_API}&count=1`);
       if (!res.ok) throw new Error("API failed");
       const data: ApodData[] = await res.json();
       if (data.length) setCurrent(data[0]);
