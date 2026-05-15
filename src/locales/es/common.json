@@ -742,5 +742,24 @@
     "generate": "Generar",
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
+  },
+  "lateralThinking": {
+    "categories": {
+      "classic": "Misterio Clásico",
+      "horror": "Terror Oscuro",
+      "brain-hole": "Agujero Mental"
+    },
+    "loading": "Generando acertijo...",
+    "offlineMode": "Modo offline — acertijo precargado",
+    "reveal": "Revelar Verdad",
+    "hint": "Obtener Pista",
+    "hinted": "Pista recibida ✓",
+    "nextStory": "Siguiente Historia →",
+    "guessPlaceholder": "Escribe tu respuesta...",
+    "check": "Verificar",
+    "theAnswer": "La Respuesta",
+    "theTwist": "El Giro",
+    "referralText": "¿Quieres crear tus propias imágenes? ¡Prueba nuestro Generador de Imágenes IA — convierte texto en imágenes increíbles!",
+    "tryAi": "Probar Generador IA →"
   }
 }

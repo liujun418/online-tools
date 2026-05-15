@@ -754,5 +754,24 @@
     "helpful": "Helpful",
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
+  },
+  "lateralThinking": {
+    "categories": {
+      "classic": "Classic Mystery",
+      "horror": "Horror Dark",
+      "brain-hole": "Brain Hole Fun"
+    },
+    "loading": "Generating puzzle...",
+    "offlineMode": "Offline mode — pre-loaded puzzle",
+    "reveal": "Reveal Truth",
+    "hint": "Get Hint",
+    "hinted": "Hint given ✓",
+    "nextStory": "Next Story →",
+    "guessPlaceholder": "Type your guess...",
+    "check": "Check",
+    "theAnswer": "The Answer",
+    "theTwist": "The Twist",
+    "referralText": "Want to create your own images? Try our AI Image Generator — turn text into stunning visuals!",
+    "tryAi": "Try AI Image Generator →"
   }
 }
