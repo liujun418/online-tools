@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { tools } from "@/lib/tools";
 import ToolCard from "@/components/ToolCard";
 import { Locale, localeDir } from "@/lib/i18n";
@@ -13,6 +13,88 @@ const categories = [
   { key: "calculator", label: "", id: "calculators" },
   { key: "converter", label: "", id: "converters" },
 ];
+
+function PromoCarousel({ locale }: { locale: string }) {
+  const slides = [
+    {
+      type: "ai" as const,
+      href: "https://ai.toolboxonline.club",
+      target: "_blank",
+      gradient: "from-blue-600 to-purple-600",
+      icon: "✨",
+      title: "AI ToolBox — AI-Powered Photo & Document Tools",
+      desc: "Background removal, avatar generation, photo restoration, PDF to Word — all in one place",
+      cta: "Try Now →",
+    },
+    {
+      type: "lateral" as const,
+      href: `/${locale}/tools/lateral-thinking`,
+      gradient: "from-indigo-800 via-purple-800 to-slate-900",
+      icon: "🧩",
+      title: "Lateral Thinking Puzzle — Free Brain Teasers",
+      desc: "AI-generated mysteries, hints, and reveals. Test your reasoning skills now!",
+      cta: "Play Now →",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    if (hovering) return;
+    const t = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 5000);
+    return () => clearInterval(t);
+  }, [hovering]);
+
+  return (
+    <div
+      className="relative mb-12 overflow-hidden rounded-2xl"
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+    >
+      <div className="relative h-28 sm:h-32">
+        <div
+          className="flex h-full transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((s, i) => (
+            <a
+              key={i}
+              href={s.href}
+              target={s.type === "ai" ? "_blank" : undefined}
+              rel={s.type === "ai" ? "noopener noreferrer" : undefined}
+              className={`flex h-full w-full shrink-0 items-center justify-between bg-gradient-to-r ${s.gradient} px-6 py-5 text-white shadow-lg sm:px-10`}
+            >
+              <div className="text-start">
+                <p className="text-lg font-bold sm:text-xl">
+                  {s.icon} {s.title}
+                </p>
+                <p className="mt-1 text-sm text-white/80">{s.desc}</p>
+              </div>
+              <span className="ml-4 shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-white/30">
+                {s.cta}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Dots */}
+      <div className="absolute bottom-2.5 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full bg-black/20 px-2.5 py-1.5 backdrop-blur-sm">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1.5 rounded-full transition-all ${
+              i === current ? "w-4 bg-white" : "w-1.5 bg-white/50 hover:bg-white/70"
+            }`}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function HomeClient({
   locale,
@@ -106,21 +188,8 @@ export default function HomeClient({
         </div>
       </section>
 
-      {/* AI ToolBox Promo Banner */}
-      <a
-        href="https://ai.toolboxonline.club"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mb-12 flex cursor-pointer items-center justify-between rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-5 text-white shadow-lg transition-all hover:shadow-xl sm:px-10"
-      >
-        <div className="text-start">
-          <p className="text-lg font-bold sm:text-xl">✨ AI ToolBox — AI-Powered Photo & Document Tools</p>
-          <p className="mt-1 text-sm text-white/80">Background removal, avatar generation, photo restoration, PDF to Word — all in one place</p>
-        </div>
-        <span className="ml-4 shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm hover:bg-white/30">
-          Try Now →
-        </span>
-      </a>
+      {/* Promo Banner Carousel */}
+      <PromoCarousel locale={locale} />
 
       {/* Filtered Results */}
       {query ? (
