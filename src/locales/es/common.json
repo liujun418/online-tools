@@ -743,6 +743,17 @@
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
   },
+  "ipLookup": {
+    "loading": "Consultando tu IP...",
+    "copyAll": "Copiar Todo",
+    "copied": "¡Copiado!",
+    "refresh": "Actualizar",
+    "poweredBy": "Powered by ipapi.co",
+    "compliance": "Datos IP solo para fines informativos. No se almacenan datos personales.",
+    "referralText": "¡Explora más herramientas!",
+    "tryMap": "Mapa Mundial",
+    "tryCrypto": "Precios Cripto"
+  },
   "worldMap": {
     "searchPlaceholder": "Buscar una ciudad o lugar...",
     "locateMe": "Mi Ubicación",

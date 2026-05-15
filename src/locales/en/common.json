@@ -755,6 +755,17 @@
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
   },
+  "ipLookup": {
+    "loading": "Looking up your IP...",
+    "copyAll": "Copy All Info",
+    "copied": "Copied!",
+    "refresh": "Refresh",
+    "poweredBy": "Powered by ipapi.co",
+    "compliance": "IP data is provided for informational purposes only. No personal data is stored.",
+    "referralText": "Explore more free tools!",
+    "tryMap": "World Map",
+    "tryCrypto": "Crypto Prices"
+  },
   "worldMap": {
     "searchPlaceholder": "Search for a city or place...",
     "locateMe": "My Location",
