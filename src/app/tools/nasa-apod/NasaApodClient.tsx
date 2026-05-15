@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
-const NASA_API = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+const NASA_API = "https://api.nasa.gov/planetary/apod?api_key=lDmppzTdoYl25cf8ggmFLdmqhTIdT4mW49TZKmcH";
 
 const metadata = {
   title: "NASA Astronomy Picture of the Day",
