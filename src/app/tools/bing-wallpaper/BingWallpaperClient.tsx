@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
 const PROXY_API = "https://ai-toolbox-api-production.up.railway.app/api/bing-wallpaper";
@@ -60,53 +60,40 @@ export default function BingWallpaperClient({
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState("");
-  const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+  const idxRef = useRef(0);
 
-  const fetchImages = useCallback(async () => {
-    setLoading(true);
+  const fetchImages = useCallback(async (idx = 0) => {
+    setLoading(idx === 0);
+    setLoadingMore(idx > 0);
     setError("");
     try {
-      const res = await fetch(`${PROXY_API}?idx=0`);
-      if (!res.ok) throw new Error("Failed to fetch");
-      const data = await res.json();
-      if (data.images?.length) {
-        setImages(data.images);
-        setCurrentIdx(0);
-        setPage(0);
-        setHasMore(data.images.length >= 8);
-      } else {
-        setError("No images found");
-      }
-    } catch {
-      setError("Unable to load wallpapers. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  const loadMore = useCallback(async () => {
-    setLoadingMore(true);
-    try {
-      const nextPage = page + 1;
-      const idx = nextPage * 8;
       const res = await fetch(`${PROXY_API}?idx=${idx}`);
       if (!res.ok) throw new Error("Failed to fetch");
       const data = await res.json();
       if (data.images?.length) {
         setImages(data.images);
         setCurrentIdx(0);
-        setPage(nextPage);
+        idxRef.current = idx;
         setHasMore(data.images.length >= 8);
+      } else if (idx === 0) {
+        setError("No images found");
       } else {
         setHasMore(false);
       }
     } catch {
-      setHasMore(false);
+      if (idx === 0) setError("Unable to load wallpapers. Please try again.");
+      else setHasMore(false);
     } finally {
+      setLoading(false);
       setLoadingMore(false);
     }
-  }, [page]);
+  }, []);
+
+  const loadMore = useCallback(() => {
+    const nextIdx = idxRef.current + 8;
+    fetchImages(nextIdx);
+  }, [fetchImages]);
 
   useEffect(() => {
     fetchImages();
