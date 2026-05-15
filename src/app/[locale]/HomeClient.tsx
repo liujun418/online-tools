@@ -29,7 +29,8 @@ function PromoCarousel({ locale }: { locale: string }) {
     {
       type: "lateral" as const,
       href: `/${locale}/tools/lateral-thinking`,
-      gradient: "from-indigo-800 via-purple-800 to-slate-900",
+      gradient: "from-indigo-900/70 via-slate-900/80 to-black/70",
+      image: "/banner-lateral-thinking.webp",
       icon: "🧩",
       title: "Lateral Thinking Puzzle — Free Brain Teasers",
       desc: "AI-generated mysteries, hints, and reveals. Test your reasoning skills now!",
@@ -63,15 +64,21 @@ function PromoCarousel({ locale }: { locale: string }) {
               href={s.href}
               target={s.type === "ai" ? "_blank" : undefined}
               rel={s.type === "ai" ? "noopener noreferrer" : undefined}
-              className={`flex h-full w-full shrink-0 items-center justify-between bg-gradient-to-r ${s.gradient} px-6 py-5 text-white shadow-lg sm:px-10`}
+              className={`relative flex h-full w-full shrink-0 items-center justify-between overflow-hidden bg-gradient-to-r ${s.gradient} px-6 py-5 text-white shadow-lg sm:px-10`}
             >
-              <div className="text-start">
+              {"image" in s && s.image && (
+                <img src={s.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              )}
+              {"image" in s && s.image && (
+                <div className={`absolute inset-0 bg-gradient-to-r ${s.gradient}`} />
+              )}
+              <div className="relative z-10 text-start">
                 <p className="text-lg font-bold sm:text-xl">
                   {s.icon} {s.title}
                 </p>
                 <p className="mt-1 text-sm text-white/80">{s.desc}</p>
               </div>
-              <span className="ml-4 shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-white/30">
+              <span className="relative z-10 ml-4 shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-white/30">
                 {s.cta}
               </span>
             </a>
