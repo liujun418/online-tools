@@ -203,26 +203,7 @@ export default function NasaApodClient({
                 )}
               </div>
 
-              {/* Info */}
-              <div className="border-t border-zinc-100 px-4 py-4 dark:border-zinc-800 sm:px-6">
-                <h2 className="text-lg font-bold text-zinc-900 dark:text-white sm:text-xl">
-                  {current.title}
-                </h2>
-                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
-                  <span>{formatDate(current.date)}</span>
-                  {current.copyright && (
-                    <>
-                      <span>·</span>
-                      <span>© {current.copyright}</span>
-                    </>
-                  )}
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {current.explanation}
-                </p>
-              </div>
-
-              {/* Actions */}
+              {/* Actions — directly below image for one-screen access */}
               <div className="flex flex-wrap gap-2 border-t border-zinc-100 px-4 py-3 dark:border-zinc-800 sm:px-6">
                 <button
                   onClick={() => goDate(current ? getPrevDate(current.date) : todayStr)}
@@ -250,6 +231,25 @@ export default function NasaApodClient({
                     ⬇ {t.download || "Download HD"}
                   </button>
                 )}
+              </div>
+
+              {/* Info */}
+              <div className="border-t border-zinc-100 px-4 py-4 dark:border-zinc-800 sm:px-6">
+                <h2 className="text-lg font-bold text-zinc-900 dark:text-white sm:text-xl">
+                  {current.title}
+                </h2>
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
+                  <span>{formatDate(current.date)}</span>
+                  {current.copyright && (
+                    <>
+                      <span>·</span>
+                      <span>© {current.copyright}</span>
+                    </>
+                  )}
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {current.explanation}
+                </p>
               </div>
             </div>
 
