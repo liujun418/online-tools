@@ -743,6 +743,17 @@
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
   },
+  "randomQuote": {
+    "loading": "Cargando cita...",
+    "refresh": "Nueva Cita",
+    "copy": "Copiar Cita",
+    "copied": "¡Copiado!",
+    "poweredBy": "Citas vía ZenQuotes API",
+    "disclaimer": "Solo para uso no comercial.",
+    "referralText": "¿Más inspiración? ¡Prueba nuestras herramientas!",
+    "tryPet": "Mascotas",
+    "tryBing": "Bing Fondos"
+  },
   "petWallpaper": {
     "loading": "Cargando...",
     "clickTab": "¡Haz clic en una pestaña para cargar!",

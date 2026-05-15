@@ -755,6 +755,17 @@
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
   },
+  "randomQuote": {
+    "loading": "Loading quote...",
+    "refresh": "New Quote",
+    "copy": "Copy Quote",
+    "copied": "Copied!",
+    "poweredBy": "Quotes via ZenQuotes API",
+    "disclaimer": "For non-commercial use only. Authors retain all rights.",
+    "referralText": "Want more inspiration? Try our other free tools!",
+    "tryPet": "Pet Wallpaper",
+    "tryBing": "Bing Wallpaper"
+  },
   "petWallpaper": {
     "loading": "Loading...",
     "clickTab": "Click a tab above to load a cute pet!",

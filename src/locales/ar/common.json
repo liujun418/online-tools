@@ -743,6 +743,17 @@
     "copyAll": "نسخ الكل",
     "copy": "نسخ"
   },
+  "randomQuote": {
+    "loading": "جارٍ تحميل الاقتباس...",
+    "refresh": "اقتباس جديد",
+    "copy": "نسخ الاقتباس",
+    "copied": "تم النسخ!",
+    "poweredBy": "اقتباسات عبر ZenQuotes API",
+    "disclaimer": "للاستخدام غير التجاري فقط.",
+    "referralText": "هل تريد المزيد من الإلهام؟ جرب أدواتنا الأخرى!",
+    "tryPet": "خلفيات الحيوانات",
+    "tryBing": "خلفيات Bing"
+  },
   "petWallpaper": {
     "loading": "جارٍ التحميل...",
     "clickTab": "انقر على تبويب للتحميل!",
