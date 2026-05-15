@@ -755,6 +755,17 @@
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
   },
+  "cryptoPrice": {
+    "loading": "Loading prices...",
+    "autoRefresh": "Auto-refresh every 30s",
+    "lastUpdate": "Last update",
+    "refresh": "Refresh",
+    "poweredBy": "Powered by CoinGecko",
+    "disclaimer": "Prices are for informational purposes only. Not financial advice.",
+    "referralText": "Need more free tools? Try our other free utilities below!",
+    "tryBing": "Bing 4K Wallpaper",
+    "tryNasa": "NASA APOD"
+  },
   "nasaApod": {
     "loading": "Loading astronomy picture...",
     "prevDay": "Previous",

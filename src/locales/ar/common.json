@@ -743,6 +743,17 @@
     "copyAll": "نسخ الكل",
     "copy": "نسخ"
   },
+  "cryptoPrice": {
+    "loading": "جارٍ تحميل الأسعار...",
+    "autoRefresh": "تحديث تلقائي كل 30 ثانية",
+    "lastUpdate": "آخر تحديث",
+    "refresh": "تحديث",
+    "poweredBy": "Powered by CoinGecko",
+    "disclaimer": "الأسعار لأغراض معلوماتية فقط. ليست نصيحة مالية.",
+    "referralText": "هل تريد المزيد من الأدوات المجانية؟ جرب أدواتنا الأخرى!",
+    "tryBing": "خلفيات Bing 4K",
+    "tryNasa": "NASA APOD"
+  },
   "nasaApod": {
     "loading": "جارٍ تحميل الصورة الفلكية...",
     "prevDay": "السابق",
