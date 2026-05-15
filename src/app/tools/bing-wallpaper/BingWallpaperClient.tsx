@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
-const BING_API = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=en-US";
+const PROXY_API = "https://ai-toolbox-api-production.up.railway.app/api/bing-wallpaper";
 const BING_BASE = "https://www.bing.com";
 
 const metadata = {
@@ -64,7 +64,7 @@ export default function BingWallpaperClient({
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(BING_API);
+      const res = await fetch(PROXY_API);
       if (!res.ok) throw new Error("Failed to fetch");
       const data = await res.json();
       if (data.images?.length) {
