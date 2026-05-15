@@ -743,6 +743,14 @@
     "copyAll": "Copiar Todos",
     "copy": "Copiar"
   },
+  "worldMap": {
+    "searchPlaceholder": "Buscar una ciudad o lugar...",
+    "locateMe": "Mi Ubicación",
+    "compliance": "Mapa gratuito sin fines comerciales, cumple con licencias OpenStreetMap y Leaflet.",
+    "referralText": "¡Explora más herramientas gratis!",
+    "tryBing": "Bing 4K Fondos",
+    "tryNasa": "NASA APOD"
+  },
   "cryptoPrice": {
     "loading": "Cargando precios...",
     "autoRefresh": "Actualización cada 30s",

@@ -743,6 +743,14 @@
     "copyAll": "نسخ الكل",
     "copy": "نسخ"
   },
+  "worldMap": {
+    "searchPlaceholder": "ابحث عن مدينة أو مكان...",
+    "locateMe": "موقعي",
+    "compliance": "خريطة مجانية للاستخدام غير التجاري، تمتثل لتراخيص OpenStreetMap و Leaflet.",
+    "referralText": "استكشف المزيد من الأدوات المجانية!",
+    "tryBing": "خلفيات Bing 4K",
+    "tryNasa": "NASA APOD"
+  },
   "cryptoPrice": {
     "loading": "جارٍ تحميل الأسعار...",
     "autoRefresh": "تحديث تلقائي كل 30 ثانية",

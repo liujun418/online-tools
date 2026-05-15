@@ -755,6 +755,14 @@
     "sortByHelpful": "Most helpful",
     "loadMore": "Load More"
   },
+  "worldMap": {
+    "searchPlaceholder": "Search for a city or place...",
+    "locateMe": "My Location",
+    "compliance": "This map tool is provided free for non-commercial use in compliance with OpenStreetMap and Leaflet open-source licenses.",
+    "referralText": "Explore more free tools!",
+    "tryBing": "Bing 4K Wallpaper",
+    "tryNasa": "NASA APOD"
+  },
   "cryptoPrice": {
     "loading": "Loading prices...",
     "autoRefresh": "Auto-refresh every 30s",
