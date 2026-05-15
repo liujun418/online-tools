@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import WorldMapClient from "@/app/tools/world-map/WorldMapClient";
 import { tools } from "@/lib/tools";
 import { isValidLocale, getDictionary, Locale } from "@/lib/i18n";
+
+const WorldMapClient = dynamic(() => import("@/app/tools/world-map/WorldMapClient"), { ssr: false });
 
 const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
