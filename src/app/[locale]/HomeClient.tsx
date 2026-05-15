@@ -22,7 +22,8 @@ function PromoCarousel({ locale }: { locale: string }) {
       target: "_blank",
       gradient: "from-blue-600 to-purple-600",
       icon: "✨",
-      title: "AI ToolBox — AI-Powered Photo & Document Tools",
+      title: "AI ToolBox",
+      subtitle: "AI Photo & Document Tools",
       desc: "Background removal, avatar generation, photo restoration, PDF to Word — all in one place",
       cta: "Try Now →",
     },
@@ -32,8 +33,9 @@ function PromoCarousel({ locale }: { locale: string }) {
       gradient: "from-indigo-900/70 via-slate-900/80 to-black/70",
       image: "/banner-lateral-thinking.webp",
       icon: "🧩",
-      title: "Lateral Thinking Puzzle — Free Brain Teasers",
-      desc: "AI-generated mysteries, hints, and reveals. Test your reasoning skills now!",
+      title: "Lateral Thinking Puzzle",
+      subtitle: "Free AI Brain Teasers",
+      desc: "Solve mysteries, get hints, and reveal the truth — unlimited free play",
       cta: "Play Now →",
     },
   ];
@@ -53,7 +55,7 @@ function PromoCarousel({ locale }: { locale: string }) {
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
-      <div className="relative h-28 sm:h-32">
+      <div className="relative h-24 sm:h-32">
         <div
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -64,7 +66,7 @@ function PromoCarousel({ locale }: { locale: string }) {
               href={s.href}
               target={s.type === "ai" ? "_blank" : undefined}
               rel={s.type === "ai" ? "noopener noreferrer" : undefined}
-              className={`relative flex h-full w-full shrink-0 items-center justify-between overflow-hidden bg-gradient-to-r ${s.gradient} px-6 py-5 text-white shadow-lg sm:px-10`}
+              className={`relative flex h-full w-full shrink-0 items-center justify-between overflow-hidden bg-gradient-to-r ${s.gradient} px-4 py-3 text-white shadow-lg sm:px-10 sm:py-5`}
             >
               {"image" in s && s.image && (
                 <img src={s.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
@@ -72,13 +74,14 @@ function PromoCarousel({ locale }: { locale: string }) {
               {"image" in s && s.image && (
                 <div className={`absolute inset-0 bg-gradient-to-r ${s.gradient}`} />
               )}
-              <div className="relative z-10 text-start">
-                <p className="text-lg font-bold sm:text-xl">
-                  {s.icon} {s.title}
+              <div className="relative z-10 min-w-0 text-start">
+                <p className="text-base font-bold leading-tight sm:text-xl">
+                  {s.icon} <span className="sm:hidden">{s.title}</span>
+                  <span className="hidden sm:inline">{s.title}{"subtitle" in s ? ` — ${(s as any).subtitle}` : ""}</span>
                 </p>
-                <p className="mt-1 text-sm text-white/80">{s.desc}</p>
+                <p className="mt-0.5 hidden text-xs text-white/70 sm:block sm:text-sm sm:text-white/80">{s.desc}</p>
               </div>
-              <span className="relative z-10 ml-4 shrink-0 rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-white/30">
+              <span className="relative z-10 ml-3 shrink-0 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-semibold backdrop-blur-sm transition-colors hover:bg-white/30 sm:ml-4 sm:px-4 sm:py-2 sm:text-sm">
                 {s.cta}
               </span>
             </a>
