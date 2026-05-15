@@ -58,18 +58,23 @@ export default function BingWallpaperClient({
   const [currentIdx, setCurrentIdx] = useState(0);
   const [resolution, setResolution] = useState<Resolution>("1080p");
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState("");
+  const [page, setPage] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
 
   const fetchImages = useCallback(async () => {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(PROXY_API);
+      const res = await fetch(`${PROXY_API}?idx=0`);
       if (!res.ok) throw new Error("Failed to fetch");
       const data = await res.json();
       if (data.images?.length) {
         setImages(data.images);
         setCurrentIdx(0);
+        setPage(0);
+        setHasMore(data.images.length >= 8);
       } else {
         setError("No images found");
       }
@@ -79,6 +84,28 @@ export default function BingWallpaperClient({
       setLoading(false);
     }
   }, []);
+
+  const loadMore = useCallback(async () => {
+    setLoadingMore(true);
+    try {
+      const nextPage = page + 1;
+      const idx = nextPage * 8;
+      const res = await fetch(`${PROXY_API}?idx=${idx}`);
+      if (!res.ok) throw new Error("Failed to fetch");
+      const data = await res.json();
+      if (data.images?.length) {
+        setImages((prev) => [...prev, ...data.images]);
+        setPage(nextPage);
+        setHasMore(data.images.length >= 8);
+      } else {
+        setHasMore(false);
+      }
+    } catch {
+      setHasMore(false);
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [page]);
 
   useEffect(() => {
     fetchImages();
@@ -220,11 +247,11 @@ export default function BingWallpaperClient({
               </div>
             </div>
 
-            {/* 7-day history thumbnails */}
+            {/* History thumbnails */}
             {images.length > 1 && (
               <div className="mt-8">
                 <h3 className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-                  {t.recentDays || "Recent 7 Days"}
+                  {t.recentDays || "History"}
                 </h3>
                 <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
                   {images.map((img, i) => (
@@ -246,6 +273,24 @@ export default function BingWallpaperClient({
                     </button>
                   ))}
                 </div>
+                {hasMore && (
+                  <div className="mt-4 text-center">
+                    <button
+                      onClick={loadMore}
+                      disabled={loadingMore}
+                      className="rounded-lg border border-zinc-300 px-5 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-50 disabled:opacity-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800"
+                    >
+                      {loadingMore ? (
+                        <span className="flex items-center gap-2">
+                          <span className="h-3 w-3 animate-spin rounded-full border border-zinc-400 border-t-transparent" />
+                          {t.loading || "Loading..."}
+                        </span>
+                      ) : (
+                        t.loadMore || "Load More →"
+                      )}
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
