@@ -18,7 +18,7 @@ declare global {
 export default function AdUnit({
   className,
   adSlot,
-  format = "auto",
+  format = "horizontal",
 }: AdUnitProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
