@@ -936,6 +936,22 @@
     "colorConverter": "Color Converter",
     "bookOfAnswers": "Book of Answers"
   },
+  "scoreboard": {
+    "teamA": "Team A",
+    "teamB": "Team B",
+    "tapToEdit": "Tap to edit name",
+    "manualSet": "Set score manually",
+    "swap": "Swap",
+    "reset": "Reset All",
+    "round": "Round",
+    "stopwatch": "Stopwatch",
+    "countdown": "Countdown",
+    "seconds": "sec",
+    "start": "Start",
+    "pause": "Pause",
+    "theme": "Theme",
+    "disclaimer": "For entertainment and casual use only. Not intended for professional or official scoring."
+  },
   "foodPicker": {
     "all": "Random Mix",
     "total": "total",
