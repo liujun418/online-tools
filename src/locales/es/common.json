@@ -43,6 +43,11 @@
     "switchLanguage": "Cambiar idioma",
     "defaultHowToUse": "Ingresa o pega tu contenido en el campo de entrada de arriba. Los resultados se actualizan instantáneamente. Todo el procesamiento ocurre localmente en tu navegador — tus datos nunca salen de tu dispositivo."
   },
+  "categoryPage": {
+    "h1": "{icon} {name} — Herramientas Gratis",
+    "exploreOther": "Explora Otras Categorías",
+    "viewAll": "Ver todos →"
+  },
   "categories": {
     "text": "Herramientas de Texto",
     "developer": "Herramientas de Desarrollador",

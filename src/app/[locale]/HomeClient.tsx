@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { tools } from "@/lib/tools";
 import ToolCard from "@/components/ToolCard";
 import { Locale, localeDir } from "@/lib/i18n";
@@ -223,12 +224,20 @@ export default function HomeClient({
           const catTools = filteredTools.filter((t) => t.category === cat.key);
           return (
             <section id={cat.id} key={cat.key} className="mb-12">
-              <h2 className="mb-6 flex items-baseline gap-3 text-2xl font-semibold text-zinc-900 dark:text-white">
-                {cat.label}
-                <span className="text-sm font-normal text-zinc-400 dark:text-zinc-500">
-                  {catTools.length} {toolsLabel}
-                </span>
-              </h2>
+              <div className="mb-6 flex items-baseline justify-between">
+                <h2 className="flex items-baseline gap-3 text-2xl font-semibold text-zinc-900 dark:text-white">
+                  {cat.label}
+                  <span className="text-sm font-normal text-zinc-400 dark:text-zinc-500">
+                    {catTools.length} {toolsLabel}
+                  </span>
+                </h2>
+                <Link
+                  href={`/${locale}/category/${cat.key}`}
+                  className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  View all →
+                </Link>
+              </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {catTools.map((tool) => (
                   <ToolCard key={tool.id} tool={tool} locale={locale} />

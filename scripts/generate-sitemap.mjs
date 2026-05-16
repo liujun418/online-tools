@@ -41,6 +41,14 @@ for (const l of LOCALES) {
   xml += hreflangLinks((loc) => `/${loc}`);
   xml += `</url>`;
 
+  // Category pages
+  for (const cat of ["text", "developer", "calculator", "reference", "media"]) {
+    const p = catPri[cat] || "0.8";
+    xml += `<url><loc>${esc(SITE)}/${l}/category/${cat}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>weekly</changefreq>`;
+    xml += hreflangLinks((loc) => `/${loc}/category/${cat}`);
+    xml += `</url>`;
+  }
+
   // Tools
   for (const t of tools) {
     const p = catPri[t.category] || "0.8";

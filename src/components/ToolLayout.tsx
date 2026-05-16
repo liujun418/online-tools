@@ -127,7 +127,7 @@ export default function ToolLayout({
         <span className="text-zinc-300 dark:text-zinc-700">/</span>
         {category && (
           <>
-            <Link href={`/${locale}/#${category.anchor}`} className="hover:text-zinc-900 dark:hover:text-white">
+            <Link href={`/${locale}/category/${tool!.category}`} className="hover:text-zinc-900 dark:hover:text-white">
               {catLabel}
             </Link>
             <span className="text-zinc-300 dark:text-zinc-700">/</span>
@@ -157,7 +157,7 @@ export default function ToolLayout({
                   "@type": "ListItem",
                   position: 2,
                   name: catLabel,
-                  item: `https://toolboxonline.club/${locale}/#${category.anchor}`,
+                  item: `https://toolboxonline.club/${locale}/category/${tool!.category}`,
                 },
                 {
                   "@type": "ListItem",

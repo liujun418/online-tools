@@ -42,11 +42,11 @@ export default function MobileMenu({ locale = "en", dict }: MobileMenuProps) {
 
   const navItems = [
     { label: nav.home || "Home", href: `/${locale}` },
-    { label: nav.text || "Text", href: `/${locale}/#text-tools` },
-    { label: nav.dev || "Dev", href: `/${locale}/#developer-tools` },
-    { label: nav.calculators || "Calculators", href: `/${locale}/#calculators` },
-    { label: nav.reference || "Reference", href: `/${locale}/#reference-tools` },
-    { label: nav.media || "Fun & Media", href: `/${locale}/#fun-media` },
+    { label: nav.text || "Text", href: `/${locale}/category/text` },
+    { label: nav.dev || "Dev", href: `/${locale}/category/developer` },
+    { label: nav.calculators || "Calculators", href: `/${locale}/category/calculator` },
+    { label: nav.reference || "Reference", href: `/${locale}/category/reference` },
+    { label: nav.media || "Fun & Media", href: `/${locale}/category/media` },
   ];
 
   return (

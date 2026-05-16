@@ -84,19 +84,19 @@ export default function Header({
           <Link href={`/${locale}`} className="hover:text-zinc-900 dark:hover:text-white">
             {nav.home}
           </Link>
-          <Link href={`/${locale}/#text-tools`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+          <Link href={`/${locale}/category/text`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             {nav.text}
           </Link>
-          <Link href={`/${locale}/#developer-tools`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+          <Link href={`/${locale}/category/developer`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             {nav.dev}
           </Link>
-          <Link href={`/${locale}/#calculators`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+          <Link href={`/${locale}/category/calculator`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             {nav.calculators}
           </Link>
-          <Link href={`/${locale}/#reference-tools`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+          <Link href={`/${locale}/category/reference`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             {nav.reference}
           </Link>
-          <Link href={`/${locale}/#fun-media`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+          <Link href={`/${locale}/category/media`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             {nav.media}
           </Link>
           <div className="ms-1 flex items-center gap-3 border-s border-zinc-200 ps-3 dark:border-zinc-800">

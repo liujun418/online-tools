@@ -43,6 +43,11 @@
     "switchLanguage": "Switch language",
     "defaultHowToUse": "Enter or paste your content in the input area above. Results update instantly in real-time. All processing happens locally in your browser — your data never leaves your device."
   },
+  "categoryPage": {
+    "h1": "{icon} {name} — Free Online Tools",
+    "exploreOther": "Explore Other Categories",
+    "viewAll": "View all →"
+  },
   "categories": {
     "text": "Text Tools",
     "developer": "Developer Tools",
