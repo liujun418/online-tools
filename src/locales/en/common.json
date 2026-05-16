@@ -852,5 +852,32 @@
     "theTwist": "The Twist",
     "referralText": "Want to create your own images? Try our AI Image Generator — turn text into stunning visuals!",
     "tryAi": "Try AI Image Generator →"
+  },
+  "globalWeather": {
+    "title": "Global Weather",
+    "searchPlaceholder": "Enter city name...",
+    "searching": "Searching...",
+    "myLocation": "My Location",
+    "refresh": "Refresh",
+    "loading": "Fetching weather...",
+    "locating": "Detecting your location...",
+    "locationDenied": "Location access denied. Search a city manually.",
+    "locationError": "Could not detect location. Try searching manually.",
+    "cityNotFound": "City not found. Try a different name.",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "precipitation": "Precipitation",
+    "gusts": "Gusts",
+    "today": "Today",
+    "forecast": "7-Day Forecast",
+    "high": "H",
+    "low": "L",
+    "poweredBy": "Powered by Open-Meteo",
+    "attribution": "Open-Meteo — Free open-source weather API",
+    "compliance": "Weather data from national meteorological services. For informational purposes only.",
+    "referralText": "Need more free tools? Try our other popular utilities!",
+    "tryBing": "Bing 4K Wallpaper",
+    "tryMap": "World Map Explorer"
   }
 }

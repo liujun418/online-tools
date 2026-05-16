@@ -4195,4 +4195,75 @@ export const tools: Tool[] = [
     howToUseTranslations: { en: ["Click New Quote.", "Copy.", "Cycle themes."], es: ["Nueva cita.", "Copiar.", "Temas."], ar: ["اقتباس جديد.", "نسخ.", "تغيير المظهر."] },
     faqTranslations: { en: [{ question: "Source?", answer: "ZenQuotes API." }], es: [{ question: "¿Fuente?", answer: "ZenQuotes API." }], ar: [{ question: "المصدر؟", answer: "ZenQuotes API." }] },
   },
+  {
+    id: "global-weather",
+    name: "Global Weather",
+    description: "Check real-time weather and 7-day forecast for any city worldwide. Auto-detect your location or search any city. Free, no signup.",
+    category: "text",
+    icon: "🌤️",
+    path: "/tools/global-weather",
+    seoTitle: "Free Global Weather — Live Temperature & 7-Day Forecast 2026",
+    seoDescription: "Check real-time weather & 7-day forecast for any city worldwide. Temperature, feels like, wind, humidity, precipitation. Auto-detect your location. Powered by Open-Meteo. Free, no signup.",
+    seoKeywords: ["global weather", "weather forecast", "world weather", "7 day forecast", "live temperature", "local weather", "free weather checker", "weather by city", "international weather", "weather today", "hourly weather", "weather app online"],
+    howToUse: [
+      "Allow location access when prompted to see your local weather automatically.",
+      "Or type any city name in the search box and press Enter to get weather for that location.",
+      "View current temperature, feels-like, humidity, wind speed, and weather conditions.",
+      "Scroll down to see the 7-day forecast with daily highs, lows, and precipitation chance.",
+      "Click the refresh button to update with the latest weather data."
+    ],
+    faq: [
+      { question: "Where does the weather data come from?", answer: "Weather data is provided by Open-Meteo, a free and open-source weather API. Open-Meteo aggregates data from national weather services including NOAA (US), DWD (Germany), and other official meteorological agencies worldwide." },
+      { question: "Is this weather tool really free?", answer: "Yes, completely free. Open-Meteo is an open-source weather API that provides free access to weather data from official national weather services. No API key required. No signup needed." },
+      { question: "How accurate is the weather data?", answer: "Open-Meteo uses data from official national weather services worldwide. Temperature accuracy is typically within 1-2°C (2-4°F). 7-day forecasts have diminishing accuracy the further out you look. The data updates every hour from the source agencies." },
+      { question: "Does this tool work for any city worldwide?", answer: "Yes. You can search for any city in the world. The geocoding search covers millions of locations globally, from major capitals to small towns." },
+      { question: "How does auto-location work?", answer: "We use your browser's built-in Geolocation API to detect your approximate location. This works best on mobile devices with GPS. If you decline, you can still search for any city manually. Your location is never stored or shared." }
+    ],
+    nameTranslations: {
+      es: "Clima Global",
+      ar: "الطقس العالمي",
+    },
+    descriptionTranslations: {
+      es: "Consulta el clima en tiempo real y el pronóstico de 7 días para cualquier ciudad. Detección automática de ubicación. Gratis, sin registro.",
+      ar: "تحقق من الطقس في الوقت الفعلي وتوقعات 7 أيام لأي مدينة في العالم. اكتشاف تلقائي لموقعك. مجاني، بدون تسجيل.",
+    },
+    seoTitleTranslations: {
+      es: "Clima Global Gratis — Temperatura en Vivo y Pronóstico 7 Días 2026",
+      ar: "طقس عالمي مجاني — درجة حرارة حية وتوقعات 7 أيام 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Consulta clima en tiempo real y pronóstico de 7 días para cualquier ciudad. Temperatura, sensación térmica, viento, humedad. Detección automática. Gratis.",
+      ar: "تحقق من الطقس في الوقت الفعلي وتوقعات 7 أيام. درجة الحرارة، الإحساس، الرياح، الرطوبة. اكتشاف تلقائي للموقع. مجاني.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Permite el acceso a la ubicación para ver tu clima local automáticamente.",
+        "O escribe cualquier ciudad en el buscador y presiona Enter.",
+        "Ve temperatura actual, sensación térmica, humedad, viento y condiciones.",
+        "Desplázate para ver el pronóstico de 7 días.",
+        "Haz clic en actualizar para los datos más recientes."
+      ],
+      ar: [
+        "اسمح بالوصول إلى الموقع لرؤية طقسك المحلي تلقائياً.",
+        "أو اكتب اسم أي مدينة في مربع البحث واضغط Enter.",
+        "اعرض درجة الحرارة الحالية والإحساس والرطوبة والرياح.",
+        "اسحب للأسفل لرؤية توقعات 7 أيام.",
+        "انقر على تحديث للحصول على أحدث البيانات."
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿De dónde vienen los datos?", answer: "Los datos provienen de Open-Meteo, una API meteorológica gratuita y de código abierto que agrega datos de servicios meteorológicos nacionales oficiales." },
+        { question: "¿Es realmente gratis?", answer: "Sí, completamente gratis. Open-Meteo es de código abierto y no requiere clave API. Sin registro." },
+        { question: "¿Qué tan precisos son los datos?", answer: "Precisión de temperatura típicamente 1-2°C. Los pronósticos a 7 días pierden precisión a mayor plazo. Datos actualizados cada hora." },
+        { question: "¿Funciona para cualquier ciudad?", answer: "Sí. La búsqueda cubre millones de ubicaciones en todo el mundo, desde capitales hasta pueblos pequeños." },
+      ],
+      ar: [
+        { question: "من أين تأتي بيانات الطقس؟", answer: "يتم توفير بيانات الطقس بواسطة Open-Meteo، وهي واجهة برمجة تطبيقات طقس مجانية ومفتوحة المصدر تجمع البيانات من خدمات الأرصاد الجوية الوطنية الرسمية." },
+        { question: "هل هذه الأداة مجانية حقاً؟", answer: "نعم، مجانية تماماً. Open-Meteo مفتوحة المصدر ولا تتطلب مفتاح API. لا حاجة للتسجيل." },
+        { question: "ما مدى دقة بيانات الطقس؟", answer: "دقة درجة الحرارة عادة في حدود 1-2 درجة مئوية. تفقد التوقعات لمدة 7 أيام دقتها كلما ابتعدت. يتم تحديث البيانات كل ساعة." },
+        { question: "هل تعمل لأي مدينة في العالم؟", answer: "نعم. يغطي البحث الملايين من المواقع على مستوى العالم، من العواصم الكبرى إلى البلدات الصغيرة." },
+      ],
+    },
+  },
 ];

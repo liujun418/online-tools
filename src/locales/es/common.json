@@ -840,5 +840,32 @@
     "theTwist": "El Giro",
     "referralText": "¿Quieres crear tus propias imágenes? ¡Prueba nuestro Generador de Imágenes IA — convierte texto en imágenes increíbles!",
     "tryAi": "Probar Generador IA →"
+  },
+  "globalWeather": {
+    "title": "Clima Global",
+    "searchPlaceholder": "Ingresa nombre de ciudad...",
+    "searching": "Buscando...",
+    "myLocation": "Mi Ubicación",
+    "refresh": "Actualizar",
+    "loading": "Obteniendo clima...",
+    "locating": "Detectando tu ubicación...",
+    "locationDenied": "Acceso a ubicación denegado. Busca una ciudad manualmente.",
+    "locationError": "No se pudo detectar la ubicación. Intenta buscar manualmente.",
+    "cityNotFound": "Ciudad no encontrada. Prueba con otro nombre.",
+    "feelsLike": "Sensación térmica",
+    "humidity": "Humedad",
+    "wind": "Viento",
+    "precipitation": "Precipitación",
+    "gusts": "Ráfagas",
+    "today": "Hoy",
+    "forecast": "Pronóstico 7 Días",
+    "high": "Máx",
+    "low": "Mín",
+    "poweredBy": "Desarrollado por Open-Meteo",
+    "attribution": "Open-Meteo — API meteorológica gratuita de código abierto",
+    "compliance": "Datos de servicios meteorológicos nacionales. Solo para fines informativos.",
+    "referralText": "¿Necesitas más herramientas? ¡Prueba nuestras utilidades populares!",
+    "tryBing": "Bing 4K Fondos",
+    "tryMap": "Explorador de Mapa"
   }
 }
