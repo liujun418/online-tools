@@ -279,7 +279,7 @@ export default function FoodPickerClient({
 
         {/* Disclaimer */}
         <p className="mt-8 text-center text-xs text-zinc-400 leading-relaxed">
-          🎮 {fp.disclaimer || "This tool is for entertainment only, food suggestions are for reference only."}
+          🎮 {fp.disclaimer || "This food picker is for entertainment purposes only. All food suggestions and calorie values are approximate and for reference only. Always consider your dietary needs, allergies, and personal preferences when choosing meals. We are not responsible for any food-related decisions made based on this tool."}
         </p>
 
         {/* Cross-linking */}
