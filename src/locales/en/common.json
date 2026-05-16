@@ -909,5 +909,29 @@
     "referralText": "Need more free tools? Try our other popular utilities!",
     "tryWeather": "Global Weather",
     "tryBing": "Bing 4K Wallpaper"
+  },
+  "foodPicker": {
+    "all": "All",
+    "total": "total",
+    "available": "available",
+    "chooseCategory": "Choose a category and spin!",
+    "tapToSpin": "Press the button below to spin!",
+    "spin": "Pick My Meal!",
+    "spinning": "Spinning...",
+    "copy": "Copy",
+    "block": "Not for me",
+    "blocked": "Blocked",
+    "unblock": "Unblock this food",
+    "allBlocked": "All foods in this category are blocked! Unblock some or switch categories.",
+    "blockedList": "Blocked foods",
+    "hideBlocked": "Hide blocked",
+    "decided": "I decided to eat",
+    "calories": "Calories",
+    "generatedBy": "via ToolBoxOnline Food Picker",
+    "disclaimer": "This food picker is for entertainment purposes only. Calorie values are approximate estimates. Always consider your dietary needs, allergies, and personal preferences when choosing meals. We are not responsible for any food-related decisions.",
+    "referralText": "Want more fun? Try our other free tools!",
+    "tryQuote": "Random Quote",
+    "tryCrypto": "Crypto Prices",
+    "tryLifeHacks": "Life Hacks"
   }
 }

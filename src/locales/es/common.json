@@ -897,5 +897,29 @@
     "referralText": "¿Necesitas más herramientas? ¡Prueba nuestras utilidades populares!",
     "tryWeather": "Clima Global",
     "tryBing": "Bing 4K Fondos"
+  },
+  "foodPicker": {
+    "all": "Todas",
+    "total": "total",
+    "available": "disponible",
+    "chooseCategory": "¡Elige una categoría y gira!",
+    "tapToSpin": "¡Presiona el botón para girar!",
+    "spin": "¡Elegir Mi Comida!",
+    "spinning": "Girando...",
+    "copy": "Copiar",
+    "block": "No para mí",
+    "blocked": "Bloqueado",
+    "unblock": "Desbloquear",
+    "allBlocked": "¡Todas las comidas están bloqueadas! Desbloquea algunas o cambia de categoría.",
+    "blockedList": "Comidas bloqueadas",
+    "hideBlocked": "Ocultar bloqueadas",
+    "decided": "Decidí comer",
+    "calories": "Calorías",
+    "generatedBy": "vía ToolBoxOnline Food Picker",
+    "disclaimer": "Este selector de comida es solo para entretenimiento. Las calorías son estimaciones aproximadas. Siempre considera tus necesidades dietéticas, alergias y preferencias personales.",
+    "referralText": "¿Quieres más diversión? ¡Prueba nuestras otras herramientas gratis!",
+    "tryQuote": "Citas Aleatorias",
+    "tryCrypto": "Precios Cripto",
+    "tryLifeHacks": "Life Hacks"
   }
 }
