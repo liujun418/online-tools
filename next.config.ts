@@ -12,10 +12,6 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
       },
-      {
-        source: "/(.*\\.(woff2?|ttf|otf|eot))",
-        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
-      },
     ];
   },
 
