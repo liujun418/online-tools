@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { tools, type Tool } from "@/lib/tools";
 import ToolCard from "@/components/ToolCard";
+import AdUnit from "@/components/AdUnit";
+import { ADSENSE_CONFIG } from "@/lib/adsense";
 import { Locale } from "@/lib/i18n";
 
 const SITE_URL = "https://toolboxonline.club";
@@ -87,6 +89,11 @@ export default function CategoryPageClient({
           <ToolCard key={tool.id} tool={tool} locale={locale as Locale} />
         ))}
       </div>
+
+      {/* Ad */}
+      {ADSENSE_CONFIG.slots.toolPage ? (
+        <AdUnit className="mt-8 w-full" adSlot={ADSENSE_CONFIG.slots.toolPage} />
+      ) : null}
 
       {/* Cross-category links */}
       <div className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
