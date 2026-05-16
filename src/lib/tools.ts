@@ -4338,12 +4338,12 @@ export const tools: Tool[] = [
   {
     id: "food-picker",
     name: "What Should I Eat? — Random Food Picker",
-    description: "Can't decide what to eat? Let our random food picker decide! Browse western lunch dinner diet meals and comfort food. One click random pick, calorie reference, block foods you don't like. Free & fun.",
+    description: "Can't decide what to eat? Spin the random food picker! Browse Quick Office Lunch, Budget-Friendly Bites, Low-Cal Healthy Picks, and Comfort Food. One click spin, calorie reference, block foods you dislike. Free & fun.",
     category: "media",
-    icon: "🍽️",
+    icon: "🎲",
     path: "/tools/food-picker",
     seoTitle: "Free What Should I Eat? Random Food Picker — Meal Decision Generator 2026",
-    seoDescription: "Can't decide what to eat? Spin the random food picker to discover western meals: quick lunch, budget meals, fitness diet, comfort food. 60+ meals with calorie info. Block foods you dislike. Free, no signup.",
+    seoDescription: "Can't decide what to eat? Spin the random food picker to discover authentic Western meals: Quick Office Lunch, Budget-Friendly Bites, Low-Cal Healthy Picks, and Comfort Food. 60+ meals with calorie info. Block foods you dislike. Free, no signup.",
     seoKeywords: [
       "what should i eat", "random food picker", "meal decision wheel",
       "food picker", "lunch picker", "dinner ideas", "what to eat generator",

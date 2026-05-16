@@ -726,7 +726,7 @@
   "lifeHacks": {
     "tipOfDay": "نصيحة اليوم",
     "newTip": "نصيحة جديدة",
-    "all": "الكل",
+    "all": "مزيج عشوائي",
     "searchPlaceholder": "ابحث عن نصائح...",
     "showing": "عرض {{shown}} من {{total}} نصيحة",
     "tipsCount": "{{count}} نصيحة",
@@ -899,7 +899,7 @@
     "tryBing": "Bing 4K خلفيات"
   },
   "foodPicker": {
-    "all": "الكل",
+    "all": "مزيج عشوائي",
     "total": "الإجمالي",
     "available": "متاح",
     "chooseCategory": "اختر فئة وأدر!",

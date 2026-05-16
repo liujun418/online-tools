@@ -744,7 +744,7 @@
   "lifeHacks": {
     "tipOfDay": "Tip of the Day",
     "newTip": "New Tip",
-    "all": "All",
+    "all": "Random Mix",
     "searchPlaceholder": "Search tips...",
     "showing": "Showing {{shown}} of {{total}} tips",
     "tipsCount": "{{count}} tips",
@@ -911,7 +911,7 @@
     "tryBing": "Bing 4K Wallpaper"
   },
   "foodPicker": {
-    "all": "All",
+    "all": "Random Mix",
     "total": "total",
     "available": "available",
     "chooseCategory": "Choose a category and spin!",

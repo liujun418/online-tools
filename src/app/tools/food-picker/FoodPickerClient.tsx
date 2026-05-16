@@ -155,7 +155,7 @@ export default function FoodPickerClient({
                   : "bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400 dark:bg-zinc-800/50 dark:text-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-500"
               }`}
             >
-              🎲 {fp.all || "All"}
+              🎲 {fp.all || "Random Mix"}
             </button>
             {foodCategories.map((cat) => {
               const lcat = getCategoryLocalized(cat, locale);
