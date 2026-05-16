@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback, useRef, useMemo } from "react";
-import { foodItems, foodCategories, type FoodItem } from "@/lib/foodPicker";
+import { useState, useCallback, useRef, useMemo, useEffect } from "react";
+import { foodItems, foodCategories, regions, detectRegionByCountry, type FoodItem, type Region } from "@/lib/foodPicker";
 import ToolLayout from "@/components/ToolLayout";
 
 const metadata = {
@@ -61,15 +61,38 @@ export default function FoodPickerClient({
   const [showBlocked, setShowBlocked] = useState(false);
   const [copied, setCopied] = useState(false);
   const [animKey, setAnimKey] = useState(0);
+  const [region, setRegion] = useState<Region>("north-america");
+  const [detectedRegion, setDetectedRegion] = useState<Region | null>(null);
+  const [detecting, setDetecting] = useState(true);
   const spinRef = useRef<NodeJS.Timeout | null>(null);
 
+  // IP geolocation
+  useEffect(() => {
+    let cancelled = false;
+    fetch("https://ipapi.co/json/")
+      .then((r) => r.json())
+      .then((d) => {
+        if (cancelled) return;
+        const code = d?.country_code || d?.country;
+        if (code) {
+          const dr = detectRegionByCountry(code);
+          setDetectedRegion(dr);
+          setRegion(dr);
+        }
+      })
+      .catch(() => {})
+      .finally(() => { if (!cancelled) setDetecting(false); });
+    return () => { cancelled = true; };
+  }, []);
+
   const available = useMemo(() => {
+    const regionItems = foodItems.filter((f) => f.regions.includes(region));
     let items = activeCategory === "all"
-      ? foodItems
-      : foodItems.filter((f) => f.category === activeCategory);
+      ? regionItems
+      : regionItems.filter((f) => f.category === activeCategory);
     items = items.filter((f) => !blocked.has(f.id));
     return items;
-  }, [activeCategory, blocked]);
+  }, [activeCategory, blocked, region]);
 
   const currentCat = useMemo(() => {
     if (activeCategory === "all") return null;
@@ -177,6 +200,25 @@ export default function FoodPickerClient({
           <p className="mt-2 text-xs text-zinc-400">
             {available.length} {fp.available || "available"} {activeCategory === "all" ? fp.total || "total" : ""}
           </p>
+        </div>
+
+        {/* Region Selector */}
+        <div className="mb-6 flex items-center gap-2">
+          <span className="text-sm font-medium text-zinc-600 dark:text-zinc-300 whitespace-nowrap">
+            🌍 {fp.changeRegion || "Region"}
+          </span>
+          <select
+            value={region}
+            onChange={(e) => { setRegion(e.target.value as Region); setPicked(null); }}
+            className="flex-1 rounded-lg border border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-3 py-2 text-sm text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-amber-500/50 cursor-pointer"
+          >
+            {regions.map((r) => (
+              <option key={r.id} value={r.id}>
+                {locale === "es" ? r.nameEs : locale === "ar" ? r.nameAr : r.name}
+                {detecting ? "" : r.id === detectedRegion ? (locale === "es" ? " (auto)" : locale === "ar" ? " (تلقائي)" : " (auto)") : ""}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/* Card */}
