@@ -6,6 +6,7 @@ const src = readFileSync(TOOLS_TS, "utf-8");
 const catPri = { calculator: "0.9", developer: "0.85", reference: "0.8", media: "0.8", text: "0.8" };
 const SITE = "https://toolboxonline.club";
 const LOCALES = ["en", "es", "ar"];
+const XDEFAULT = "en";
 const tools = [];
 
 const re = /{\s*id:\s*"([^"]+)".*?category:\s*"([^"]+)"/gs;
@@ -18,6 +19,15 @@ function esc(s) {
   return s.replace(/&/g, "&amp;").replace(/'/g, "&apos;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function hreflangLinks(pathFn) {
+  let links = "";
+  for (const l of LOCALES) {
+    links += `<xhtml:link rel="alternate" hreflang="${l}" href="${esc(SITE)}${pathFn(l)}"/>`;
+  }
+  links += `<xhtml:link rel="alternate" hreflang="x-default" href="${esc(SITE)}${pathFn(XDEFAULT)}"/>`;
+  return links;
+}
+
 const d = new Date();
 const tz = "+00:00";
 const pad = (n) => String(n).padStart(2, "0");
@@ -27,17 +37,23 @@ let xml = '<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns=
 
 for (const l of LOCALES) {
   // Home
-  xml += `<url><loc>${esc(SITE)}/${l}</loc><lastmod>${lm}</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>`;
+  xml += `<url><loc>${esc(SITE)}/${l}</loc><lastmod>${lm}</lastmod><priority>1.0</priority><changefreq>weekly</changefreq>`;
+  xml += hreflangLinks((loc) => `/${loc}`);
+  xml += `</url>`;
 
   // Tools
   for (const t of tools) {
     const p = catPri[t.category] || "0.8";
-    xml += `<url><loc>${esc(SITE)}/${l}/tools/${t.id}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>monthly</changefreq></url>`;
+    xml += `<url><loc>${esc(SITE)}/${l}/tools/${t.id}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>monthly</changefreq>`;
+    xml += hreflangLinks((loc) => `/${loc}/tools/${t.id}`);
+    xml += `</url>`;
   }
 
   // Static pages
   for (const pg of ["about", "privacy", "terms", "contact"]) {
-    xml += `<url><loc>${esc(SITE)}/${l}/${pg}</loc><lastmod>${lm}</lastmod><priority>0.3</priority><changefreq>monthly</changefreq></url>`;
+    xml += `<url><loc>${esc(SITE)}/${l}/${pg}</loc><lastmod>${lm}</lastmod><priority>0.3</priority><changefreq>monthly</changefreq>`;
+    xml += hreflangLinks((loc) => `/${loc}/${pg}`);
+    xml += `</url>`;
   }
 }
 
@@ -45,4 +61,4 @@ xml += `</urlset>`;
 
 const out = new URL("../public/sitemap.xml", import.meta.url).pathname.replace(/^\/([a-z]):\//i, "$1:/");
 writeFileSync(out, xml);
-console.log("Generated", out, `(${tools.length} tools, ${LOCALES.length} locales)`);
+console.log("Generated", out, `(${tools.length} tools, ${LOCALES.length} locales, with hreflang)`);

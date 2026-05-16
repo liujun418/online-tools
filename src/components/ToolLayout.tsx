@@ -138,6 +138,38 @@ export default function ToolLayout({
         </span>
       </nav>
 
+      {/* BreadcrumbList structured data */}
+      {category && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: t.home,
+                  item: `https://toolboxonline.club/${locale}`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: catLabel,
+                  item: `https://toolboxonline.club/${locale}/#${category.anchor}`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: title,
+                },
+              ],
+            }),
+          }}
+        />
+      )}
+
       <header className="mb-8">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
           <div>

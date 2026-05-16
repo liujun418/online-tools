@@ -123,6 +123,38 @@ export default async function LocaleLayout({
             gtag('config', 'G-B17KH1S3VM');
           `,
         }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "ToolBoxOnline",
+              url: "https://toolboxonline.club",
+              description: "Free online tools — text, developer, calculators, reference, and fun media. No signup required.",
+              inLanguage: ["en", "es", "ar"],
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://toolboxonline.club/en?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "ToolBoxOnline",
+                url: "https://toolboxonline.club",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://toolboxonline.club/favicon-512.png",
+                  width: 512,
+                  height: 512,
+                },
+              },
+            }),
+          }}
+        />
       </head>
       <body className="flex min-h-dvh flex-col overflow-x-hidden bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <Script

@@ -34,8 +34,7 @@ export async function generateMetadata({
     robots: { index: true, follow: true },
     alternates: {
       canonical: `${SITE_URL}/tools/${tool.id}`,
-      languages: {
-        en: `${SITE_URL}/en/tools/${tool.id}`,
+      languages: { "x-default": `${SITE_URL}/en/tools/${tool.id}`, en: `${SITE_URL}/en/tools/${tool.id}`,
         es: `${SITE_URL}/es/tools/${tool.id}`,
         ar: `${SITE_URL}/ar/tools/${tool.id}`,
       },

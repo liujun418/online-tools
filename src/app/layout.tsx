@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-import { redirect } from "next/navigation";
 import "@/app/globals.css";
 
 const geistSans = Geist({
@@ -19,20 +17,20 @@ const SITE_NAME = "ToolBoxOnline";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} — Free Online Tools for Everyone`,
-  description: "Free online tools for text, development, calculations, and conversions.",
+  description: "Free online tools for text, development, calculations, and more.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Free Online Tools for Everyone`,
-    description: "Free online tools for text, development, calculations, and conversions.",
+    description: "Free online tools for text, development, calculations, and more.",
     images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} — Free Online Tools for Everyone`,
-    description: "Free online tools for text, development, calculations, and conversions.",
+    description: "Free online tools for text, development, calculations, and more.",
     images: [`${SITE_URL}/og-default.png`],
   },
   alternates: {
@@ -65,19 +63,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-B17KH1S3VM"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-B17KH1S3VM');
-          `,
-        }} />
       </head>
       {children}
     </html>
