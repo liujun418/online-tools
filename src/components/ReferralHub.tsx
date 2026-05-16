@@ -12,11 +12,20 @@ function getLinks(locale: string, dict?: Record<string, unknown>): ReferralLink[
   const r = (dict as any)?.referral || {};
   return [
     { label: `🤖 ${r.aiTools || "AI Tools"}`, href: `https://ai.toolboxonline.club/${locale}`, external: true },
+    { label: `🍽️ ${r.foodPicker || "Food Picker"}`, href: `/${locale}/tools/food-picker` },
     { label: `💬 ${r.randomQuote || "Random Quote"}`, href: `/${locale}/tools/random-quote` },
     { label: `🌤️ ${r.globalWeather || "Global Weather"}`, href: `/${locale}/tools/global-weather` },
     { label: `📊 ${r.cryptoPrice || "Crypto Price"}`, href: `/${locale}/tools/crypto-price` },
     { label: `🎞️ ${r.gifSearch || "GIF Search"}`, href: `/${locale}/tools/gif-search` },
     { label: `💡 ${r.lifeHacks || "Life Hacks"}`, href: `/${locale}/tools/life-hacks` },
+    { label: `🐾 ${r.petWallpaper || "Pet Wallpaper"}`, href: `/${locale}/tools/pet-wallpaper` },
+    { label: `🌌 ${r.nasaApod || "NASA APOD"}`, href: `/${locale}/tools/nasa-apod` },
+    { label: `🗺️ ${r.worldMap || "World Map"}`, href: `/${locale}/tools/world-map` },
+    { label: `🧩 ${r.lateralThinking || "Lateral Thinking"}`, href: `/${locale}/tools/lateral-thinking` },
+    { label: `🔐 ${r.passwordGenerator || "Password Generator"}`, href: `/${locale}/tools/password-generator` },
+    { label: `📱 ${r.qrCode || "QR Code"}`, href: `/${locale}/tools/qr-code-generator` },
+    { label: `🎨 ${r.colorConverter || "Color Converter"}`, href: `/${locale}/tools/color-converter` },
+    { label: `📖 ${r.bookOfAnswers || "Book of Answers"}`, href: `/${locale}/tools/book-of-answers` },
   ];
 }
 

@@ -905,7 +905,16 @@
     "globalWeather": "Clima Global",
     "cryptoPrice": "Precios Cripto",
     "gifSearch": "Búsqueda GIF",
-    "lifeHacks": "Life Hacks"
+    "lifeHacks": "Life Hacks",
+    "foodPicker": "Selector Comida",
+    "petWallpaper": "Mascotas",
+    "nasaApod": "NASA APOD",
+    "worldMap": "Mapa Mundial",
+    "lateralThinking": "Pensamiento Lateral",
+    "passwordGenerator": "Generador Contraseñas",
+    "qrCode": "Código QR",
+    "colorConverter": "Convertidor Color",
+    "bookOfAnswers": "Libro Respuestas"
   },
   "foodPicker": {
     "all": "Mezcla Aleatoria",

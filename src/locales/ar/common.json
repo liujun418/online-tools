@@ -905,7 +905,16 @@
     "globalWeather": "الطقس العالمي",
     "cryptoPrice": "أسعار العملات",
     "gifSearch": "بحث GIF",
-    "lifeHacks": "حيل حياتية"
+    "lifeHacks": "حيل حياتية",
+    "foodPicker": "منتقي الطعام",
+    "petWallpaper": "خلفيات حيوانات",
+    "nasaApod": "صورة ناسا",
+    "worldMap": "خريطة العالم",
+    "lateralThinking": "تفكير جانبي",
+    "passwordGenerator": "مولد كلمات مرور",
+    "qrCode": "رمز QR",
+    "colorConverter": "محول ألوان",
+    "bookOfAnswers": "كتاب الإجابات"
   },
   "foodPicker": {
     "all": "مزيج عشوائي",
