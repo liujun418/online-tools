@@ -125,8 +125,21 @@ export default function FoodPickerClient({
     foodItems.filter((f) => blocked.has(f.id))
   , [blocked]);
 
+  const referralSection = (
+    <div className="rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 text-center dark:border-blue-800 dark:from-blue-950/30 dark:to-indigo-950/20">
+      <p className="text-sm font-medium text-blue-800 dark:text-blue-300">
+        {fp.referralText || "Want more fun? Try our other free tools!"}
+      </p>
+      <div className="mt-3 flex flex-wrap justify-center gap-2">
+        <a href={`/${locale}/tools/random-quote`} className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700 transition-colors">💬 {fp.tryQuote || "Random Quote"}</a>
+        <a href={`/${locale}/tools/crypto-price`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">📊 {fp.tryCrypto || "Crypto Prices"}</a>
+        <a href={`/${locale}/tools/life-hacks`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">💡 {fp.tryLifeHacks || "Life Hacks"}</a>
+      </div>
+    </div>
+  );
+
   return (
-    <ToolLayout title={title} description={description} keywords={metadata.keywords} toolId={metadata.toolId} locale={locale as any} dict={dict}>
+    <ToolLayout title={title} description={description} keywords={metadata.keywords} toolId={metadata.toolId} locale={locale as any} dict={dict} referralChildren={referralSection}>
       <div className="mx-auto max-w-2xl">
         {/* Category Tabs */}
         <div className="mb-6">
@@ -281,18 +294,6 @@ export default function FoodPickerClient({
         <p className="mt-8 text-center text-xs text-zinc-400 leading-relaxed">
           🎮 {fp.disclaimer || "This food picker is for entertainment purposes only. All food suggestions and calorie values are approximate and for reference only. Always consider your dietary needs, allergies, and personal preferences when choosing meals. We are not responsible for any food-related decisions made based on this tool."}
         </p>
-
-        {/* Cross-linking */}
-        <div className="mt-4 rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 text-center dark:border-blue-800 dark:from-blue-950/30 dark:to-indigo-950/20">
-          <p className="text-sm font-medium text-blue-800 dark:text-blue-300">
-            {fp.referralText || "Want more fun? Try our other free tools!"}
-          </p>
-          <div className="mt-3 flex flex-wrap justify-center gap-2">
-            <a href={`/${locale}/tools/random-quote`} className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700 transition-colors">💬 {fp.tryQuote || "Random Quote"}</a>
-            <a href={`/${locale}/tools/crypto-price`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">📊 {fp.tryCrypto || "Crypto Prices"}</a>
-            <a href={`/${locale}/tools/life-hacks`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">💡 {fp.tryLifeHacks || "Life Hacks"}</a>
-          </div>
-        </div>
 
         {/* Global CSS keyframes for card flip */}
         <style jsx global>{`

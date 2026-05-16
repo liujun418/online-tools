@@ -29,6 +29,7 @@ interface ToolLayoutProps {
   metadata?: Metadata;
   locale?: Locale;
   dict?: Record<string, unknown>;
+  referralChildren?: React.ReactNode;
 }
 
 export function generateMetadata({
@@ -88,6 +89,7 @@ export default function ToolLayout({
   toolId,
   locale = "en",
   dict,
+  referralChildren,
 }: ToolLayoutProps) {
   const tool = toolId
     ? tools.find((t) => t.id === toolId)
@@ -206,6 +208,8 @@ export default function ToolLayout({
           {t.advertisement}
         </div>
       )}
+
+      {referralChildren}
 
       {tool && <RelatedTools toolId={tool.id} locale={locale} dict={dict} />}
 
