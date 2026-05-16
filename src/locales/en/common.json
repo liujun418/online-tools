@@ -936,6 +936,19 @@
     "colorConverter": "Color Converter",
     "bookOfAnswers": "Book of Answers"
   },
+  "morseCode": {
+    "textInput": "Text",
+    "morseInput": "Morse Code",
+    "copy": "Copy",
+    "clear": "Clear",
+    "bidirectional": "Bidirectional",
+    "play": "Play Audio",
+    "playing": "Playing...",
+    "reference": "Morse Code Reference",
+    "textPlaceholder": "Type your message here... (A-Z, 0-9, punctuation)",
+    "morsePlaceholder": "Or paste Morse code here... (use . and - with spaces between letters, / for new word)",
+    "disclaimer": "Standard International Morse Code. Audio playback uses Web Audio API — enable sound on your device. For entertainment and educational use."
+  },
   "scoreboard": {
     "teamA": "Team A",
     "teamB": "Team B",
