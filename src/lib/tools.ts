@@ -4426,9 +4426,9 @@ export const tools: Tool[] = [
     },
   },
   {
-    id: "scoreboard",
-    name: "Free Scoreboard — Two-Team Score Keeper & Timer",
-    description: "Keep score for two teams with this free online scoreboard. Custom team names, quick +/- buttons, round counter, countdown timer and stopwatch. Perfect for board games, sports, and tournaments. Free, no signup.",
+    id: "morse-code",
+    name: "Free Morse Code Translator — Text to Morse & Morse to Text",
+    description: "Convert text to Morse code and decode Morse code back to text. Supports A-Z, 0-9, and common symbols. Includes audio playback. Free, no signup.",
     category: "developer",
     icon: "📡",
     path: "/tools/morse-code",
