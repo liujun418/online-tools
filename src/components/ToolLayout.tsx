@@ -207,6 +207,39 @@ export default function ToolLayout({
         </div>
       )}
 
+      {/* Cross-site referral hub */}
+      <section className="mt-8 rounded-xl border border-zinc-200 bg-gradient-to-r from-zinc-50 to-zinc-100 p-5 dark:border-zinc-700 dark:from-zinc-900/50 dark:to-zinc-800/30">
+        <p className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+          {getTranslation(dict, "referral.title") || "Discover More Free Tools"}
+        </p>
+        <div className="grid gap-2 sm:grid-cols-2">
+          <a href={`https://ai.toolboxonline.club/${locale}`} target="_blank" rel="noopener"
+            className="flex items-center gap-2 rounded-lg border border-purple-200 bg-purple-50/50 px-3 py-2 text-xs font-medium text-purple-700 hover:bg-purple-100 dark:border-purple-800 dark:bg-purple-950/20 dark:text-purple-300 dark:hover:bg-purple-950/40 transition-colors">
+            🤖 {getTranslation(dict, "referral.aiTools") || "AI Tools — Image Generator, Style Transfer & More"}
+          </a>
+          <a href={`/${locale}/tools/random-quote`}
+            className="flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50/50 px-3 py-2 text-xs font-medium text-amber-700 hover:bg-amber-100 dark:border-amber-800 dark:bg-amber-950/20 dark:text-amber-300 dark:hover:bg-amber-950/40 transition-colors">
+            💬 {getTranslation(dict, "referral.randomQuote") || "Random Quote — Daily Inspiration"}
+          </a>
+          <a href={`/${locale}/tools/global-weather`}
+            className="flex items-center gap-2 rounded-lg border border-sky-200 bg-sky-50/50 px-3 py-2 text-xs font-medium text-sky-700 hover:bg-sky-100 dark:border-sky-800 dark:bg-sky-950/20 dark:text-sky-300 dark:hover:bg-sky-950/40 transition-colors">
+            🌤️ {getTranslation(dict, "referral.globalWeather") || "Global Weather — Real-time Forecast"}
+          </a>
+          <a href={`/${locale}/tools/crypto-price`}
+            className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50/50 px-3 py-2 text-xs font-medium text-green-700 hover:bg-green-100 dark:border-green-800 dark:bg-green-950/20 dark:text-green-300 dark:hover:bg-green-950/40 transition-colors">
+            📊 {getTranslation(dict, "referral.cryptoPrice") || "Crypto Price Tracker — Live Updates"}
+          </a>
+          <a href={`/${locale}/tools/gif-search`}
+            className="flex items-center gap-2 rounded-lg border border-pink-200 bg-pink-50/50 px-3 py-2 text-xs font-medium text-pink-700 hover:bg-pink-100 dark:border-pink-800 dark:bg-pink-950/20 dark:text-pink-300 dark:hover:bg-pink-950/40 transition-colors">
+            🎞️ {getTranslation(dict, "referral.gifSearch") || "GIF Search — Find & Download GIFs"}
+          </a>
+          <a href={`/${locale}/tools/life-hacks`}
+            className="flex items-center gap-2 rounded-lg border border-teal-200 bg-teal-50/50 px-3 py-2 text-xs font-medium text-teal-700 hover:bg-teal-100 dark:border-teal-800 dark:bg-teal-950/20 dark:text-teal-300 dark:hover:bg-teal-950/40 transition-colors">
+            💡 {getTranslation(dict, "referral.lifeHacks") || "Life Hacks — 100 Practical Tips"}
+          </a>
+        </div>
+      </section>
+
       {tool && <RelatedTools toolId={tool.id} locale={locale} dict={dict} />}
 
       {howToUse && howToUse.length > 0 ? (
