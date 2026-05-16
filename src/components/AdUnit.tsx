@@ -18,7 +18,7 @@ declare global {
 export default function AdUnit({
   className,
   adSlot,
-  format = "horizontal",
+  format = "rectangle",
 }: AdUnitProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -55,14 +55,13 @@ export default function AdUnit({
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} style={{ textAlign: "center" }}>
       <ins
         className={`adsbygoogle ${className ?? ""}`}
         style={{ display: "block" }}
         data-ad-client={ADSENSE_CONFIG.publisherId}
         data-ad-slot={adSlot}
         data-ad-format={format}
-        data-full-width-responsive="true"
       />
     </div>
   );
