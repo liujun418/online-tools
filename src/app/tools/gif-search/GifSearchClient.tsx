@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
-const GIPHY_KEY = "dc6zaTOxFJmzC";
+// Get free key at: https://developers.giphy.com/ → Create App → select "API"
+const GIPHY_KEY = "YOUR_GIPHY_API_KEY";
 const GIPHY_API = "https://api.giphy.com/v1/gifs";
 const PAGE_SIZE = 20;
 
@@ -114,11 +115,11 @@ export default function GifSearchClient({
       setOffset(currentOffset + PAGE_SIZE);
     } catch (err: any) {
       if (!loadMore) setGifs([]);
-      setError(
-        err.message === "API key invalid"
-          ? "GIPHY API key is invalid or expired. Please update the key."
-          : (t.error || "Unable to load GIFs. Please try again.")
-      );
+      if (err.message === "API key invalid" || GIPHY_KEY === "YOUR_GIPHY_API_KEY") {
+        setError("GIPHY API key required. Get a free key at developers.giphy.com → Create App → replace YOUR_GIPHY_API_KEY in GifSearchClient.tsx");
+      } else {
+        setError(t.error || "Unable to load GIFs. Please try again.");
+      }
     } finally {
       setLoading(false);
       setLoadingMore(false);
@@ -285,8 +286,18 @@ export default function GifSearchClient({
         {/* Error */}
         {error && !loading && (
           <div className="flex flex-col items-center py-20">
-            <span className="text-4xl">🎞️</span>
-            <p className="mt-4 text-sm text-red-500">{error}</p>
+            <span className="text-4xl">🔑</span>
+            <p className="mt-4 max-w-md text-center text-sm text-red-500">{error}</p>
+            {GIPHY_KEY === "YOUR_GIPHY_API_KEY" && (
+              <a
+                href="https://developers.giphy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"
+              >
+                Get Free GIPHY API Key →
+              </a>
+            )}
           </div>
         )}
 
