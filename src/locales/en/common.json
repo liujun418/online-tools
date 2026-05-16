@@ -879,5 +879,28 @@
     "referralText": "Need more free tools? Try our other popular utilities!",
     "tryBing": "Bing 4K Wallpaper",
     "tryMap": "World Map Explorer"
+  },
+  "gifSearch": {
+    "title": "GIF Search",
+    "searchPlaceholder": "Search GIFs...",
+    "trending": "Trending",
+    "search": "Search",
+    "loadMore": "Load More",
+    "loading": "Loading GIFs...",
+    "noResults": "No GIFs found. Try a different keyword.",
+    "error": "Unable to load GIFs. Please try again.",
+    "download": "Download GIF",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link copied!",
+    "rating": "Rating",
+    "ratingG": "G — All Ages",
+    "ratingPg": "PG — Parental Guidance",
+    "ratingPg13": "PG-13 — Teens",
+    "poweredBy": "Powered by GIPHY",
+    "attribution": "All GIFs provided by GIPHY and belong to their original creators",
+    "compliance": "This tool is for personal, non-commercial use only. All GIFs remain the property of their respective creators. For commercial use, please contact the original content owner.",
+    "referralText": "Need more free tools? Try our other popular utilities!",
+    "tryWeather": "Global Weather",
+    "tryBing": "Bing 4K Wallpaper"
   }
 }

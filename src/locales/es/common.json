@@ -867,5 +867,28 @@
     "referralText": "¿Necesitas más herramientas? ¡Prueba nuestras utilidades populares!",
     "tryBing": "Bing 4K Fondos",
     "tryMap": "Explorador de Mapa"
+  },
+  "gifSearch": {
+    "title": "Buscador de GIFs",
+    "searchPlaceholder": "Buscar GIFs...",
+    "trending": "Tendencias",
+    "search": "Buscar",
+    "loadMore": "Cargar Más",
+    "loading": "Cargando GIFs...",
+    "noResults": "No se encontraron GIFs. Prueba otra palabra.",
+    "error": "No se pudieron cargar los GIFs. Intenta de nuevo.",
+    "download": "Descargar GIF",
+    "copyLink": "Copiar Enlace",
+    "linkCopied": "¡Enlace copiado!",
+    "rating": "Clasificación",
+    "ratingG": "G — Todas las edades",
+    "ratingPg": "PG — Supervisión parental",
+    "ratingPg13": "PG-13 — Adolescentes",
+    "poweredBy": "Desarrollado por GIPHY",
+    "attribution": "Todos los GIFs son proporcionados por GIPHY y pertenecen a sus creadores originales",
+    "compliance": "Esta herramienta es solo para uso personal y no comercial. Todos los GIFs son propiedad de sus respectivos creadores. Para uso comercial, contacta al propietario original.",
+    "referralText": "¿Necesitas más herramientas? ¡Prueba nuestras utilidades populares!",
+    "tryWeather": "Clima Global",
+    "tryBing": "Bing 4K Fondos"
   }
 }

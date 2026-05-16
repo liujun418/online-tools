@@ -4266,4 +4266,73 @@ export const tools: Tool[] = [
       ],
     },
   },
+  {
+    id: "gif-search",
+    name: "GIF Search",
+    description: "Search and download millions of trending GIFs from GIPHY. Keyword search, grid preview, one-click download, copy link. Free, no signup.",
+    category: "text",
+    icon: "🎞️",
+    path: "/tools/gif-search",
+    seoTitle: "Free GIF Search — Search & Download Trending GIFs 2026",
+    seoDescription: "Search and download millions of animated GIFs powered by GIPHY. Browse trending GIFs, search by keyword, one-click download, copy share link. Free online GIF finder — no signup required.",
+    seoKeywords: ["gif search", "animated gif", "gif download", "trending gif", "free gif", "giphy search", "gif finder", "funny gif", "reaction gif", "meme gif", "download gif", "gif online"],
+    howToUse: [
+      "Browse trending GIFs on the default homepage or type a keyword to search.",
+      "Click 'Load More' to see additional GIFs for the current search.",
+      "Click any GIF to open it in a detail view with full animation.",
+      "In the detail view, click 'Download GIF' to save it to your device.",
+      "Use 'Copy Link' to copy the GIPHY share URL to your clipboard."
+    ],
+    faq: [
+      { question: "Where do the GIFs come from?", answer: "All GIFs are provided by GIPHY, the world's largest GIF search engine. GIPHY hosts millions of animated GIFs uploaded by creators, brands, and users worldwide." },
+      { question: "Is this GIF search tool free?", answer: "Yes, completely free. This tool uses GIPHY's public API to search and display GIFs. No signup required. No hidden costs." },
+      { question: "Can I use downloaded GIFs commercially?", answer: "GIFs are provided by GIPHY and remain the property of their original creators. This tool is for personal search and download only. For commercial use, please check the original source and obtain proper licensing from the content owner." },
+      { question: "What does the rating filter do?", answer: "By default, we show 'G' rated content suitable for all audiences. You can switch to 'PG' or 'PG-13' in the filter for more variety. Explicit content is blocked by default." },
+      { question: "How do I download a GIF?", answer: "Click any GIF to open the detail view, then click 'Download GIF'. The GIF will be saved to your device in its original format." }
+    ],
+    nameTranslations: {
+      es: "Buscador de GIFs",
+      ar: "بحث GIF",
+    },
+    descriptionTranslations: {
+      es: "Busca y descarga millones de GIFs animados de GIPHY. Búsqueda por palabra clave, vista previa en cuadrícula, descarga con un clic. Gratis.",
+      ar: "ابحث ونزل ملايين صور GIF المتحركة من GIPHY. بحث بالكلمات المفتاحية، معاينة شبكية، تنزيل بنقرة واحدة. مجاني.",
+    },
+    seoTitleTranslations: {
+      es: "Buscador de GIFs Gratis — Busca y Descarga GIFs Animados 2026",
+      ar: "بحث GIF مجاني — ابحث ونزل صور GIF المتحركة 2026",
+    },
+    seoDescriptionTranslations: {
+      es: "Busca y descarga millones de GIFs animados con tecnología de GIPHY. Explora GIFs populares, busca por palabra clave, descarga con un clic. Sin registro.",
+      ar: "ابحث ونزل ملايين صور GIF المتحركة بدعم من GIPHY. تصفح GIFs الرائجة، ابحث بالكلمات المفتاحية، تنزيل بنقرة واحدة. بدون تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Explora GIFs populares o busca por palabra clave.",
+        "Haz clic en 'Cargar Más' para ver más GIFs.",
+        "Haz clic en un GIF para verlo en detalle.",
+        "En detalle, haz clic en 'Descargar GIF' para guardarlo.",
+        "Usa 'Copiar Enlace' para copiar la URL de GIPHY."
+      ],
+      ar: [
+        "تصفح GIFs الرائجة أو ابحث بكلمة مفتاحية.",
+        "انقر على 'تحميل المزيد' لمشاهدة المزيد.",
+        "انقر على أي GIF لفتحه في عرض التفاصيل.",
+        "في التفاصيل، انقر على 'تنزيل GIF' لحفظه.",
+        "استخدم 'نسخ الرابط' لنسخ رابط GIPHY."
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿De dónde vienen los GIFs?", answer: "Todos los GIFs son proporcionados por GIPHY, el motor de búsqueda de GIFs más grande del mundo." },
+        { question: "¿Es gratis?", answer: "Sí, completamente gratis. Usa la API pública de GIPHY. Sin registro." },
+        { question: "¿Uso comercial?", answer: "Los GIFs pertenecen a sus creadores originales. Esta herramienta es solo para búsqueda y descarga personal. Para uso comercial, verifica la licencia con el propietario." },
+      ],
+      ar: [
+        { question: "من أين تأتي الصور؟", answer: "يتم توفير جميع صور GIF بواسطة GIPHY، أكبر محرك بحث GIF في العالم." },
+        { question: "هل هي مجانية؟", answer: "نعم، مجانية تماماً. تستخدم واجهة برمجة تطبيقات GIPHY العامة. بدون تسجيل." },
+        { question: "الاستخدام التجاري؟", answer: "صور GIF مملوكة لمنشئيها الأصليين. هذه الأداة للبحث والتنزيل الشخصي فقط. للاستخدام التجاري، تحقق من الترخيص من المالك." },
+      ],
+    },
+  },
 ];
