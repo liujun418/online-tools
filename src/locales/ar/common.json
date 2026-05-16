@@ -898,6 +898,15 @@
     "tryWeather": "الطقس العالمي",
     "tryBing": "Bing 4K خلفيات"
   },
+  "referral": {
+    "title": "اكتشف المزيد من الأدوات المجانية",
+    "aiTools": "أدوات الذكاء الاصطناعي",
+    "randomQuote": "اقتباسات عشوائية",
+    "globalWeather": "الطقس العالمي",
+    "cryptoPrice": "أسعار العملات",
+    "gifSearch": "بحث GIF",
+    "lifeHacks": "حيل حياتية"
+  },
   "foodPicker": {
     "all": "مزيج عشوائي",
     "total": "الإجمالي",

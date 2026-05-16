@@ -898,6 +898,15 @@
     "tryWeather": "Clima Global",
     "tryBing": "Bing 4K Fondos"
   },
+  "referral": {
+    "title": "Descubre Más Herramientas Gratis",
+    "aiTools": "Herramientas IA",
+    "randomQuote": "Citas Aleatorias",
+    "globalWeather": "Clima Global",
+    "cryptoPrice": "Precios Cripto",
+    "gifSearch": "Búsqueda GIF",
+    "lifeHacks": "Life Hacks"
+  },
   "foodPicker": {
     "all": "Mezcla Aleatoria",
     "total": "total",

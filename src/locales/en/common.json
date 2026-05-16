@@ -910,6 +910,15 @@
     "tryWeather": "Global Weather",
     "tryBing": "Bing 4K Wallpaper"
   },
+  "referral": {
+    "title": "Discover More Free Tools",
+    "aiTools": "AI Tools",
+    "randomQuote": "Random Quote",
+    "globalWeather": "Global Weather",
+    "cryptoPrice": "Crypto Price",
+    "gifSearch": "GIF Search",
+    "lifeHacks": "Life Hacks"
+  },
   "foodPicker": {
     "all": "Random Mix",
     "total": "total",
