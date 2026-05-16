@@ -5,13 +5,14 @@ import { tools } from "@/lib/tools";
 import ToolCard from "@/components/ToolCard";
 import { Locale, localeDir } from "@/lib/i18n";
 
-const categoryKeys = ["text", "developer", "calculator", "converter"] as const;
+const categoryKeys = ["text", "developer", "calculator", "reference", "media"] as const;
 
 const categories = [
   { key: "text", label: "", id: "text-tools" },
   { key: "developer", label: "", id: "developer-tools" },
   { key: "calculator", label: "", id: "calculators" },
-  { key: "converter", label: "", id: "converters" },
+  { key: "reference", label: "", id: "reference-tools" },
+  { key: "media", label: "", id: "fun-media" },
 ];
 
 function PromoCarousel({ locale }: { locale: string }) {

@@ -8,14 +8,16 @@ const categoryColors: Record<string, string> = {
   text: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400",
   developer: "bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-400",
   calculator: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400",
-  converter: "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-400",
+  reference: "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-400",
+  media: "bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-400",
 };
 
 const catLabels: Record<string, Record<Locale, string>> = {
   text: { en: "Text", es: "Texto", ar: "نص" },
   developer: { en: "Dev", es: "Desarrollador", ar: "مطور" },
   calculator: { en: "Calculator", es: "Calculadora", ar: "حاسبة" },
-  converter: { en: "Converter", es: "Conversor", ar: "محول" },
+  reference: { en: "Reference", es: "Referencia", ar: "مرجع" },
+  media: { en: "Media", es: "Media", ar: "وسائط" },
 };
 
 function getRelatedTools(toolId: string): Tool[] {

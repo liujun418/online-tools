@@ -16,7 +16,8 @@ const categoryAnchors: Record<string, string> = {
   text: "text-tools",
   developer: "developer-tools",
   calculator: "calculators",
-  converter: "converters",
+  reference: "reference-tools",
+  media: "fun-media",
 };
 
 interface ToolLayoutProps {
@@ -104,7 +105,7 @@ export default function ToolLayout({
 
   const catLabel = category
     ? getTranslation(dict, `categories.${category.label}`) ||
-      { text: "Text Tools", developer: "Developer Tools", calculator: "Calculators", converter: "Converters" }[category.label] ||
+      { text: "Text Tools", developer: "Developer Tools", calculator: "Calculators", reference: "Reference", media: "Fun & Media" }[category.label] ||
       category.label
     : "";
 

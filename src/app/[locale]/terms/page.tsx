@@ -17,7 +17,7 @@ const content: Record<string, TermsContent> = {
     sections: [
       {
         heading: "Services",
-        text: "ToolBoxOnline provides free online tools including text utilities, developer tools, calculators, and converters. All tool processing is performed client-side in your browser. We do not store, transmit, or process your data on any server.",
+        text: "ToolBoxOnline provides free online tools including text utilities, developer tools, calculators, reference tools, and fun & media content. All tool processing is performed client-side in your browser. We do not store, transmit, or process your data on any server.",
       },
       {
         heading: "User License",

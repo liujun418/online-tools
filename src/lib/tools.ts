@@ -7,7 +7,7 @@ export interface Tool {
   id: string;
   name: string;
   description: string;
-  category: "text" | "developer" | "calculator" | "converter";
+  category: "text" | "developer" | "calculator" | "reference" | "media";
   icon: string;
   path: string;
   seoTitle?: string;
@@ -1038,7 +1038,7 @@ export const tools: Tool[] = [
     name: "Markdown Preview",
     description:
       "Write Markdown and see a live HTML preview as you type. Free Markdown editor.",
-    category: "developer",
+    category: "text",
     icon: "📑",
     path: "/tools/markdown-preview",
     seoTitle: "Free Markdown Preview Online - MD to HTML Converter 2026",
@@ -1265,7 +1265,7 @@ export const tools: Tool[] = [
     name: "Password Generator",
     description:
       "Generate strong, secure passwords with customizable length and character options.",
-    category: "calculator",
+    category: "developer",
     icon: "🔐",
     path: "/tools/password-generator",
     seoTitle: "Free Password Generator Online - Strong Random Passwords 2026",
@@ -1638,7 +1638,7 @@ export const tools: Tool[] = [
     name: "Number Base Converter",
     description:
       "Convert numbers between binary, octal, decimal, and hexadecimal systems.",
-    category: "converter",
+    category: "calculator",
     icon: "🔢",
     path: "/tools/base-converter",
     seoTitle: "Free Base Converter Online - Binary, Hex, Decimal, Octal 2026",
@@ -1713,7 +1713,7 @@ export const tools: Tool[] = [
     name: "Roman Numeral Converter",
     description:
       "Convert between Roman numerals and Arabic numbers in both directions.",
-    category: "converter",
+    category: "calculator",
     icon: "🏛️",
     path: "/tools/roman-numerals",
     seoTitle: "Free Roman Numerals Converter Online - Roman to Number 2026",
@@ -1789,7 +1789,7 @@ export const tools: Tool[] = [
     name: "Color Converter",
     description:
       "Convert colors between HEX, RGB, and HSL formats with live preview.",
-    category: "converter",
+    category: "reference",
     icon: "🎨",
     path: "/tools/color-converter",
     seoTitle: "Free Color Converter Online - HEX, RGB, HSL Converter 2026",
@@ -1867,7 +1867,7 @@ export const tools: Tool[] = [
     name: "HTML Entity Encoder",
     description:
       "Encode or decode HTML entities and special characters safely.",
-    category: "converter",
+    category: "developer",
     icon: "<>",
     path: "/tools/html-entities",
     seoTitle: "Free HTML Entities Encoder Online - Encode & Decode HTML Entities 2026",
@@ -1942,7 +1942,7 @@ export const tools: Tool[] = [
     name: "JSON to CSV Converter",
     description:
       "Convert JSON data to CSV format for spreadsheets and databases.",
-    category: "converter",
+    category: "developer",
     icon: "📊",
     path: "/tools/json-to-csv",
     seoTitle: "Free JSON to CSV Converter Online - Export JSON Data 2026",
@@ -2017,7 +2017,7 @@ export const tools: Tool[] = [
     name: "CSV to JSON Converter",
     description:
       "Convert CSV data to JSON format for APIs and web applications.",
-    category: "converter",
+    category: "developer",
     icon: "📋",
     path: "/tools/csv-to-json",
     seoTitle: "Free CSV to JSON Converter Online - Convert CSV to JSON 2026",
@@ -2092,7 +2092,7 @@ export const tools: Tool[] = [
     name: "Image to Base64",
     description:
       "Convert images to Base64 encoded strings for embedding in code.",
-    category: "converter",
+    category: "developer",
     icon: "🖼️",
     path: "/tools/image-to-base64",
     seoTitle: "Free Image to Base64 Converter Online - Encode Images 2026",
@@ -2832,7 +2832,7 @@ export const tools: Tool[] = [
     name: "Zodiac Sign Finder",
     description:
       "Find your zodiac sign by birth date with traits and compatibility info.",
-    category: "text",
+    category: "reference",
     icon: "⭐",
     path: "/tools/zodiac-sign",
     seoTitle: "Free Zodiac Sign Calculator Online - Star Sign Finder 2026",
@@ -2907,7 +2907,7 @@ export const tools: Tool[] = [
     name: "Random Name Generator",
     description:
       "Generate random names for characters, profiles, or testing.",
-    category: "text",
+    category: "developer",
     icon: "👤",
     path: "/tools/random-name-generator",
     seoTitle: "Free Random Name Generator Online - Character Name Creator 2026",
@@ -3428,7 +3428,7 @@ export const tools: Tool[] = [
     name: "Famous Quotes Directory",
     description:
       "Search and discover famous quotes from world-renowned figures.",
-    category: "text",
+    category: "media",
     icon: "💬",
     path: "/tools/quotes",
     seoTitle: "Free Quotes Online - Motivational & Inspirational Quotes 2026",
@@ -3506,7 +3506,7 @@ export const tools: Tool[] = [
     name: "Book of Answers",
     description:
       "A digital Book of Answers for fun decision-making and guidance. Focus on your question and receive a random, thoughtfully curated response.",
-    category: "text",
+    category: "media",
     icon: "📖",
     path: "/tools/book-of-answers",
     seoTitle: "Free Book of Answers Online - Random Answer Generator 2026",
@@ -3585,7 +3585,7 @@ export const tools: Tool[] = [
     name: "Reaction Time Tester",
     description:
       "Test your reflexes! Click as fast as you can when the block turns green to measure your reaction time.",
-    category: "calculator",
+    category: "media",
     icon: "⚡",
     path: "/tools/reaction-test",
     seoTitle: "Free Reaction Time Test Online - Reflex Speed Game 2026",
@@ -3661,7 +3661,7 @@ export const tools: Tool[] = [
     name: "Free AI Tools Directory",
     description:
       "Curated directory of the best free AI tools for writing, images, video, coding, and more.",
-    category: "developer",
+    category: "reference",
     icon: "🧭",
     path: "/tools/ai-tools",
     seoTitle: "Free AI Tools Directory - Best AI Tools List Online 2026",
@@ -3734,7 +3734,7 @@ export const tools: Tool[] = [
     name: "Life Hacks",
     description:
       "Browse 100 practical life hacks organized by category. From cleaning tricks to kitchen shortcuts, find quick solutions for everyday problems.",
-    category: "text",
+    category: "media",
     icon: "💡",
     path: "/tools/life-hacks",
     seoTitle: "Free Life Hacks Online — 100 Practical Tips for Everyday Problems 2026",
@@ -3816,7 +3816,7 @@ export const tools: Tool[] = [
     name: "Lateral Thinking Puzzle",
     description:
       "Test your reasoning with AI-generated lateral thinking puzzles. Free online brain teasers — no signup required.",
-    category: "text",
+    category: "media",
     icon: "🧩",
     path: "/tools/lateral-thinking",
     seoTitle: "Free Lateral Thinking Puzzle Online — AI-Generated Brain Teasers 2026",
@@ -3909,7 +3909,7 @@ export const tools: Tool[] = [
     name: "Bing 4K Daily Wallpaper",
     description:
       "Download stunning Bing daily wallpapers in 4K, Full HD, and mobile resolutions. Browse 7-day history and one-click download. Free, no signup.",
-    category: "text",
+    category: "media",
     icon: "🖼️",
     path: "/tools/bing-wallpaper",
     seoTitle: "Free Bing 4K Daily Wallpaper Download — HD & Mobile 2026",
@@ -4001,7 +4001,7 @@ export const tools: Tool[] = [
     name: "NASA Astronomy Picture of the Day",
     description:
       "Explore the cosmos with NASA's daily astronomy picture. Browse history, random discoveries, HD downloads. Powered by NASA APOD.",
-    category: "text",
+    category: "media",
     icon: "🔭",
     path: "/tools/nasa-apod",
     seoTitle: "Free NASA Astronomy Picture of the Day — Daily Space Photos 2026",
@@ -4074,7 +4074,7 @@ export const tools: Tool[] = [
     id: "crypto-price",
     name: "Cryptocurrency Price Tracker",
     description: "Track real-time cryptocurrency prices — Bitcoin, Ethereum, Solana, and more. Live USD prices, 24h change, auto-refresh. Free, no signup.",
-    category: "text",
+    category: "reference",
     icon: "📈",
     path: "/tools/crypto-price",
     seoTitle: "Free Cryptocurrency Price Tracker — Live BTC, ETH Prices 2026",
@@ -4101,7 +4101,7 @@ export const tools: Tool[] = [
     id: "world-map",
     name: "World Map Explorer",
     description: "Search and explore any city worldwide on an interactive map. Free, no signup — powered by OpenStreetMap & Leaflet.",
-    category: "text",
+    category: "reference",
     icon: "🗺️",
     path: "/tools/world-map",
     seoTitle: "Free World Map Explorer — Interactive Map with City Search 2026",
@@ -4127,7 +4127,7 @@ export const tools: Tool[] = [
     id: "ip-lookup",
     name: "IP Geolocation Lookup",
     description: "Find your IP address, country, city, ISP, timezone, and coordinates instantly. Free IP lookup — no signup required.",
-    category: "text",
+    category: "reference",
     icon: "🌐",
     path: "/tools/ip-lookup",
     seoTitle: "Free IP Geolocation Lookup — What Is My IP Address 2026",
@@ -4153,7 +4153,7 @@ export const tools: Tool[] = [
     id: "pet-wallpaper",
     name: "Random Pet Wallpaper",
     description: "Get random cute cat, dog, and fox wallpapers. One-click refresh, fullscreen preview, free download. No signup required.",
-    category: "text",
+    category: "media",
     icon: "🐾",
     path: "/tools/pet-wallpaper",
     seoTitle: "Free Random Pet Wallpaper — Cute Cats, Dogs & Foxes 2026",
@@ -4178,7 +4178,7 @@ export const tools: Tool[] = [
     id: "random-quote",
     name: "Random Inspirational Quote",
     description: "Get random inspirational quotes from famous authors. One-click refresh, copy to clipboard, light/dark/sepia themes. Free, no signup.",
-    category: "text",
+    category: "media",
     icon: "💬",
     path: "/tools/random-quote",
     seoTitle: "Free Random Inspirational Quote Generator — Famous Quotes 2026",
@@ -4199,7 +4199,7 @@ export const tools: Tool[] = [
     id: "global-weather",
     name: "Global Weather",
     description: "Check real-time weather and 7-day forecast for any city worldwide. Auto-detect your location or search any city. Free, no signup.",
-    category: "text",
+    category: "reference",
     icon: "🌤️",
     path: "/tools/global-weather",
     seoTitle: "Free Global Weather — Live Temperature & 7-Day Forecast 2026",
@@ -4270,7 +4270,7 @@ export const tools: Tool[] = [
     id: "gif-search",
     name: "GIF Search",
     description: "Search and download millions of trending GIFs from GIPHY. Keyword search, grid preview, one-click download, copy link. Free, no signup.",
-    category: "text",
+    category: "media",
     icon: "🎞️",
     path: "/tools/gif-search",
     seoTitle: "Free GIF Search — Search & Download Trending GIFs 2026",

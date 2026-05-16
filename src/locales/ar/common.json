@@ -4,7 +4,8 @@
     "text": "نص",
     "dev": "مطور",
     "calculators": "حاسبات",
-    "converters": "محولات",
+    "reference": "مرجع",
+    "media": "مرح ووسائط",
     "suggest": "اقترح أداة",
     "theme": "تبديل المظهر"
   },
@@ -46,7 +47,8 @@
     "text": "أدوات النص",
     "developer": "أدوات المطور",
     "calculator": "حاسبات",
-    "converter": "محولات"
+    "reference": "مرجع",
+    "media": "مرح ووسائط"
   },
   "language": {
     "select": "اللغة"

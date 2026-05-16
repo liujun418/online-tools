@@ -45,7 +45,8 @@ export default function MobileMenu({ locale = "en", dict }: MobileMenuProps) {
     { label: nav.text || "Text", href: `/${locale}/#text-tools` },
     { label: nav.dev || "Dev", href: `/${locale}/#developer-tools` },
     { label: nav.calculators || "Calculators", href: `/${locale}/#calculators` },
-    { label: nav.converters || "Converters", href: `/${locale}/#converters` },
+    { label: nav.reference || "Reference", href: `/${locale}/#reference-tools` },
+    { label: nav.media || "Fun & Media", href: `/${locale}/#fun-media` },
   ];
 
   return (

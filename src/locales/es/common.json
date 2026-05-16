@@ -4,7 +4,8 @@
     "text": "Texto",
     "dev": "Desarrollador",
     "calculators": "Calculadoras",
-    "converters": "Conversores",
+    "reference": "Referencia",
+    "media": "Diversión y Media",
     "suggest": "Sugerir una Herramienta",
     "theme": "Cambiar tema"
   },
@@ -46,7 +47,8 @@
     "text": "Herramientas de Texto",
     "developer": "Herramientas de Desarrollador",
     "calculator": "Calculadoras",
-    "converter": "Conversores"
+    "reference": "Referencia",
+    "media": "Diversión y Media"
   },
   "language": {
     "select": "Idioma"

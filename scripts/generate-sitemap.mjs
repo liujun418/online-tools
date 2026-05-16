@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "fs";
 const TOOLS_TS = new URL("../src/lib/tools.ts", import.meta.url).pathname.replace(/^\/([a-z]):\//i, "$1:/");
 const src = readFileSync(TOOLS_TS, "utf-8");
 
-const catPri = { calculator: "0.9", developer: "0.85", text: "0.8", converter: "0.8" };
+const catPri = { calculator: "0.9", developer: "0.85", reference: "0.8", media: "0.8", text: "0.8" };
 const SITE = "https://toolboxonline.club";
 const LOCALES = ["en", "es", "ar"];
 const tools = [];

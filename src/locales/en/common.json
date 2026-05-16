@@ -4,7 +4,8 @@
     "text": "Text",
     "dev": "Dev",
     "calculators": "Calculators",
-    "converters": "Converters",
+    "reference": "Reference",
+    "media": "Fun & Media",
     "suggest": "Suggest a Tool",
     "theme": "Toggle theme"
   },
@@ -46,7 +47,8 @@
     "text": "Text Tools",
     "developer": "Developer Tools",
     "calculator": "Calculators",
-    "converter": "Converters"
+    "reference": "Reference",
+    "media": "Fun & Media"
   },
   "language": {
     "select": "Language"

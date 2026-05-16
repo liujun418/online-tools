@@ -16,7 +16,8 @@ function getNav(dict: Record<string, unknown> | undefined) {
     text: (nav.text as string) || "Text",
     dev: (nav.dev as string) || "Dev",
     calculators: (nav.calculators as string) || "Calculators",
-    converters: (nav.converters as string) || "Converters",
+    reference: (nav.reference as string) || "Reference",
+    media: (nav.media as string) || "Fun & Media",
     suggest: (nav.suggest as string) || "Suggest a Tool",
   };
 }
@@ -92,8 +93,11 @@ export default function Header({
           <Link href={`/${locale}/#calculators`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
             {nav.calculators}
           </Link>
-          <Link href={`/${locale}/#converters`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
-            {nav.converters}
+          <Link href={`/${locale}/#reference-tools`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+            {nav.reference}
+          </Link>
+          <Link href={`/${locale}/#fun-media`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
+            {nav.media}
           </Link>
           <div className="ms-1 flex items-center gap-3 border-s border-zinc-200 ps-3 dark:border-zinc-800">
             <a
