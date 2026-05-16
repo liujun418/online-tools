@@ -3,8 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
-// Get free key at: https://developers.giphy.com/ → Create App → select "API"
-const GIPHY_KEY = "YOUR_GIPHY_API_KEY";
+const GIPHY_KEY = "WxIYM7hxvuLyl8izCNq9nIkRj9XL9NCl";
 const GIPHY_API = "https://api.giphy.com/v1/gifs";
 const PAGE_SIZE = 20;
 
