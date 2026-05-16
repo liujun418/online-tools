@@ -18,7 +18,7 @@ declare global {
 export default function AdUnit({
   className,
   adSlot,
-  format = "rectangle",
+  format = "auto",
 }: AdUnitProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -62,6 +62,7 @@ export default function AdUnit({
         data-ad-client={ADSENSE_CONFIG.publisherId}
         data-ad-slot={adSlot}
         data-ad-format={format}
+        data-full-width-responsive="true"
       />
     </div>
   );
