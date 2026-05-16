@@ -4,6 +4,7 @@ import AdUnit from "@/components/AdUnit";
 import ShareButton from "@/components/ShareButton";
 import VisitorCounter from "@/components/VisitorCounter";
 import RelatedTools from "@/components/RelatedTools";
+import ReferralHub from "@/components/ReferralHub";
 import { ADSENSE_CONFIG } from "@/lib/adsense";
 import { tools } from "@/lib/tools";
 import { Locale, localeDir } from "@/lib/i18n";
@@ -212,19 +213,9 @@ export default function ToolLayout({
       {referralChildren ? (
         referralChildren
       ) : (
-        <section className="mt-8 rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 text-center dark:border-blue-800 dark:from-blue-950/30 dark:to-indigo-950/20">
-          <p className="text-sm font-medium text-blue-800 dark:text-blue-300">
-            {getTranslation(dict, "referral.title") || "Discover More Free Tools"}
-          </p>
-          <div className="mt-3 flex flex-wrap justify-center gap-2">
-            <a href={`https://ai.toolboxonline.club/${locale}`} target="_blank" rel="noopener" className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700 transition-colors">🤖 {getTranslation(dict, "referral.aiTools") || "AI Tools"}</a>
-            <a href={`/${locale}/tools/random-quote`} className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700 transition-colors">💬 {getTranslation(dict, "referral.randomQuote") || "Random Quote"}</a>
-            <a href={`/${locale}/tools/global-weather`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">🌤️ {getTranslation(dict, "referral.globalWeather") || "Global Weather"}</a>
-            <a href={`/${locale}/tools/crypto-price`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">📊 {getTranslation(dict, "referral.cryptoPrice") || "Crypto Price"}</a>
-            <a href={`/${locale}/tools/gif-search`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">🎞️ {getTranslation(dict, "referral.gifSearch") || "GIF Search"}</a>
-            <a href={`/${locale}/tools/life-hacks`} className="rounded-lg border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-600 dark:bg-transparent dark:text-amber-300 dark:hover:bg-amber-900/20 transition-colors">💡 {getTranslation(dict, "referral.lifeHacks") || "Life Hacks"}</a>
-          </div>
-        </section>
+        <div className="mt-8">
+          <ReferralHub locale={locale} dict={dict} />
+        </div>
       )}
 
       {tool && <RelatedTools toolId={tool.id} locale={locale} dict={dict} />}
