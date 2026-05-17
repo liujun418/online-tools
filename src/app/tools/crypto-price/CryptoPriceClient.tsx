@@ -111,7 +111,7 @@ export default function CryptoPriceClient({
           </span>
           <button
             onClick={fetchPrices}
-            className="rounded-lg border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            className="rounded-lg border border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800"
           >
             ↻ {t.refresh || "Refresh"}
           </button>

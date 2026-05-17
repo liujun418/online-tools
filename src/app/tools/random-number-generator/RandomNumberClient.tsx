@@ -152,7 +152,7 @@ export default function RandomNumberClient({ locale = "en", dict, titleOverride,
           </div>
           <button
             onClick={() => navigator.clipboard.writeText(numbers.join(", "))}
-            className="mt-3 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+            className="mt-3 rounded bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
           >
             {rn.copyAll || "Copy All"}
           </button>

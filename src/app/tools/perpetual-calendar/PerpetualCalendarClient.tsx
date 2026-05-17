@@ -1056,31 +1056,31 @@ const pc = (dict as any)?.perpetualCalendar || {};
       <div className="mt-3 flex gap-2">
         <button
           onClick={() => { setMonth(0); }}
-          className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+          className="rounded-lg bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
         >
           Jan
         </button>
         <button
           onClick={() => { setMonth(3); }}
-          className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+          className="rounded-lg bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
         >
           Apr
         </button>
         <button
           onClick={() => { setMonth(6); }}
-          className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+          className="rounded-lg bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
         >
           Jul
         </button>
         <button
           onClick={() => { setMonth(9); }}
-          className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+          className="rounded-lg bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
         >
           Oct
         </button>
         <button
           onClick={() => { setYear(now.getFullYear()); setMonth(now.getMonth()); }}
-          className="rounded-lg bg-blue-600 px-3 py-1 text-xs font-medium text-white transition-colors hover:bg-blue-700"
+          className="rounded-lg bg-blue-600 px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-blue-700"
         >
           {pc.today || "Today"}
         </button>
@@ -1166,7 +1166,7 @@ const pc = (dict as any)?.perpetualCalendar || {};
                       </span>
                       {d.holiday && d.isCurrentMonth && (
                         <span
-                          className={`mt-0.5 line-clamp-1 max-w-full truncate text-[10px] font-medium ${
+                          className={`mt-0.5 line-clamp-1 max-w-full truncate text-[11px] leading-tight font-medium ${
                             d.holiday.type === "public"
                               ? "text-red-600 dark:text-red-400"
                               : "text-orange-500 dark:text-orange-400"
@@ -1220,7 +1220,7 @@ const pc = (dict as any)?.perpetualCalendar || {};
             </div>
             <button
               onClick={() => setSelectedDate(null)}
-              className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+              className="rounded-lg bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
             >
               ✕
             </button>

@@ -62,7 +62,7 @@ export default function TextToSlugClient({ locale = "en", dict, titleOverride, d
           {slug && (
             <button
               onClick={handleCopy}
-              className="rounded-lg bg-blue-600 px-3 py-1 text-xs font-medium text-white transition-colors hover:bg-blue-700"
+              className="rounded-lg bg-blue-600 px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-blue-700"
             >
               {copied ? (ts.copied || "Copied!") : (ts.copy || "Copy")}
             </button>

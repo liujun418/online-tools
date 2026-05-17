@@ -397,13 +397,13 @@ export default function WeatherClient({
               <div className="inline-flex rounded-lg border border-zinc-300 p-0.5 dark:border-zinc-600">
                 <button
                   onClick={() => setUnit("C")}
-                  className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${unit === "C" ? "bg-emerald-500 text-white" : "text-zinc-500 dark:text-zinc-400"}`}
+                  className={`rounded-md px-3 py-2 text-xs font-medium transition-colors ${unit === "C" ? "bg-emerald-500 text-white" : "text-zinc-500 dark:text-zinc-400"}`}
                 >
                   °C
                 </button>
                 <button
                   onClick={() => setUnit("F")}
-                  className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${unit === "F" ? "bg-emerald-500 text-white" : "text-zinc-500 dark:text-zinc-400"}`}
+                  className={`rounded-md px-3 py-2 text-xs font-medium transition-colors ${unit === "F" ? "bg-emerald-500 text-white" : "text-zinc-500 dark:text-zinc-400"}`}
                 >
                   °F
                 </button>

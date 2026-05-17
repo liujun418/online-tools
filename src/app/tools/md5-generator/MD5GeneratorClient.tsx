@@ -223,13 +223,13 @@ export default function MD5GeneratorClient({ locale = "en", dict, titleOverride,
               <div className="flex gap-2">
                 <button
                   onClick={() => handleCopyFormat("lower")}
-                  className="rounded bg-blue-200 px-3 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-300 dark:hover:bg-blue-700"
+                  className="rounded bg-blue-200 px-3 py-2 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-300 dark:hover:bg-blue-700"
                 >
                   {md5t.copyLowercase || "Copy Lowercase"}
                 </button>
                 <button
                   onClick={() => handleCopyFormat("upper")}
-                  className="rounded bg-blue-200 px-3 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-300 dark:hover:bg-blue-700"
+                  className="rounded bg-blue-200 px-3 py-2 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-300 dark:hover:bg-blue-700"
                 >
                   {md5t.copyUppercase || "Copy Uppercase"}
                 </button>

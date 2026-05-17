@@ -248,11 +248,11 @@ export default function FoodPickerClient({
                   {getLocalized(picked, locale).desc}
                 </p>
                 <div className="mt-4 flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-white/60 dark:bg-zinc-800/60 px-3 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-300 backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-white/60 dark:bg-zinc-800/60 px-3 py-2 text-xs font-medium text-zinc-600 dark:text-zinc-300 backdrop-blur-sm">
                     🔥 {picked.calories}
                   </span>
                   {localizedCat && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-white/60 dark:bg-zinc-800/60 px-3 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-300 backdrop-blur-sm">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/60 dark:bg-zinc-800/60 px-3 py-2 text-xs font-medium text-zinc-600 dark:text-zinc-300 backdrop-blur-sm">
                       {localizedCat.icon} {localizedCat.name}
                     </span>
                   )}

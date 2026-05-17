@@ -116,7 +116,7 @@ export default function CsvToJsonClient({ locale = "en", dict, titleOverride, de
             </span>
             <button
               onClick={handleCopy}
-              className="rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+              className="rounded bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
             >
               {c2j.copy || "Copy"}
             </button>

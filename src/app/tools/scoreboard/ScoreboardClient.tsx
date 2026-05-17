@@ -328,11 +328,11 @@ export default function ScoreboardClient({
           <div className="flex flex-col items-center gap-3">
             <div className="flex items-center gap-2">
               <button onClick={() => { setTimerMode("stopwatch"); resetTimer(); }}
-                className={`rounded-lg px-2 py-1 text-xs font-medium transition-colors ${timerMode === "stopwatch" ? `${theme.accent} ${theme.accentText}` : theme.btn}`}>
+                className={`rounded-lg px-2 py-2 text-xs font-medium transition-colors ${timerMode === "stopwatch" ? `${theme.accent} ${theme.accentText}` : theme.btn}`}>
                 ⏱ {sb.stopwatch || "Stopwatch"}
               </button>
               <button onClick={() => { setTimerMode("countdown"); resetTimer(); }}
-                className={`rounded-lg px-2 py-1 text-xs font-medium transition-colors ${timerMode === "countdown" ? `${theme.accent} ${theme.accentText}` : theme.btn}`}>
+                className={`rounded-lg px-2 py-2 text-xs font-medium transition-colors ${timerMode === "countdown" ? `${theme.accent} ${theme.accentText}` : theme.btn}`}>
                 ⏰ {sb.countdown || "Countdown"}
               </button>
             </div>
@@ -341,7 +341,7 @@ export default function ScoreboardClient({
             {timerMode === "countdown" && !timerRunning && countdownRemaining === 0 && (
               <div className="flex items-center gap-2">
                 <input type="number" value={countdownInput} onChange={(e) => setCountdownInput(e.target.value)}
-                  className={`w-20 rounded-lg border ${theme.border} bg-white dark:bg-zinc-800 px-2 py-1 text-xs text-center ${theme.text}`}
+                  className={`w-20 rounded-lg border ${theme.border} bg-white dark:bg-zinc-800 px-2 py-2 text-xs text-center ${theme.text}`}
                   min="1" step="1" />
                 <span className={`text-xs ${theme.text} opacity-50`}>{sb.seconds || "sec"}</span>
               </div>

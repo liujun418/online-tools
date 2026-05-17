@@ -94,7 +94,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict, titleOverride,
               </code>
               <button
                 onClick={() => navigator.clipboard.writeText(encoded)}
-                className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               >
                 {he.copy || "Copy"}
               </button>
@@ -112,7 +112,7 @@ export default function HtmlEntitiesClient({ locale = "en", dict, titleOverride,
               </code>
               <button
                 onClick={() => navigator.clipboard.writeText(decoded)}
-                className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
               >
                 {he.copy || "Copy"}
               </button>

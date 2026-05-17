@@ -129,7 +129,7 @@ export default function ColorConverterClient({ locale = "en", dict, titleOverrid
           <button
             key={val}
             onClick={() => navigator.clipboard.writeText(val)}
-            className="rounded-lg bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            className="rounded-lg bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
           >
             {cc.copy || "Copy"} {val.slice(0, 8)}...
           </button>

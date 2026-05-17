@@ -158,11 +158,11 @@ export default function MorseCodeClient({
             </label>
             <div className="flex gap-2">
               <button onClick={() => copyText(text, "text")}
-                className="rounded-lg border border-zinc-300 px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800">
+                className="rounded-lg border border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800">
                 {copied === "text" ? "✓ " + (tp.copied || "Copied!") : "📋 " + (mc.copy || "Copy")}
               </button>
               <button onClick={clearAll}
-                className="rounded-lg border border-zinc-300 px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800">
+                className="rounded-lg border border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800">
                 🗑️ {mc.clear || "Clear"}
               </button>
             </div>
@@ -178,7 +178,7 @@ export default function MorseCodeClient({
 
         {/* Arrow */}
         <div className="flex items-center justify-center gap-2 my-2">
-          <span className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-300">⇅ {mc.bidirectional || "Bidirectional"}</span>
+          <span className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-2 text-xs font-medium text-amber-700 dark:text-amber-300">⇅ {mc.bidirectional || "Bidirectional"}</span>
         </div>
 
         {/* Morse → Text */}
@@ -199,7 +199,7 @@ export default function MorseCodeClient({
                 </button>
               )}
               <button onClick={() => copyText(morse, "morse")}
-                className="rounded-lg border border-zinc-300 px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800">
+                className="rounded-lg border border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-50 dark:border-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800">
                 {copied === "morse" ? "✓ " + (tp.copied || "Copied!") : "📋 " + (mc.copy || "Copy")}
               </button>
             </div>

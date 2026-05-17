@@ -162,7 +162,7 @@ export default function RandomNameGeneratorClient({ locale = "en", dict, titleOv
                 <span className="text-zinc-700 dark:text-zinc-300">{name}</span>
                 <button
                   onClick={() => handleCopy(name)}
-                  className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                  className="ml-2 shrink-0 rounded bg-zinc-200 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
                 >
                   {rng.copy || "Copy"}
                 </button>
