@@ -82,7 +82,7 @@ export default function CoinFlipClient({
           <div
             className={`relative w-40 h-40 sm:w-48 sm:h-48 cursor-pointer select-none ${flipping ? "animate-flip" : ""}`}
             onClick={flip}
-            style={{ perspective: "600px" }}
+            style={{ perspective: "600px", filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.25))" }}
           >
             <div
               className="relative w-full h-full"
@@ -96,7 +96,7 @@ export default function CoinFlipClient({
             >
               {/* Heads side */}
               <div
-                className="absolute inset-0 rounded-full shadow-xl"
+                className="absolute inset-0"
                 style={{ backfaceVisibility: "hidden" }}
               >
                 <img
@@ -108,7 +108,7 @@ export default function CoinFlipClient({
 
               {/* Tails side (rotated 180deg) */}
               <div
-                className="absolute inset-0 rounded-full shadow-xl"
+                className="absolute inset-0"
                 style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
               >
                 <img
