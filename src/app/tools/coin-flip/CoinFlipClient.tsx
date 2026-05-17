@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
 const metadata = {
@@ -49,8 +49,6 @@ export default function CoinFlipClient({
   const [headsLabel, setHeadsLabel] = useState(cf.headsLabel || "Heads");
   const [tailsLabel, setTailsLabel] = useState(cf.tailsLabel || "Tails");
   const [showSettings, setShowSettings] = useState(false);
-  const flipTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
-
   const flip = useCallback(() => {
     if (flipping) return;
     setFlipping(true);
@@ -59,7 +57,7 @@ export default function CoinFlipClient({
     const outcome = Math.random() < 0.5 ? "heads" : "tails";
 
     // Animation duration matches CSS (0.8s)
-    flipTimeoutRef.current = setTimeout(() => {
+    setTimeout(() => {
       setResult(outcome);
       setFlipping(false);
       setStats((prev) => ({
