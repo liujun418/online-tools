@@ -37,27 +37,31 @@ export default function CoinFlipClient({
 
   const [result, setResult] = useState<"heads" | "tails" | null>(null);
   const [flipping, setFlipping] = useState(false);
+  const [flipTarget, setFlipTarget] = useState<"heads" | "tails" | null>(null);
   const [stats, setStats] = useState({ heads: 0, tails: 0, total: 0 });
   const [headsLabel, setHeadsLabel] = useState(cf.headsLabel || "Heads");
   const [tailsLabel, setTailsLabel] = useState(cf.tailsLabel || "Tails");
   const [showSettings, setShowSettings] = useState(false);
+
   const flip = useCallback(() => {
     if (flipping) return;
-    setFlipping(true);
-    setResult(null);
-
     const outcome = Math.random() < 0.5 ? "heads" : "tails";
 
-    // Animation duration matches CSS (0.8s)
+    // Determine outcome FIRST, then animate to the correct side
+    setFlipping(true);
+    setFlipTarget(outcome);
+    setResult(null);
+
     setTimeout(() => {
       setResult(outcome);
       setFlipping(false);
+      setFlipTarget(null);
       setStats((prev) => ({
         ...prev,
         [outcome]: prev[outcome] + 1,
         total: prev.total + 1,
       }));
-    }, 800);
+    }, 900);
   }, [flipping]);
 
   const resetStats = () => {
@@ -84,7 +88,10 @@ export default function CoinFlipClient({
               className="relative w-full h-full"
               style={{
                 transformStyle: "preserve-3d",
-                animation: flipping ? "coinFlip 0.8s ease-out" : "none",
+                transform: flipping ? undefined : result === "tails" ? "rotateY(180deg)" : "rotateY(0deg)",
+                animation: flipping && flipTarget
+                  ? `${flipTarget === "heads" ? "coinFlipHeads" : "coinFlipTails"} 0.9s ease-out forwards`
+                  : "none",
               }}
             >
               {/* Heads side */}
@@ -215,12 +222,21 @@ export default function CoinFlipClient({
       </div>
 
       <style jsx global>{`
-        @keyframes coinFlip {
+        @keyframes coinFlipHeads {
           0% { transform: rotateY(0deg); }
-          30% { transform: rotateY(180deg); }
-          60% { transform: rotateY(360deg); }
-          80% { transform: rotateY(540deg); }
+          20% { transform: rotateY(180deg); }
+          40% { transform: rotateY(360deg); }
+          60% { transform: rotateY(540deg); }
+          80% { transform: rotateY(630deg); }
           100% { transform: rotateY(720deg); }
+        }
+        @keyframes coinFlipTails {
+          0% { transform: rotateY(0deg); }
+          20% { transform: rotateY(180deg); }
+          40% { transform: rotateY(360deg); }
+          60% { transform: rotateY(540deg); }
+          80% { transform: rotateY(810deg); }
+          100% { transform: rotateY(900deg); }
         }
       `}</style>
     </ToolLayout>
