@@ -15,8 +15,8 @@ const metadata = {
 };
 
 const COIN_IMAGES = {
-  heads: "/coin-heads.png",
-  tails: "/coin-tails.png",
+  heads: "/coin-heads.webp",
+  tails: "/coin-tails.webp",
 };
 
 export default function CoinFlipClient({
