@@ -218,8 +218,6 @@ export default function ToolLayout({
         </div>
       )}
 
-      {tool && <RelatedTools toolId={tool.id} locale={locale} dict={dict} />}
-
       {howToUse && howToUse.length > 0 ? (
         <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
           <h2 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
@@ -241,6 +239,8 @@ export default function ToolLayout({
           </p>
         </section>
       )}
+
+      {tool && <RelatedTools toolId={tool.id} locale={locale} dict={dict} />}
 
       {faq && faq.length > 0 && (
         <section className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
