@@ -14,18 +14,10 @@ const metadata = {
   toolId: "coin-flip",
 };
 
-const COIN_SIDES = {
-  heads: {
-    face: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/2006_Quarter_Proof.png/480px-2006_Quarter_Proof.png",
-    label: "Heads",
-  },
-  tails: {
-    face: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/2006_Quarter_Proof_Reverse.png/480px-2006_Quarter_Proof_Reverse.png",
-    label: "Tails",
-  },
+const COIN_IMAGES = {
+  heads: "/coin-heads.png",
+  tails: "/coin-tails.png",
 };
-
-const EMULATE_COINS = false;
 
 export default function CoinFlipClient({
   locale = "en",
@@ -97,40 +89,26 @@ export default function CoinFlipClient({
             >
               {/* Heads side */}
               <div
-                className="absolute inset-0 flex flex-col items-center justify-center rounded-full border-4 border-amber-500 bg-gradient-to-b from-amber-300 to-amber-500 shadow-xl"
+                className="absolute inset-0 rounded-full shadow-xl"
                 style={{ backfaceVisibility: "hidden" }}
               >
-                {EMULATE_COINS ? (
-                  <img
-                    src={COIN_SIDES.heads.face}
-                    alt="Heads"
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                ) : (
-                  <>
-                    <span className="text-3xl sm:text-4xl">🪙</span>
-                    <span className="mt-1 text-sm font-bold text-amber-900">{headsLabel}</span>
-                  </>
-                )}
+                <img
+                  src={COIN_IMAGES.heads}
+                  alt={headsLabel}
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
 
               {/* Tails side (rotated 180deg) */}
               <div
-                className="absolute inset-0 flex flex-col items-center justify-center rounded-full border-4 border-amber-500 bg-gradient-to-b from-amber-500 to-amber-600 shadow-xl"
+                className="absolute inset-0 rounded-full shadow-xl"
                 style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
               >
-                {EMULATE_COINS ? (
-                  <img
-                    src={COIN_SIDES.tails.face}
-                    alt="Tails"
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                ) : (
-                  <>
-                    <span className="text-3xl sm:text-4xl">🪙</span>
-                    <span className="mt-1 text-sm font-bold text-amber-900">{tailsLabel}</span>
-                  </>
-                )}
+                <img
+                  src={COIN_IMAGES.tails}
+                  alt={tailsLabel}
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -140,9 +118,9 @@ export default function CoinFlipClient({
             {flipping
               ? (cf.flipping || "Flipping...")
               : result === "heads"
-              ? `🪙 ${headsLabel}!`
+              ? `${headsLabel}!`
               : result === "tails"
-              ? `🪙 ${tailsLabel}!`
+              ? `${tailsLabel}!`
               : (cf.tapToFlip || "Tap the coin to flip")}
           </p>
 
