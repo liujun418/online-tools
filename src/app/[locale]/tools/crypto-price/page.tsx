@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: `${seoTitle} | ${SITE_NAME}`, description: seoDesc,
     keywords: tool.seoKeywords?.join(", "),
     robots: { index: true, follow: true },
-    alternates: { canonical: `${SITE_URL}/tools/${tool.id}`, languages: { "x-default": `${SITE_URL}/en/tools/${tool.id}`, en: `${SITE_URL}/en/tools/${tool.id}`, es: `${SITE_URL}/es/tools/${tool.id}`, ar: `${SITE_URL}/ar/tools/${tool.id}` } },
+    alternates: { canonical: `${SITE_URL}/en/tools/${tool.id}`, languages: { "x-default": `${SITE_URL}/en/tools/${tool.id}`, en: `${SITE_URL}/en/tools/${tool.id}`, es: `${SITE_URL}/es/tools/${tool.id}`, ar: `${SITE_URL}/ar/tools/${tool.id}` } },
     openGraph: { type: "website", locale: LOCALE_OG[locale] || "en_US", url: `${SITE_URL}/${locale}/tools/${tool.id}`, siteName: SITE_NAME, title: `${seoTitle} | ${SITE_NAME}`, description: seoDesc, images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: name }] },
     twitter: { card: "summary_large_image", title: `${seoTitle} | ${SITE_NAME}`, description: seoDesc },
   };

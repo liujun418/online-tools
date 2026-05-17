@@ -33,7 +33,7 @@ export async function generateMetadata({
     authors: [{ name: SITE_NAME }],
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `${SITE_URL}/tools/${tool.id}`,
+      canonical: `${SITE_URL}/en/tools/${tool.id}`,
       languages: {
         "x-default": `${SITE_URL}/en/tools/${tool.id}`,
         en: `${SITE_URL}/en/tools/${tool.id}`,
