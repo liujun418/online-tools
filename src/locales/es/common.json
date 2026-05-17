@@ -940,5 +940,17 @@
     "tryCrypto": "Precios Cripto",
     "tryLifeHacks": "Life Hacks",
     "changeRegion": "Región"
+  },
+  "coinFlip": {
+    "flipAgain": "Lanzar de Nuevo",
+    "flipping": "Lanzando...",
+    "tapToFlip": "Toca la moneda para lanzar",
+    "statistics": "Estadísticas",
+    "total": "Total",
+    "resetStats": "Restablecer Estadísticas",
+    "settings": "Personalizar Etiquetas",
+    "headsLabel": "Etiqueta de Cara",
+    "tailsLabel": "Etiqueta de Cruz",
+    "disclaimer": "Este lanzador de monedas usa pseudoaleatoriedad con fines de entretenimiento. No apto para decisiones criptográficas o legalmente vinculantes."
   }
 }

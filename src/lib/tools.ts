@@ -4601,4 +4601,84 @@ export const tools: Tool[] = [
       ],
     },
   },
+  {
+    id: "coin-flip",
+    name: "Virtual Coin Flip",
+    description: "Flip a virtual coin online with realistic 3D animation. Track heads/tails statistics and customize coin labels. Perfect for making decisions or teaching probability. Free, no signup.",
+    category: "media",
+    icon: "🪙",
+    path: "/tools/coin-flip",
+    seoTitle: "Free Virtual Coin Flip — Heads or Tails Simulator Online 2026",
+    seoDescription: "Flip a virtual coin online with realistic 3D animation. Track heads/tails statistics, customize labels. Perfect for decision making, settling bets, teaching probability. Free, no signup.",
+    seoKeywords: [
+      "virtual coin flip", "coin flipper", "heads or tails", "coin toss online",
+      "random coin flip", "digital coin toss", "decision maker coin", "free coin flip",
+      "coin flip simulator", "flip a coin", "online coin toss", "random heads or tails",
+      "virtual coin toss", "free online coin flipper 2026",
+    ],
+    howToUse: [
+      "Tap or click the coin to flip it. Watch the realistic 3D spinning animation.",
+      "The coin will land on either Heads or Tails randomly.",
+      "Check the statistics panel below to see your flip history — heads count, tails count, and total flips.",
+      "Use the \"Flip Again\" button to keep flipping, or tap the coin directly.",
+      "Customize the Heads and Tails labels in Settings to match your needs (e.g., \"Yes/No\", \"Buy/Sell\").",
+      "Click \"Reset Statistics\" to clear all counts and start fresh.",
+    ],
+    faq: [
+      { question: "Is the coin flip truly random?", answer: "The coin flipper uses JavaScript’s Math.random() for pseudo-randomness. It’s sufficiently random for everyday decisions, games, and teaching probability. However, it is not suitable for cryptographic or legally binding purposes." },
+      { question: "Can I customize what the coin sides say?", answer: "Yes! Open the \"Customize Labels\" section and change Heads and Tails to anything you want — Yes/No, Buy/Sell, Team A/Team B, or any text up to 20 characters." },
+      { question: "Does the coin flip animation look realistic?", answer: "The coin uses CSS 3D transforms for a smooth spinning animation. It rotates multiple times before landing, closely mimicking a real coin toss." },
+      { question: "Does this work on mobile phones?", answer: "Yes! The coin flipper is fully responsive. Buttons and the coin are sized for comfortable tapping on any screen size." },
+      { question: "Is this tool really free?", answer: "Yes, 100% free. No signup, no credits, no premium features. Flip as many times as you want." },
+    ],
+    nameTranslations: {
+      es: "Lanzamiento Virtual de Moneda",
+      ar: "قذف العملة الافتراضي",
+    },
+    descriptionTranslations: {
+      es: "Lanza una moneda virtual con animación 3D realista. Registra estadísticas de cara/cruz y personaliza etiquetas. Gratis, sin registro.",
+      ar: "اقلب عملة افتراضية برسومات ثلاثية الأبعاد واقعية. تتبع إحصاءات الوجه والظهر. مجاني، بدون تسجيل.",
+    },
+    seoTitleTranslations: {
+      es: "Lanzamiento de Moneda Virtual Gratis — Simulador de Cara o Cruz",
+      ar: "قلب العملة الافتراضي المجاني — محاكاة رأس أو ذيل",
+    },
+    seoDescriptionTranslations: {
+      es: "Lanza una moneda virtual con animación 3D realista. Seguimiento de estadísticas, etiquetas personalizables. Perfecto para decisiones o enseñar probabilidad. Gratis.",
+      ar: "اقلب عملة افتراضية برسومات ثلاثية الأبعاد. تتبع إحصاءات، تسميات قابلة للتخصيص. مجاني.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Toca o haz clic en la moneda para lanzarla. Mira la animación 3D realista.",
+        "La moneda caerá en Cara o Cruz aleatoriamente.",
+        "Revisa el panel de estadísticas para ver tu historial de lanzamientos.",
+        "Usa el botón \"Lanzar de Nuevo\" para seguir lanzando.",
+        "Personaliza las etiquetas en Configuración (ej: \"Sí/No\", \"Comprar/Vender\").",
+        "Haz clic en \"Restablecer Estadísticas\" para borrar todo.",
+      ],
+      ar: [
+        "انقر أو اضغط على العملة لقلبها. شاهد الرسومات الثلاثية الأبعاد.",
+        "ستهبط العملة على الوجه أو الظهر عشوائًا.",
+        "تحقق من لوحة الإحصاءات لرؤية سجل القلب.",
+        "استخدم زر اقلب مرة أخرى للاستمرار.",
+        "قم بتخصيص التسميات في الإعدادات (مثل نعم/لا، شراء/بيع).",
+        "انقر إعادة الإحصاءات للبدء من جديد.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Es realmente aleatorio el lanzamiento?", answer: "El lanzamiento usa Math.random() de JavaScript. Es suficientemente aleatorio para decisiones cotidianas y juegos, pero no para fines criptográficos." },
+        { question: "¿Puedo personalizar el texto de las caras?", answer: "¡Sí! Abre la sección de Personalización y cambia Cara y Cruz por lo que quieras: Sí/No, Comprar/Vender, Equipo A/Equipo B." },
+        { question: "¿La animación es realista?", answer: "La moneda usa transformaciones CSS 3D para una animación de giro suave. Gira varias veces antes de detenerse." },
+        { question: "¿Funciona en móviles?", answer: "¡Sí! El lanzador de monedas es totalmente responsive. Los botones y la moneda tienen tamaño cómodo para tocar." },
+        { question: "¿Es realmente gratis?", answer: "Sí, 100% gratis. Sin registro, sin créditos, sin funciones premium. Lanza tantas veces como quieras." },
+      ],
+      ar: [
+        { question: "هل قلب العملة عشوائي حقًا؟", answer: "يستخدم قلب العملة Math.random() في JavaScript. هو عشوائي بشكل كافٍ للقرارات اليومية." },
+        { question: "هل يمكنني تخصيص نص الوجهين؟", answer: "نعم! افتح قسم التخصيص وغير وجه وظهر إلى أي شيء: نعم/لا، شراء/بيع." },
+        { question: "هل الرسومات واقعية؟", answer: "تستخدم العملة تحويلات CSS ثلاثية الأبعاد لرسومات دوران سلسة. تدور عدة مرات قبل التوقف." },
+        { question: "هل هذه الأداة مجانية حقًا؟", answer: "نعم، مجانية 100%. بدون تسجيل، بدون رصيد، بدون ميزات مدفوعة. اقلب كما شئت." },
+      ],
+    },
+  }
 ];

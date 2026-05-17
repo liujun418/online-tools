@@ -989,5 +989,17 @@
     "tryCrypto": "Crypto Prices",
     "tryLifeHacks": "Life Hacks",
     "changeRegion": "Region"
+  },
+  "coinFlip": {
+    "flipAgain": "Flip Again",
+    "flipping": "Flipping...",
+    "tapToFlip": "Tap the coin to flip",
+    "statistics": "Statistics",
+    "total": "Total",
+    "resetStats": "Reset Statistics",
+    "settings": "Customize Labels",
+    "headsLabel": "Heads Label",
+    "tailsLabel": "Tails Label",
+    "disclaimer": "This coin flipper uses pseudo-randomness for entertainment purposes. Not suitable for cryptographic or legally binding decisions."
   }
 }
