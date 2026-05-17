@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import ToolLayout from "@/components/ToolLayout";
 
 const metadata = {
@@ -153,7 +153,7 @@ export default function TranslateClient({
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
   const [detectedLang, setDetectedLang] = useState("");
-  const debounceRef = useState<ReturnType<typeof setTimeout> | null>(null)[1];
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const translate = useCallback(async (text: string, sl: string, tl: string) => {
     if (!text.trim()) {
@@ -187,14 +187,13 @@ export default function TranslateClient({
 
   const handleSourceChange = (val: string) => {
     setSourceText(val);
-    if (debounceRef) clearTimeout(debounceRef as ReturnType<typeof setTimeout>);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
     if (!val.trim()) {
       setResultText("");
       setError("");
       return;
     }
-    const timeout = setTimeout(() => translate(val, sourceLang, targetLang), 600);
-    debounceRef(timeout);
+    debounceRef.current = setTimeout(() => translate(val, sourceLang, targetLang), 600);
   };
 
   const handleLangChange = (type: "source" | "target", val: string) => {
