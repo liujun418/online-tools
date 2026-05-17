@@ -4680,7 +4680,7 @@ export const tools: Tool[] = [
         { question: "هل هذه الأداة مجانية حقًا؟", answer: "نعم، مجانية 100%. بدون تسجيل، بدون رصيد، بدون ميزات مدفوعة. اقلب كما شئت." },
       ],
     },
-  }
+  },
   {
     id: "translate",
     name: "Free Online Translator",
