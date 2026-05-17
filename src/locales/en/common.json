@@ -1001,5 +1001,23 @@
     "headsLabel": "Heads Label",
     "tailsLabel": "Tails Label",
     "disclaimer": "This coin flipper uses pseudo-randomness for entertainment purposes. Not suitable for cryptographic or legally binding decisions."
+  },
+  "translate": {
+    "sourceLanguage": "Source Language",
+    "targetLanguage": "Target Language",
+    "input": "Input",
+    "output": "Translation",
+    "inputPlaceholder": "Type or paste text to translate...",
+    "outputPlaceholder": "Translation will appear here...",
+    "swap": "Swap languages",
+    "copy": "Copy",
+    "clear": "Clear",
+    "translating": "Translating...",
+    "characters": "characters",
+    "autoDetect": "Auto-detecting source language",
+    "error": "Translation failed. Please try again.",
+    "poweredBy": "Powered by Google Translate — This tool uses Google's free translation service for personal, non-commercial use only.",
+    "attribution": "Google Translate is a trademark of Google LLC. This site is not affiliated with or endorsed by Google.",
+    "disclaimer": "Machine translation is for reference only. Accuracy is not guaranteed. Do not use for critical legal, medical, or financial documents. Not for commercial use."
   }
 }

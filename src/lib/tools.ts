@@ -4681,4 +4681,82 @@ export const tools: Tool[] = [
       ],
     },
   }
+  {
+    id: "translate",
+    name: "Free Online Translator",
+    description: "Instantly translate text between 100+ languages. Auto-detect source language, one-click copy results. Powered by Google Translate. Free, no signup.",
+    category: "text",
+    icon: "🌐",
+    path: "/tools/translate",
+    seoTitle: "Free Online Translator — Translate Between 100+ Languages Instantly",
+    seoDescription: "Translate text between 100+ languages instantly. Auto-detect source language, one-click copy. Powered by Google Translate. Free, no signup, unlimited use.",
+    seoKeywords: [
+      "free translator", "online translator", "language translator", "translate text",
+      "google translate alternative", "free translation tool", "multi language translator",
+      "text translator online", "instant translation", "100 languages translator",
+      "auto detect language", "free text translator 2026",
+    ],
+    howToUse: [
+      "Type or paste your text in the left input box.",
+      "Select the source language or choose \"Detect Language\" for auto-detection.",
+      "Choose your target language from the dropdown (100+ languages available).",
+      "Translation appears automatically in the right panel within seconds.",
+      "Click \"Copy\" to copy the translated text to clipboard.",
+      "Use the swap button (↔) to reverse source and target languages.",
+    ],
+    faq: [
+      { question: "How many languages does this translator support?", answer: "Over 100 languages, including English, Spanish, Arabic, Chinese, Japanese, French, German, Hindi, and many more. The full language list is available in both the source and target dropdown menus." },
+      { question: "Is this translator really free?", answer: "Yes, 100% free for personal, non-commercial use. No signup, no credits, no usage limits. Powered by Google Translate's public translation service." },
+      { question: "How accurate is the translation?", answer: "The translator uses Google's neural machine translation, which is among the most accurate available. However, machine translation is for reference only — it may not capture nuance, idioms, or cultural context perfectly." },
+      { question: "Can I translate entire documents?", answer: "This tool is designed for text translation (up to ~5000 characters per request). For full document translation, consider Google Docs' built-in translation or dedicated document translation services." },
+      { question: "Is my text stored or shared?", answer: "No. All translation requests go directly from your browser to Google's translation API. We do not store, log, or share any of your text." },
+    ],
+    nameTranslations: {
+      es: "Traductor Gratuito en Línea",
+      ar: "مترجم مجاني عبر الإنترنت",
+    },
+    descriptionTranslations: {
+      es: "Traduce texto al instante entre más de 100 idiomas. Detección automática de idioma, copia con un clic. Gratis, sin registro.",
+      ar: "ترجم النص فورًا بين أكثر من 100 لغة. اكتشاف تلقائي للغة، نسخ بنقرة واحدة. مجاني، بدون تسجيل.",
+    },
+    seoTitleTranslations: {
+      es: "Traductor Gratuito en Línea — Traduce Entre Más de 100 Idiomas",
+      ar: "مترجم مجاني عبر الإنترنت — ترجم بين أكثر من 100 لغة",
+    },
+    seoDescriptionTranslations: {
+      es: "Traduce texto entre más de 100 idiomas al instante. Detección automática, copia rápida. Gratis, sin registro, uso ilimitado.",
+      ar: "ترجم النص بين أكثر من 100 لغة فورًا. اكتشاف تلقائي، نسخ سريع. مجاني، بدون تسجيل.",
+    },
+    howToUseTranslations: {
+      es: [
+        "Escribe o pega tu texto en el cuadro de entrada izquierdo.",
+        "Selecciona el idioma de origen o elige \"Detectar Idioma\".",
+        "Elige tu idioma de destino (más de 100 idiomas disponibles).",
+        "La traducción aparece automáticamente en el panel derecho.",
+        "Haz clic en \"Copiar\" para copiar el texto traducido.",
+        "Usa el botón de intercambio (↔) para invertir los idiomas.",
+      ],
+      ar: [
+        "اكتب أو الصق نصك في مربع الإدخال الأيسر.",
+        "اختر لغة المصدر أو اختر \"اكتشاف اللغة\".",
+        "اختر لغتك المستهدفة (أكثر من 100 لغة).",
+        "تظهر الترجمة تلقائيًا في اللوحة اليمنى.",
+        "انقر \"نسخ\" لنسخ النص المترجم.",
+        "استخدم زر التبديل (↔) لعكس اللغات.",
+      ],
+    },
+    faqTranslations: {
+      es: [
+        { question: "¿Cuántos idiomas admite este traductor?", answer: "Más de 100 idiomas, incluyendo inglés, español, árabe, chino, japonés, francés, alemán, hindi y muchos más. La lista completa está disponible en los menús desplegables." },
+        { question: "¿Es realmente gratuito este traductor?", answer: "Sí, 100% gratis para uso personal no comercial. Sin registro, sin créditos, sin límites de uso." },
+        { question: "¿Qué tan precisa es la traducción?", answer: "Usa la traducción automática neuronal de Google, una de las más precisas. Sin embargo, la traducción automática es solo para referencia." },
+        { question: "¿Se almacena o comparte mi texto?", answer: "No. Todas las solicitudes van directamente de tu navegador a la API de Google. No almacenamos, registramos ni compartimos tu texto." },
+      ],
+      ar: [
+        { question: "كم عدد اللغات التي يدعمها هذا المترجم؟", answer: "أكثر من 100 لغة، بما في ذلك الإنجليزية والإسبانية والعربية والصينية واليابانية والفرنسية والألمانية والهندية." },
+        { question: "هل هذا المترجم مجاني حقًا؟", answer: "نعم، مجاني 100% للاستخدام الشخصي غير التجاري. بدون تسجيل، بدون رصيد." },
+        { question: "هل يتم تخزين نصي أو مشاركته؟", answer: "لا. جميع الطلبات تذهب مباشرة من متصفحك إلى واجهة Google. لا نخزن أو نسجل أو نشارك نصك." },
+      ],
+    },
+  }
 ];
