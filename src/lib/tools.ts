@@ -13,6 +13,7 @@ export interface Tool {
   seoTitle?: string;
   seoDescription?: string;
   seoKeywords?: string[];
+  relatedTools?: string[];
   howToUse?: string[];
   faq?: FAQItem[];
   nameTranslations?: Record<string, string>;
@@ -42,6 +43,7 @@ export const tools: Tool[] = [
       "how many words in my text", "online text counter",
       "character count with spaces", "word counter for essays"
 ,      "word counter for students", "best word counter 2026", "free essay word counter online"        ],
+    relatedTools: ["lorem-ipsum", "text-repeater", "case-converter"],
     howToUse: [
       "Paste or type your text into the input field above.",
       "View your word count, character count, sentence count, and paragraph count instantly.",
@@ -124,6 +126,7 @@ export const tools: Tool[] = [
       "change text case online", "convert uppercase to lowercase",
       "text case changer free", "online case converter tool"
 ,      "case converter for students", "best case changer 2026", "free text case converter online"        ],
+    relatedTools: ["text-to-slug", "text-repeater", "word-counter"],
     howToUse: [
       "Paste or type your text into the input field above.",
       "Click the desired case button: UPPERCASE, lowercase, Title Case, or Sentence case.",
@@ -201,6 +204,7 @@ export const tools: Tool[] = [
       "free lorem ipsum tool", "lorem ipsum paragraphs",
       "lorem ipsum generator online", "mockup text generator"
 ,      "lorem ipsum for students", "best lorem ipsum generator 2026", "free dummy text generator online"        ],
+    relatedTools: ["word-counter", "hashtag-generator", "text-to-slug"],
     howToUse: [
       "Select the type of content you need: paragraphs, sentences, or words.",
       "Choose the number of units you want to generate.",
@@ -277,6 +281,7 @@ export const tools: Tool[] = [
       "convert text to url slug", "seo slug generator",
       "online slug generator free", "slugify text online"
 ,      "slug generator for students", "best url slug generator 2026", "free slugifier online"        ],
+    relatedTools: ["case-converter", "text-repeater", "fancy-text-generator"],
     howToUse: [
       "Enter your text, title, or heading in the input field.",
       "View the URL-friendly slug generated instantly below.",
@@ -353,6 +358,7 @@ export const tools: Tool[] = [
       "text diff tool free", "difference finder text",
       "online text comparison", "text diff checker online"
 ,      "text diff for students", "best text comparison tool 2026", "free text diff checker online"        ],
+    relatedTools: ["word-counter", "lorem-ipsum", "hashtag-generator"],
     howToUse: [
       "Paste your original text in the first input field.",
       "Paste the modified or second text in the second input field.",
@@ -429,6 +435,7 @@ export const tools: Tool[] = [
       "remove repeated lines", "duplicate line remover free",
       "clean duplicate lines from list", "text deduplicator"
 ,      "deduplicate for students", "best duplicate remover 2026", "free remove duplicates online"        ],
+    relatedTools: ["word-counter", "case-converter", "lorem-ipsum"],
     howToUse: [
       "Paste your text with duplicate lines into the input field.",
       "Click 'Remove Duplicates' to process the text.",
@@ -503,6 +510,7 @@ export const tools: Tool[] = [
       "copy paste repeater", "repeat words online",
       "text repeater online free", "how to repeat text"
 ,      "text repeater for students", "best string repeater 2026", "free text repeat tool online"        ],
+    relatedTools: ["case-converter", "text-to-slug", "word-counter"],
     howToUse: [
       "Enter the text or string you want to repeat in the input field.",
       "Set the number of times you want it repeated.",
@@ -580,6 +588,7 @@ export const tools: Tool[] = [
       "format json online", "json syntax checker", "json format tool",
       "how to format json", "free json formatter"
 ,      "json formatter for students", "best json formatter 2026", "free json validator online"        ],
+    relatedTools: ["json-to-csv", "csv-to-json", "regex-tester"],
     howToUse: [
       "Paste your raw or minified JSON data into the input field.",
       "Click 'Format' to beautify the JSON with proper indentation, or 'Minify' to compress it.",
@@ -658,6 +667,7 @@ export const tools: Tool[] = [
       "base64 encode decode free", "online base64 converter",
       "how to decode base64", "base64 text encoder"
 ,      "base64 for students", "best base64 converter 2026", "free base64 encoder online"        ],
+    relatedTools: ["url-encoder", "html-entities", "image-to-base64"],
     howToUse: [
       "Select 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to text.",
       "Paste your text or Base64 string into the input field.",
@@ -734,6 +744,7 @@ export const tools: Tool[] = [
       "url encoding tool", "percent encode url",
       "free url encoder", "url encoder decoder online"
 ,      "url encoder for students", "best url encoder 2026", "free percent encoding tool online"        ],
+    relatedTools: ["base64-converter", "html-entities", "csv-to-json"],
     howToUse: [
       "Select 'Encode' to convert a URL to percent-encoded format, or 'Decode' to decode it back.",
       "Paste your URL or encoded string into the input field.",
@@ -810,6 +821,7 @@ export const tools: Tool[] = [
       "sha256 hash online", "text to hash converter",
       "free hash generator", "sha hash generator online"
 ,      "hash generator for students", "best sha generator 2026", "free hash calculator online"        ],
+    relatedTools: ["md5-generator", "base64-converter", "regex-tester"],
     howToUse: [
       "Enter the text you want to hash in the input field.",
       "View SHA-1, SHA-256, and SHA-512 hash digests generated instantly.",
@@ -885,6 +897,7 @@ export const tools: Tool[] = [
       "uuid generator free", "generate multiple uuids",
       "uuid v4 online", "universal unique identifier generator"
 ,      "uuid generator for students", "best uuid generator 2026", "free guid generator online"        ],
+    relatedTools: ["password-generator", "random-name-generator", "qr-code-generator"],
     howToUse: [
       "Click 'Generate' to create a random UUID v4 identifier.",
       "Set the number of UUIDs to generate multiple at once.",
@@ -961,6 +974,7 @@ export const tools: Tool[] = [
       "test regex online", "regex debugger", "regex to code",
       "generate regex code", "online regex replace tool"
 ,      "regex tester for students", "best regex tester 2026", "free regex code generator online"        ],
+    relatedTools: ["password-generator", "hash-generator", "base64-converter"],
     howToUse: [
       "Enter your regular expression pattern in the pattern field (between the slashes).",
       "Set regex flags (g=global, i=case-insensitive, m=multiline, s=dotAll, u=unicode).",
@@ -1050,6 +1064,7 @@ export const tools: Tool[] = [
       "markdown previewer", "md to html online",
       "markdown live editor"
 ,      "markdown preview for students", "best markdown editor 2026", "free md to html converter online"        ],
+    relatedTools: ["text-to-slug", "case-converter", "text-repeater"],
     howToUse: [
       "Start typing Markdown in the left editor panel.",
       "View the rendered HTML preview update in real-time on the right.",
@@ -1126,6 +1141,7 @@ export const tools: Tool[] = [
       "free css minifier", "css optimizer online",
       "minify css free", "css compression tool"
 ,      "css minifier for students", "best css compressor 2026", "free css optimizer online"        ],
+    relatedTools: ["base64-converter", "url-encoder", "regex-tester"],
     howToUse: [
       "Paste your CSS code into the input field.",
       "Click 'Minify' to compress the CSS by removing whitespace, comments, and unnecessary characters.",
@@ -1202,6 +1218,7 @@ export const tools: Tool[] = [
       "current unix time", "unix timestamp online",
       "epoch time converter online", "timestamp converter free"
 ,      "unix timestamp for students", "best epoch converter 2026", "free timestamp converter online"        ],
+    relatedTools: ["json-to-csv", "csv-to-json", "base64-converter"],
     howToUse: [
       "View the current Unix timestamp displayed at the top of the page.",
       "Enter a Unix timestamp to convert it to a human-readable date and time.",
@@ -1276,6 +1293,7 @@ export const tools: Tool[] = [
       "free password generator tool", "how to create a strong password",
       "random password generator with symbols", "long password generator"
 ,      "password generator for students", "best password generator 2026", "free secure password creator online"        ],
+    relatedTools: ["regex-tester", "random-name-generator", "qr-code-generator"],
     howToUse: [
       "Choose your desired password length (8-128 characters recommended).",
       "Select which character types to include: uppercase, lowercase, numbers, and symbols.",
@@ -1356,6 +1374,7 @@ export const tools: Tool[] = [
       "age calculator online free", "how many days until my birthday",
       "date of birth age calculator"
 ,      "age calculator for students", "best age calculator 2026", "how old am i calculator free"        ],
+    relatedTools: ["calorie-calculator", "percentage-calculator", "loan-calculator"],
     nameTranslations: {
       es: "Calculadora de Edad",
       ar: "حاسبة العمر",
@@ -1435,6 +1454,7 @@ export const tools: Tool[] = [
       "how to calculate percentage", "percentage increase calculator",
       "online percentage calculator"
 ,      "percentage calculator for students", "best percent calculator 2026", "free percentage tool for homework"        ],
+    relatedTools: ["roman-numerals", "tip-calculator", "age-calculator"],
     nameTranslations: {
       es: "Calculadora de Porcentaje",
       ar: "حاسبة النسبة المئوية",
@@ -1510,6 +1530,7 @@ export const tools: Tool[] = [
       "bmi chart", "healthy weight calculator", "bmi calculator free",
       "body mass index checker online"
 ,      "bmi calculator for students", "best bmi calculator 2026", "free body mass index checker online"        ],
+    relatedTools: ["percentage-calculator", "loan-calculator", "compound-interest"],
     nameTranslations: {
       es: "Calculadora de IMC",
       ar: "حاسبة مؤشر كتلة الجسم",
@@ -1573,6 +1594,7 @@ export const tools: Tool[] = [
       "unit conversion online", "free unit converter tool",
       "cm to inches converter", "kg to lbs converter"
 ,      "unit converter for students", "best unit converter 2026", "free metric to imperial converter online"        ],
+    relatedTools: ["roman-numerals", "base-converter", "bmi-calculator"],
     nameTranslations: {
       es: "Convertidor de Unidades",
       ar: "محول الوحدات",
@@ -1649,6 +1671,7 @@ export const tools: Tool[] = [
       "binary octal decimal hex converter", "convert number bases",
       "free base converter", "number system converter"
 ,      "number base converter for students", "best binary converter 2026", "free hex to decimal converter online"        ],
+    relatedTools: ["roman-numerals", "unit-converter", "percentage-calculator"],
     nameTranslations: {
       es: "Convertidor de Bases Numéricas",
       ar: "محول الأنظمة العددية",
@@ -1725,6 +1748,7 @@ export const tools: Tool[] = [
       "roman numeral converter online", "free roman numeral tool",
       "roman numbers converter", "what is this roman numeral"
 ,      "roman numerals for students", "best roman numeral converter 2026", "free roman to number converter online"        ],
+    relatedTools: ["percentage-calculator", "base-converter", "unit-converter"],
     nameTranslations: {
       es: "Convertidor de Números Romanos",
       ar: "محول الأرقام الرومانية",
@@ -1800,6 +1824,7 @@ export const tools: Tool[] = [
       "online color converter", "color converter tool free",
       "convert hex color code", "hsl to rgb converter"
 ,      "color converter for students", "best color converter 2026", "free hex to rgb converter online"        ],
+    relatedTools: ["zodiac-sign", "ai-tools", "regex-tester"],
     nameTranslations: {
       es: "Convertidor de Colores",
       ar: "محول الألوان",
@@ -1878,6 +1903,7 @@ export const tools: Tool[] = [
       "html entity converter", "escape html online",
       "free html entity encoder", "html encode decode online"
 ,      "html entity encoder for students", "best html encoder 2026", "free html special character converter online"        ],
+    relatedTools: ["url-encoder", "base64-converter", "image-to-base64"],
     nameTranslations: {
       es: "Codificador de Entidades HTML",
       ar: "مشفّر كيانات HTML",
@@ -1953,6 +1979,7 @@ export const tools: Tool[] = [
       "json to csv free", "online json csv converter",
       "json to csv tool", "convert api data to csv"
 ,      "json to csv for students", "best json to csv converter 2026", "free json to excel converter online"        ],
+    relatedTools: ["csv-to-json", "base64-converter", "image-to-base64"],
     nameTranslations: {
       es: "Convertidor de JSON a CSV",
       ar: "محول JSON إلى CSV",
@@ -2028,6 +2055,7 @@ export const tools: Tool[] = [
       "csv to json free", "online csv json tool",
       "convert spreadsheet to json", "csv to json array"
 ,      "csv to json for students", "best csv to json converter 2026", "free spreadsheet to json converter online"        ],
+    relatedTools: ["json-to-csv", "base64-converter", "image-to-base64"],
     nameTranslations: {
       es: "Convertidor de CSV a JSON",
       ar: "محول CSV إلى JSON",
@@ -2104,6 +2132,7 @@ export const tools: Tool[] = [
       "free image base64 converter", "image to base64 tool",
       "svg to base64", "png to base64 converter"
 ,      "image to base64 for students", "best image encoder 2026", "free image to data uri converter online"        ],
+    relatedTools: ["base64-converter", "json-to-csv", "csv-to-json"],
     nameTranslations: {
       es: "Imagen a Base64",
       ar: "تحويل الصورة إلى Base64",
@@ -2178,6 +2207,7 @@ export const tools: Tool[] = [
       "loan interest calculator", "free loan calculator online",
       "how much is my monthly loan payment"
 ,      "loan calculator for students", "best loan payment calculator 2026", "free monthly payment estimator online"        ],
+    relatedTools: ["mortgage-calculator", "compound-interest", "age-calculator"],
     nameTranslations: {
       es: "Calculadora de Préstamos",
       ar: "حاسبة القروض",
@@ -2254,6 +2284,7 @@ export const tools: Tool[] = [
       "free mortgage calculator", "house payment calculator",
       "mortgage payment calculator online", "how much house can i afford"
 ,      "mortgage calculator for students", "best mortgage calculator 2026", "free house payment calculator online"        ],
+    relatedTools: ["loan-calculator", "income-tax-calculator", "calorie-calculator"],
     nameTranslations: {
       es: "Calculadora de Hipoteca",
       ar: "حاسبة الرهن العقاري",
@@ -2330,6 +2361,7 @@ export const tools: Tool[] = [
       "how many calories should i eat", "calorie calculator for weight loss",
       "free calorie calculator", "daily calorie intake calculator"
 ,      "calorie calculator for students", "best tdee calculator 2026", "free daily calorie needs estimator online"        ],
+    relatedTools: ["age-calculator", "mortgage-calculator", "income-tax-calculator"],
     nameTranslations: {
       es: "Calculadora de Calorías",
       ar: "حاسبة السعرات الحرارية",
@@ -2406,6 +2438,7 @@ export const tools: Tool[] = [
       "free roi calculator", "roi percentage calculator",
       "return on investment tool", "calculate investment returns"
 ,      "roi calculator for students", "best roi calculator 2026", "free investment return calculator online"        ],
+    relatedTools: ["percentage-calculator", "calorie-calculator", "tip-calculator"],
     nameTranslations: {
       es: "Calculadora de ROI",
       ar: "حاسبة العائد على الاستثمار",
@@ -2482,6 +2515,7 @@ export const tools: Tool[] = [
       "free compound interest calculator", "compound interest online",
       "how much will my savings grow", "compound interest estimator"
 ,      "compound interest for students", "best compound interest calculator 2026", "free savings growth calculator online"        ],
+    relatedTools: ["loan-calculator", "income-tax-calculator", "mortgage-calculator"],
     nameTranslations: {
       es: "Calculadora de Interés Compuesto",
       ar: "حاسبة الفائدة المركبة",
@@ -2558,6 +2592,7 @@ export const tools: Tool[] = [
       "free income tax calculator", "paycheck calculator",
       "salary calculator after tax", "how much tax will i pay"
 ,      "income tax calculator for students", "best salary calculator 2026", "free take home pay estimator online"        ],
+    relatedTools: ["mortgage-calculator", "compound-interest", "discount-calculator"],
     nameTranslations: {
       es: "Calculadora de Impuesto sobre la Renta",
       ar: "حاسبة ضريبة الدخل",
@@ -2634,6 +2669,7 @@ export const tools: Tool[] = [
       "free tip calculator", "tip and split calculator",
       "bill splitter with tip", "tip calculator online"
 ,      "tip calculator for students", "best tip calculator 2026", "free bill splitter online"        ],
+    relatedTools: ["discount-calculator", "percentage-calculator", "loan-calculator"],
     howToUse: [
       "Enter the total bill amount.",
       "Select your desired tip percentage (15%, 18%, 20%, or custom).",
@@ -2664,6 +2700,7 @@ export const tools: Tool[] = [
       "free discount calculator", "how much will i save",
       "calculate percentage off"
 ,      "discount calculator for students", "best sale price calculator 2026", "free savings calculator online"        ],
+    relatedTools: ["income-tax-calculator", "tip-calculator", "compound-interest"],
     howToUse: [
       "Enter the original price of the item.",
       "Enter the discount percentage or the discount amount.",
@@ -2694,6 +2731,7 @@ export const tools: Tool[] = [
       "free pregnancy calculator", "due date by lmp",
       "pregnancy timeline calculator"
 ,      "pregnancy calculator for students", "best due date calculator 2026", "free baby due date estimator online"        ],
+    relatedTools: ["mortgage-calculator", "calorie-calculator", "compound-interest"],
     howToUse: [
       "Enter the first day of your last menstrual period (LMP).",
       "Click 'Calculate' to see your estimated due date.",
@@ -2768,6 +2806,7 @@ export const tools: Tool[] = [
       "random number tool", "generate random integer",
       "random number generator online free", "pick a random number"
 ,      "random number generator for students", "best rng tool 2026", "free random number picker online"        ],
+    relatedTools: ["roman-numerals", "percentage-calculator", "base-converter"],
     howToUse: [
       "Set the minimum and maximum range for your random numbers.",
       "Choose how many numbers you want to generate.",
@@ -2843,6 +2882,7 @@ export const tools: Tool[] = [
       "zodiac traits", "sun sign calculator",
       "free zodiac sign finder", "what star sign am i"
 ,      "zodiac sign for students", "best star sign calculator 2026", "free what is my zodiac sign tool"        ],
+    relatedTools: ["color-converter", "age-calculator", "ip-lookup"],
     howToUse: [
       "Enter your birth date using the date picker.",
       "View your zodiac sign with its symbol and date range.",
@@ -2919,6 +2959,7 @@ export const tools: Tool[] = [
       "free name generator", "random names online",
       "name generator tool", "random person name generator"
 ,      "random name generator for students", "best name generator 2026", "free character name generator online"        ],
+    relatedTools: ["password-generator", "uuid-generator", "regex-tester"],
     howToUse: [
       "Choose the gender: male, female, or both.",
       "Set the number of names you want to generate.",
@@ -2994,6 +3035,7 @@ export const tools: Tool[] = [
       "text style generator", "fancy text for social media",
       "free fancy text generator", "instagram bio font generator"
 ,      "fancy text for students", "best fancy text generator 2026", "free instagram bio font generator online"        ],
+    relatedTools: ["text-to-slug", "case-converter", "lorem-ipsum"],
     howToUse: [
       "Enter your text in the input field.",
       "View your text converted to multiple fancy Unicode font styles.",
@@ -3070,6 +3112,7 @@ export const tools: Tool[] = [
       "free hashtag generator", "best hashtags for instagram",
       "hashtag generator online"
 ,      "hashtag generator for students", "best hashtag generator 2026", "free instagram hashtags tool online"        ],
+    relatedTools: ["lorem-ipsum", "text-diff", "fancy-text-generator"],
     howToUse: [
       "Enter your topic, keyword, or describe your content.",
       "View a list of relevant and trending hashtags generated for your topic.",
@@ -3144,6 +3187,7 @@ export const tools: Tool[] = [
       "youtube thumbnail specs", "youtube thumbnail best practices",
       "youtube thumbnail checker", "youtube thumbnail tool"
 ,      "youtube thumbnail for students", "best youtube thumbnail tool 2026", "free youtube thumbnail specs online"        ],
+    relatedTools: ["password-generator", "regex-tester", "base64-converter"],
     howToUse: [
       "Review the recommended YouTube thumbnail dimensions and specifications.",
       "Use the preview tool to see how your thumbnail will look on different devices.",
@@ -3218,6 +3262,7 @@ export const tools: Tool[] = [
       "free perpetual calendar", "interactive calendar online",
       "historical events calendar"
 ,      "perpetual calendar for students", "best perpetual calendar 2026", "free calendar lookup tool online"        ],
+    relatedTools: ["age-calculator", "percentage-calculator", "roman-numerals"],
     howToUse: [
       "Navigate to any year and month using the calendar controls.",
       "Click any date to see detailed information including day of week and week number.",
@@ -3293,6 +3338,7 @@ export const tools: Tool[] = [
       "text to md5", "md5 hash online", "free md5 generator",
       "md5 hash tool", "online md5 calculator"
 ,      "md5 generator for students", "best md5 hash generator 2026", "free md5 checksum calculator online"        ],
+    relatedTools: ["hash-generator", "base64-converter", "qr-code-generator"],
     howToUse: [
       "Enter the text you want to generate an MD5 hash for.",
       "View the MD5 hash digest generated instantly.",
@@ -3366,6 +3412,7 @@ export const tools: Tool[] = [
       "qr code generator online", "generate qr code free",
       "qr code creator", "download qr code"
 ,      "qr code generator for students", "best qr code maker 2026", "free qr code creator online"        ],
+    relatedTools: ["hash-generator", "password-generator", "md5-generator"],
     howToUse: [
       "Select the type of content: URL, text, email, phone number, or WiFi.",
       "Enter your content in the appropriate fields.",
@@ -3439,6 +3486,7 @@ export const tools: Tool[] = [
       "famous sayings", "quote search tool", "quotes about life",
       "wisdom quotes", "motivational sayings", "famous quotes by category"
 ,      "quotes for students", "best quotes directory 2026", "free motivational quotes online"        ],
+    relatedTools: ["book-of-answers", "life-hacks", "random-quote"],
     howToUse: [
       "Browse quotes organized by category: courage, wisdom, love, success, and more.",
       "Use the search bar to find quotes by person name, quote text, or keyword.",
@@ -3517,6 +3565,7 @@ export const tools: Tool[] = [
       "random decision generator", "book of answers free online",
       "fun decision tool", "random yes or no generator"
 ,      "book of answers for students", "best book of answers 2026", "free random answer generator online"        ],
+    relatedTools: ["coin-flip", "food-picker", "quotes"],
     howToUse: [
       "Think of a question you'd like guidance on — it can be about anything.",
       "Close your eyes and hold the question in mind for 3–5 seconds.",
@@ -3595,6 +3644,7 @@ export const tools: Tool[] = [
       "click reaction test", "reaction time milliseconds", "reflex game",
       "test my reflexes", "reaction time challenge", "free reflex test",
     ],
+    relatedTools: ["scoreboard", "coin-flip", "lateral-thinking"],
     howToUse: [
       "Choose a mode: Static Flash (center target) or Random Position (moving target).",
       "Click the game area or press Space/Enter to start a round.",
@@ -3680,6 +3730,7 @@ export const tools: Tool[] = [
       "ai coding tools", "ai tools list", "free ai tools online",
       "ai tools for students", "best free ai tools 2026"
 ,      "ai tools for students", "best ai tools directory 2026", "free ai tools list online"        ],
+    relatedTools: ["color-converter", "zodiac-sign", "global-weather"],
     howToUse: [
       "Browse AI tools organized by category: writing, images, video, coding, audio, and productivity.",
       "Click any tool to see its details, features, and direct link.",
@@ -3755,6 +3806,7 @@ export const tools: Tool[] = [
       "how to clean naturally", "kitchen shortcuts", "laundry tips",
       "organization hacks", "quick fixes", "home maintenance tips"
     ],
+    relatedTools: ["quotes", "book-of-answers", "food-picker"],
     howToUse: [
       "Browse tips organized by category using the tab navigation.",
       "Use the search bar to find tips for a specific problem or topic.",
@@ -3834,6 +3886,7 @@ export const tools: Tool[] = [
       "mystery puzzle game", "free riddle game", "critical thinking puzzle",
       "logic puzzle online", "mind game free",
     ],
+    relatedTools: ["reaction-test", "scoreboard", "book-of-answers"],
     howToUse: [
       "Select a category — Classic Mystery, Horror Dark, or Brain Hole Fun — to start.",
       "A mystery scenario will be randomly generated for you to solve.",
@@ -3927,6 +3980,7 @@ export const tools: Tool[] = [
       "bing daily image", "hd wallpaper free", "mobile wallpaper",
       "bing background", "wallpaper of the day",
     ],
+    relatedTools: ["nasa-apod", "gif-search", "pet-wallpaper"],
     howToUse: [
       "Browse the daily Bing wallpaper displayed in the main card.",
       "Switch between 4K UHD, 1920×1080 Full HD, and Mobile Portrait resolutions.",
@@ -4019,6 +4073,7 @@ export const tools: Tool[] = [
       "space photo", "hubble telescope image", "nasa picture",
       "astronomy photo", "galaxy wallpaper", "nebula image",
     ],
+    relatedTools: ["bing-wallpaper", "pet-wallpaper", "food-picker"],
     howToUse: [
       "View today's NASA Astronomy Picture of the Day in the main card.",
       "Click Previous/Next to browse daily astronomy photos by date.",
@@ -4088,6 +4143,7 @@ export const tools: Tool[] = [
     seoTitle: "Free Cryptocurrency Price Tracker — Live BTC, ETH Prices 2026",
     seoDescription: "Track real-time crypto prices: Bitcoin, Ethereum, Solana, and more. Live USD prices with 24h change indicators. Auto-refresh every 30 seconds. Powered by CoinGecko.",
     seoKeywords: ["crypto price", "bitcoin price", "ethereum price", "crypto tracker", "btc usd", "live crypto prices", "cryptocurrency tracker"],
+    relatedTools: ["global-weather", "world-map", "ip-lookup"],
     howToUse: ["View real-time prices for 8 major cryptocurrencies.", "Prices auto-refresh every 30 seconds.", "Green ▲ indicates price increase, Red ▼ indicates decrease.", "Click Refresh to manually update all prices."],
     faq: [
       { question: "Where does the price data come from?", answer: "All price data is from the CoinGecko API, a leading cryptocurrency data aggregator tracking thousands of coins across hundreds of exchanges." },
@@ -4115,6 +4171,7 @@ export const tools: Tool[] = [
     seoTitle: "Free World Map Explorer — Interactive Map with City Search 2026",
     seoDescription: "Explore any city worldwide on an interactive map. Search locations, zoom & pan, get coordinates. Powered by OpenStreetMap & Leaflet. Free, no signup.",
     seoKeywords: ["world map", "interactive map", "city search", "map explorer", "openstreetmap", "leaflet map", "free map tool"],
+    relatedTools: ["global-weather", "ip-lookup", "zodiac-sign"],
     howToUse: ["Type a city or place name in the search box to find it on the map.", "Click a search result to zoom directly to that location.", "Use mouse scroll to zoom and drag to pan the map.", "Click 'My Location' to center the map on your current position."],
     faq: [
       { question: "What map data is used?", answer: "Map tiles are from OpenStreetMap, a collaborative project to create a free editable map of the world. The map library is Leaflet, an open-source JavaScript library." },
@@ -4141,6 +4198,7 @@ export const tools: Tool[] = [
     seoTitle: "Free IP Geolocation Lookup — What Is My IP Address 2026",
     seoDescription: "Instantly find your IP address, country, city, ISP, timezone, and GPS coordinates. Free IP geolocation lookup powered by ipapi.co. No signup required.",
     seoKeywords: ["ip lookup", "what is my ip", "ip geolocation", "ip address lookup", "geo ip", "ip location", "my ip address"],
+    relatedTools: ["zodiac-sign", "world-map", "global-weather"],
     howToUse: ["Open the page — your IP information is fetched automatically.", "View your IP, country, city, region, ISP, timezone, and coordinates.", "Click 'Copy All Info' to copy everything to clipboard.", "Click 'Refresh' to reload your IP data."],
     faq: [
       { question: "What is IP geolocation?", answer: "IP geolocation maps your IP address to a physical location — country, city, region, and approximate coordinates. It helps identify where an internet connection originates." },
@@ -4167,6 +4225,7 @@ export const tools: Tool[] = [
     seoTitle: "Free Random Pet Wallpaper — Cute Cats, Dogs & Foxes 2026",
     seoDescription: "Random cute cat, dog and fox photos. One-click refresh, fullscreen preview, and free download. No signup required.",
     seoKeywords: ["pet wallpaper", "cute cat", "dog photo", "fox image", "random pet", "animal wallpaper", "cute animal"],
+    relatedTools: ["bing-wallpaper", "random-quote", "gif-search"],
     howToUse: ["Click Cat, Dog, or Fox tab to load a random photo.", "Click Refresh for a new random image.", "Click Fullscreen to view the image in full screen mode.", "Click Download to save the image."],
     faq: [
       { question: "Where do the images come from?", answer: "Cat images from Cataas/thecatapi.com, dog images from Dog CEO API, fox images from randomfox.ca. All are free public APIs." },
@@ -4192,6 +4251,7 @@ export const tools: Tool[] = [
     seoTitle: "Free Random Inspirational Quote Generator — Famous Quotes 2026",
     seoDescription: "Get random inspirational quotes from famous authors. One-click refresh, copy to clipboard, multiple color themes. Free online quote generator — no signup required.",
     seoKeywords: ["random quote", "inspirational quote", "famous quote", "quote generator", "motivational quote", "daily quote", "wisdom quote"],
+    relatedTools: ["quotes", "gif-search", "bing-wallpaper"],
     howToUse: ["Click 'New Quote' to load a random inspirational quote.", "Click 'Copy Quote' to copy the quote and author to clipboard.", "Click the palette icon to cycle through light, sepia, and dark themes."],
     faq: [
       { question: "Where do the quotes come from?", answer: "Quotes are from the ZenQuotes API, which curates thousands of inspirational quotes from famous authors, philosophers, and historical figures." },
@@ -4213,6 +4273,7 @@ export const tools: Tool[] = [
     seoTitle: "Free Global Weather — Live Temperature & 7-Day Forecast 2026",
     seoDescription: "Check real-time weather & 7-day forecast for any city worldwide. Temperature, feels like, wind, humidity, precipitation. Auto-detect your location. Powered by Open-Meteo. Free, no signup.",
     seoKeywords: ["global weather", "weather forecast", "world weather", "7 day forecast", "live temperature", "local weather", "free weather checker", "weather by city", "international weather", "weather today", "hourly weather", "weather app online"],
+    relatedTools: ["world-map", "crypto-price", "color-converter"],
     howToUse: [
       "Allow location access when prompted to see your local weather automatically.",
       "Or type any city name in the search box and press Enter to get weather for that location.",
@@ -4284,6 +4345,7 @@ export const tools: Tool[] = [
     seoTitle: "Free GIF Search — Search & Download Trending GIFs 2026",
     seoDescription: "Search and download millions of animated GIFs powered by GIPHY. Browse trending GIFs, search by keyword, one-click download, copy share link. Free online GIF finder — no signup required.",
     seoKeywords: ["gif search", "animated gif", "gif download", "trending gif", "free gif", "giphy search", "gif finder", "funny gif", "reaction gif", "meme gif", "download gif", "gif online"],
+    relatedTools: ["bing-wallpaper", "reaction-test", "random-quote"],
     howToUse: [
       "Browse trending GIFs on the default homepage or type a keyword to search.",
       "Click 'Load More' to see additional GIFs for the current search.",
@@ -4359,6 +4421,7 @@ export const tools: Tool[] = [
       "free food picker", "whats for lunch", "meal spinner",
       "spin the wheel food", "lunch generator", "dinner spinner",
     ],
+    relatedTools: ["book-of-answers", "scoreboard", "coin-flip"],
     howToUse: [
       "Choose a food category or leave it on 'All' to browse every option.",
       "Click the big 'Pick My Meal!' button to start the spinning animation.",
@@ -4440,6 +4503,7 @@ export const tools: Tool[] = [
       "morse code audio", "learn morse code", "free morse translator",
       "morse code generator", "morse code player",
     ],
+    relatedTools: ["base64-converter", "regex-tester", "hash-generator"],
     howToUse: [
       "Type your message in the Text box — Morse code appears instantly below.",
       "Or paste Morse code (dots and dashes) in the Morse box to decode back to text.",
@@ -4526,6 +4590,7 @@ export const tools: Tool[] = [
       "score counter", "board game score", "sports scoreboard", "free scoreboard",
       "online score keeper", "tournament scoreboard", "match timer", "countdown timer",
     ],
+    relatedTools: ["reaction-test", "coin-flip", "lateral-thinking"],
     howToUse: [
       "Tap team names to customize them for your teams or players.",
       "Use the +1, +5, +10 buttons to quickly add points, or -1, -5, -10 to subtract.",
@@ -4616,6 +4681,7 @@ export const tools: Tool[] = [
       "coin flip simulator", "flip a coin", "online coin toss", "random heads or tails",
       "virtual coin toss", "free online coin flipper 2026",
     ],
+    relatedTools: ["book-of-answers", "reaction-test", "scoreboard"],
     howToUse: [
       "Tap or click the coin to flip it. Watch the realistic 3D spinning animation.",
       "The coin will land on either Heads or Tails randomly.",
@@ -4696,6 +4762,7 @@ export const tools: Tool[] = [
       "text translator online", "instant translation", "100 languages translator",
       "auto detect language", "free text translator 2026",
     ],
+    relatedTools: ["text-diff", "text-repeater", "word-counter"],
     howToUse: [
       "Type or paste your text in the left input box.",
       "Select the source language or choose \"Detect Language\" for auto-detection.",

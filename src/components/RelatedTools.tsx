@@ -23,9 +23,16 @@ const catLabels: Record<string, Record<Locale, string>> = {
 function getRelatedTools(toolId: string): Tool[] {
   const current = tools.find((t) => t.id === toolId);
   if (!current) return [];
+  // Prefer explicit relatedTools, fall back to same-category sorted by id
+  if (current.relatedTools?.length) {
+    return current.relatedTools
+      .map((id) => tools.find((t) => t.id === id))
+      .filter(Boolean) as Tool[];
+  }
+  // Deterministic order ensures consistent internal linking for SEO
   return tools
     .filter((t) => t.category === current.category && t.id !== toolId)
-    .sort(() => Math.random() - 0.5)
+    .sort((a, b) => a.id.localeCompare(b.id))
     .slice(0, 4);
 }
 
