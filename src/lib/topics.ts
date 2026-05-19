@@ -17,6 +17,18 @@ export const freeTopics: TopicData[] = [
       { question: "Do these student tools work on mobile?", answer: "Yes — all our student tools are fully responsive and work on phones, tablets, and laptops. Use them in the classroom, library, or at home with any device." },
       { question: "Are these tools really free for students?", answer: "Yes, completely free. No registration, no credit card, no hidden fees. We support the site through non-intrusive advertising while keeping all tools accessible to students worldwide." },
     ],
+    translations: {
+      es: {
+        title: 'Herramientas Gratis para Estudiantes',
+        description: 'Herramientas esenciales gratuitas que todo estudiante necesita: calculadoras, conversores, herramientas de texto y ayudas de estudio. Sin descargas, sin anuncios molestos.',
+        intro: 'Los estudiantes pasan horas buscando herramientas online fiables. Hemos organizado las mejores herramientas gratuitas para estudiantes en un solo lugar. Calcula tu edad, IMC o pagos de prestamos. Convierte unidades para tareas de ciencias. Cuenta palabras para ensayos. Genera Lorem Ipsum para proyectos de diseno. Todas las herramientas son gratuitas, funcionan en cualquier dispositivo y no requieren registro.',
+      },
+      ar: {
+        title: 'أدوات مجانية للطلاب',
+        description: 'أدوات أساسية مجانية يحتاجها كل طالب: آلات حاسبة ومحولات وأدوات نصية ومساعدات دراسية. بدون تحميل، بدون إعلانات مزعجة.',
+        intro: 'يقضي الطلاب ساعات في البحث عن أدوات موثوقة عبر الإنترنت. قمنا بتنظيم أفضل الأدوات المجانية للطلاب في مكان واحد. احسب عمرك ومؤشر كتلة الجسم ومدفوعات القروض. حول الوحدات للواجبات العلمية. عد الكلمات للمقالات. جميع الأدوات مجانية وتعمل على أي جهاز وبدون تسجيل.',
+      },
+    },
   },
   {
     id: "developer-tools",
@@ -35,6 +47,18 @@ export const freeTopics: TopicData[] = [
       { question: "What developer tools are included?", answer: "Our developer toolkit includes JSON formatter/validator, Base64 encoder/decoder, URL encoder/decoder, hash generator (MD5, SHA-1, SHA-256), UUID generator, regex tester, CSS minifier, Unix timestamp converter, password generator, HTML entity converter, Markdown preview, text diff checker, color converter, and base converter. All are free to use." },
       { question: "Do I need to install anything?", answer: "No installation required. All tools work directly in your browser. Just open the tool and start using it — perfect for quick debugging sessions or when working on machines where you can't install software." },
     ],
+    translations: {
+      es: {
+        title: 'Herramientas Gratis para Desarrolladores',
+        description: 'Utilidades esenciales para desarrolladores: formateador JSON, codificador Base64, probador regex, generador hash y mas. Todo se ejecuta en tu navegador sin subir datos a servidores.',
+        intro: 'Todo desarrollador necesita un conjunto de utilidades fiables. Nuestras herramientas cubren el flujo completo: formatea y valida JSON, codifica/decodifica Base64 y URLs, genera UUIDs y contrasenas seguras, prueba expresiones regulares, minifica CSS, convierte marcas de tiempo y previsualiza Markdown. Todas las herramientas procesan datos localmente en tu navegador.',
+      },
+      ar: {
+        title: 'أدوات مجانية للمطورين',
+        description: 'أدوات أساسية للمطورين: منسق JSON ومشفر Base64 ومختبر regex ومولد التجزئة والمزيد. كل شيء يعمل في متصفحك دون تحميل بيانات للخوادم.',
+        intro: 'يحتاج كل مطور إلى مجموعة أدوات موثوقة. تغطي أدواتنا سير العمل الكامل: تنسيق JSON والتحقق منه، تشفير/فك تشفير Base64 و URL، إنشاء UUIDs وكلمات مرور آمنة، اختبار التعابير النمطية، تقليص CSS، تحويل الطوابع الزمنية، ومعاينة Markdown. جميع الأدوات تعالج البيانات محليا في متصفحك.',
+      },
+    },
   },
   {
     id: "image-tools",
@@ -50,6 +74,18 @@ export const freeTopics: TopicData[] = [
       { question: "Where do the wallpapers come from?", answer: "Bing Wallpaper shows Microsoft Bing's daily homepage image — professional photography curated by Bing's editorial team. NASA APOD features astronomy images from NASA's official Astronomy Picture of the Day archive. Pet Wallpaper sources cute animal photos from Unsplash. All images are properly attributed to their sources." },
       { question: "Can I download and use these images?", answer: "Yes, you can download the images for personal use. For commercial use, check the specific license of each image source. Bing wallpapers are generally for personal use only. NASA images are typically public domain." },
     ],
+    translations: {
+      es: {
+        title: 'Herramientas de Imagen y Fondos de Pantalla Gratis',
+        description: 'Descubre fondos de pantalla impresionantes, fotos astronomicas de la NASA, busqueda de GIFs y herramientas de color. Contenido actualizado diariamente.',
+        intro: 'Encuentra imagenes hermosas sin salir de tu navegador. Explora el fondo de pantalla diario de Bing, las fotos astronomicas de la NASA, busca millones de GIFs y obten adorables fondos de mascotas. Usa el conversor de color para tus proyectos de diseno. Todas las herramientas obtienen contenido de APIs oficiales, garantizando alta calidad y actualizaciones regulares.',
+      },
+      ar: {
+        title: 'أدوات صور وخلفيات مجانية',
+        description: 'اكتشف خلفيات مذهلة وصور NASA الفلكية وبحث GIF وأدوات الألوان. محتوى محدث يوميا من أفضل المصادر.',
+        intro: 'اعثر على صور جميلة دون مغادرة متصفحك. تصفح خلفية Bing اليومية، واستكشف صور NASA الفلكية، وابحث في ملايين GIFs، واحصل على خلفيات حيوانات أليفة لطيفة. استخدم محول الألوان لمشاريع التصميم. جميع الأدوات تستمد المحتوى من واجهات برمجة رسمية.',
+      },
+    },
   },
   {
     id: "seo-tools",
@@ -66,6 +102,18 @@ export const freeTopics: TopicData[] = [
       { question: "How do I write SEO-friendly titles and descriptions?", answer: "Use our word counter to check character counts (50-60 characters for titles, 150-160 for meta descriptions). Use the case converter to format titles properly. Use the slug generator to create clean, keyword-rich URLs. Consistently applying these formatting rules improves click-through rates from search results." },
       { question: "Are there any paid SEO tools on this site?", answer: "No — every tool on ToolBoxOnline is completely free. We believe essential SEO tools should be accessible to everyone, from hobby bloggers to professional marketers." },
     ],
+    translations: {
+      es: {
+        title: 'Herramientas SEO y de Contenido Gratis',
+        description: 'Mejora el posicionamiento de tu sitio web con herramientas SEO gratuitas: contador de palabras, conversor de mayusculas, generador de slugs y mas.',
+        intro: 'El exito en SEO comienza con las herramientas adecuadas. Cuenta palabras y caracteres para meta descripciones. Convierte mayusculas/minusculas para titulares. Genera slugs URL amigables para SEO. Previsualiza Markdown antes de publicar. Crea estrategias de hashtags para redes sociales. Todas las herramientas son gratuitas para bloggers, especialistas en marketing SEO y profesionales del contenido.',
+      },
+      ar: {
+        title: 'أدوات SEO ومحتوى مجانية',
+        description: 'حسن ترتيب موقعك في البحث باستخدام أدوات SEO مجانية: عداد كلمات ومحول حالة الأحرف ومولد الروابط والمزيد. أساسية للمدونين والمسوقين.',
+        intro: 'يبدأ نجاح SEO بالأدوات المناسبة. عد الكلمات والأحرف للأوصاف الوصفية. حول حالة الأحرف للعناوين. أنشئ روابط URL صديقة لـ SEO. عاين Markdown قبل النشر. أنشئ استراتيجيات هاشتاج للتوزيع على وسائل التواصل. جميع الأدوات مجانية للمدونين ومسوقي SEO ومحترفي المحتوى.',
+      },
+    },
   },
   {
     id: "writing-tools",
@@ -82,5 +130,17 @@ export const freeTopics: TopicData[] = [
       { question: "What writing tools are essential for bloggers?", answer: "A word counter for checking article length, a case converter for formatting headlines, a text diff tool for comparing draft revisions, a Markdown preview for formatting posts, a slug generator for URLs, and a hashtag generator for social media promotion. All are available free on ToolBoxOnline." },
       { question: "Can I check my essay word count here?", answer: "Yes — our word counter instantly shows word count, character count (with and without spaces), sentences, paragraphs, and reading time. Just paste your text and see the results." },
     ],
+    translations: {
+      es: {
+        title: 'Herramientas de Escritura y Texto Gratis',
+        description: 'Mejora tu escritura con herramientas de texto gratuitas: contador de palabras, conversor de mayusculas, comparador de textos, previsualizador Markdown y mas.',
+        intro: 'Escribe mejor, mas rapido y de forma mas eficiente con nuestra coleccion de herramientas de escritura. Cuenta palabras y caracteres para cualquier documento. Convierte texto entre diferentes formatos de mayusculas. Compara versiones de texto con el verificador de diferencias. Genera texto de marcador de posicion Lorem Ipsum. Crea texto decorativo y hashtags para redes sociales. Previsualiza Markdown antes de publicar en tu blog.',
+      },
+      ar: {
+        title: 'أدوات كتابة ونصوص مجانية',
+        description: 'حسن كتابتك باستخدام أدوات نصية مجانية: عداد كلمات ومحول حالة الأحرف ومقارن نصوص ومعاين Markdown والمزيد. مثالية للكتاب والمحررين والطلاب.',
+        intro: 'اكتب بشكل أفضل وأسرع وأكثر كفاءة مع مجموعتنا من أدوات الكتابة. عد الكلمات والأحرف لأي مستند. حول النص بين تنسيقات الأحرف المختلفة. قارن إصدارات النص مع مدقق الاختلافات. أنشئ نص Lorem Ipsum للتصاميم. أنشئ نصوصا مزخرفة وهاشتاجات لوسائل التواصل الاجتماعي. عاين Markdown قبل النشر.',
+      },
+    },
   },
 ];

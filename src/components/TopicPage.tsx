@@ -9,6 +9,17 @@ export interface TopicData {
   intro: string;
   toolIds: string[];
   faq: { question: string; answer: string }[];
+  translations?: Record<string, { title: string; description: string; intro: string }>;
+}
+
+function t(text: string, topic: TopicData, locale: string): string {
+  if (locale === 'en') return text;
+  const trans = topic.translations?.[locale];
+  if (!trans) return text;
+  if (text === title) return trans.title || text;
+  if (text === description) return trans.description || text;
+  if (text === topic.intro) return trans.intro || text;
+  return text;
 }
 
 interface TopicPageProps {
@@ -18,6 +29,9 @@ interface TopicPageProps {
 }
 
 export default function TopicPage({ topic, locale, dict }: TopicPageProps) {
+  const title = t(title, topic, locale);
+  const description = t(description, topic, locale);
+  const intro = t(topic.intro, topic, locale);
   const tools_i18n = (dict as any)?.tools || {};
   const home = (dict as any)?.home || {};
   const tp = (dict as any)?.toolPage || {};
@@ -32,7 +46,7 @@ export default function TopicPage({ topic, locale, dict }: TopicPageProps) {
       <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400" aria-label="Breadcrumb">
         <Link href={`/${locale}`} className="hover:text-blue-600 dark:hover:text-blue-400">{home.title || "Home"}</Link>
         <span>/</span>
-        <span className="font-medium text-zinc-900 dark:text-white">{topic.title}</span>
+        <span className="font-medium text-zinc-900 dark:text-white">{title}</span>
       </nav>
 
       {/* BreadcrumbList Schema */}
@@ -44,7 +58,7 @@ export default function TopicPage({ topic, locale, dict }: TopicPageProps) {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: home.title || "Home", item: `https://toolboxonline.club/${locale}` },
-              { "@type": "ListItem", position: 2, name: topic.title },
+              { "@type": "ListItem", position: 2, name: title },
             ],
           }),
         }}
@@ -53,9 +67,9 @@ export default function TopicPage({ topic, locale, dict }: TopicPageProps) {
       {/* Header */}
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
-          {topic.icon} {topic.title}
+          {topic.icon} {title}
         </h1>
-        <p className="mt-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">{topic.description}</p>
+        <p className="mt-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">{description}</p>
         <p className="mt-4 text-sm leading-relaxed text-zinc-500 dark:text-zinc-500">{topic.intro}</p>
       </header>
 
@@ -66,8 +80,8 @@ export default function TopicPage({ topic, locale, dict }: TopicPageProps) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            name: topic.title,
-            description: topic.description,
+            name: title,
+            description: description,
             mainEntity: {
               "@type": "ItemList",
               itemListElement: resolvedTools.map((t: any, i: number) => ({

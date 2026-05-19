@@ -30,7 +30,7 @@ export const tools: Tool[] = [
     id: "word-counter",
     name: "Word Counter",
     description:
-      "Count words, characters, sentences, and paragraphs in your text in real-time.",
+      "Count words, characters, sentences, and paragraphs in real time. Shows reading time and speaking time estimates. Copy-paste or type directly — no buttons to click, updates as you write.",
     category: "text",
     icon: "📝",
     path: "/tools/word-counter",
@@ -114,7 +114,7 @@ export const tools: Tool[] = [
     id: "case-converter",
     name: "Case Converter",
     description:
-      "Convert text to uppercase, lowercase, title case, or sentence case instantly.",
+      "Convert text to uppercase, lowercase, title case, sentence case, or toggle case. Handles bulk text with one click. Useful for fixing all-caps text, formatting headlines, or normalizing copy-pasted content.",
     category: "text",
     icon: "🔤",
     path: "/tools/case-converter",
@@ -191,7 +191,7 @@ export const tools: Tool[] = [
     id: "lorem-ipsum",
     name: "Lorem Ipsum Generator",
     description:
-      "Generate placeholder text for your designs, mockups, and wireframes.",
+      "Generate placeholder text for mockups, wireframes, and design drafts. Choose paragraph count and length. Standard Lorem Ipsum with optional customization.",
     category: "text",
     icon: "📄",
     path: "/tools/lorem-ipsum",
@@ -269,7 +269,7 @@ export const tools: Tool[] = [
     id: "text-to-slug",
     name: "Text to Slug",
     description:
-      "Convert any text into a URL-friendly slug string for clean URLs.",
+      "Turn any text into a clean URL slug. Strips special characters, replaces spaces with hyphens, converts to lowercase. Handles accented characters and Unicode — just paste your title and copy the slug.",
     category: "text",
     icon: "🔗",
     path: "/tools/text-to-slug",
@@ -346,7 +346,7 @@ export const tools: Tool[] = [
     id: "text-diff",
     name: "Text Diff Checker",
     description:
-      "Compare two texts and highlight the differences side by side.",
+      "Compare two pieces of text side by side and see exactly what changed. Highlights additions, deletions, and modifications. Drop in old and new versions to spot edits.",
     category: "text",
     icon: "📋",
     path: "/tools/text-diff",
@@ -423,7 +423,7 @@ export const tools: Tool[] = [
     id: "remove-duplicate-lines",
     name: "Remove Duplicate Lines",
     description:
-      "Remove duplicate lines from text while preserving order. Clean up your lists instantly.",
+      "Remove duplicate lines from any text while keeping the original order. Sorts alphabetically if you want. Filters out repeated entries from lists, CSVs, logs, or copy-pasted data.",
     category: "text",
     icon: "🧹",
     path: "/tools/remove-duplicate-lines",
@@ -498,7 +498,7 @@ export const tools: Tool[] = [
     id: "text-repeater",
     name: "Text Repeater",
     description:
-      "Repeat any text or string a specified number of times instantly.",
+      "Repeat any text string as many times as you need. Set the count and separator. Good for generating test data, creating placeholder patterns, or bulk-copying formatted snippets.",
     category: "text",
     icon: "🔁",
     path: "/tools/text-repeater",
@@ -576,7 +576,7 @@ export const tools: Tool[] = [
     id: "json-formatter",
     name: "JSON Formatter",
     description:
-      "Format, minify, and validate JSON data with syntax highlighting.",
+      "Format, validate, and beautify JSON with syntax highlighting and collapsible tree view. Minify to a single line for production. Catches syntax errors with line numbers.",
     category: "developer",
     icon: "{ }",
     path: "/tools/json-formatter",
@@ -655,7 +655,7 @@ export const tools: Tool[] = [
   {
     id: "base64-converter",
     name: "Base64 Encoder/Decoder",
-    description: "Encode and decode text to and from Base64 format instantly.",
+    description: "Encode text to Base64 and decode Base64 back to readable text. Works with standard Base64 and URL-safe variants. Quick way to embed data in URLs or decode API responses.",
     category: "developer",
     icon: "🔄",
     path: "/tools/base64-converter",
@@ -732,7 +732,7 @@ export const tools: Tool[] = [
     id: "url-encoder",
     name: "URL Encoder/Decoder",
     description:
-      "Encode or decode URLs and URL components for web development.",
+      "Encode special characters in URLs and decode percent-encoded strings back to normal text. Handles full URLs or individual components. Essential for working with query parameters and form data.",
     category: "developer",
     icon: "🌐",
     path: "/tools/url-encoder",
@@ -809,7 +809,7 @@ export const tools: Tool[] = [
     id: "hash-generator",
     name: "Hash Generator",
     description:
-      "Generate SHA-1, SHA-256, and SHA-512 hashes from any text input.",
+      "Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes from any text. Also supports MD5 for legacy checks. Compare two hashes side by side to verify file integrity.",
     category: "developer",
     icon: "#️⃣",
     path: "/tools/hash-generator",
@@ -885,7 +885,7 @@ export const tools: Tool[] = [
   {
     id: "uuid-generator",
     name: "UUID Generator",
-    description: "Generate random UUID v4 identifiers for development.",
+    description: "Generate random UUID v4 identifiers. Click to copy, generate multiple at once with separator options. Good for database keys, test fixtures, or any time you need a unique ID.",
     category: "developer",
     icon: "🔑",
     path: "/tools/uuid-generator",
@@ -1051,7 +1051,7 @@ export const tools: Tool[] = [
     id: "markdown-preview",
     name: "Markdown Preview",
     description:
-      "Write Markdown and see a live HTML preview as you type. Free Markdown editor.",
+      "Write Markdown on the left, see formatted HTML on the right. Live preview updates as you type. Supports GitHub-flavored Markdown including tables, code blocks, and task lists.",
     category: "text",
     icon: "📑",
     path: "/tools/markdown-preview",
@@ -1129,7 +1129,7 @@ export const tools: Tool[] = [
     id: "css-minifier",
     name: "CSS Minifier",
     description:
-      "Minify and beautify CSS code. Remove whitespace and comments for production.",
+      "Minify CSS by stripping whitespace, comments, and unnecessary characters. Also beautifies minified CSS back to readable format. Paste your stylesheet and toggle between compact and readable.",
     category: "developer",
     icon: "🎨",
     path: "/tools/css-minifier",
@@ -1206,7 +1206,7 @@ export const tools: Tool[] = [
     id: "unix-timestamp",
     name: "Unix Timestamp Converter",
     description:
-      "Convert Unix timestamps to human-readable dates and vice versa.",
+      "Convert Unix timestamps to human-readable dates and vice versa. Supports seconds and milliseconds. Shows UTC and local time side by side. Pick a date to get its timestamp.",
     category: "developer",
     icon: "⏱️",
     path: "/tools/unix-timestamp",
@@ -1281,7 +1281,7 @@ export const tools: Tool[] = [
     id: "password-generator",
     name: "Password Generator",
     description:
-      "Generate strong, secure passwords with customizable length and character options.",
+      "Generate strong random passwords with adjustable length and character sets — uppercase, lowercase, numbers, symbols. Shows estimated strength. One click to copy or regenerate.",
     category: "developer",
     icon: "🔐",
     path: "/tools/password-generator",
@@ -1361,7 +1361,7 @@ export const tools: Tool[] = [
     id: "age-calculator",
     name: "Age Calculator",
     description:
-      "Calculate exact age in years, months, and days from any birth date.",
+      "Calculate exact age in years, months, and days from any birth date. Shows total months, weeks, and days lived. Also calculates age on a specific future or past date.",
     category: "calculator",
     icon: "🎂",
     path: "/tools/age-calculator",
@@ -1441,7 +1441,7 @@ export const tools: Tool[] = [
     id: "percentage-calculator",
     name: "Percentage Calculator",
     description:
-      "Calculate percentages, percentage change, and percentage of a number instantly.",
+      "Calculate percentage of a number, percentage change between two values, and find the original number from a percentage. Three calculators in one, no confusing math required.",
     category: "calculator",
     icon: "📊",
     path: "/tools/percentage-calculator",
@@ -1518,7 +1518,7 @@ export const tools: Tool[] = [
     id: "bmi-calculator",
     name: "BMI Calculator",
     description:
-      "Calculate your Body Mass Index (BMI) and see your weight category.",
+      "Calculate your Body Mass Index from height and weight. Shows your BMI number and weight category from underweight to obese. Supports both metric (kg/cm) and imperial (lbs/in) units.",
     category: "calculator",
     icon: "⚖️",
     path: "/tools/bmi-calculator",
@@ -1582,7 +1582,7 @@ export const tools: Tool[] = [
     id: "unit-converter",
     name: "Unit Converter",
     description:
-      "Convert between length, weight, temperature, and other units easily.",
+      "Convert between common units: length, weight, temperature, area, volume, speed, and time. Real-time conversion as you type. Covers metric and imperial with one-click unit swapping.",
     category: "calculator",
     icon: "📐",
     path: "/tools/unit-converter",
@@ -1659,7 +1659,7 @@ export const tools: Tool[] = [
     id: "base-converter",
     name: "Number Base Converter",
     description:
-      "Convert numbers between binary, octal, decimal, and hexadecimal systems.",
+      "Convert numbers between binary, octal, decimal, and hexadecimal. See all four bases at once when you type a number in any format. Includes hex color reference.",
     category: "calculator",
     icon: "🔢",
     path: "/tools/base-converter",
@@ -1735,7 +1735,7 @@ export const tools: Tool[] = [
     id: "roman-numerals",
     name: "Roman Numeral Converter",
     description:
-      "Convert between Roman numerals and Arabic numbers in both directions.",
+      "Convert Roman numerals to numbers and numbers to Roman numerals. Handles values up to 3,999,999 with proper vinculum notation. Quick reference for dates and page numbers.",
     category: "calculator",
     icon: "🏛️",
     path: "/tools/roman-numerals",
@@ -1812,7 +1812,7 @@ export const tools: Tool[] = [
     id: "color-converter",
     name: "Color Converter",
     description:
-      "Convert colors between HEX, RGB, and HSL formats with live preview.",
+      "Convert colors between HEX, RGB, HSL, and HSV formats. Adjust with sliders and see a live color preview. Copy CSS-ready values. Pick from a color wheel or paste any valid color.",
     category: "reference",
     icon: "🎨",
     path: "/tools/color-converter",
@@ -1891,7 +1891,7 @@ export const tools: Tool[] = [
     id: "html-entities",
     name: "HTML Entity Encoder",
     description:
-      "Encode or decode HTML entities and special characters safely.",
+      "Encode special HTML characters to entities and decode entities back to plain text. Covers all named entities plus numeric codes. Paste raw HTML to escape it for safe embedding.",
     category: "developer",
     icon: "<>",
     path: "/tools/html-entities",
@@ -1967,7 +1967,7 @@ export const tools: Tool[] = [
     id: "json-to-csv",
     name: "JSON to CSV Converter",
     description:
-      "Convert JSON data to CSV format for spreadsheets and databases.",
+      "Convert JSON arrays to CSV format. Handles nested objects by flattening keys. Configure delimiter and download. Quick way to get API responses into Excel or Google Sheets.",
     category: "developer",
     icon: "📊",
     path: "/tools/json-to-csv",
@@ -2043,7 +2043,7 @@ export const tools: Tool[] = [
     id: "csv-to-json",
     name: "CSV to JSON Converter",
     description:
-      "Convert CSV data to JSON format for APIs and web applications.",
+      "Convert CSV data to structured JSON. Auto-detects headers and generates either an array of objects or a column-based structure. Handles quoted fields and different delimiters.",
     category: "developer",
     icon: "📋",
     path: "/tools/csv-to-json",
@@ -2119,7 +2119,7 @@ export const tools: Tool[] = [
     id: "image-to-base64",
     name: "Image to Base64",
     description:
-      "Convert images to Base64 encoded strings for embedding in code.",
+      "Convert any image to a Base64 data URI string. Drag and drop, get the encoded string with the correct MIME type prefix. Copy directly into CSS or HTML.",
     category: "developer",
     icon: "🖼️",
     path: "/tools/image-to-base64",
@@ -2194,7 +2194,7 @@ export const tools: Tool[] = [
     id: "loan-calculator",
     name: "Loan Calculator",
     description:
-      "Calculate monthly payments, total interest, and amortization for loans.",
+      "Calculate monthly loan payments including interest and principal. See full amortization schedule showing how much goes to interest vs principal each month. Adjust loan amount, rate, and term.",
     category: "calculator",
     icon: "🏦",
     path: "/tools/loan-calculator",
@@ -2271,7 +2271,7 @@ export const tools: Tool[] = [
     id: "mortgage-calculator",
     name: "Mortgage Calculator",
     description:
-      "Estimate your monthly mortgage payment with taxes and insurance.",
+      "Estimate your monthly mortgage payment including principal, interest, property tax, and insurance. See total cost over the loan term and how extra payments shorten it.",
     category: "calculator",
     icon: "🏠",
     path: "/tools/mortgage-calculator",
@@ -2348,7 +2348,7 @@ export const tools: Tool[] = [
     id: "calorie-calculator",
     name: "Calorie Calculator",
     description:
-      "Estimate daily calorie needs based on age, weight, height, and activity.",
+      "Estimate daily calorie needs based on age, weight, height, and activity level. Uses the Mifflin-St Jeor equation. Shows maintenance calories plus targets for weight loss or gain.",
     category: "calculator",
     icon: "🔥",
     path: "/tools/calorie-calculator",
@@ -2425,7 +2425,7 @@ export const tools: Tool[] = [
     id: "roi-calculator",
     name: "ROI Calculator",
     description:
-      "Calculate return on investment (ROI) percentage and profit amount.",
+      "Calculate return on investment as a percentage and dollar amount. Enter initial investment and final value. Also computes annualized ROI for multi-year comparisons.",
     category: "calculator",
     icon: "📈",
     path: "/tools/roi-calculator",
@@ -2502,7 +2502,7 @@ export const tools: Tool[] = [
     id: "compound-interest",
     name: "Compound Interest Calculator",
     description:
-      "See how your money grows over time with compound interest calculations.",
+      "See how compound interest grows your money over time. Adjust principal, monthly contributions, rate, and compounding frequency. Shows year-by-year breakdown.",
     category: "calculator",
     icon: "💰",
     path: "/tools/compound-interest",
@@ -2579,7 +2579,7 @@ export const tools: Tool[] = [
     id: "income-tax-calculator",
     name: "Income Tax Calculator",
     description:
-      "Estimate your take-home pay after income tax deductions.",
+      "Estimate take-home pay after federal, state, and FICA taxes. Enter gross salary and filing status. See breakdown of each tax type and your effective tax rate. US brackets only.",
     category: "calculator",
     icon: "💵",
     path: "/tools/income-tax-calculator",
@@ -2656,7 +2656,7 @@ export const tools: Tool[] = [
     id: "tip-calculator",
     name: "Tip Calculator",
     description:
-      "Calculate tip amount, split the bill, and figure out per-person cost.",
+      "Calculate tip amount and split the bill evenly. Choose common percentages or enter a custom amount. Shows per-person cost including tip. Rounds results for easy cash payments.",
     category: "calculator",
     icon: "💳",
     path: "/tools/tip-calculator",
@@ -2687,7 +2687,7 @@ export const tools: Tool[] = [
     id: "discount-calculator",
     name: "Discount Calculator",
     description:
-      "Calculate discounted price, savings amount, and discount percentage.",
+      "Calculate the final price after a percentage or dollar discount. Shows savings amount and discounted total. Works both ways — enter the sale price to find the discount percentage.",
     category: "calculator",
     icon: "🏷️",
     path: "/tools/discount-calculator",
@@ -2718,7 +2718,7 @@ export const tools: Tool[] = [
     id: "pregnancy-calculator",
     name: "Pregnancy Due Date Calculator",
     description:
-      "Estimate your due date based on last menstrual period with trimester info.",
+      "Estimate your due date from the first day of your last period. Shows week-by-week trimester breakdown and key milestones. Uses Naegele rule with a 28-day cycle assumption.",
     category: "calculator",
     icon: "👶",
     path: "/tools/pregnancy-calculator",
@@ -2793,7 +2793,7 @@ export const tools: Tool[] = [
     id: "random-number-generator",
     name: "Random Number Generator",
     description:
-      "Generate random numbers within a specified range with customizable options.",
+      "Generate random numbers within a range. Set minimum, maximum, and count. Option to allow or exclude repeats. Good for raffles, sampling, and testing.",
     category: "calculator",
     icon: "🎲",
     path: "/tools/random-number-generator",
@@ -2870,7 +2870,7 @@ export const tools: Tool[] = [
     id: "zodiac-sign",
     name: "Zodiac Sign Finder",
     description:
-      "Find your zodiac sign by birth date with traits and compatibility info.",
+      "Find your zodiac sign from your birth date. Shows element, ruling planet, personality traits, and compatibility with other signs. Covers all 12 signs with date ranges for cusp birthdays.",
     category: "reference",
     icon: "⭐",
     path: "/tools/zodiac-sign",
@@ -2946,7 +2946,7 @@ export const tools: Tool[] = [
     id: "random-name-generator",
     name: "Random Name Generator",
     description:
-      "Generate random names for characters, profiles, or testing.",
+      "Generate random names with options for gender, region, and quantity. Pulls from large name databases. Useful for character creation, test accounts, and placeholder data.",
     category: "developer",
     icon: "👤",
     path: "/tools/random-name-generator",
@@ -3023,7 +3023,7 @@ export const tools: Tool[] = [
     id: "fancy-text-generator",
     name: "Fancy Text Generator",
     description:
-      "Convert text to fancy Unicode fonts for social media bios and posts.",
+      "Convert plain text into fancy Unicode styles — bold, italic, script, fraktur, bubble letters, and more. Copy directly into Instagram bios, Twitter posts, or anywhere accepting Unicode.",
     category: "text",
     icon: "✨",
     path: "/tools/fancy-text-generator",
@@ -3099,7 +3099,7 @@ export const tools: Tool[] = [
     id: "hashtag-generator",
     name: "Hashtag Generator",
     description:
-      "Generate relevant hashtags for Instagram, Twitter, and TikTok.",
+      "Generate relevant hashtag suggestions from a keyword or topic. Shows popularity tiers and category groupings. Works for Instagram, Twitter, TikTok, and LinkedIn.",
     category: "text",
     icon: "#️⃣",
     path: "/tools/hashtag-generator",
@@ -3174,7 +3174,7 @@ export const tools: Tool[] = [
     id: "youtube-thumbnail",
     name: "YouTube Thumbnail Size Tool",
     description:
-      "YouTube thumbnail size guide and preview tool with best practice tips.",
+      "Preview how your thumbnail looks at different sizes — full HD, search results, and sidebar. Overlay text on your image to test readability. Includes size guide for best click-through rates.",
     category: "developer",
     icon: "🎬",
     path: "/tools/youtube-thumbnail",
@@ -3249,7 +3249,7 @@ export const tools: Tool[] = [
     id: "perpetual-calendar",
     name: "Perpetual Calendar",
     description:
-      "Interactive calendar with world holidays, week numbers, and historical events on any date.",
+      "Browse any month from any year. Shows world holidays, week numbers, moon phases, and notable historical events for each date. Search for a specific date or jump to any month.",
     category: "calculator",
     icon: "📅",
     path: "/tools/perpetual-calendar",
@@ -3326,7 +3326,7 @@ export const tools: Tool[] = [
     id: "md5-generator",
     name: "MD5 Hash Generator",
     description:
-      "Generate MD5 hash from any text input instantly. Free online MD5 generator.",
+      "Generate MD5 hashes from any text input. Shows both lowercase and uppercase versions. While MD5 is not secure for passwords, it remains widely used for checksums and cache keys.",
     category: "developer",
     icon: "🔒",
     path: "/tools/md5-generator",
@@ -3400,7 +3400,7 @@ export const tools: Tool[] = [
     id: "qr-code-generator",
     name: "QR Code Generator",
     description:
-      "Generate QR codes from texts, URLs, emails, or any string. Download as PNG.",
+      "Generate QR codes from URLs, text, email addresses, or phone numbers. Download as PNG. Adjustable size and error correction. Preview scans in real time before downloading.",
     category: "developer",
     icon: "📱",
     path: "/tools/qr-code-generator",
@@ -3474,7 +3474,7 @@ export const tools: Tool[] = [
     id: "quotes",
     name: "Famous Quotes Directory",
     description:
-      "Search and discover famous quotes from world-renowned figures.",
+      "Browse and search thousands of quotes by author, topic, or keyword. Each quote shows source attribution and copies with one click. Good for presentations and social media captions.",
     category: "media",
     icon: "💬",
     path: "/tools/quotes",
@@ -3718,7 +3718,7 @@ export const tools: Tool[] = [
     id: "ai-tools",
     name: "Free AI Tools Directory",
     description:
-      "Curated directory of the best free AI tools for writing, images, video, coding, and more.",
+      "A hand-picked directory of useful AI tools across writing, image generation, video editing, coding, and productivity. Each listing has a short description and direct link. Updated regularly.",
     category: "reference",
     icon: "🧭",
     path: "/tools/ai-tools",

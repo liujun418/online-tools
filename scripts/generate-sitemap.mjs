@@ -64,6 +64,17 @@ for (const l of LOCALES) {
     xml += `</url>`;
   }
 
+  // Blog
+  xml += `<url><loc>${esc(SITE)}/${l}/blog</loc><lastmod>${lm}</lastmod><priority>0.7</priority><changefreq>weekly</changefreq>`;
+  xml += hreflangLinks((loc) => `/${loc}/blog`);
+  xml += `</url>`;
+  const slugs = ["json-formatter-online-guide","base64-encoding-explained","strong-password-guide","url-encoding-for-beginners","calculate-loan-payments","bmi-calculator-what-it-means","color-converter-hex-rgb-hsl","markdown-preview-guide","hash-generator-checksum-guide","online-unit-converter-switch-metric-imperial"];
+  for (const s of slugs) {
+    xml += `<url><loc>${esc(SITE)}/${l}/blog/${s}</loc><lastmod>${lm}</lastmod><priority>0.6</priority><changefreq>monthly</changefreq>`;
+    xml += hreflangLinks((loc) => `/${loc}/blog/${s}`);
+    xml += `</url>`;
+  }
+
   // Static pages
   for (const pg of ["about", "privacy", "terms", "contact"]) {
     xml += `<url><loc>${esc(SITE)}/${l}/${pg}</loc><lastmod>${lm}</lastmod><priority>0.3</priority><changefreq>monthly</changefreq>`;
