@@ -100,7 +100,7 @@ export default function Header({
             {nav.media}
           </Link>
           <Link href={`/${locale}/blog`} className="hidden hover:text-zinc-900 dark:hover:text-white sm:inline">
-            {nav.blog || "Blog"}
+            {(nav as any).blog || "Blog"}
           </Link>
           <div className="ms-1 flex items-center gap-3 border-s border-zinc-200 ps-3 dark:border-zinc-800">
             <a
