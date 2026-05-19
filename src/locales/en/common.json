@@ -7,7 +7,8 @@
     "reference": "Reference",
     "media": "Fun & Media",
     "suggest": "Suggest a Tool",
-    "theme": "Toggle theme"
+    "theme": "Toggle theme",
+    "blog": "Blog"
   },
   "footer": {
     "copyright": "ToolBoxOnline. All rights reserved.",

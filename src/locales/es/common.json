@@ -7,7 +7,8 @@
     "reference": "Referencia",
     "media": "Diversión y Media",
     "suggest": "Sugerir una Herramienta",
-    "theme": "Cambiar tema"
+    "theme": "Cambiar tema",
+    "blog": "Blog"
   },
   "footer": {
     "copyright": "ToolBoxOnline. Todos los derechos reservados.",
@@ -97,10 +98,22 @@
     "mission": "Nuestra Misión",
     "missionText": "ToolBoxOnline ofrece herramientas online rápidas, gratuitas y respetuosas con la privacidad que cualquiera puede usar sin una cuenta. Todas las herramientas funcionan completamente en tu navegador — no se envían datos a servidores, no hay rastreo más allá de analíticas básicas, y ningún contenido oculto detrás de muros de pago.",
     "features": [
-      { "title": "Más de 50 Herramientas Gratuitas", "text": "Utilidades de texto, herramientas de desarrollo, calculadoras y conversores — todo lo que necesitas en un solo lugar." },
-      { "title": "Privacidad Primero", "text": "Todos los datos se procesan localmente en tu navegador. Nada se sube ni se almacena en ningún servidor." },
-      { "title": "Sin Cuenta Requerida", "text": "Abre el sitio y empieza a usar cualquier herramienta inmediatamente. Sin registro, sin inicio de sesión, sin datos personales." },
-      { "title": "Multilingüe", "text": "Disponible en inglés, español y árabe con soporte completo de RTL." }
+      {
+        "title": "Más de 50 Herramientas Gratuitas",
+        "text": "Utilidades de texto, herramientas de desarrollo, calculadoras y conversores — todo lo que necesitas en un solo lugar."
+      },
+      {
+        "title": "Privacidad Primero",
+        "text": "Todos los datos se procesan localmente en tu navegador. Nada se sube ni se almacena en ningún servidor."
+      },
+      {
+        "title": "Sin Cuenta Requerida",
+        "text": "Abre el sitio y empieza a usar cualquier herramienta inmediatamente. Sin registro, sin inicio de sesión, sin datos personales."
+      },
+      {
+        "title": "Multilingüe",
+        "text": "Disponible en inglés, español y árabe con soporte completo de RTL."
+      }
     ],
     "aboutProject": "Sobre este Proyecto",
     "projectText": "ToolBoxOnline es un proyecto personal creado y mantenido por una sola persona. Empezó como una colección de pequeñas utilidades y creció hasta convertirse en una caja de herramientas completa. El sitio se monetiza a través de Google AdSense para cubrir los costes de alojamiento — sin suscripciones, sin niveles premium, sin muros de pago.",
