@@ -49,6 +49,13 @@ for (const l of LOCALES) {
     xml += `</url>`;
   }
 
+  // Topic landing pages
+  for (const tp of ["student-tools", "developer-tools", "image-tools", "seo-tools", "writing-tools"]) {
+    xml += `<url><loc>${esc(SITE)}/${l}/${tp}</loc><lastmod>${lm}</lastmod><priority>0.7</priority><changefreq>weekly</changefreq>`;
+    xml += hreflangLinks((loc) => `/${loc}/${tp}`);
+    xml += `</url>`;
+  }
+
   // Tools
   for (const t of tools) {
     const p = catPri[t.category] || "0.8";
