@@ -2,9 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import sanitizeHtml from "sanitize-html";
-import { isValidLocale, Locale } from "@/lib/i18n";
+import { isValidLocale, getDictionary, Locale } from "@/lib/i18n";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
 import { tools as allTools } from "@/lib/tools";
+import ShareBar from "@/components/ShareBar";
 
 const SITE_URL = "https://toolboxonline.club";
 
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) notFound();
+  const dict = await getDictionary(locale as Locale);
   const post = getBlogPost(slug);
   if (!post) notFound();
 
@@ -99,6 +101,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
           </div>
         </section>
       )}
+
+      <ShareBar locale={locale} dict={dict as Record<string, unknown>} />
 
       <div className="mt-8">
         <Link href={`/${locale}/blog`} className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400">Back to all articles</Link>
