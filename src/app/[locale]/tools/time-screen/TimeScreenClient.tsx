@@ -65,7 +65,16 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
       if (e.key === "Escape") exitFullscreen();
     };
     document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
+    // Hide Kofi and any floating third-party widgets when fullscreen
+    const style = document.createElement("style");
+    style.id = "time-screen-fs";
+    style.textContent = "#kofi-floating-chat, iframe[id*=kofi], .floatingchat-container, .floating-chat-kofi, [id*=ko-fi]{display:none!important}";
+    document.head.appendChild(style);
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      const s = document.getElementById("time-screen-fs");
+      if (s) s.remove();
+    };
   }, [isFullscreen, exitFullscreen]);
 
   const bgClass = bgMode === "dark"
