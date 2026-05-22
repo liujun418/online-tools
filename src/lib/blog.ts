@@ -297,7 +297,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Tables are the worst.</strong> The separator row needs exactly the right number of pipes and dashes. One missing pipe and the whole table breaks. The preview shows your table as it will actually render.</p>
 
-<p><strong>Code blocks</strong> need a blank line before them in some Markdown flavors. If your code is squished into the previous paragraph, the preview catches it. Language tags on code blocks — <code>```python</code> vs <code>```</code> — control syntax highlighting. The preview shows you exactly how the highlighting will look.</p>
+<p><strong>Code blocks</strong> need a blank line before them in some Markdown flavors. If your code is squished into the previous paragraph, the preview catches it. Language tags on code blocks — <code>\`\`\`python</code> vs <code>\`\`\`</code> — control syntax highlighting. The preview shows you exactly how the highlighting will look.</p>
 
 <p><strong>Nested lists</strong> need exactly the right indentation. Two spaces or four? The spec says two, but some parsers require four. The preview removes the guesswork.</p>
 
@@ -310,7 +310,7 @@ export const blogPosts: BlogPost[] = [
 **bold text**
 *italic text*
 ~~strikethrough~~
-`inline code`
+&#96;inline code&#96;
 
 [link text](https://example.com)
 ![alt text](image.jpg)
@@ -325,9 +325,9 @@ export const blogPosts: BlogPost[] = [
 |----------|----------|
 | Cell 1   | Cell 2   |
 
-```python
+&#96;&#96;&#96;python
 print("code block with syntax highlighting")
-```
+&#96;&#96;&#96;
 </code></pre>
 
 <h2>When to use each Markdown flavor</h2>
@@ -430,7 +430,7 @@ print("code block with syntax highlighting")
     category: "Developer",
     tags: ["online developer tools", "free dev tools", "web tools for developers", "online formatter", "developer productivity"],
     relatedTools: ["json-formatter", "base64-converter", "url-encoder", "hash-generator", "markdown-preview", "css-minifier", "regex-tester", "html-entities"],
-    content: ``
+    content: `
 <p>I got a new laptop last week. Before installing anything, I needed to format a JSON blob, encode a URL, and check a hash. All three took under 30 seconds — no installs, no terminals, no signups. Just browser tabs.</p>
 
 <p>Here are 21 online developer tools that replace the things you would normally install or script yourself. All free. All work in any browser.</p>
@@ -496,7 +496,7 @@ print("code block with syntax highlighting")
     category: "Developer",
     tags: ["verify checksum", "SHA-256 verification", "MD5 checksum", "file integrity check", "hash verification"],
     relatedTools: ["hash-generator", "md5-generator"],
-    content: ``
+    content: `
 <p>You download a 2GB software installer. The website shows a string of random-looking characters next to the download button labeled "SHA-256". Most people ignore it. Here is why you should not — and how to check it in 30 seconds.</p>
 
 <h2>Why checksums matter</h2>
@@ -554,7 +554,7 @@ print("code block with syntax highlighting")
     category: "Developer",
     tags: ["JSON vs CSV", "data formats comparison", "XML vs JSON", "when to use CSV", "data interchange formats"],
     relatedTools: ["json-formatter", "json-to-csv", "csv-to-json"],
-    content: ``
+    content: `
 <p>Someone sends you data as XML. You wanted JSON. Or they send CSV and the nested fields are a mess. Choosing the right data format up front saves hours of conversion and debugging later.</p>
 
 <p>Here is when to use each — with real examples, not textbook definitions.</p>
@@ -622,3 +622,11 @@ print("code block with syntax highlighting")
 `
   },
 ];
+
+export function getBlogPosts(): BlogPost[] {
+  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug);
+}

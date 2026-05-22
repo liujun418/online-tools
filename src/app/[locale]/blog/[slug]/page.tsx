@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import sanitizeHtml from "sanitize-html";
 import { isValidLocale, Locale } from "@/lib/i18n";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
 import { tools as allTools } from "@/lib/tools";
@@ -77,7 +78,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
         </div>
       </header>
 
-      <div className="prose prose-zinc dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className="prose prose-zinc dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content, {
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "h1", "h2", "h3"]),
+        allowedAttributes: { ...sanitizeHtml.defaults.allowedAttributes, img: ["src", "alt", "title"], a: ["href", "title", "rel", "target"] },
+      }) }} />
 
       {related.length > 0 && (
         <section className="mt-12 rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
