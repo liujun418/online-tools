@@ -1,25 +1,15 @@
-export interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  category: string;
-  tags: string[];
-  content: string;
-  relatedTools?: string[];
-}
+"""Update blog.ts with expanded content + 3 new posts."""
+import re
 
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "json-formatter-online-guide",
-    title: "How to Format JSON Online — No IDE Required",
-    description: "JSON getting messy? Here's how to format, validate, and fix JSON without installing anything. Just paste and see the structure instantly.",
-    date: "2026-05-20",
-    category: "Developer",
-    tags: ["json formatter", "format json online", "json validator", "json beautifier", "developer tools"],
-    relatedTools: ["json-formatter", "json-to-csv", "base64-converter"],
-    content: `
-<p>You open a log file and it is one giant line of JSON. Three thousand characters, no line breaks, and somewhere in there is the field you need to debug. We have all been there.</p>
+PATH = "C:/Users/jun/online-tools/src/lib/blog.ts"
+
+with open(PATH, encoding="utf-8") as f:
+    ts = f.read()
+
+# ── Fix existing posts (replace content fields with expanded versions) ──
+
+EXPANDED = {
+    "json-formatter-online-guide": """<p>You open a log file and it is one giant line of JSON. Three thousand characters, no line breaks, and somewhere in there is the field you need to debug. We have all been there.</p>
 
 <p>The quickest fix: <a href="/en/tools/json-formatter">format JSON online</a> with a browser tool. No IDE, no command line, no npm install. Just paste and it is readable.</p>
 
@@ -47,19 +37,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>The <a href="/en/tools/json-formatter">online formatter</a> is already there. No file to create. No extension to install. Just paste and see the result. It is also useful when you are on a computer that is not yours — a QA machine, a server terminal, or a colleague's laptop.</p>
 
-<p>Try it next time you need to <a href="/en/tools/json-formatter">validate and format JSON</a>. No signup, no ads getting in the way.</p>
-`,
-  },
-  {
-    slug: "base64-encoding-explained",
-    title: "Base64 Encoding Explained — When and Why You Actually Need It",
-    description: "Base64 encoding isn't encryption, compression, or security. It's a way to safely move binary data through text-only systems. Here's when to use it.",
-    date: "2026-05-19",
-    category: "Developer",
-    tags: ["base64 encoding", "base64 explained", "encode base64", "decode base64", "base64 converter"],
-    relatedTools: ["base64-converter", "image-to-base64", "url-encoder"],
-    content: `
-<p>Base64 encoding shows up everywhere — email attachments, data URIs, JWT tokens, API authentication headers. But what it actually does is often misunderstood. It is not encryption. It is not compression. It actually makes data about 33% larger.</p>
+<p>Try it next time you need to <a href="/en/tools/json-formatter">validate and format JSON</a>. No signup, no ads getting in the way.</p>""",
+
+    "base64-encoding-explained": """<p>Base64 encoding shows up everywhere — email attachments, data URIs, JWT tokens, API authentication headers. But what it actually does is often misunderstood. It is not encryption. It is not compression. It actually makes data about 33% larger.</p>
 
 <p>So why use it? Because it turns binary data (which can contain any byte value) into a safe set of 64 ASCII characters. This matters when you need to send binary through a system that only handles text.</p>
 
@@ -87,19 +67,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>Base64 is reversible by design. Anyone can decode a Base64 string. Do not use it to "hide" passwords, API keys, or sensitive data. It is a transport encoding, not a security measure.</p>
 
-<p>If you need to actually protect data, use encryption (AES, RSA) or hashing (SHA-256, bcrypt). Base64 is for making binary data text-safe — nothing more.</p>
-`,
-  },
-  {
-    slug: "strong-password-guide",
-    title: "How to Make a Strong Password You Can Actually Remember",
-    description: "Stop using your dog's name plus 123. Here's how to create passwords that are both strong and memorable, plus why password managers aren't as scary as they sound.",
-    date: "2026-05-18",
-    category: "Security",
-    tags: ["strong password", "password generator", "password security", "random password", "password tips"],
-    relatedTools: ["password-generator", "hash-generator", "md5-generator"],
-    content: `
-<p>Everyone knows they should use strong passwords. Everyone also reuses the same three passwords across twenty sites. The gap between knowing and doing is that strong passwords feel impossible to remember.</p>
+<p>If you need to actually protect data, use encryption (AES, RSA) or hashing (SHA-256, bcrypt). Base64 is for making binary data text-safe — nothing more.</p>""",
+
+    "strong-password-guide": """<p>Everyone knows they should use strong passwords. Everyone also reuses the same three passwords across twenty sites. The gap between knowing and doing is that strong passwords feel impossible to remember.</p>
 
 <p>Here is the good news: <a href="/en/tools/password-generator">random password generators</a> solve the strength part. And a simple system solves the remembering part.</p>
 
@@ -127,19 +97,9 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Why "password123!" is not clever</h2>
 
-<p>Attackers know all the common patterns: common words followed by numbers, the site name as part of the password, birthday dates, pet names, sports teams. Password cracking tools try these patterns first. A truly random password from a generator has none of these weaknesses.</p>
-`,
-  },
-  {
-    slug: "url-encoding-for-beginners",
-    title: "URL Encoding: What Those %20 Signs Mean and When to Use Them",
-    description: "Spaces become %20, ampersands become %26, and suddenly your URL works. A practical guide to URL encoding for anyone who's ever copied a link that broke.",
-    date: "2026-05-17",
-    category: "Developer",
-    tags: ["url encoding", "url encoder", "percent encoding", "encode url", "decode url"],
-    relatedTools: ["url-encoder", "text-to-slug", "base64-converter"],
-    content: `
-<p>You copy a link from an email. It has spaces and Chinese characters in it. You paste it into a browser and it is broken — half the characters turned into gibberish. That is because URLs can only contain a limited set of characters. Everything else needs to be encoded.</p>
+<p>Attackers know all the common patterns: common words followed by numbers, the site name as part of the password, birthday dates, pet names, sports teams. Password cracking tools try these patterns first. A truly random password from a generator has none of these weaknesses.</p>""",
+
+    "url-encoding-for-beginners": """<p>You copy a link from an email. It has spaces and Chinese characters in it. You paste it into a browser and it is broken — half the characters turned into gibberish. That is because URLs can only contain a limited set of characters. Everything else needs to be encoded.</p>
 
 <p>An <a href="/en/tools/url-encoder">online URL encoder</a> does this in one click. Paste your URL, and it converts all the special characters into percent-encoded format that browsers and servers understand.</p>
 
@@ -163,19 +123,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>You need to manually encode URLs when building query strings, working with APIs, or creating links that contain user-generated content. If your URL includes a search term, a username, or any text with special characters, encode it first.</p>
 
-<p>Most programming languages have built-in functions: <code>encodeURIComponent()</code> in JavaScript, <code>urllib.parse.quote()</code> in Python, <code>URLEncoder.encode()</code> in Java. But if you need a quick check without writing code, the <a href="/en/tools/url-encoder">online encoder</a> is right there.</p>
-`,
-  },
-  {
-    slug: "calculate-loan-payments",
-    title: "How to Calculate Loan Payments Without a Spreadsheet",
-    description: "See exactly how much that car loan or personal loan costs per month. Break down principal vs interest, and learn why paying extra early saves more than you'd think.",
-    date: "2026-05-16",
-    category: "Finance",
-    tags: ["loan calculator", "calculate loan payments", "amortization", "monthly payment", "interest calculator"],
-    relatedTools: ["loan-calculator", "mortgage-calculator", "compound-interest", "percentage-calculator"],
-    content: `
-<p>You are at the dealership and they tell you the monthly payment. But what is the actual cost of the loan? The difference between the sale price and what you will pay after five years of interest can be thousands of dollars.</p>
+<p>Most programming languages have built-in functions: <code>encodeURIComponent()</code> in JavaScript, <code>urllib.parse.quote()</code> in Python, <code>URLEncoder.encode()</code> in Java. But if you need a quick check without writing code, the <a href="/en/tools/url-encoder">online encoder</a> is right there.</p>""",
+
+    "calculate-loan-payments": """<p>You are at the dealership and they tell you the monthly payment. But what is the actual cost of the loan? The difference between the sale price and what you will pay after five years of interest can be thousands of dollars.</p>
 
 <p>A <a href="/en/tools/loan-calculator">loan calculator</a> shows you the full picture: monthly payment, total interest, and an amortization schedule breaking down every payment.</p>
 
@@ -199,19 +149,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>Other things that affect your actual cost: origination fees (1-5% of the loan amount upfront), prepayment penalties (some lenders charge you for paying early), and whether the rate is fixed or variable. A variable rate at 5% might look cheaper than a fixed rate at 6%, but if rates rise, that variable loan gets more expensive.</p>
 
-<p>Use the <a href="/en/tools/loan-calculator">loan calculator</a> to run different scenarios. Change the rate, the term, the extra payments. See how each variable affects the total cost before you sign anything.</p>
-`,
-  },
-  {
-    slug: "bmi-calculator-what-it-means",
-    title: "BMI Calculator: What the Number Actually Means (and What It Doesn't)",
-    description: "BMI is a useful screening tool but it misses a lot. Here's when to pay attention to your BMI and when to ignore it entirely.",
-    date: "2026-05-15",
-    category: "Health",
-    tags: ["BMI calculator", "body mass index", "BMI explained", "weight category", "health calculator"],
-    relatedTools: ["bmi-calculator", "calorie-calculator", "unit-converter"],
-    content: `
-<p>Body Mass Index takes your height and weight and produces a single number that categorizes you as underweight, normal, overweight, or obese. It is quick, it is free, and it is used everywhere from doctor offices to insurance forms.</p>
+<p>Use the <a href="/en/tools/loan-calculator">loan calculator</a> to run different scenarios. Change the rate, the term, the extra payments. See how each variable affects the total cost before you sign anything.</p>""",
+
+    "bmi-calculator-what-it-means": """<p>Body Mass Index takes your height and weight and produces a single number that categorizes you as underweight, normal, overweight, or obese. It is quick, it is free, and it is used everywhere from doctor offices to insurance forms.</p>
 
 <p>But BMI has blind spots. It does not distinguish between muscle and fat. It does not account for where you carry weight. It was developed from population data that did not include many body types.</p>
 
@@ -233,19 +173,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>BMI also does not account for fat distribution. Carrying fat around your midsection (visceral fat) is associated with higher health risks than fat on hips and thighs, even at the same BMI. Waist circumference is a better indicator for this specific risk.</p>
 
-<p>For athletes, use body fat percentage instead. For elderly people, focus on functional measures like grip strength and walking speed. For everyone else, BMI is one data point among several — useful for population trends, limited for individual assessment. Our <a href="/en/tools/bmi-calculator">free BMI calculator</a> gives you the number in seconds, but treat it as a starting point, not a verdict.</p>
-`,
-  },
-  {
-    slug: "color-converter-hex-rgb-hsl",
-    title: "HEX to RGB to HSL: A Designer's Quick Guide to Color Formats",
-    description: "Converting between HEX, RGB, and HSL isn't hard — once you understand what each format is for. Spoiler: use HEX for code, HSL for thinking.",
-    date: "2026-05-14",
-    category: "Design",
-    tags: ["color converter", "HEX to RGB", "RGB to HSL", "color picker", "CSS color"],
-    relatedTools: ["color-converter", "css-minifier", "markdown-preview"],
-    content: `
-<p>You are copying a color from Figma and need it in HEX for your CSS. Then the developer asks for RGB. And the designer wants HSL so they can tweak the saturation. Three formats, same color.</p>
+<p>For athletes, use body fat percentage instead. For elderly people, focus on functional measures like grip strength and walking speed. For everyone else, BMI is one data point among several — useful for population trends, limited for individual assessment. Our <a href="/en/tools/bmi-calculator">free BMI calculator</a> gives you the number in seconds, but treat it as a starting point, not a verdict.</p>""",
+
+    "color-converter-hex-rgb-hsl": """<p>You are copying a color from Figma and need it in HEX for your CSS. Then the developer asks for RGB. And the designer wants HSL so they can tweak the saturation. Three formats, same color.</p>
 
 <p>A <a href="/en/tools/color-converter">color converter</a> handles all the conversions instantly. Pick a color with the wheel, paste any format, or adjust sliders — and get the values in every format at once.</p>
 
@@ -275,19 +205,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>HSL is the best format for creating color palettes. Keep the hue, vary the saturation and lightness. Or shift the hue by 30 degrees for analogous colors, 180 degrees for complementary. This is dramatically easier than doing the same thing with RGB values.</p>
 
-<p>The <a href="/en/tools/color-converter">free color converter</a> shows all three formats at once with a live preview. Adjust any slider and watch the others update in real time.</p>
-`,
-  },
-  {
-    slug: "markdown-preview-guide",
-    title: "Stop Pushing Broken Markdown: Use a Preview Tool First",
-    description: "A Markdown preview tool catches formatting mistakes before you publish. No more broken headings, misaligned tables, or code blocks that don't render.",
-    date: "2026-05-13",
-    category: "Writing",
-    tags: ["markdown preview", "markdown editor", "markdown guide", "write markdown", "markdown online"],
-    relatedTools: ["markdown-preview", "text-to-slug", "word-counter", "case-converter"],
-    content: `
-<p>You write a README, push to GitHub, and the formatting is wrong. Headings are not headings. The code block is missing its language tag. The table is a mess. You edit, push again, wait for it to render, and hope it is fixed this time.</p>
+<p>The <a href="/en/tools/color-converter">free color converter</a> shows all three formats at once with a live preview. Adjust any slider and watch the others update in real time.</p>""",
+
+    "markdown-preview-guide": """<p>You write a README, push to GitHub, and the formatting is wrong. Headings are not headings. The code block is missing its language tag. The table is a mess. You edit, push again, wait for it to render, and hope it is fixed this time.</p>
 
 <p>This is why a <a href="/en/tools/markdown-preview">Markdown preview tool</a> saves so much time. Write on the left, see the rendered output on the right, and catch mistakes instantly.</p>
 
@@ -336,19 +256,9 @@ print("code block with syntax highlighting")
 
 <p><strong>CommonMark</strong> is the strict standard. No tables, no task lists, no strikethrough. Use this when you need guaranteed compatibility across all Markdown parsers — or when writing for a platform that explicitly uses CommonMark.</p>
 
-<p>The <a href="/en/tools/markdown-preview">Markdown preview tool</a> supports GFM. Write, preview, copy the formatted output or the raw Markdown. It is the fastest way to check your formatting before pushing.</p>
-`,
-  },
-  {
-    slug: "hash-generator-checksum-guide",
-    title: "What Is a Hash? SHA-256, MD5, and Why Checksums Still Matter",
-    description: "Hash functions turn any text into a fixed-length string. Here's why that's useful for verifying downloads, storing passwords, and checking file integrity.",
-    date: "2026-05-12",
-    category: "Developer",
-    tags: ["hash generator", "SHA-256", "MD5", "checksum", "file verification", "hash function"],
-    relatedTools: ["hash-generator", "md5-generator", "uuid-generator"],
-    content: `
-<p>You download a Linux ISO or a software package, and the website shows a long string of letters and numbers labeled "SHA-256". That is a hash — a digital fingerprint of the file. If even one bit of the file changes, the hash changes completely.</p>
+<p>The <a href="/en/tools/markdown-preview">Markdown preview tool</a> supports GFM. Write, preview, copy the formatted output or the raw Markdown. It is the fastest way to check your formatting before pushing.</p>""",
+
+    "hash-generator-checksum-guide": """<p>You download a Linux ISO or a software package, and the website shows a long string of letters and numbers labeled "SHA-256". That is a hash — a digital fingerprint of the file. If even one bit of the file changes, the hash changes completely.</p>
 
 <p>A <a href="/en/tools/hash-generator">hash generator</a> creates these fingerprints from any text. You can use it to verify file integrity, compare two pieces of data without seeing the actual data, or generate cache keys.</p>
 
@@ -383,19 +293,9 @@ print("code block with syntax highlighting")
 
 <p><strong>File download verification:</strong> major software projects publish checksums next to their downloads. After downloading, you compute the hash locally and compare. If they match, the file was not corrupted or tampered with during download. This is especially important for OS images, wallet software, and security tools.</p>
 
-<p>We also have a <a href="/en/tools/md5-generator">dedicated MD5 generator</a> if that is all you need.</p>
-`,
-  },
-  {
-    slug: "online-unit-converter-switch-metric-imperial",
-    title: "Converting Units Online: Better Than Googling '5 Miles in Km' Each Time",
-    description: "Stop typing conversion queries into Google one at a time. A proper unit converter handles length, weight, temperature, and volume all in one place.",
-    date: "2026-05-11",
-    category: "Tools",
-    tags: ["unit converter", "metric to imperial", "unit conversion", "length converter", "weight converter"],
-    relatedTools: ["unit-converter", "base-converter", "roman-numerals"],
-    content: `
-<p>You are following a recipe from a British site and it says 180°C. Your oven uses Fahrenheit. You type "180c to f" into Google. Then the recipe says 200g of flour and you do it again. Then 30cm cake tin. Then 1.5 liters of stock.</p>
+<p>We also have a <a href="/en/tools/md5-generator">dedicated MD5 generator</a> if that is all you need.</p>""",
+
+    "online-unit-converter-switch-metric-imperial": """<p>You are following a recipe from a British site and it says 180°C. Your oven uses Fahrenheit. You type "180c to f" into Google. Then the recipe says 200g of flour and you do it again. Then 30cm cake tin. Then 1.5 liters of stock.</p>
 
 <p>There is a faster way. A <a href="/en/tools/unit-converter">unit converter</a> handles all these conversions in one place. Pick the category, enter your number, and see the result instantly.</p>
 
@@ -417,208 +317,39 @@ print("code block with syntax highlighting")
 
 <h2>Quick tip for frequent converters</h2>
 
-<p>Bookmark the <a href="/en/tools/unit-converter">unit converter page</a>. If you find yourself converting the same units repeatedly, keeping it one click away is faster than any app — no launching, no loading screen, just type and convert.</p>
-`,
-  },
-
-
-  {
-    slug: "online-developer-tools-bookmarks-2026",
-    title: "21 Developer Tools You Can Use Without Installing Anything (2026)",
-    description: "A curated list of online developer tools for formatting, encoding, converting, and testing — all in the browser. No installs, no signups.",
-    date: "2026-05-21",
-    category: "Developer",
-    tags: ["online developer tools", "free dev tools", "web tools for developers", "online formatter", "developer productivity"],
-    relatedTools: ["json-formatter", "base64-converter", "url-encoder", "hash-generator", "markdown-preview", "css-minifier", "regex-tester", "html-entities"],
-    content: ``
-<p>I got a new laptop last week. Before installing anything, I needed to format a JSON blob, encode a URL, and check a hash. All three took under 30 seconds — no installs, no terminals, no signups. Just browser tabs.</p>
-
-<p>Here are 21 online developer tools that replace the things you would normally install or script yourself. All free. All work in any browser.</p>
-
-<h2>Data Formatting</h2>
-
-<p><strong><a href="/en/tools/json-formatter">JSON Formatter</a></strong> — Paste ugly JSON, get indented, collapsible tree view with validation and line numbers. Also minifies back to single-line for production. Made for the "I just got a 3000-character JSON blob from an API" scenario.</p>
-
-<p><strong><a href="/en/tools/json-to-csv">JSON to CSV Converter</a></strong> — Flattens nested JSON arrays into spreadsheet-ready CSV. Handles nested objects by flattening keys with dot notation. No Excel macro required.</p>
-
-<p><strong><a href="/en/tools/csv-to-json">CSV to JSON Converter</a></strong> — The reverse. Paste a CSV and get a JSON array of objects. Detects headers automatically. Picks the right data types instead of making everything a string.</p>
-
-<h2>Encoding and Decoding</h2>
-
-<p><strong><a href="/en/tools/base64-converter">Base64 Encoder/Decoder</a></strong> — Standard and URL-safe Base64 in both directions. For when you are reading JWT payloads, embedding images as data URIs, or decoding Basic auth headers.</p>
-
-<p><strong><a href="/en/tools/url-encoder">URL Encoder/Decoder</a></strong> — Encodes spaces, symbols, and Unicode for URL safety. Also decodes percent-encoded URLs back to readable text. Solves the "why is my link broken" problem in one click.</p>
-
-<p><strong><a href="/en/tools/html-entities">HTML Entities Encoder/Decoder</a></strong> — Converts <code>&lt;</code> to <code>&amp;lt;</code> and back. Useful when embedding code snippets in HTML or cleaning up escaped text from an API.</p>
-
-<h2>Hashing and Security</h2>
-
-<p><strong><a href="/en/tools/hash-generator">Hash Generator</a></strong> — SHA-1, SHA-256, SHA-384, SHA-512, MD5. Hash any text and compare two hashes side by side. For verifying file checksums.</p>
-
-<p><strong><a href="/en/tools/password-generator">Password Generator</a></strong> — Cryptographically secure random passwords using Web Crypto API. Choose length and character types. Generated locally — nothing sent to any server.</p>
-
-<p><strong><a href="/en/tools/uuid-generator">UUID Generator</a></strong> — Generates v4 UUIDs. One click, one UUID. Click again for another. No libraries, no imports.</p>
-
-<h2>Text and Code</h2>
-
-<p><strong><a href="/en/tools/markdown-preview">Markdown Preview</a></strong> — Write Markdown on the left, see rendered output on the right. GitHub Flavored Markdown. Catches formatting mistakes before you push.</p>
-
-<p><strong><a href="/en/tools/css-minifier">CSS Minifier</a></strong> — Strips whitespace, comments, and unnecessary characters from CSS. Smaller file, faster load.</p>
-
-<p><strong><a href="/en/tools/regex-tester">Regex Tester</a></strong> — Write a regex, test it against sample text, see matches highlighted in real time. No more "works on my machine" surprises.</p>
-
-<p><strong><a href="/en/tools/case-converter">Case Converter</a></strong> — Convert between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case.</p>
-
-<p><strong><a href="/en/tools/text-diff">Text Diff Checker</a></strong> — Paste two versions of text, see what changed. Line-by-line comparison with additions and deletions highlighted.</p>
-
-<h2>Generators and Utilities</h2>
-
-<p><strong><a href="/en/tools/text-to-slug">Text to Slug</a></strong> — Converts "My Blog Post Title!" to "my-blog-post-title". For URLs, file names, and IDs.</p>
-
-<p><strong><a href="/en/tools/lorem-ipsum">Lorem Ipsum Generator</a></strong> — Generates placeholder text by paragraph, sentence, or word count. For mockups and testing.</p>
-
-<p><strong><a href="/en/tools/word-counter">Word Counter</a></strong> — Character, word, sentence, and paragraph counts. Plus reading time estimate.</p>
-
-<p><strong><a href="/en/tools/remove-duplicate-lines">Duplicate Line Remover</a></strong> — Paste a list, remove duplicates, sort alphabetically. For cleaning up email lists and data imports.</p>
-
-<h2>The Browser-Only Advantage</h2>
-
-<p>All of these tools run entirely in your browser. No data is uploaded to any server. No account required. No ads. No "pro" upsells. Just the tool, doing one thing, right there in a tab.</p>
-
-<p>Bookmark the ones you use most. Keep the rest in the back of your mind for when you need them. That is the whole point of <a href="/en">online tools</a> — there when you need them, invisible when you do not.</p>
-`
-  },
-  {
-    slug: "verify-file-checksum-guide",
-    title: "How to Verify a Downloaded File Is Not Corrupted or Tampered With",
-    description: "Learn how to use SHA-256 and MD5 checksums to verify file integrity. Step-by-step guide for Windows, Mac, and online tools.",
-    date: "2026-05-21",
-    category: "Developer",
-    tags: ["verify checksum", "SHA-256 verification", "MD5 checksum", "file integrity check", "hash verification"],
-    relatedTools: ["hash-generator", "md5-generator"],
-    content: ``
-<p>You download a 2GB software installer. The website shows a string of random-looking characters next to the download button labeled "SHA-256". Most people ignore it. Here is why you should not — and how to check it in 30 seconds.</p>
-
-<h2>Why checksums matter</h2>
-
-<p>When you download a file, two things can go wrong. First, the download can be corrupted — a few bits flipped during transfer, and your installer silently breaks. Second, someone could have tampered with the file — replacing the real download with malware.</p>
-
-<p>A checksum protects against both. The software author computes a hash of the original file and publishes it. You compute the hash of the file you downloaded. If they match, the file is identical — bit for bit — to what the author intended. If they do not match, delete the file and download again from a different source.</p>
-
-<p>Major projects like Ubuntu, Tor Browser, and VeraCrypt all publish checksums. It takes 30 seconds and eliminates the most common vector for malware distribution through downloads.</p>
-
-<h2>Method 1: Online Hash Generator (fastest for text)</h2>
-
-<p>Open the <a href="/en/tools/hash-generator">hash generator</a>. Paste the text content you want to verify. For small text files, configs, and scripts, copy-paste works. For binary files, use Method 2 or 3.</p>
-
-<p>Select SHA-256 from the dropdown. The hash appears instantly. Compare it side-by-side with the published checksum using the built-in comparison feature. If they match, your file is verified.</p>
-
-<h2>Method 2: Windows (PowerShell)</h2>
-
-<pre><code>Get-FileHash -Path "C:\Downloads\file.iso" -Algorithm SHA256</code></pre>
-
-<p>Replace the path with your actual file path. PowerShell prints the hash. Compare it visually with the published one.</p>
-
-<p>For MD5:</p>
-
-<pre><code>Get-FileHash -Path "C:\Downloads\file.iso" -Algorithm MD5</code></pre>
-
-<h2>Method 3: Mac / Linux (Terminal)</h2>
-
-<pre><code>shasum -a 256 ~/Downloads/file.iso</code></pre>
-
-<p>For MD5:</p>
-
-<pre><code>md5 ~/Downloads/file.iso</code></pre>
-
-<p>The output is the hash followed by the filename. Compare with the published checksum. If identical, the file is intact.</p>
-
-<h2>When you must verify checksums</h2>
-
-<ul>
-<li><strong>Operating system installers:</strong> Corrupted ISO = unbootable system</li>
-<li><strong>Password managers and crypto wallets:</strong> Tampered installer = all your passwords or money stolen</li>
-<li><strong>BIOS/firmware updates:</strong> Corrupted firmware = bricked device</li>
-<li><strong>Privacy tools (Tor, Signal, VPN):</strong> Tampered binary = your privacy compromised</li>
-<li><strong>Large downloads over unreliable connections:</strong> Corrupted ZIP = mysterious extraction errors</li>
-</ul>
-
-<p>For everything else — casual downloads, media files, documents — checksums are optional. But the 30 seconds it takes to verify can save hours of debugging a corrupted install. Make it a habit for anything security-critical. And the <a href="/en/tools/hash-generator">hash generator</a> makes it easy.</p>
-`
-  },
-  {
-    slug: "json-vs-csv-vs-xml-data-formats",
-    title: "JSON vs CSV vs XML: When to Use Each Format (With Real Examples)",
-    description: "JSON, CSV, and XML each solve different problems. Learn which format to use for APIs, spreadsheets, config files, and data exchange — with concrete examples.",
-    date: "2026-05-20",
-    category: "Developer",
-    tags: ["JSON vs CSV", "data formats comparison", "XML vs JSON", "when to use CSV", "data interchange formats"],
-    relatedTools: ["json-formatter", "json-to-csv", "csv-to-json"],
-    content: ``
-<p>Someone sends you data as XML. You wanted JSON. Or they send CSV and the nested fields are a mess. Choosing the right data format up front saves hours of conversion and debugging later.</p>
-
-<p>Here is when to use each — with real examples, not textbook definitions.</p>
-
-<h2>JSON: The Default for Web APIs</h2>
-
-<pre><code>{
-  "users": [
-    {
-      "id": 1,
-      "name": "Alice",
-      "roles": ["admin", "editor"],
-      "metadata": { "lastLogin": "2026-05-20" }
-    }
-  ]
-}</code></pre>
-
-<p><strong>Best for:</strong> APIs, configuration files, data with nested relationships, anything consumed by JavaScript or Python. If your data has objects inside objects, arrays of mixed types, or optional fields, JSON handles it naturally.</p>
-
-<p><strong>When not to use it:</strong> Very large datasets (JSON is verbose — field names repeat in every record). Tabular data with flat structure (CSV is more compact). Situations where a human needs to read and edit the data directly (JSON syntax is picky about commas and quotes).</p>
-
-<p>A <a href="/en/tools/json-formatter">JSON formatter</a> makes nested JSON readable. Paste compact JSON and get an indented tree view with collapsible nodes.</p>
-
-<h2>CSV: The Spreadsheet Format</h2>
-
-<pre><code>id,name,role,lastLogin
-1,Alice,admin,2026-05-20
-2,Bob,editor,2026-05-19
-3,Carol,viewer,2026-05-18</code></pre>
-
-<p><strong>Best for:</strong> Tabular data (rows and columns), spreadsheet import/export, data analysis in Excel or pandas, large datasets where every record has the same fields. CSV files are compact — a million-row CSV might be 50MB where the equivalent JSON is 200MB.</p>
-
-<p><strong>When not to use it:</strong> Nested data (arrays within objects, objects within objects). CSV is flat — one level only. Fields that contain commas or line breaks (these need quoting and escaping, which gets messy).</p>
-
-<p>Converting between JSON and CSV is common: APIs return JSON, but analysts want CSV. Our <a href="/en/tools/json-to-csv">JSON to CSV converter</a> handles this in one click. Going the other way? <a href="/en/tools/csv-to-json">CSV to JSON</a> does the reverse.</p>
-
-<h2>XML: The Legacy Standard (Still Everywhere)</h2>
-
-<pre><code>&lt;users&gt;
-  &lt;user id="1"&gt;
-    &lt;name&gt;Alice&lt;/name&gt;
-    &lt;role&gt;admin&lt;/role&gt;
-  &lt;/user&gt;
-&lt;/users&gt;</code></pre>
-
-<p><strong>Best for:</strong> Document formats (SVG, DOCX, RSS feeds, sitemaps), enterprise systems (SOAP APIs, Java configurations), situations requiring schema validation (XSD), and data that mixes text with metadata.</p>
-
-<p><strong>When not to use it:</strong> New web APIs (use JSON). Simple key-value configs (use JSON or YAML). Anything where verbosity is a problem — XML's closing tags roughly double the character count compared to JSON.</p>
-
-<p><strong>Why XML still matters:</strong> Microsoft Office files (DOCX, XLSX) are ZIP files containing XML. SVG images are XML. RSS and Atom feeds are XML. Android app layouts are XML. Java and .NET enterprise systems default to XML. You will encounter XML whether you choose to use it or not.</p>
-
-<h2>How to choose in practice</h2>
-
-<ul>
-<li><strong>Building a REST API?</strong> JSON. No question.</li>
-<li><strong>Exporting data for Excel?</strong> CSV.</li>
-<li><strong>Configuration file?</strong> JSON or YAML.</li>
-<li><strong>Integrating with enterprise/Java/.NET?</strong> XML (they probably require it).</li>
-<li><strong>Data with nested arrays and objects?</strong> JSON.</li>
-<li><strong>Million-row dataset for analysis?</strong> CSV.</li>
-<li><strong>RSS feed or sitemap?</strong> XML (those standards require it).</li>
-</ul>
-
-<p>And if someone sends you the wrong format, our converters handle the translation: <a href="/en/tools/json-formatter">format</a>, <a href="/en/tools/json-to-csv">convert</a>, validate, and move on. No scripting required.</p>
-`
-  },
-];
+<p>Bookmark the <a href="/en/tools/unit-converter">unit converter page</a>. If you find yourself converting the same units repeatedly, keeping it one click away is faster than any app — no launching, no loading screen, just type and convert.</p>""",
+}
+
+# Add h2/h3 headings for missing structure
+for slug, new_content in EXPANDED.items():
+    # Find the post and replace content (slug could be in single or double quotes)
+    pattern = rf"(slug:\s*[\"']{slug}[\"'].*?content:\s*`)"
+    m = re.search(pattern, ts, re.DOTALL)
+    if not m:
+        print(f"  NOT FOUND: {slug}")
+        continue
+    # Find the closing backtick
+    start = m.end()
+    # Find matching template literal end
+    depth = 1
+    i = start
+    while i < len(ts) - 1:
+        if ts[i:i+2] == '${' and ts[i-1:i] != '\\':
+            i += 1
+            continue
+        if ts[i] == '`' and ts[i-1] != '\\':
+            depth -= 1
+            if depth == 0:
+                content_end = i
+                break
+        i += 1
+    if depth != 0:
+        print(f"  PARSE ERROR: {slug}")
+        continue
+    ts = ts[:start] + "\n" + new_content.strip() + "\n" + ts[content_end:]
+    print(f"  OK: {slug} ({len(new_content)} chars)")
+
+with open(PATH, "w", encoding="utf-8") as f:
+    f.write(ts)
+
+print(f"\nUpdated: {len(EXPANDED)} posts")
