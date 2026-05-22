@@ -1004,5 +1004,16 @@
 		"email": "شارك عبر البريد",
 		"copy": "نسخ الرابط",
 		"copyTitle": "نسخ الرابط إلى الحافظة"
+	},
+	"fullscreenText": {
+		"textLabel": "نصك",
+		"textPlaceholder": "اكتب أي شيء — رسالة، تذكير، اقتباس...",
+		"bgColor": "لون الخلفية",
+		"textColor": "لون النص",
+		"customColor": "لون مخصص",
+		"previewPlaceholder": "سيظهر نصك هنا",
+		"placeholder": "نصك هنا",
+		"enterFullscreen": "ملء الشاشة",
+		"exitHint": "انقر في أي مكان أو اضغط Esc للخروج"
 	}
 }

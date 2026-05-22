@@ -4827,6 +4827,32 @@ export const tools: Tool[] = [
     },
   },
   {
+    id: "fullscreen-text",
+    name: "Fullscreen Text",
+    description: "Display custom text in full screen — perfect for signs, messages, reminders, or name displays. Pick your colors or use the default warm theme.",
+    category: "reference",
+    icon: "📝",
+    path: "/tools/fullscreen-text",
+    seoKeywords: ["fullscreen text", "large text display", "digital sign", "text board", "message display", "big text screen"],
+    relatedTools: ["time-screen", "scoreboard", "coin-flip"],
+    howToUse: [
+      "Type your text in the input area — it can be a message, reminder, quote, or anything you want to display prominently.",
+      "Pick a background color and text color from the presets, or use the color picker for any custom color.",
+      "Use the preview area to see how your text will look before going full screen.",
+      "Click Full Screen to display your text across the entire screen. Click anywhere or press Esc to exit.",
+    ],
+    faq: [
+      { question: "What can I use this for?", answer: "Digital signs at events, name displays on a tablet, leaving a message on a shared screen, presentation title cards, classroom displays, or just a fun way to show a message." },
+      { question: "Can I use custom colors?", answer: "Yes. Click any color preset or use the color picker wheel to choose any background and text color. The default is a warm paper-like background with dark text." },
+      { question: "How long can my text be?", answer: "No hard limit, but the text scales to fit the screen. Short messages (1-2 lines) display largest. Longer text will scale down to fit." },
+    ],
+    nameTranslations: { es: "Texto a Pantalla Completa", ar: "نص بملء الشاشة" },
+    descriptionTranslations: {
+      es: "Muestra texto personalizado a pantalla completa con colores personalizables.",
+      ar: "اعرض نصًا مخصصًا بملء الشاشة بألوان قابلة للتخصيص.",
+    },
+  },
+  {
     id: "time-screen",
     name: "Time Screen",
     description: "Full-screen digital clock with dark and light background modes. Perfect for keeping time visible on a second monitor, during presentations, or as a minimalist desk clock.",

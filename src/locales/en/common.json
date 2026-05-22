@@ -1041,5 +1041,16 @@
 		"email": "Share via Email",
 		"copy": "Copy Link",
 		"copyTitle": "Copy link to clipboard"
+	},
+	"fullscreenText": {
+		"textLabel": "Your Text",
+		"textPlaceholder": "Type anything — a message, a reminder, a quote...",
+		"bgColor": "Background Color",
+		"textColor": "Text Color",
+		"customColor": "Custom color",
+		"previewPlaceholder": "Your text will appear here",
+		"placeholder": "Your text here",
+		"enterFullscreen": "Full Screen",
+		"exitHint": "Click anywhere or press Esc to exit"
 	}
 }

@@ -1004,5 +1004,16 @@
 		"email": "Compartir por Email",
 		"copy": "Copiar Enlace",
 		"copyTitle": "Copiar enlace al portapapeles"
+	},
+	"fullscreenText": {
+		"textLabel": "Tu Texto",
+		"textPlaceholder": "Escribe cualquier cosa — un mensaje, un recordatorio, una cita...",
+		"bgColor": "Color de Fondo",
+		"textColor": "Color del Texto",
+		"customColor": "Color personalizado",
+		"previewPlaceholder": "Tu texto aparecerá aquí",
+		"placeholder": "Tu texto aquí",
+		"enterFullscreen": "Pantalla Completa",
+		"exitHint": "Haz clic en cualquier lugar o presiona Esc para salir"
 	}
 }
