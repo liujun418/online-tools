@@ -88,7 +88,7 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
         onClick={exitFullscreen}
       >
         <div className="text-center select-none">
-          <div className="font-mono text-[25vmin] md:text-[18vmin] font-bold tracking-tighter tabular-nums leading-none">
+          <div className="font-mono text-[18vw] md:text-[14vw] lg:text-9xl font-bold tracking-tighter tabular-nums leading-none">
             {formatTime(time)}
           </div>
           {showDate && (
