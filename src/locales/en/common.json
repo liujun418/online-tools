@@ -1029,5 +1029,17 @@
 		"exitHint": "Click anywhere or press Esc to exit",
 		"hideDate": "Hide Date",
 		"showDate": "Show Date"
+	},
+	"shareBar": {
+		"share": "Share this tool",
+		"twitter": "Share on X",
+		"facebook": "Share on Facebook",
+		"reddit": "Share on Reddit",
+		"linkedin": "Share on LinkedIn",
+		"whatsapp": "Share on WhatsApp",
+		"telegram": "Share on Telegram",
+		"email": "Share via Email",
+		"copy": "Copy Link",
+		"copyTitle": "Copy link to clipboard"
 	}
 }

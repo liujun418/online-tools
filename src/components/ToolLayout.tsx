@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdUnit from "@/components/AdUnit";
-import ShareButton from "@/components/ShareButton";
+import ShareBar from "@/components/ShareBar";
 import VisitorCounter from "@/components/VisitorCounter";
 import RelatedTools from "@/components/RelatedTools";
 import ReferralHub from "@/components/ReferralHub";
@@ -181,7 +181,7 @@ export default function ToolLayout({
             </h1>
             <p className="mt-2 text-sm sm:text-base text-zinc-500 dark:text-zinc-400">{description}</p>
           </div>
-          <ShareButton locale={locale} dict={dict} />
+          <ShareBar locale={locale} dict={dict} />
         </div>
         {tool && <VisitorCounter toolId={tool.id} locale={locale} dict={dict} />}
         <script
