@@ -989,6 +989,8 @@
 		"lightMode": "Fondo Claro",
 		"enterFullscreen": "Pantalla Completa",
 		"exitFullscreen": "Salir de Pantalla Completa",
-		"exitHint": "Haz clic en cualquier lugar o presiona Esc para salir"
+		"exitHint": "Haz clic en cualquier lugar o presiona Esc para salir",
+		"hideDate": "Ocultar Fecha",
+		"showDate": "Mostrar Fecha"
 	}
 }

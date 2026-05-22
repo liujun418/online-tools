@@ -989,6 +989,8 @@
 		"lightMode": "خلفية فاتحة",
 		"enterFullscreen": "ملء الشاشة",
 		"exitFullscreen": "الخروج من ملء الشاشة",
-		"exitHint": "انقر في أي مكان أو اضغط Esc للخروج"
+		"exitHint": "انقر في أي مكان أو اضغط Esc للخروج",
+		"hideDate": "إخفاء التاريخ",
+		"showDate": "إظهار التاريخ"
 	}
 }

@@ -32,6 +32,7 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
   const [time, setTime] = useState(new Date());
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [bgMode, setBgMode] = useState<"dark" | "light">("dark");
+  const [showDate, setShowDate] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -71,22 +72,23 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
     ? "bg-black text-white"
     : "bg-white text-zinc-900";
 
-  // Full-viewport clock overlay — hides everything else
   if (isFullscreen) {
     return (
       <div
-        className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center transition-colors duration-500 cursor-pointer ${bgClass}`}
+        className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center transition-colors duration-500 cursor-pointer ${bgClass}`}
         onClick={exitFullscreen}
       >
         <div className="text-center select-none">
           <div className="font-mono text-[10vw] sm:text-[12vw] md:text-9xl font-bold tracking-tighter tabular-nums leading-none">
             {formatTime(time)}
           </div>
-          <div className="mt-4 text-lg sm:text-2xl md:text-3xl opacity-50 font-medium">
-            {formatDate(time, locale)}
-          </div>
+          {showDate && (
+            <div className="mt-4 text-lg sm:text-2xl md:text-3xl opacity-40 font-medium">
+              {formatDate(time, locale)}
+            </div>
+          )}
         </div>
-        <p className="absolute bottom-8 text-sm opacity-30">{t.exitHint || "Click anywhere or press Esc to exit"}</p>
+        <p className="absolute bottom-8 text-sm opacity-25">{t.exitHint || "Click anywhere or press Esc to exit"}</p>
       </div>
     );
   }
@@ -96,25 +98,31 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
       title={tool.seoTitle || tool.name}
       description={tool.seoDescription || tool.description}
       keywords={tool.seoKeywords || []}>
-      {/* Time Display */}
       <div className={`flex flex-col items-center justify-center rounded-2xl transition-colors duration-500 ${bgClass}`} style={{ minHeight: "60vh" }}>
         <div className="text-center select-none">
           <div className="font-mono text-7xl sm:text-8xl md:text-9xl font-bold tracking-tighter tabular-nums">
             {formatTime(time)}
           </div>
-          <div className="mt-3 text-lg sm:text-xl opacity-60 font-medium">
-            {formatDate(time, locale)}
-          </div>
+          {showDate && (
+            <div className="mt-3 text-lg sm:text-xl opacity-50 font-medium">
+              {formatDate(time, locale)}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Controls */}
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <button
           onClick={() => setBgMode(bgMode === "dark" ? "light" : "dark")}
           className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
         >
           {bgMode === "dark" ? (t.lightMode || "Light Background") : (t.darkMode || "Dark Background")}
+        </button>
+        <button
+          onClick={() => setShowDate(!showDate)}
+          className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+        >
+          {showDate ? (t.hideDate || "Hide Date") : (t.showDate || "Show Date")}
         </button>
         <button
           onClick={enterFullscreen}
