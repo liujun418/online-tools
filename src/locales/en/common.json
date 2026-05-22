@@ -1025,6 +1025,7 @@
 		"darkMode": "Dark Background",
 		"lightMode": "Light Background",
 		"enterFullscreen": "Full Screen",
-		"exitFullscreen": "Exit Fullscreen"
+		"exitFullscreen": "Exit Fullscreen",
+		"exitHint": "Click anywhere or press Esc to exit"
 	}
 }

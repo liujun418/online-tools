@@ -988,6 +988,7 @@
 		"darkMode": "خلفية داكنة",
 		"lightMode": "خلفية فاتحة",
 		"enterFullscreen": "ملء الشاشة",
-		"exitFullscreen": "الخروج من ملء الشاشة"
+		"exitFullscreen": "الخروج من ملء الشاشة",
+		"exitHint": "انقر في أي مكان أو اضغط Esc للخروج"
 	}
 }
