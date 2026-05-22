@@ -98,14 +98,14 @@ export default function ShareBar({ locale = "en", dict }: ShareBarProps) {
             rel="noopener noreferrer"
             onClick={link.id === "copy" ? handleCopy : undefined}
             title={link.title}
-            className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+            className={`inline-flex items-center justify-center h-9 w-9 rounded-lg border transition-colors ${
               link.id === "copy" && copied
                 ? "border-green-300 bg-green-50 text-green-700 dark:border-green-800 dark:bg-green-900/30 dark:text-green-400"
                 : "border-zinc-200 text-zinc-600 hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:bg-zinc-800/50"
             }`}
+            title={link.title}
           >
             {link.icon}
-            <span className="hidden sm:inline">{link.label}</span>
           </a>
         ))}
       </div>
