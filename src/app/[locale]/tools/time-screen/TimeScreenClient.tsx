@@ -61,8 +61,8 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
       title={tool.seoTitle || tool.name}
       description={tool.seoDescription || tool.description}
       keywords={tool.seoKeywords || []}>
+      {/* Time Display */}
       <div className={`flex flex-col items-center justify-center rounded-2xl transition-colors duration-500 ${bgClass}`} style={{ minHeight: "60vh" }}>
-        {/* Time Display */}
         <div className="text-center select-none">
           <div className="font-mono text-7xl sm:text-8xl md:text-9xl font-bold tracking-tighter tabular-nums">
             {formatTime(time)}
@@ -71,30 +71,22 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
             {formatDate(time, locale)}
           </div>
         </div>
+      </div>
 
-        {/* Controls */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <button
-            onClick={() => setBgMode(bgMode === "dark" ? "light" : "dark")}
-            className={`rounded-full border px-5 py-2.5 text-sm font-medium transition-all ${
-              bgMode === "dark"
-                ? "border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white"
-                : "border-zinc-300 text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
-            }`}
-          >
-            {bgMode === "dark" ? (t.lightMode || "Light Background") : (t.darkMode || "Dark Background")}
-          </button>
-          <button
-            onClick={toggleFullscreen}
-            className={`rounded-full border px-5 py-2.5 text-sm font-medium transition-all ${
-              bgMode === "dark"
-                ? "border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white"
-                : "border-zinc-300 text-zinc-600 hover:border-zinc-500 hover:text-zinc-900"
-            }`}
-          >
-            {isFullscreen ? (t.exitFullscreen || "Exit Fullscreen") : (t.enterFullscreen || "Full Screen")}
-          </button>
-        </div>
+      {/* Controls */}
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <button
+          onClick={() => setBgMode(bgMode === "dark" ? "light" : "dark")}
+          className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+        >
+          {bgMode === "dark" ? (t.lightMode || "Light Background") : (t.darkMode || "Dark Background")}
+        </button>
+        <button
+          onClick={toggleFullscreen}
+          className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+        >
+          {isFullscreen ? (t.exitFullscreen || "Exit Fullscreen") : (t.enterFullscreen || "Full Screen")}
+        </button>
       </div>
     </ToolLayout>
   );
