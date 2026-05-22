@@ -38,14 +38,34 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
     return () => clearInterval(timer);
   }, []);
 
+  const enterFullscreen = useCallback(async () => {
+    try { await document.documentElement.requestFullscreen(); } catch {}
+    setIsFullscreen(true);
+  }, []);
+
+  const exitFullscreen = useCallback(async () => {
+    if (document.fullscreenElement) {
+      try { await document.exitFullscreen(); } catch {}
+    }
+    setIsFullscreen(false);
+  }, []);
+
+  useEffect(() => {
+    const handleFSChange = () => {
+      if (!document.fullscreenElement) setIsFullscreen(false);
+    };
+    document.addEventListener("fullscreenchange", handleFSChange);
+    return () => document.removeEventListener("fullscreenchange", handleFSChange);
+  }, []);
+
   useEffect(() => {
     if (!isFullscreen) return;
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsFullscreen(false);
+      if (e.key === "Escape") exitFullscreen();
     };
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
-  }, [isFullscreen]);
+  }, [isFullscreen, exitFullscreen]);
 
   const bgClass = bgMode === "dark"
     ? "bg-black text-white"
@@ -56,7 +76,7 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
     return (
       <div
         className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center transition-colors duration-500 cursor-pointer ${bgClass}`}
-        onClick={() => setIsFullscreen(false)}
+        onClick={exitFullscreen}
       >
         <div className="text-center select-none">
           <div className="font-mono text-[10vw] sm:text-[12vw] md:text-9xl font-bold tracking-tighter tabular-nums leading-none">
@@ -97,7 +117,7 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
           {bgMode === "dark" ? (t.lightMode || "Light Background") : (t.darkMode || "Dark Background")}
         </button>
         <button
-          onClick={() => setIsFullscreen(true)}
+          onClick={enterFullscreen}
           className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
         >
           {t.enterFullscreen || "Full Screen"}
