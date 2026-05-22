@@ -4825,5 +4825,31 @@ export const tools: Tool[] = [
         { question: "هل يتم تخزين نصي أو مشاركته؟", answer: "لا. جميع الطلبات تذهب مباشرة من متصفحك إلى واجهة Google. لا نخزن أو نسجل أو نشارك نصك." },
       ],
     },
+  },
+  {
+    id: "time-screen",
+    name: "Time Screen",
+    description: "Full-screen digital clock with dark and light background modes. Perfect for keeping time visible on a second monitor, during presentations, or as a minimalist desk clock.",
+    category: "reference",
+    icon: "⏰",
+    path: "/tools/time-screen",
+    seoKeywords: ["time screen", "fullscreen clock", "digital clock", "desk clock", "large clock display", "online clock"],
+    relatedTools: ["perpetual-calendar", "coin-flip", "scoreboard"],
+    howToUse: [
+      "The current time displays automatically in large, easy-to-read digits.",
+      "Click Dark/Light to switch between background modes.",
+      "Click Full Screen for a distraction-free clock display — great for a second monitor.",
+      "Press Esc or click Exit Fullscreen to return to normal view.",
+    ],
+    faq: [
+      { question: "Does this clock stay accurate?", answer: "Yes. It syncs with your device's system clock and updates every second." },
+      { question: "Can I use this as a desk clock?", answer: "Yes. Open it in full screen, pick your preferred background color, and leave it on a spare monitor or tablet." },
+      { question: "Does it work offline?", answer: "Yes, once loaded. The clock runs entirely in your browser using JavaScript — no server requests needed." },
+    ],
+    nameTranslations: { es: "Pantalla de Hora", ar: "شاشة الوقت" },
+    descriptionTranslations: {
+      es: "Reloj digital a pantalla completa con modo oscuro y claro.",
+      ar: "ساعة رقمية بملء الشاشة مع وضعين داكن وفاتح.",
+    },
   }
 ];
