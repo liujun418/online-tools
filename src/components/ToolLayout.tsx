@@ -181,8 +181,8 @@ export default function ToolLayout({
             </h1>
             <p className="mt-2 text-sm sm:text-base text-zinc-500 dark:text-zinc-400">{description}</p>
           </div>
-          <ShareBar locale={locale} dict={dict} />
         </div>
+        <ShareBar locale={locale} dict={dict} />
         {tool && <VisitorCounter toolId={tool.id} locale={locale} dict={dict} />}
         <script
           type="application/ld+json"
