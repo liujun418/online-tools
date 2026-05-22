@@ -107,13 +107,13 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
       title={tool.seoTitle || tool.name}
       description={tool.seoDescription || tool.description}
       keywords={tool.seoKeywords || []}>
-      <div className={`flex flex-col items-center justify-center rounded-2xl transition-colors duration-500 ${bgClass}`} style={{ minHeight: "60vh" }}>
+      <div className={`flex flex-col items-center justify-center rounded-2xl transition-colors duration-500 ${bgClass} p-4 sm:p-8`} style={{ minHeight: "60vh" }}>
         <div className="text-center select-none">
-          <div className="font-mono text-7xl sm:text-8xl md:text-9xl font-bold tracking-tighter tabular-nums">
+          <div className="font-mono text-[16vw] sm:text-8xl md:text-9xl font-bold tracking-tighter tabular-nums">
             {formatTime(time)}
           </div>
           {showDate && (
-            <div className="mt-3 text-lg sm:text-xl opacity-50 font-medium">
+            <div className="mt-3 text-[3.5vw] sm:text-xl opacity-50 font-medium">
               {formatDate(time, locale)}
             </div>
           )}
