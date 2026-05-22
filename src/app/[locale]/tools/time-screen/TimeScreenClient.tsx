@@ -88,16 +88,16 @@ export default function TimeScreenClient({ locale = "en" as Locale, dict }: { lo
         onClick={exitFullscreen}
       >
         <div className="text-center select-none">
-          <div className="font-mono text-[14vmin] landscape:text-[12vmin] font-bold tracking-tighter tabular-nums leading-none">
+          <div className="font-mono text-[25vmin] md:text-[18vmin] font-bold tracking-tighter tabular-nums leading-none">
             {formatTime(time)}
           </div>
           {showDate && (
-            <div className="mt-4 text-[2.5vmin] landscape:text-[2vmin] opacity-40 font-medium">
+            <div className="mt-4 text-[3.5vmin] opacity-40 font-medium">
               {formatDate(time, locale)}
             </div>
           )}
         </div>
-        <p className="absolute bottom-8 text-sm opacity-25 landscape:bottom-4 landscape:text-xs">{t.exitHint || "Click anywhere or press Esc to exit"}</p>
+        <p className="absolute bottom-8 text-sm opacity-25">{t.exitHint || "Click anywhere or press Esc to exit"}</p>
       </div>
     );
   }
