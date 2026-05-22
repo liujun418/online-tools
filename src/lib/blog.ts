@@ -670,6 +670,56 @@ print("code block with syntax highlighting")
 
 <p>Try it on a second monitor or a tablet. You might find yourself checking your phone less.</p>`
   },
+
+  {
+    slug: "fullscreen-text-display-uses",
+    title: "5 Unexpected Ways to Use a Fullscreen Text Display",
+    description: "A big text display isn't just for presentations. From desk nameplates at events to leaving messages on shared screens — here's how people actually use it.",
+    date: "2026-05-22",
+    category: "Tools",
+    tags: ["fullscreen text", "digital sign", "text display online", "message board", "big text screen"],
+    relatedTools: ["fullscreen-text", "time-screen"],
+    content: `<p>I built a <a href="/en/tools/fullscreen-text">fullscreen text tool</a> thinking people would use it for presentations. They did. But they also used it for things I never expected — price tags at a craft fair, name displays on tablets at a conference, and a "DO NOT DISTURB" sign on a monitor.</p>
+
+<p>Here are five ways people are actually using it, in case any of these solve a problem you didn't know you had.</p>
+
+<h2>1. Event Name Tags and Table Signs</h2>
+
+<p>Someone at a local makers' market used it on a tablet to display their booth name and prices. They set a warm cream background with dark brown text, put the tablet on a stand, and suddenly had a digital sign that was readable from across the aisle.</p>
+
+<p>Better than a printed sign because you can change it instantly. Sold out of something? Update the text. Price change? Type it in. No reprinting, no crossing things out with a marker. Just pick the text color and background that match your branding and leave it running.</p>
+
+<h2>2. Leaving Messages on a Shared Screen</h2>
+
+<p>If you work in an office with shared monitors or dashboard displays, you know the problem: someone walks by, sees an empty screen, and unplugs it. A fullscreen text display saying "Meeting Room — Back at 2pm" or "Build Status: Monitoring" prevents this. It also tells people what the screen is doing without having to ask.</p>
+
+<p>The default colors are a warm paper-like background with dark text — intentionally not the black-and-green terminal look. It blends in with an office environment rather than screaming "TECH SETUP."</p>
+
+<h2>3. Presentation Title Cards</h2>
+
+<p>Before your talk starts, put the title on screen. Before each section, switch to a section header. During Q&A, display "Questions?" in large text. A fullscreen text display is simpler than building title slides — no animations, no templates, just the words filling the screen.</p>
+
+<p>Pick a background and text color that match your deck. The preview shows exactly what the audience will see before you go full screen. Switch between cards instantly by typing new text — no slide transition lag, no software to learn.</p>
+
+<h2>4. Focus Prompts and Reminders</h2>
+
+<p>"Finish the proposal." "Drink water." "Stand up and stretch." Put a reminder on your second monitor in 200px text and you cannot ignore it. The <a href="/en/tools/fullscreen-text">fullscreen text tool</a> takes whatever you type and fills the screen with it.</p>
+
+<p>Set it before a deep work session. Use a calm color — pale green background with dark green text, or soft blue with navy. The text stays there until you change it. Unlike a notification that disappears after 3 seconds, this one waits.</p>
+
+<h2>5. Classroom and Workshop Displays</h2>
+
+<p>Teachers use it to display instructions, discussion prompts, or group activity guidelines. "Discuss in pairs: What would you do differently?" on the projector means no one asks "what are we supposed to be doing?"</p>
+
+<p>Workshop facilitators display the current activity, the WiFi password, or the schedule for the next session. It updates in seconds — type new text and the display changes instantly. The large text means people in the back can read it without squinting.</p>
+
+<h2>How to Set It Up</h2>
+
+<p>Type your text. Pick a background color and text color — seven presets each, plus a custom color picker for any shade you want. The default is a warm cream background with dark text. Click <strong>Full Screen</strong> and the text fills the entire display. Click anywhere or press Esc to exit.</p>
+
+<p>It also pairs well with the <a href="/en/tools/time-screen">time screen clock</a> if you want to show both the time and a message on different screens or tabs. No account, no download, no setup. Just a browser tab doing one thing.</p>`
+  },
+
 ];
 
 export function getBlogPosts(): BlogPost[] {
