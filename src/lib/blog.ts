@@ -720,12 +720,44 @@ print("code block with syntax highlighting")
 <p>It also pairs well with the <a href="/en/tools/time-screen">time screen clock</a> if you want to show both the time and a message on different screens or tabs. No account, no download, no setup. Just a browser tab doing one thing.</p>`
   },
 
+
+  {
+    slug: "browser-tools-as-digital-displays",
+    title: "Your Browser Is the Best Digital Sign You Already Own",
+    description: "Turn any screen into a clock, a message board, or a scoreboard — no app install, no smart TV setup. Just a browser tab and a URL.",
+    date: "2026-05-22",
+    category: "Tools",
+    tags: ["digital sign", "browser clock", "fullscreen display", "online message board", "scoreboard online", "desk clock"],
+    relatedTools: ["fullscreen-text", "time-screen", "scoreboard"],
+    content: `<p>I have an old iPad that sits on my desk doing nothing. Last week I opened a browser tab on it and turned it into a clock. This week it became a message board for my family. Next week it might be a scoreboard for game night.</p>
+
+<p>The thing is: you do not need a smart display, a digital sign subscription, or a dedicated app. Your browser is already a full-screen rendering engine. Open a tab, go full screen, and any screen becomes whatever you want it to be.</p>
+
+<h2>The Clock: Time Screen</h2>
+
+<p>A <a href="/en/tools/time-screen">fullscreen clock</a> on a spare monitor or tablet is the simplest upgrade you can make to your desk. Large monospace digits, dark or light background, and a full-screen mode that hides everything except the time. No notifications. No app to open. Just a URL that stays open.</p>
+
+<p>I use it on a second monitor during focus sessions. Instead of checking my phone (which leads to notifications, which leads to distraction), I glance left and see the time. That is the entire interaction. It has saved me from countless phone-check rabbit holes. The <a href="/en/tools/time-screen">clock display</a> updates every second and uses almost no CPU. Leave it running all day and it will not spin up your fans.</p>
+
+<h2>The Message Board: Fullscreen Text</h2>
+
+<p>The <a href="/en/tools/fullscreen-text">fullscreen text tool</a> turns any screen into a digital sign. Type a message, pick a background and text color, and go full screen. I used it to display "Recording in Progress" on a tablet outside my office door. Someone at a craft fair told me they used it as a price display on their booth table.</p>
+
+<p>It works because it is stupidly simple. There is no login. There are no templates. You type text. You pick colors. The text fills the screen. The default colors are a warm paper-like background with dark text — it looks like a printed sign, not a terminal. Change the message anytime by exiting full screen, typing new text, and going full screen again. Three seconds total.</p>
+
+<h2>The Scoreboard: Game Night Upgrade</h2>
+
+<p>We play board games on Fridays. The <a href="/en/tools/scoreboard">online scoreboard</a> on the TV means everyone can see the scores without asking "what is the score?" every five minutes. Tap to add or subtract points. The numbers are large enough to read from across the room. No one has to keep score on a scrap of paper that inevitably gets lost between rounds.</p>
+
+<p>It also works for keeping score in backyard games, trivia nights, or any situation where multiple people need to see a number change in real time. The scoreboard runs entirely in the browser — no app install, no account creation, no "please sign in to use this scoreboard" nonsense.</p>
+
+<h2>The Setup That Makes This Work</h2>
+
+<p>These three tools share a design philosophy: open a URL, go full screen, and the browser disappears. The <strong>Dark/Light</strong> toggle lets you match the display to your environment — dark for a dim room, light for daytime. The <strong>Full Screen</strong> button hides the browser chrome. Click anywhere or press Esc to exit.</p>
+
+<p>What makes this better than a dedicated app: no updates, no permissions, no storage space. A bookmark is lighter than any app. And you can <a href="/en">share any tool</a> instantly by copying the URL — no one needs to install anything to see the same clock or sign you are looking at.</p>
+
+<p>Try it. Open the <a href="/en/tools/time-screen">clock</a>, <a href="/en/tools/fullscreen-text">message board</a>, or <a href="/en/tools/scoreboard">scoreboard</a> on any screen you have lying around. An old tablet. A spare monitor. The TV in the living room. Your browser is the only display engine you need.</p>`
+  },
+
 ];
-
-export function getBlogPosts(): BlogPost[] {
-  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-}
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find((p) => p.slug === slug);
-}
