@@ -760,4 +760,86 @@ print("code block with syntax highlighting")
 <p>Try it. Open the <a href="/en/tools/time-screen">clock</a>, <a href="/en/tools/fullscreen-text">message board</a>, or <a href="/en/tools/scoreboard">scoreboard</a> on any screen you have lying around. An old tablet. A spare monitor. The TV in the living room. Your browser is the only display engine you need.</p>`
   },
 
+
+  {
+    slug: "qr-code-generator-practical-guide",
+    title: "Everything You Can Do With a QR Code Generator (That You Probably Haven't Tried)",
+    description: "QR codes aren't just for restaurant menus. From WiFi login cards to contact sharing to event check-ins — here's what a free QR generator can actually do.",
+    date: "2026-05-24",
+    category: "Tools",
+    tags: ["QR code generator", "free QR code", "create QR code", "QR code uses", "WiFi QR code"],
+    relatedTools: ["qr-code-generator"],
+    content: `<p>Everyone knows QR codes from restaurant menus. Scan, read, order. But a QR code can encode way more than a URL — and most of those uses are free with a <a href="/en/tools/qr-code-generator">basic QR generator</a>.</p>
+
+<p>Here are five things you can encode into a QR code today, plus why each one is useful.</p>
+
+<h2>1. WiFi Login Card (No More Spelling Your Password)</h2>
+
+<p>You have guests over. They ask for the WiFi. You spell out your password: "Capital S, m, a, l, l, underscore, c, a, t, the number 7, exclamation mark." They type it wrong. You do it again.</p>
+
+<p>A WiFi QR code encodes your network name and password in a standard format. Scan it with a phone camera, and the phone connects automatically. No typing. No spelling. No repeating yourself.</p>
+
+<p>Print it and put it on the fridge. Frame it in the guest room. Keep it on your desk. One scan, connected. The QR code format for WiFi is: <code>WIFI:S:&lt;SSID&gt;;T:WPA;P:&lt;password&gt;;;</code>. Our <a href="/en/tools/qr-code-generator">QR code generator</a> handles this — paste that string or type the network details, and download a ready-to-print QR code.</p>
+
+<h2>2. Share Your Contact Info Without Typing</h2>
+
+<p>Networking events. Someone wants your number. You both fumble with phones. "What's your email?" "Let me type it in." It takes 30 seconds of awkward silence.</p>
+
+<p>A QR code with your contact info (vCard format) lets someone scan and save you instantly. Name, phone, email, website — all encoded. They scan, tap Save, done. No typing, no typos, no "did I get that right?"</p>
+
+<p>Generate it once. Keep it on your phone's lock screen for events. Or print a small card. It works offline — the data is in the QR code itself, not fetched from a server.</p>
+
+<h2>3. Event Check-In Without an App</h2>
+
+<p>Running a small event? A QR code that links to a Google Form or a check-in URL is the easiest registration system you will ever set up. Print the code. Put it at the entrance. Attendees scan and fill out the form. You get their info. They get in. No app, no subscription, no event management platform.</p>
+
+<p>For recurring events, generate one code per event. Change the form URL each time. The QR code is just the delivery mechanism — the form does the data collection.</p>
+
+<h2>4. Quick Links to Anything (Without Typing URLs)</h2>
+
+<p>Printed instructions that say "go to example.com/setup-guide" rely on people typing the URL correctly. They will not. A QR code next to those instructions eliminates the typing step entirely. Scan, tap, you are there.</p>
+
+<p>Use cases: setup guides on product packaging, feedback forms on receipts, app download links on business cards, survey links on event programs. Anywhere you would print a URL, print a QR code instead. People will actually use it.</p>
+
+<h2>5. Calendar Event (Add to Calendar With One Scan)</h2>
+
+<p>You send an email with an event date. The recipient has to manually create a calendar entry. They might forget. A QR code can encode an iCalendar event — scan it and the event is added to the calendar instantly.</p>
+
+<p>Great for: event posters, wedding invitations, conference schedules, appointment reminder cards. The QR code contains the date, time, location, and description. One scan and it is on their calendar. No typing, no forgetting.</p>
+
+<p>Try the <a href="/en/tools/qr-code-generator">free QR code generator</a>. Paste your text or URL, and download the QR code as a PNG. No signup, no watermark, no limits.</p>`
+  },
+  {
+    slug: "perpetual-calendar-practical-uses",
+    title: "Why You Need a Perpetual Calendar (and 3 Times It Saved Me)",
+    description: "A perpetual calendar shows any month from any year instantly. Here's when that's actually useful — from planning events to checking what day you were born.",
+    date: "2026-05-24",
+    category: "Tools",
+    tags: ["perpetual calendar", "online calendar", "calendar tool", "date lookup", "day of week calculator"],
+    relatedTools: ["perpetual-calendar", "time-screen"],
+    content: `<p>I needed to know what day of the week July 15, 2028 falls on. Not for any important reason — I was planning a hypothetical birthday party and wanted to know if it would be on a weekend. A <a href="/en/tools/perpetual-calendar">perpetual calendar</a> told me in two clicks: Saturday.</p>
+
+<p>A perpetual calendar shows any month from any year. It is not a planner or a scheduling tool. It is just a calendar that works for any date, past or future. Here is when that comes in handy.</p>
+
+<h2>1. Planning Events Way in Advance</h2>
+
+<p>You are planning a wedding, a conference, or a reunion for next year. You need to know if the date falls on a weekend. You could count forward from today, or you could type the month and year into a perpetual calendar and see the whole month instantly.</p>
+
+<p>This is especially useful for annual events. "Third Saturday in September" means something different every year. The perpetual calendar shows you exactly which date that is for any year — 2026, 2027, 2030, whatever you need.</p>
+
+<h2>2. Looking Up Historical Dates</h2>
+
+<p>"What day of the week was I born?" is the most common question people ask a perpetual calendar. But it also answers: what day did the moon landing happen? (Sunday, July 20, 1969). What day did the Berlin Wall fall? (Thursday, November 9, 1989).</p>
+
+<p>Genealogy research uses this constantly. A birth certificate says "March 3, 1887" — was that a Thursday? Knowing the day of the week can help cross-reference with other records like church attendance logs or newspaper announcements.</p>
+
+<h2>3. Understanding Calendar Quirks</h2>
+
+<p>Ever notice that your birthday falls on a different day each year? It advances by one day most years, but by two days after a leap year. The perpetual calendar makes this pattern visible. Look at the same date across five years and you see the rhythm immediately.</p>
+
+<p>This is also useful for understanding recurring dates. Thanksgiving is the fourth Thursday of November. The perpetual calendar shows you which date that is each year. Same for Election Day (Tuesday after the first Monday), Mother's Day, and other floating holidays.</p>
+
+<p>The <a href="/en/tools/perpetual-calendar">perpetual calendar</a> is free, works for any year from 1 to 9999, and loads instantly. No account, no download. Just pick a month and year and see the calendar.</p>`
+  },
+
 ];
