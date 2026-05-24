@@ -841,5 +841,12 @@ print("code block with syntax highlighting")
 
 <p>The <a href="/en/tools/perpetual-calendar">perpetual calendar</a> is free, works for any year from 1 to 9999, and loads instantly. No account, no download. Just pick a month and year and see the calendar.</p>`
   },
-
 ];
+
+export function getBlogPosts(): BlogPost[] {
+  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug);
+}
