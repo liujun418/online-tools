@@ -848,8 +848,8 @@ print("code block with syntax highlighting")
     description: "A digital Book of Answers gives you random thoughtful responses to your questions. Here is how it works, where to find a free one, and when to use it.",
     date: "2026-05-25",
     category: "Tools",
-    tags: [book of answers online, answer book online, random answer generator, digital oracle, decision making tool, free book of answers],
-    relatedTools: [book-of-answers,coin-flip,food-picker],
+    tags: ["book of answers online", "answer book online", "random answer generator", "digital oracle", "decision making tool", "free book of answers"],
+    relatedTools: ["book-of-answers","coin-flip","food-picker"],
     content: `
 <p>You have a question. You want an answer. Not necessarily the RIGHT answer — just something to break the mental loop of overthinking. That is what a <a href="/en/tools/book-of-answers">Book of Answers</a> does.</p>
 
@@ -886,8 +886,8 @@ print("code block with syntax highlighting")
     description: "Need to count words fast? A free online word counter does more than just count — it shows characters, sentences, paragraphs, and estimated reading time.",
     date: "2026-05-25",
     category: "Tools",
-    tags: [word counter, word count tool, character counter, online word checker, count words online, reading time calculator],
-    relatedTools: [word-counter,case-converter,text-diff],
+    tags: ["word counter", "word count tool", "character counter", "online word checker", "count words online", "reading time calculator"],
+    relatedTools: ["word-counter","case-converter","text-diff"],
     content: `
 <p>I needed to submit an article with a 1,500 word minimum. I wrote it in a text editor that does not show word count. Instead of copying everything into Google Docs, I pasted it into a <a href="/en/tools/word-counter">word counter</a>. Two seconds later I knew: 1,487 words. Thirteen words short. I added a sentence and submitted.</p>
 
@@ -918,8 +918,8 @@ print("code block with syntax highlighting")
     description: "No downloads, no signups, no fees. A curated list of genuinely useful free online tools for text, images, calculations, and everyday tasks.",
     date: "2026-05-25",
     category: "Tools",
-    tags: [free online tool, online tools, tools online, free tool online, best online tools, no download tools],
-    relatedTools: [word-counter,json-formatter,password-generator,qr-code-generator,unit-converter,color-converter],
+    tags: ["free online tool", "online tools", "tools online", "free tool online", "best online tools", "no download tools"],
+    relatedTools: ["word-counter","json-formatter","password-generator","qr-code-generator","unit-converter","color-converter"],
     content: `
 <p>I switch computers a lot. Work laptop, home desktop, occasionally a borrowed machine. I have stopped installing tools I can use in a browser. Over time, I built a list of free online tools that replace the things I used to download. Here are the ones I use most.</p>
 
