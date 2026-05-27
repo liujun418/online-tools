@@ -998,5 +998,12 @@ print("code block with syntax highlighting")
 
 <p>Bookmark it if you write CSS regularly. It is the kind of tool you do not think about until you need it, and then you use it five times in one afternoon.</p>`
   },
-
 ];
+
+export function getBlogPosts(): BlogPost[] {
+  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug);
+}
