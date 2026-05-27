@@ -961,12 +961,42 @@ print("code block with syntax highlighting")
 `,
   },
 
+
+  {
+    slug: "color-converter-design-guide",
+    title: "HEX vs RGB vs HSL: A Designer's Guide to Picking the Right Color Format",
+    description: "Stop converting colors manually. Here's when to use HEX, RGB, or HSL — and how a color converter makes it instant.",
+    date: "2026-05-25",
+    category: "Design",
+    tags: ["color converter", "HEX to RGB", "HSL color", "CSS color formats", "design tools", "color picker online"],
+    relatedTools: ["color-converter","css-minifier"],
+    content: `<p>You are copying a color from a design file. Figma gives you HEX. Your CSS needs RGB for a box-shadow with transparency. Your brain now has to convert #3B82F6 to rgb(59, 130, 246). Or you could use a <a href="/en/tools/color-converter">color converter</a> and be done in one second.</p>
+
+<p>Here is when to use each color format, and why fighting with manual conversion is a waste of time.</p>
+
+<h2>HEX: The Web Standard</h2>
+
+<p>HEX (<code>#3B82F6</code>) is the default for CSS. It is compact, universally supported, and every design tool exports it. Use it for backgrounds, text colors, borders, and any solid color in your stylesheets.</p>
+
+<p>HEX can also include transparency with 8-digit format: <code>#3B82F6FF</code> (the last two digits are alpha). But this is less readable than rgba() and fewer developers use it. Stick with 6-digit HEX for solid colors.</p>
+
+<h2>RGB/RGBA: When Transparency Matters</h2>
+
+<p>RGB (<code>rgb(59, 130, 246)</code>) is the functional notation. Each channel is 0-255. The real value of RGB is RGBA: <code>rgba(59, 130, 246, 0.5)</code>. This is how you make semi-transparent overlays, shadows, and hover effects.</p>
+
+<p>Use RGB when you need to tweak individual channels in code, or when you need transparency. For everything else, HEX is more compact.</p>
+
+<h2>HSL: Think Like a Designer</h2>
+
+<p>HSL (<code>hsl(217, 91%, 60%)</code>) is the format that matches how humans think about color. <strong>Hue</strong> is the position on the color wheel (0-360). <strong>Saturation</strong> is the intensity (0% = gray, 100% = vivid). <strong>Lightness</strong> is the brightness (0% = black, 100% = white).</p>
+
+<p>HSL is the best format for creating color palettes. Keep the hue, adjust saturation and lightness to create variations. Shift the hue by 30 degrees for analogous colors, 180 degrees for complementary. Doing this with RGB values requires math you do not want to do in your head.</p>
+
+<h2>Stop Converting Manually</h2>
+
+<p>The <a href="/en/tools/color-converter">free color converter</a> shows all three formats at once. Pick a color with the wheel, paste any format, or adjust sliders. Every other format updates instantly. No mental math, no Googling "HEX to RGB," no opening a new tab every time you need a conversion.</p>
+
+<p>Bookmark it if you write CSS regularly. It is the kind of tool you do not think about until you need it, and then you use it five times in one afternoon.</p>`
+  },
+
 ];
-
-export function getBlogPosts(): BlogPost[] {
-  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-}
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find((p) => p.slug === slug);
-}
