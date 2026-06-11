@@ -1,90 +1,100 @@
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { join, dirname } from "path";
 
 const TOOLS_TS = new URL("../src/lib/tools.ts", import.meta.url).pathname.replace(/^\/([a-z]):\//i, "$1:/");
+const BLOG_TS = new URL("../src/lib/blog.ts", import.meta.url).pathname.replace(/^\/([a-z]):\//i, "$1:/");
 const src = readFileSync(TOOLS_TS, "utf-8");
+const blogSrc = readFileSync(BLOG_TS, "utf-8");
 
-const catPri = { calculator: "0.9", developer: "0.85", reference: "0.8", media: "0.8", text: "0.8" };
 const SITE = "https://toolboxonline.club";
 const LOCALES = ["en", "es", "ar"];
 const XDEFAULT = "en";
-const tools = [];
+const today = new Date().toISOString().split("T")[0] + "T00:00:00+00:00";
 
-const re = /{\s*id:\s*"([^"]+)".*?category:\s*"([^"]+)"/gs;
+const tools = [];
+const re = /{\s*id:\s*"([^"]+)"[\s\S]*?category:\s*"([^"]+)"/g;
 let m;
-while ((m = re.exec(src))) {
-  tools.push({ id: m[1], category: m[2] });
-}
+while ((m = re.exec(src))) tools.push({ id: m[1], category: m[2] });
+
+const blogSlugs = [];
+const slugRe = /slug:\s*"([^"]+)"/g;
+let sm;
+while ((sm = slugRe.exec(blogSrc))) blogSlugs.push(sm[1]);
 
 function esc(s) {
   return s.replace(/&/g, "&amp;").replace(/'/g, "&apos;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function hreflangLinks(pathFn) {
-  let links = "";
+function hreflangLinks(path) {
+  let s = "";
+  for (const l of LOCALES) s += `\n    <xhtml:link rel="alternate" hreflang="${l}" href="${esc(SITE)}/${l}/${path}"/>`;
+  s += `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${esc(SITE)}/${XDEFAULT}/${path}"/>`;
+  return s;
+}
+
+function makeUrlSet(urls) {
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+  for (const u of urls) xml += u;
+  xml += "</urlset>\n";
+  return xml;
+}
+
+const outDir = new URL("../public/", import.meta.url).pathname.replace(/^\/([a-z]):\//i, "$1:/");
+
+// Sitemap 1: Tools
+let toolsXml = "";
+for (const t of tools) {
   for (const l of LOCALES) {
-    links += `<xhtml:link rel="alternate" hreflang="${l}" href="${esc(SITE)}${pathFn(l)}"/>`;
+    toolsXml += `  <url>\n    <loc>${esc(SITE)}/${l}/tools/${t.id}/</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.9</priority>\n    <changefreq>weekly</changefreq>${hreflangLinks(`tools/${t.id}/`)}\n  </url>\n`;
   }
-  links += `<xhtml:link rel="alternate" hreflang="x-default" href="${esc(SITE)}${pathFn(XDEFAULT)}"/>`;
-  return links;
 }
+writeFileSync(join(outDir, "sitemap-tools.xml"), makeUrlSet([toolsXml]));
+console.log(`sitemap-tools.xml: ${tools.length} tools`);
 
-const d = new Date();
-const tz = "+00:00";
-const pad = (n) => String(n).padStart(2, "0");
-const lm = `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}T${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:${pad(d.getUTCSeconds())}${tz}`;
-
-let xml = '<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
-
+// Sitemap 2: Blog posts
+let blogXml = "";
 for (const l of LOCALES) {
-  // Home
-  xml += `<url><loc>${esc(SITE)}/${l}</loc><lastmod>${lm}</lastmod><priority>1.0</priority><changefreq>weekly</changefreq>`;
-  xml += hreflangLinks((loc) => `/${loc}`);
-  xml += `</url>`;
-
-  // Category pages
-  for (const cat of ["text", "developer", "calculator", "reference", "media"]) {
-    const p = catPri[cat] || "0.8";
-    xml += `<url><loc>${esc(SITE)}/${l}/category/${cat}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>weekly</changefreq>`;
-    xml += hreflangLinks((loc) => `/${loc}/category/${cat}`);
-    xml += `</url>`;
-  }
-
-  // Topic landing pages
-  for (const tp of ["student-tools", "developer-tools", "image-tools", "seo-tools", "writing-tools"]) {
-    xml += `<url><loc>${esc(SITE)}/${l}/${tp}</loc><lastmod>${lm}</lastmod><priority>0.7</priority><changefreq>weekly</changefreq>`;
-    xml += hreflangLinks((loc) => `/${loc}/${tp}`);
-    xml += `</url>`;
-  }
-
-  // Tools
-  for (const t of tools) {
-    const p = catPri[t.category] || "0.8";
-    xml += `<url><loc>${esc(SITE)}/${l}/tools/${t.id}</loc><lastmod>${lm}</lastmod><priority>${p}</priority><changefreq>monthly</changefreq>`;
-    xml += hreflangLinks((loc) => `/${loc}/tools/${t.id}`);
-    xml += `</url>`;
-  }
-
-  // Blog
-  xml += `<url><loc>${esc(SITE)}/${l}/blog</loc><lastmod>${lm}</lastmod><priority>0.7</priority><changefreq>weekly</changefreq>`;
-  xml += hreflangLinks((loc) => `/${loc}/blog`);
-  xml += `</url>`;
-  const slugs = ["json-formatter-online-guide","base64-encoding-explained","strong-password-guide","url-encoding-for-beginners","calculate-loan-payments","bmi-calculator-what-it-means","color-converter-hex-rgb-hsl","markdown-preview-guide","hash-generator-checksum-guide","online-unit-converter-switch-metric-imperial"];
-  for (const s of slugs) {
-    xml += `<url><loc>${esc(SITE)}/${l}/blog/${s}</loc><lastmod>${lm}</lastmod><priority>0.6</priority><changefreq>monthly</changefreq>`;
-    xml += hreflangLinks((loc) => `/${loc}/blog/${s}`);
-    xml += `</url>`;
-  }
-
-  // Static pages
-  for (const pg of ["about", "privacy", "terms", "contact"]) {
-    xml += `<url><loc>${esc(SITE)}/${l}/${pg}</loc><lastmod>${lm}</lastmod><priority>0.3</priority><changefreq>monthly</changefreq>`;
-    xml += hreflangLinks((loc) => `/${loc}/${pg}`);
-    xml += `</url>`;
+  blogXml += `  <url>\n    <loc>${esc(SITE)}/${l}/blog/</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.8</priority>\n    <changefreq>weekly</changefreq>\n  </url>\n`;
+}
+for (const slug of blogSlugs) {
+  for (const l of LOCALES) {
+    blogXml += `  <url>\n    <loc>${esc(SITE)}/${l}/blog/${slug}/</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.8</priority>\n    <changefreq>weekly</changefreq>${hreflangLinks(`blog/${slug}/`)}\n  </url>\n`;
   }
 }
+writeFileSync(join(outDir, "sitemap-blog.xml"), makeUrlSet([blogXml]));
+console.log(`sitemap-blog.xml: ${blogSlugs.length} blog posts`);
 
-xml += `</urlset>`;
+// Sitemap 3: Pages (category, topic, static)
+let pagesXml = "";
+const categories = ["text", "developer", "calculator", "reference", "media"];
+for (const cat of categories) {
+  for (const l of LOCALES) {
+    pagesXml += `  <url>\n    <loc>${esc(SITE)}/${l}/category/${cat}/</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.7</priority>\n    <changefreq>weekly</changefreq>${hreflangLinks(`category/${cat}/`)}\n  </url>\n`;
+  }
+}
+const topics = ["student-tools", "developer-tools", "image-tools", "seo-tools", "writing-tools"];
+for (const topic of topics) {
+  for (const l of LOCALES) {
+    pagesXml += `  <url>\n    <loc>${esc(SITE)}/${l}/${topic}/</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.7</priority>\n    <changefreq>weekly</changefreq>${hreflangLinks(topic + "/")}\n  </url>\n`;
+  }
+}
+const staticPages = ["about", "privacy", "terms"];
+for (const page of staticPages) {
+  for (const l of LOCALES) {
+    pagesXml += `  <url>\n    <loc>${esc(SITE)}/${l}/${page}/</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.5</priority>\n    <changefreq>monthly</changefreq>${hreflangLinks(page + "/")}\n  </url>\n`;
+  }
+}
+writeFileSync(join(outDir, "sitemap-pages.xml"), makeUrlSet([pagesXml]));
+console.log(`sitemap-pages.xml: categories + topics + static`);
 
-const out = new URL("../public/sitemap.xml", import.meta.url).pathname.replace(/^\/([a-z]):\//i, "$1:/");
-writeFileSync(out, xml);
-console.log("Generated", out, `(${tools.length} tools, ${LOCALES.length} locales, with hreflang)`);
+// Sitemap Index
+let index = '<?xml version="1.0" encoding="UTF-8"?>\n';
+index += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+index += `  <sitemap><loc>${esc(SITE)}/sitemap-tools.xml</loc><lastmod>${today}</lastmod></sitemap>\n`;
+index += `  <sitemap><loc>${esc(SITE)}/sitemap-blog.xml</loc><lastmod>${today}</lastmod></sitemap>\n`;
+index += `  <sitemap><loc>${esc(SITE)}/sitemap-pages.xml</loc><lastmod>${today}</lastmod></sitemap>\n`;
+index += "</sitemapindex>\n";
+writeFileSync(join(outDir, "sitemap.xml"), index);
+console.log("sitemap.xml: index file");

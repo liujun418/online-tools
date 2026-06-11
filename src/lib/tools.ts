@@ -22,6 +22,8 @@ export interface Tool {
   seoDescriptionTranslations?: Record<string, string>;
   howToUseTranslations?: Record<string, string[]>;
   faqTranslations?: Record<string, FAQItem[]>;
+  sceneIntro?: string;
+  sceneIntroTranslations?: Record<string, string>;
 }
 
 export const tools: Tool[] = [
@@ -44,6 +46,7 @@ export const tools: Tool[] = [
       "character count with spaces", "word counter for essays"
 ,      "word counter for students", "best word counter 2026", "free essay word counter online"        ],
     relatedTools: ["lorem-ipsum", "text-repeater", "case-converter"],
+    sceneIntro: "You paste an essay into the input box. Three seconds later you know: 1,487 words. Thirteen short of the minimum. You add a sentence and submit. No opening Google Docs, no copy-pasting between apps — just paste and see your counts instantly.",
     howToUse: [
       "Paste or type your text into the input field above.",
       "View your word count, character count, sentence count, and paragraph count instantly.",
@@ -127,6 +130,7 @@ export const tools: Tool[] = [
       "text case changer free", "online case converter tool"
 ,      "case converter for students", "best case changer 2026", "free text case converter online"        ],
     relatedTools: ["text-to-slug", "text-repeater", "word-counter"],
+    sceneIntro: "Someone sent you an email IN ALL CAPS. You need it in normal case before replying. Or you wrote camelCase but the API wants snake_case. Instead of retyping everything, you paste and click one button.",
     howToUse: [
       "Paste or type your text into the input field above.",
       "Click the desired case button: UPPERCASE, lowercase, Title Case, or Sentence case.",
@@ -205,6 +209,7 @@ export const tools: Tool[] = [
       "lorem ipsum generator online", "mockup text generator"
 ,      "lorem ipsum for students", "best lorem ipsum generator 2026", "free dummy text generator online"        ],
     relatedTools: ["word-counter", "hashtag-generator", "text-to-slug"],
+    sceneIntro: "You are building a landing page layout but the copy is not ready yet. You need realistic text to fill the space so you can see the design. Generate paragraphs, sentences, or words — just enough to test the layout.",
     howToUse: [
       "Select the type of content you need: paragraphs, sentences, or words.",
       "Choose the number of units you want to generate.",
@@ -282,6 +287,7 @@ export const tools: Tool[] = [
       "online slug generator free", "slugify text online"
 ,      "slug generator for students", "best url slug generator 2026", "free slugifier online"        ],
     relatedTools: ["case-converter", "text-repeater", "fancy-text-generator"],
+    sceneIntro: "Your blog title is 'How to Build a REST API in Python (2026 Guide)'. You need the URL slug: 'how-to-build-a-rest-api-in-python-2026-guide'. This converts it instantly — lowercase, hyphens, no special characters.",
     howToUse: [
       "Enter your text, title, or heading in the input field.",
       "View the URL-friendly slug generated instantly below.",
@@ -359,6 +365,7 @@ export const tools: Tool[] = [
       "online text comparison", "text diff checker online"
 ,      "text diff for students", "best text comparison tool 2026", "free text diff checker online"        ],
     relatedTools: ["word-counter", "lorem-ipsum", "hashtag-generator"],
+    sceneIntro: "Your coworker edited the config file without telling you what they changed. You have the old version and the new version. Paste both and see every addition, deletion, and modification highlighted line by line.",
     howToUse: [
       "Paste your original text in the first input field.",
       "Paste the modified or second text in the second input field.",
@@ -436,6 +443,7 @@ export const tools: Tool[] = [
       "clean duplicate lines from list", "text deduplicator"
 ,      "deduplicate for students", "best duplicate remover 2026", "free remove duplicates online"        ],
     relatedTools: ["word-counter", "case-converter", "lorem-ipsum"],
+    sceneIntro: "You have a list of 5,000 email addresses and you need to know how many are unique. Or you are deduplicating log entries. Paste the list and the duplicates disappear. Sort, deduplicate, done.",
     howToUse: [
       "Paste your text with duplicate lines into the input field.",
       "Click 'Remove Duplicates' to process the text.",
@@ -511,6 +519,7 @@ export const tools: Tool[] = [
       "text repeater online free", "how to repeat text"
 ,      "text repeater for students", "best string repeater 2026", "free text repeat tool online"        ],
     relatedTools: ["case-converter", "text-to-slug", "word-counter"],
+    sceneIntro: "You need to generate 200 lines of test data for a load test. Or print a page of labels. Or fill a database column with placeholder text. Typing it manually is absurd. This does it in one click.",
     howToUse: [
       "Enter the text or string you want to repeat in the input field.",
       "Set the number of times you want it repeated.",
@@ -589,6 +598,7 @@ export const tools: Tool[] = [
       "how to format json", "free json formatter"
 ,      "json formatter for students", "best json formatter 2026", "free json validator online"        ],
     relatedTools: ["json-to-csv", "csv-to-json", "regex-tester"],
+    sceneIntro: "An API returned 3,000 characters of JSON on a single line. Somewhere in there is the field you need. Paste it here, and suddenly you have a collapsible tree view with indentation and line numbers. Also catches missing commas and trailing commas.",
     howToUse: [
       "Paste your raw or minified JSON data into the input field.",
       "Click 'Format' to beautify the JSON with proper indentation, or 'Minify' to compress it.",
@@ -668,6 +678,7 @@ export const tools: Tool[] = [
       "how to decode base64", "base64 text encoder"
 ,      "base64 for students", "best base64 converter 2026", "free base64 encoder online"        ],
     relatedTools: ["url-encoder", "html-entities", "image-to-base64"],
+    sceneIntro: "You are reading a JWT token and need to see what is inside the payload. Or you need to embed a tiny icon as a data URI. Base64 encode and decode in both directions — standard and URL-safe.",
     howToUse: [
       "Select 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to text.",
       "Paste your text or Base64 string into the input field.",
@@ -745,6 +756,7 @@ export const tools: Tool[] = [
       "free url encoder", "url encoder decoder online"
 ,      "url encoder for students", "best url encoder 2026", "free percent encoding tool online"        ],
     relatedTools: ["base64-converter", "html-entities", "csv-to-json"],
+    sceneIntro: "Your link has Chinese characters and spaces. Some browsers handle it. Many do not. Encode it to percent-format and it works everywhere. Also decodes: paste a percent-encoded URL to see the original.",
     howToUse: [
       "Select 'Encode' to convert a URL to percent-encoded format, or 'Decode' to decode it back.",
       "Paste your URL or encoded string into the input field.",
@@ -822,6 +834,7 @@ export const tools: Tool[] = [
       "free hash generator", "sha hash generator online"
 ,      "hash generator for students", "best sha generator 2026", "free hash calculator online"        ],
     relatedTools: ["md5-generator", "base64-converter", "regex-tester"],
+    sceneIntro: "You downloaded a 2GB ISO and the website shows a SHA-256 checksum. You need to verify the file was not corrupted or tampered with. Generate the hash of your download and compare it side by side with the published one.",
     howToUse: [
       "Enter the text you want to hash in the input field.",
       "View SHA-1, SHA-256, and SHA-512 hash digests generated instantly.",
@@ -898,6 +911,7 @@ export const tools: Tool[] = [
       "uuid v4 online", "universal unique identifier generator"
 ,      "uuid generator for students", "best uuid generator 2026", "free guid generator online"        ],
     relatedTools: ["password-generator", "random-name-generator", "qr-code-generator"],
+    sceneIntro: "You need a unique ID. Not a sequential number someone can guess — a proper random identifier. One click gives you a v4 UUID. Click again for another. Use it for database keys, file names, or request tracking.",
     howToUse: [
       "Click 'Generate' to create a random UUID v4 identifier.",
       "Set the number of UUIDs to generate multiple at once.",
@@ -975,6 +989,7 @@ export const tools: Tool[] = [
       "generate regex code", "online regex replace tool"
 ,      "regex tester for students", "best regex tester 2026", "free regex code generator online"        ],
     relatedTools: ["password-generator", "hash-generator", "base64-converter"],
+    sceneIntro: "You wrote a regex and it works on your machine. But will it match the edge cases? Paste your pattern and test text. Matches highlight in real time. See groups, positions, and what your regex actually captures.",
     howToUse: [
       "Enter your regular expression pattern in the pattern field (between the slashes).",
       "Set regex flags (g=global, i=case-insensitive, m=multiline, s=dotAll, u=unicode).",
@@ -1065,6 +1080,7 @@ export const tools: Tool[] = [
       "markdown live editor"
 ,      "markdown preview for students", "best markdown editor 2026", "free md to html converter online"        ],
     relatedTools: ["text-to-slug", "case-converter", "text-repeater"],
+    sceneIntro: "You are writing a README and want to see it rendered before pushing to GitHub. Write Markdown on the left, see the formatted output on the right. Catch broken tables, missing heading spaces, and unclosed code blocks before anyone sees them.",
     howToUse: [
       "Start typing Markdown in the left editor panel.",
       "View the rendered HTML preview update in real-time on the right.",
@@ -1142,6 +1158,7 @@ export const tools: Tool[] = [
       "minify css free", "css compression tool"
 ,      "css minifier for students", "best css compressor 2026", "free css optimizer online"        ],
     relatedTools: ["base64-converter", "url-encoder", "regex-tester"],
+    sceneIntro: "Your CSS file is 50KB of whitespace and comments. Before deploying to production, strip everything unnecessary. Paste formatted CSS, get a single compressed line. Smaller file, faster load time.",
     howToUse: [
       "Paste your CSS code into the input field.",
       "Click 'Minify' to compress the CSS by removing whitespace, comments, and unnecessary characters.",
@@ -1219,6 +1236,7 @@ export const tools: Tool[] = [
       "epoch time converter online", "timestamp converter free"
 ,      "unix timestamp for students", "best epoch converter 2026", "free timestamp converter online"        ],
     relatedTools: ["json-to-csv", "csv-to-json", "base64-converter"],
+    sceneIntro: "An API timestamp is '1715299200' and you need to know what date that is. Or you need the current Unix timestamp for an API call. Convert between human-readable dates and epoch seconds in both directions.",
     howToUse: [
       "View the current Unix timestamp displayed at the top of the page.",
       "Enter a Unix timestamp to convert it to a human-readable date and time.",
@@ -1294,6 +1312,7 @@ export const tools: Tool[] = [
       "random password generator with symbols", "long password generator"
 ,      "password generator for students", "best password generator 2026", "free secure password creator online"        ],
     relatedTools: ["regex-tester", "random-name-generator", "qr-code-generator"],
+    sceneIntro: "Your dog's name plus 123 is not a strong password. Neither is anything you can think of yourself — humans are terrible at randomness. Generate a truly random password with the length and character types you need.",
     howToUse: [
       "Choose your desired password length (8-128 characters recommended).",
       "Select which character types to include: uppercase, lowercase, numbers, and symbols.",
@@ -1423,6 +1442,7 @@ export const tools: Tool[] = [
         { question: "كيف تتعامل حاسبة العمر مع السنوات الكبيسة؟", answer: "تتعامل حاسبة العمر بدقة مع السنوات الكبيسة باستخدام خوارزمية فرق التواريخ الدقيقة. تراعي أطوال الأشهر المتفاوتة والسنوات الكبيسة لتعطيك العمر الدقيق بالسنوات والأشهر والأيام." },
       ],
     },
+    sceneIntro: "How old is someone born on March 15, 1982? Enter any birth date and get the exact age in years, months, and days. Also shows the next birthday countdown and the day of the week they were born.",
     howToUse: [
       "Enter your date of birth using the date picker or type it manually (YYYY-MM-DD format).",
       "Click 'Calculate' or press Enter to see your results instantly.",
@@ -1501,6 +1521,7 @@ export const tools: Tool[] = [
         { question: "كيف أحسب الزيادة أو النقصان النسبي؟", answer: "لحساب التغير النسبي: اطرح القيمة القديمة من الجديدة، اقسم على القيمة القديمة، ثم اضرب في 100. حاسبة النسبة المئوية تفعل ذلك تلقائياً -- فقط أدخل قيمتيك." },
       ],
     },
+    sceneIntro: "What is 15% of $87.50? What percentage is 45 of 200? That restaurant bill with tax and tip — what is the total? The percentage calculator answers these in one input.",
     howToUse: [
       "Choose the type of percentage calculation you need: percentage of a number, percentage change, or what percentage one number is of another.",
       "Enter your values in the appropriate input fields.",
@@ -1641,6 +1662,7 @@ export const tools: Tool[] = [
         { question: "ما الوحدات التي يدعمها هذا المحول؟", answer: "يدعم محول الوحدات لدينا الطول (كم، ميل، م، قدم، سم، بوصة)، الوزن (كجم، رطل، جم، أونصة)، الحرارة (س، ف، ك)، الحجم (لتر، جالون، مل، أونصة سائلة) والسرعة (كم/ساعة، ميل/ساعة، م/ث، عقدة)." },
       ],
     },
+    sceneIntro: "You want a quick health snapshot. Enter your height and weight. The calculator tells you your BMI and which category you fall into. It is one data point — not a diagnosis — but a useful starting point.",
     howToUse: [
       "Select the unit category you want to convert (length, weight, temperature, volume, or speed).",
       "Choose the input and output units from the dropdown menus.",
@@ -1718,6 +1740,7 @@ export const tools: Tool[] = [
         { question: "ما الأنظمة العددية التي يدعمها هذا المحول؟", answer: "يدعم محولنا النظام الثنائي (الأساس 2) والثماني (الأساس 8) والعشري (الأساس 10) والست عشري (الأساس 16). أدخل رقماً بأي نظام وشاهد المكافئ في جميع الأنظمة الأخرى فوراً." },
       ],
     },
+    sceneIntro: "You are reading a hex dump and need to convert to decimal. Or working with binary data and need octal. Base converter handles binary, octal, decimal, and hex — plus custom bases from 2 to 36.",
     howToUse: [
       "Select the input number base (binary, octal, decimal, or hexadecimal).",
       "Enter your number in the input field.",
@@ -1795,6 +1818,7 @@ export const tools: Tool[] = [
         { question: "ما أكبر رقم روماني يمكن لهذه الأداة تحويله؟", answer: "يُعامِل محول الأرقام الرومانية لدينا الأرقام من 1 إلى 3,999 (MMMCMXCIX)، وهو يغطي النطاق القياسي للأرقام الرومانية. للأرقام الأكبر، تصبح كتابة الأرقام الرومانية غير قياسية." },
       ],
     },
+    sceneIntro: "What year is MMXXVI? Or you need to write 2026 in Roman numerals for a tattoo or a clock face. Convert between Arabic numbers and Roman numerals in both directions.",
     howToUse: [
       "Enter a Roman numeral (like XIV) to convert it to an Arabic number.",
       "Or enter an Arabic number (like 2024) to convert it to Roman numerals.",
@@ -1873,6 +1897,7 @@ export const tools: Tool[] = [
         { question: "ما صيغ الألوان التي يدعمها هذا المحول؟", answer: "يدعم محول الألوان لدينا HEX (#RRGGBB) و RGB (rgb(r, g, b)) و HSL (hsl(h, s%, l%)) والألوان المسماة. أدخل أي قيمة واحصل على تحويلات فورية لجميع الصيغ الأخرى." },
       ],
     },
+    sceneIntro: "Figma gives you HEX. Your CSS needs RGB for a box-shadow with transparency. Your designer wants HSL to tweak saturation. See all three formats at once with a live preview picker.",
     howToUse: [
       "Enter a color value in any format: HEX (#FF5733), RGB (rgb(255,87,51)), or HSL (hsl(11,100%,60%)).",
       "View the converted values in all formats displayed side by side.",
@@ -1950,6 +1975,7 @@ export const tools: Tool[] = [
         { question: "لماذا أحتاج لتشفير كيانات HTML؟", answer: "يحول تشفير كيانات HTML الأحرف الخاصة مثل الزوايا وعلامة العطف إلى بدائل آمنة لمنع تفسيرها كوسوم HTML. هذا أساسي للأمان وعرض الكود على صفحات الويب." },
       ],
     },
+    sceneIntro: "You are writing a code tutorial and need to display <div> as text without the browser rendering it. Encode the angle brackets into HTML entities. Going the other way? Decode <code>&amp;lt;</code> back to <.",
     howToUse: [
       "Paste your text with special characters or HTML entities into the input field.",
       "Click 'Encode' to convert special characters to HTML entities.",
@@ -2026,6 +2052,7 @@ export const tools: Tool[] = [
         { question: "هل تتعامل هذه الأداة مع كائنات JSON المتداخلة؟", answer: "يُسطّح محول JSON إلى CSV لدينا الكائنات المتداخلة باستخدام ترقيم النقاط (مثلاً user.name). المصفوفات داخل الكائنات تُحوّل إلى سلاسل مفصولة بفواصل. كل كائن من المستوى الأعلى يصبح صفاً في CSV." },
       ],
     },
+    sceneIntro: "An API returned a JSON array and you need to open it in Excel. Paste the JSON, get a CSV. Nested objects are flattened with dot notation. The reverse of CSV to JSON.",
     howToUse: [
       "Paste your JSON array data into the input field.",
       "Click 'Convert' to transform the JSON into CSV format.",
@@ -2102,6 +2129,7 @@ export const tools: Tool[] = [
         { question: "ما صيغة CSV التي يتوقعها هذا المحول؟", answer: "يتوقع المحول صيغة CSV قياسية مع صف عناوين كسطر أول. الحقول التي تحتوي على فواصل يجب أن تكون بين علامتي تنصيص مزدوجتين. يتعامل مع الفواصل الشائعة ويكتشف الصيغة تلقائياً." },
       ],
     },
+    sceneIntro: "Someone sent you a CSV with 5,000 rows and asked for it in JSON. You could write a Python script. Or you could paste it here and be done in 5 seconds. Auto-detects data types so numbers stay numbers.",
     howToUse: [
       "Paste your CSV data into the input field (with or without headers).",
       "Click 'Convert' to transform the CSV into JSON format.",
@@ -2177,6 +2205,7 @@ export const tools: Tool[] = [
         { question: "كيف يؤثر Base64 على حجم الملف؟", answer: "يزيد تشفير Base64 حجم الملف بنحو 33% مقارنة بالثنائي الأصلي. هذه المقايضة عادة ما تستحق ذلك للصور الصغيرة لأنها تلغي طلب HTTP منفصل." }
       ],
     },
+    sceneIntro: "You need a tiny icon embedded directly in your HTML — no separate file, no extra HTTP request. Drop your image and get a Base64 data URI string ready to paste into an img tag or CSS background.",
     howToUse: [
       "Upload an image file (PNG, JPG, GIF, SVG, WebP) or drag and drop it into the upload area.",
       "View the Base64 encoded string generated instantly.",
@@ -2254,6 +2283,7 @@ export const tools: Tool[] = [
         { question: "هل تتضمن هذه الحاسبة معدلات الفائدة؟", answer: "نعم، تحسب حاسبة القروض لدينا الدفعات الشهرية بناءً على مبلغ القرض ومعدل الفائدة ومدة القرض. تُظهر إجمالي مبلغ الدفع وإجمالي الفائدة المدفوعة خلال عمر القرض." },
       ],
     },
+    sceneIntro: "The dealer gave you a monthly payment that sounds reasonable. But what is the actual cost? Enter the loan amount, rate, and term to see monthly payment, total interest, and an amortization schedule breaking down every payment.",
     howToUse: [
       "Enter the loan amount (principal) you want to borrow.",
       "Enter the annual interest rate and loan term in years.",
@@ -2331,6 +2361,7 @@ export const tools: Tool[] = [
         { question: "ما العوامل التي تراعيها حاسبة الرهن العقاري؟", answer: "تراعي حاسبة الرهن العقاري لدينا سعر المنزل والدفعة الأولى ومدة القرض ومعدل الفائدة لتقدير دفعتك الشهرية. تُظهر أيضاً إجمالي الفائدة المدفوعة وتقسيم السداد." },
       ],
     },
+    sceneIntro: "You are house shopping and want to know the real monthly cost — not just principal and interest, but property tax and insurance too. This calculator shows the full picture so you are not surprised by the actual payment.",
     howToUse: [
       "Enter the home price and your down payment amount or percentage.",
       "Enter the interest rate and loan term (typically 15 or 30 years).",
@@ -2408,6 +2439,7 @@ export const tools: Tool[] = [
         { question: "كيف تُحسب الاحتياجات اليومية من السعرات؟", answer: "تستخدم حاسبة السعرات لدينا معادلة Mifflin-St Jeor التي تراعي عمرك وجنسك ووزنك وطولك ومستوى نشاطك لتقدير إجمالي إنفاقك اليومي من الطاقة (TDEE)." },
       ],
     },
+    sceneIntro: "You are tracking what you eat and want to know how many calories are in today's meals. Pick foods from the list, set portions, and see the total. Useful for meal planning and nutritional awareness.",
     howToUse: [
       "Enter your age, gender, weight, and height.",
       "Select your activity level from sedentary to very active.",
@@ -2485,6 +2517,7 @@ export const tools: Tool[] = [
         { question: "كيف يُحسب ROI؟", answer: "يُحسب ROI (العائد على الاستثمار) كالتالي: ((العائد من الاستثمار - تكلفة الاستثمار) / تكلفة الاستثمار) × 100. ROI الإيجابي يعني ربحاً، بينما ROI السلبي يشير إلى خسارة." },
       ],
     },
+    sceneIntro: "You invested $2,000 in a project and it returned $3,500. What was your ROI? 75%. Enter any investment and return to see the percentage gain or loss instantly.",
     howToUse: [
       "Enter your initial investment amount (cost).",
       "Enter the final value or return amount.",
@@ -2562,6 +2595,7 @@ export const tools: Tool[] = [
         { question: "ما هي الفائدة المركبة ولماذا هي مهمة؟", answer: "الفائدة المركبة هي الفائدة المحتسبة على كل من رأس المال الأولي والفائدة المتراكمة من الفترات السابقة. لها تأثير قوي على تنمية الثروة مع مرور الوقت بسبب النمو الأسي." },
       ],
     },
+    sceneIntro: "You put $5,000 in an account earning 4% interest. What will it be worth in 10 years if you add $200 a month? This calculator shows how compound interest turns small regular investments into real money over time.",
     howToUse: [
       "Enter your initial principal (starting investment amount).",
       "Enter the annual interest rate and investment duration in years.",
@@ -2639,6 +2673,7 @@ export const tools: Tool[] = [
         { question: "هل تُظهر هذه الحاسبة صافي الراتب؟", answer: "نعم، تُقدّر حاسبة ضريبة الدخل لدينا صافي راتبك بعد الضرائب. أدخل إجمالي راتبك وستحسب صافي راتبك المقدر بناءً على معدلات الضرائب القياسية." },
       ],
     },
+    sceneIntro: "Your salary is $75,000. How much goes to federal income tax? Enter your gross income and filing status. The calculator applies US tax brackets and the standard deduction to estimate your tax.",
     howToUse: [
       "Enter your gross annual salary or hourly wage.",
       "Select your filing status and state.",
@@ -2670,6 +2705,7 @@ export const tools: Tool[] = [
       "bill splitter with tip", "tip calculator online"
 ,      "tip calculator for students", "best tip calculator 2026", "free bill splitter online"        ],
     relatedTools: ["discount-calculator", "percentage-calculator", "loan-calculator"],
+    sceneIntro: "The bill arrived. $73.40 for dinner. How much do you tip? 15%? 20%? Split between 3 people? Enter the amount, pick a percentage, choose the number of people, and everyone knows what they owe.",
     howToUse: [
       "Enter the total bill amount.",
       "Select your desired tip percentage (15%, 18%, 20%, or custom).",
@@ -2701,6 +2737,7 @@ export const tools: Tool[] = [
       "calculate percentage off"
 ,      "discount calculator for students", "best sale price calculator 2026", "free savings calculator online"        ],
     relatedTools: ["income-tax-calculator", "tip-calculator", "compound-interest"],
+    sceneIntro: "That jacket is 40% off, marked down from $85. What is the final price? And with 8% sales tax? Enter the original price, discount, and tax rate to see exactly what you will pay.",
     howToUse: [
       "Enter the original price of the item.",
       "Enter the discount percentage or the discount amount.",
@@ -2732,6 +2769,7 @@ export const tools: Tool[] = [
       "pregnancy timeline calculator"
 ,      "pregnancy calculator for students", "best due date calculator 2026", "free baby due date estimator online"        ],
     relatedTools: ["mortgage-calculator", "calorie-calculator", "compound-interest"],
+    sceneIntro: "Expecting? Enter the first day of your last period to estimate your due date. See which trimester you are in and get week-by-week development milestones.",
     howToUse: [
       "Enter the first day of your last menstrual period (LMP).",
       "Click 'Calculate' to see your estimated due date.",
@@ -2807,6 +2845,7 @@ export const tools: Tool[] = [
       "random number generator online free", "pick a random number"
 ,      "random number generator for students", "best rng tool 2026", "free random number picker online"        ],
     relatedTools: ["roman-numerals", "percentage-calculator", "base-converter"],
+    sceneIntro: "Need a random number between 1 and 100? Or 100 numbers for a raffle? Pick your range, set the count, and generate. Uses cryptographically random values when available.",
     howToUse: [
       "Set the minimum and maximum range for your random numbers.",
       "Choose how many numbers you want to generate.",
@@ -2883,6 +2922,7 @@ export const tools: Tool[] = [
       "free zodiac sign finder", "what star sign am i"
 ,      "zodiac sign for students", "best star sign calculator 2026", "free what is my zodiac sign tool"        ],
     relatedTools: ["color-converter", "age-calculator", "ip-lookup"],
+    sceneIntro: "Born on August 12? You are a Leo. Enter any date to find the zodiac sign. Also shows the element, ruling planet, and personality traits associated with that sign.",
     howToUse: [
       "Enter your birth date using the date picker.",
       "View your zodiac sign with its symbol and date range.",
@@ -2960,6 +3000,7 @@ export const tools: Tool[] = [
       "name generator tool", "random person name generator"
 ,      "random name generator for students", "best name generator 2026", "free character name generator online"        ],
     relatedTools: ["password-generator", "uuid-generator", "regex-tester"],
+    sceneIntro: "Need a character name for your novel? Or a placeholder username for testing? Generate random first and last names. Pick gender, set the count, and get a list.",
     howToUse: [
       "Choose the gender: male, female, or both.",
       "Set the number of names you want to generate.",
@@ -3036,6 +3077,7 @@ export const tools: Tool[] = [
       "free fancy text generator", "instagram bio font generator"
 ,      "fancy text for students", "best fancy text generator 2026", "free instagram bio font generator online"        ],
     relatedTools: ["text-to-slug", "case-converter", "lorem-ipsum"],
+    sceneIntro: "You want your bio to stand out with 𝓯𝓪𝓷𝓬𝔂 text or 𝔻𝕠𝕦𝕓𝕝𝕖 𝕤𝕥𝕣𝕦𝕔𝕜 letters. Type normal text and see it in multiple decorative Unicode styles. Copy and paste anywhere.",
     howToUse: [
       "Enter your text in the input field.",
       "View your text converted to multiple fancy Unicode font styles.",
@@ -3113,6 +3155,7 @@ export const tools: Tool[] = [
       "hashtag generator online"
 ,      "hashtag generator for students", "best hashtag generator 2026", "free instagram hashtags tool online"        ],
     relatedTools: ["lorem-ipsum", "text-diff", "fancy-text-generator"],
+    sceneIntro: "You posted a photo and need the right hashtags to reach your audience. Enter a keyword or topic, and get a list of relevant, popular hashtags for Instagram, Twitter, or TikTok.",
     howToUse: [
       "Enter your topic, keyword, or describe your content.",
       "View a list of relevant and trending hashtags generated for your topic.",
@@ -3188,6 +3231,7 @@ export const tools: Tool[] = [
       "youtube thumbnail checker", "youtube thumbnail tool"
 ,      "youtube thumbnail for students", "best youtube thumbnail tool 2026", "free youtube thumbnail specs online"        ],
     relatedTools: ["password-generator", "regex-tester", "base64-converter"],
+    sceneIntro: "You need a thumbnail from a YouTube video for a reference, a presentation, or a blog post. Paste the video URL and get the thumbnail in multiple resolutions. Download the one you need.",
     howToUse: [
       "Review the recommended YouTube thumbnail dimensions and specifications.",
       "Use the preview tool to see how your thumbnail will look on different devices.",
@@ -3263,6 +3307,7 @@ export const tools: Tool[] = [
       "historical events calendar"
 ,      "perpetual calendar for students", "best perpetual calendar 2026", "free calendar lookup tool online"        ],
     relatedTools: ["age-calculator", "percentage-calculator", "roman-numerals"],
+    sceneIntro: "What day of the week was July 15, 1982? Or what date is the third Friday of September 2027? Pick any month from any year (1-9999) and see the full calendar instantly.",
     howToUse: [
       "Navigate to any year and month using the calendar controls.",
       "Click any date to see detailed information including day of week and week number.",
@@ -3339,6 +3384,7 @@ export const tools: Tool[] = [
       "md5 hash tool", "online md5 calculator"
 ,      "md5 generator for students", "best md5 hash generator 2026", "free md5 checksum calculator online"        ],
     relatedTools: ["hash-generator", "base64-converter", "qr-code-generator"],
+    sceneIntro: "You need a quick, lightweight hash for cache invalidation or duplicate detection. MD5 is not for passwords or security, but it is fast and reliable for data integrity checks. Generate a 32-character hex string instantly.",
     howToUse: [
       "Enter the text you want to generate an MD5 hash for.",
       "View the MD5 hash digest generated instantly.",
@@ -3413,6 +3459,7 @@ export const tools: Tool[] = [
       "qr code creator", "download qr code"
 ,      "qr code generator for students", "best qr code maker 2026", "free qr code creator online"        ],
     relatedTools: ["hash-generator", "password-generator", "md5-generator"],
+    sceneIntro: "You want guests to connect to your WiFi without asking for the password. Or share your contact info at a networking event without typing. A QR code encodes text, URLs, or WiFi credentials into a scannable square. Print it, share it, done.",
     howToUse: [
       "Select the type of content: URL, text, email, phone number, or WiFi.",
       "Enter your content in the appropriate fields.",
@@ -3487,6 +3534,7 @@ export const tools: Tool[] = [
       "wisdom quotes", "motivational sayings", "famous quotes by category"
 ,      "quotes for students", "best quotes directory 2026", "free motivational quotes online"        ],
     relatedTools: ["book-of-answers", "life-hacks", "random-quote"],
+    sceneIntro: "You need a quote for a speech, a presentation, or a social media post. Browse 500+ famous quotes organized by theme — courage, wisdom, love, success. Search by author, keyword, or category.",
     howToUse: [
       "Browse quotes organized by category: courage, wisdom, love, success, and more.",
       "Use the search bar to find quotes by person name, quote text, or keyword.",
@@ -3566,6 +3614,7 @@ export const tools: Tool[] = [
       "fun decision tool", "random yes or no generator"
 ,      "book of answers for students", "best book of answers 2026", "free random answer generator online"        ],
     relatedTools: ["coin-flip", "food-picker", "quotes"],
+    sceneIntro: "You have a question and want a different perspective. Concentrate on your question, click to open the book, and read a random thoughtful response from 500+ curated answers. Not a yes/no oracle — a thinking tool.",
     howToUse: [
       "Think of a question you'd like guidance on — it can be about anything.",
       "Close your eyes and hold the question in mind for 3–5 seconds.",
@@ -3645,6 +3694,7 @@ export const tools: Tool[] = [
       "test my reflexes", "reaction time challenge", "free reflex test",
     ],
     relatedTools: ["scoreboard", "coin-flip", "lateral-thinking"],
+    sceneIntro: "How fast are your reflexes? Click when the color changes and see your time in milliseconds. Compare with friends or track your improvement over time.",
     howToUse: [
       "Choose a mode: Static Flash (center target) or Random Position (moving target).",
       "Click the game area or press Space/Enter to start a round.",
@@ -3731,6 +3781,7 @@ export const tools: Tool[] = [
       "ai tools for students", "best free ai tools 2026"
 ,      "ai tools for students", "best ai tools directory 2026", "free ai tools list online"        ],
     relatedTools: ["color-converter", "zodiac-sign", "global-weather"],
+    sceneIntro: "You heard about AI tools but do not know where to start. This page curates free and paid AI-powered tools for image editing, content creation, and more — all organized by category.",
     howToUse: [
       "Browse AI tools organized by category: writing, images, video, coding, audio, and productivity.",
       "Click any tool to see its details, features, and direct link.",
@@ -3807,6 +3858,7 @@ export const tools: Tool[] = [
       "organization hacks", "quick fixes", "home maintenance tips"
     ],
     relatedTools: ["quotes", "book-of-answers", "food-picker"],
+    sceneIntro: "You want to clean your microwave without scrubbing. Or remove a stain from a shirt. Or organize a messy drawer. Browse 100 practical tips across cleaning, kitchen, storage, laundry, and home maintenance.",
     howToUse: [
       "Browse tips organized by category using the tab navigation.",
       "Use the search bar to find tips for a specific problem or topic.",
@@ -3887,6 +3939,7 @@ export const tools: Tool[] = [
       "logic puzzle online", "mind game free",
     ],
     relatedTools: ["reaction-test", "scoreboard", "book-of-answers"],
+    sceneIntro: "You love mystery puzzles. Read a scenario that seems impossible. Make guesses, get hints, and eventually reveal the surprising truth. Each puzzle is AI-generated so you get fresh scenarios every time.",
     howToUse: [
       "Select a category — Classic Mystery, Horror Dark, or Brain Hole Fun — to start.",
       "A mystery scenario will be randomly generated for you to solve.",
@@ -3981,6 +4034,7 @@ export const tools: Tool[] = [
       "bing background", "wallpaper of the day",
     ],
     relatedTools: ["nasa-apod", "gif-search", "pet-wallpaper"],
+    sceneIntro: "That beautiful Bing homepage image today — you want it as your desktop wallpaper. Browse recent daily wallpapers, see the story behind each image, and download in full resolution.",
     howToUse: [
       "Browse the daily Bing wallpaper displayed in the main card.",
       "Switch between 4K UHD, 1920×1080 Full HD, and Mobile Portrait resolutions.",
@@ -4074,6 +4128,7 @@ export const tools: Tool[] = [
       "astronomy photo", "galaxy wallpaper", "nebula image",
     ],
     relatedTools: ["bing-wallpaper", "pet-wallpaper", "food-picker"],
+    sceneIntro: "Every day NASA publishes one stunning astronomy image with an astronomer's explanation. See today's picture, browse the archive, and read the science behind each image.",
     howToUse: [
       "View today's NASA Astronomy Picture of the Day in the main card.",
       "Click Previous/Next to browse daily astronomy photos by date.",
@@ -4144,6 +4199,7 @@ export const tools: Tool[] = [
     seoDescription: "Track real-time crypto prices: Bitcoin, Ethereum, Solana, and more. Live USD prices with 24h change indicators. Auto-refresh every 30 seconds. Powered by CoinGecko.",
     seoKeywords: ["crypto price", "bitcoin price", "ethereum price", "crypto tracker", "btc usd", "live crypto prices", "cryptocurrency tracker"],
     relatedTools: ["global-weather", "world-map", "ip-lookup"],
+    sceneIntro: "What is Bitcoin trading at right now? Track live cryptocurrency prices including BTC, ETH, SOL, and more. See USD price, 24-hour change, and market cap. Powered by CoinGecko.",
     howToUse: ["View real-time prices for 8 major cryptocurrencies.", "Prices auto-refresh every 30 seconds.", "Green ▲ indicates price increase, Red ▼ indicates decrease.", "Click Refresh to manually update all prices."],
     faq: [
       { question: "Where does the price data come from?", answer: "All price data is from the CoinGecko API, a leading cryptocurrency data aggregator tracking thousands of coins across hundreds of exchanges." },
@@ -4172,6 +4228,7 @@ export const tools: Tool[] = [
     seoDescription: "Explore any city worldwide on an interactive map. Search locations, zoom & pan, get coordinates. Powered by OpenStreetMap & Leaflet. Free, no signup.",
     seoKeywords: ["world map", "interactive map", "city search", "map explorer", "openstreetmap", "leaflet map", "free map tool"],
     relatedTools: ["global-weather", "ip-lookup", "zodiac-sign"],
+    sceneIntro: "You want to look up a location or explore geography. An interactive world map with zoom and pan. Search for cities, countries, or landmarks and see them on the map.",
     howToUse: ["Type a city or place name in the search box to find it on the map.", "Click a search result to zoom directly to that location.", "Use mouse scroll to zoom and drag to pan the map.", "Click 'My Location' to center the map on your current position."],
     faq: [
       { question: "What map data is used?", answer: "Map tiles are from OpenStreetMap, a collaborative project to create a free editable map of the world. The map library is Leaflet, an open-source JavaScript library." },
@@ -4199,6 +4256,7 @@ export const tools: Tool[] = [
     seoDescription: "Instantly find your IP address, country, city, ISP, timezone, and GPS coordinates. Free IP geolocation lookup powered by ipapi.co. No signup required.",
     seoKeywords: ["ip lookup", "what is my ip", "ip geolocation", "ip address lookup", "geo ip", "ip location", "my ip address"],
     relatedTools: ["zodiac-sign", "world-map", "global-weather"],
+    sceneIntro: "You got a security alert about a login from an unfamiliar IP address. Is it a VPN server? A different country? Or your neighbor? Look up the IP to see approximate location, ISP, and connection type.",
     howToUse: ["Open the page — your IP information is fetched automatically.", "View your IP, country, city, region, ISP, timezone, and coordinates.", "Click 'Copy All Info' to copy everything to clipboard.", "Click 'Refresh' to reload your IP data."],
     faq: [
       { question: "What is IP geolocation?", answer: "IP geolocation maps your IP address to a physical location — country, city, region, and approximate coordinates. It helps identify where an internet connection originates." },
@@ -4226,6 +4284,7 @@ export const tools: Tool[] = [
     seoDescription: "Random cute cat, dog and fox photos. One-click refresh, fullscreen preview, and free download. No signup required.",
     seoKeywords: ["pet wallpaper", "cute cat", "dog photo", "fox image", "random pet", "animal wallpaper", "cute animal"],
     relatedTools: ["bing-wallpaper", "random-quote", "gif-search"],
+    sceneIntro: "You want a cute animal photo as your wallpaper. Browse high-quality pet images. Pick your favorite, download, and set as your background.",
     howToUse: ["Click Cat, Dog, or Fox tab to load a random photo.", "Click Refresh for a new random image.", "Click Fullscreen to view the image in full screen mode.", "Click Download to save the image."],
     faq: [
       { question: "Where do the images come from?", answer: "Cat images from Cataas/thecatapi.com, dog images from Dog CEO API, fox images from randomfox.ca. All are free public APIs." },
@@ -4252,6 +4311,7 @@ export const tools: Tool[] = [
     seoDescription: "Get random inspirational quotes from famous authors. One-click refresh, copy to clipboard, multiple color themes. Free online quote generator — no signup required.",
     seoKeywords: ["random quote", "inspirational quote", "famous quote", "quote generator", "motivational quote", "daily quote", "wisdom quote"],
     relatedTools: ["quotes", "gif-search", "bing-wallpaper"],
+    sceneIntro: "One click, one quote. For daily inspiration without scrolling through categories. Each click pulls a random quote from the collection. Simple and fast.",
     howToUse: ["Click 'New Quote' to load a random inspirational quote.", "Click 'Copy Quote' to copy the quote and author to clipboard.", "Click the palette icon to cycle through light, sepia, and dark themes."],
     faq: [
       { question: "Where do the quotes come from?", answer: "Quotes are from the ZenQuotes API, which curates thousands of inspirational quotes from famous authors, philosophers, and historical figures." },
@@ -4274,6 +4334,7 @@ export const tools: Tool[] = [
     seoDescription: "Check real-time weather & 7-day forecast for any city worldwide. Temperature, feels like, wind, humidity, precipitation. Auto-detect your location. Powered by Open-Meteo. Free, no signup.",
     seoKeywords: ["global weather", "weather forecast", "world weather", "7 day forecast", "live temperature", "local weather", "free weather checker", "weather by city", "international weather", "weather today", "hourly weather", "weather app online"],
     relatedTools: ["world-map", "crypto-price", "color-converter"],
+    sceneIntro: "You are traveling next week and want to know what the weather will be like. Search any city worldwide. See current conditions, temperature, humidity, wind speed, and a 7-day forecast.",
     howToUse: [
       "Allow location access when prompted to see your local weather automatically.",
       "Or type any city name in the search box and press Enter to get weather for that location.",
@@ -4346,6 +4407,7 @@ export const tools: Tool[] = [
     seoDescription: "Search and download millions of animated GIFs powered by GIPHY. Browse trending GIFs, search by keyword, one-click download, copy share link. Free online GIF finder — no signup required.",
     seoKeywords: ["gif search", "animated gif", "gif download", "trending gif", "free gif", "giphy search", "gif finder", "funny gif", "reaction gif", "meme gif", "download gif", "gif online"],
     relatedTools: ["bing-wallpaper", "reaction-test", "random-quote"],
+    sceneIntro: "You need a reaction GIF for a Slack message. Search millions of trending GIFs from GIPHY. Keyword search, grid preview, one-click download or copy link.",
     howToUse: [
       "Browse trending GIFs on the default homepage or type a keyword to search.",
       "Click 'Load More' to see additional GIFs for the current search.",
@@ -4422,6 +4484,7 @@ export const tools: Tool[] = [
       "spin the wheel food", "lunch generator", "dinner spinner",
     ],
     relatedTools: ["book-of-answers", "scoreboard", "coin-flip"],
+    sceneIntro: "Can not decide what to eat? Pick a category, spin the card, and the food picker chooses for you. Block foods you do not like so they do not appear again. Includes 60+ Western meals.",
     howToUse: [
       "Choose a food category or leave it on 'All' to browse every option.",
       "Click the big 'Pick My Meal!' button to start the spinning animation.",
@@ -4504,6 +4567,7 @@ export const tools: Tool[] = [
       "morse code generator", "morse code player",
     ],
     relatedTools: ["base64-converter", "regex-tester", "hash-generator"],
+    sceneIntro: "What does SOS sound like? Or you want to write a message in Morse code. Convert text to dots and dashes and back. Also plays the audio so you can hear the pattern.",
     howToUse: [
       "Type your message in the Text box — Morse code appears instantly below.",
       "Or paste Morse code (dots and dashes) in the Morse box to decode back to text.",
@@ -4591,6 +4655,7 @@ export const tools: Tool[] = [
       "online score keeper", "tournament scoreboard", "match timer", "countdown timer",
     ],
     relatedTools: ["reaction-test", "coin-flip", "lateral-thinking"],
+    sceneIntro: "Game night. Everyone needs to see the score. Open this on the TV or a tablet. Tap to add or subtract points. Large numbers visible across the room. No paper scorecard to lose.",
     howToUse: [
       "Tap team names to customize them for your teams or players.",
       "Use the +1, +5, +10 buttons to quickly add points, or -1, -5, -10 to subtract.",
@@ -4682,6 +4747,7 @@ export const tools: Tool[] = [
       "virtual coin toss", "free online coin flipper 2026",
     ],
     relatedTools: ["book-of-answers", "reaction-test", "scoreboard"],
+    sceneIntro: "Heads or tails? Flip a virtual coin to settle decisions, start a game, or teach probability. Watch the 3D spinning animation. See your flip history — heads count, tails count, and total.",
     howToUse: [
       "Tap or click the coin to flip it. Watch the realistic 3D spinning animation.",
       "The coin will land on either Heads or Tails randomly.",
@@ -4763,6 +4829,7 @@ export const tools: Tool[] = [
       "auto detect language", "free text translator 2026",
     ],
     relatedTools: ["text-diff", "text-repeater", "word-counter"],
+    sceneIntro: "You got a message in French. Or you need to write back in Spanish. Paste your text, pick source and target languages (100+ available), and see the translation instantly.",
     howToUse: [
       "Type or paste your text in the left input box.",
       "Select the source language or choose \"Detect Language\" for auto-detection.",
@@ -4835,6 +4902,7 @@ export const tools: Tool[] = [
     path: "/tools/fullscreen-text",
     seoKeywords: ["fullscreen text", "large text display", "digital sign", "text board", "message display", "big text screen"],
     relatedTools: ["time-screen", "scoreboard", "coin-flip"],
+    sceneIntro: "You need to display a message on a screen. A 'Recording in Progress' sign on your office door. A welcome message at an event. A price display on a tablet. Type your text, pick colors, and go full screen.",
     howToUse: [
       "Type your text in the input area — it can be a message, reminder, quote, or anything you want to display prominently.",
       "Pick a background color and text color from the presets, or use the color picker for any custom color.",
@@ -4861,6 +4929,7 @@ export const tools: Tool[] = [
     path: "/tools/time-screen",
     seoKeywords: ["time screen", "fullscreen clock", "digital clock", "desk clock", "large clock display", "online clock"],
     relatedTools: ["perpetual-calendar", "coin-flip", "scoreboard"],
+    sceneIntro: "You want a clean clock on your second monitor. No notifications, no widgets — just the time in large digits. Open this, go full screen, and leave it running. Dark or light background.",
     howToUse: [
       "The current time displays automatically in large, easy-to-read digits.",
       "Click Dark/Light to switch between background modes.",

@@ -1078,12 +1078,537 @@ print("code block with syntax highlighting")
 `,
   },
 
+
+  {
+    slug: "password-generator-security-guide",
+    title: "How to Actually Fix Your Password Problem (Without Memorizing 50 Random Strings)",
+    description: "Stop reusing passwords. A password generator plus a password manager is the only practical security system — and it takes 5 minutes to set up.",
+    date: "2026-05-27",
+    category: "Security",
+    tags: ["password generator", "strong password generator", "random password", "password security", "password manager guide", "online password tool"],
+    relatedTools: ["password-generator","hash-generator","uuid-generator"],
+    content: `
+<p>Everyone knows the advice: use strong, unique passwords for every account. Everyone also uses the same three passwords everywhere. The gap between knowing and doing is real — strong passwords feel impossible to remember, and most people give up before they start.</p>
+
+<p>A <a href="/en/tools/password-generator">password generator</a> solves the hard part. Here is how to actually build a password system that works.</p>
+
+<h2>Why Your Brain Is Bad at Passwords</h2>
+
+<p>Humans are terrible at randomness. When people create "random" passwords, they follow predictable patterns: capital first letter, a number at the end, common symbol substitutions (@ for a, 3 for e). Password cracking tools know all of these. They try dictionary words first, then common variations, then brute force.</p>
+
+<p>A computer-generated random password has none of these weaknesses. The <a href="/en/tools/password-generator">password generator</a> uses the Web Crypto API — the same randomness source your browser uses for TLS encryption. Every character is truly random. No patterns to exploit.</p>
+
+<h2>What Makes a Password Actually Strong</h2>
+
+<p>Length beats complexity. A 16-character all-lowercase password is harder to crack than an 8-character password with uppercase, numbers, and symbols. Each additional character multiplies the possible combinations by the character set size. Going from 8 to 16 characters increases the search space by about 200 quadrillion times.</p>
+
+<p>For most accounts, 16 characters with mixed case and numbers is enough. For email and banking, go to 20+ and include symbols. The generator lets you choose length and character types with sliders — no memorizing weird formulas.</p>
+
+<h2>The Only Practical Solution: A Password Manager</h2>
+
+<p>You cannot memorize 50 different 16-character random passwords. No one can. The solution is a password manager. Bitwarden is free and open source. It stores your passwords encrypted, auto-fills them on websites, and syncs across devices.</p>
+
+<p>You memorize one strong master password — use four or five random words (like "correct-horse-battery-staple") — and the manager handles the rest. The generator creates the passwords, the manager stores them, and you only need to remember one.</p>
+
+<p>If you want an extra layer, use the <a href="/en/tools/hash-generator">hash generator</a> to verify important passwords against known safe hashes, or the <a href="/en/tools/uuid-generator">UUID generator</a> for unique identifiers in your security setup.</p>
+
+<p>Generate a <a href="/en/tools/password-generator">strong password</a> and put it in a password manager. That is the entire security strategy. It takes five minutes to set up and saves you from the most common attack vector.</p>
+`,
+  },
+  {
+    slug: "loan-calculator-financial-guide",
+    title: "Before You Sign Anything: How to Use a Loan Calculator to Understand What You Are Actually Paying",
+    description: "That monthly payment looks reasonable until you see the total interest. A loan calculator shows you the real cost — and how to pay less.",
+    date: "2026-05-27",
+    category: "Finance",
+    tags: ["loan calculator", "calculate loan payments", "loan amortization", "APR vs interest rate", "loan interest calculator", "personal loan calculator"],
+    relatedTools: ["loan-calculator","mortgage-calculator","compound-interest"],
+    content: `
+<p>I almost bought a car last year. The salesperson gave me the monthly payment, and it sounded reasonable. Then I ran the numbers through a <a href="/en/tools/loan-calculator">loan calculator</a>. The total interest over five years was nearly $4,000. The monthly payment had been carefully chosen to sound affordable while hiding the true cost.</p>
+
+<p>Understanding loan math takes five minutes and saves thousands. Here is what you need to know.</p>
+
+<h2>How a Loan Actually Works</h2>
+
+<p>A loan has three numbers: the <strong>principal</strong> (how much you borrow), the <strong>interest rate</strong> (what the lender charges), and the <strong>term</strong> (how long you have to pay it back). These three numbers determine your monthly payment and the total cost.</p>
+
+<p>The sneaky part: early payments mostly go to interest, not principal. On a $20,000 five-year loan at 7%, your first payment of $396 is about $279 of interest and only $117 of principal. You do not start paying more principal than interest until month 32 of 60. This is why making extra payments early saves so much — an extra $50 per month from the start saves about $800 in total interest.</p>
+
+<h2>APR vs Interest Rate: The Number That Matters</h2>
+
+<p>The interest rate is what the lender charges for the money. The APR (Annual Percentage Rate) includes fees. If a lender advertises 5% interest but 5.8% APR, that 0.8% difference is fees baked into the rate. Always compare loans using APR, not the headline interest rate.</p>
+
+<p>Other costs to watch: origination fees (1-5% of the loan amount, sometimes added to the balance), prepayment penalties (some lenders charge you for paying early), and whether the rate is fixed or variable. A variable rate at 5% might look cheaper than a fixed rate at 6% — until rates rise and your payment goes up.</p>
+
+<h2>Use the Calculator Before You Sign</h2>
+
+<p>The <a href="/en/tools/loan-calculator">free loan calculator</a> shows you the full picture. Enter the loan amount, interest rate, and term. It calculates your monthly payment, total interest, and generates an amortization schedule — a table showing exactly how much of each payment goes to interest vs principal over the life of the loan.</p>
+
+<p>For home loans specifically, use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a>, which factors in property tax and home insurance. First-time buyers often look at principal and interest alone and get surprised by the actual monthly cost — property tax and insurance can add 30-40%.</p>
+
+<p>Run the numbers before you sign anything. The five minutes you spend with a <a href="/en/tools/loan-calculator">loan calculator</a> could save you thousands.</p>
+`,
+  },
+
+
+  {
+    slug: "md5-hash-generator-guide",
+    title: "MD5 Hash Generator: When to Use It and When to Use SHA-256 Instead",
+    description: "MD5 is fast and still useful — but not for everything. Here is when to use MD5 for file verification and when to upgrade to SHA-256.",
+    date: "2026-05-28",
+    category: "Developer",
+    tags: ["MD5 generator", "MD5 hash", "MD5 checksum", "file verification", "hash generator", "MD5 vs SHA"],
+    relatedTools: ["md5-generator","hash-generator"],
+    content: `
+<p>Someone sent me a file and a string of letters and numbers: "Verify with this MD5 hash." I ignored it. The file was corrupted and I spent 20 minutes debugging an install that was never going to work. Now I check hashes. It takes 10 seconds.</p>
+
+<p>An <a href="/en/tools/md5-generator">MD5 hash generator</a> creates a fingerprint of any text or file. Same input always produces the same hash. Change one character, and the hash changes completely. Here is when MD5 is the right tool and when you should use something stronger.</p>
+
+<h2>What MD5 Actually Is</h2>
+
+<p>MD5 takes any input and produces a 32-character hexadecimal string. It is deterministic (same input = same output), fast to compute, and the output is always the same length regardless of input size. One word or a 10GB file — the hash is always 32 characters.</p>
+
+<p>The critical property: even changing a single character produces a completely different hash. "hello" and "Hello" have entirely different MD5 hashes. This makes hashing useful for detecting changes and verifying integrity.</p>
+
+<h2>When MD5 Is Still the Right Choice</h2>
+
+<p><strong>File integrity checks.</strong> Download a large file. The website shows an MD5 hash. You compute the hash of your downloaded file. If they match, the file is intact. MD5 is fast enough for multi-gigabyte files and reliable enough to detect accidental corruption. Most software downloads still publish MD5 checksums alongside SHA-256.</p>
+
+<p><strong>Duplicate detection.</strong> You have 10,000 files and need to find duplicates. MD5 hashing each file and comparing hashes is dramatically faster than comparing file contents byte by byte. If two files have different MD5 hashes, they are definitely different files.</p>
+
+<p><strong>Cache keys.</strong> You need a predictable, fixed-length identifier for a piece of content. MD5 the content and use the 32-character hex string as your cache key. It is deterministic and collisions in cache use are practically irrelevant.</p>
+
+<h2>When You Should NOT Use MD5</h2>
+
+<p><strong>Password storage.</strong> Do not use MD5 for hashing passwords. It is too fast — attackers can try billions of combinations per second. Use bcrypt, scrypt, or Argon2 instead. These are deliberately slow, making brute-force attacks impractical.</p>
+
+<p><strong>Security verification.</strong> If you need to verify that a file has not been tampered with by an adversary (not just accidentally corrupted), use SHA-256. MD5 has known collision attacks — it is possible to create two different files with the same MD5 hash. SHA-256 has no known practical collisions.</p>
+
+<p><strong>Digital signatures or certificates.</strong> These require cryptographic strength. Use SHA-256 or SHA-512.</p>
+
+<p>For general hashing needs, the <a href="/en/tools/hash-generator">hash generator</a> supports SHA-1, SHA-256, SHA-384, SHA-512, and MD5. For quick checks where speed matters more than cryptographic security, the <a href="/en/tools/md5-generator">MD5 generator</a> is the fastest option.</p>
+`,
+  },
+
+
+  {
+    slug: "uuid-generator-guide",
+    title: "What Is a UUID and Why Every Developer Uses Them",
+    description: "UUIDs are random 128-bit identifiers that are practically guaranteed to be unique. Here is when to use them and why they beat auto-increment IDs.",
+    date: "2026-05-29",
+    category: "Developer",
+    tags: ["UUID generator", "generate UUID", "UUID v4", "unique identifier", "GUID generator", "distributed database ID"],
+    relatedTools: ["uuid-generator","base64-converter"],
+    content: `
+<p>You need a unique ID. Not a sequential number that someone can guess. A proper random identifier that will never collide. A <a href="/en/tools/uuid-generator">UUID generator</a> creates one in a single click.</p>
+
+<p>UUIDs (Universally Unique Identifiers) are 128-bit numbers that are practically guaranteed to be unique. The version 4 UUID uses random generation — 122 random bits plus 6 fixed version/variant bits. The probability of generating two identical UUIDs is so low it is effectively zero.</p>
+
+<h2>When UUIDs Are the Right Choice</h2>
+
+<p><strong>Database primary keys in distributed systems.</strong> Auto-increment IDs break when you have multiple servers inserting simultaneously. UUIDs can be generated independently on any server and will never collide. This is why most distributed databases default to UUID primary keys.</p>
+
+<p><strong>File and resource identifiers.</strong> Uploaded files, S3 objects, temporary resources — give them UUID names and you never worry about naming conflicts. No timestamp prefix, no counter, no logic. Just generate a UUID and move on.</p>
+
+<p><strong>API request tracking.</strong> Generate a UUID per request, pass it through your system, and you can trace every request across every service by its ID. This is the foundation of distributed tracing.</p>
+
+<p><strong>Idempotency keys.</strong> Payment processing, order creation, any operation that should only happen once — tag it with a UUID. If the same UUID comes in again, skip the operation. This prevents double-charging and duplicate orders.</p>
+
+<h2>UUID vs Other ID Formats</h2>
+
+<p>UUIDs are 36 characters with dashes. For URLs and filenames, strip the dashes to get a 32-character clean string. For databases, store as a native UUID type for efficient indexing. The <a href="/en/tools/uuid-generator">free UUID generator</a> creates version 4 UUIDs with one click. Pair it with the <a href="/en/tools/base64-converter">Base64 encoder</a> if you need a more compact representation.</p>
+`,
+  },
+
+
+  {
+    slug: "url-encoder-practical-guide",
+    title: "URL Encoding Explained: Why Your Links Break and How to Fix Them",
+    description: "Spaces become %20, ampersands become %26. URL encoding is the difference between a link that works and one that breaks. Here is when you need it.",
+    date: "2026-05-30",
+    category: "Developer",
+    tags: ["URL encoder", "URL encoding", "percent encoding", "encode URL online", "URL decoder", "fix broken links"],
+    relatedTools: ["url-encoder","text-to-slug","base64-converter"],
+    content: `
+<p>You paste a URL into a message and it is 200 characters of gibberish. Tracking parameters, session IDs, UTF-8 characters double-encoded. The person receiving it cannot tell what the link actually is. A <a href="/en/tools/url-encoder">URL encoder</a> fixes this in seconds.</p>
+
+<p>URL encoding is one of those things you do not think about until a link breaks. Here is what it does and the three situations where you need it.</p>
+
+<h2>What URL Encoding Actually Does</h2>
+
+<p>URLs can only contain a limited set of characters: A-Z, a-z, 0-9, hyphen, underscore, period, and tilde. Everything else — spaces, symbols, non-Latin characters, emoji — must be percent-encoded to work reliably.</p>
+
+<p>Space becomes <code>%20</code>. Ampersand becomes <code>%26</code>. The Chinese characters for "hello" become <code>%E4%BD%A0%E5%A5%BD</code>. The browser decodes these back to readable text in the address bar, but the actual URL underneath is percent-encoded. If you skip encoding, the URL either breaks or produces unpredictable results depending on the browser and server.</p>
+
+<h2>Three Times You Need URL Encoding</h2>
+
+<p><strong>Building query strings.</strong> If your URL includes user input — a search term, a username, a form field — encode it. A search for "coffee & tea" needs the ampersand encoded as <code>%26</code>, otherwise the server interprets everything after & as a separate parameter. Results: broken query, missing data, confused users.</p>
+
+<p><strong>Links with special characters.</strong> Square brackets in URLs (common in PHP-style query strings) should be encoded. Curly braces, pipes, backslashes — all need encoding. The encoder handles them automatically.</p>
+
+<p><strong>Non-Latin text in URLs.</strong> If your URL contains Arabic, Chinese, Japanese, Korean, or any non-Latin script, it must be percent-encoded. Some browsers do this automatically. Many do not. Assume it will break and encode it preemptively.</p>
+
+<h2>Common Mistakes</h2>
+
+<p><strong>Double encoding.</strong> You encode a URL, then encode it again. <code>%20</code> becomes <code>%2520</code> (the % gets encoded to %25). The browser decodes once, leaving <code>%20</code> instead of a space. This happens when URL encoding is applied at multiple layers — your code encodes, then your framework encodes again.</p>
+
+<p><strong>Encoding the entire URL.</strong> Only encode the parts that need it — query parameter values, path segments with special characters. Encoding the entire URL including <code>https://</code> produces broken results. The <a href="/en/tools/url-encoder">free URL encoder</a> handles this correctly.</p>
+
+<p>Try it: paste a messy URL and see what gets encoded. The tool also decodes — paste a percent-encoded URL to see the original text.</p>
+`,
+  },
+
+
+  {
+    slug: "csv-json-conversion-guide",
+    title: "How to Convert CSV to JSON (and Back) Without Writing a Single Line of Code",
+    description: "Paste CSV, get JSON. Paste JSON, get CSV. No scripts, no Excel export, no data type guessing. The fastest way to convert between the two most common data formats.",
+    date: "2026-05-31",
+    category: "Developer",
+    tags: ["CSV to JSON","JSON to CSV","convert CSV to JSON","data conversion","CSV converter online","JSON converter"],
+    relatedTools: ["csv-to-json","json-to-csv","json-formatter"],
+    content: `
+<p>Someone sent me a CSV with 5,000 rows and asked me to convert it to JSON. I could write a Python script. I could open it in Excel and export. Or I could paste it into a <a href="/en/tools/csv-to-json">CSV to JSON converter</a> and be done in 5 seconds.</p>
+<p>CSV and JSON are the two most common data formats you will encounter. Converting between them is a daily task if you work with data. Here is how to do it right.</p>
+<h2>How CSV to JSON Conversion Works</h2>
+<p>The converter reads the first row of your CSV as headers, then creates a JSON array where each object represents one row with the headers as keys. A CSV like <code>name,age
+Alice,30
+Bob,25</code> becomes <code>[{"name":"Alice","age":"30"},{"name":"Bob","age":"25"}]</code>.</p>
+<p>The <a href="/en/tools/csv-to-json">free CSV to JSON converter</a> auto-detects data types — numbers stay numbers, booleans stay booleans, strings stay strings. It handles quoted fields, embedded commas, and line breaks within cells. For large files, it processes up to 5MB of CSV data.</p>
+<h2>Going the Other Way: JSON to CSV</h2>
+<p>The <a href="/en/tools/json-to-csv">JSON to CSV converter</a> flattens nested JSON objects using dot notation. A nested field like <code>{"address":{"city":"NYC"}}</code> becomes a column named <code>address.city</code>. This works for most API responses and JSON exports. Deeply nested structures (more than 3 levels) may need manual flattening first.</p>
+<h2>When to Use Each Format</h2>
+<p>Use CSV for spreadsheets, data analysis, and anything that will be opened in Excel. Use JSON for APIs, configuration files, and data with nested relationships. The converters handle the translation so you do not have to write a script every time someone sends you data in the wrong format. Pair with the <a href="/en/tools/json-formatter">JSON formatter</a> to validate the output before using it.</p>
+`,
+  },
+
+
+  {
+    slug: "json-formatter-common-mistakes",
+    title: "The 5 Most Common JSON Mistakes and How to Catch Them Instantly",
+    description: "Trailing commas, unquoted keys, single quotes, unescaped characters, and type mismatches. These break JSON parsing constantly. Here is how to spot and fix each one.",
+    date: "2026-06-03",
+    category: "Developer",
+    tags: ["JSON mistakes", "JSON syntax errors", "JSON validator", "trailing comma JSON", "JSON formatter online", "fix JSON errors"],
+    relatedTools: ["json-formatter","json-to-csv","csv-to-json"],
+    content: `
+<p>Someone sent me JSON with a trailing comma on line 42. The error message said "Unexpected token" and pointed to line 1. I searched line 1 for five minutes before realizing it was the comma at the end of line 42. A <a href="/en/tools/json-formatter">JSON validator</a> would have caught it in one second.</p>
+
+<p>JSON is the default data format of the web. Every API returns it. Every config file uses it. And almost everyone has spent time debugging a JSON syntax error that was actually something else entirely. Here are the five most common JSON mistakes and how to catch them instantly.</p>
+
+<h2>1. Trailing Commas</h2>
+
+<p>JavaScript allows trailing commas. JSON does not. A comma after the last item in an array or object is legal in JS but breaks JSON parsing. This is the single most common JSON error because developers write JSON the same way they write JavaScript objects.</p>
+
+<p>The fix: use a <a href="/en/tools/json-formatter">JSON validator</a> that highlights errors with line numbers. The validator points to the exact position of the trailing comma instead of giving you a generic parse error.</p>
+
+<h2>2. Unquoted Keys</h2>
+
+<p>JSON requires double quotes around keys. <code>{name: "Alice"}</code> is valid JavaScript but invalid JSON. The correct format is <code>{"name": "Alice"}</code>. This mistake happens when writing JSON by hand instead of generating it with a library.</p>
+
+<h2>3. Single Quotes Instead of Double</h2>
+
+<p>JSON uses double quotes exclusively. <code>'hello'</code> is a valid Python or JavaScript string but invalid JSON. The correct format is <code>"hello"</code>. This is the second most common error after trailing commas, especially for Python developers who are used to single quotes.</p>
+
+<h2>4. Unescaped Characters</h2>
+
+<p>If your JSON value contains a double quote, a backslash, or a control character, it must be escaped with a backslash. A value like <code>"He said "hello""</code> breaks because the parser sees the inner quotes as the end of the string. The fix: <code>"He said \"hello\""</code>.</p>
+
+<h2>5. Wrong Data Types</h2>
+
+<p>A number in quotes like <code>"42"</code> is a string, not a number. A bare word like <code>true</code> is a boolean, but <code>"true"</code> is a string. These type mismatches pass validation but break your application logic. The <a href="/en/tools/json-formatter">tree view</a> helps spot these — values are color-coded by type so strings, numbers, booleans, and null are visually distinct.</p>
+
+<p>Paste your JSON into the <a href="/en/tools/json-formatter">free formatter</a>. If it has errors, the validator tells you exactly where. If it is valid but messy, the formatter structures it with collapsible sections. No IDE needed.</p>
+`,
+  },
+
+
+  {
+    slug: "income-tax-calculator-guide",
+    title: "How Tax Brackets Actually Work and Why Your Effective Rate Is Lower",
+    description: "You are in the 24 percent bracket but that does not mean you pay 24 percent on everything. Understand marginal vs effective rates and why the standard deduction matters.",
+    date: "2026-06-04",
+    category: "Finance",
+    tags: ["tax brackets explained", "income tax calculator", "marginal vs effective tax rate", "standard deduction", "federal income tax estimator"],
+    relatedTools: ["income-tax-calculator","loan-calculator","percentage-calculator"],
+    content: `
+<p>I did my taxes last month and wondered: how much of my income actually goes to federal tax? Not my tax bracket — the rate matters less than the effective rate. An <a href="/en/tools/income-tax-calculator">income tax calculator</a> answered this in 10 seconds.</p>
+<p>Tax brackets are widely misunderstood. Being in the 24 percent bracket does not mean you pay 24 percent on everything. Here is how it actually works.</p>
+<h2>Marginal vs Effective Tax Rate</h2>
+<p>Your marginal rate is the tax on your highest dollar of income. Your effective rate is what you actually pay as a percentage of total income. If you earn 75000 dollars as a single filer, your marginal rate might be 22 percent but your effective rate is closer to 15 percent after the standard deduction and graduated brackets. The calculator shows both numbers so you understand what you actually pay.</p>
+<h2>How the Standard Deduction Changes Everything</h2>
+<p>The standard deduction reduces your taxable income before any bracket applies. For 2025 it is 15000 dollars single and 30000 married. If you earn 75000, only 60000 is taxable. The first 11925 of that is taxed at 10 percent. Then the next portion at 12 percent. Only income above 48475 hits the 22 percent bracket. The deduction alone can drop you into a lower bracket.</p>
+<p>The <a href="/en/tools/income-tax-calculator">free tax calculator</a> lets you switch between single and married filing status to compare. Enter your gross income and see your estimated federal tax, effective rate, and take-home pay.</p>
+`,
+  },
+
+
+  {
+    slug: "text-diff-checker-guide",
+    title: "What to Do When Your Diff Tool Shows No Difference (But You Know Something Changed)",
+    description: "The diff says identical. Your eyes say identical. But the server crashed. Here are three invisible changes that break text comparisons and how to catch each one.",
+    date: "2026-06-04",
+    category: "Developer",
+    tags: ["text diff", "diff checker", "compare text", "text comparison tool", "find text differences"],
+    relatedTools: ["text-diff","json-formatter","case-converter"],
+    content: `
+<p>I pasted two config files into a diff checker. It said they were identical. I knew they were not — the server crashed with the new version but worked fine with the old one. Something had changed. The diff tool was not wrong. I was.</p>
+<p>A <a href="/en/tools/text-diff">text diff checker</a> is one of those tools you do not think about until it lies to you. Here is what I learned about why diff tools miss changes, and how to actually find what you are looking for.</p>
+<h2>The Invisible Diff: Whitespace Changes You Cannot See</h2>
+<p>I spent 20 minutes staring at two identical-looking blocks of JSON before I noticed the indentation was different. The old file used tabs. The new file used spaces. Every line was technically different, but the diff tool showed them as identical because I had ignore whitespace enabled by default.</p>
+<p>This is the most common false negative in diff tools. The fix: if a diff shows no changes but you are sure something broke, toggle whitespace sensitivity. Tabs vs spaces, trailing spaces, and indentation depth are invisible to the eye but can break parsers that are whitespace-sensitive. Our <a href="/en/tools/text-diff">diff checker</a> shows changes with and without whitespace — toggle between modes to catch this.</p>
+<h2>The Case-Sensitivity Trap</h2>
+<p>Another time, a variable name changed from UserId to userID. The diff caught it. But when I changed ApiKey to apiKey, the diff missed it — I had case-insensitive comparison on. The code broke because the API expected the exact case.</p>
+<p>Counter-intuitive lesson: case-sensitive comparison is more useful for debugging than case-insensitive. When something is broken, turn ON case sensitivity first. Most people do the opposite — they make the diff less strict hoping to find real changes, but the breakage is often in the details the relaxed comparison hides.</p>
+<h2>What to Do When You Still Cannot Find the Difference</h2>
+<p>If whitespace and case sensitivity are both set correctly and you still see no differences: check line endings. CRLF vs LF. This is the silent killer of cross-platform development. Files written on Windows have invisible carriage returns that files from Mac and Linux do not. The diff tool shows the text as identical. The runtime disagrees. Our <a href="/en/tools/text-diff">diff tool</a> can show these as visible markers so you know what is actually on each line.</p>
+<p>If none of those are the issue, compare the file sizes. If they differ but the text is identical, there are non-printing characters — null bytes, BOM markers, Unicode direction characters. These are rare but devastating when present. For 99% of cases, toggling whitespace and case sensitivity catches the problem.</p>
+`,
+  },
+
+
+  {
+    slug: "url-slug-vs-manual-guide",
+    title: "URL Slug Generator vs Manual Editing — Why I Stopped Typing Slugs by Hand",
+    description: "I typed a slug four times before getting it right. A slug converter does it in one click. But sometimes manual edits matter. Here is when to use each.",
+    date: "2026-06-05",
+    category: "Developer",
+    tags: ["URL slug", "slug generator", "text to slug", "SEO URL", "pretty URL", "slug vs manual"],
+    relatedTools: ["text-to-slug","url-encoder","case-converter"],
+    content: `
+<p>I manually typed a URL slug last week: "how to build a rest api in python 2025 guide." It took me four tries. First I used spaces. Then I forgot to lowercase the REST. Then I left in the parentheses. By the time I got it right, I had wasted two minutes on what a <a href="/en/tools/text-to-slug">text to slug converter</a> does in one click.</p>
+
+<p>URL slugs seem trivial until you get them wrong. A bad slug breaks links, hurts SEO, and looks unprofessional. A good slug is invisible — it just works. Here is how to get good slugs every time.</p>
+
+<h2>What Makes a URL Slug Good</h2>
+
+<p>A good slug is lowercase, uses hyphens not underscores, contains no special characters, and is roughly 3-6 words. It should be readable by humans. You should be able to look at a slug and know what the page is about without seeing the title.</p>
+
+<p>The slug for this article should be something like <code>what-makes-a-good-url-slug</code>. Not <code>article-1472</code>, not <code>what-makes-a-good-url-slug-in-2025-complete-guide-with-examples</code>, and definitely not <code>What Makes a Good URL Slug?</code> with spaces and capitals.</p>
+
+<p>The <a href="/en/tools/text-to-slug">slug converter</a> handles the rules automatically: lowercases everything, replaces spaces and underscores with hyphens, removes special characters, collapses multiple hyphens, and trims to a reasonable length.</p>
+
+<h2>The Mistake That Broke My Analytics</h2>
+
+<p>I once changed a blog post title from "10 Tips for Better Writing" to "12 Tips for Better Writing" but forgot to update the slug. Google had indexed the old URL. Readers who bookmarked the old title saw a page that did not match. The mismatch between title and URL confused both users and search engines.</p>
+
+<p>Counter-intuitive lesson: once a slug is published and indexed, do not change it unless you set up a 301 redirect. The slug is permanent. If you might change the title later, make the slug intentionally generic and let the title do the descriptive work. A slug like <code>better-writing-tips</code> works whether you have 10, 12, or 20 tips. Tying the slug to a number in the title creates a future problem.</p>
+
+<h2>When Manual Slugs Are Better</h2>
+
+<p>Automated slug converters remove everything non-standard. Sometimes you want to keep something. A product name with a plus sign. A technical term with a slash. An abbreviation in caps. The converter will strip or lowercase these.</p>
+
+<p>In these cases, generate the slug with the tool, then manually edit the result. The tool does 95% of the work. You fix the 5% where context matters. This hybrid approach is faster than manual and more accurate than fully automated.</p>
+
+<p>The <a href="/en/tools/text-to-slug">free slug converter</a> works in any browser. Paste your title, get a slug, tweak if needed, and paste it into your CMS. Two seconds instead of two minutes of trial and error.</p>
+`,
+  },
+
+
+  {
+    slug: "password-generator-randomness-guide",
+    title: "Why Your Password Generator Might Not Be Random (And How to Check)",
+    description: "Not all random passwords are created equal. Math.random() is predictable. Crypto-random is not. Here is why the difference matters.",
+    date: "2026-06-06",
+    category: "Security",
+    tags: ["password generator", "crypto random", "random password", "Math.random vs crypto", "secure password", "Web Crypto API"],
+    relatedTools: ["password-generator","hash-generator","uuid-generator"],
+    content: `
+<p>I thought a random password was random. Then I learned that <code>Math.random()</code> in JavaScript is predictable enough that an attacker who knows the seed can regenerate every password the tool ever produced. That is when I stopped using browser tools that rely on it.</p>
+
+<p>A <a href="/en/tools/password-generator">password generator</a> is only as good as its randomness source. Most people never think about this. They see a string of random-looking characters and assume it is secure. Here is why that assumption can be wrong.</p>
+
+<h2>The Difference Between Math.random() and Crypto-Random</h2>
+
+<p><code>Math.random()</code> is a pseudo-random number generator. It produces numbers that look random but follow a deterministic sequence based on a seed value. If you know the seed, you know every "random" number that follows. This is fine for games and animations. It is not fine for passwords.</p>
+
+<p>The Web Crypto API's <code>crypto.getRandomValues()</code> is different. It pulls randomness from the operating system's entropy pool — mouse movements, keyboard timings, network packet variations, hardware noise. This randomness is cryptographically secure. An attacker cannot predict it because there is no seed to know.</p>
+
+<p>Counter-intuitive: a truly random 12-character password from crypto.getRandomValues is stronger than a 20-character password from Math.random() with a known seed. Length matters, but the randomness source matters more. Our <a href="/en/tools/password-generator">password generator</a> uses the Web Crypto API. The randomness comes from your device hardware, not a predictable math function.</p>
+
+<h2>The Length vs Complexity Myth</h2>
+
+<p>I used to think adding symbols made passwords stronger. A 12-character password with uppercase, lowercase, numbers, and symbols has about 95^12 possible combinations. A 16-character all-lowercase password has 26^16 combinations — about 6.5 million times more. Length beats complexity. Every. Single. Time.</p>
+
+<p>This does not mean you should ignore complexity entirely. It means prioritize length. Get to 16+ characters first. Then add numbers and symbols. A 16-character password from a <a href="/en/tools/password-generator">random generator</a> is practically uncrackable regardless of the character set. The math is simple: more characters = exponentially more combinations = exponentially longer to crack.</p>
+
+<h2>What to Do When You Cannot Memorize Random Passwords</h2>
+
+<p>This is where most people give up. They generate a strong random password, cannot remember it, and go back to using their dog's name plus 123. The fix is not a better memory. The fix is a password manager. Bitwarden is free and open source. You memorize one master password. The manager handles the rest.</p>
+
+<p>For the master password itself, use four or five random words: "correct-horse-battery-staple" is both strong and memorable. Generate it with the <a href="/en/tools/password-generator">password generator</a> using the passphrase mode. Write it down on paper and store it somewhere safe. Digital password manager plus physical master backup covers both security and recoverability.</p>
+`,
+  },
+
+
+  {
+    slug: "unit-converter-quick-guide",
+    title: "How to Convert Any Unit in Under 3 Seconds Without Googling Each One",
+    description: "Stop typing conversion queries into Google one at a time. A proper unit converter handles length, weight, temperature, and volume all in one place.",
+    date: "2026-06-07",
+    category: "Tools",
+    tags: ["unit converter", "metric to imperial", "unit conversion", "Celsius to Fahrenheit", "kg to lbs", "converter tool"],
+    relatedTools: ["unit-converter","base-converter","roman-numerals"],
+    content: `
+<p>I was following a British recipe. It said 180 degrees Celsius and 200 grams of flour. My oven is Fahrenheit. My scale is ounces. I Googled each conversion individually. Then the recipe said 1.5 liters of stock and I had to convert that too. An <a href="/en/tools/unit-converter">online unit converter</a> would have done all of these in one place.</p>
+
+<p>Unit conversion is not hard math. It is annoying math. The kind you do wrong at 7 AM while preheating the oven. Here is how to convert anything without opening five different Google tabs.</p>
+
+<h2>The Conversion Mistake That Ruined My Cake</h2>
+
+<p>I converted the oven temperature correctly: 180 C equals roughly 356 F. But I set my oven to 350 because that is the closest round number. The cake was underbaked. A 6-degree difference matters more than you think in baking. Counter-intuitive: rounding conversions is fine for weather. It is not fine for baking, chemistry, or medicine. Convert precisely, then make rounding decisions consciously.</p>
+
+<p>The <a href="/en/tools/unit-converter">unit converter</a> covers temperature, weight, length, area, volume, speed, and time. Each category converts between metric and imperial with one input. No typing formulas, no guessing.</p>
+
+<h2>Fluid Ounces Are Not the Same Everywhere</h2>
+
+<p>A US fluid ounce is 29.57 milliliters. A UK fluid ounce is 28.41 milliliters. If you use a UK recipe and measure with US cups, every measurement is slightly off. One ingredient is not a problem. Ten ingredients with cumulative error is a ruined dish. The converter distinguishes between US and UK fluid ounces so you do not have to think about it.</p>
+
+<p>Same issue with gallons. US gallon = 3.785 liters. UK gallon = 4.546 liters. If you are reading a British car review that says 40 miles per gallon, and you think in US gallons, you are getting the fuel economy wrong by 20 percent.</p>
+
+<h2>When Speed Conversions Matter</h2>
+
+<p>You are driving in Canada and the speed limit sign says 100. That is kilometers per hour, not miles per hour. The difference between 100 km/h (62 mph) and 100 mph (161 km/h) is a speeding ticket. The converter handles km/h, mph, meters per second, and knots in one place.</p>
+
+<p>Bookmark the <a href="/en/tools/unit-converter">unit converter</a>. It is faster than Googling each conversion separately, and more accurate than doing mental math that you will second-guess anyway.</p>
+`,
+  },
+
+
+  {
+    slug: "qr-code-wifi-practical-guide",
+    title: "What to Do When Six People Ask for Your WiFi Password at the Same Time",
+    description: "A WiFi QR code on your fridge ends the password spelling game forever. Here is how to make one and three other practical uses for QR codes.",
+    date: "2026-06-08",
+    category: "Tools",
+    tags: ["QR code", "WiFi QR code", "QR code generator", "create QR code", "share WiFi password", "QR code uses"],
+    relatedTools: ["qr-code-generator","url-encoder","text-to-slug"],
+    content: `
+<p>I had guests over last weekend. Six different people asked for the WiFi password. I spelled it out six times. Capital S, lowercase m, the letter a, lowercase l, lowercase l, underscore, c, a, t, the number 7. Three people typed it wrong. I spelled it again. A <a href="/en/tools/qr-code-generator">WiFi QR code</a> would have solved this in zero words.</p>
+
+<p>QR codes are not just for restaurant menus. They encode any text into a scannable square. Here is what you can actually do with a QR code generator and why each use case saves real time.</p>
+
+<h2>The WiFi QR Code That Saved My Sanity</h2>
+
+<p>A WiFi QR code encodes your network name and password in a standard format. Scan it with any phone camera and the phone connects automatically. No typing. No spelling. No explaining that the underscore is above the hyphen key.</p>
+
+<p>The format is <code>WIFI:S:YourNetworkName;T:WPA;P:YourPassword;;</code>. The <a href="/en/tools/qr-code-generator">QR code generator</a> handles this — paste the string, and download a ready-to-print QR code. Print it. Frame it. Put it on the fridge. Guests scan and connect.</p>
+
+<h2>The Mistake: Putting Too Much Data in One QR Code</h2>
+
+<p>I tried to put a 500-word document into a QR code. The code became dense, complex, and unreadable by most phone cameras. Counter-intuitive: QR codes work better with less data. A URL is ideal — 30-50 characters. A WiFi config is perfect. A vCard with name, phone, and email is fine. A full paragraph of text produces a QR code that is too dense to scan reliably.</p>
+
+<p>The fix: if you need to share a lot of information, put it on a webpage and encode the URL in the QR code. The QR code stays clean and scannable. The webpage handles the heavy content.</p>
+
+<h2>QR Codes vs Links: When Each Wins</h2>
+
+<p>A link works when someone can click it. A QR code works when someone is looking at a physical object — a printed flyer, a product label, a business card, a sign on the wall. If the medium is physical and the device is a phone, a QR code bridges the gap instantly.</p>
+
+<p>The <a href="/en/tools/qr-code-generator">free QR code generator</a> creates codes from URLs, text, WiFi credentials, or vCard contact info. Download as PNG. Print at any size. No signup, no watermark.</p>
+`,
+  },
+
+
+  {
+    slug: "json-debugging-nightmare-guide",
+    title: "I Spent an Hour Debugging One JSON Error That a Validator Would Have Caught Instantly",
+    description: "Trailing commas. Unescaped quotes. Duplicate keys that silently lose data. Four JSON errors that cost real time and how to catch each one in seconds.",
+    date: "2026-06-09",
+    category: "Developer",
+    tags: ["JSON validator", "JSON formatter", "JSON error", "trailing comma", "debug JSON", "JSON parser error"],
+    relatedTools: ["json-formatter","json-to-csv","csv-to-json"],
+    content: `
+<p>Last Tuesday I spent an hour debugging a JSON file. The error message said "Unexpected token at line 1, column 342." I counted to column 342 manually. It was a trailing comma on line 17. The parser just pointed to the wrong line. A <a href="/en/tools/json-formatter">JSON validator</a> would have caught it in one second with the correct line number.</p>
+
+<p>JSON errors are the worst kind of bug: they should not exist. Structured data should be structured. But one typo, one missing bracket, one unescaped quote, and the entire file breaks. Here are the four JSON errors that cost me real time and how to catch them instantly.</p>
+
+<h2>The Trailing Comma That Cost Me an Hour</h2>
+
+<p>JavaScript and Python allow trailing commas. JSON does not. A comma after the last item in an array or object is valid JS but breaks JSON parsing. Every time. The error message is almost always misleading — it points to the NEXT element after the comma, not the comma itself.</p>
+
+<p>The fix: paste into a <a href="/en/tools/json-formatter">JSON formatter</a>. The validator highlights the exact line with the error and the correct column number. Counter-intuitive: when the error message points to a line that looks fine, check the line ABOVE it. The trailing comma is almost always on the previous line.</p>
+
+<h2>The Unescaped Quote That Hid in Plain Sight</h2>
+
+<p>My JSON contained user input: a name field with the value O'Brien. The apostrophe was fine. But someone named "Big John" with double quotes in their nickname broke the parser. The double quote inside a double-quoted string terminated the string early. The fix is escaping: <code>Big \"John\"</code>.</p>
+
+<p>This is impossible to spot by eye in a 300-line JSON file. The validator catches it instantly because it knows that an unescaped quote inside a quoted string is always a syntax error.</p>
+
+<h2>The Case Where Two Tools Disagree and Both Are Right</h2>
+
+<p>I ran the same JSON through two validators. One said valid. One said invalid. Both were right. The difference: one used the strict JSON spec (RFC 8259), which forbids duplicate keys. The other used a lenient parser that silently keeps the last duplicate key. My application was losing data because one duplicate key was overwriting another.</p>
+
+<p>The lesson: use a <a href="/en/tools/json-formatter">strict validator</a> that catches duplicate keys. A "valid JSON" that silently drops your data is worse than invalid JSON that refuses to parse.</p>
+
+<p>The <a href="/en/tools/json-formatter">free JSON formatter and validator</a> catches trailing commas, missing brackets, unquoted keys, and unescaped characters with correct line numbers. Paste, validate, fix. One second instead of one hour.</p>
+`,
+  },
+
+
+  {
+    slug: "image-to-base64-practical-guide",
+    title: "How to Embed an Image Directly in HTML Without a Separate File",
+    description: "Turn any image into a Base64 data URI string and paste it directly into an img tag. No file upload, no external URL, no blocked content.",
+    date: "2026-06-10",
+    category: "Developer",
+    tags: ["image to Base64", "Base64 image", "embed image HTML", "data URI", "image to text", "Base64 converter"],
+    relatedTools: ["image-to-base64","base64-converter","url-encoder"],
+    content: `
+<p>I needed to send someone a 2KB icon embedded directly in an HTML email. No external images allowed — the email client blocks them. A <a href="/en/tools/image-to-base64">Base64 image converter</a> turned the icon into a text string I pasted directly into an img tag. The image displayed. No file upload, no external URL, no blocked content.</p>
+
+<p>Base64 encoding turns any image into a text string. It makes the data about 33% larger but eliminates the HTTP request. Here is when that trade-off is worth it and when it is not.</p>
+
+<h2>The Email Signature Problem Solved</h2>
+
+<p>Email clients block external images by default. Your logo, your headshot, your social media icons — all invisible until the recipient clicks "display images." A Base64-encoded image is embedded directly in the HTML. No external source to block. The image loads with the email.</p>
+
+<p>The <a href="/en/tools/image-to-base64">image to Base64 converter</a> processes your image in the browser. Nothing is uploaded to any server. Drag an image, get the data URI string, paste it into your HTML. The format is <code>&lt;img src="data:image/png;base64,iVBORw0K..." /&gt;</code>.</p>
+
+<h2>The Mistake: Base64-Encoding a 2MB Photo</h2>
+
+<p>I tried Base64-encoding a 2MB product photo for a webpage. The encoded string was 2.6MB of text embedded in my HTML. The browser had to download and parse 2.6MB before rendering anything. The page loaded in 4 seconds instead of 1. Counter-intuitive: Base64 is only worth it for images under 5KB. Above that, the HTTP request is faster than the Base64 overhead.</p>
+
+<p>A 2KB icon as a separate file: one HTTP request, 2KB download, cached by browser for future visits. The same icon as Base64: zero HTTP requests, 2.6KB embedded in HTML, NEVER cached, re-downloaded every page load. For icons under 5KB used on a single page, Base64 wins. For anything larger or used on multiple pages, regular image files win.</p>
+
+<p>The <a href="/en/tools/image-to-base64">free image to Base64 converter</a> works on PNG, JPG, WebP, and SVG. Images up to 10MB. For small icons, logos, and email signatures, it is the fastest way to embed images without external files.</p>
+`,
+  },
+
+
+  {
+    slug: "loan-calculator-dealership-guide",
+    title: "What to Do When the Dealer's Numbers Don't Match Your Loan Calculator",
+    description: "The monthly payment sounds fine until you multiply it by 60 and realize you are paying thousands in hidden interest. Here is how to spot it before you sign.",
+    date: "2026-06-11",
+    category: "Finance",
+    tags: ["loan calculator", "car loan interest", "amortization", "APR vs monthly payment", "total loan cost", "dealer financing"],
+    relatedTools: ["loan-calculator","mortgage-calculator","compound-interest"],
+    content: `
+<p>I almost bought a car last year. The dealer gave me a monthly payment of $389 for 60 months. I multiplied: $389 times 60 equals $23,340. The car was listed at $20,000. Somewhere, $3,340 had disappeared into interest and fees. A <a href="/en/tools/loan-calculator">loan calculator</a> showed me exactly where it went.</p>
+
+<p>Dealers and lenders present monthly payments because they sound affordable. They rarely volunteer the total cost. Here is how to understand what you are actually paying.</p>
+
+<h2>The Number the Dealer Hopes You Skip</h2>
+
+<p>I asked for the APR. The salesperson changed the subject to monthly payment again. That is when I knew the APR was high. A <a href="/en/tools/loan-calculator">loan calculator</a> tells you the total interest over the life of the loan. On the $20,000 car at 6.5% for 60 months, the total interest is $3,475. That is 17% of the car's price, just in interest.</p>
+
+<p>Counter-intuitive: a slightly lower monthly payment over a longer term costs MORE total interest. $20,000 at 6.5% for 60 months costs $3,475 in interest. The same loan at 72 months costs $4,215. The monthly payment drops by $60, but you pay $740 more in total interest. Longer terms are almost never better for the buyer.</p>
+
+<h2>The Amortization Curve That Changed How I Think About Debt</h2>
+
+<p>The <a href="/en/tools/loan-calculator">amortization schedule</a> showed me something I did not expect: in month 1, $279 of my $396 payment goes to interest. Only $117 goes to the car. By month 32, the split finally tips — more goes to principal than interest. This means making extra payments early in the loan saves dramatically more than extra payments later.</p>
+
+<p>An extra $50 per month from the start saves about $800 in total interest. The same $50 per month starting in year 3 saves about $200. The timing of extra payments matters enormously because of how the interest front-loads.</p>
+
+<p>The <a href="/en/tools/loan-calculator">free loan calculator</a> shows the full picture: monthly payment, total interest, and the amortization table. For home loans, use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> which adds property tax and insurance.</p>
+`,
+  },
+
 ];
 
 export function getBlogPosts(): BlogPost[] {
   return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
-
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }

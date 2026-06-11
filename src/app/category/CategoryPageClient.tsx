@@ -10,7 +10,7 @@ import { Locale } from "@/lib/i18n";
 const SITE_URL = "https://toolboxonline.club";
 const SITE_NAME = "ToolBoxOnline";
 
-const categoryMeta: Record<string, { en: { title: string; desc: string }; es: { title: string; desc: string }; ar: { title: string; desc: string } }> = {
+const categoryMeta: Record<string, { en: { title: string; desc: string; intro?: string }; es: { title: string; desc: string; intro?: string }; ar: { title: string; desc: string; intro?: string } }> = {
   text: {
     en: { title: "Free Text Tools — Word Counter, Case Converter & More 2026", desc: "Free online text processing tools. Count words, convert case, generate lorem ipsum, create URL slugs, compare text diffs, and more. All tools run in your browser — no signup required." },
     es: { title: "Herramientas de Texto Gratis — Contador de Palabras y Más 2026", desc: "Herramientas gratuitas de procesamiento de texto. Cuenta palabras, convierte mayúsculas/minúsculas, genera lorem ipsum, crea slugs URL y más. Sin registro." },
@@ -82,6 +82,13 @@ export default function CategoryPageClient({
           {catTools.length} tools
         </p>
       </header>
+
+      {/* Category Intro */}
+      {meta?.intro && (
+        <div className="mb-6 rounded-xl border border-blue-100 bg-blue-50/50 px-5 py-4 text-sm leading-relaxed text-zinc-700 dark:border-blue-900/30 dark:bg-blue-950/20 dark:text-zinc-300">
+          {meta.intro}
+        </div>
+      )}
 
       {/* Tools Grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

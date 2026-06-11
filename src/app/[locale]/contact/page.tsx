@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { isValidLocale, getDictionary } from "@/lib/i18n";
 import Link from "next/link";
+
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 const CONTACT_EMAIL = "jzerov@live.com";
 

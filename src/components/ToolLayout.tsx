@@ -200,6 +200,12 @@ export default function ToolLayout({
         />
       </header>
 
+      {tool?.sceneIntro && (
+        <div className="mb-6 rounded-xl border border-blue-100 bg-blue-50/50 px-5 py-4 text-sm leading-relaxed text-zinc-700 dark:border-blue-900/30 dark:bg-blue-950/20 dark:text-zinc-300">
+          {((tool as any).sceneIntroTranslations?.[locale]) || tool.sceneIntro}
+        </div>
+      )}
+
       {children}
 
       {adSlot ? (

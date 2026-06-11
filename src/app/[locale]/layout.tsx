@@ -8,6 +8,7 @@ import "@/app/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import KofiWidget from "@/components/KofiWidget";
+import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { locales, defaultLocale, isValidLocale, localeDir, getDictionary } from "@/lib/i18n";
 
@@ -167,6 +168,7 @@ export default async function LocaleLayout({
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />
         <KofiWidget />
+        <CookieConsent locale={locale} />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>

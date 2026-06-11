@@ -94,35 +94,46 @@
 	},
 	"about": {
 		"title": "About ToolBoxOnline",
-		"subtitle": "Your free, private online toolkit",
+		"subtitle": "Free online tools that work entirely in your browser",
 		"mission": "Our Mission",
-		"missionText": "ToolBoxOnline provides fast, free, and privacy-friendly online tools that anyone can use without an account. All tools run entirely in your browser — no data is sent to servers, no tracking beyond basic analytics, and no content hidden behind paywalls.",
+		"missionText": "We build free, fast, private online tools that anyone can use without installing anything. No signups, no ads getting in the way, no data collection. Just tools that do one thing well — in your browser, on any device.",
 		"features": [
 			{
-				"title": "50+ Free Tools",
-				"text": "Text utilities, developer tools, calculators, and converters — everything you need in one place."
+				"title": "68+ Free Tools",
+				"text": "Text formatting, developer utilities, calculators, reference tools, and fun media tools — all free, all in one place."
+			},
+			{
+				"title": "Runs in Your Browser",
+				"text": "Most tools process data locally on your device. Your files and text never leave your computer unless a tool explicitly needs an external API."
+			},
+			{
+				"title": "No Signup Required",
+				"text": "Every tool works immediately. No account creation, no email verification, no credit card. Open and use."
+			},
+			{
+				"title": "Multi-Language Support",
+				"text": "Available in English, Spanish, and Arabic. We are working on more languages."
 			},
 			{
 				"title": "Privacy First",
-				"text": "All data is processed locally in your browser. Nothing is uploaded to or stored on any server."
+				"text": "We do not track you. No analytics cookies. No personal data collection. Tools that need external APIs clearly state it."
 			},
 			{
-				"title": "No Account Required",
-				"text": "Open the site and start using any tool immediately. No registration, no login, no personal data required."
-			},
-			{
-				"title": "Multi-Language",
-				"text": "Available in English, Spanish, and Arabic with full RTL support."
+				"title": "Ad-Supported, Not Ad-Ruined",
+				"text": "Lightweight advertising keeps the tools free. No popups, no intrusive overlays, no auto-playing video ads."
 			}
 		],
 		"aboutProject": "About This Project",
-		"projectText": "ToolBoxOnline is a personal project built and maintained by one person. It started as a collection of small utilities and grew into a comprehensive toolkit. The site is monetized through Google AdSense to cover hosting costs — no subscriptions, no premium tiers, no paywalls.",
+		"projectText": "ToolBoxOnline started as a collection of tools the creator needed personally — a JSON formatter, a word counter, a password generator. It grew into a 68-tool platform serving users worldwide. Every tool was built because someone needed it, and keeping them free and accessible is the core principle behind this project. The site is independently built and maintained. No venture capital, no exit strategy — just a useful collection of tools that stay out of your way.",
 		"techStack": "Built With",
-		"techText": "This site is built with Next.js and deployed on Vercel's edge network for fast loading worldwide. The UI uses Tailwind CSS for responsive design that works on desktop, tablet, and mobile devices. All tool logic runs client-side using vanilla JavaScript and modern browser APIs.",
+		"techText": "This site is built with Next.js, Tailwind CSS, and TypeScript. Deployed on Vercel. Tools use a mix of browser-local processing and external APIs — each tool page clearly states how your data is handled. We use Open-Meteo for weather (free, no API key), GIPHY for GIFs, CoinGecko for crypto prices, and NASA APOD for astronomy images.",
 		"commitment": [
-			"We will keep all tools free and accessible",
-			"We will not collect or sell personal data",
-			"We will continue adding new tools regularly"
+			"No registration required for any tool",
+			"No tracking or analytics cookies",
+			"Most tools process data locally in your browser",
+			"Clear disclosure when external APIs are used",
+			"Accessible design that works on all devices",
+			"Open source where possible"
 		]
 	},
 	"bookOfAnswers": {
