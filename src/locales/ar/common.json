@@ -1015,5 +1015,64 @@
 		"placeholder": "نصك هنا",
 		"enterFullscreen": "ملء الشاشة",
 		"exitHint": "انقر في أي مكان أو اضغط Esc للخروج"
+	},
+	"colorContrastChecker": {
+		"foreground": "لون المقدمة",
+		"background": "لون الخلفية",
+		"contrastRatio": "نسبة التباين",
+		"aaNormal": "AA عادي",
+		"aaLarge": "AA كبير",
+		"aaaNormal": "AAA عادي",
+		"aaaLarge": "AAA كبير",
+		"pass": "نجاح",
+		"fail": "فشل",
+		"preview": "معاينة",
+		"previewText": "الثعلب البني السريع يقفز فوق الكلب الكسول."
+	},
+	"base64ToImage": {
+		"placeholder": "الصق سلسلة Base64 هنا...",
+		"preview": "معاينة",
+		"download": "تنزيل الصورة",
+		"format": "التنسيق المكتشف",
+		"copy": "نسخ",
+		"error": "سلسلة Base64 غير صالحة"
+	},
+	"codeFormatter": {
+		"format": "تنسيق",
+		"language": "اللغة",
+		"json": "JSON",
+		"javascript": "JavaScript",
+		"css": "CSS",
+		"html": "HTML",
+		"placeholder": "الصق الكود هنا...",
+		"copy": "نسخ",
+		"result": "النتيجة",
+		"invalid": "كود غير صالح",
+		"error": "خطأ"
+	},
+	"svgMinifier": {
+		"minify": "تصغير",
+		"placeholder": "الصق SVG هنا...",
+		"copy": "نسخ",
+		"result": "النتيجة",
+		"reduced": "تم التصغير من {{original}}B إلى {{minified}}B ({{savings}}% أصغر)"
+	},
+	"htmlToMarkdown": {
+		"placeholder": "الصق HTML هنا...",
+		"copy": "نسخ",
+		"result": "Markdown",
+		"inputLabel": "إدخال HTML",
+		"outputLabel": "إخراج Markdown"
+	},
+	"qrCodeScanner": {
+		"startCamera": "تشغيل الكاميرا",
+		"stopCamera": "إيقاف الكاميرا",
+		"uploadImage": "رفع صورة",
+		"result": "النتيجة",
+		"copy": "نسخ",
+		"error": "خطأ",
+		"noCamera": "الكاميرا غير متاحة أو تم رفض الإذن.",
+		"noQrFound": "لم يتم العثور على رمز QR في هذه الصورة.",
+		"instructions": "الصق صورة من الحافظة، أو ارفع ملفاً، أو استخدم الكاميرا للمسح."
 	}
 }

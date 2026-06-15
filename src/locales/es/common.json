@@ -1015,5 +1015,64 @@
 		"placeholder": "Tu texto aquí",
 		"enterFullscreen": "Pantalla Completa",
 		"exitHint": "Haz clic en cualquier lugar o presiona Esc para salir"
+	},
+	"colorContrastChecker": {
+		"foreground": "Color de Primer Plano",
+		"background": "Color de Fondo",
+		"contrastRatio": "Relación de Contraste",
+		"aaNormal": "AA Normal",
+		"aaLarge": "AA Grande",
+		"aaaNormal": "AAA Normal",
+		"aaaLarge": "AAA Grande",
+		"pass": "Aprueba",
+		"fail": "Falla",
+		"preview": "Vista Previa",
+		"previewText": "El rápido zorro marrón salta sobre el perro perezoso."
+	},
+	"base64ToImage": {
+		"placeholder": "Pega tu cadena Base64 aquí...",
+		"preview": "Vista Previa",
+		"download": "Descargar Imagen",
+		"format": "Formato detectado",
+		"copy": "Copiar",
+		"error": "Cadena Base64 inválida"
+	},
+	"codeFormatter": {
+		"format": "Formatear",
+		"language": "Lenguaje",
+		"json": "JSON",
+		"javascript": "JavaScript",
+		"css": "CSS",
+		"html": "HTML",
+		"placeholder": "Pega tu código aquí...",
+		"copy": "Copiar",
+		"result": "Resultado",
+		"invalid": "Código inválido",
+		"error": "Error"
+	},
+	"svgMinifier": {
+		"minify": "Minificar",
+		"placeholder": "Pega tu SVG aquí...",
+		"copy": "Copiar",
+		"result": "Resultado",
+		"reduced": "Reducido de {{original}}B a {{minified}}B ({{savings}}% más pequeño)"
+	},
+	"htmlToMarkdown": {
+		"placeholder": "Pega tu HTML aquí...",
+		"copy": "Copiar",
+		"result": "Markdown",
+		"inputLabel": "Entrada HTML",
+		"outputLabel": "Salida Markdown"
+	},
+	"qrCodeScanner": {
+		"startCamera": "Iniciar Cámara",
+		"stopCamera": "Detener Cámara",
+		"uploadImage": "Subir Imagen",
+		"result": "Resultado",
+		"copy": "Copiar",
+		"error": "Error",
+		"noCamera": "Cámara no disponible o permiso denegado.",
+		"noQrFound": "No se encontró código QR en esta imagen.",
+		"instructions": "Pega una imagen del portapapeles, sube un archivo o usa tu cámara para escanear."
 	}
 }

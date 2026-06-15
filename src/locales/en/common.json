@@ -1063,5 +1063,64 @@
 		"placeholder": "Your text here",
 		"enterFullscreen": "Full Screen",
 		"exitHint": "Click anywhere or press Esc to exit"
+	},
+	"colorContrastChecker": {
+		"foreground": "Foreground Color",
+		"background": "Background Color",
+		"contrastRatio": "Contrast Ratio",
+		"aaNormal": "AA Normal",
+		"aaLarge": "AA Large",
+		"aaaNormal": "AAA Normal",
+		"aaaLarge": "AAA Large",
+		"pass": "Pass",
+		"fail": "Fail",
+		"preview": "Preview",
+		"previewText": "The quick brown fox jumps over the lazy dog."
+	},
+	"base64ToImage": {
+		"placeholder": "Paste your Base64 string here...",
+		"preview": "Preview",
+		"download": "Download Image",
+		"format": "Detected format",
+		"copy": "Copy",
+		"error": "Invalid Base64 string"
+	},
+	"codeFormatter": {
+		"format": "Format",
+		"language": "Language",
+		"json": "JSON",
+		"javascript": "JavaScript",
+		"css": "CSS",
+		"html": "HTML",
+		"placeholder": "Paste your code here...",
+		"copy": "Copy",
+		"result": "Result",
+		"invalid": "Invalid code",
+		"error": "Error"
+	},
+	"svgMinifier": {
+		"minify": "Minify",
+		"placeholder": "Paste your SVG here...",
+		"copy": "Copy",
+		"result": "Result",
+		"reduced": "Reduced from {{original}}B to {{minified}}B ({{savings}}% smaller)"
+	},
+	"htmlToMarkdown": {
+		"placeholder": "Paste your HTML here...",
+		"copy": "Copy",
+		"result": "Markdown",
+		"inputLabel": "HTML Input",
+		"outputLabel": "Markdown Output"
+	},
+	"qrCodeScanner": {
+		"startCamera": "Start Camera",
+		"stopCamera": "Stop Camera",
+		"uploadImage": "Upload Image",
+		"result": "Result",
+		"copy": "Copy",
+		"error": "Error",
+		"noCamera": "Camera not available or permission denied.",
+		"noQrFound": "No QR code found in this image.",
+		"instructions": "Paste an image from clipboard, upload a file, or use your camera to scan."
 	}
 }
