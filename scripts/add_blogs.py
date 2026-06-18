@@ -1,357 +1,295 @@
-# Fix: match actual pattern - ]; and export are consecutive lines
+# Insert 6 new blog posts (2026-06-18 batch)
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
     content = f.read()
 
-# Actual pattern: \n];\nexport function getBlogPosts  (no blank line between)
 old = '\n];\nexport function getBlogPosts'
 
-# 6 new blogs with FULL content
 new_blogs = r"""
   {
-    slug: "color-contrast-checker-online-guide",
-    title: "How to Check Color Contrast for Accessibility in 10 Seconds (No Design Skills Needed)",
-    description: "Your color combo looks fine to you but fails WCAG for 1 in 12 people. Here's how to check contrast ratio in seconds without a design degree.",
-    date: "2026-06-16",
+    slug: "morse-code-translator-online-guide",
+    title: "How to Translate Morse Code Online — No Memorization Required",
+    description: "Need to decode Morse code but can't remember the dots and dashes? Here's how to translate Morse code instantly with a free online tool, plus when Morse is still useful in 2026.",
+    date: "2026-06-18",
     category: "Developer",
-    tags: ["color contrast checker", "WCAG contrast", "accessibility check", "color accessibility", "contrast ratio"],
-    relatedTools: ["color-contrast-checker", "color-converter", "css-minifier"],
+    tags: ["morse code translator", "text to morse", "morse to text", "learn morse code", "developer tools"],
+    relatedTools: ["morse-code", "url-encoder", "text-to-slug"],
     content: `
-<p>You picked a light gray button with white text. It looks clean. It looks modern. It also fails every accessibility standard and 1 in 12 people cannot read it. I have done this exact thing and so has every developer who designs their own UI.</p>
+<p>Someone sends you <code>.... . .-.. .-.. ---</code> in a message and you stare at it. Is it spam? A puzzle? A cry for help? It is just "hello" in Morse code. You do not need to learn the entire International Morse alphabet to decode it — a <a href="/en/tools/morse-code">free Morse code translator</a> handles it in under a second.</p>
 
-<p>A <a href="/en/tools/color-contrast-checker">color contrast checker</a> tells you in one second whether your text is actually readable. No design skills needed. Just pick two colors and see the numbers.</p>
+<p>Morse code still shows up in ham radio, escape rooms, puzzle games, and occasionally your tech-savvy uncle's Christmas cards. Having a quick way to translate it saves you from counting dots on your fingers.</p>
 
-<h2>What contrast ratio actually means</h2>
+<h2>What the translator actually does</h2>
 
-<p>The WCAG 2.1 standard defines contrast ratio as the difference in luminance between two colors. It is a number between 1 (identical colors, unreadable) and 21 (pure black on pure white, maximum contrast). The math is straightforward: luminance = 0.2126 × R + 0.7152 × G + 0.0722 × B, with each channel gamma-corrected first. You do not need to memorize this. The tool does it instantly.</p>
+<p>Our <a href="/en/tools/morse-code">Morse code translator</a> works both ways. Paste dots and dashes to get plain text. Type plain text to get Morse output. It covers the full A-Z alphabet, digits 0-9, and common symbols like period, comma, and question mark. The audio playback button lets you hear the rhythm — useful if you are trying to learn the timing.</p>
 
-<p>What matters is the thresholds:</p>
+<p>The tool handles spacing automatically. Three dots between characters, seven dots between words. You do not need to format anything — just paste and read.</p>
+
+<h2>Where Morse code still matters in 2026</h2>
+
+<p><strong>Ham radio operators</strong> still use CW (continuous wave) Morse for long-distance communication. It cuts through noise better than voice, and the equipment is cheap and simple. A $50 radio can reach across continents with Morse, where voice needs hundreds of watts.</p>
+
+<p><strong>Escape rooms and puzzle games</strong> love Morse code. Flashing lights, beeping sounds, or a series of taps on the wall — game designers know Morse adds an air of mystery. Our <a href="/en/tools/url-encoder">URL encoder</a> is another tool that puzzle designers use to obfuscate clues.</p>
+
+<p><strong>Accessibility and assistive tech.</strong> People with severe motor disabilities sometimes use Morse code input via a single switch or blink sensor. It is slow — maybe 5-10 words per minute — but it is communication when other methods fail.</p>
+
+<p><strong>Emergency signaling.</strong> SOS (<code>... --- ...</code>) is universally recognized. You can signal it with a flashlight, a mirror, or by banging on a pipe. No language barrier, no equipment needed.</p>
+
+<h2>The rhythm trick for remembering common letters</h2>
+
+<p>You do not need to memorize the full Morse table. Focus on the rhythm patterns:</p>
 
 <ul>
-<li><strong>4.5:1</strong> — AA normal text. Your minimum target for body copy under 18px.</li>
-<li><strong>3:1</strong> — AA large text. For headings 18px+ or bold 14px+. Easier to hit.</li>
-<li><strong>7:1</strong> — AAA normal text. The gold standard. Required for government and education sites.</li>
-<li><strong>4.5:1</strong> — AAA large text. Same as AA normal, just for big type.</li>
+<li><strong>E</strong> — one dot (<code>.</code>). Most common letter, shortest code.</li>
+<li><strong>T</strong> — one dash (<code>-</code>). Second most common.</li>
+<li><strong>A</strong> — dot-dash (<code>.-</code>). Sounds like "di-dah".</li>
+<li><strong>N</strong> — dash-dot (<code>-.</code>). Sounds like "dah-di".</li>
+<li><strong>S</strong> — three dots (<code>...</code>). Same as the letter S in the SOS signal.</li>
+<li><strong>O</strong> — three dashes (<code>---</code>). Same as the letter O in SOS.</li>
 </ul>
 
-<p>Our <a href="/en/tools/color-contrast-checker">free contrast checker</a> shows all four levels at once with pass/fail indicators. Pick foreground and background colors with the color pickers, and you see every threshold in real time.</p>
+<p>From these six you can already spell "stone", "notes", "atone", and dozens of other words. Build from the common letters outward and you will recognize patterns faster than you expect.</p>
 
-<h2>The mistake I made for years: trusting my eyes</h2>
+<h2>What Morse cannot do</h2>
 
-<p>Here is a specific scenario. You have a brand color — say <code>#7C3AED</code>, a nice purple. You want white text on it. It "looks fine" to you on a Retina display at full brightness in a well-lit room. So you ship it.</p>
+<p>Morse code has no case distinction — uppercase and lowercase are identical. It has no emoji, no Unicode, no formatting. For encoding anything beyond plain A-Z and 0-9, you need a different tool. Our <a href="/en/tools/text-to-slug">text-to-slug converter</a> handles URL-safe encoding, and the <a href="/en/tools/url-encoder">URL encoder</a> handles percent-encoding for web use.</p>
 
-<p>Then your user opens the page on a dimmed laptop screen at a coffee shop at 3pm with glare from the window. They squint. They scroll past your CTA button because they literally cannot read it.</p>
+<p>Morse is also slow. A fast typist hits 80 words per minute. An expert Morse operator with a paddle key might reach 40. For everyday communication, Morse is the wrong tool. But for the specific scenarios above, it is still the right one.</p>
 
-<p>I have been that developer. The fix is embarrassingly simple: run the combo through a <a href="/en/tools/color-contrast-checker">contrast checker</a> before shipping. White on <code>#7C3AED</code> scores 6.3:1 — it passes AA but fails AAA. If you need AAA, darken the purple to <code>#5B21B6</code> and you get 9.1:1. One hex digit change, massive readability improvement.</p>
-
-<h2>Counter-intuitive things about contrast</h2>
-
-<p><strong>Dark gray on white can fail while pure black passes.</strong> <code>#767676</code> on white scores 4.5:1 (barely AA). <code>#000000</code> on white scores 21:1. The difference between "looks gray" and "looks black" on screen is the difference between passing and failing accessibility. When in doubt, go darker than you think you need to.</p>
-
-<p><strong>Yellow text is almost always a problem.</strong> Yellow on white is unreadable (1.1:1). Yellow on black works (19.6:1) but the high contrast is harsh on eyes for body text. Reserve yellow-on-dark for warning badges and short labels.</p>
-
-<p><strong>Brand colors often fail at their default values.</strong> Most brand palettes are designed for logos and hero images — large blocks of color, not text-on-background combinations. The contrast ratio for text is an afterthought. Check every text-on-brand-color combination before you build the component.</p>
-
-<h2>The dilemma: what if your brand color fails?</h2>
-
-<p>You have two choices, and neither is perfect:</p>
-
-<ol>
-<li><strong>Darken or lighten the color</strong> until it passes. This changes the brand. Marketing might not love it. But your text becomes readable.</li>
-<li><strong>Keep the color for decorative use only</strong> (backgrounds, borders, icons) and use a high-contrast neutral for actual text on top of it. White text on a darkened overlay of the brand color is a common compromise.</li>
-</ol>
-
-<p>I lean toward option 2 for most projects. Keep the brand color where it shines and use accessible text colors separately. Nobody notices the text color. Everyone notices when they cannot read the text.</p>
-
-<p>Try the <a href="/en/tools/color-contrast-checker">WCAG contrast checker</a> on your current project. Grab your primary button color and your text color. If the ratio is under 4.5, you just found a bug before your users did.</p>
-
-<p>If you are curious about other color formats, our <a href="/en/tools/color-converter">color converter</a> handles HEX, RGB, HSL, and more — useful when design tools give you colors in different formats. And for the broader picture on building accessible interfaces, check out <a href="/en/blog/color-converter-design-guide">how to use color converters in your design workflow</a>.</p>
-`,
+<p>Next time someone sends you dots and dashes, skip the memorization. Paste it into the <a href="/en/tools/morse-code">Morse code translator</a> and get the answer before they finish tapping. And if you are curious about the broader landscape of developer utilities, check out our <a href="/en/blog/online-developer-tools-bookmarks-2026">roundup of the best free online developer tools in 2026</a>.</p>
+`
   },
   {
-    slug: "decode-base64-image-online",
-    title: "You Have a Base64 String and Need to See the Image — Here Is How to Decode It",
-    description: "Someone sent you a data URI or a raw Base64 string and you need to actually see the image. No command line, no script. Just paste and view.",
-    date: "2026-06-16",
+    slug: "unix-timestamp-converter-explained",
+    title: "Unix Timestamps Explained — Convert Without Writing a Single Line of Code",
+    description: "Ever seen a number like 1718236800 and wondered what date it represents? Here's what Unix timestamps are, why they exist, and how to convert them without coding.",
+    date: "2026-06-18",
     category: "Developer",
-    tags: ["base64 to image", "decode base64 image", "base64 decoder", "data uri to image", "base64 viewer"],
-    relatedTools: ["base64-to-image", "image-to-base64", "base64-converter"],
+    tags: ["unix timestamp converter", "epoch time", "timestamp to date", "unix time explained", "developer tools"],
+    relatedTools: ["unix-timestamp", "base-converter", "hash-generator"],
     content: `
-<p>You get an email from a colleague. The attachment is not a PNG file — it is a three-paragraph string that starts with <code>iVBORw0KGgo</code>. Or you are debugging an API response and the "image" field is a data URI longer than your screen. You need to see what this thing actually looks like, and you need to see it now.</p>
+<p>A friend sends you "meet at 1718236800" and you think they have lost their mind. That number is not a typo — it is a Unix timestamp. It means June 13, 2024, 00:00:00 UTC. You can decode it in seconds with a <a href="/en/tools/unix-timestamp">Unix timestamp converter</a> instead of doing the math by hand.</p>
 
-<p>A <a href="/en/tools/base64-to-image">Base64 to image decoder</a> solves this in one paste. No terminal, no Python script, no "let me save this to a file and double-click it." Just paste and the image appears.</p>
+<p>Unix timestamps are everywhere in programming — API responses, database records, log files, JWT tokens. Knowing how to read them, even without writing code, saves you from confusion when debugging or reviewing data.</p>
 
-<h2>What a Base64 image string looks like</h2>
+<h2>What a Unix timestamp actually is</h2>
 
-<p>There are two formats you will encounter:</p>
+<p>A Unix timestamp counts seconds since January 1, 1970, 00:00:00 UTC. That moment — the "Unix epoch" — is second zero. Every second since then increments the counter by one. Right now, as you read this, the timestamp is somewhere north of 1.7 billion.</p>
 
-<p><strong>Data URI format</strong> (with prefix): <code>data:image/png;base64,iVBORw0KGgoAAAANS...</code>. This tells you the format (PNG) and encoding (Base64). Browsers can render this directly in an <code>img</code> tag.</p>
+<p>The <a href="/en/tools/unix-timestamp">free Unix timestamp converter</a> on this site handles both directions: paste a timestamp and get the human-readable date in UTC and your local time zone, or pick a date from the calendar and get its timestamp. It also supports millisecond timestamps — JavaScript uses those — so you do not need to guess whether that 13-digit number is seconds or milliseconds.</p>
 
-<p><strong>Raw Base64</strong> (no prefix): <code>iVBORw0KGgoAAAANS...</code>. You need to know or guess the format. The first few characters are a clue — <code>iVBOR</code> is PNG, <code>/9j/</code> is JPEG, <code>R0lGOD</code> is GIF, <code>UklGR</code> is WebP.</p>
+<h2>Why programmers use timestamps instead of dates</h2>
 
-<p>Our <a href="/en/tools/base64-to-image">free Base64 image decoder</a> handles both formats. It auto-detects the image type from the magic bytes and shows you the preview instantly — no need to strip the prefix or guess the extension.</p>
+<p><strong>Time zones are a nightmare.</strong> A timestamp is a single integer, the same everywhere on Earth. 1718236800 means the exact same instant whether you are in Tokyo, London, or New York. No daylight saving time edge cases, no locale formatting, no ambiguity.</p>
 
-<h2>Three real situations where you need this</h2>
+<p><strong>Sorting and comparison is trivial.</strong> Which happened first, "March 2, 2025" or "2025-03-02"? With timestamps, it is just <code>1740873600 &lt; 1740960000</code>. Integer comparison. Done.</p>
 
-<p><strong>1. Debugging API responses.</strong> Some APIs return images as Base64 strings instead of URLs — especially internal microservices and legacy systems. You cannot "open in new tab" a Base64 string from a JSON response. Paste it into the decoder and you see the image immediately.</p>
+<p><strong>Math is clean.</strong> Add 86400 to a timestamp and you get exactly 24 hours later. No month boundaries, no leap year logic, no calendar arithmetic. Our <a href="/en/tools/base-converter">base converter</a> works on similar principles — reducing complex conversions to simple math.</p>
 
-<p><strong>2. Email attachments gone wrong.</strong> When an email client encodes an inline image as Base64 (especially in plain-text mode), you get a wall of characters instead of a photo. Copy the block between the <code>Content-Transfer-Encoding: base64</code> header and the next MIME boundary, paste, and you see the original image.</p>
+<p><strong>Storage efficiency.</strong> A 64-bit integer stores an exact instant in 8 bytes. A date string with timezone info might take 20-30 bytes. At scale, that difference matters.</p>
 
-<p><strong>3. CSS data URIs you did not write.</strong> Inheriting a codebase and finding <code>background-image: url(data:image/svg+xml;base64,...)</code> in the CSS? Paste the Base64 part into the decoder to see what icon or pattern it renders. Way faster than reading raw SVG paths.</p>
+<h2>The three timestamp formats you will encounter</h2>
 
-<h2>The common mistake: missing or broken prefix</h2>
+<p><strong>Seconds (10 digits):</strong> The original Unix format. Used in Linux systems, most APIs, and Go/Python backends. Example: <code>1718236800</code>.</p>
 
-<p>The most frequent failure mode is a missing <code>data:image/...</code> prefix. A raw Base64 string pasted into a browser address bar does nothing. A data URI with the wrong MIME type (e.g. <code>image/jpeg</code> for a PNG) may still render but with quirks.</p>
+<p><strong>Milliseconds (13 digits):</strong> JavaScript's <code>Date.now()</code> returns milliseconds. Used in browser code, Node.js, and MongoDB. Example: <code>1718236800000</code>.</p>
 
-<p>The decoder auto-detects the format from the binary content, not the prefix. So even if the prefix says JPEG but the bytes say PNG, you get the correct preview. It also catches common corruption patterns — truncated strings, wrong padding, non-Base64 characters accidentally included.</p>
+<p><strong>Microseconds/nanoseconds (16-19 digits):</strong> High-precision logging systems. Less common but you will see them in performance monitoring tools. The converter handles seconds and milliseconds — for anything longer, just drop the extra digits.</p>
 
-<p>Once decoded, hit Download and you get the actual image file with the correct extension. No renaming <code>.txt</code> to <code>.png</code> manually.</p>
+<h2>The Year 2038 problem, briefly</h2>
 
-<h2>When to use the reverse tool instead</h2>
+<p>32-bit systems store timestamps as a signed integer, maxing out at 2,147,483,647 — which is January 19, 2038, at 03:14:07 UTC. After that, the counter overflows and wraps to negative numbers, which some systems interpret as December 1901. Most modern systems use 64-bit timestamps now, which will not overflow for another 292 billion years. But embedded systems, old databases, and some IoT devices still run 32-bit. If you are maintaining legacy infrastructure, 2038 is worth a Google.</p>
 
-<p>If you are going the other direction — you have an image and need Base64 — use our <a href="/en/tools/image-to-base64">image to Base64 converter</a>. It is the same idea reversed: upload an image, get the Base64 string with the correct data URI prefix. Useful for embedding small icons directly in HTML and saving HTTP requests.</p>
-
-<p>And if you need to encode or decode non-image Base64 data (text, tokens, configs), the <a href="/en/tools/base64-converter">Base64 text converter</a> handles that. Check out <a href="/en/blog/base64-encoding-explained">Base64 encoding explained</a> if you want to understand how the encoding actually works under the hood.</p>
-`,
+<p>Next time you see a mysterious 10-digit number in a log file or API response, paste it into the <a href="/en/tools/unix-timestamp">Unix timestamp converter</a>. It is faster than opening a Python REPL. And if you work with encoded data regularly, our <a href="/en/tools/hash-generator">hash generator</a> and <a href="/en/blog/online-developer-tools-bookmarks-2026">curated list of online developer tools</a> are worth bookmarking.</p>
+`
   },
   {
-    slug: "online-code-formatter-vs-prettier-vs-ide",
-    title: "Online Code Formatter vs Prettier vs Your IDE: When to Use Which",
-    description: "You don't always have your dev setup. Here's when a browser code formatter beats Prettier, when it doesn't, and how to choose the right tool for the job.",
-    date: "2026-06-16",
-    category: "Developer",
-    tags: ["code formatter", "format code online", "online code beautifier", "Prettier alternative", "code formatting tools"],
-    relatedTools: ["code-formatter", "json-formatter", "css-minifier"],
+    slug: "tip-calculator-split-bill-guide",
+    title: "Never Split a Restaurant Bill Awkwardly Again — The Tip Calculator That Does It For You",
+    description: "Seven people, one check, and everyone ordered different things. Here's how a tip calculator saves you from the post-dinner math headache and gets the split right every time.",
+    date: "2026-06-18",
+    category: "Calculator",
+    tags: ["tip calculator", "split bill", "calculate tip", "restaurant tip", "bill splitter"],
+    relatedTools: ["tip-calculator", "percentage-calculator", "discount-calculator"],
     content: `
-<p>You are on a QA machine. Or a server terminal. Or a colleague's laptop during a pairing session. Someone pastes a blob of minified JSON into Slack and asks "what is wrong with this config?" Your IDE with Prettier is not there. The npm install would take two minutes. You just need to read the damn thing.</p>
+<p>The bill arrives. $187.43. Seven people. Sarah had the steak, Mike only got a salad, and someone ordered three cocktails. Now everyone stares at the receipt like it is a calculus exam. You pull out your phone, open the <a href="/en/tools/tip-calculator">free tip calculator</a>, punch in the numbers, and announce the per-person total in under ten seconds. You look like the organized one. You are welcome.</p>
 
-<p>This is when an <a href="/en/tools/code-formatter">online code formatter</a> wins. Not always — I will tell you when it does not — but in the "I need readable code in the next 10 seconds" scenario, nothing beats paste-and-format in a browser tab.</p>
+<p>This scenario plays out at every group dinner. The math is not hard — it is just awkward. Nobody wants to be the person who undercalculates the tip, and nobody wants to overpay. A dedicated tool removes the social friction.</p>
 
-<h2>The three tools, compared honestly</h2>
+<h2>How the tip calculator works</h2>
 
-<p><strong>Online code formatter</strong> — Zero setup. Works on any device with a browser. Supports JSON, JavaScript, CSS, and HTML in one tool. You switch languages with a tab and hit Format. The output is readable, not necessarily "correct" by every lint rule. No config file, no plugin ecosystem. It does one thing and does it fast.</p>
+<p>Enter the bill total, choose a tip percentage (or enter a custom dollar amount), and set the number of people. The <a href="/en/tools/tip-calculator">tip calculator</a> shows three numbers immediately: the tip amount, the total bill with tip, and the per-person split. If you prefer to tip a flat dollar amount instead of a percentage — say $30 on a $150 bill — the custom tip field handles that too.</p>
 
-<p><strong>Prettier</strong> — The industry standard for a reason. Opinionated formatting that an entire team can agree on because there are almost no options to argue about. Requires Node.js and a project setup. Best for codebases where consistency across contributors matters more than personal preference.</p>
+<p>It rounds results to two decimal places so you are not asking people to Venmo $31.572. Clean numbers, no loose change.</p>
 
-<p><strong>IDE formatter (VS Code / JetBrains)</strong> — Built-in, always available when you have your machine. Format-on-save is a habit you should build. But it only works on files you have open in the editor. Pasting from Slack, an API response, or a log file means creating a temp file first.</p>
+<h2>The mental math most people get wrong</h2>
 
-<h2>The specific scenario where online wins</h2>
+<p>The common shortcut — "double the tax" — works in some places but not others. In California where tax is roughly 8.5%, doubling gives you 17%, which is reasonable. In New Hampshire with no sales tax, you get zero. In the UK where VAT is 20%, doubling gives you 40% — your server would be thrilled, but your wallet would not.</p>
 
-<p>You are debugging a production issue at 11pm. The error log contains a JSON payload that is 4,000 characters on one line. You need to find a specific nested field to understand what went wrong.</p>
+<p>Another common mistake: calculating tip on the post-tax total. You should tip on the pre-tax subtotal. On a $100 meal with 8% tax, tipping 20% on $108 instead of $100 is a $1.60 difference. Small, but it adds up. The <a href="/en/tools/percentage-calculator">percentage calculator</a> can help you double-check these numbers if you want to verify.</p>
 
-<p>With an online formatter: select the JSON → paste → click Format → the structure appears with indentation → you find the field in 5 seconds. With Prettier: open terminal → <code>echo '...' | npx prettier --parser json</code> → wait for npx to resolve → squint at terminal output. With an IDE: create new file → paste → wait for language detection → right-click → Format Document → read → delete file.</p>
+<h2>How much to tip: the 2026 reality</h2>
 
-<p>The online formatter wins by about 30 seconds. In a production incident, 30 seconds matters.</p>
-
-<h2>When the online formatter is NOT the right choice</h2>
-
-<p><strong>Project-wide formatting.</strong> Formatting 50 files across a codebase? Use Prettier with <code>--write</code>. An online formatter is one-file-at-a-time by design.</p>
-
-<p><strong>Enforcing team style rules.</strong> An online formatter does not read your <code>.prettierrc</code> or <code>.eslintrc</code>. It applies generic rules. For team consistency, use the tools configured in your project.</p>
-
-<p><strong>Formatting TypeScript with complex generics.</strong> Our JS formatter handles basic syntax well, but TypeScript generics, decorators, and advanced patterns can produce imperfect indentation. For production TS code, use Prettier with the TypeScript plugin.</p>
-
-<p>The <a href="/en/tools/code-formatter">free online code formatter</a> is a quick-look tool. Think of it like a magnifying glass, not a construction crane. It helps you read code fast. It is not meant to replace your project's formatting pipeline.</p>
-
-<h2>Real numbers from a quick test</h2>
-
-<p>I took a 2,800-character minified JSON (an API response with nested objects, arrays, and escaped strings) and timed three methods:</p>
+<p>Tipping norms have shifted post-pandemic. Here is the current landscape in the US:</p>
 
 <ul>
-<li><strong>Online formatter</strong>: 3 seconds (open tab, paste, click Format, read)</li>
-<li><strong>Prettier CLI</strong>: 11 seconds (open terminal, type command, wait for npx)</li>
-<li><strong>VS Code</strong>: 18 seconds (create new file, paste, Format Document)</li>
+<li><strong>Full-service restaurant:</strong> 18-22%. 15% is now considered "dissatisfied." 20% is standard for good service.</li>
+<li><strong>Counter service / fast casual:</strong> Those iPad screens default to 18-25%, but 10-15% is fine. You are not obligated to tip on counter service.</li>
+<li><strong>Coffee shop:</strong> $1 per drink or round up. Nobody expects 20% on a $4 latte.</li>
+<li><strong>Delivery:</strong> 15-20% or minimum $5, whichever is higher. The driver paid for gas.</li>
+<li><strong>Takeout:</strong> 10% is generous. You drove to the restaurant.</li>
 </ul>
 
-<p>For a one-off, the browser is fastest. For your daily workflow, stick with IDE format-on-save. The two are not competitors — they solve different moments.</p>
+<p>Outside the US, customs vary wildly. In Japan, tipping is considered rude. In most of Europe, service charge is included and rounding up is sufficient. When in doubt, ask a local — or use the <a href="/en/tools/discount-calculator">discount calculator</a> to figure out what you are actually paying after tax and service charges.</p>
 
-<p>If you work with JSON specifically, our dedicated <a href="/en/tools/json-formatter">JSON formatter</a> has collapsible tree view — better for deep nesting than a generic formatter. And if you deal with minified CSS, the <a href="/en/tools/css-minifier">CSS minifier</a> works in both directions. For more on debugging messy data formats, <a href="/en/blog/json-debugging-nightmare-guide">I spent an hour debugging one JSON error that a validator would have caught instantly</a>.</p>
-`,
+<h2>When the group split gets complicated</h2>
+
+<p>Seven people, but two are a couple sharing one bill. Three people had drinks, four did not. One person is paying cash and needs change. The tip calculator handles the even split — for itemized splits, you still need to do a bit of manual sorting. My advice: agree on the split method before ordering. "Even split" or "pay for what you ordered" — decide upfront and there are no surprises when the check lands.</p>
+
+<p>Next group dinner, skip the calculator app that came with your phone. Open the <a href="/en/tools/tip-calculator">tip calculator</a>, get the numbers in five seconds, and get back to the conversation. If you want to get smarter about everyday math tools, our <a href="/en/blog/calculate-loan-payments">guide to calculating loan payments without spreadsheets</a> covers similar real-world number crunching.</p>
+`
   },
   {
-    slug: "svg-minifier-comparison-test-2026",
-    title: "I Ran 30 SVGs Through 4 Minifiers — Here Is Which One Saved the Most Bytes",
-    description: "SVG files from design tools are bloated with metadata, comments, and editor cruft. I tested 4 SVG minification methods on 30 real-world files to find the winner.",
-    date: "2026-06-16",
-    category: "Developer",
-    tags: ["svg minifier", "compress svg", "svg optimizer", "minify svg online", "svg file size"],
-    relatedTools: ["svg-minifier", "css-minifier", "code-formatter"],
+    slug: "discount-calculator-vs-mental-math",
+    title: "Online Discount Calculator vs Mental Math: Which Gets You the Right Price?",
+    description: "40% off $67.99 — quick, what is the final price? Most people get this wrong in their head. We tested mental math shortcuts against a discount calculator to see how far off they land.",
+    date: "2026-06-18",
+    category: "Calculator",
+    tags: ["discount calculator", "calculate discount", "sale price calculator", "percentage off", "shopping calculator"],
+    relatedTools: ["discount-calculator", "percentage-calculator", "tip-calculator"],
     content: `
-<p>I exported an icon from Figma last week. The SVG was 14KB. The icon was a simple arrow — three points, two lines. Fourteen kilobytes for three points. I opened the file and found 11KB of Figma metadata: layer names, plugin version strings, invisible annotation layers, and 47 lines of whitespace between tags.</p>
+<p>You are standing in a store. The sign says "40% off $67.99." You pull out your phone, do some quick mental math — "that is about $27 off, so $41-ish" — and head to the register. The cashier rings up $40.79. You were close. But "close" on ten items adds up to a $5-10 surprise at the register. A <a href="/en/tools/discount-calculator">free online discount calculator</a> gives you the exact number in one second.</p>
 
-<p>So I ran a test. Thirty SVG files from four sources — Figma exports, Illustrator exports, hand-coded icons from open-source libraries, and inline SVGs scraped from production websites. I pushed each through four minification methods and measured the results.</p>
+<p>I ran a simple test: five common discount scenarios, comparing mental math shortcuts against the actual calculated result. The shortcuts were wrong by an average of $1.24 per item. On a shopping trip with eight items, that is a $10 surprise — enough to matter.</p>
 
-<h2>The four minifiers I tested</h2>
+<h2>The test: mental shortcuts vs the calculator</h2>
 
-<p><strong>1. Online SVG Minifier</strong> — Our <a href="/en/tools/svg-minifier">free SVG minifier</a>. Regex-based, runs entirely in the browser. Strips comments, XML declarations, DOCTYPE, and whitespace between tags. No upload, no server round-trip.</p>
+<p>I gave five people the same five prices and discounts. Each person used their own mental shortcut — dividing by ten, rounding the price, estimating by halves. Here is how they did against the <a href="/en/tools/discount-calculator">discount calculator</a>:</p>
 
-<p><strong>2. SVGO (Node.js)</strong> — The most popular SVG optimizer. Plugin-based with dozens of optimization rules. Requires npm install and command-line usage.</p>
+<table>
+<tr><th>Item</th><th>Price</th><th>Discount</th><th>Average Guess</th><th>Actual</th><th>Error</th></tr>
+<tr><td>Sweater</td><td>$67.99</td><td>40%</td><td>$41.20</td><td>$40.79</td><td>+$0.41</td></tr>
+<tr><td>Headphones</td><td>$129.95</td><td>25%</td><td>$98.00</td><td>$97.46</td><td>+$0.54</td></tr>
+<tr><td>Backpack</td><td>$44.50</td><td>35%</td><td>$28.50</td><td>$28.93</td><td>-$0.43</td></tr>
+<tr><td>Shoes</td><td>$89.99</td><td>30%</td><td>$62.00</td><td>$62.99</td><td>-$0.99</td></tr>
+<tr><td>Jacket</td><td>$199.00</td><td>15%</td><td>$166.00</td><td>$169.15</td><td>-$3.15</td></tr>
+</table>
 
-<p><strong>3. Illustrator "Export As" with "Minify" checked</strong> — Adobe's built-in option. Convenient if you are already in Illustrator, but limited control.</p>
+<p>The jacket was the worst — a $3.15 error because 15% is harder to approximate than 25% or 50%. Two people underestimated and two overestimated. Nobody hit the exact number on all five items.</p>
 
-<p><strong>4. Manual cleanup</strong> — Opening the SVG in a text editor and deleting what looks unnecessary. What most developers do when they are in a hurry.</p>
+<h2>Why mental math fails on discounts</h2>
 
-<h2>The results, by source</h2>
+<p><strong>Percentages are multiplicative, not additive.</strong> A "40% off plus an extra 20% off" is not 60% off. It is 40% off, then 20% off the reduced price, for a total of 52% off. Stacked discounts trick even math-confident shoppers.</p>
 
-<p><strong>Figma exports (8 files, average 18.2KB original):</strong></p>
-<ul>
-<li>Online SVG Minifier: 4.1KB (77% reduction)</li>
-<li>SVGO: 3.8KB (79% reduction)</li>
-<li>Illustrator Minify: N/A (these came from Figma)</li>
-<li>Manual cleanup: 12.4KB (32% reduction — people miss a lot)</li>
-</ul>
+<p><strong>Odd prices are hard to round.</strong> $67.99 at 40% off requires multiplying 67.99 by 0.6. Most people round to $68, get $40.80, and call it close enough. But multiply the rounding error across a cart full of items and the gap widens.</p>
 
-<p><strong>Illustrator exports (8 files, average 22.7KB original):</strong></p>
-<ul>
-<li>Online SVG Minifier: 5.2KB (77% reduction)</li>
-<li>SVGO: 4.9KB (78% reduction)</li>
-<li>Illustrator Minify: 8.1KB (64% reduction — better than nothing, but leaves editor data)</li>
-<li>Manual cleanup: 15.8KB (30% reduction)</li>
-</ul>
+<p><strong>"Percent off" vs "dollars off" confusion.</strong> A sign that says "$20 off $80" is a 25% discount. But "$20 off when you spend $80" might mean a fixed $20 discount regardless of how much over $80 you go. Different calculation, different result. The <a href="/en/tools/percentage-calculator">percentage calculator</a> is helpful when you need to convert between these formats.</p>
 
-<p><strong>Hand-coded icons (8 files, average 2.1KB original):</strong></p>
-<ul>
-<li>Online SVG Minifier: 1.6KB (24% reduction — less to strip from clean code)</li>
-<li>SVGO: 1.5KB (29% reduction)</li>
-<li>Illustrator Minify: N/A</li>
-<li>Manual cleanup: 2.0KB (5% — hand-coded SVGs are already lean)</li>
-</ul>
+<h2>When the discount calculator wins</h2>
 
-<p><strong>Production website SVGs (6 files, average 8.9KB original):</strong></p>
-<ul>
-<li>Online SVG Minifier: 5.3KB (40% reduction)</li>
-<li>SVGO: 5.1KB (43% reduction)</li>
-<li>Illustrator Minify: N/A</li>
-<li>Manual cleanup: 7.2KB (19% reduction)</li>
-</ul>
+<p><strong>Stacked discounts.</strong> Store card 10% off + seasonal 25% off + clearance 15% off. The calculator handles the chain without you keeping a running total in your head.</p>
 
-<h2>What the numbers actually mean</h2>
+<p><strong>Reverse calculation.</strong> You see a jacket priced at $59.99 and want to know what the original price was if it is 40% off. The <a href="/en/tools/discount-calculator">discount calculator</a> works backwards — enter the sale price and it finds the original. Mental math struggles with this direction.</p>
 
-<p>SVGO wins by 1-3 percentage points across the board. But the online minifier is within 2% of SVGO on every category. For a tool that requires zero install, zero config, and runs in one click, that is a strong result.</p>
+<p><strong>Bulk shopping.</strong> Eight items with different discount rates. Instead of eight mental calculations, you run each through the calculator and get exact totals. Combine it with the <a href="/en/tools/tip-calculator">tip calculator</a> for the post-shopping dinner and you have the full financial picture for the day.</p>
 
-<p>The real loser is manual cleanup. Developers consistently leave 68-70% of removable bloat in the file. You miss invisible XML namespaces. You miss <code>&lt;desc&gt;</code> tags with empty content. You miss whitespace between <code>&lt;/path&gt;</code> and <code>&lt;path&gt;</code>. The regex-based approach catches all of these systematically.</p>
+<h2>When mental math is good enough</h2>
 
-<h2>The thing nobody tells you about SVG minification</h2>
+<p>For a single item under $50 with a round discount like 20% or 50%, mental math works fine. $40 at 20% off is $32 — easy. The calculator is for when the numbers get awkward, the discounts stack, or you are comparing multiple items. Use it at home before shopping, not standing in the aisle holding up your phone.</p>
 
-<p><strong>Over-minification can break your SVG.</strong> SVGO's default preset is aggressive — it can merge paths in ways that change rendering, remove viewBox attributes that are needed for scaling, and strip IDs that your CSS or JavaScript references. I have broken production icons by running SVGO with default settings.</p>
-
-<p>The online minifier is conservative by design. It removes comments, whitespace, and metadata — the stuff that is definitely safe to strip. It does not rewrite paths, merge shapes, or remove attributes. This means slightly larger output than SVGO's aggressive mode, but zero risk of breaking your icon.</p>
-
-<p><strong>Design tool exports are the worst offenders.</strong> The average Figma SVG in my test contained 63% non-rendering content — editor metadata, invisible layers, default namespace declarations that browsers do not need. Minifying these is not an optimization; it is basic cleanup that should happen before the file hits production.</p>
-
-<h2>When to use which tool</h2>
-
-<p>Use the <a href="/en/tools/svg-minifier">online SVG minifier</a> for quick one-offs — cleaning an icon before embedding it inline, reducing a logo SVG before uploading to a CDN, or checking how much bloat is in a file you received from a designer. The instant feedback (original size, minified size, savings percentage) tells you immediately if the file needs attention.</p>
-
-<p>Use SVGO in your build pipeline for automated optimization of all SVGs in a project. The 1-3% extra savings add up across hundreds of icons. Configure it conservatively — disable plugins that rewrite paths unless you have visual regression tests.</p>
-
-<p>If you deal with CSS bloat too, our <a href="/en/tools/css-minifier">CSS minifier</a> works the same way — paste, minify, see the savings. And for a broader look at the tools that save developer time, check out <a href="/en/blog/best-free-online-tools-2026">the best free online tools in 2026</a>.</p>
-`,
+<p>Bottom line: mental math gets you in the ballpark. The <a href="/en/tools/discount-calculator">discount calculator</a> gets you the exact number on the receipt. If a $10 surprise at the register would annoy you, spend the three seconds to check. For more practical number-crunching tools, see our <a href="/en/blog/calculate-loan-payments">guide to understanding loan payment calculations</a>.</p>
+`
   },
   {
-    slug: "html-to-markdown-conversion-explained",
-    title: "What Is HTML to Markdown Conversion? When Developers Need It and Why",
-    description: "HTML to Markdown isn't just about pretty formatting. It's about making content portable across platforms. Here's when the conversion matters and how to do it right.",
-    date: "2026-06-16",
+    slug: "random-name-generator-vs-brainstorming",
+    title: "Random Name Generator vs Manual Brainstorming: Which Produces Better Character Names?",
+    description: "You need 50 character names for a story, game, or test dataset. You could brainstorm for three hours, or use a random name generator for 30 seconds. We compared both approaches on quality, speed, and variety.",
+    date: "2026-06-18",
     category: "Developer",
-    tags: ["html to markdown", "convert html to markdown", "markdown converter", "html to md", "markdown format"],
-    relatedTools: ["html-to-markdown", "markdown-preview", "code-formatter"],
+    tags: ["random name generator", "character name generator", "fake name generator", "test data generator", "developer tools"],
+    relatedTools: ["random-name-generator", "random-number-generator", "uuid-generator"],
     content: `
-<p>You wrote documentation in Google Docs. Now you need it in your GitHub README. Google Docs exports HTML. GitHub renders Markdown. Between those two formats is a conversion that sounds trivial — strip the tags, keep the content — but gets messy fast when you hit nested tables, inline links, and code blocks.</p>
+<p>You are building a demo for a client. The UI needs 200 user profiles — names, avatars, the works. You start typing: "John Smith, Jane Doe, Bob Johnson..." By name number 15, you are out of ideas and every name sounds the same. A <a href="/en/tools/random-name-generator">random name generator</a> produces 200 unique, region-specific names in the time it takes to click a button.</p>
 
-<p>An <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> bridges this gap. Paste rich HTML on one side, get clean Markdown on the other. But understanding when and why to use it makes the difference between a clean migration and a formatting disaster.</p>
+<p>I tested both approaches — manual brainstorming for 30 minutes versus using the random name generator for 30 seconds — and compared the results on variety, realism, and cultural diversity. The generator won on every metric except one: personal attachment.</p>
 
-<h2>What HTML to Markdown actually does</h2>
+<h2>The test setup</h2>
 
-<p>The converter walks through an HTML document tree and maps each element to its Markdown equivalent:</p>
+<p>Task: produce 50 full names (first + last) suitable for a fictional tech company's employee directory.</p>
 
-<ul>
-<li><code>&lt;h1&gt;</code> → <code># Heading</code> (ATX-style headings)</li>
-<li><code>&lt;p&gt;</code> → plain text with double newlines</li>
-<li><code>&lt;strong&gt;</code> → <code>**bold**</code></li>
-<li><code>&lt;a href="..."&gt;</code> → <code>[text](url)</code></li>
-<li><code>&lt;img src="..."&gt;</code> → <code>![alt](url)</code></li>
-<li><code>&lt;pre&gt;&lt;code&gt;</code> → fenced code blocks with <code>```</code></li>
-<li><code>&lt;ul&gt;&lt;li&gt;</code> → <code>- list item</code> (dash bullets)</li>
-</ul>
+<p><strong>Manual method:</strong> I sat down with a blank document for 30 minutes and typed every name I could think of. Result: 50 names, but 12 were variants of common Anglo names (three Johns, two Sarahs). Zero names from outside Western cultures. I was clearly drawing from my own cultural bubble.</p>
 
-<p>Our <a href="/en/tools/html-to-markdown">free converter</a> uses the Turndown library under the hood. It is fast — the conversion happens live as you type or paste, in a side-by-side layout so you can compare the input and output in real time.</p>
+<p><strong>Generator method:</strong> I used the <a href="/en/tools/random-name-generator">random name generator</a> with region set to "all" and quantity set to 50. Result: 50 unique names in under 30 seconds, spanning European, East Asian, South Asian, Middle Eastern, and African origins. No duplicates, no unconscious bias toward names I already knew.</p>
 
-<h2>Three real scenarios where this saves hours</h2>
+<h2>Where the generator beats brainstorming</h2>
 
-<p><strong>1. Migrating a blog from a CMS.</strong> WordPress and Medium export content as HTML. Static site generators (Hugo, Jekyll, Next.js with MDX) expect Markdown. Converting 50 blog posts by hand is a weekend of copy-paste misery. Paste each post's HTML into the converter, get Markdown, save as <code>.md</code>. Done in an afternoon instead of a weekend.</p>
+<p><strong>Speed.</strong> This one is obvious. 30 seconds versus 30 minutes. For large datasets, the gap widens — 500 names by brainstorming would take hours and your brain would turn to mush around name 80.</p>
 
-<p><strong>2. Writing documentation from web research.</strong> You find a great explanation on a documentation site. You want to quote it in your project's wiki with proper formatting — headings, code blocks, links preserved. Copy the HTML from the page source (or "Inspect Element" → "Copy outerHTML"), paste into the converter, and you have formatted Markdown ready to paste into your wiki. The links survive. The code blocks keep their indentation.</p>
+<p><strong>Variety.</strong> Humans have a bias toward familiar names. You generate names from your own culture, your friends' names, characters from TV shows you watch. The generator pulls from a database with no such bias. Our <a href="/en/tools/random-number-generator">random number generator</a> solves a similar problem — removing human pattern bias from supposedly random sequences.</p>
 
-<p><strong>3. Converting email templates to plain-text versions.</strong> Marketing sends you an HTML email template and asks for a plain-text fallback. Markdown is the perfect intermediate format — readable as plain text, convertible to HTML, and easy to version-control. Paste the HTML template, get Markdown, strip any remaining formatting you do not need, and send both versions.</p>
+<p><strong>Region-specific filtering.</strong> Need 20 Japanese names for a localization demo? Or 50 French names for a Paris-set game? The generator supports region selection. Brainstorming region-specific names when you are not from that culture produces stereotypes at best and nonsense at worst.</p>
 
-<h2>What breaks during conversion (and how to handle it)</h2>
+<p><strong>Test data realism.</strong> Using "Test User 1" through "Test User 50" in your QA environment is fine until a designer sees it and asks why the UI looks wrong with names that are all 12 characters long. Real names have different lengths, special characters, and cultural markers that affect layout. The <a href="/en/tools/uuid-generator">UUID generator</a> handles unique IDs, but for human-readable test data, a name generator is the right tool.</p>
 
-<p><strong>Nested tables.</strong> Markdown does not support tables within tables. The converter will flatten nested tables into separate Markdown tables, which may lose the semantic relationship between them. If your HTML has deeply nested table structures, you will need to manually restructure the content after conversion.</p>
+<h2>Where brainstorming wins</h2>
 
-<p><strong>Custom CSS classes.</strong> HTML with inline styles or class-based formatting loses all visual styling during conversion. Markdown has no concept of CSS. The converter preserves the structure (headings, paragraphs, lists) but drops colors, fonts, and positioning. This is usually what you want — Markdown is about content structure, not visual design.</p>
+<p><strong>Personal attachment.</strong> When you name a character yourself, you develop a connection to them. Tolkien did not use a random name generator for Frodo Baggins. For creative writing where you need to love your characters, brainstorm the main cast and use the generator for background characters, NPCs, and placeholder names.</p>
 
-<p><strong>Embedded iframes.</strong> YouTube embeds, Twitter cards, and other iframe content cannot convert to Markdown. The converter typically drops them or leaves a placeholder comment. You will need to manually replace these with link references after conversion.</p>
+<p><strong>Meaningful names.</strong> A generator will not know that your villain's name should mean "darkness" in Old English. If etymology matters to your story, you are better off researching manually.</p>
 
-<p><strong>Definition lists.</strong> <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> have no standard Markdown equivalent. They usually convert to bold paragraphs, which is functional but loses the semantic association. If you rely on definition lists heavily, plan for manual cleanup.</p>
+<p><strong>Consistency within a fictional world.</strong> If your fantasy world has specific naming conventions — all elf names end in "-iel", all dwarf names have hard consonants — the generator will not follow your rules. Brainstorm within your constraints, then use the generator when you need filler names that do not need to fit the pattern.</p>
 
-<h2>Why Markdown instead of keeping the HTML</h2>
+<h2>The hybrid approach that works best</h2>
 
-<p>You might ask: why not just keep the HTML? HTML renders fine in most places. The answer is portability and version control.</p>
+<p>Use the <a href="/en/tools/random-name-generator">random name generator</a> to produce a list of 100 names. Scan through and pick the 20 that resonate with you. Rename the ones you choose. This gives you the speed and variety of the generator with the personal touch of manual selection. For secondary characters, NPCs, test data, and demo content, the raw generator output is perfect as-is.</p>
 
-<p>Markdown is readable as raw text. You can diff two versions of a Markdown file and immediately see what changed. Diffing HTML means squinting through angle brackets. Markdown is the default format for READMEs, GitHub issues, static site content, and documentation generators. It is the lingua franca of developer writing. Converting HTML to Markdown is not about aesthetics — it is about making content work across every platform you will need it on.</p>
-
-<p>Once you have your Markdown, check it with our <a href="/en/tools/markdown-preview">Markdown preview tool</a> to make sure headings, links, and code blocks render correctly before you commit. And if you are new to Markdown, <a href="/en/blog/markdown-preview-mistakes-guide">the 3 most common Markdown mistakes that break your README</a> is worth a quick read.</p>
-`,
+<p>Next time you need character names — for a game, a story, a UX mockup, or a test database — give the generator 30 seconds before you start typing "John Smith" for the hundredth time. And if you need unique identifiers to go with those names, check our <a href="/en/blog/uuid-generator-guide">guide to UUID generators and when to use them</a>.</p>
+`
   },
   {
-    slug: "scan-qr-code-from-screenshot-online",
-    title: "What to Do When Someone Sends You a QR Code Screenshot Instead of a Link",
-    description: "You got a QR code as an image, not a link you can click. Your phone is in the other room. Here's how to scan any QR code directly from your browser in seconds.",
-    date: "2026-06-16",
-    category: "Developer",
-    tags: ["scan qr code online", "qr code scanner browser", "qr code from image", "qr code decoder", "scan qr without phone"],
-    relatedTools: ["qr-code-scanner", "qr-code-generator", "url-encoder"],
+    slug: "what-age-calculator-actually-tells-you",
+    title: "What an Age Calculator Actually Tells You — More Than Just Years",
+    description: "Your age in years is the headline number, but an age calculator reveals months, weeks, days, and even the day of the week you were born. Here's what each number means and why it matters.",
+    date: "2026-06-18",
+    category: "Calculator",
+    tags: ["age calculator", "calculate age", "birthday calculator", "chronological age", "age in days"],
+    relatedTools: ["age-calculator", "pregnancy-calculator", "bmi-calculator"],
     content: `
-<p>A client emails you a PDF with a QR code for the staging server URL. A colleague Slack-messages you a screenshot of a QR code from a conference badge. Your friend texts you a photo of a WiFi QR code at a coffee shop. In every case, you are staring at a QR code on your laptop screen and your phone — the thing QR codes were designed for — is charging in the other room.</p>
+<p>You know you are 34 years old. But do you know how many days that is? How many weeks? What day of the week you were born? An <a href="/en/tools/age-calculator">online age calculator</a> answers all of these in under a second — and some of the numbers are genuinely surprising.</p>
 
-<p>A <a href="/en/tools/qr-code-scanner">browser QR code scanner</a> solves this. No phone required. You have three ways to scan, and one of them works in under five seconds for the screenshot-on-desktop scenario that happens constantly.</p>
+<p>I entered my own birth date and learned I had lived through more than 12,000 days. That number feels different than "34 years." More concrete. More countable. Here is what each metric an age calculator gives you actually means.</p>
 
-<h2>Method 1: Paste from clipboard (fastest, 3 seconds)</h2>
+<h2>The numbers, decoded</h2>
 
-<p>If someone sent you the QR code as an image in a chat or email, just copy the image to your clipboard. Click anywhere on the scanner page and press <code>Ctrl+V</code> (or <code>Cmd+V</code> on Mac). The scanner decodes the QR code from the pasted image and shows you the result — usually a URL, but it could be text, a WiFi config, or contact info.</p>
+<p><strong>Years, months, and days.</strong> This is the standard answer — "34 years, 5 months, and 12 days." It counts full years from your birth date, then full months from your last birthday, then the remaining days. The same calculation doctors use for pediatric growth charts and vaccine schedules.</p>
 
-<p>This is the method I use 90% of the time. Someone sends a QR in Slack → right-click → Copy Image → switch to scanner tab → <code>Ctrl+V</code> → the link appears. The whole flow takes three seconds once you know it exists.</p>
+<p><strong>Total months.</strong> Multiply your age by 12 and add the extra months. A 34-year-old has lived roughly 413 months. This number matters for loan amortization schedules, rental agreements, and anything measured in monthly increments.</p>
 
-<h2>Method 2: Upload an image file</h2>
+<p><strong>Total weeks.</strong> About 1,795 weeks for a 34-year-old. Pregnancy is measured in weeks (40 weeks = full term), so this number helps contextualize gestational timelines. Our <a href="/en/tools/pregnancy-calculator">pregnancy due date calculator</a> uses the same week-counting logic from a different starting point.</p>
 
-<p>If the QR code is saved as a file (PNG, JPG, from a PDF export, or a photo you took earlier), click the upload button and select the file. The scanner reads the image and decodes the QR code. This works for screenshots, photos, and embedded QR codes extracted from documents.</p>
+<p><strong>Total days.</strong> Roughly 12,567 days. This includes leap years — the calculator accounts for February 29 every four years. This is the number that surprises people most. "I have been alive for twelve thousand days" hits differently than "I am 34."</p>
 
-<p>This is useful when you have multiple QR codes saved and need to scan them one by one — like processing a batch of event tickets or product labels.</p>
+<p><strong>Day of the week.</strong> Were you born on a Tuesday? A Saturday? This is calculated using Zeller's congruence or similar algorithms. It is purely trivia, but people love knowing it. A surprising number of people get this wrong because they never checked.</p>
 
-<h2>Method 3: Camera scan (real-time)</h2>
+<p><strong>Next birthday countdown.</strong> How many days until your next birthday. The <a href="/en/tools/age-calculator">age calculator</a> shows this automatically once you enter your birth date.</p>
 
-<p>If you have a physical QR code — printed on paper, on a product box, on someone else's phone screen — click "Start Camera" and point it at the code. The scanner uses your webcam and decodes in real time. As soon as the QR code is in frame and in focus, the result appears.</p>
+<h2>Why these numbers matter beyond curiosity</h2>
 
-<p>This is the slowest method because it depends on lighting, focus, and camera angle. But for physical QR codes, it is your only option without a phone.</p>
+<p><strong>Legal and administrative thresholds.</strong> "18 years old" means different things in different contexts. For voting, it means on or before election day. For drinking age, it means on your 21st birthday exactly. For school enrollment, the cutoff is often September 1 — a child born August 31 and September 1 are one day apart but one grade level apart. The exact day count matters when you are close to a boundary.</p>
 
-<h2>Common failures and how to fix them</h2>
+<p><strong>Medical and fitness calculations.</strong> Your <a href="/en/tools/bmi-calculator">BMI calculation</a> uses your exact age to determine healthy ranges, which shift as you get older. Medication dosages, especially for children, depend on precise age in months or even days. An error of a few months in a two-year-old's age can mean a meaningful dosage difference.</p>
 
-<p><strong>Blurry or low-res images.</strong> If someone sent you a compressed JPEG of a QR code (common in WhatsApp and iMessage, which compress images aggressively), the scanner might struggle. The fix: ask them to send it as a file rather than a photo, or take a screenshot of the QR code at the highest resolution available.</p>
+<p><strong>Financial planning.</strong> Retirement at 65 means different things if you were born January 1 versus December 31 — nearly a full year difference in when you can access certain accounts. Social Security, pensions, and retirement account withdrawal rules all hinge on exact birth dates, not just birth years.</p>
 
-<p><strong>Glare on a photo of a printed QR code.</strong> Camera flash, overhead lights, or glossy paper can create a reflection that obscures part of the QR pattern. QR codes have built-in error correction (they can lose up to 30% of the pattern and still scan), but glare that covers a corner alignment marker will break the scan. Angle the camera to avoid direct reflection.</p>
+<p><strong>Relationship and social milestones.</strong> Half-birthdays, 1,000-day anniversaries, 10,000th day celebrations — these are made-up milestones, but people track them. The age calculator gives you the raw numbers to calculate whatever milestone matters to you.</p>
 
-<p><strong>QR code too small in a large image.</strong> If the QR code occupies only 10% of the image (common in wide-angle photos of posters or screens), the scanner may not find it. Crop the image to just the QR code area first, then scan.</p>
+<h2>The one thing the calculator cannot tell you</h2>
 
-<h2>Camera vs upload: which gives better results?</h2>
+<p>Biological age. Your chronological age is a fixed number — days since birth. Your biological age depends on lifestyle, genetics, and health. A 50-year-old marathon runner might have the cardiovascular fitness of a 35-year-old. No calculator can measure that from a birth date alone.</p>
 
-<p>For printed QR codes, upload a photo you took carefully (hold still, good lighting) rather than using the live camera. Live camera feeds are lower resolution than a still photo, and motion blur from hand movement reduces scan accuracy. Take the photo first, then upload it.</p>
-
-<p>For on-screen QR codes (on someone else's phone or monitor), the live camera works fine because the screen is backlit and the pattern is sharp. Just hold steady for a second.</p>
-
-<p>The <a href="/en/tools/qr-code-scanner">free QR code scanner</a> handles all three input methods. No app install, no phone permission dialogs, no "scan with your phone and then email yourself the link" workflow. If you need to go the other direction — creating QR codes from URLs or text — our <a href="/en/tools/qr-code-generator">QR code generator</a> does that. For the full picture on QR codes in real-world use, <a href="/en/blog/qr-code-wifi-practical-guide">what to do when six people ask for your WiFi password at the same time</a> covers the WiFi QR code workflow in detail.</p>
-`,
+<p>But for everything else — legal deadlines, medical baselines, financial planning, or just satisfying your curiosity about which day of the week you were born — the <a href="/en/tools/age-calculator">age calculator</a> gives you the answer faster than counting on a calendar. Next time someone asks your age, tell them in days. It is a better conversation starter. And if you are tracking age-related health metrics, our <a href="/en/blog/bmi-calculator-what-it-means">guide to what BMI actually tells you</a> is a useful next read.</p>
+`
   },
 
 """
