@@ -1,4 +1,4 @@
-# Insert 6 new blog posts (2026-06-21 batch)
+# Insert 6 new blog posts (2026-06-22 batch) — deepening coverage
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -7,316 +7,283 @@ with open(BLOG_FILE, "r", encoding="utf-8") as f:
 old = '\n\n];\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
+
+  // 2026-06-22 batch: deepening coverage with new angles (3A+2B+1C)
   {
-    slug: "free-ai-tools-directory-guide",
-    title: "What Is a Free AI Tools Directory? How to Find the Right AI Tool Without Endless Google Searches",
-    description: "There are thousands of AI tools launched every month. A curated AI tools directory saves you from sifting through hype, dead links, and tools that don't do what they claim. Here's how to use one effectively.",
-    date: "2026-06-21",
-    category: "Reference",
-    tags: ["free AI tools", "AI directory", "best AI tools", "AI tool finder", "curated AI tools"],
-    relatedTools: ["ai-tools", "translate", "crypto-price"],
+    slug: "case-converter-sentence-title-upper-guide",
+    title: "Case Converter: When to Use sentence case, Title Case, and UPPERCASE",
+    description: "Sentence case, Title Case, UPPERCASE, lowercase, camelCase — each has a specific job. Here's when to use each and how to convert text instantly without retyping everything.",
+    date: "2026-06-22",
+    category: "Text",
+    tags: ["case converter", "sentence case", "title case", "uppercase converter", "text formatting"],
+    relatedTools: ["case-converter", "fancy-text-generator", "text-to-slug"],
     content: `
-<p>You need an AI tool for a specific task — maybe removing a background from a product photo, or generating a voiceover for a video. You type "best AI background remover" into Google. The first five results are listicles written by content farms that have never used the tools they recommend. The next three are paid ads for enterprise software that costs $50/month. You spend 20 minutes clicking through dead links and overhyped landing pages.</p>
+<p>You paste a paragraph into an email and realize it is ALL IN CAPS. Or you need a headline in Title Case but you are not sure which words to capitalize. Everyone hits this. A <a href="/en/tools/case-converter">case converter</a> fixes it in one click instead of retyping everything.</p>
 
-<p>A <a href="/en/tools/ai-tools">curated free AI tools directory</a> solves this by organizing tools into categories, keeping descriptions short and honest, and linking directly to the tool — not to a review, not to an affiliate landing page, to the actual tool. Here is what makes a directory useful and how to use it to find tools that actually work.</p>
+<p>But which case is actually right for what you are doing? Each one has a real job. Here is the breakdown.</p>
 
-<h2>What a good AI tools directory does differently</h2>
+<h2>Sentence case — the default for everything you write</h2>
 
-<p><strong>Categories, not just a list.</strong> A raw list of 500 AI tools is useless — nobody scrolls through 500 items. A good directory groups tools by what they do: writing, image generation, video editing, coding, productivity. You go to the category you need and see 5-15 relevant tools instead of 500 irrelevant ones.</p>
+<p>Sentence case capitalizes only the first letter of the first word. Everything else is lowercase except proper nouns like names and places. This is what you use in emails, chat messages, blog body text, and documentation. It reads the most naturally because it matches how we actually write.</p>
 
-<p><strong>Short descriptions, no marketing fluff.</strong> "Revolutionary AI-powered content optimization platform leveraging cutting-edge NLP" means nothing. "Writes blog posts from a topic — free tier 10 posts/month" tells you what the tool does and whether it costs money. Good directories use the second format.</p>
+<p>When you paste text that is in ALL CAPS from a legacy system or a shouty email thread, the <a href="/en/tools/case-converter">online case converter</a> switches it to sentence case instantly. One click, no retyping.</p>
 
-<p><strong>Direct links.</strong> Click the listing, go to the tool. Not to a review page. Not to a "top 10" article. Not to a signup wall. The <a href="/en/tools/ai-tools">free AI tools directory</a> links straight to each tool's website.</p>
+<h2>Title Case — for headlines that look professional</h2>
 
-<p><strong>Regularly updated.</strong> AI tools die fast. A tool listed in January might be shut down by March. A directory updated monthly stays useful. One last updated in 2023 is a graveyard of broken links. Our directory is updated regularly — dead tools get removed, new useful tools get added.</p>
+<p>Title Case capitalizes the first letter of every major word. Articles (a, an, the), coordinating conjunctions (and, but, or), and short prepositions (in, on, at) stay lowercase — unless they are the first or last word of the title. So "The Cat in the Hat" is correct. "The Cat In The Hat" is not — "In" should stay lowercase.</p>
 
-<h2>How to use the directory to find the right tool in 60 seconds</h2>
+<p>Different style guides have different rules. AP style only capitalizes words with 4+ letters. Chicago style capitalizes all prepositions regardless of length. Our tool follows the most common convention — the one most blogs and websites use. If your CMS or editor has a title case option, it probably uses the same rules.</p>
 
-<ol>
-<li><strong>Pick your category.</strong> Writing, images, video, coding, or productivity. Do not browse all categories — you are here for a specific task.</li>
-<li><strong>Scan the 3-5 tools in that category.</strong> Read the one-sentence descriptions. Ignore tools that sound overhyped. Focus on tools that describe what they actually output.</li>
-<li><strong>Open the top 2 in new tabs.</strong> Try each one for 30 seconds. Paste your text, upload your image, type your prompt. See which one gives you a useful result fastest.</li>
-<li><strong>Bookmark the winner.</strong> You have your tool. Close the directory. The whole process should take under a minute.</li>
-</ol>
+<h2>UPPERCASE — for emphasis, not for paragraphs</h2>
 
-<p>If the directory does not have what you need, expand your search. But the directory should be your first stop — it filters out the noise before you see it. For text-related AI tasks, our <a href="/en/tools/translate">free translator</a> handles language conversion, and for tracking the tech landscape beyond AI, the <a href="/en/tools/crypto-price">crypto price tracker</a> gives you market context without an account.</p>
+<p>ALL CAPS has exactly one legitimate use in writing: short headings, acronyms, and warnings. "DO NOT DELETE" works as a warning label. A three-paragraph email in all caps does not — it reads as shouting and people will skim right past it. Use uppercase sparingly and only when you genuinely need something to scream for attention.</p>
 
-<h2>What the directory cannot tell you</h2>
+<p>One practical use: generating short codes or IDs that need to stand out from surrounding text. The <a href="/en/tools/case-converter">free case converter</a> does this with one click — type the text, hit UPPERCASE, copy the result.</p>
 
-<p><strong>Whether the tool is actually good for your specific use case.</strong> A writing tool that excels at blog posts might be terrible at technical documentation. A background remover that handles product photos perfectly might struggle with hair and fur in portraits. The directory points you to the tool; you still need to test it with your actual content.</p>
+<h2>lowercase, Capitalized Case, and the programming ones</h2>
 
-<p><strong>Whether the free tier is sustainable.</strong> Many AI tools offer generous free tiers to attract users, then restrict them once they have market share. The directory notes current pricing but cannot predict future changes. If a tool is critical to your workflow, have a backup option.</p>
+<p><strong>lowercase</strong> is useful for normalizing data before comparison. Email addresses, usernames, and file extensions are not case-sensitive in most systems — but "Hello" and "hello" are different strings to a computer. Converting both to lowercase makes them match. This is why most login forms auto-lowercase your email.</p>
 
-<p><strong>Data privacy practices.</strong> Free AI tools often use your inputs to improve their models. If you are working with confidential data — client documents, unreleased product images, proprietary code — check the tool's privacy policy before uploading. The directory links to each tool but does not audit their data practices.</p>
+<p><strong>Capitalized Case</strong> capitalizes the first letter of every single word. Useful for proper names, book titles, and short labels. Not the same as Title Case — it does not skip small words. "The Lord Of The Rings" in Capitalized Case; "The Lord of the Rings" in Title Case.</p>
 
-<h2>Why directories still matter in the age of AI search</h2>
+<p><strong>camelCase</strong> and <strong>snake_case</strong> are for programming. If you are naming a variable or a function in code, these are your formats. For a related tool, check our <a href="/en/tools/text-to-slug">URL slug generator</a> which converts titles to kebab-case for web URLs — another case format with a specific job.</p>
 
-<p>You might think: "I will just ask ChatGPT to recommend a tool." AI chatbots can recommend tools, but their training data is months old. They recommend tools that were popular when the model was trained, not tools that are good today. They also tend to recommend well-known tools over better niche ones — ChatGPT is more likely to recommend Canva for background removal than a specialized free tool that does the job faster. A human-curated directory has fresher information and less brand-name bias.</p>
-
-<p>Next time you need an AI tool for a specific task, start with the <a href="/en/tools/ai-tools">free AI tools directory</a>. It takes less time than reading a listicle and the links actually work. For a broader look at free online utilities beyond AI, our <a href="/en/blog/best-free-online-tools-2026">curated roundup of the best free online tools in 2026</a> covers the non-AI side of your toolkit.</p>
-`
+<p>Next time you face a wall of badly-cased text, do not retype it. Drop it into the <a href="/en/tools/case-converter">case converter</a>, pick the right format, and copy the result. For a deeper dive into text manipulation, see our <a href="/en/blog/what-is-fancy-text-generator">explainer on Unicode fancy text generators</a>.</p>
+`,
   },
   {
-    slug: "gif-search-download-guide",
-    title: "How to Search and Download GIFs Without Installing the GIPHY App",
-    description: "You need a reaction GIF for Slack, right now. You are not installing the GIPHY app, creating an account, or digging through a bloated GIF keyboard. Here's the fastest way to find and download the right GIF.",
-    date: "2026-06-21",
-    category: "Media",
-    tags: ["GIF search", "download GIF", "GIPHY search", "reaction GIFs", "free GIFs"],
-    relatedTools: ["gif-search", "bing-wallpaper", "pet-wallpaper"],
+    slug: "base-converter-binary-hex-decimal-explained",
+    title: "Binary, Hex, Decimal — What They Actually Mean and When You Need Each One",
+    description: "Decimal is for humans, binary is for computers, hexadecimal is the bridge between them. Here's what each number base actually means and how to convert between them instantly.",
+    date: "2026-06-22",
+    category: "Developer",
+    tags: ["base converter", "binary converter", "hexadecimal", "decimal to binary", "number systems"],
+    relatedTools: ["base-converter", "unix-timestamp", "color-converter"],
     content: `
-<p>Your coworker just announced a mandatory 8am meeting in Slack. You need the perfect GIF — a slow-motion eye roll, a dramatic faint, a cat looking deeply disappointed. You open the GIPHY app, which asks you to sign in. You open the GIPHY website, which autoplays six trending GIFs and buries the search bar under a carousel. You close both and Google "disappointed cat GIF" which returns 47 Pinterest links and zero actual GIFs.</p>
+<p>You see <code>0xFF</code> in CSS, <code>0b1010</code> in a microcontroller data sheet, and a Unix timestamp like <code>1719000000</code> in an API response. These are all the same thing — numbers — just written in different bases. A <a href="/en/tools/base-converter">base converter</a> translates between them instantly so you do not have to do the math by hand.</p>
 
-<p>A <a href="/en/tools/gif-search">free GIF search tool</a> that queries GIPHY's library directly — no app, no account, no autoplay chaos — finds the right GIF in three seconds. Here is how to search effectively and what to do with the GIF once you have it.</p>
+<h2>Why we use different number bases in the first place</h2>
 
-<h2>How the GIF search tool works</h2>
+<p><strong>Decimal (base-10)</strong> is what humans use. Ten digits: 0 through 9. It is natural for us because we have ten fingers. But computers do not have fingers — they have transistors that are either on or off, and that is where binary comes from.</p>
 
-<p>Type a keyword. The tool queries GIPHY's public API and returns a grid of matching GIFs. Click any GIF to preview it full-size. Click Download to save the GIF file to your device. Click Copy Link to get a shareable URL.</p>
+<p><strong>Binary (base-2)</strong> is what computers actually use. Two digits: 0 and 1. Every piece of data in your computer — text, images, video, code — is ultimately stored as long strings of 0s and 1s. <code>01001000 01101001</code> is "Hi" in ASCII binary. Binary is perfect for machines and terrible for humans — a single byte takes 8 digits to write.</p>
 
-<p>The <a href="/en/tools/gif-search">GIF search tool</a> shows trending GIFs on first load — useful when you do not have a specific keyword and just want to browse what is popular. As soon as you type a search term, it switches to keyword results. The grid loads fast because it pulls from GIPHY's CDN, not from a third-party cache.</p>
+<p><strong>Hexadecimal (base-16)</strong> is the shorthand that makes binary readable. Sixteen digits: 0-9 plus A-F (where A=10, B=11, through F=15). Two hex digits represent exactly one byte, making it far more compact than binary. <code>0xFF</code> is 255 in decimal and <code>11111111</code> in binary — hex is clearly the most human-readable of the three formats.</p>
 
-<p>If you need a fresh desktop background instead of a GIF, our <a href="/en/tools/bing-wallpaper">Bing wallpaper downloader</a> gives you today's 4K daily image with one click. And for animal lovers, the <a href="/en/tools/pet-wallpaper">random pet wallpaper generator</a> serves cat, dog, and fox photos.</p>
+<h2>Where you actually encounter these in real work</h2>
 
-<h2>How to find the right GIF with a two-word search</h2>
+<p><strong>Colors in CSS.</strong> <code>#FF5733</code> is a hex color. FF is the red channel (255 in decimal), 57 is green (87), 33 is blue (51). Our <a href="/en/tools/color-converter">color converter</a> translates hex colors to RGB, HSL, and other formats — same number, different representation.</p>
 
-<p>Most people type one word and scroll. That works for common reactions — "happy," "angry," "shocked." But for specific reactions, use two-word combos:</p>
+<p><strong>Memory addresses in debugging.</strong> When a program crashes, the error message shows memory addresses in hex: <code>0x7fff5c6b3a00</code>. That is much shorter than writing <code>140734799998464</code> in decimal. Every developer eventually learns to read hex addresses.</p>
 
+<p><strong>MAC addresses on your network.</strong> Your device's hardware identifier looks like <code>00:1A:2B:3C:4D:5E</code> — six pairs of hex digits. Each pair is one byte, and together they uniquely identify your network interface worldwide.</p>
+
+<p><strong>Unix timestamps in APIs.</strong> A <a href="/en/tools/unix-timestamp">Unix timestamp converter</a> translates decimal epoch seconds into human-readable dates. 1719000000 becomes "June 21, 2024." Same number, different representation — exactly the kind of conversion base systems are about.</p>
+
+<h2>Octal — the one nobody talks about but you have seen</h2>
+
+<p>Octal (base-8) uses digits 0-7. It shows up most commonly in Linux file permissions: <code>chmod 755 script.sh</code> means the owner can read/write/execute (7 = 111 in binary = all permissions), while group and others can read/execute (5 = 101). Each octal digit maps to exactly three binary bits, which is why it was popular in early computing when 3-bit groups were common.</p>
+
+<p>Try the <a href="/en/tools/base-converter">free online base converter</a> — type any number and see it in binary, octal, decimal, and hex simultaneously. It is the fastest way to check your work when reading hardware documentation or debugging low-level code. For a broader look at developer tools, see our <a href="/en/blog/online-developer-tools-bookmarks-2026">curated list of essential online developer tools</a>.</p>
+`,
+  },
+  {
+    slug: "mortgage-calculator-vs-loan-calculator-comparison",
+    title: "Mortgage Calculator vs Loan Calculator — What Is Actually Different and Which One You Need",
+    description: "They look similar but a mortgage calculator handles amortization, property tax, and PMI. A loan calculator is for simpler debt like car loans. Here's when to use each and why the difference matters.",
+    date: "2026-06-22",
+    category: "Calculator",
+    tags: ["mortgage calculator", "loan calculator", "home loan", "amortization", "mortgage vs loan"],
+    relatedTools: ["mortgage-calculator", "loan-calculator", "compound-interest"],
+    content: `
+<p>You are trying to figure out your monthly payment. You type numbers into a calculator and get a result. But is it the right result? If you used a <a href="/en/tools/loan-calculator">loan calculator</a> for a mortgage, the number is missing a lot — property tax, homeowners insurance, and possibly PMI. If you used a <a href="/en/tools/mortgage-calculator">mortgage calculator</a> for a car loan, you overcomplicated something simple.</p>
+
+<p>They look nearly identical on the surface but they model completely different financial situations. Here is what actually differs and when each one gives you the right number.</p>
+
+<h2>What a loan calculator does — and does well</h2>
+
+<p>A loan calculator takes three inputs — loan amount, interest rate, and term — and gives you a monthly payment. It uses the standard amortization formula that every lender uses. This works perfectly for personal loans, car loans, and student loans where the payment is just principal plus interest with nothing else rolled in.</p>
+
+<p>The math behind it: <code>M = P [ r(1+r)^n ] / [ (1+r)^n - 1 ]</code> where P is the principal, r is the monthly interest rate, and n is the total number of months. You do not need to memorize this — the <a href="/en/tools/loan-calculator">free loan calculator</a> does it for you.</p>
+
+<p>A $25,000 car loan at 6% for 60 months = $483 per month. That is the whole story. There are no property taxes on a car loan, no insurance escrow, no PMI. The loan calculator gives you a clean, accurate number that matches what the bank will quote you.</p>
+
+<h2>What a mortgage calculator adds — and why it matters</h2>
+
+<p>A mortgage payment is rarely just principal and interest. Most lenders require you to escrow property tax and homeowners insurance. If your down payment is less than 20%, you also pay PMI (private mortgage insurance), which can add hundreds per month. A <a href="/en/tools/mortgage-calculator">mortgage calculator</a> includes all of these extra costs.</p>
+
+<p>Here is a real example: a $300,000 mortgage at 6.5% for 30 years. The principal + interest alone is $1,896 per month. But add $250/month for property tax, $100/month for insurance, and $150/month for PMI — your actual payment is $2,396. That is a $500 per month difference, or $6,000 per year that the loan calculator would not have shown you.</p>
+
+<p>If you budget based on the loan calculator's number and then get the mortgage calculator's number from your lender, you are suddenly $500 short every month. That is how people end up "house poor" — they budgeted for the wrong number.</p>
+
+<h2>When to use each one</h2>
+
+<p><strong>Use the loan calculator for:</strong> car loans, personal loans, student loans, business equipment financing — anything where the payment is just principal + interest with no taxes or insurance attached.</p>
+
+<p><strong>Use the mortgage calculator for:</strong> buying a house, refinancing a mortgage, comparing mortgage offers from different lenders — any situation involving real estate where taxes and insurance are part of the monthly payment.</p>
+
+<p>One feature both tools share: the amortization schedule. It shows exactly how much of each payment goes to interest versus principal. In the early years of a 30-year mortgage, over 70% of each payment is pure interest. Understanding this changes how you think about making extra payments toward the principal.</p>
+
+<p>For the other side of the equation — what happens when you are earning interest instead of paying it — try our <a href="/en/tools/compound-interest">compound interest calculator</a>. And for a deeper look at loan math, see our <a href="/en/blog/calculate-loan-payments">guide to calculating loan payments without a finance degree</a>.</p>
+
+<p>Bottom line: if you are buying a house, use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a>. For everything else, the <a href="/en/tools/loan-calculator">loan calculator</a> is simpler and just as accurate. Using the wrong one does not just give you a slightly off number — it can miss hundreds of dollars in monthly costs.</p>
+`,
+  },
+  {
+    slug: "compound-interest-calculator-wealth-building-guide",
+    title: "How $100 a Month Becomes Over $200,000 — Compound Interest Explained with Real Numbers",
+    description: "Compound interest is why financial advisors say 'start early.' Here's the actual math with real dollar amounts, plus how to use a compound interest calculator to see your own numbers.",
+    date: "2026-06-22",
+    category: "Calculator",
+    tags: ["compound interest", "compound interest calculator", "investing", "wealth building", "savings growth"],
+    relatedTools: ["compound-interest", "roi-calculator", "mortgage-calculator"],
+    content: `
+<p>Someone tells you to "start investing early because of compound interest." It sounds like standard financial advice you nod at and ignore. But the numbers are actually startling when you see them laid out. A <a href="/en/tools/compound-interest">compound interest calculator</a> shows you exactly what your money becomes over time — and the difference between starting now and starting in five years is bigger than most people realize.</p>
+
+<h2>The one example that makes compound interest click</h2>
+
+<p>Invest $100 per month starting at age 25, earning a 7% average annual return. By age 65, you have put in $48,000 of your own money over 40 years. Your account balance: about $264,000. The extra $216,000 is pure compound growth — money your money earned, and money that money's earnings earned, repeating thousands of times.</p>
+
+<p>Now start at age 35 instead. Same $100 per month, same 7% return, but only 30 years until age 65. You put in $36,000. Final balance: about $122,000. That 10-year delay cost you $142,000 — not because you saved less, but because your earliest contributions lost a decade of compounding. The money you put in at 25 had 40 years to grow. The money you put in at 35 only had 30.</p>
+
+<h2>The formula is simpler than it looks</h2>
+
+<p>The compound interest formula: <code>A = P(1 + r/n)^(nt)</code></p>
+
+<p>Where:
 <ul>
-<li><strong>"excited dog"</strong> instead of "excited" — filters out the 10,000 generic excited-people GIFs</li>
-<li><strong>"facepalm star trek"</strong> instead of "facepalm" — adds context, narrows to a specific show</li>
-<li><strong>"dancing fail"</strong> instead of "dancing" — finds the funny ones, not the professional dancers</li>
-<li><strong>"cat confused"</strong> instead of "cat" — gets you reaction GIFs, not cat product ads</li>
+  <li><strong>A</strong> = final amount</li>
+  <li><strong>P</strong> = starting principal</li>
+  <li><strong>r</strong> = annual interest rate as a decimal (7% = 0.07)</li>
+  <li><strong>n</strong> = number of times interest compounds per year</li>
+  <li><strong>t</strong> = number of years</li>
 </ul>
 
-<p>The two-word rule: first word is the emotion or action, second word is the subject or context. This works on any GIF search engine, not just this one. It is the difference between finding a usable GIF in 5 seconds and scrolling for 30 seconds.</p>
+The key insight is the exponent <code>nt</code>. Because time sits in the exponent, doubling the time more than doubles the result. That is why "start early" is not just advice — it is math. The <a href="/en/tools/compound-interest">free compound interest calculator</a> handles all of this, including the more complex formula for monthly contributions where each deposit compounds for a different length of time.</p>
 
-<h2>What to do with the GIF after downloading</h2>
+<h2>How much to save monthly — real numbers for real incomes</h2>
 
-<p><strong>Slack and Discord:</strong> Drag the downloaded GIF directly into the chat input. Both apps auto-embed GIFs from files. You do not need the GIPHY integration — just drag and drop.</p>
+<p>$100 per month at 7% for 30 years = about $122,000. Bump it to $200 per month and the result is roughly $245,000. At $500 per month, it becomes about $612,000. The calculator lets you experiment with these numbers — change the monthly amount, the interest rate, the time horizon — and see the result update instantly.</p>
 
-<p><strong>Email and newsletters:</strong> Most email clients support animated GIFs. Embed the downloaded file as you would any image. Keep the file size under 1MB for email — large GIFs get blocked or load slowly.</p>
+<p>One thing most people get wrong: the interest rate assumption. The S&P 500 has historically returned about 10% per year before inflation, or about 7% after inflation. Use 7% for realistic projections in today's dollars. Use 10% only if you are comparing to nominal (non-inflation-adjusted) numbers and understand that inflation will eat roughly 3% per year of your purchasing power.</p>
 
-<p><strong>Social media:</strong> Twitter, Facebook, and LinkedIn all support GIF uploads. Upload the file directly — do not paste a GIPHY link, which renders as a link preview instead of an inline animation.</p>
+<h2>Compounding frequency matters less than you think</h2>
 
-<p><strong>Presentations:</strong> PowerPoint and Google Slides both support animated GIFs. Insert the file and set it to play on loop. A well-placed GIF in a presentation breaks tension; five GIFs in a presentation makes you look unprofessional. One per deck is the rule.</p>
+<p>Daily compounding versus monthly compounding at a 7% annual rate changes the final number by less than 0.1% over 30 years. The rate and the time horizon are what actually move the needle. Do not get distracted by banks advertising "daily compounding" — it sounds impressive but the math barely differs from monthly.</p>
 
-<h2>What the tool cannot do</h2>
+<p>For comparing specific investments side by side, pair the compound interest calculator with our <a href="/en/tools/roi-calculator">ROI calculator</a> to see percentage returns for each option. And if you are weighing whether to invest extra cash or pay down a mortgage faster, the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> helps you compare guaranteed savings from reduced mortgage interest against potential market returns.</p>
 
-<p><strong>Create custom GIFs.</strong> This is a search tool, not a GIF maker. If you need to turn a video clip into a GIF, you need a video-to-GIF converter — a different tool entirely.</p>
-
-<p><strong>Search beyond GIPHY.</strong> The tool queries GIPHY's library. It does not search Tenor, Imgur, or Reddit-hosted GIFs. GIPHY has the largest library (owned by Meta/Facebook), so for most purposes this is sufficient. But if you are looking for a very specific niche GIF — a scene from an obscure anime, a moment from a Twitch stream — you may need to search elsewhere.</p>
-
-<p><strong>Guarantee the GIF stays available.</strong> GIPHY occasionally removes GIFs due to copyright claims. If you find a GIF you plan to use repeatedly, download and save it locally. A GIPHY link is not permanent storage.</p>
-
-<p>Next time you need a reaction GIF, skip the app store. Open the <a href="/en/tools/gif-search">GIF search tool</a>, type two words, download the right one in under ten seconds. For more media tools that replace single-purpose apps, check out our <a href="/en/blog/bing-wallpaper-download-guide">guide to downloading Bing daily wallpapers in 4K</a>.</p>
-`
+<p>Try the <a href="/en/tools/compound-interest">compound interest calculator</a> with your own numbers — your age, your monthly amount, your target retirement age. The difference between starting now and starting in five years is probably larger than you think. For more calculator comparisons, see our <a href="/en/blog/roi-calculator-vs-manual-spreadsheet">ROI calculator versus spreadsheet comparison</a>.</p>
+`,
   },
   {
-    slug: "lateral-thinking-puzzles-vs-riddles",
-    title: "Lateral Thinking Puzzles vs Regular Riddles: What's the Difference and Which Is Better for Your Brain?",
-    description: "A riddle has one right answer. A lateral thinking puzzle has a dozen possible answers and rewards creative logic over trivia knowledge. We compared both formats to see which stretches your mind more.",
-    date: "2026-06-21",
-    category: "Media",
-    tags: ["lateral thinking puzzles", "brain teasers", "riddles vs puzzles", "critical thinking", "logic puzzles"],
-    relatedTools: ["lateral-thinking", "book-of-answers", "random-quote"],
+    slug: "html-entities-escape-special-characters-guide",
+    title: "HTML Entities: Why &amp;amp; Shows Up on Your Page and How to Fix Special Characters",
+    description: "Ever seen &amp;amp; in your webpage text? That is an HTML entity double-encoding bug. Here is what entities actually are, the ones you will use, and how to encode and decode them correctly.",
+    date: "2026-06-22",
+    category: "Developer",
+    tags: ["html entities", "html escape", "special characters", "ampersand encoding", "html character codes"],
+    relatedTools: ["html-entities", "base64-converter", "url-encoder"],
     content: `
-<p>A man walks into a bar and asks for a glass of water. The bartender points a gun at him. The man says "thank you" and leaves. What happened?</p>
+<p>You write a blog post with an ampersand in the title. It renders on your page as <code>&amp;amp;</code> instead of <code>&</code>. Or you paste a code snippet into an HTML page and the <code>&lt;div&gt;</code> tags disappear entirely — because the browser interpreted them as actual HTML elements instead of displaying them as text. Both are HTML entity problems, and a <a href="/en/tools/html-entities">free HTML entities converter</a> fixes them in seconds.</p>
 
-<p>If you know the answer, you have encountered lateral thinking puzzles before. If you are furiously Googling, you are about to discover why these puzzles are more satisfying than riddles — and more frustrating, in the best way. An <a href="/en/tools/lateral-thinking">online lateral thinking puzzle generator</a> creates these scenarios on demand, each one a tiny mystery that rewards creative logic over trivia knowledge.</p>
+<h2>What HTML entities actually are and why they exist</h2>
 
-<h2>The difference between a riddle and a lateral thinking puzzle</h2>
-
-<p><strong>A riddle</strong> gives you all the information you need. "I speak without a mouth and hear without ears. What am I?" The answer (an echo) is deducible from the words alone. Riddles test vocabulary, metaphor recognition, and pattern matching. They have one correct answer and you either get it or you do not.</p>
-
-<p><strong>A lateral thinking puzzle</strong> deliberately withholds information. The bartender story above is missing a critical fact: the man had hiccups, and the gun was to scare them away. You discover this by asking yes/no questions — "Did the man know the bartender?" (No.) "Was the gun loaded?" (No.) "Was the man in danger?" (No.) Each question narrows the possibilities until the solution clicks.</p>
-
-<p>Riddles test what you know. Lateral thinking puzzles test how you think. Both are fun, but they exercise different mental muscles. The <a href="/en/tools/lateral-thinking">lateral thinking puzzle tool</a> generates puzzles with hints and reveals — you can try to solve them alone or with friends, asking questions and piecing together the scenario.</p>
-
-<h2>Why lateral thinking puzzles are better for groups</h2>
-
-<p>I tested both formats at a dinner party with six people. The results:</p>
-
-<p><strong>Riddles:</strong> One person blurts the answer in 3 seconds (they heard it before). Three people are mildly annoyed. Two people are still processing the question. The puzzle is over before it started.</p>
-
-<p><strong>Lateral thinking puzzles:</strong> Everyone asks questions. Multiple theories emerge. Someone suggests a ridiculous but logically consistent answer. Someone else builds on it. The group collectively gets closer. The puzzle lasts 5-10 minutes. Everyone participates.</p>
-
-<p>Lateral thinking puzzles are collaborative by design. There is no "I know this one" moment because the puzzles are not widely known and the question-asking process engages everyone equally. If you want an icebreaker that actually breaks ice, skip the riddles and use lateral thinking puzzles. Our <a href="/en/tools/book-of-answers">Book of Answers</a> serves a different kind of group entertainment — ask a question, get a cryptic answer, argue about what it means.</p>
-
-<h2>The mental skills lateral thinking builds</h2>
-
-<p><strong>Question formulation.</strong> The hardest part of a lateral thinking puzzle is asking the right questions. "Is the man okay?" is too broad. "Was the gun real?" is specific and testable. Learning to ask precise, falsifiable questions is a skill that transfers directly to debugging code, diagnosing problems, and conducting interviews.</p>
-
-<p><strong>Assumption detection.</strong> Most people assume the bartender is threatening the man. The puzzle only works because of that assumption. Lateral thinking teaches you to identify and question your assumptions — "what if the gun is not a threat?" — which is the foundation of critical thinking.</p>
-
-<p><strong>Multiple hypothesis management.</strong> You will have 3-5 theories at any point. One might be partially right. Lateral thinking forces you to hold multiple possibilities simultaneously and test them systematically. This is the same skill used in scientific reasoning and strategic planning.</p>
-
-<p>For a different kind of mental stimulation, our <a href="/en/tools/random-quote">random inspirational quote generator</a> provides bursts of perspective — not a puzzle, but sometimes exactly the right thought at the right time.</p>
-
-<h2>When lateral thinking puzzles go wrong</h2>
-
-<p><strong>Too obscure scenarios.</strong> Some puzzles rely on cultural knowledge or wordplay that only works in one language. A puzzle about an American driving custom will frustrate someone from a different culture. The generator aims for universal scenarios, but no puzzle set is truly universal.</p>
-
-<p><strong>The "moon logic" trap.</strong> Bad lateral thinking puzzles have solutions that feel arbitrary — "the man was actually a ghost" or "it was all a dream." Good puzzles have solutions that make you say "of course!" not "seriously?" The generator's AI-curated puzzles tend toward the satisfying kind, but occasional duds slip through.</p>
-
-<p><strong>Overuse.</strong> One or two puzzles at a party is fun. Ten puzzles in a row is exhausting. Space them out. Use them as palate cleansers between conversations, not as the main course.</p>
-
-<p>Next time you are in a group and conversation stalls, pull up the <a href="/en/tools/lateral-thinking">lateral thinking puzzle generator</a>. Read the scenario. Let the questions begin. And if you want to explore different kinds of brain teasers, our <a href="/en/blog/book-of-answers-online-guide">guide to the Book of Answers</a> covers another popular online diversion.</p>
-`
-  },
-  {
-    slug: "life-hacks-collection-guide",
-    title: "100 Life Hacks You Didn't Know You Needed — Organized by Category",
-    description: "From cleaning tricks to kitchen shortcuts, a well-organized life hacks collection saves you from scrolling through 47-second TikTok videos. Here's how to find the hack you need without the infinite scroll.",
-    date: "2026-06-21",
-    category: "Media",
-    tags: ["life hacks", "everyday tips", "cleaning tricks", "kitchen shortcuts", "practical tips"],
-    relatedTools: ["life-hacks", "lateral-thinking", "quotes"],
-    content: `
-<p>You spilled red wine on the carpet. You grab your phone and search "how to remove red wine stain." The results: a 12-minute YouTube video with a three-minute intro, a TikTok where someone uses seven products you do not own, and a blog post that buries the actual tip under 800 words of personal anecdote about the author's grandmother's carpet.</p>
-
-<p>A <a href="/en/tools/life-hacks">curated life hacks collection</a> — organized by category, each hack described in one paragraph — gives you the solution in 10 seconds. No video intros, no product sponsorships, no scrolling past someone's life story. Here is what makes a hack collection actually useful and how to find the right tip fast.</p>
-
-<h2>What the life hacks collection covers</h2>
-
-<p>The <a href="/en/tools/life-hacks">100 life hacks collection</a> is organized into six categories:</p>
+<p>HTML entities are special character sequences that represent characters which would otherwise break your HTML. They all start with <code>&amp;</code> and end with <code>;</code>. The five you will see most often:</p>
 
 <ul>
-<li><strong>Cleaning:</strong> Stain removal, odor elimination, surface cleaning without expensive products. Most hacks use items you already have — vinegar, baking soda, lemon juice.</li>
-<li><strong>Kitchen:</strong> Food storage, prep shortcuts, cooking tricks. How to keep herbs fresh for two weeks. How to peel garlic in 10 seconds. The stuff that actually saves time, not the "hacks" that take longer than the normal method.</li>
-<li><strong>Organization:</strong> Decluttering strategies, storage solutions, productivity setups. How to fold a fitted sheet so it does not become a crumpled ball.</li>
-<li><strong>Tech:</strong> Keyboard shortcuts, phone tips, browser tricks. The Ctrl+Shift+T to reopen a closed tab kind of thing — small actions that save cumulative hours.</li>
-<li><strong>Health:</strong> Sleep tips, hydration reminders, posture fixes. Nothing medical — just practical daily habits backed by common sense.</li>
-<li><strong>Money:</strong> Budgeting shortcuts, saving strategies, subscription management. How to cancel subscriptions you forgot about. How to compare prices per unit at the grocery store.</li>
+  <li><code>&amp;lt;</code> → &lt; (the less-than sign that opens every HTML tag)</li>
+  <li><code>&amp;gt;</code> → &gt; (the greater-than sign that closes every HTML tag)</li>
+  <li><code>&amp;amp;</code> → &amp; (the ampersand character itself — the one that starts all entities)</li>
+  <li><code>&amp;quot;</code> → " (double quote, which would break HTML attributes)</li>
+  <li><code>&amp;#39;</code> → ' (single quote or apostrophe)</li>
 </ul>
 
-<p>Each hack is one paragraph — what to do, why it works, what you need. No backstory, no product pitch. If you want brain teasers instead of practical tips, our <a href="/en/tools/lateral-thinking">lateral thinking puzzles</a> exercise a different part of your mind.</p>
+<p>Without entities, typing <code>&lt;div&gt;</code> in your blog post would create an actual HTML div element on the page instead of displaying the text "&lt;div&gt;". Entities tell the browser "show this character as text — do not interpret it as code."</p>
 
-<h2>How to use the collection without getting lost</h2>
+<h2>The double-encoding trap that creates &amp;amp;</h2>
 
-<p><strong>Browse by category.</strong> Do not scroll through all 100 hacks. Pick the category that matches your current problem. Cleaning emergency? Cleaning category. Cooking dinner? Kitchen category.</p>
+<p>This is the most common HTML entity bug: you encode <code>&amp;</code> to <code>&amp;amp;</code>. Then some other system — your CMS, a template engine, a JavaScript framework — encodes it again, producing <code>&amp;amp;amp;</code>. Your page now shows <code>&amp;amp;</code> instead of <code>&</code>. This happens whenever data passes through multiple encoding layers: database → backend → template → frontend. Each layer tries to be helpful by encoding, and the result is a mess.</p>
 
-<p><strong>Use it as a reference, not a reading list.</strong> You do not need to read all 100 hacks. You need the one hack that solves your immediate problem. Find it, use it, close the tab. Come back next time you have a different problem.</p>
+<p>The fix: encode once, at the last possible moment before rendering to HTML. Store raw text in your database. Encode only when outputting to the page. If you already have double-encoded text, the <a href="/en/tools/html-entities">HTML entities converter</a> has a decode mode — use it to undo the extra layer of encoding and get back to the original text.</p>
 
-<p><strong>Test one hack at a time.</strong> The biggest mistake with life hack collections is trying five hacks at once and not knowing which one worked. Try the simplest hack first — usually the one with the fewest ingredients or steps.</p>
+<h2>The entities you will actually use in real content</h2>
 
-<h2>Which hacks actually work vs which are internet lies</h2>
+<p><strong>&amp;nbsp; — the non-breaking space.</strong> Keeps two words glued together on the same line. Use it between a number and its unit: <code>10&amp;nbsp;km</code> prevents "10" from sitting at the end of one line and "km" at the start of the next. Also useful in navigation menus where you do not want a brand name to break across lines.</p>
 
-<p>Not all viral life hacks work. Some are staged for views. Here is a quick filter:</p>
+<p><strong>&amp;copy; &copy;, &amp;reg; &reg;, &amp;trade; &trade;</strong> — copyright, registered trademark, and trademark symbols. Much easier than memorizing their Unicode code points or copying them from another page every time.</p>
 
-<ul>
-<li><strong>Works:</strong> Vinegar for hard water stains (acid dissolves mineral deposits). Baking soda for odors (absorbs and neutralizes). Rubber band around a stripped screw head (adds grip).</li>
-<li><strong>Does not work:</strong> "Microwave your phone to charge it" (obviously). "Toothpaste on a scratched DVD" (makes it worse). "Peel a mango with a glass" (works, but you lose 30% of the fruit).</li>
-<li><strong>Works but is not worth it:</strong> "Use a straw to remove strawberry stems" — it works, but cutting the stem with a knife takes 2 seconds and the straw method takes 10. A hack that takes longer than the normal method is not a hack.</li>
-</ul>
+<p><strong>&amp;mdash; &mdash; and &amp;ndash; &ndash;</strong> — em dash and en dash. An em dash separates clauses within a sentence — like this — while an en dash indicates ranges: pages 10&ndash;20, Monday&ndash;Friday. Most people just type a hyphen for everything, but proper dashes make text look professionally typeset.</p>
 
-<p>The <a href="/en/tools/life-hacks">life hacks collection</a> filters out the nonsense. No microwave-your-phone tips. No "life hack" that requires buying a $40 specialized tool. Just things that work, described briefly. If you need a break from practical problem-solving, our <a href="/en/tools/quotes">famous quotes directory</a> is a calmer browsing experience.</p>
+<p><strong>Numeric entities</strong> — any Unicode character can be written as <code>&amp;#NNNN;</code> where NNNN is its decimal code point. <code>&amp;#10003;</code> is ✓, <code>&amp;#9829;</code> is &hearts;. Useful when your text editor or CMS does not support the character directly but you need it in the output.</p>
 
-<h2>Why a text-based collection beats video hacks</h2>
+<h2>When encoding saves you from security problems</h2>
 
-<p>Video hacks (TikTok, YouTube Shorts, Instagram Reels) have two problems: you cannot search them, and you cannot skim them. A 45-second video for a hack that could be described in one sentence is 40 seconds of filler. A text collection is searchable (Ctrl+F "red wine"), skimmable (scan 20 hacks in 30 seconds), and usable while you are in the middle of a mess (you do not need to rewind a paragraph).</p>
+<p>If your site renders user-submitted content as HTML without encoding entities, a malicious user can submit <code>&lt;script&gt;alert('hacked')&lt;/script&gt;</code> and it will execute in every visitor's browser. Encoding converts those angle brackets to <code>&amp;lt;</code> and <code>&amp;gt;</code>, turning the script tag into harmless displayed text. This is called output escaping and it is the most fundamental web security practice — and the most commonly forgotten one.</p>
 
-<p>Bookmark the <a href="/en/tools/life-hacks">life hacks page</a> for the next time you spill something, lose something, or need to open a jar that refuses to open. For a different kind of curated collection, check out our <a href="/en/blog/free-online-translator-guide">guide to translating text without installing an app</a>.</p>
-`
+<p>For URL-specific encoding where spaces become %20 and question marks become %3F, use our <a href="/en/tools/url-encoder">URL encoder</a> instead — it handles a completely different set of reserved characters. And if you are working with binary data that needs to become text-safe, the <a href="/en/tools/base64-converter">Base64 converter</a> is the right tool for that job.</p>
+
+<p>Bookmark the <a href="/en/tools/html-entities">HTML entities tool</a> for the next time you see weird characters appearing in your page output. For more developer tool guides, see our <a href="/en/blog/online-developer-tools-bookmarks-2026">curated list of essential browser-based developer tools</a>.</p>
+`,
   },
   {
-    slug: "quotes-directory-vs-random-generator",
-    title: "Famous Quotes Directory vs Random Quote Generator: Which One Actually Helps Your Writing?",
-    description: "You need a quote for your presentation opening. A quotes directory lets you search by author and topic. A random quote generator gives you serendipity. We compared both approaches for finding the right words.",
-    date: "2026-06-21",
-    category: "Media",
-    tags: ["famous quotes", "quote directory", "inspirational quotes", "quote search", "writing quotes"],
-    relatedTools: ["quotes", "random-quote", "life-hacks"],
+    slug: "nasa-apod-vs-bing-wallpaper-daily-images",
+    title: "NASA APOD vs Bing Wallpaper — Two Free Daily Images, Completely Different Purposes",
+    description: "NASA Astronomy Picture of the Day gives you the cosmos with an astronomer's explanation. Bing Daily Wallpaper gives you 4K beauty shots for your desktop. Here is how to use both and which one fits your morning routine.",
+    date: "2026-06-22",
+    category: "Fun & Media",
+    tags: ["nasa apod", "bing wallpaper", "daily wallpaper", "astronomy picture", "desktop background", "space images"],
+    relatedTools: ["nasa-apod", "bing-wallpaper", "global-weather"],
     content: `
-<p>You are putting together a presentation. The opening slide needs a quote — something about perseverance, from someone credible, that has not been used in every graduation speech since 2003. You type "perseverance quote" into Google and get the same ten quotes on every list: Edison's "1% inspiration," Churchill's "never give up," that one Nietzsche quote everyone misattributes. You have seen them all. Your audience has seen them all.</p>
+<p>Every single morning, two free services publish a new high-quality image. One comes from NASA and has been running since 1995. The other comes from Microsoft and has been running since 2009. Both are completely free. Both update daily. But they serve completely different purposes, and knowing which one to reach for saves you time when you want either a moment of wonder or a fresh desktop background.</p>
 
-<p>A <a href="/en/tools/quotes">quotes directory</a> with thousands of entries, searchable by author and keyword, gives you depth beyond the top-10 listicles. But a <a href="/en/tools/random-quote">random quote generator</a> gives you serendipity — quotes you would never find by searching because you did not know to look for them. Which approach produces the better quote? I tested both for a real presentation and compared the results.</p>
+<h2>NASA APOD — a daily astronomy lesson disguised as a photograph</h2>
 
-<h2>The test: finding a perseverance quote for a presentation</h2>
+<p>Every day since June 1995, NASA has published one astronomy image. Each one comes with a paragraph written by a professional astronomer explaining exactly what you are looking at. You get both the image and the science behind it in one place.</p>
 
-<p>I needed a quote about perseverance for a team presentation. The criteria: not overused, from a credible source, under 20 words, and relevant to a tech audience.</p>
+<p>The images span the full range of astronomy: Hubble deep-field shots showing galaxies billions of light-years away, ISS astronaut photos of Earth at night, composite images of nebulae rendered in colors human eyes could never see unaided, and occasionally diagrams or illustrations when the day's topic is more theoretical. The <a href="/en/tools/nasa-apod">NASA APOD viewer</a> shows today's image with the full astronomer's explanation — no need to visit a separate NASA page.</p>
 
-<p><strong>Method 1 — Directory search:</strong> I opened the <a href="/en/tools/quotes">quotes directory</a> and searched "perseverance." Results: 40+ quotes, from Marcus Aurelius to contemporary authors. I scrolled through, rejected the overused ones, and found Calvin Coolidge: "Nothing in the world can take the place of persistence. Talent will not; nothing is more common than unsuccessful men with talent." Good quote, right length, not overused in tech presentations. Time: 90 seconds.</p>
+<p>What makes APOD special is the context. A pretty picture of a nebula is nice to look at. Knowing that the red glow is ionized hydrogen gas heated by newborn stars and the blue is starlight reflecting off dust — that turns a wallpaper into a genuine learning moment. You spend 60 seconds looking at the image and reading the caption, and you start your day knowing something about the universe you did not know five minutes ago.</p>
 
-<p><strong>Method 2 — Random generator:</strong> I clicked the <a href="/en/tools/random-quote">random quote generator</a> 15 times, copying any quote that felt relevant. Results: 2 quotes about perseverance, 5 about life in general, 3 about creativity, 3 about failure, 2 about love (not useful for this presentation). The two perseverance quotes were both by authors I did not recognize. One was perfect: "It does not matter how slowly you go as long as you do not stop" — attributed to Confucius. Time: 60 seconds.</p>
+<h2>Bing Wallpaper — the most reliable source of free 4K desktop backgrounds</h2>
 
-<p><strong>Winner:</strong> The directory for targeted search, the generator for discovery. For "I know what I need," use the directory. For "surprise me," use the generator. Both beat Google by a wide margin.</p>
+<p>Bing has published a new wallpaper-quality image every day since 2009. These are professional photographs: sweeping landscapes, wildlife close-ups, architectural marvels, cultural festivals. The quality is consistently high — often true 4K resolution — and the subject matter is far more varied than APOD's space-only focus.</p>
 
-<h2>When to use the directory</h2>
+<p>The <a href="/en/tools/bing-wallpaper">Bing wallpaper downloader</a> lets you grab today's image in full resolution with one click. Many people use it to set their desktop background or phone lock screen. Unlike APOD, there is no science lesson — just a one-sentence caption identifying the location or subject, and occasionally a trivia fact about the place.</p>
 
-<p><strong>You have a specific topic.</strong> "I need a quote about teamwork." Search the directory, get 30+ options, pick the best one. No algorithm deciding which quotes to show you first — just chronological or alphabetical order.</p>
+<h2>Head-to-head comparison</h2>
 
-<p><strong>You need a quote from a specific author.</strong> "I want something by Maya Angelou." Browse the author listing, see all her indexed quotes, find one that fits. The directory's author organization makes this fast.</p>
+<table>
+  <tr><th></th><th>NASA APOD</th><th>Bing Wallpaper</th></tr>
+  <tr><td><strong>Subject</strong></td><td>Space and astronomy only</td><td>Everything: nature, cities, animals, culture</td></tr>
+  <tr><td><strong>Resolution</strong></td><td>Varies widely, often not 4K</td><td>Consistently high, usually 4K</td></tr>
+  <tr><td><strong>Explanation</strong></td><td>Full paragraph by a professional astronomer</td><td>One-sentence caption with location</td></tr>
+  <tr><td><strong>Archive</strong></td><td>Every day back to June 1995</td><td>Every day back to 2009</td></tr>
+  <tr><td><strong>Best for</strong></td><td>Learning something + a moment of wonder</td><td>Desktop backgrounds and visual variety</td></tr>
+</table>
 
-<p><strong>You are fact-checking a quote.</strong> You saw "Be the change you wish to see in the world — Gandhi" on a poster. The directory can help verify: Gandhi never said that exact phrase. It is a paraphrase of a longer passage. The directory attributes quotes to their actual sources, not to whoever sounds most impressive.</p>
+<h2>How I use both in a 90-second morning routine</h2>
 
-<h2>When to use the random generator</h2>
+<p>I check APOD with my morning coffee — it takes about 30 seconds to look at the image and read the explanation. It is a small daily ritual that keeps me connected to something bigger than my to-do list. Then I grab the Bing wallpaper for my desktop background — the image changes daily and keeps my workspace from feeling visually stale.</p>
 
-<p><strong>You are stuck and need inspiration.</strong> You do not know what quote you need. You just need something that shifts your perspective. Click the generator 10 times. Something will land.</p>
+<p>One practical tip: Bing wallpapers are often location-specific. When today's image shows a place I have never heard of, I pull up our <a href="/en/tools/global-weather">global weather checker</a> to see what conditions are like there right now. It adds an extra layer of context to the image — knowing it is currently snowing in that Norwegian village or 35°C at that Thai temple makes the photo feel more real.</p>
 
-<p><strong>You want a quote for a bio or profile.</strong> A random quote that resonates with you says more about your personality than a famous quote you found by searching. The generator's randomness makes the selection feel personal — "this quote found me" rather than "I searched for this."</p>
-
-<p><strong>You are designing a "quote of the day" feature.</strong> If you need a fresh quote every day for an app, newsletter, or whiteboard, the generator provides variety without manual curation. Our <a href="/en/tools/life-hacks">life hacks collection</a> works on a similar principle — browse for serendipity, search for specifics.</p>
-
-<h2>The hybrid strategy that works best</h2>
-
-<p>Start with the <a href="/en/tools/random-quote">random quote generator</a> for 5-10 clicks. See if anything resonates. If you find the right quote, you are done in 30 seconds. If not, switch to the <a href="/en/tools/quotes">quotes directory</a> and search your topic. This gives you the serendipity of random discovery with the precision of targeted search.</p>
-
-<p>One last tip: when you find a quote you like, verify it. The directory attributes sources but even reputable sources sometimes misattribute. A quick Google of "[quote] misattributed" saves you from putting words in someone's mouth. And for more on how to use text tools in your daily workflow, see our <a href="/en/blog/what-is-fancy-text-generator">explainer on Unicode fancy text generators</a>.</p>
-`
-  },
-  {
-    slug: "random-quote-inspirational-guide",
-    title: "How to Use a Random Quote Generator for Daily Inspiration Without It Becoming Background Noise",
-    description: "Random quotes are great — until you see so many that they stop meaning anything. Here's how to use a quote generator in a way that actually sticks, from morning routines to presentation hooks.",
-    date: "2026-06-21",
-    category: "Media",
-    tags: ["random quote", "daily inspiration", "quote of the day", "inspirational quotes", "morning motivation"],
-    relatedTools: ["random-quote", "quotes", "coin-flip"],
-    content: `
-<p>You set up a "quote of the day" widget on your phone. For the first week, it is great — each morning, a fresh nugget of wisdom from a philosopher or poet. By week three, you are swiping past it without reading. By week six, you have turned off the notification. The quotes did not get worse. Your brain just learned to filter them out.</p>
-
-<p>A <a href="/en/tools/random-quote">random quote generator</a> works better when you use it intentionally rather than passively. Here is how to make random quotes actually stick — whether for personal motivation, creative inspiration, or professional presentations.</p>
-
-<h2>Why most "quote of the day" habits fail</h2>
-
-<p><strong>Passive consumption does not create memory.</strong> Reading a quote in a notification takes 2 seconds. Your brain processes it as background noise — like a billboard you pass every day. You remember none of them.</p>
-
-<p><strong>Volume kills impact.</strong> One meaningful quote per week is memorable. Seven per week is wallpaper. The quote generator is not designed to be checked daily — it is designed to be checked when you need it. The difference is crucial.</p>
-
-<p><strong>Context matters more than the quote.</strong> The same quote hits differently depending on what you are going through. "This too shall pass" means nothing on a good day and everything on a bad one. A random generator cannot time the quote to your emotional state — but you can time your use of the generator.</p>
-
-<h2>Three ways to use the random quote generator that actually work</h2>
-
-<p><strong>1. The morning journal prompt (3 minutes).</strong> Click the <a href="/en/tools/random-quote">random quote generator</a> once. Read the quote. Write one sentence about why it does or does not resonate with you today. If it resonates, keep it. If not, click again — but only once. The goal is not to find the perfect quote. The goal is to use a quote as a writing prompt that reveals what is on your mind. The sentence you write about the quote says more about you than the quote itself.</p>
-
-<p><strong>2. The presentation hook (30 seconds).</strong> You need an opening for a talk or meeting. Click the generator 5 times. Pick the quote that best fits your topic. Do not force a connection — if none fit, use a different opening. A forced quote is worse than no quote. The <a href="/en/tools/quotes">quotes directory</a> is better for this use case if you know your topic — search by keyword instead of relying on randomness.</p>
-
-<p><strong>3. The creative constraint (5 minutes).</strong> For writers and artists: click the generator once. Use the quote as a creative constraint. Write a paragraph, sketch a scene, or compose a line of code that relates to the quote somehow. The constraint forces creativity. The randomness prevents you from picking a quote that is too comfortable.</p>
-
-<p>For a completely different kind of randomized decision-making, our <a href="/en/tools/coin-flip">virtual coin flip</a> handles the binary choices — but unlike a quote generator, it will not give you anything to think about.</p>
-
-<h2>When NOT to use random quotes</h2>
-
-<p><strong>As therapy.</strong> Inspirational quotes are not a substitute for mental health support. If you are struggling, talk to a professional, not a quote generator. Quotes can supplement a healthy mindset; they cannot create one.</p>
-
-<p><strong>As advice.</strong> A quote from a 19th-century philosopher does not know your specific situation. "Follow your passion" is terrible career advice for someone who needs a stable income. Quotes are perspectives, not prescriptions.</p>
-
-<p><strong>As social media filler.</strong> Posting a quote with no personal context is the social media equivalent of a motivational poster in a dentist's waiting room. If you share a quote, share why it matters to you. Otherwise, it is just noise — and you are contributing to the exact problem that makes people tune out quotes in the first place.</p>
-
-<h2>The one-quote-per-week rule</h2>
-
-<p>Here is the approach that has worked for me: use the <a href="/en/tools/random-quote">random quote generator</a> once per week. Pick one quote. Write it somewhere visible — a sticky note on your monitor, a line in your journal, the top of your to-do list. Sit with it for a week. By Wednesday, it will have revealed something about your current state of mind that a daily quote never could. By Friday, you will actually remember it.</p>
-
-<p>One quote, one week. Quality over quantity. The generator provides the randomness; you provide the attention. For more on making the most of text-based tools, read our <a href="/en/blog/quotes-directory-vs-random-generator">comparison of quotes directories vs random generators</a>.</p>
-`
+<p>Both tools are free, both update every day, and both take under a minute to check. Try the <a href="/en/tools/nasa-apod">NASA APOD viewer</a> for your daily dose of the cosmos, and the <a href="/en/tools/bing-wallpaper">Bing wallpaper downloader</a> when your desktop background needs a refresh. For more media tool guides, see our <a href="/en/blog/gif-search-download-guide">guide to searching and downloading GIFs without installing any apps</a>.</p>
+`,
   },
 
-"""
+];
+
+export function getBlogPosts(): BlogPost[]"""
 
 if old in content:
-    content = content.replace(old, new_blogs + '\n\n];\nexport function getBlogPosts(): BlogPost[]')
+    content = content.replace(old, new_blogs)
     with open(BLOG_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    print("OK: 6 blogs inserted")
+    print("OK — inserted 6 blogs into free station blog.ts (76→82)")
 else:
-    print("ERROR: pattern not found")
+    print("FAIL — insertion marker not found. Check the pattern.")
+    idx = content.rfind('];')
+    if idx > 0:
+        print("Last ]; found at index", idx)
+        print("Context:", repr(content[idx-30:idx+60]))
