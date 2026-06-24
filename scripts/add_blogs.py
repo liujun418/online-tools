@@ -1,4 +1,4 @@
-# Insert 6 new blog posts (2026-06-23 batch) — deepening coverage
+# Insert 6 new blog posts (2026-06-24 batch)
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,303 +8,258 @@ old = '\n\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
 
-  // 2026-06-23 batch: deepening coverage (3A+2B+1C)
+  // 2026-06-24 batch (3A+2B+1C)
   {
-    slug: "percentage-calculator-tips-discounts-grades-guide",
-    title: "Percentage Calculator: 5 Real-Life Uses Beyond Math Homework",
-    description: "You learned percentages in school for grades. But you use them every day for tips, discounts, tax, and raises. Here are 5 practical uses with the actual math explained simply.",
-    date: "2026-06-23",
-    category: "Calculator",
-    tags: ["percentage calculator", "calculate percentage", "tip percentage", "discount percentage", "percent change"],
-    relatedTools: ["percentage-calculator", "discount-calculator", "tip-calculator"],
-    content: `
-<p>Everyone learned percentages in middle school. What is 20% of 150? You might remember the formula. But in real life, percentages show up in situations that middle school never prepared you for: figuring out whether the 30%-off sale is actually a good deal, calculating how much your rent just increased, or splitting a restaurant bill where one person ordered the lobster and three people shared an appetizer.</p>
-
-<p>A <a href="/en/tools/percentage-calculator">percentage calculator</a> handles all of these without you doing mental math under pressure. Here are five situations where it saves you from getting the number wrong.</p>
-
-<h2>1. Restaurant tips without the awkward pause</h2>
-
-<p>The bill arrives. It is $87.40. You want to tip 18%. Everyone at the table is looking at their phones while you stare at the receipt doing mental math. 10% is $8.74. 5% is $4.37. 1% is $0.87. So 18% is… $8.74 + $4.37 + $0.87 + $0.87 + $0.87… you have lost the thread.</p>
-
-<p>The <a href="/en/tools/percentage-calculator">percentage calculator</a> does it instantly: $87.40 × 18% = $15.73. Round to $16 if the service was good. Done. No mental arithmetic, no wrong numbers, no undertipping because you gave up and rounded to 15% out of frustration. For a dedicated tip tool with bill-splitting, see our <a href="/en/tools/tip-calculator">tip calculator</a>.</p>
-
-<h2>2. Sale prices — is 40% off actually good?</h2>
-
-<p>A jacket is marked "$120, 40% off!" You calculate: $120 − 40% = $72. That seems reasonable. But wait — was it really $120 to begin with, or did they raise the price before the sale? And is the jacket next to it, marked "$95, 25% off," actually cheaper?</p>
-
-<p>Jacket A: $120 − 40% = $72. Jacket B: $95 − 25% = $71.25. They are essentially the same price. But Jacket A feels like a better deal because "40% off" sounds bigger than "25% off." The percentage calculator gives you the actual number, not the marketing feeling. Our <a href="/en/tools/discount-calculator">discount calculator</a> specializes in exactly this — comparing sale prices side by side.</p>
-
-<h2>3. Rent increases and salary negotiations</h2>
-
-<p>Your landlord sends a notice: rent is going from $1,450 to $1,580. Is that a reasonable increase or are you getting gouged? The percentage change: (1580 − 1450) ÷ 1450 × 100 = 8.97%. That is a nearly 9% increase. The national average rent increase is 3-5% per year. You now have a number to push back with — "a 9% increase is nearly double the market rate" is a stronger argument than "that feels like a lot."</p>
-
-<p>Same math applies to salary: a raise from $62,000 to $65,500 is a 5.6% increase. If inflation is 3%, your real raise is 2.6%. The <a href="/en/tools/percentage-calculator">free percentage calculator</a> gives you these numbers in seconds.</p>
-
-<h2>4. Splitting bills proportionally</h2>
-
-<p>Three roommates share an apartment. The rent is $2,400. One bedroom is twice the size of the others. How do you split it fairly? If the large room pays 40% and the two small rooms pay 30% each: 40% of $2,400 = $960. 30% of $2,400 = $720. Total: $960 + $720 + $720 = $2,400. The math checks out.</p>
-
-<p>This proportional splitting works for any shared expense: utilities based on room size, a group gift where one person contributed more, a dinner where one person did not drink alcohol. The percentage calculator handles the division; you handle the negotiation about what is fair.</p>
-
-<h2>5. Understanding statistics and news</h2>
-
-<p>"Study shows 50% increase in risk!" sounds alarming. But if the original risk was 2 in 10,000 (0.02%), a 50% increase brings it to 3 in 10,000 (0.03%). The relative increase is large. The absolute risk is still tiny. Understanding the difference between relative and absolute percentages is the single most useful math skill for reading news critically.</p>
-
-<p>The <a href="/en/tools/percentage-calculator">percentage calculator</a> cannot teach you statistical literacy, but it can show you the actual numbers behind scary-sounding percentages. For compound growth over time, use our <a href="/en/tools/compound-interest">compound interest calculator</a> instead — percentages that stack year after year behave differently from one-time calculations. And for more calculator comparisons, see our <a href="/en/blog/compound-interest-calculator-wealth-building-guide">guide to building wealth with compound interest</a>.</p>
-`,
-  },
-  {
-    slug: "calorie-calculator-vs-fitness-apps-comparison",
-    title: "Calorie Calculator vs Fitness Apps — Which One Actually Gives You an Accurate Number?",
-    description: "MyFitnessPal, Apple Watch, and a simple online calorie calculator all gave me different numbers. Here's why, which one to trust, and what the formulas actually measure.",
-    date: "2026-06-23",
-    category: "Calculator",
-    tags: ["calorie calculator", "daily calories", "BMR calculator", "TDEE", "calorie counting"],
-    relatedTools: ["calorie-calculator", "bmi-calculator", "pregnancy-calculator"],
-    content: `
-<p>I entered my stats — 32 years old, male, 175 lbs, 5'10", moderately active — into five different tools. MyFitnessPal said 2,410 calories to maintain. Apple Watch said my resting energy was 1,820 and total daily burn averaged 2,550. A <a href="/en/tools/calorie-calculator">free online calorie calculator</a> said 2,680. That is a 270-calorie spread — the difference between maintaining and gaining a pound per month.</p>
-
-<p>They all use the same underlying science. So why the different numbers? And which one should you actually trust? Here is what each tool measures and where the discrepancies come from.</p>
-
-<h2>The formulas behind every calorie calculator</h2>
-
-<p>Every calorie tool starts with BMR (Basal Metabolic Rate) — the calories your body burns just to stay alive: breathing, circulating blood, maintaining body temperature. The two most common BMR formulas:</p>
-
-<p><strong>Mifflin-St Jeor (newer, more accurate for most people):</strong><br>
-Men: 10 × weight(kg) + 6.25 × height(cm) − 5 × age − 161<br>
-Women: 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5</p>
-
-<p><strong>Harris-Benedict (older, still widely used):</strong><br>
-Slightly different coefficients, tends to overestimate by about 5% compared to Mifflin-St Jeor.</p>
-
-<p>The <a href="/en/tools/calorie-calculator">calorie calculator</a> uses Mifflin-St Jeor, which is the one most nutritionists recommend. Some fitness apps use Harris-Benedict because it was built into their codebase years ago. That alone accounts for a 50-100 calorie difference — and that is before we even get to the activity multiplier.</p>
-
-<h2>Where the activity multiplier ruins everything</h2>
-
-<p>BMR gives you the calories for lying in bed all day. You then multiply by an activity factor to get TDEE (Total Daily Energy Expenditure):</p>
-
-<ul>
-<li><strong>Sedentary (desk job, no exercise):</strong> BMR × 1.2</li>
-<li><strong>Lightly active (1-3 days/week):</strong> BMR × 1.375</li>
-<li><strong>Moderately active (3-5 days/week):</strong> BMR × 1.55</li>
-<li><strong>Very active (6-7 days/week):</strong> BMR × 1.725</li>
-<li><strong>Extremely active (athlete, physical job):</strong> BMR × 1.9</li>
-</ul>
-
-<p>The problem: "moderately active" means different things to different tools. One app's "moderate" is another's "light." Apple Watch and fitness trackers have an advantage here — they measure your actual movement instead of asking you to estimate it. But even they have error margins of 10-20% on calorie estimates from heart rate data.</p>
-
-<p>The <a href="/en/tools/calorie-calculator">online calorie calculator</a> gives you all five activity levels at once — you can see the range from sedentary to extremely active and pick the one that matches your actual lifestyle, not the one that gives you the number you want to hear.</p>
-
-<h2>Which number should you use?</h2>
-
-<p><strong>For weight loss:</strong> Start with the sedentary number — BMR × 1.2 — even if you think you are active. Subtract 300-500 calories for your deficit. Most people overestimate their activity level. Starting conservative means you will actually lose weight instead of wondering why the math is not working.</p>
-
-<p><strong>For maintenance:</strong> Use the calculator's number for your best-guess activity level. Track your weight for two weeks. If it stays the same, the number is right. If it goes up, you are overestimating activity. If it goes down, you are underestimating. Adjust by 200 calories and test another two weeks.</p>
-
-<p><strong>For muscle gain:</strong> Add 200-300 calories above maintenance. More than that and you are gaining unnecessary fat along with the muscle. The body can only build muscle so fast; excess calories beyond that rate just become fat.</p>
-
-<p>One number the calorie calculator cannot give you: body composition. Two people with the same height, weight, and age can have completely different calorie needs if one has significantly more muscle mass. For a related health metric, our <a href="/en/tools/bmi-calculator">BMI calculator</a> gives you the basic body mass number — limited, but useful as a starting point. And for expecting mothers, our <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> tracks a different kind of body change entirely.</p>
-
-<p>The <a href="/en/tools/calorie-calculator">calorie calculator</a> gives you a solid starting number. Use it, track your actual results, and adjust. The best calculator is the one you calibrate against your own body's response. For more calculator comparisons, see our <a href="/en/blog/bmi-calculator-what-it-means">guide to what BMI actually tells you and what it does not</a>.</p>
-`,
-  },
-  {
-    slug: "qr-code-creative-uses-beyond-urls",
-    title: "7 Creative Uses for QR Codes That Have Nothing to Do with Restaurant Menus",
-    description: "QR codes can store WiFi credentials, calendar events, pre-written texts, and more. Here are 7 unexpected uses that go way beyond linking to a website.",
-    date: "2026-06-23",
-    category: "Developer",
-    tags: ["QR code", "QR code generator", "creative QR codes", "WiFi QR", "vCard QR"],
-    relatedTools: ["qr-code-generator", "qr-code-scanner", "url-encoder"],
-    content: `
-<p>Every restaurant in 2026 uses QR codes for menus. That is the obvious use case — and the most boring one. A QR code can store far more than a URL. It can share your WiFi password without anyone typing it, add an event to someone's calendar in one scan, compose a pre-written text message, or share your full contact info as a digital business card. A <a href="/en/tools/qr-code-generator">free QR code generator</a> creates all of these in seconds.</p>
-
-<p>Here are seven uses you probably have not tried — each one solving a specific, annoying problem.</p>
-
-<h2>1. WiFi login — no more spelling your password</h2>
-
-<p>A guest asks for your WiFi. Your password is "Tr0ub4dor&3" and they type "Troubador3" three times before giving up. Generate a WiFi QR code instead. The format: <code>WIFI:S:YourNetworkName;T:WPA;P:YourPassword;;</code> When scanned, the phone auto-connects to the network. No typing, no errors, no standing over someone's shoulder reading out random characters.</p>
-
-<p>Print it and put it on your fridge. Guests scan, connect, done. The <a href="/en/tools/qr-code-generator">QR code generator</a> has a WiFi preset — just enter your network name and password, and it creates the code.</p>
-
-<h2>2. Calendar events — one scan adds to their phone</h2>
-
-<p>You are organizing a meetup. Instead of "I will send you a calendar invite later" (you will forget), generate a QR code that contains a calendar event. When scanned, it opens the phone's calendar app with the event title, date, time, and location pre-filled. The recipient just taps "Add."</p>
-
-<p>Use this for: party invitations, meeting reminders, conference schedules, dinner reservations. The format is a standard .ics file encoded as a data URI. The generator handles the encoding — you just provide the event details.</p>
-
-<h2>3. Pre-written text messages — scan to text</h2>
-
-<p>Generate a QR code that, when scanned, opens the phone's messaging app with a pre-written text to a specific number. "I am running 10 minutes late" — scan the QR code stuck to your desk, the text sends. "I am outside" — scan the code by your door, your friend knows to come down.</p>
-
-<p>Also useful for businesses: a QR code on a product label that opens a text to customer support with the product name and issue pre-filled. The format: <code>SMSTO:+15551234567:Your message here</code>.</p>
-
-<h2>4. Digital business cards (vCard)</h2>
-
-<p>Instead of handing out paper cards that get lost in pockets and eventually thrown away, generate a QR code containing your vCard — name, phone, email, company, title, website. When someone scans it, your contact info opens directly in their phone's address book. One tap to save.</p>
-
-<p>Print the QR code on your actual business card too — now the paper card and the digital save work together. Even if they lose the card, your info is already in their phone. Our <a href="/en/tools/qr-code-scanner">QR code scanner</a> handles the receiving end — upload a QR image to decode what is inside.</p>
-
-<h2>5. App store links — one code, both platforms</h2>
-
-<p>You want someone to download your app. They have an iPhone; their friend has an Android. Instead of sending two different links, generate a QR code that redirects to the correct app store based on the scanning device. Dynamic QR services handle this, but for static QR codes, encode both links and let the user choose — or encode a single landing page that auto-detects the platform.</p>
-
-<h2>6. Geolocation — scan to navigate</h2>
-
-<p>Generate a QR code with GPS coordinates. When scanned, it opens Google Maps or Apple Maps with the location pinned. Use this for: wedding venues ("here is exactly where the ceremony is"), hiking meetup points, hidden-gem restaurants without proper addresses. The format: <code>geo:latitude,longitude</code>.</p>
-
-<h2>7. Email templates — scan to compose</h2>
-
-<p>Generate a QR code that opens an email with the recipient, subject, and body pre-filled. Use it for: customer feedback ("scan to tell us how we did"), event RSVPs, newsletter signups that bypass the landing page. The format: <code>mailto:email@example.com?subject=Subject&body=Body text</code>. Our <a href="/en/tools/url-encoder">URL encoder</a> handles the special characters that email subjects and bodies often contain.</p>
-
-<p>QR codes are a data container, not just a link. The <a href="/en/tools/qr-code-generator">free QR code generator</a> supports all these formats — URLs, WiFi, vCard, email, SMS, geolocation, and plain text. Next time you need to share information that someone has to type, stop making them type it. Generate a QR code instead. For more on QR codes, see our <a href="/en/blog/scan-qr-code-from-screenshot-online">guide to scanning QR codes from screenshots without a second phone</a>.</p>
-`,
-  },
-  {
-    slug: "css-minifier-vs-js-minifier-vs-html-minifier",
-    title: "CSS Minifier vs JS Minifier vs HTML Minifier — They All Shrink Files But in Completely Different Ways",
-    description: "Minifying CSS removes whitespace. Minifying JS renames variables. Minifying HTML strips comments. Each one works differently under the hood. Here's what each one actually does.",
-    date: "2026-06-23",
-    category: "Developer",
-    tags: ["CSS minifier", "JS minifier", "HTML minifier", "minification", "code compression", "web performance"],
-    relatedTools: ["css-minifier", "html-to-markdown", "svg-minifier"],
-    content: `
-<p>You run your CSS through a minifier and it comes out as one unreadable line. You run your JavaScript through a different minifier and your variable names change to single letters. You run your HTML through a third minifier and all the comments disappear. All three are called "minifiers," but they work in completely different ways because CSS, JS, and HTML have completely different rules about what you can safely remove.</p>
-
-<p>A <a href="/en/tools/css-minifier">CSS minifier</a> does the simplest job of the three. Here is what each type actually does under the hood, and why you cannot use the same tool for all three.</p>
-
-<h2>CSS minification — the safe one</h2>
-
-<p>CSS minification is mostly about removing things the browser ignores anyway: whitespace, line breaks, comments, and the last semicolon in a block. It can also shorten color values where safe: <code>#ffffff</code> becomes <code>#fff</code>, <code>rgb(255,0,0)</code> becomes <code>red</code>. Some aggressive minifiers also remove the last <code>0</code> from values: <code>0.5em</code> becomes <code>.5em</code>.</p>
-
-<p>CSS minification is the safest of the three because CSS has simple rules. Whitespace is almost never significant (the exception: inside <code>content:</code> properties for generated text). The <a href="/en/tools/css-minifier">CSS minifier tool</a> typically reduces file size by 20-40%. For a 50KB stylesheet, that is 10-20KB saved — not transformative, but free performance with zero risk.</p>
-
-<h2>JavaScript minification — the aggressive one</h2>
-
-<p>JavaScript minification goes much further than CSS because JS has more redundancy. A JS minifier does everything a CSS minifier does, plus:</p>
-
-<ul>
-<li><strong>Renames variables:</strong> <code>calculateMonthlyPayment</code> becomes <code>a</code>. <code>numberOfItems</code> becomes <code>b</code>. This is safe because the minifier tracks scope — a variable inside a function can be renamed without affecting anything outside.</li>
-<li><strong>Removes dead code:</strong> Functions that are never called, variables that are never read, code after a <code>return</code> statement — all stripped out.</li>
-<li><strong>Inlines single-use functions:</strong> If a function is called exactly once, the minifier replaces the call with the function body.</li>
-<li><strong>Shortens expressions:</strong> <code>true</code> becomes <code>!0</code>, <code>false</code> becomes <code>!1</code>, <code>undefined</code> becomes <code>void 0</code>.</li>
-</ul>
-
-<p>JS minification typically reduces file size by 50-70%. A 100KB JavaScript bundle becomes 30-50KB. This is why every production website uses a JS minifier — it is the single biggest performance win with the least effort.</p>
-
-<h2>HTML minification — the subtle one</h2>
-
-<p>HTML minification is the least aggressive because HTML has the most contextual rules. You cannot remove all whitespace — spaces between words in a paragraph are significant. You cannot rename attributes — the browser expects specific names. What an HTML minifier actually does:</p>
-
-<ul>
-<li>Removes comments (except conditional comments for IE, which nobody uses anymore)</li>
-<li>Removes whitespace between tags (the newline and indentation between <code>&lt;/div&gt;</code> and <code>&lt;div&gt;</code>)</li>
-<li>Removes optional closing tags where safe (the <code>&lt;/li&gt;</code> after each list item, the <code>&lt;/p&gt;</code> at paragraph end)</li>
-<li>Removes quotes from attributes that do not need them (bare boolean attributes)</li>
-<li>Shortens inline CSS and JS using the same techniques as above</li>
-</ul>
-
-<p>HTML minification typically saves 10-20%. It is less dramatic than JS minification but still worth doing for large pages. Our <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> goes even further — it strips all HTML formatting and produces clean Markdown, which is useful for content migration rather than performance.</p>
-
-<h2>Which order to minify in your build pipeline</h2>
-
-<p>If you are setting up a build process, the order matters: HTML first (because your HTML may contain inline CSS and JS), then CSS, then JS last (because JS is the most complex and needs the cleanest input). Most modern frameworks (Next.js, webpack, Vite) handle all three automatically in production builds. But for quick one-offs — a standalone HTML file, a CSS snippet you are sharing, a script you are pasting into a CMS — the individual minifiers are faster than setting up a whole build pipeline.</p>
-
-<p>For a related optimization, our <a href="/en/tools/svg-minifier">SVG minifier</a> handles SVG specifically — it removes editor metadata, comments, and unnecessary precision from path data, which standard CSS/JS minifiers cannot do because SVG is XML, not CSS or JS. For more developer tool guides, see our <a href="/en/blog/online-developer-tools-bookmarks-2026">curated list of the best free online developer tools</a>.</p>
-`,
-  },
-  {
-    slug: "word-counter-beyond-word-count-guide",
-    title: "What a Word Counter Actually Tells You — Character Count, Reading Time, and Keyword Density",
-    description: "A word counter does more than count words. Character count matters for meta descriptions, reading time predicts engagement, and keyword density helps SEO. Here's what each metric means.",
-    date: "2026-06-23",
+    slug: "text-repeater-creative-uses-guide",
+    title: "Text Repeater: 5 Legitimate Uses Beyond Spam and Memes",
+    description: "A text repeater isn't just for annoying your friends. Use it for ASCII art, placeholder data, test fixtures, pattern-based designs, and more. Here are 5 practical uses.",
+    date: "2026-06-24",
     category: "Text",
-    tags: ["word counter", "character count", "reading time", "keyword density", "writing metrics"],
-    relatedTools: ["word-counter", "case-converter", "text-diff"],
+    tags: ["text repeater", "repeat text", "text multiplier", "ASCII art", "placeholder generator"],
+    relatedTools: ["text-repeater", "lorem-ipsum", "word-counter"],
     content: `
-<p>You paste your draft into a word counter. It says 847 words. You close the tab. But you missed three other numbers that matter more than the word count: character count (which determines whether your meta description gets truncated), reading time (which predicts whether anyone finishes your article), and keyword density (which tells you if you are over-optimizing). A <a href="/en/tools/word-counter">word counter</a> gives you all of these — here is what each one actually means and how to use them.</p>
+<p>Text repeaters have a reputation problem. Most people associate them with spam — someone copying "HELLO" 500 times to flood a chat. But a <a href="/en/tools/text-repeater">text repeater tool</a> solves a surprising number of legitimate problems that have nothing to do with annoying people. Here are five practical uses you probably have not considered.</p>
 
-<h2>Character count — the SEO number nobody checks</h2>
+<h2>1. Generate placeholder data for testing</h2>
 
-<p>Google truncates meta descriptions at roughly 155-160 characters on desktop and 120 characters on mobile. Your carefully crafted meta description that ends at 175 characters will read: "Learn how to write better meta descriptions that drive clicks and improve your search engine rankings with these simple…" The key point is cut off.</p>
+<p>You are building a paginated list. You need 200 items to test whether the "Load More" button works correctly. Instead of manually typing 200 entries or writing a script for a one-time test, use the text repeater. Generate "Item 1, Item 2, Item 3…" with a number suffix, add line breaks as separators, and paste into your test fixture. Five seconds instead of five minutes of scripting.</p>
 
-<p>The <a href="/en/tools/word-counter">free word counter</a> shows character count with and without spaces. For meta descriptions, use the "with spaces" count. Aim for 140-155 characters. Under 120 is fine — Google sometimes shows shorter descriptions. Over 160 means your ending will get replaced with an ellipsis.</p>
+<p>The <a href="/en/tools/text-repeater">free text repeater</a> supports custom separators — commas, newlines, spaces, or any custom string. For numbered lists, combine it with a text editor's column mode: repeat the base text, then use multiple cursors to add incrementing numbers. For longer placeholder blocks, our <a href="/en/tools/lorem-ipsum">Lorem Ipsum generator</a> produces realistic-looking paragraph text for layout testing.</p>
 
-<p>Character count also matters for: Twitter posts (280 characters), SMS messages (160 characters per segment), app store descriptions (170 characters for the short description), and email subject lines (40-50 characters for mobile display). Each platform has its own limit, and the character counter tells you where you stand against all of them.</p>
+<h2>2. Create simple ASCII art and text dividers</h2>
 
-<h2>Reading time — the engagement predictor</h2>
+<p>You want a clean section divider in a plain-text document — a README, a forum post, a plain-text email. Something like <code>═══════════════════════</code> or <code>~~~~~~~~~~~~~~~~~~~~~~~~~~~</code>. Repeat one character 40 times, add line breaks above and below, and you have a professional-looking divider that works in any plain-text context.</p>
 
-<p>The average adult reads about 238 words per minute in English. A 1,500-word article should take about 6-7 minutes to read. If your analytics show an average time on page of 45 seconds for that article, nobody is actually reading it — they are skimming the headline and bouncing.</p>
+<p>For more complex patterns: repeat "◼◻" 20 times for a checkerboard border, repeat "• " 10 times for a bullet-style separator, repeat "▀" 60 times for a solid block header. The repeater handles any Unicode character — emoji, box-drawing characters, mathematical symbols — not just ASCII.</p>
 
-<p>Reading time helps you set reader expectations. Put the estimated reading time at the top of your article: "6 min read." Readers who are willing to commit 6 minutes will stay. Readers who wanted a 30-second answer will bounce — but they were never going to read 1,500 words anyway. You did not lose them; you correctly disqualified them.</p>
+<h2>3. Build test fixtures for databases and APIs</h2>
 
-<p>For blog posts: 3-5 minute reads (700-1,200 words) get the most engagement. Under 3 minutes feels insubstantial. Over 8 minutes needs to be genuinely valuable to justify the time commitment. The word counter's reading time estimate helps you hit the right length before you publish.</p>
+<p>You need to seed a database with 50 user records for local development. The text repeater generates the raw data structure: repeat a JSON template 50 times with newline separators. Paste the result into your seed file. Swap out the placeholder values with actual varied data. The repeater handles the mechanical repetition; you handle the variation.</p>
 
-<h2>Keyword density — the over-optimization detector</h2>
+<p>Example: repeat <code>{"name": "User N", "email": "userN@test.com"}</code> 50 times. Then use find-and-replace to add incrementing numbers. The alternative — typing 50 JSON objects by hand or writing a seed script — is slower for one-off testing needs.</p>
 
-<p>You wrote a 1,000-word article about "best running shoes." You used the phrase "best running shoes" 15 times. That is 1.5% keyword density, which is on the edge of keyword stuffing. Google's algorithm is smart enough to understand synonyms and related terms — you do not need to repeat the exact phrase.</p>
+<h2>4. Generate pattern-based CSS and design tokens</h2>
 
-<p>The word counter shows you how many times specific words appear. Use this to catch accidental repetition. If the word "actually" appears 47 times in an 800-word article, you have a verbal tic you did not notice. The counter catches what your brain skims past during editing.</p>
+<p>You need a striped background in CSS. The gradient syntax for 10 alternating stripes is tedious to write by hand. Generate the pattern with the text repeater: repeat ", #color1 10%, #color2 10%" 5 times, then wrap in the gradient function. The repeater produces the repetitive part; you add the wrapper.</p>
 
-<p>For natural writing: aim for keyword density under 1%. Use variations and synonyms. "Running shoes," "trainers," "athletic footwear," "jogging sneakers" — these all signal the same topic without repeating the same phrase. Our <a href="/en/tools/case-converter">case converter</a> helps standardize text before analysis — lowercase everything so "Running" and "running" count as the same word.</p>
+<p>This also works for: generating repeated grid-template-columns values, creating repetitive box-shadow chains for pixel-art effects, building long strings of nth-child selectors. Any CSS property that accepts repeated values benefits from a repeater.</p>
 
-<h2>Sentence and paragraph counts — the readability check</h2>
+<h2>5. Create practice material for typing and language learning</h2>
 
-<p>Average sentence length over 25 words = hard to read. Average under 12 words = choppy and simplistic. The sweet spot is 15-20 words per sentence. The word counter gives you total sentences — divide words by sentences to get your average.</p>
+<p>Repeat a difficult word or phrase 20 times, print it, and practice typing or writing it. "Definitely, definitely, definitely…" — after writing it 20 times, you will stop typing "definately." Language learners use this for verb conjugations: repeat "je suis, tu es, il est…" to drill patterns into muscle memory.</p>
 
-<p>Paragraph count matters too. If you have 800 words in 3 paragraphs, each paragraph averages 267 words — that is a wall of text on mobile. Aim for 3-5 sentences per paragraph (50-100 words). Shorter paragraphs get read; long paragraphs get scrolled past.</p>
-
-<p>For comparing different versions of a document — before and after editing, or two drafts — our <a href="/en/tools/text-diff">text diff checker</a> shows exactly what changed between versions. Combined with the word counter, you can see not just what changed but how the metrics improved: shorter sentences, better keyword distribution, more appropriate reading time.</p>
-
-<p>Next time you paste into a <a href="/en/tools/word-counter">word counter</a>, look at all four numbers. Word count tells you how long it is. Character count tells you where it will get cut off. Reading time tells you who will finish it. Keyword density tells you if you are trying too hard. For more text tool guides, see our <a href="/en/blog/case-converter-sentence-title-upper-guide">guide to using case converters for professional text formatting</a>.</p>
+<p>For measuring your output, our <a href="/en/tools/word-counter">word counter</a> tells you exactly how much text you generated — useful if you are trying to hit a specific word count for practice or content production. For more text tool guides, see our <a href="/en/blog/case-converter-sentence-title-upper-guide">guide to using case converters for professional text formatting</a>.</p>
 `,
   },
   {
-    slug: "scoreboard-beyond-sports-creative-uses",
-    title: "Scoreboard Tool: 6 Creative Uses That Have Nothing to Do with Sports",
-    description: "An online scoreboard is not just for basketball games. Use it for trivia nights, classroom quizzes, debate scoring, habit tracking, and more. Here are 6 ways people are using it.",
-    date: "2026-06-23",
-    category: "Fun & Media",
-    tags: ["scoreboard", "online scoreboard", "score keeper", "trivia scoring", "classroom tool"],
-    relatedTools: ["scoreboard", "reaction-test", "coin-flip"],
+    slug: "url-slug-best-practices-seo-guide",
+    title: "How to Write URL Slugs That Actually Help Your SEO — A Practical Guide",
+    description: "Your URL slug is not just a technical detail. It affects click-through rates, search rankings, and shareability. Here's how to write clean, readable slugs and the mistakes that hurt you.",
+    date: "2026-06-24",
+    category: "Developer",
+    tags: ["URL slug", "slug generator", "SEO slug", "URL best practices", "permalink"],
+    relatedTools: ["text-to-slug", "case-converter", "url-encoder"],
     content: `
-<p>When you hear "scoreboard," you think basketball, football, or a dusty unit on the wall of a high school gym. But an <a href="/en/tools/scoreboard">online scoreboard</a> is just a tool for tracking points between two or more sides — and that turns out to be useful in a surprising number of situations that have nothing to do with sports. Here are six ways people are actually using it.</p>
+<p>You publish a blog post with the title "10 Ways to Improve Your JavaScript Performance in 2026." Your CMS auto-generates the URL: <code>/blog/10-ways-to-improve-your-javascript-performance-in-2026</code>. That is 63 characters long. On a mobile search result, Google truncates URLs at around 60 characters. Your carefully crafted title becomes <code>/blog/10-ways-to-improve-your-javascript-performanc…</code> in the SERP. A <a href="/en/tools/text-to-slug">URL slug generator</a> helps — but only if you know what makes a good slug in the first place.</p>
 
-<h2>1. Trivia night scoring</h2>
+<h2>The rules of a good URL slug</h2>
 
-<p>You are hosting a trivia night at a bar, a party, or a family gathering. Four teams, six rounds, different point values for different questions. Instead of scribbling numbers on a napkin and arguing about whether Team 3 had 14 or 15 points after the music round, open the scoreboard on a laptop or tablet facing the room. Everyone sees the scores update in real time. No disputes. No napkin math.</p>
+<ol>
+<li><strong>Keep it under 60 characters.</strong> Shorter slugs rank slightly better and get clicked more often. "javascript-performance-tips" (29 chars) beats "10-ways-to-improve-your-javascript-performance-in-2026" (63 chars). The difference is not huge, but it compounds across hundreds of URLs.</li>
+<li><strong>Include your primary keyword.</strong> If your article is about JavaScript performance, those words should appear in the slug. The slug is a ranking signal — not the strongest one, but one you control completely.</li>
+<li><strong>Remove stop words.</strong> "the," "a," "an," "in," "on," "at," "to," "for," "of" — these add length without adding meaning. "ways-to-improve-javascript-performance" becomes "improve-javascript-performance." Same meaning, 10 characters shorter.</li>
+<li><strong>Use hyphens, not underscores.</strong> Google treats hyphens as word separators and underscores as word joiners. "javascript-performance" is read as two words. "javascript_performance" is read as one word. Use hyphens.</li>
+<li><strong>Lowercase only.</strong> Mixed-case URLs create duplicate content issues: /Blog/JavaScript and /blog/javascript are different URLs that serve the same content. Always lowercase.</li>
+</ol>
 
-<p>The <a href="/en/tools/scoreboard">online scoreboard</a> supports custom team names, point increments, and clear visual display. For a trivia host, it is the difference between "I think you guys are winning" and everyone knowing exactly where they stand.</p>
+<h2>How the slug generator works</h2>
 
-<h2>2. Classroom quiz competitions</h2>
+<p>The <a href="/en/tools/text-to-slug">URL slug generator</a> takes any text and converts it to a clean, URL-safe format. It lowercases everything, replaces spaces and special characters with hyphens, removes stop words, and strips accents from international characters (café → cafe, naïve → naive). Paste your title, get a clean slug in under a second.</p>
 
-<p>Split the class into groups. Ask a question. First group to raise their hand gets to answer — correct = +1, incorrect = −1, and the other groups get a chance. The scoreboard on the projector keeps everyone engaged. Students who normally tune out during quizzes suddenly care because they can see their team's position changing in real time.</p>
+<p>For titles with special characters — ampersands, quotes, mathematical symbols — the generator handles the conversion that would otherwise require manual lookup. "Ben & Jerry's Ice Cream" becomes "ben-jerrys-ice-cream." Our <a href="/en/tools/url-encoder">URL encoder</a> handles the opposite direction — encoding special characters for query parameters, where hyphens would be incorrect.</p>
 
-<p>Teachers have been using chalkboards for this for decades. A digital scoreboard is faster, clearer, and does not require you to turn your back on the class to update the score.</p>
+<h2>The slug mistakes that hurt your SEO</h2>
 
-<h2>3. Debate and argument scoring</h2>
+<p><strong>Auto-generated IDs as slugs.</strong> <code>/blog/post-2847</code> tells Google nothing about your content. It tells users nothing about your content. If your CMS generates numeric slugs, override them with descriptive text. The slug is free real estate in your search snippet — use it.</p>
 
-<p>You and a friend have a recurring debate — best movie of the 90s, superior pizza topping, whether Die Hard is a Christmas movie. Each round, you present an argument. An impartial third party (or the group chat) awards a point to the more convincing side. First to 5 points wins the debate.</p>
+<p><strong>Changing slugs after publishing.</strong> If you change a slug, the old URL returns a 404 unless you set up a 301 redirect. Every old link — from other sites, from social media, from bookmarks — breaks. Pick a good slug the first time and stick with it. The slug generator helps you get it right before you hit publish.</p>
 
-<p>It sounds silly, but structured scoring turns endless circular arguments into finite, decisive competitions. The scoreboard provides the structure. For a completely different kind of decision-making tool, our <a href="/en/tools/coin-flip">virtual coin flip</a> handles the binary choices that do not need a full scoring system.</p>
+<p><strong>Keyword stuffing slugs.</strong> <code>/best-javascript-performance-tips-optimization-speed-fast</code> is not a slug; it is a spam signal. One or two keywords, not seven. The slug should read naturally — if you would not say it out loud, do not put it in a URL.</p>
 
-<h2>4. Habit and productivity tracking</h2>
+<p><strong>Dates in slugs.</strong> <code>/blog/2026-06-24/javascript-performance</code> locks your content to a specific date. When you update the article in 2027, the 2026 date makes it look outdated even though the content is fresh. Omit dates from slugs unless the date is essential to the content (news articles, event coverage).</p>
 
-<p>You and a roommate or partner are both trying to build a habit — going to the gym, reading daily, not ordering takeout. Each day you complete the habit, you get a point. The scoreboard displays the running tally. It is not about winning; it is about the social accountability of a visible score. You are less likely to skip the gym when you know your score will visibly fall behind.</p>
+<p>For related text transformation tools, our <a href="/en/tools/case-converter">case converter</a> handles the other direction — converting slugs back to readable titles. And for a broader look at URL handling, see our <a href="/en/blog/url-encoding-for-beginners">beginner's guide to URL encoding and why it matters</a>.</p>
+`,
+  },
+  {
+    slug: "fullscreen-text-vs-time-screen-digital-displays",
+    title: "Fullscreen Text Display vs Time Screen — Two Digital Display Tools, Two Completely Different Jobs",
+    description: "Fullscreen text shows a message big and bold. A time screen shows a clock. Both are 'put it on the screen' tools, but they solve different problems. Here's when to use each.",
+    date: "2026-06-24",
+    category: "Fun & Media",
+    tags: ["fullscreen text", "time screen", "digital display", "big text display", "fullscreen clock"],
+    relatedTools: ["fullscreen-text", "time-screen", "scoreboard"],
+    content: `
+<p>You need to display something on a screen so people across the room can see it. Two tools seem similar: a <a href="/en/tools/fullscreen-text">fullscreen text display</a> and a <a href="/en/tools/time-screen">fullscreen time screen</a>. Both go fullscreen. Both are designed to be seen from a distance. But they serve completely different purposes, and using the wrong one means your message either gets ignored or does not work at all. Here is when to use each.</p>
 
-<p>This works best for short-term challenges: a 30-day fitness challenge, a month of daily writing, a "who can save more money this month" competition. The scoreboard makes the abstract ("are you keeping up?") into something concrete ("you are down by 4 points").</p>
+<h2>What a fullscreen text display does</h2>
 
-<h2>5. Game night beyond sports</h2>
+<p>You type a message. It fills the entire screen in the largest possible font. The background can be black, white, or any custom color. The text can be any color. The goal: someone across the room — a classroom, a conference hall, an office — can read the message without squinting or walking closer.</p>
 
-<p>Board game night, but the board game does not have its own scoring system — or it has a complex one that nobody wants to calculate mid-game. Use the scoreboard as an external tally. Catan victory points, Scrabble running totals, Mario Kart tournament standings across multiple races. The scoreboard aggregates results across games so you can crown an overall game night champion.</p>
+<p>The <a href="/en/tools/fullscreen-text">fullscreen text tool</a> is for active communication. You are telling people something they need to know right now: "Meeting starts in 5 minutes," "WiFi password: guest2026," "Lunch served in Room 204," "Please silence your phones." It is a one-way broadcast — you put up a message, people read it, you change it when the message changes.</p>
 
-<h2>6. Live polling and audience participation</h2>
+<h2>What a time screen does</h2>
 
-<p>At a workshop or presentation, split the audience into two sides. Ask opinion questions — "which approach is better for this problem?" Each hand raise counts as a point. The scoreboard makes the audience feel like participants rather than spectators. It also gives you, the presenter, real-time feedback on what your audience thinks.</p>
+<p>A time screen displays the current time — and nothing else — in large, clear digits. It is passive. People glance at it when they need to know the time. It does not demand attention; it answers a question people already have: "What time is it?"</p>
 
-<p>For measuring individual performance instead of group scores, our <a href="/en/tools/reaction-test">reaction time tester</a> gives each person their own score — a different kind of competitive tool for a different kind of competition.</p>
+<p>The <a href="/en/tools/time-screen">time screen tool</a> is for contexts where the time matters continuously: exam halls (students need to pace themselves), meeting rooms (presenters need to track time without looking at a watch), kitchens and workshops (timing tasks without touching a phone with dirty hands). It replaces the wall clock with a digital display that is visible from any angle in the room.</p>
 
-<p>The <a href="/en/tools/scoreboard">free online scoreboard</a> works for any situation where you need to track points visibly. It is simple by design — add points, subtract points, reset — and that simplicity is what makes it flexible. For more creative tool ideas, see our <a href="/en/blog/reaction-test-speed-comparison">comparison of reaction time tests and what your score actually means</a>.</p>
+<h2>When to use which</h2>
+
+<table>
+  <tr><th>Situation</th><th>Right Tool</th><th>Why</th></tr>
+  <tr><td>Conference room before a talk</td><td>Fullscreen text</td><td>Show talk title, speaker name, WiFi password</td></tr>
+  <tr><td>During the talk</td><td>Time screen</td><td>Speaker tracks time without checking phone</td></tr>
+  <tr><td>Exam hall</td><td>Time screen</td><td>Students pace themselves; no distracting messages</td></tr>
+  <tr><td>Office common area</td><td>Fullscreen text</td><td>Announcements, event reminders, lunch orders</td></tr>
+  <tr><td>Kitchen or workshop</td><td>Time screen</td><td>Check time without touching devices</td></tr>
+  <tr><td>Event registration desk</td><td>Fullscreen text</td><td>"Check-in here," schedule, directions</td></tr>
+</table>
+
+<h2>The combination strategy</h2>
+
+<p>For events, use both on separate screens or switch between them. Before the event: fullscreen text with the welcome message and schedule. During the event: time screen so speakers stay on schedule. Between sessions: fullscreen text with "Next session: Room 204, 2:30 PM." After the event: fullscreen text with "Thank you — feedback form at bit.ly/event2026."</p>
+
+<p>For a more interactive display tool, our <a href="/en/tools/scoreboard">online scoreboard</a> combines elements of both — it displays information (scores) that updates in real time, visible from across the room. For more display tool comparisons, see our <a href="/en/blog/scoreboard-beyond-sports-creative-uses">guide to creative uses for scoreboards beyond sports</a>.</p>
+`,
+  },
+  {
+    slug: "roman-numerals-where-they-still-matter-guide",
+    title: "Roman Numerals: Where They Still Show Up and Why We Haven't Abandoned Them",
+    description: "Super Bowl LVIII. Copyright MMXXVI. Chapter IV. Roman numerals refuse to die — and for good reason. Here's where they still matter and how to read and convert them instantly.",
+    date: "2026-06-24",
+    category: "Calculator",
+    tags: ["roman numerals", "roman numeral converter", "roman numbers", "numeral system", "ancient numerals"],
+    relatedTools: ["roman-numerals", "base-converter", "perpetual-calendar"],
+    content: `
+<p>The year is 2026, and the Super Bowl is called "Super Bowl LX." Movie credits end with "Copyright MMXXVI." Your watch has "IV" instead of "4." Roman numerals should have died 1,500 years ago when Arabic numerals took over mathematics. But they did not. They survived in specific niches where they do something Arabic numerals cannot: they make numbers look important. A <a href="/en/tools/roman-numerals">roman numerals converter</a> translates between the two systems instantly — here is where you will actually encounter them and why they are still around.</p>
+
+<h2>Where Roman numerals still rule</h2>
+
+<p><strong>Super Bowls and sporting events.</strong> The NFL uses Roman numerals for the Super Bowl because it makes the event look grander. "Super Bowl 60" sounds like a number. "Super Bowl LX" sounds like an institution. The Olympics and WrestleMania do the same thing. It is branding, not mathematics.</p>
+
+<p><strong>Copyright dates.</strong> Movie and TV credits use Roman numerals for the copyright year. "MMXXVI" looks more formal and permanent than "2026." It is a legal convention that became an aesthetic one — the Roman numerals signal "this is an official, protected work."</p>
+
+<p><strong>Book chapters and outlines.</strong> Chapter I, Chapter II, Chapter III. Roman numerals distinguish major sections from sub-sections (which use Arabic numerals or letters). The visual hierarchy — Roman for top level, Arabic for second level, lowercase letters for third — makes document structure scannable at a glance.</p>
+
+<p><strong>Clocks and watches.</strong> Many analog watches use Roman numerals on the dial. "IV" for 4, "IX" for 9, "XII" for 12. It is purely aesthetic — a Roman numeral clock face looks more classic and traditional than an Arabic numeral one. The convention is so strong that digital watch faces often include a Roman numeral option.</p>
+
+<p><strong>Monarchs and popes.</strong> Queen Elizabeth II, Pope John XXIII, King Charles III. Roman numerals in regnal names are a thousand-year tradition. They distinguish rulers with the same name and imply continuity with the past. "Charles the Third" and "Charles III" mean the same thing, but the Roman numeral version is what appears on coins, stamps, and official documents.</p>
+
+<h2>How to read Roman numerals in 30 seconds</h2>
+
+<p>The system uses seven letters: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. Numbers are formed by combining these letters. The key rule: if a smaller value comes before a larger one, subtract; if it comes after, add.</p>
+
+<ul>
+<li>IV = 5 − 1 = 4 (I before V, subtract)</li>
+<li>VI = 5 + 1 = 6 (I after V, add)</li>
+<li>IX = 10 − 1 = 9</li>
+<li>XL = 50 − 10 = 40</li>
+<li>MCMXCIX = 1000 + (1000−100) + (100−10) + (10−1) = 1999</li>
+</ul>
+
+<p>That last one is why you want a <a href="/en/tools/roman-numerals">roman numerals converter</a>. MCMXCIX takes 30 seconds to decode manually and you will still doubt your answer. The converter gives you the Arabic number instantly, or converts the other direction — type 2026, get MMXXVI.</p>
+
+<h2>Why Roman numerals survived when other ancient systems died</h2>
+
+<p>Babylonian base-60 survives in our clocks (60 minutes, 60 seconds) and angles (360 degrees). Egyptian fractions are gone. Greek numerals are gone. Mayan base-20 is gone. Roman numerals survived because they transitioned from a practical tool (Roman merchants used them for accounting) to a prestige marker (medieval scribes used them for important documents) to an aesthetic convention (modern designers use them because they look good).</p>
+
+<p>They are terrible for calculation — try multiplying XIV by XXVII in your head. That is why Arabic numerals replaced them for mathematics. But for display, hierarchy, and prestige, Roman numerals still have no substitute. Our <a href="/en/tools/base-converter">base converter</a> handles the number systems that are actually used for math — binary, octal, decimal, hex. And our <a href="/en/tools/perpetual-calendar">perpetual calendar</a> covers the other ancient timekeeping system that refuses to die: the seven-day week. For more number conversion guides, see our <a href="/en/blog/base-converter-binary-hex-decimal-explained">explainer on binary, hex, and decimal number bases</a>.</p>
+`,
+  },
+  {
+    slug: "image-to-base64-data-uri-practical-guide",
+    title: "Image to Base64: When to Use Data URIs and When to Stick with Image Files",
+    description: "Converting images to Base64 strings embeds them directly in your HTML or CSS. This saves HTTP requests but makes your files larger. Here's when the tradeoff is worth it.",
+    date: "2026-06-24",
+    category: "Developer",
+    tags: ["image to base64", "base64 image", "data URI", "inline image", "image encoding"],
+    relatedTools: ["image-to-base64", "base64-to-image", "base64-converter"],
+    content: `
+<p>You have a small icon — a 2KB SVG logo. Your page makes 40 HTTP requests, and this icon is one of them. You could convert it to Base64 and embed it directly in your HTML, eliminating one request. But the Base64 version will be about 33% larger than the original file. Is the tradeoff worth it? A <a href="/en/tools/image-to-base64">free image to Base64 converter</a> does the conversion instantly — here is when to use the result and when to leave it as a file.</p>
+
+<h2>How Base64 images work</h2>
+
+<p>Base64 encoding turns binary image data into a string of 64 safe ASCII characters. This string can be embedded directly in HTML or CSS as a data URI: <code>&lt;img src="data:image/png;base64,iVBORw0KGgo…" /&gt;</code>. The browser decodes the Base64 back into the original image and renders it — no separate HTTP request needed.</p>
+
+<p>The cost: Base64 encoding increases file size by about 33%. A 3KB icon becomes a 4KB Base64 string. A 100KB photo becomes a 133KB string. The <a href="/en/tools/image-to-base64">image to Base64 converter</a> handles the encoding and gives you the ready-to-use data URI with the correct MIME type prefix.</p>
+
+<h2>When embedding is worth it</h2>
+
+<p><strong>Tiny icons and logos (under 5KB).</strong> A 2KB SVG logo embedded as a 2.7KB Base64 string saves one HTTP request. The 0.7KB overhead is negligible. For 10 tiny icons on a page, that is 10 saved requests. The cumulative effect on page load time is real — each HTTP request has overhead (DNS lookup, TCP handshake, TLS negotiation) that can exceed the file size for very small files.</p>
+
+<p><strong>Single-use images that are part of the design.</strong> A decorative border pattern, a custom bullet point icon, a subtle background texture. These are not content images that need to be managed separately — they are part of the page design. Embedding them in CSS as Base64 data URIs keeps the design self-contained.</p>
+
+<p><strong>Email signatures and HTML emails.</strong> Email clients block external images by default. A logo embedded as Base64 in an email signature displays immediately without the recipient clicking "Show Images." For HTML emails, Base64 logos and icons bypass the image-blocking problem entirely. Our <a href="/en/tools/base64-to-image">Base64 to image decoder</a> handles the reverse direction — decoding a Base64 string back to an image file.</p>
+
+<h2>When embedding is NOT worth it</h2>
+
+<p><strong>Photos and large images (over 10KB).</strong> A 100KB photo becomes a 133KB Base64 string. You saved one HTTP request but added 33KB to your HTML file — which blocks rendering while it downloads. For photos, the HTTP request overhead is a fraction of the file size; the 33% Base64 penalty is worse than the request overhead.</p>
+
+<p><strong>Images used on multiple pages.</strong> If the same logo appears on 20 pages, embedding it in each page means downloading the Base64 string 20 times — once per page. A separate image file gets cached by the browser after the first download and reused across all 20 pages. For shared assets, files beat Base64 every time.</p>
+
+<p><strong>Images that change frequently.</strong> Every time the image changes, every page with the embedded Base64 needs to be updated. A separate image file changes once and all pages automatically get the new version. For content images managed by a CMS, keep them as files.</p>
+
+<p><strong>Accessibility and SEO.</strong> Screen readers and search engines cannot extract meaning from a Base64 string. A separate image file with a descriptive filename and alt text is accessible and indexable. Embedded Base64 images should always have alt text, but they lose the filename context.</p>
+
+<h2>The decision framework</h2>
+
+<p>Ask three questions: (1) Is the image under 5KB? (2) Is it used on only one or two pages? (3) Does it rarely change? If all three are yes, embed as Base64. If any is no, use a file.</p>
+
+<p>For general Base64 encoding and decoding of any data, our <a href="/en/tools/base64-converter">Base64 converter</a> handles text, not just images. And for the full picture on Base64, see our <a href="/en/blog/base64-encoding-explained">complete guide to Base64 encoding and when you actually need it</a>.</p>
+`,
+  },
+  {
+    slug: "pet-wallpaper-vs-bing-wallpaper-comparison",
+    title: "Pet Wallpaper vs Bing Wallpaper — Which Random Daily Image Brightens Your Day More?",
+    description: "One gives you curated 4K landscapes from around the world. The other gives you random photos of cats, dogs, and foxes. We compared both daily wallpaper tools to see which is more delightful.",
+    date: "2026-06-24",
+    category: "Fun & Media",
+    tags: ["pet wallpaper", "Bing wallpaper", "random wallpaper", "daily wallpaper", "animal photos"],
+    relatedTools: ["pet-wallpaper", "bing-wallpaper", "nasa-apod"],
+    content: `
+<p>Every morning, you have two seconds to glance at your desktop background before the work day consumes your attention. That background matters — it is the one image you see every single day, often dozens of times. Two free tools serve you a fresh image daily: a <a href="/en/tools/bing-wallpaper">Bing wallpaper downloader</a> and a <a href="/en/tools/pet-wallpaper">random pet wallpaper generator</a>. They could not be more different in what they offer. I used both for a week each and compared the experience.</p>
+
+<h2>The test: one week with each</h2>
+
+<p><strong>Week 1 — Bing Wallpaper:</strong> Every morning, a new 4K photograph. Monday: a misty rice terrace in Vietnam. Tuesday: a puffin on a cliff in Iceland. Wednesday: the Northern Lights over a Norwegian fjord. Thursday: a close-up of a hummingbird in Costa Rica. Friday: the skyline of Singapore at blue hour. Saturday: a castle in the Scottish Highlands. Sunday: an underwater shot of a sea turtle in the Great Barrier Reef.</p>
+
+<p>The images were universally beautiful, technically flawless, and emotionally neutral. I appreciated them — the photography was genuinely stunning — but they did not make me feel anything. They were like a screensaver at a hotel lobby: beautiful, impersonal, forgettable within seconds of looking away.</p>
+
+<p><strong>Week 2 — Pet Wallpaper:</strong> Monday: a golden retriever puppy with its head tilted at a 45-degree angle. Tuesday: a cat sitting in a box that was clearly too small, looking deeply offended. Wednesday: a fox mid-pounce in snow. Thursday: a bulldog sleeping on its back with its tongue out. Friday: two kittens wrestling on a couch. Saturday: a corgi running at full speed with ears flopping. Sunday: a tabby cat yawning directly into the camera.</p>
+
+<p>Every single one made me smile. Not because the photography was better — it was not; Bing's photos are technically superior — but because animals doing animal things triggers an emotional response that landscapes do not. By Wednesday, I was genuinely looking forward to seeing what the next day's pet would be.</p>
+
+<h2>Head-to-head comparison</h2>
+
+<table>
+  <tr><th></th><th>Bing Wallpaper</th><th>Pet Wallpaper</th></tr>
+  <tr><td><strong>Image quality</strong></td><td>4K, professional photography</td><td>Varies — some pro, some amateur, all charming</td></tr>
+  <tr><td><strong>Variety</strong></td><td>Landscapes, architecture, wildlife, culture</td><td>Cats, dogs, and foxes (three sources)</td></tr>
+  <tr><td><strong>Emotional impact</strong></td><td>Appreciation, calm</td><td>Joy, amusement, warmth</td></tr>
+  <tr><td><strong>Update frequency</strong></td><td>Daily (new image each day)</td><td>On-demand (click for a new random pet)</td></tr>
+  <tr><td><strong>Best for</strong></td><td>Professional setting, shared screen</td><td>Personal device, mood boost</td></tr>
+</table>
+
+<h2>Which one should you use?</h2>
+
+<p><strong>Use Bing Wallpaper if:</strong> you share your screen in meetings and need a background that looks professional, you appreciate travel and nature photography, you want the highest possible image quality on a 4K monitor, or you prefer visual variety across categories (not just animals). The <a href="/en/tools/bing-wallpaper">Bing wallpaper tool</a> gives you today's image with one click.</p>
+
+<p><strong>Use Pet Wallpaper if:</strong> you work alone and want something that makes you smile, you are having a rough day and need a dog with floppy ears to make it better, you want to change your wallpaper multiple times until you find the perfect pet expression, or you simply like animals more than landscapes. The <a href="/en/tools/pet-wallpaper">pet wallpaper generator</a> pulls random images from three APIs — one for cats, one for dogs, one for foxes — giving you variety within the animal category.</p>
+
+<p><strong>Use both:</strong> Bing for your work computer, Pet Wallpaper for your personal laptop and phone. That is what I settled on. The work screen stays professional for screen sharing; the personal screen gets the emotional boost.</p>
+
+<p>For a completely different category of daily image — space photography with astronomer explanations — our <a href="/en/tools/nasa-apod">NASA APOD viewer</a> gives you the cosmos instead of landscapes or pets. And for more wallpaper comparisons, see our <a href="/en/blog/nasa-apod-vs-bing-wallpaper-daily-images">comparison of NASA APOD versus Bing Wallpaper</a>.</p>
 `,
   },
 
@@ -316,10 +271,9 @@ if old in content:
     content = content.replace(old, new_blogs)
     with open(BLOG_FILE, "w", encoding="utf-8") as f:
         f.write(content)
-    print("OK — inserted 6 blogs into free station blog.ts (82→88)")
+    print("OK: free station 88→94")
 else:
-    print("FAIL — insertion marker not found. Check the pattern.")
+    print("FAIL: pattern not found")
     idx = content.rfind('];')
     if idx > 0:
-        print("Last ]; found at index", idx)
-        print("Context:", repr(content[idx-30:idx+60]))
+        print("Last ]; at", idx, repr(content[idx-40:idx+80]))
