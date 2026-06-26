@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (94→100) — June 25, 2026"""
+"""Add 6 blogs to free station (100→106) — June 26, 2026"""
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,337 +8,286 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "random-number-generator-beyond-dice-rolls",
-    title: "Random Number Generator — 7 Uses Beyond Dice Rolls and Lotteries",
-    description: "Random numbers aren't just for gambling. From A/B testing to sampling, here are practical uses you probably haven't considered.",
-    date: "2026-06-25",
+    slug: "dice-roller-probability-real-use-cases",
+    title: "Dice Roller — When You Need More Than a Six-Sided Die (and Why Probability Matters)",
+    description: "Dice aren't just for board games. From randomized decision-making to teaching probability, here's how an online dice roller beats shaking physical dice.",
+    date: "2026-06-26",
+    category: "Fun & Media",
+    tags: ["dice roller", "online dice", "random dice", "probability", "DnD dice"],
+    relatedTools: ["dice-roller", "random-number-generator", "coin-flip"],
+    content: `
+<p>You grab a d20 to decide who does the dishes. It rolls under the couch. You crawl under to retrieve it, and by the time you come back up, everyone has already forgotten what the roll was for. Physical dice have a retrieval cost that nobody talks about.</p>
+
+<p>Our <a href="/en/tools/dice-roller">free online dice roller</a> handles d4 through d100 with one click — no crawling under furniture required. But beyond convenience, there are actual reasons an online roller beats physical dice for certain use cases.</p>
+
+<h2>When physical dice fail</h2>
+
+<p>Physical dice are not perfectly fair. Manufacturing tolerances mean some faces are slightly heavier than others. Casino dice are machined to tolerances within 0.0005 inches — your board game dice are not. Over thousands of rolls, cheap dice show measurable bias toward certain numbers.</p>
+
+<p>Our <a href="/en/tools/dice-roller">dice roller</a> uses cryptographic randomness — every outcome is equally probable. For anything where fairness matters (settling disputes, running a classroom activity, picking a random student), a digital roller removes the "is this die loaded?" question entirely.</p>
+
+<h2>Custom dice that physical dice can't match</h2>
+
+<p>Need a d37? A d13? A d7? Physical dice beyond the standard set (d4, d6, d8, d10, d12, d20, d100) are specialty items that cost $15+ each — if they even exist. An online dice roller gives you any number of sides you want. Need a d47 for a weird game mechanic? Type "47" and roll. It is instant and free.</p>
+
+<p>This matters for more than game design. Teachers use custom dice ranges for math exercises: "Roll a d50, multiply the result by 3, subtract 7." Each student gets a unique problem set. The <a href="/en/tools/random-number-generator">random number generator</a> works for arbitrary ranges, but the dice roller gives you the familiar dice metaphor with visual feedback.</p>
+
+<h2>Multiple dice, simultaneous rolls</h2>
+
+<p>Need to roll 4d6 and drop the lowest? That is a standard D&D stat-generation method. With physical dice, you roll four dice, scan for the lowest, mentally add the remaining three, and write down the result. Repeat six times. With an online roller, you click once and get all six ability scores pre-calculated.</p>
+
+<p>This "roll multiple, drop lowest" pattern is common in tabletop gaming, and the mental math overhead is real. After your fourth character build, you start making addition errors. The online roller eliminates that.</p>
+
+<h2>Teaching probability with actual data</h2>
+
+<p>Tell a student "rolling a 7 on 2d6 is six times more likely than rolling a 12." They nod. Then have them roll 2d6 one hundred times — physically, that takes 10 minutes of tedious dice-throwing. With our <a href="/en/tools/dice-roller">dice roller</a>, it takes 30 seconds. The probability distribution emerges visually: 7 appears roughly 17% of the time, 12 appears roughly 3%. The concept sticks because they saw it happen, not because a textbook said so.</p>
+
+<p><strong>One common mistake:</strong> people think "I rolled three 1s in a row, so the next roll is more likely to be a 6." This is the gambler's fallacy. Each roll is independent. The dice have no memory. If your brain refuses to accept this, roll a d6 one hundred times and count the streaks — you will see clusters of repeated numbers that feel "impossible" but are mathematically expected.</p>
+
+<p>For coin flips instead of dice, our <a href="/en/tools/coin-flip">coin flip tool</a> gives you heads or tails with the same cryptographic randomness. And for a deeper look at randomness, see our guide to the <a href="/en/blog/random-number-generator-beyond-dice-rolls">random number generator's uses beyond dice and lotteries</a>.</p>
+`,
+  },
+  {
+    slug: "qr-code-scanner-web-vs-phone-app",
+    title: "QR Code Scanner — Why a Browser Scanner Beats Downloading Yet Another App",
+    description: "You see a QR code. You unlock your phone, find the camera app, frame it, wait, tap the notification. Or: open a browser tab, paste an image, done. Here's when each method wins.",
+    date: "2026-06-26",
+    category: "Developer",
+    tags: ["QR code scanner", "scan QR online", "QR from image", "barcode scanner"],
+    relatedTools: ["qr-code-scanner", "qr-code-generator", "barcode-generator"],
+    content: `
+<p>QR codes are everywhere — restaurant menus, event tickets, WiFi passwords, payment links, product packaging. And every time you see one, the ritual is the same: pull out your phone, open the camera, frame the code, hold steady, wait for the notification, tap it. It works, but it is about six steps too many when you are already sitting at a computer.</p>
+
+<p>Our <a href="/en/tools/qr-code-scanner">QR code scanner</a> works in your browser — paste a screenshot, upload an image, or use your webcam. No app install, no phone handoff. Here is when each approach makes sense.</p>
+
+<h2>The phone camera approach: good for physical-world scanning</h2>
+
+<p>When you are standing in front of a QR code on a wall, a poster, or a product label, your phone camera is the right tool. It is already in your hand, the camera is already pointed at the code, and the scanning happens automatically. This is the use case QR codes were designed for, and it works well.</p>
+
+<p>The friction comes when the QR code is <strong>on the screen you are already looking at</strong>. A Zoom call shares a QR code for a survey. A website shows a QR code to download an app. A PDF document has a QR code linking to supplementary materials. In all these cases, scanning with your phone means pointing a camera at a screen — which introduces glare, moire patterns, and focus hunting. The browser scanner bypasses all of that.</p>
+
+<h2>The browser scanner approach: when the QR code is already on your screen</h2>
+
+<p>Our <a href="/en/tools/qr-code-scanner">QR code scanner</a> supports three input methods:</p>
+
+<p><strong>1. Screenshot paste:</strong> take a screenshot of the QR code (Win+Shift+S on Windows, Cmd+Shift+4 on Mac), paste it into the scanner with Ctrl+V. Done in 2 seconds. No phone involved.</p>
+
+<p><strong>2. Image upload:</strong> if someone emailed you a QR code image or it is saved in a document, drag the file onto the scanner. Works for PNG, JPG, and WebP.</p>
+
+<p><strong>3. Webcam scan:</strong> if you have a laptop with a camera, you can hold a physical QR code up to the webcam. This is the bridge between physical and digital — same convenience as a phone camera, but the result appears on your computer screen where you actually need it.</p>
+
+<p>The killer feature of a browser scanner: the decoded content stays on your computer. A URL opens in your desktop browser, not your phone. A WiFi password can be copied and pasted into your network settings. A vCard contact gets saved to your desktop address book. No transferring data between devices.</p>
+
+<h2>When phone scanning is actually worse</h2>
+
+<ul>
+<li><strong>Dark environments:</strong> phone cameras need light to focus on a QR code. If you are in a dimly lit conference room with a QR code on a projector screen, your phone camera will struggle. A screenshot from your laptop has perfect lighting.</li>
+<li><strong>Small QR codes on screen:</strong> a QR code that is 100px wide on a webpage is too small for a phone camera to scan reliably from a normal viewing distance. Screenshot and paste into the browser scanner — it reads the pixels directly.</li>
+<li><strong>Damaged or low-contrast QR codes:</strong> a QR code printed on a wrinkled receipt or a curved surface is hard for any scanner, but the browser scanner can apply image preprocessing that phone cameras skip.</li>
+</ul>
+
+<p>For generating QR codes instead of scanning them, our <a href="/en/tools/qr-code-generator">QR code generator</a> creates codes for URLs, WiFi, vCards, and more. And for creative QR code use cases, see our <a href="/en/blog/qr-code-7-creative-uses-beyond-urls">guide to 7 creative QR code uses beyond URLs</a>.</p>
+`,
+  },
+  {
+    slug: "barcode-generator-retail-logistics-guide",
+    title: "Barcode Generator — EAN-13, UPC-A, Code 128, and When to Use Each Format",
+    description: "Not all barcodes are the same. EAN-13 for retail, Code 128 for shipping, UPC-A for North America — here's which format your project actually needs.",
+    date: "2026-06-26",
+    category: "Developer",
+    tags: ["barcode generator", "EAN-13", "UPC", "Code 128", "barcode formats"],
+    relatedTools: ["barcode-generator", "qr-code-generator"],
+    content: `
+<p>You need a barcode. You search "barcode generator," see a dozen format options, and realize you have no idea which one to pick. EAN-13? UPC-A? Code 128? Code 39? They all look like vertical lines to the untrained eye, but picking the wrong format means your barcode will not scan at the point of sale, the warehouse, or the shipping depot.</p>
+
+<p>Our <a href="/en/tools/barcode-generator">free barcode generator</a> supports all major formats. Here is which one you need for your specific situation.</p>
+
+<h2>EAN-13: the global retail standard</h2>
+
+<p>If you are selling a physical product that will be scanned at retail checkout counters anywhere outside North America, you need EAN-13. It is a 13-digit number (12 data digits + 1 check digit) that uniquely identifies your product in the global GS1 system.</p>
+
+<p><strong>What you need:</strong> a GS1 company prefix (purchased from GS1 in your country). This prefix goes into the first digits of your barcode, followed by your product code, and the check digit is calculated automatically by our <a href="/en/tools/barcode-generator">barcode generator</a>.</p>
+
+<p><strong>Do not guess EAN-13 numbers.</strong> If you make up a random 13-digit number, it might conflict with a real product in the global database. Retailers scan your barcode and get someone else's product listing. Buy a proper GS1 prefix — it costs $250-750 depending on how many products you need to identify.</p>
+
+<h2>UPC-A: the North American equivalent</h2>
+
+<p>UPC-A is the 12-digit barcode used in the United States and Canada. Functionally identical to EAN-13 (EAN-13 is a superset — UPC-A barcodes scan correctly on EAN-13 systems but not always vice versa). If you are selling only in North America, UPC-A is sufficient. If you might expand globally, start with EAN-13.</p>
+
+<h2>Code 128: logistics, shipping, and internal tracking</h2>
+
+<p>Code 128 is the workhorse of logistics. Unlike EAN-13 and UPC-A (which encode only numbers), Code 128 encodes letters, numbers, and some symbols. This makes it ideal for:</p>
+
+<ul>
+<li><strong>Shipping labels:</strong> tracking numbers that include letters (e.g., "1Z999AA10123456784")</li>
+<li><strong>Inventory management:</strong> warehouse bin codes like "A12-B34-C56"</li>
+<li><strong>Asset tracking:</strong> equipment IDs that mix letters and numbers</li>
+<li><strong>Healthcare:</strong> patient wristbands, specimen labels, medication tracking</li>
+</ul>
+
+<p>Code 128 is <strong>denser</strong> than Code 39 — it packs more data into less horizontal space. If your barcode needs to fit on a small label, Code 128 is the right choice. Our <a href="/en/tools/barcode-generator">barcode generator</a> handles Code 128 with automatic check digit calculation.</p>
+
+<h2>Code 39: the older, simpler alternative</h2>
+
+<p>Code 39 is older than Code 128 and encodes fewer characters (only uppercase A-Z, 0-9, and a handful of symbols). It takes more space per character. You still see it on government ID cards, military equipment, and automotive parts because these industries standardized on it decades ago and never migrated.</p>
+
+<p><strong>Use Code 39 only if:</strong> your industry requires it for compliance, or your scanning hardware is old enough that it only supports Code 39 (rare in 2026, but still happens in some industrial settings).</p>
+
+<h2>QR code vs barcode: when to use which</h2>
+
+<p>Barcodes are 1D — a line scanner reads them in one pass. QR codes are 2D — a camera reads them from any angle. Barcodes hold 12-50 characters; QR codes hold up to 4,000. Use a barcode when you need fast, single-direction scanning at checkout or on a conveyor belt. Use a <a href="/en/tools/qr-code-generator">QR code</a> when you need to encode a URL, contact info, WiFi credentials, or more data than fits in a barcode.</p>
+
+<p><strong>Common mistake:</strong> printing a barcode too small. The minimum width for reliable scanning is about 1.5 inches for a 12-digit UPC-A. Smaller than that, and budget scanners cannot resolve the individual bars. Test your barcode with the actual scanner hardware your warehouse or retail partner uses — not just your phone.</p>
+
+<p>For a comparison of barcode versus QR code technologies and when each makes sense, see our <a href="/en/blog/qr-code-scanner-web-vs-phone-app">QR code scanner comparison guide</a>.</p>
+`,
+  },
+  {
+    slug: "emi-calculator-real-loan-examples",
+    title: "EMI Calculator — How Much That 'Affordable' Monthly Payment Actually Costs You Over 5 Years",
+    description: "A ₹20,000 monthly EMI sounds manageable until you realize you are paying ₹3.2 lakh in interest. Here's how to use an EMI calculator to see the real cost before signing.",
+    date: "2026-06-26",
     category: "Calculator",
-    tags: ["random number generator", "RNG online", "generate random numbers", "sampling"],
-    relatedTools: ["random-number-generator", "random-name-generator", "uuid-generator"],
+    tags: ["EMI calculator", "loan EMI", "monthly installment", "interest calculation", "car loan"],
+    relatedTools: ["emi-calculator", "loan-calculator", "mortgage-calculator"],
     content: `
-<p>When most people hear "random number generator," they think lottery tickets or Dungeons & Dragons dice rolls. Fair enough — those are the obvious use cases. But if that is all you use an RNG for, you are leaving a surprising amount of utility on the table.</p>
+<p>A salesperson tells you the EMI is only ₹18,500 per month. For a car that costs ₹9 lakh. For 5 years. It sounds reasonable — ₹18,500 is less than your monthly rent. What they do not emphasize: over 5 years, you will pay approximately ₹11.1 lakh for a ₹9 lakh car. That is ₹2.1 lakh in interest — enough to buy a second-hand scooter.</p>
 
-<p>Our <a href="/en/tools/random-number-generator">free random number generator</a> gives you numbers in any range with one click. No signup, no download. Here are seven ways to use it that go way beyond picking lottery numbers.</p>
+<p>Our <a href="/en/tools/emi-calculator">free EMI calculator</a> shows you the total interest before you sign anything. Here is how to use it for real financial decisions, not just "plug in numbers and nod."</p>
 
-<h2>1. A/B test group assignment</h2>
+<h2>How EMI math actually works</h2>
 
-<p>Say you are running an email subject line test. You have 200 recipients and two variants. The lazy approach: send variant A to the first 100, variant B to the second 100. Problem: the first 100 might be alphabetically sorted, earlier signups, or some other hidden bias.</p>
+<p>EMI stands for Equated Monthly Installment. The formula is:</p>
 
-<p>The correct approach: assign each recipient a random number 1-2. Group 1 gets A, group 2 gets B. Now your groups are actually randomized — no hidden bias from list order. Our <a href="/en/tools/random-number-generator">RNG tool</a> makes this trivial: set range 1-2, generate as many times as you need, and tag each recipient.</p>
+<pre><code class="language-text">EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)</code></pre>
 
-<p>This same pattern works for user interview selection (pick 5 random customers from a list of 200), survey sampling, and any situation where "first N" is not actually random.</p>
+<p>Where P is the principal (loan amount), r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the number of months. The key insight: <strong>early payments are mostly interest, not principal</strong>. In month 1 of a 5-year car loan at 9%, roughly 70% of your EMI goes to interest and only 30% reduces your debt.</p>
 
-<h2>2. Random sampling from large datasets</h2>
+<p>Our <a href="/en/tools/emi-calculator">EMI calculator</a> shows you the full amortization schedule — month by month, you can see exactly how much of each payment is interest versus principal. Most people are shocked by the first few rows.</p>
 
-<p>You have a CSV with 50,000 rows. You want to spot-check 20 rows manually because running queries on the full dataset takes forever. How do you pick which 20?</p>
+<h2>Three real scenarios where the EMI calculator saves you money</h2>
 
-<p>Generate 20 random numbers between 1 and 50,000. Those are your row numbers. Open the CSV, jump to those rows, and inspect. It takes 30 seconds instead of "let me scroll and hope I catch something."</p>
+<p><strong>Scenario 1: The "low EMI" trap.</strong> A bank offers you two options for a ₹15 lakh home loan at 8.5%: 20-year tenure at ₹13,000/month, or 15-year tenure at ₹14,800/month. The 20-year option looks cheaper — it saves ₹1,800 per month! But over the full term, the 20-year loan costs ₹31.2 lakh total. The 15-year loan costs ₹26.6 lakh. That "cheaper" EMI costs you ₹4.6 lakh extra in interest. The EMI calculator makes this visible immediately.</p>
 
-<p>This is not a toy technique — <strong>statisticians call this "simple random sampling"</strong> and it is the foundation of survey methodology. An RNG turns a subjective spot-check into a defensible sampling process.</p>
+<p><strong>Scenario 2: Prepayment impact.</strong> You have a ₹10 lakh loan at 10% for 5 years. Your EMI is ₹21,247. After 12 months, you get a ₹1 lakh bonus and put it toward the loan. Should you reduce the EMI or reduce the tenure? Reducing tenure saves more interest — you pay off the loan faster, so interest accrues for fewer months. The EMI calculator shows both options side by side.</p>
 
-<h2>3. Game prototyping and playtesting</h2>
+<p><strong>Scenario 3: Rate shopping.</strong> Bank A offers 8.5%, Bank B offers 8.2%. The difference sounds tiny — 0.3%! On a ₹20 lakh, 10-year loan, that 0.3% difference is ₹41,000 in total interest. The EMI calculator turns abstract rate comparisons into concrete rupee amounts.</p>
 
-<p>Board game designers use RNGs constantly during prototyping. Before you code anything, you simulate dice mechanics with a number generator to see if the probabilities feel right. A game where the player needs to roll 12 or higher on 2d6 — that is roughly a 2.8% chance. Does that feel too rare? Generate 100 random 2d6 sums and count how many hit 12. Now you know, without printing a single card.</p>
+<h2>What the EMI calculator does not tell you</h2>
 
-<p>Our <a href="/en/tools/dice-roller">dice roller</a> handles standard RPG dice, but for custom ranges — like a game mechanic that needs a number between 7 and 43 — the general <a href="/en/tools/random-number-generator">random number generator</a> is more flexible.</p>
+<p><strong>Processing fees:</strong> most banks charge 0.5-1% of the loan amount as a processing fee. On a ₹20 lakh loan, that is ₹10,000-20,000 upfront. Add it to your cost comparison.</p>
 
-<h2>4. Practice problem generation</h2>
+<p><strong>Prepayment penalties:</strong> some loans charge 2-4% on prepayment amounts. If you plan to prepay (and you should), check whether your loan has prepayment penalties. Floating rate loans in India typically do not; fixed rate loans often do.</p>
 
-<p>If you are learning to code and practicing with random datasets, an RNG generates your inputs. Need to test your sorting algorithm? Generate 50 random numbers, sort them, verify. Need to practice SQL queries? Generate random IDs, amounts, and dates, and build a test table.</p>
+<p><strong>Floating vs fixed rate risk:</strong> the EMI calculator assumes a constant rate. If you take a floating rate loan and RBI raises rates, your EMI goes up — or your tenure extends. The calculator gives you a snapshot at current rates, not a guarantee.</p>
 
-<p>Teachers do this too: generate random math problems by setting a range for each operand. "Generate two numbers between 10 and 99, multiply them." Now you have an infinite supply of unique practice sheets.</p>
-
-<h2>5. Fair contest winner selection</h2>
-
-<p>You ran a giveaway on social media. 347 people commented. How do you pick a winner without accusations of favoritism?</p>
-
-<p>Number the entries 1-347 (export comments, number the rows). Generate one random number in that range. That is your winner. Screen-record the process if you want receipts. It is transparent, defensible, and takes 10 seconds.</p>
-
-<h2>6. Randomized playlist and media shuffle</h2>
-
-<p>Spotify's shuffle algorithm is famously not random — it weights recently played artists lower. If you want actual random shuffle, number your playlist tracks and generate the sequence with an RNG. You will hear songs you forgot you saved, and you might even notice patterns in your own music taste that algorithmic shuffle was hiding.</p>
-
-<h2>7. Seating arrangements and team splits</h2>
-
-<p>Running a workshop with 30 people? Number everyone, generate random pairs or groups of 4. It breaks up cliques, forces cross-team interaction, and nobody can complain about "unfair" grouping because the RNG made the call — not you.</p>
-
-<p><strong>One mistake to avoid:</strong> using the same seed or the same sequence repeatedly. If you generate numbers 1-10 ten times, you might get repeats. That is fine for individual decisions. But if you need every number exactly once (like assigning 30 people to 30 seats), generate numbers 1-30, and as each one comes up, cross it off the list. If you get a duplicate, skip it and generate again.</p>
-
-<p>For picking random names instead of numbers, our <a href="/en/tools/random-name-generator">random name generator</a> handles character names, project codenames, and more. And for a deeper look at when to use randomness versus structured naming, see our comparison of <a href="/en/blog/random-name-generator-vs-brainstorming">random name generators versus manual brainstorming</a>.</p>
+<p>For comparing EMI loans against other loan types, our <a href="/en/tools/loan-calculator">loan calculator</a> handles simple interest loans, and the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> covers home loans with PMI and property taxes. For the deeper comparison, see our <a href="/en/blog/mortgage-vs-loan-calculator-comparison">mortgage versus loan calculator comparison</a>.</p>
 `,
   },
   {
-    slug: "uuid-generator-when-random-isnt-enough",
-    title: "UUID Generator Explained — When a Random Number Isn't Unique Enough",
-    description: "Random numbers can collide. UUIDs practically can't. Here's why v4 UUIDs matter and when you should reach for them instead of a simple random ID.",
-    date: "2026-06-25",
-    category: "Developer",
-    tags: ["UUID generator", "generate UUID v4", "unique identifier", "GUID"],
-    relatedTools: ["uuid-generator", "random-number-generator", "password-generator"],
+    slug: "food-picker-decision-fatigue-solved",
+    title: "Food Picker — What It Reveals About Decision Fatigue and Why Random Choice Is Sometimes Better",
+    description: "You and your partner have spent 20 minutes deciding where to eat. A food picker solves this in 2 seconds. But there's actual psychology behind why random choice beats deliberation for low-stakes decisions.",
+    date: "2026-06-26",
+    category: "Fun & Media",
+    tags: ["food picker", "what to eat", "decision fatigue", "random choice", "food decision"],
+    relatedTools: ["food-picker", "random-number-generator", "coin-flip"],
     content: `
-<p>You are building a database table and need a primary key. Your first instinct: auto-increment integers. Simple, fast, everyone understands them. Then the first time you merge two databases or expose an ID in a URL, you realize auto-increment was a mistake.</p>
+<p>You ask your partner what they want for dinner. "I don't know, what do you want?" This exchange repeats three times. Twenty minutes later, you order from the same place you always order from, and neither of you is happy about it. This is decision fatigue — and a food picker solves it in two seconds.</p>
 
-<p>Enter the UUID — a 128-bit identifier that is <strong>practically guaranteed to be unique</strong> across every computer on Earth. Our <a href="/en/tools/uuid-generator">free UUID generator</a> creates them with one click. But what makes a UUID different from just picking a random number between one and a billion?</p>
+<p>Our <a href="/en/tools/food-picker">free food picker</a> randomly selects a meal from a customizable list. It sounds trivial. But the reason it works is not trivial at all — it is grounded in how human brains handle (and fail to handle) repeated low-stakes decisions.</p>
 
-<h2>Why "random enough" is not enough</h2>
+<h2>What decision fatigue actually is</h2>
 
-<p>A random number between 1 and 1,000,000,000 has a collision probability that rises fast. With just 40,000 random picks, you have roughly a 50% chance of hitting a duplicate. That is the birthday paradox — collisions arrive way sooner than intuition expects.</p>
+<p>Psychologists have studied decision fatigue since the 1990s. The core finding: <strong>every decision you make depletes a shared mental resource</strong>. Choosing what to wear, which email to answer first, what to eat for lunch — these all draw from the same reservoir of decision-making energy. By dinner time, you have made hundreds of micro-decisions, and your brain is looking for shortcuts.</p>
 
-<p>A UUID v4, on the other hand, has 122 bits of randomness. That is 2¹²² possible values — roughly 5.3 × 10³⁶. To have a 50% chance of collision, you would need to generate about 2.7 × 10¹⁸ UUIDs. If you generated one billion UUIDs per second, it would take about 85 years to hit that number. <strong>You will not generate a duplicate UUID by accident.</strong></p>
+<p>That is why you default to the same takeout place every night. It is not that you love their pad thai that much — it is that choosing something new requires mental energy you no longer have. The food picker removes the decision entirely, which is exactly what your tired brain wants.</p>
 
-<h2>UUID versions — v1, v4, and why v4 is the default</h2>
+<h2>When random choice beats deliberation</h2>
 
-<p>There are several UUID versions, but for most developers, only two matter:</p>
-
-<p><strong>UUID v1:</strong> based on timestamp + MAC address. It is unique, but it reveals when and where it was generated. If privacy matters — say, user IDs in a public API — v1 UUIDs leak information. Someone can extract the creation timestamp and potentially the machine that generated it.</p>
-
-<p><strong>UUID v4:</strong> purely random. No timestamp, no MAC address, no pattern. Just 122 random bits plus 6 version/variant bits. This is what our <a href="/en/tools/uuid-generator">UUID generator</a> produces. It is the safe default: unique, unguessable, and reveals nothing about the system that created it.</p>
-
-<p>There are also v3 and v5 (name-based, deterministic) and v7 (time-ordered, newer standard), but v4 covers the vast majority of use cases.</p>
-
-<h2>When to use UUIDs instead of auto-increment</h2>
-
-<ul>
-<li><strong>Distributed systems:</strong> two servers insert records simultaneously. With auto-increment, they conflict. With UUIDs, they do not — each server generates IDs independently.</li>
-<li><strong>Public-facing IDs:</strong> <code>/users/453</code> tells an attacker exactly how many users you have. <code>/users/a3f2b8c1-9d4e-4f7a-8b2c-1e5f6a7d8c9b</code> reveals nothing.</li>
-<li><strong>Database merges:</strong> combining two customer databases? UUID primary keys merge cleanly. Auto-increment integers require renumbering every foreign key reference.</li>
-<li><strong>Offline-first apps:</strong> a mobile app creates records offline, then syncs. UUIDs mean no ID conflicts when the sync happens.</li>
-</ul>
-
-<h2>When NOT to use UUIDs</h2>
-
-<p>UUIDs are 36 characters as strings (including hyphens). That is 4× larger than a 64-bit integer in storage. If you have a billion-row table, the storage difference matters. They also fragment B-tree indexes more than sequential integers. For small, single-server apps where IDs never leave the database, auto-increment is fine.</p>
-
-<p><strong>A common mistake:</strong> generating UUIDs in application code but storing them as strings in the database. Most databases (PostgreSQL, MySQL 8+, SQLite) have native UUID types that store them as 16 bytes instead of 36 characters. Use the native type.</p>
-
-<p>For generating secure passwords alongside your UUIDs, our <a href="/en/tools/password-generator">password generator</a> creates strong random credentials. And for basic random numbers when collision does not matter, see our <a href="/en/tools/random-number-generator">random number generator</a>.</p>
-`,
-  },
-  {
-    slug: "stopwatch-timer-precision-timing-guide",
-    title: "Stopwatch and Timer — Precision Timing Without Installing an App",
-    description: "Stopwatches aren't just for gym class. From tracking work sprints to measuring page load times, here's how a browser stopwatch beats phone apps.",
-    date: "2026-06-25",
-    category: "Calculator",
-    tags: ["stopwatch", "online timer", "countdown timer", "time tracking"],
-    relatedTools: ["stopwatch-and-timer", "reaction-test", "scoreboard"],
-    content: `
-<p>Your phone has a stopwatch. Your smartwatch has one too. So does your microwave, your fitness tracker, and probably your fridge at this point. Why would anyone need a browser-based stopwatch?</p>
-
-<p>Because sometimes you are already at your computer, the phone is in another room, and you just need to time something <strong>right now</strong> without context-switching. Our <a href="/en/tools/stopwatch-and-timer">free online stopwatch and timer</a> does exactly that — one click, no install, no unlocking your phone.</p>
-
-<h2>The friction cost of phone stopwatches</h2>
-
-<p>Here is what actually happens when you reach for your phone to time something: you pick it up, Face ID fails because your face is at a weird angle, you type your PIN, find the Clock app, swipe to the stopwatch tab, and tap start. That is a 5-8 second process — and by then, the thing you wanted to time might already be underway.</p>
-
-<p>Compare that to: click the browser tab, click Start. Two seconds, one hand, no context switch. For short measurements — boiling an egg, timing a Pomodoro break, measuring how long a build script takes — that friction difference actually matters.</p>
-
-<h2>What our stopwatch can do that a basic phone app can't</h2>
-
-<p>Most phone stopwatches give you start, stop, and reset. Our <a href="/en/tools/stopwatch-and-timer">online stopwatch and timer</a> adds a few things that make it more useful for actual work:</p>
-
-<p><strong>Lap tracking with notes.</strong> Hit "Lap" at key moments, and each split time is recorded. Measuring a multi-step process — like "how long does each stage of our deployment pipeline take" — becomes trivially trackable. You get the total time plus each segment breakdown.</p>
-
-<p><strong>Countdown mode with alarm.</strong> The timer mode counts down from a set duration and alerts you when time is up. This is for Pomodoro sessions, time-boxed debugging ("I will spend exactly 20 minutes on this bug"), or reminding yourself to stand up every hour.</p>
-
-<p><strong>Full-screen display.</strong> If you are presenting or teaching, you can put the stopwatch in full-screen mode. Everyone in the room can see the elapsed time without squinting at your phone.</p>
-
-<h2>Real use cases beyond "timing a run"</h2>
-
-<p><strong>Measuring build and deploy times.</strong> Run <code>npm run build</code> and start the stopwatch simultaneously. When the terminal returns, stop. Now you have a baseline. After optimization, compare. A stopwatch is the simplest performance benchmark tool that exists.</p>
-
-<p><strong>Tracking support call duration.</strong> If you do customer support or consulting, track how long each call takes. At the end of the week, you know exactly how much time went to calls versus other work.</p>
-
-<p><strong>Pomodoro with accountability.</strong> The timer counts down 25 minutes. When it rings, you stop — no "just five more minutes." The audible alarm breaks the flow intentionally, which is the whole point of Pomodoro.</p>
-
-<p><strong>Presentation pacing.</strong> Running a workshop or talk? Start the stopwatch when you begin. Glance at it between slides to know if you are running long. Way less distracting than checking your phone on stage.</p>
-
-<p><strong>A common mistake:</strong> leaving the stopwatch running in a background tab and forgetting about it. Hours later, you glance at it and see "03:47:22" and think you have been working on something for four hours. Most browsers throttle background tabs, so the time might be slightly off. For accurate long-duration tracking, use a dedicated time tracker — the stopwatch is for short, focused measurements.</p>
-
-<p>For measuring reflexes instead of task duration, our <a href="/en/tools/reaction-test">reaction time test</a> tracks milliseconds. And for keeping score during timed games, the <a href="/en/tools/scoreboard">scoreboard tool</a> pairs well with the timer. For more on reaction benchmarks, see our <a href="/en/blog/reaction-test-speed-comparison">reaction test speed comparison</a>.</p>
-`,
-  },
-  {
-    slug: "color-picker-vs-color-contrast-checker",
-    title: "Color Picker vs Color Contrast Checker — Which One Do You Actually Need?",
-    description: "Picking a color and checking its contrast are two different problems. Here's when you need each, and why using only a color picker leaves your design inaccessible.",
-    date: "2026-06-25",
-    category: "Developer",
-    tags: ["color picker", "color contrast checker", "WCAG accessibility", "hex color"],
-    relatedTools: ["color-picker", "color-contrast-checker"],
-    content: `
-<p>You found a nice blue for your button. Hex #4A90D9. It looks great on the white background. You ship it. A week later, someone emails you: "I can't read the button text." Turns out your white text on that medium-blue button has a contrast ratio of 3.2:1 — below the WCAG AA minimum of 4.5:1. Oops.</p>
-
-<p>A <a href="/en/tools/color-picker">color picker</a> and a <a href="/en/tools/color-contrast-checker">contrast checker</a> solve two completely different problems. Here is why you need both in your toolkit, and what happens when you only use one.</p>
-
-<h2>What a color picker does (and does not do)</h2>
-
-<p>A color picker extracts the exact hex, RGB, or HSL value of any color on your screen. You hover over a pixel, click, and you get the code. This is essential for:</p>
-
-<ul>
-<li>Matching a brand color from a logo or website screenshot</li>
-<li>Sampling a color from an image to use in CSS</li>
-<li>Exploring color variations with an interactive picker</li>
-<li>Getting precise hex values without guessing</li>
-</ul>
-
-<p>What a color picker does <strong>not</strong> do: tell you whether that color will be readable when paired with another color. It gives you the raw value — #4A90D9 — and nothing else. Whether that blue on white text passes accessibility standards is a separate question that the picker does not answer.</p>
-
-<h2>What a contrast checker does</h2>
-
-<p>A <a href="/en/tools/color-contrast-checker">contrast checker</a> takes two colors — foreground and background — and calculates their contrast ratio. It then tells you whether that ratio passes WCAG 2.1 standards:</p>
-
-<ul>
-<li><strong>AA normal text:</strong> 4.5:1 minimum</li>
-<li><strong>AA large text (18px+ bold or 24px+ regular):</strong> 3:1 minimum</li>
-<li><strong>AAA normal text:</strong> 7:1 minimum</li>
-<li><strong>AAA large text:</strong> 4.5:1 minimum</li>
-</ul>
-
-<p>It also shows you a preview of how the text will actually look — white on blue, black on blue, whatever combination you are testing — so you can judge readability with your own eyes alongside the mathematical score.</p>
-
-<h2>The workflow: pick first, then verify</h2>
-
-<p>The correct workflow is sequential, not either/or:</p>
+<p>Random choice is superior to deliberation when three conditions are met:</p>
 
 <ol>
-<li><strong>Pick:</strong> use the <a href="/en/tools/color-picker">color picker</a> to grab a color from your brand palette, a reference image, or an existing design element. Get the hex code.</li>
-<li><strong>Verify:</strong> plug that hex code plus your background color into the <a href="/en/tools/color-contrast-checker">contrast checker</a>. Does it pass AA for the font size you are using? If not, adjust — darken the text or lighten the background until it passes.</li>
-<li><strong>Repeat:</strong> for every text-background pair in your design. Button text on button background. Body text on page background. Caption text on card background. Each combination gets its own check.</li>
+<li><strong>The stakes are low.</strong> A bad dinner is disappointing but not catastrophic. You can afford to be wrong.</li>
+<li><strong>The options are roughly equal.</strong> If you genuinely cannot decide between pizza and sushi, they are probably both acceptable outcomes. If one option would make you miserable, remove it from the list.</li>
+<li><strong>The cost of deciding exceeds the cost of a suboptimal outcome.</strong> Spending 20 minutes deciding on dinner costs you 20 minutes of your evening. A suboptimal dinner costs you mild disappointment. The math favors random choice.</li>
 </ol>
 
-<h2>When only one is enough</h2>
+<p>Our <a href="/en/tools/food-picker">food picker</a> enforces condition 2 by making you customize the list first. Remove the options you genuinely dislike. What remains is your "acceptable outcome" set — any result from this set is fine. The random pick is now guaranteed to be at least acceptable.</p>
 
-<p><strong>Color picker only:</strong> when you are grabbing colors for non-text purposes — a decorative border, a chart color, a gradient stop. These do not need contrast checking because nobody needs to read them.</p>
+<h2>Beyond food: other decisions to randomize</h2>
 
-<p><strong>Contrast checker only:</strong> when you already have hex codes and just need to verify them. Maybe your design system defines specific color pairs, and you are auditing whether they all pass.</p>
+<p>The food picker pattern applies to any low-stakes, roughly-equal decision:</p>
 
-<p><strong>Most projects need both:</strong> you find colors with the picker, then validate them with the checker. Skipping the checker is how inaccessible designs ship.</p>
+<ul>
+<li><strong>What movie to watch:</strong> you and your partner scroll Netflix for 30 minutes, watch nothing, go to bed. Put 5 options in a list, randomize, watch whatever comes up. Even a mediocre movie is better than 30 minutes of scrolling.</li>
+<li><strong>Which workout to do:</strong> you have 5 workout routines you tolerate equally. Randomize. The decision is made before you can talk yourself out of exercising.</li>
+<li><strong>Which task to tackle first:</strong> you have 6 equally important tasks. Instead of deliberating for 10 minutes, randomize and start. Momentum beats prioritization for small task lists.</li>
+<li><strong>Where to go on a weekend trip:</strong> you and your friends have 4 destinations nobody objects to. Randomize. The trip will be fun regardless of which one is chosen — but only if a choice actually gets made.</li>
+</ul>
 
-<p>For the full guide on contrast ratios and accessibility standards, see our <a href="/en/blog/color-contrast-checker-guide">color contrast checker guide</a> with WCAG compliance walkthrough.</p>
+<p><strong>The caveat:</strong> randomization only works if you commit to the result before you see it. If you randomize, get "pizza," and immediately think "actually I want sushi instead," the problem was never indecision — it was that you already knew what you wanted and were avoiding admitting it. In that case, just order the sushi.</p>
+
+<p>For more randomization tools, our <a href="/en/tools/coin-flip">coin flip</a> handles binary decisions and our <a href="/en/tools/random-number-generator">random number generator</a> handles numeric ranges. And for a broader look at randomness in decision-making, see our guide on <a href="/en/blog/random-number-generator-beyond-dice-rolls">random number generators beyond dice rolls</a>.</p>
 `,
   },
   {
-    slug: "json-to-csv-vs-manual-excel-import",
-    title: "JSON to CSV vs Manual Excel Import — Stop Copy-Pasting JSON Fields One by One",
-    description: "Converting JSON to CSV manually is tedious and error-prone. Here's why an online converter beats manual methods for nested data, large files, and repeated conversions.",
-    date: "2026-06-25",
+    slug: "hash-generator-sha256-md5-real-world-guide",
+    title: "Hash Generator — SHA-256, MD5, and What 'One-Way Encryption' Actually Means",
+    description: "Hashing sounds like encryption but isn't. Here's the difference, why MD5 is dead, and where SHA-256 actually matters in your daily digital life.",
+    date: "2026-06-26",
     category: "Developer",
-    tags: ["JSON to CSV", "convert JSON", "JSON converter online", "export JSON"],
-    relatedTools: ["json-to-csv", "json-formatter"],
+    tags: ["hash generator", "SHA-256", "MD5", "checksum", "one-way encryption"],
+    relatedTools: ["hash-generator", "password-generator", "uuid-generator"],
     content: `
-<p>You get a JSON file from an API response. It has 2,000 objects, each with 15 nested fields. Your boss wants it as an Excel spreadsheet by end of day. You open the JSON, stare at it, and consider your options. None of them are good.</p>
+<p>You download a software installer. The download page shows a long string of letters and numbers labeled "SHA-256 checksum." You ignore it and click install. Most people do. But that string is the only thing standing between you and a tampered installer that contains malware.</p>
 
-<p>Option A: copy-paste each field into Excel, one cell at a time. For 2,000 × 15 = 30,000 cells. That is not a plan, that is a resignation letter.</p>
+<p>Our <a href="/en/tools/hash-generator">free hash generator</a> creates SHA-256, MD5, SHA-1, and other hash values from any text or file. Here is what hashing actually does, why it is not encryption, and where it matters in ways you might not expect.</p>
 
-<p>Option B: use <a href="/en/tools/json-to-csv">our JSON to CSV converter</a>. Paste the JSON, click convert, download the CSV. Open in Excel. Done in 30 seconds.</p>
+<h2>Hashing vs encryption: the one-way street</h2>
 
-<p>Let us walk through why manual methods break down and where an online converter actually saves the day.</p>
+<p>Encryption is two-way: you encrypt data with a key, and you decrypt it with a key. If you have the key, you can recover the original message. Hashing is one-way: you put data in, you get a fixed-length string out, and <strong>there is no mathematical way to recover the original input from the output</strong>.</p>
 
-<h2>The "just use Excel" trap</h2>
+<p>This is why websites store hashed passwords, not encrypted passwords. If a database is breached, the attacker gets <code>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</code> — the SHA-256 hash of "password" — instead of "password" itself. They cannot reverse the hash to get the original. They have to guess passwords, hash each guess, and compare. That is why "password" is a terrible password — it is the first thing attackers guess.</p>
 
-<p>Modern Excel has a "Get Data from JSON" feature. Power Query can parse JSON. These are real tools and they work — for flat, simple JSON. The moment you hit nested objects, arrays inside objects, or inconsistent field presence, Power Query becomes a puzzle you did not sign up to solve.</p>
+<h2>SHA-256: the current standard</h2>
 
-<p>Try importing this into Excel manually:</p>
-
-<pre><code class="language-json">{
-  "orders": [
-    {
-      "id": 1042,
-      "customer": {"name": "Alice", "email": "alice@example.com"},
-      "items": [{"sku": "A100", "qty": 2}, {"sku": "B200", "qty": 1}],
-      "total": 47.50
-    }
-  ]
-}</code></pre>
-
-<p>Excel will flatten <code>customer.name</code> and <code>customer.email</code> into separate columns — that is actually fine. But the <code>items</code> array? Excel does not know whether to create one row per item, concatenate them into a single cell, or ignore the field entirely. You end up manually reshaping the data anyway.</p>
-
-<h2>How the converter handles nested JSON</h2>
-
-<p>Our <a href="/en/tools/json-to-csv">JSON to CSV converter</a> handles nested structures by flattening them: <code>customer.name</code> becomes a column, <code>customer.email</code> becomes another column. Arrays get stringified into a single cell (which you can then split in Excel if needed).</p>
-
-<p>It is not magic — the flattening has limits. Deeply nested arrays of objects (3+ levels) will produce verbose column names. But for the 90% case — API responses, database exports, form submissions — it works immediately.</p>
-
-<h2>When JSON to CSV conversion fails</h2>
-
-<p><strong>Arrays of varying length:</strong> if each object has a <code>tags</code> array with anywhere from 1 to 50 items, the CSV column for tags will be inconsistent. Some rows get 1 tag, others get 50. Excel handles this poorly.</p>
-
-<p><strong>Binary or base64 fields:</strong> if your JSON contains <code>"image": "iVBORw0KGgo..."</code>, that base64 string will end up as a CSV cell. A single image can be megabytes. Your CSV is now unusably large.</p>
-
-<p><strong>Mixed data types:</strong> if the same field is sometimes a string and sometimes a number — <code>"price": "47.50"</code> in one record and <code>"price": 47.50</code> in another — the converter has to pick one type. Usually it chooses string, and you fix it in Excel afterward.</p>
-
-<p><strong>The workaround:</strong> validate your JSON first with the <a href="/en/tools/json-formatter">JSON formatter and validator</a>. It catches syntax errors before the converter chokes on them. If the JSON is invalid, the CSV output will be garbled or empty — garbage in, garbage out.</p>
-
-<p>For more on working with JSON in the browser, see our <a href="/en/blog/json-formatter-online-guide">beginner's guide to formatting JSON online</a>.</p>
-`,
-  },
-  {
-    slug: "password-generator-why-clever-passwords-fail",
-    title: "Why Your 'Clever' Password Isn't — What a Password Generator Gets Right",
-    description: "You think 'P@ssword123!' is clever. Attackers think it's predictable. Here's why generated passwords beat human creativity every time.",
-    date: "2026-06-25",
-    category: "Developer",
-    tags: ["password generator", "strong password", "password security", "random password"],
-    relatedTools: ["password-generator", "hash-generator", "uuid-generator"],
-    content: `
-<p>Take a moment and think of your go-to password pattern. Is it a word plus a number plus a symbol? A pet's name with your birth year? The street you grew up on with an exclamation mark? If you answered yes to any of these, your passwords are <strong>predictable in ways that password-cracking tools specifically target</strong>.</p>
-
-<p>Our <a href="/en/tools/password-generator">free password generator</a> creates truly random passwords with one click. Here is why that matters more than you think.</p>
-
-<h2>The human password problem</h2>
-
-<p>Humans are terrible at randomness. When asked to create a "random" password, most people follow the same patterns:</p>
+<p>SHA-256 (Secure Hash Algorithm, 256-bit output) is the most widely used secure hash function. It produces a 64-character hexadecimal string. It is used in:</p>
 
 <ul>
-<li>One dictionary word, capitalized: <code>Monkey</code></li>
-<li>Append a number (often a year): <code>Monkey2024</code></li>
-<li>Append a symbol (usually ! or @ or #): <code>Monkey2024!</code></li>
-<li>Maybe substitute a character: <code>M0nkey2024!</code></li>
+<li><strong>Blockchain:</strong> Bitcoin uses double SHA-256 for proof-of-work mining and transaction verification.</li>
+<li><strong>TLS/SSL certificates:</strong> the padlock icon in your browser relies on SHA-256 to verify that the website you are connecting to is the real one, not an imposter.</li>
+<li><strong>File integrity verification:</strong> when you download Linux ISOs, software installers, or firmware updates, the SHA-256 checksum confirms the file was not corrupted or tampered with during download.</li>
+<li><strong>Git commits:</strong> every commit in a Git repository is identified by a SHA-1 hash (Git is migrating to SHA-256). The hash uniquely identifies the exact state of the code at that point in time.</li>
 </ul>
 
-<p>This is called <strong>leet-speak substitution</strong>, and password crackers have had rules for it since the 1990s. Replacing "o" with "0" and "e" with "3" adds approximately zero seconds to a cracking attempt. The tool tries all common substitutions automatically.</p>
+<p>Our <a href="/en/tools/hash-generator">hash generator</a> computes SHA-256 instantly. Paste your text or upload a file, and you get the hash. Compare it to the published checksum — if they match, your download is intact.</p>
 
-<h2>How password crackers actually work</h2>
+<h2>MD5: why it is dead (but still everywhere)</h2>
 
-<p>Modern password cracking is not about trying every possible combination (though that happens too). It is about <strong>prioritizing likely patterns</strong>. A cracking tool starts with:</p>
+<p>MD5 produces a 32-character hexadecimal hash. It was designed in 1991 and was broken in 2004 — researchers found a way to create two different files with the same MD5 hash (a "collision"). This means an attacker could create a malicious file that has the same MD5 checksum as a legitimate file.</p>
 
-<ol>
-<li>Dictionary words (all of them, in multiple languages)</li>
-<li>Common substitutions (o→0, a→@, s→$, e→3, i→1)</li>
-<li>Common append patterns (years, single symbols, "123", "!")</li>
-<li>Leaked password databases (billions of real passwords from breaches)</li>
-</ol>
-
-<p>Your "clever" <code>M0nkey2024!</code> gets cracked in under a second because it matches every pattern the tool is optimized for. A generated password like <code>x7Kp2mQ9vR4nL8wS</code> has no dictionary words, no patterns, no meaningful substitutions — the cracker has to fall back to brute force, which for a 16-character random password takes longer than the age of the universe.</p>
-
-<h2>What makes a password generator different</h2>
-
-<p>When you use a <a href="/en/tools/password-generator">password generator</a>, the output is <strong>cryptographically random</strong>. Not "random-ish" like a human picking letters. Actually random, using the same entropy source that encryption protocols use.</p>
-
-<p>You can configure the generator to match different site requirements:</p>
+<p>Despite being cryptographically broken, MD5 is still used for non-security purposes:</p>
 
 <ul>
-<li><strong>Length:</strong> 16+ characters is the current recommendation. At 12 characters, a random password is borderline crackable with nation-state resources. At 16, it is not.</li>
-<li><strong>Character sets:</strong> include uppercase, lowercase, numbers, and symbols. Some sites require at least one from each category — the generator handles that automatically.</li>
-<li><strong>Avoid ambiguous characters:</strong> turn off 0/O, 1/l/I, 5/S if you ever need to type the password manually. Some generators offer this as a toggle.</li>
+<li><strong>Deduplication:</strong> comparing files by MD5 hash is fast. If two files have the same MD5, they are probably identical. This is fine for finding duplicate photos, not for verifying downloads.</li>
+<li><strong>Cache keys:</strong> some systems use MD5 hashes of URLs or query parameters as cache keys. Speed matters more than collision resistance here.</li>
+<li><strong>Legacy systems:</strong> older software that has not been updated still uses MD5 for password hashing. If your website still uses MD5 for passwords, stop everything and fix that first.</li>
 </ul>
 
-<h2>"But I can't remember random passwords"</h2>
+<p><strong>Rule of thumb:</strong> use SHA-256 for anything security-related. Use MD5 only for non-security tasks where speed matters more than collision resistance. And never use SHA-1 — it was broken in 2017 and should be treated the same as MD5.</p>
 
-<p>You are not supposed to. Use a password manager. The workflow is:</p>
+<h2>Real-world hash verification workflow</h2>
 
 <ol>
-<li>Generate a random password with our <a href="/en/tools/password-generator">password generator</a></li>
-<li>Save it in your password manager (Bitwarden, 1Password, iCloud Keychain, etc.)</li>
-<li>Never type it again — autofill handles it</li>
+<li>Download a file (software installer, ISO, firmware).</li>
+<li>The download page shows a SHA-256 checksum: <code>a1b2c3d4...</code></li>
+<li>Upload the downloaded file to our <a href="/en/tools/hash-generator">hash generator</a> (or paste text content).</li>
+<li>Select SHA-256, generate the hash.</li>
+<li>Compare character by character. If they match exactly, the file is authentic and undamaged. If even one character differs, the file was either corrupted during download or tampered with.</li>
 </ol>
 
-<p>The only passwords you need to memorize are your computer login, your password manager master password, and maybe your email. Everything else should be generated and stored.</p>
-
-<p><strong>One caveat:</strong> password generators create strong passwords, but they do not protect against phishing. If you type your generated password into a fake login page, the randomness does not help. That is where two-factor authentication and password manager domain matching come in.</p>
-
-<p>For hashing those passwords (never store them in plain text!), our <a href="/en/tools/hash-generator">hash generator</a> supports SHA-256, MD5, and more. And for unique identifiers that are not secrets, our <a href="/en/tools/uuid-generator">UUID generator</a> creates collision-free IDs.</p>
+<p>For generating secure passwords that produce strong hashes, our <a href="/en/tools/password-generator">password generator</a> creates cryptographically random credentials. And for unique identifiers that are not hashes, see our <a href="/en/tools/uuid-generator">UUID generator</a>.</p>
 `,
   },
 
