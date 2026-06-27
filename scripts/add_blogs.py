@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (100→106) — June 26, 2026"""
+"""Add 6 blogs to free station (106→112) — June 27, 2026"""
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,286 +8,248 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "dice-roller-probability-real-use-cases",
-    title: "Dice Roller — When You Need More Than a Six-Sided Die (and Why Probability Matters)",
-    description: "Dice aren't just for board games. From randomized decision-making to teaching probability, here's how an online dice roller beats shaking physical dice.",
-    date: "2026-06-26",
+    slug: "coin-flip-beyond-heads-or-tails",
+    title: "Coin Flip — 6 Situations Where a Virtual Coin Toss Is Actually the Smartest Decision Tool",
+    description: "Flipping a coin sounds like giving up on deciding. But for certain decisions, randomization is genuinely the optimal strategy. Here's when and why.",
+    date: "2026-06-27",
     category: "Fun & Media",
-    tags: ["dice roller", "online dice", "random dice", "probability", "DnD dice"],
-    relatedTools: ["dice-roller", "random-number-generator", "coin-flip"],
+    tags: ["coin flip", "random decision", "coin toss", "decision making"],
+    relatedTools: ["coin-flip", "random-number-generator", "food-picker"],
     content: `
-<p>You grab a d20 to decide who does the dishes. It rolls under the couch. You crawl under to retrieve it, and by the time you come back up, everyone has already forgotten what the roll was for. Physical dice have a retrieval cost that nobody talks about.</p>
+<p>You are stuck between two choices. Neither is obviously better. You have been going back and forth for 20 minutes. Someone says "just flip a coin" — and you immediately think "no, I want option A." Congratulations, the coin flip just revealed your actual preference without ever being tossed.</p>
 
-<p>Our <a href="/en/tools/dice-roller">free online dice roller</a> handles d4 through d100 with one click — no crawling under furniture required. But beyond convenience, there are actual reasons an online roller beats physical dice for certain use cases.</p>
+<p>Our <a href="/en/tools/coin-flip">free coin flip tool</a> does more than settle bar bets. It exposes hidden preferences, breaks analysis paralysis, and — when used correctly — produces better outcomes than deliberation for a specific class of decisions. Here is the surprisingly useful psychology behind a simple heads-or-tails.</p>
 
-<h2>When physical dice fail</h2>
+<h2>The coin flip that reveals your preference</h2>
 
-<p>Physical dice are not perfectly fair. Manufacturing tolerances mean some faces are slightly heavier than others. Casino dice are machined to tolerances within 0.0005 inches — your board game dice are not. Over thousands of rolls, cheap dice show measurable bias toward certain numbers.</p>
+<p>Assign option A to heads, option B to tails. Flip the coin. Before you look at the result, pay attention to what you are hoping for. If you find yourself thinking "please be heads," you already know your preference. The coin did not decide — it revealed what you already wanted but could not admit.</p>
 
-<p>Our <a href="/en/tools/dice-roller">dice roller</a> uses cryptographic randomness — every outcome is equally probable. For anything where fairness matters (settling disputes, running a classroom activity, picking a random student), a digital roller removes the "is this die loaded?" question entirely.</p>
+<p>This is the most useful application of a coin flip, and it costs nothing. The act of externalizing the decision — giving it to the coin — forces your brain to take a side. Before the flip, both options were abstract. After assigning them to heads and tails, one of them is about to become real, and your emotional reaction tells you which one you actually want.</p>
 
-<h2>Custom dice that physical dice can't match</h2>
+<h2>When random choice beats careful deliberation</h2>
 
-<p>Need a d37? A d13? A d7? Physical dice beyond the standard set (d4, d6, d8, d10, d12, d20, d100) are specialty items that cost $15+ each — if they even exist. An online dice roller gives you any number of sides you want. Need a d47 for a weird game mechanic? Type "47" and roll. It is instant and free.</p>
+<p>Psychologists have studied this. For decisions where the options are roughly equal in quality, random choice produces <strong>higher satisfaction</strong> than deliberation. The reason: deliberation amplifies regret. When you deliberate for 30 minutes and pick the wrong restaurant, you are annoyed — you invested time and still got a bad outcome. When you flip a coin and get the wrong restaurant, you shrug — the coin picked it, not you. Lower emotional investment, lower regret.</p>
 
-<p>This matters for more than game design. Teachers use custom dice ranges for math exercises: "Roll a d50, multiply the result by 3, subtract 7." Each student gets a unique problem set. The <a href="/en/tools/random-number-generator">random number generator</a> works for arbitrary ranges, but the dice roller gives you the familiar dice metaphor with visual feedback.</p>
+<p>This only works when three conditions are met: (1) the options are genuinely close in quality, (2) the stakes are low to moderate, and (3) you commit to the result before flipping. If you flip, get tails, and immediately say "best two out of three," you were never going to accept the coin's decision — and the problem was not indecision, it was avoidance.</p>
 
-<h2>Multiple dice, simultaneous rolls</h2>
+<h2>Practical uses beyond "what to eat"</h2>
 
-<p>Need to roll 4d6 and drop the lowest? That is a standard D&D stat-generation method. With physical dice, you roll four dice, scan for the lowest, mentally add the remaining three, and write down the result. Repeat six times. With an online roller, you click once and get all six ability scores pre-calculated.</p>
+<p><strong>Meeting agenda order:</strong> two topics are equally urgent. Instead of debating for 10 minutes which to discuss first, flip a coin. The meeting starts 10 minutes earlier, and both topics get covered either way.</p>
 
-<p>This "roll multiple, drop lowest" pattern is common in tabletop gaming, and the mental math overhead is real. After your fourth character build, you start making addition errors. The online roller eliminates that.</p>
+<p><strong>Hiring tiebreaker:</strong> two candidates are equally qualified after interviews. You have spent three hours debating. Flip a coin. If your gut screams "no, not that one" when the result lands, you just identified your actual preference. Hire the other candidate.</p>
 
-<h2>Teaching probability with actual data</h2>
+<p><strong>Vacation destination:</strong> you and your partner narrowed it to two places. Neither of you wants to be the one who "picked" in case the trip has bad weather or a disappointing hotel. Flip a coin. Now the coin is responsible, not either of you. This is not avoidance — it is relationship maintenance.</p>
 
-<p>Tell a student "rolling a 7 on 2d6 is six times more likely than rolling a 12." They nod. Then have them roll 2d6 one hundred times — physically, that takes 10 minutes of tedious dice-throwing. With our <a href="/en/tools/dice-roller">dice roller</a>, it takes 30 seconds. The probability distribution emerges visually: 7 appears roughly 17% of the time, 12 appears roughly 3%. The concept sticks because they saw it happen, not because a textbook said so.</p>
+<p><strong>Workout selection:</strong> you have two workout routines you tolerate equally. Instead of spending 5 minutes deciding, flip. The decision is made before you can talk yourself out of exercising entirely.</p>
 
-<p><strong>One common mistake:</strong> people think "I rolled three 1s in a row, so the next roll is more likely to be a 6." This is the gambler's fallacy. Each roll is independent. The dice have no memory. If your brain refuses to accept this, roll a d6 one hundred times and count the streaks — you will see clusters of repeated numbers that feel "impossible" but are mathematically expected.</p>
+<p><strong>Creative block breaker:</strong> two design directions, two writing angles, two code approaches. Flip a coin and start building the one that comes up. Forward momentum beats perfect direction for creative work. You can always switch later — but you cannot switch from "did not start."</p>
 
-<p>For coin flips instead of dice, our <a href="/en/tools/coin-flip">coin flip tool</a> gives you heads or tails with the same cryptographic randomness. And for a deeper look at randomness, see our guide to the <a href="/en/blog/random-number-generator-beyond-dice-rolls">random number generator's uses beyond dice and lotteries</a>.</p>
+<p><strong>One caveat:</strong> do not flip a coin for high-stakes, irreversible decisions. Surgery, career changes, large financial commitments — these deserve deliberation, not randomization. The coin flip is for the 80% of daily decisions where the cost of deciding exceeds the cost of a suboptimal outcome.</p>
+
+<p>For more sophisticated randomization, our <a href="/en/tools/random-number-generator">random number generator</a> handles ranges, and our <a href="/en/tools/food-picker">food picker</a> handles multi-option meal decisions. For a deeper look at decision fatigue, see our <a href="/en/blog/food-picker-decision-fatigue-solved">guide to how a food picker solves decision fatigue</a>.</p>
 `,
   },
   {
-    slug: "qr-code-scanner-web-vs-phone-app",
-    title: "QR Code Scanner — Why a Browser Scanner Beats Downloading Yet Another App",
-    description: "You see a QR code. You unlock your phone, find the camera app, frame it, wait, tap the notification. Or: open a browser tab, paste an image, done. Here's when each method wins.",
-    date: "2026-06-26",
+    slug: "url-encoder-when-percent-20-matters",
+    title: "URL Encoder — Why Your Link Broke and How %20, %23, and %26 Fix It",
+    description: "You paste a URL into an email and it breaks at the first space. URL encoding fixes that — and understanding it prevents a surprising number of everyday web annoyances.",
+    date: "2026-06-27",
     category: "Developer",
-    tags: ["QR code scanner", "scan QR online", "QR from image", "barcode scanner"],
-    relatedTools: ["qr-code-scanner", "qr-code-generator", "barcode-generator"],
+    tags: ["URL encoder", "percent encoding", "URL decode", "encode URL"],
+    relatedTools: ["url-encoder", "text-to-slug", "html-entities"],
     content: `
-<p>QR codes are everywhere — restaurant menus, event tickets, WiFi passwords, payment links, product packaging. And every time you see one, the ritual is the same: pull out your phone, open the camera, frame the code, hold steady, wait for the notification, tap it. It works, but it is about six steps too many when you are already sitting at a computer.</p>
+<p>You copy a link from your browser, paste it into an email, and the link breaks. The URL had spaces in it, or a # symbol, or an & that got interpreted as an HTML entity. What should have been a working link is now a broken string of text that goes nowhere.</p>
 
-<p>Our <a href="/en/tools/qr-code-scanner">QR code scanner</a> works in your browser — paste a screenshot, upload an image, or use your webcam. No app install, no phone handoff. Here is when each approach makes sense.</p>
+<p>Our <a href="/en/tools/url-encoder">free URL encoder</a> converts unsafe characters into percent-encoded equivalents that work everywhere — in emails, in code, in APIs, in database queries. Here is what URL encoding actually does and where it matters in your daily digital life.</p>
 
-<h2>The phone camera approach: good for physical-world scanning</h2>
+<h2>What characters break URLs (and why)</h2>
 
-<p>When you are standing in front of a QR code on a wall, a poster, or a product label, your phone camera is the right tool. It is already in your hand, the camera is already pointed at the code, and the scanning happens automatically. This is the use case QR codes were designed for, and it works well.</p>
+<p>A URL can only safely contain a limited set of characters: letters (A-Z, a-z), digits (0-9), and a handful of special characters (hyphen, underscore, period, tilde). Everything else — spaces, symbols, non-ASCII characters, even some punctuation — must be percent-encoded.</p>
 
-<p>The friction comes when the QR code is <strong>on the screen you are already looking at</strong>. A Zoom call shares a QR code for a survey. A website shows a QR code to download an app. A PDF document has a QR code linking to supplementary materials. In all these cases, scanning with your phone means pointing a camera at a screen — which introduces glare, moire patterns, and focus hunting. The browser scanner bypasses all of that.</p>
+<p>The encoding is simple: <code>%</code> followed by the character's hexadecimal ASCII code. A space becomes <code>%20</code>. A # becomes <code>%23</code>. An & becomes <code>%26</code>. A ? becomes <code>%3F</code>. The <code>%</code> tells the browser "the next two characters are a hex code, interpret them as the original character."</p>
 
-<h2>The browser scanner approach: when the QR code is already on your screen</h2>
-
-<p>Our <a href="/en/tools/qr-code-scanner">QR code scanner</a> supports three input methods:</p>
-
-<p><strong>1. Screenshot paste:</strong> take a screenshot of the QR code (Win+Shift+S on Windows, Cmd+Shift+4 on Mac), paste it into the scanner with Ctrl+V. Done in 2 seconds. No phone involved.</p>
-
-<p><strong>2. Image upload:</strong> if someone emailed you a QR code image or it is saved in a document, drag the file onto the scanner. Works for PNG, JPG, and WebP.</p>
-
-<p><strong>3. Webcam scan:</strong> if you have a laptop with a camera, you can hold a physical QR code up to the webcam. This is the bridge between physical and digital — same convenience as a phone camera, but the result appears on your computer screen where you actually need it.</p>
-
-<p>The killer feature of a browser scanner: the decoded content stays on your computer. A URL opens in your desktop browser, not your phone. A WiFi password can be copied and pasted into your network settings. A vCard contact gets saved to your desktop address book. No transferring data between devices.</p>
-
-<h2>When phone scanning is actually worse</h2>
-
+<p><strong>Common breakage scenarios:</strong></p>
 <ul>
-<li><strong>Dark environments:</strong> phone cameras need light to focus on a QR code. If you are in a dimly lit conference room with a QR code on a projector screen, your phone camera will struggle. A screenshot from your laptop has perfect lighting.</li>
-<li><strong>Small QR codes on screen:</strong> a QR code that is 100px wide on a webpage is too small for a phone camera to scan reliably from a normal viewing distance. Screenshot and paste into the browser scanner — it reads the pixels directly.</li>
-<li><strong>Damaged or low-contrast QR codes:</strong> a QR code printed on a wrinkled receipt or a curved surface is hard for any scanner, but the browser scanner can apply image preprocessing that phone cameras skip.</li>
+<li><strong>Spaces in filenames:</strong> "my report.pdf" in a URL becomes "my%20report.pdf." If you skip encoding, the space terminates the URL at "my" and everything after is lost.</li>
+<li><strong>& in query parameters:</strong> <code>?name=Tom&Jerry</code> — the & splits the query string, so the server sees name=Tom and Jerry as a separate (invalid) parameter. Encode the &: <code>?name=Tom%26Jerry</code>.</li>
+<li><strong># in URLs:</strong> the # character starts a fragment identifier. <code>/page#section</code> means "go to /page, then scroll to #section." If your actual content includes #, encode it as %23.</li>
+<li><strong>Non-ASCII characters:</strong> Chinese characters, emoji, accented letters — these are encoded as UTF-8 byte sequences, each byte prefixed with %. "café" becomes "caf%C3%A9."</li>
 </ul>
 
-<p>For generating QR codes instead of scanning them, our <a href="/en/tools/qr-code-generator">QR code generator</a> creates codes for URLs, WiFi, vCards, and more. And for creative QR code use cases, see our <a href="/en/blog/qr-code-7-creative-uses-beyond-urls">guide to 7 creative QR code uses beyond URLs</a>.</p>
-`,
-  },
-  {
-    slug: "barcode-generator-retail-logistics-guide",
-    title: "Barcode Generator — EAN-13, UPC-A, Code 128, and When to Use Each Format",
-    description: "Not all barcodes are the same. EAN-13 for retail, Code 128 for shipping, UPC-A for North America — here's which format your project actually needs.",
-    date: "2026-06-26",
-    category: "Developer",
-    tags: ["barcode generator", "EAN-13", "UPC", "Code 128", "barcode formats"],
-    relatedTools: ["barcode-generator", "qr-code-generator"],
-    content: `
-<p>You need a barcode. You search "barcode generator," see a dozen format options, and realize you have no idea which one to pick. EAN-13? UPC-A? Code 128? Code 39? They all look like vertical lines to the untrained eye, but picking the wrong format means your barcode will not scan at the point of sale, the warehouse, or the shipping depot.</p>
+<h2>URL encoding vs slug generation: different tools, different jobs</h2>
 
-<p>Our <a href="/en/tools/barcode-generator">free barcode generator</a> supports all major formats. Here is which one you need for your specific situation.</p>
-
-<h2>EAN-13: the global retail standard</h2>
-
-<p>If you are selling a physical product that will be scanned at retail checkout counters anywhere outside North America, you need EAN-13. It is a 13-digit number (12 data digits + 1 check digit) that uniquely identifies your product in the global GS1 system.</p>
-
-<p><strong>What you need:</strong> a GS1 company prefix (purchased from GS1 in your country). This prefix goes into the first digits of your barcode, followed by your product code, and the check digit is calculated automatically by our <a href="/en/tools/barcode-generator">barcode generator</a>.</p>
-
-<p><strong>Do not guess EAN-13 numbers.</strong> If you make up a random 13-digit number, it might conflict with a real product in the global database. Retailers scan your barcode and get someone else's product listing. Buy a proper GS1 prefix — it costs $250-750 depending on how many products you need to identify.</p>
-
-<h2>UPC-A: the North American equivalent</h2>
-
-<p>UPC-A is the 12-digit barcode used in the United States and Canada. Functionally identical to EAN-13 (EAN-13 is a superset — UPC-A barcodes scan correctly on EAN-13 systems but not always vice versa). If you are selling only in North America, UPC-A is sufficient. If you might expand globally, start with EAN-13.</p>
-
-<h2>Code 128: logistics, shipping, and internal tracking</h2>
-
-<p>Code 128 is the workhorse of logistics. Unlike EAN-13 and UPC-A (which encode only numbers), Code 128 encodes letters, numbers, and some symbols. This makes it ideal for:</p>
+<p>URL encoding makes a string safe for use in a URL. Slug generation converts a human-readable title into a clean, SEO-friendly URL path segment. They solve different problems:</p>
 
 <ul>
-<li><strong>Shipping labels:</strong> tracking numbers that include letters (e.g., "1Z999AA10123456784")</li>
-<li><strong>Inventory management:</strong> warehouse bin codes like "A12-B34-C56"</li>
-<li><strong>Asset tracking:</strong> equipment IDs that mix letters and numbers</li>
-<li><strong>Healthcare:</strong> patient wristbands, specimen labels, medication tracking</li>
+<li><strong>URL encoding:</strong> "Hello World & Friends!" → "Hello%20World%20%26%20Friends%21" — preserves every character, just makes them URL-safe. Use this for query parameters, API calls, and any situation where you need the original string to survive a round-trip through a URL.</li>
+<li><strong>Slug generation:</strong> "Hello World & Friends!" → "hello-world-friends" — strips punctuation, lowercases, replaces spaces with hyphens. Use this for blog post URLs, page paths, and SEO-friendly permalinks.</li>
 </ul>
 
-<p>Code 128 is <strong>denser</strong> than Code 39 — it packs more data into less horizontal space. If your barcode needs to fit on a small label, Code 128 is the right choice. Our <a href="/en/tools/barcode-generator">barcode generator</a> handles Code 128 with automatic check digit calculation.</p>
+<p>Our <a href="/en/tools/url-encoder">URL encoder</a> handles the first case — encode and decode with one click. Our <a href="/en/tools/text-to-slug">URL slug generator</a> handles the second — convert titles to clean URL paths. Use the right tool for the right job.</p>
 
-<h2>Code 39: the older, simpler alternative</h2>
+<h2>Real situations where URL encoding saves you</h2>
 
-<p>Code 39 is older than Code 128 and encodes fewer characters (only uppercase A-Z, 0-9, and a handful of symbols). It takes more space per character. You still see it on government ID cards, military equipment, and automotive parts because these industries standardized on it decades ago and never migrated.</p>
+<p><strong>API calls with user input:</strong> a user types "AC/DC" into a search box. Your frontend sends <code>/api/search?q=AC/DC</code>. The slash in "AC/DC" breaks the URL path. Encode the query: <code>/api/search?q=AC%2FDC</code>. Now it works.</p>
 
-<p><strong>Use Code 39 only if:</strong> your industry requires it for compliance, or your scanning hardware is old enough that it only supports Code 39 (rare in 2026, but still happens in some industrial settings).</p>
+<p><strong>Email links with special characters:</strong> you email a link to <code>example.com/file?name=report (final).pdf</code>. The parentheses and space break the link in most email clients. Encode: <code>example.com/file?name=report%20(final).pdf</code>. The link survives.</p>
 
-<h2>QR code vs barcode: when to use which</h2>
+<p><strong>Database storage of URLs:</strong> storing raw URLs in a database is fine — until someone inserts a URL with a % that is not percent-encoding. Double-encoding happens: %20 becomes %2520. Always decode before displaying and encode before storing.</p>
 
-<p>Barcodes are 1D — a line scanner reads them in one pass. QR codes are 2D — a camera reads them from any angle. Barcodes hold 12-50 characters; QR codes hold up to 4,000. Use a barcode when you need fast, single-direction scanning at checkout or on a conveyor belt. Use a <a href="/en/tools/qr-code-generator">QR code</a> when you need to encode a URL, contact info, WiFi credentials, or more data than fits in a barcode.</p>
-
-<p><strong>Common mistake:</strong> printing a barcode too small. The minimum width for reliable scanning is about 1.5 inches for a 12-digit UPC-A. Smaller than that, and budget scanners cannot resolve the individual bars. Test your barcode with the actual scanner hardware your warehouse or retail partner uses — not just your phone.</p>
-
-<p>For a comparison of barcode versus QR code technologies and when each makes sense, see our <a href="/en/blog/qr-code-scanner-web-vs-phone-app">QR code scanner comparison guide</a>.</p>
+<p>For encoding HTML entities instead of URL characters, our <a href="/en/tools/html-entities">HTML entities converter</a> handles &amp;, &lt;, &gt; and more. And for clean URL slugs, see our <a href="/en/blog/url-slug-best-practices-seo-guide">URL slug best practices SEO guide</a>.</p>
 `,
   },
   {
-    slug: "emi-calculator-real-loan-examples",
-    title: "EMI Calculator — How Much That 'Affordable' Monthly Payment Actually Costs You Over 5 Years",
-    description: "A ₹20,000 monthly EMI sounds manageable until you realize you are paying ₹3.2 lakh in interest. Here's how to use an EMI calculator to see the real cost before signing.",
-    date: "2026-06-26",
+    slug: "bmi-calculator-what-the-number-actually-means",
+    title: "BMI Calculator — What That Number Actually Tells You (and What It Definitely Doesn't)",
+    description: "BMI says you are 'overweight.' But are you actually unhealthy? Here's what BMI measures, what it misses, and why athletes and bodybuilders consistently 'fail' it.",
+    date: "2026-06-27",
     category: "Calculator",
-    tags: ["EMI calculator", "loan EMI", "monthly installment", "interest calculation", "car loan"],
-    relatedTools: ["emi-calculator", "loan-calculator", "mortgage-calculator"],
+    tags: ["BMI calculator", "body mass index", "BMI meaning", "health metrics"],
+    relatedTools: ["bmi-calculator", "calorie-calculator", "age-calculator"],
     content: `
-<p>A salesperson tells you the EMI is only ₹18,500 per month. For a car that costs ₹9 lakh. For 5 years. It sounds reasonable — ₹18,500 is less than your monthly rent. What they do not emphasize: over 5 years, you will pay approximately ₹11.1 lakh for a ₹9 lakh car. That is ₹2.1 lakh in interest — enough to buy a second-hand scooter.</p>
+<p>You type your height and weight into a BMI calculator. The result says 27.3 — "overweight." You go to the gym four times a week, your blood work is perfect, and you can run a 5K without stopping. What gives?</p>
 
-<p>Our <a href="/en/tools/emi-calculator">free EMI calculator</a> shows you the total interest before you sign anything. Here is how to use it for real financial decisions, not just "plug in numbers and nod."</p>
+<p>Our <a href="/en/tools/bmi-calculator">free BMI calculator</a> gives you the number instantly. But understanding what that number means — and what it definitely does not mean — is the difference between useful health information and unnecessary anxiety. Here is the honest, no-hype explanation.</p>
 
-<h2>How EMI math actually works</h2>
+<h2>What BMI actually measures</h2>
 
-<p>EMI stands for Equated Monthly Installment. The formula is:</p>
+<p>BMI (Body Mass Index) is weight in kilograms divided by height in meters squared. That is it. It is a <strong>population-level screening tool</strong>, not an individual health diagnosis. It was invented in the 1830s by a Belgian mathematician (not a doctor) named Adolphe Quetelet, who was studying "the average man" — not individual health.</p>
 
-<pre><code class="language-text">EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)</code></pre>
+<p>The formula was designed to estimate obesity prevalence across populations of thousands, not to tell any single person whether they are healthy. Using BMI as an individual health metric is like using average rainfall to decide whether to water your specific plant today — it is directionally informative but misses most of what matters.</p>
 
-<p>Where P is the principal (loan amount), r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the number of months. The key insight: <strong>early payments are mostly interest, not principal</strong>. In month 1 of a 5-year car loan at 9%, roughly 70% of your EMI goes to interest and only 30% reduces your debt.</p>
+<h2>What BMI misses completely</h2>
 
-<p>Our <a href="/en/tools/emi-calculator">EMI calculator</a> shows you the full amortization schedule — month by month, you can see exactly how much of each payment is interest versus principal. Most people are shocked by the first few rows.</p>
+<p><strong>Muscle vs fat:</strong> BMI cannot distinguish between muscle and fat. A 5'10", 210-pound bodybuilder with 12% body fat has a BMI of 30.1 — "obese." The same BMI as a sedentary person of the same height and weight with 35% body fat. These two people have radically different health profiles, but BMI treats them identically.</p>
 
-<h2>Three real scenarios where the EMI calculator saves you money</h2>
+<p><strong>Fat distribution:</strong> where fat is stored matters more than how much. Visceral fat (around organs, in the abdomen) is strongly linked to metabolic disease. Subcutaneous fat (under the skin, on hips and thighs) is much less concerning. BMI does not know where your fat is.</p>
 
-<p><strong>Scenario 1: The "low EMI" trap.</strong> A bank offers you two options for a ₹15 lakh home loan at 8.5%: 20-year tenure at ₹13,000/month, or 15-year tenure at ₹14,800/month. The 20-year option looks cheaper — it saves ₹1,800 per month! But over the full term, the 20-year loan costs ₹31.2 lakh total. The 15-year loan costs ₹26.6 lakh. That "cheaper" EMI costs you ₹4.6 lakh extra in interest. The EMI calculator makes this visible immediately.</p>
+<p><strong>Age, sex, and ethnicity:</strong> the same BMI means different things for a 25-year-old man versus a 65-year-old woman versus a South Asian person (who tend to develop metabolic issues at lower BMIs than European populations). BMI uses one scale for everyone, which is why it is a screening tool, not a diagnostic tool.</p>
 
-<p><strong>Scenario 2: Prepayment impact.</strong> You have a ₹10 lakh loan at 10% for 5 years. Your EMI is ₹21,247. After 12 months, you get a ₹1 lakh bonus and put it toward the loan. Should you reduce the EMI or reduce the tenure? Reducing tenure saves more interest — you pay off the loan faster, so interest accrues for fewer months. The EMI calculator shows both options side by side.</p>
+<h2>When BMI is actually useful</h2>
 
-<p><strong>Scenario 3: Rate shopping.</strong> Bank A offers 8.5%, Bank B offers 8.2%. The difference sounds tiny — 0.3%! On a ₹20 lakh, 10-year loan, that 0.3% difference is ₹41,000 in total interest. The EMI calculator turns abstract rate comparisons into concrete rupee amounts.</p>
-
-<h2>What the EMI calculator does not tell you</h2>
-
-<p><strong>Processing fees:</strong> most banks charge 0.5-1% of the loan amount as a processing fee. On a ₹20 lakh loan, that is ₹10,000-20,000 upfront. Add it to your cost comparison.</p>
-
-<p><strong>Prepayment penalties:</strong> some loans charge 2-4% on prepayment amounts. If you plan to prepay (and you should), check whether your loan has prepayment penalties. Floating rate loans in India typically do not; fixed rate loans often do.</p>
-
-<p><strong>Floating vs fixed rate risk:</strong> the EMI calculator assumes a constant rate. If you take a floating rate loan and RBI raises rates, your EMI goes up — or your tenure extends. The calculator gives you a snapshot at current rates, not a guarantee.</p>
-
-<p>For comparing EMI loans against other loan types, our <a href="/en/tools/loan-calculator">loan calculator</a> handles simple interest loans, and the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> covers home loans with PMI and property taxes. For the deeper comparison, see our <a href="/en/blog/mortgage-vs-loan-calculator-comparison">mortgage versus loan calculator comparison</a>.</p>
-`,
-  },
-  {
-    slug: "food-picker-decision-fatigue-solved",
-    title: "Food Picker — What It Reveals About Decision Fatigue and Why Random Choice Is Sometimes Better",
-    description: "You and your partner have spent 20 minutes deciding where to eat. A food picker solves this in 2 seconds. But there's actual psychology behind why random choice beats deliberation for low-stakes decisions.",
-    date: "2026-06-26",
-    category: "Fun & Media",
-    tags: ["food picker", "what to eat", "decision fatigue", "random choice", "food decision"],
-    relatedTools: ["food-picker", "random-number-generator", "coin-flip"],
-    content: `
-<p>You ask your partner what they want for dinner. "I don't know, what do you want?" This exchange repeats three times. Twenty minutes later, you order from the same place you always order from, and neither of you is happy about it. This is decision fatigue — and a food picker solves it in two seconds.</p>
-
-<p>Our <a href="/en/tools/food-picker">free food picker</a> randomly selects a meal from a customizable list. It sounds trivial. But the reason it works is not trivial at all — it is grounded in how human brains handle (and fail to handle) repeated low-stakes decisions.</p>
-
-<h2>What decision fatigue actually is</h2>
-
-<p>Psychologists have studied decision fatigue since the 1990s. The core finding: <strong>every decision you make depletes a shared mental resource</strong>. Choosing what to wear, which email to answer first, what to eat for lunch — these all draw from the same reservoir of decision-making energy. By dinner time, you have made hundreds of micro-decisions, and your brain is looking for shortcuts.</p>
-
-<p>That is why you default to the same takeout place every night. It is not that you love their pad thai that much — it is that choosing something new requires mental energy you no longer have. The food picker removes the decision entirely, which is exactly what your tired brain wants.</p>
-
-<h2>When random choice beats deliberation</h2>
-
-<p>Random choice is superior to deliberation when three conditions are met:</p>
-
-<ol>
-<li><strong>The stakes are low.</strong> A bad dinner is disappointing but not catastrophic. You can afford to be wrong.</li>
-<li><strong>The options are roughly equal.</strong> If you genuinely cannot decide between pizza and sushi, they are probably both acceptable outcomes. If one option would make you miserable, remove it from the list.</li>
-<li><strong>The cost of deciding exceeds the cost of a suboptimal outcome.</strong> Spending 20 minutes deciding on dinner costs you 20 minutes of your evening. A suboptimal dinner costs you mild disappointment. The math favors random choice.</li>
-</ol>
-
-<p>Our <a href="/en/tools/food-picker">food picker</a> enforces condition 2 by making you customize the list first. Remove the options you genuinely dislike. What remains is your "acceptable outcome" set — any result from this set is fine. The random pick is now guaranteed to be at least acceptable.</p>
-
-<h2>Beyond food: other decisions to randomize</h2>
-
-<p>The food picker pattern applies to any low-stakes, roughly-equal decision:</p>
+<p>Despite its limitations, BMI is useful for:</p>
 
 <ul>
-<li><strong>What movie to watch:</strong> you and your partner scroll Netflix for 30 minutes, watch nothing, go to bed. Put 5 options in a list, randomize, watch whatever comes up. Even a mediocre movie is better than 30 minutes of scrolling.</li>
-<li><strong>Which workout to do:</strong> you have 5 workout routines you tolerate equally. Randomize. The decision is made before you can talk yourself out of exercising.</li>
-<li><strong>Which task to tackle first:</strong> you have 6 equally important tasks. Instead of deliberating for 10 minutes, randomize and start. Momentum beats prioritization for small task lists.</li>
-<li><strong>Where to go on a weekend trip:</strong> you and your friends have 4 destinations nobody objects to. Randomize. The trip will be fun regardless of which one is chosen — but only if a choice actually gets made.</li>
+<li><strong>Population studies:</strong> tracking obesity rates across countries and decades. The individual inaccuracies average out over millions of people.</li>
+<li><strong>Identifying extremes:</strong> a BMI under 16 or over 40 reliably indicates a health issue that needs attention, regardless of muscle mass or body composition.</li>
+<li><strong>Starting a conversation:</strong> a BMI outside the normal range is a reason to check other metrics — waist circumference, blood pressure, blood sugar, cholesterol — not a diagnosis by itself.</li>
 </ul>
 
-<p><strong>The caveat:</strong> randomization only works if you commit to the result before you see it. If you randomize, get "pizza," and immediately think "actually I want sushi instead," the problem was never indecision — it was that you already knew what you wanted and were avoiding admitting it. In that case, just order the sushi.</p>
+<p><strong>What to do instead of obsessing over BMI:</strong> track your waist-to-height ratio (waist circumference should be less than half your height), your resting heart rate, your blood work (A1C, lipids, liver enzymes), and — most importantly — how you feel during daily activities. Can you climb stairs without getting winded? Can you carry groceries without back pain? These functional measures matter more than a single number from an 1830s formula.</p>
 
-<p>For more randomization tools, our <a href="/en/tools/coin-flip">coin flip</a> handles binary decisions and our <a href="/en/tools/random-number-generator">random number generator</a> handles numeric ranges. And for a broader look at randomness in decision-making, see our guide on <a href="/en/blog/random-number-generator-beyond-dice-rolls">random number generators beyond dice rolls</a>.</p>
+<p>For tracking calorie intake alongside BMI, our <a href="/en/tools/calorie-calculator">calorie calculator</a> estimates daily energy needs. And for a broader perspective on health metrics, see our <a href="/en/blog/calorie-calculator-vs-fitness-apps">calorie calculator versus fitness apps comparison</a>.</p>
 `,
   },
   {
-    slug: "hash-generator-sha256-md5-real-world-guide",
-    title: "Hash Generator — SHA-256, MD5, and What 'One-Way Encryption' Actually Means",
-    description: "Hashing sounds like encryption but isn't. Here's the difference, why MD5 is dead, and where SHA-256 actually matters in your daily digital life.",
-    date: "2026-06-26",
+    slug: "text-diff-compare-code-like-a-pro",
+    title: "Text Diff Tool — Compare Code, Contracts, and Config Files Without Squinting at Two Windows",
+    description: "Spotting the one changed line in a 500-line config file by eye is impossible. A text diff tool highlights every insertion, deletion, and modification instantly.",
+    date: "2026-06-27",
     category: "Developer",
-    tags: ["hash generator", "SHA-256", "MD5", "checksum", "one-way encryption"],
-    relatedTools: ["hash-generator", "password-generator", "uuid-generator"],
+    tags: ["text diff", "compare text", "code diff", "file comparison"],
+    relatedTools: ["text-diff", "code-formatter", "json-formatter"],
     content: `
-<p>You download a software installer. The download page shows a long string of letters and numbers labeled "SHA-256 checksum." You ignore it and click install. Most people do. But that string is the only thing standing between you and a tampered installer that contains malware.</p>
+<p>You changed one setting in a 300-line YAML config file. The deploy failed. You need to find what changed, but you did not commit the original version, and scrolling through two windows side by side looking for differences is making your eyes cross. You will miss the change — humans are terrible at spotting small differences in large blocks of similar text.</p>
 
-<p>Our <a href="/en/tools/hash-generator">free hash generator</a> creates SHA-256, MD5, SHA-1, and other hash values from any text or file. Here is what hashing actually does, why it is not encryption, and where it matters in ways you might not expect.</p>
+<p>Our <a href="/en/tools/text-diff">free text diff tool</a> compares two text blocks and highlights every addition, deletion, and modification — line by line, word by word. Here is how to use it for the three most common real-world scenarios.</p>
 
-<h2>Hashing vs encryption: the one-way street</h2>
+<h2>Scenario 1: Finding what broke the deploy</h2>
 
-<p>Encryption is two-way: you encrypt data with a key, and you decrypt it with a key. If you have the key, you can recover the original message. Hashing is one-way: you put data in, you get a fixed-length string out, and <strong>there is no mathematical way to recover the original input from the output</strong>.</p>
+<p>You have the working config file and the broken config file. Paste both into the <a href="/en/tools/text-diff">text diff tool</a> — original on the left, modified on the right. The tool highlights added lines in green, removed lines in red, and modified lines with inline character differences.</p>
 
-<p>This is why websites store hashed passwords, not encrypted passwords. If a database is breached, the attacker gets <code>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</code> — the SHA-256 hash of "password" — instead of "password" itself. They cannot reverse the hash to get the original. They have to guess passwords, hash each guess, and compare. That is why "password" is a terrible password — it is the first thing attackers guess.</p>
+<p>In 2 seconds, you see: line 47, <code>port: 5432</code> changed to <code>port: 5342</code>. That is the typo. You would have scanned past that 10 times in a manual comparison. The diff tool catches it instantly because it compares character by character, not impression by impression.</p>
 
-<h2>SHA-256: the current standard</h2>
+<h2>Scenario 2: Reviewing a contract revision</h2>
 
-<p>SHA-256 (Secure Hash Algorithm, 256-bit output) is the most widely used secure hash function. It produces a 64-character hexadecimal string. It is used in:</p>
+<p>A client sends back a revised contract. They say they "just fixed a few typos." You need to know if they changed anything substantive before you sign. Paste the original contract and the revised version into the diff tool.</p>
 
-<ul>
-<li><strong>Blockchain:</strong> Bitcoin uses double SHA-256 for proof-of-work mining and transaction verification.</li>
-<li><strong>TLS/SSL certificates:</strong> the padlock icon in your browser relies on SHA-256 to verify that the website you are connecting to is the real one, not an imposter.</li>
-<li><strong>File integrity verification:</strong> when you download Linux ISOs, software installers, or firmware updates, the SHA-256 checksum confirms the file was not corrupted or tampered with during download.</li>
-<li><strong>Git commits:</strong> every commit in a Git repository is identified by a SHA-1 hash (Git is migrating to SHA-256). The hash uniquely identifies the exact state of the code at that point in time.</li>
-</ul>
+<p>The tool shows: paragraph 8, sentence 3, "within 30 days" changed to "within 14 days." That is not a typo — that is a payment term change. The diff tool is a legal review assistant that costs nothing and misses nothing. For contracts, NDAs, terms of service, and any document where small wording changes have large consequences, a diff is essential.</p>
 
-<p>Our <a href="/en/tools/hash-generator">hash generator</a> computes SHA-256 instantly. Paste your text or upload a file, and you get the hash. Compare it to the published checksum — if they match, your download is intact.</p>
+<h2>Scenario 3: Debugging CSS or configuration drift</h2>
 
-<h2>MD5: why it is dead (but still everywhere)</h2>
+<p>Your staging environment works. Production does not. The code is identical — so the difference must be in configuration. Paste the staging config and the production config into the diff tool. Line 23: <code>NODE_ENV=staging</code> vs <code>NODE_ENV=production</code>. Line 89: <code>CACHE_TTL=3600</code> vs <code>CACHE_TTL=60</code>. Two differences found in 5 seconds. Without a diff tool, you would have compared these files manually for 20 minutes and probably missed the CACHE_TTL difference.</p>
 
-<p>MD5 produces a 32-character hexadecimal hash. It was designed in 1991 and was broken in 2004 — researchers found a way to create two different files with the same MD5 hash (a "collision"). This means an attacker could create a malicious file that has the same MD5 checksum as a legitimate file.</p>
+<h2>When manual comparison works better</h2>
 
-<p>Despite being cryptographically broken, MD5 is still used for non-security purposes:</p>
+<p>For files under 20 lines, manual comparison is faster than opening a diff tool. For files where the structure has changed completely (a full rewrite, not a modification), the diff will show every line as changed — which is technically correct but useless. Diff tools work best when the two versions are 80%+ identical and you need to find the 20% that changed.</p>
 
-<ul>
-<li><strong>Deduplication:</strong> comparing files by MD5 hash is fast. If two files have the same MD5, they are probably identical. This is fine for finding duplicate photos, not for verifying downloads.</li>
-<li><strong>Cache keys:</strong> some systems use MD5 hashes of URLs or query parameters as cache keys. Speed matters more than collision resistance here.</li>
-<li><strong>Legacy systems:</strong> older software that has not been updated still uses MD5 for password hashing. If your website still uses MD5 for passwords, stop everything and fix that first.</li>
-</ul>
+<p><strong>A common mistake:</strong> comparing files with different indentation or formatting. If one version uses tabs and the other uses spaces, every line will show as different. Run both files through our <a href="/en/tools/code-formatter">code formatter</a> first to normalize indentation and formatting, then diff them. You will get meaningful results instead of whitespace noise.</p>
 
-<p><strong>Rule of thumb:</strong> use SHA-256 for anything security-related. Use MD5 only for non-security tasks where speed matters more than collision resistance. And never use SHA-1 — it was broken in 2017 and should be treated the same as MD5.</p>
+<p>For formatting JSON before comparing, our <a href="/en/tools/json-formatter">JSON formatter</a> standardizes indentation. And for a guide to online developer tools, see our <a href="/en/blog/code-formatter-vs-prettier-vs-ide">code formatter versus Prettier versus IDE comparison</a>.</p>
+`,
+  },
+  {
+    slug: "color-names-beyond-red-green-blue",
+    title: "Color Names — From 'That Weird Blue-Green' to 'Teal' in One Search",
+    description: "You know the color you want but not its name. 'Burnt orange'? 'Terracotta'? 'Rust'? A color name lookup tool pinpoints the exact name — and the hex code — from visual input.",
+    date: "2026-06-27",
+    category: "Developer",
+    tags: ["color names", "color picker", "named colors", "CSS colors", "hex to name"],
+    relatedTools: ["color-names", "color-picker", "color-contrast-checker"],
+    content: `
+<p>You are writing CSS and need a specific shade of blue-green. You type <code>teal</code> — too dark. <code>aquamarine</code> — too light. <code>turquoise</code> — close but slightly off. You end up opening a color picker, finding the hex code, and typing <code>#48C9B0</code>. But what do you name the CSS variable? <code>--muted-teal</code>? <code>--sea-foam</code>? <code>--blue-greenish-thing</code>?</p>
 
-<h2>Real-world hash verification workflow</h2>
+<p>Our <a href="/en/tools/color-names">color names tool</a> maps hex codes to their closest named color. It turns "that specific shade I can see but cannot name" into a human-readable label — useful for CSS variables, design systems, and communicating with designers who think in names, not hex codes.</p>
 
-<ol>
-<li>Download a file (software installer, ISO, firmware).</li>
-<li>The download page shows a SHA-256 checksum: <code>a1b2c3d4...</code></li>
-<li>Upload the downloaded file to our <a href="/en/tools/hash-generator">hash generator</a> (or paste text content).</li>
-<li>Select SHA-256, generate the hash.</li>
-<li>Compare character by character. If they match exactly, the file is authentic and undamaged. If even one character differs, the file was either corrupted during download or tampered with.</li>
-</ol>
+<h2>The surprising usefulness of named colors</h2>
 
-<p>For generating secure passwords that produce strong hashes, our <a href="/en/tools/password-generator">password generator</a> creates cryptographically random credentials. And for unique identifiers that are not hashes, see our <a href="/en/tools/uuid-generator">UUID generator</a>.</p>
+<p>CSS supports 148 named colors — from <code>aliceblue</code> to <code>yellowgreen</code>. Most developers know maybe 20 of them. The rest are obscure but occasionally perfect: <code>gainsboro</code> (a light grey), <code>peru</code> (a warm brown), <code>thistle</code> (a pale purple), <code>cornsilk</code> (a yellowish white).</p>
+
+<p>Using named colors in prototypes has a real advantage: readability. <code>background: papayawhip</code> tells you what color it is without looking up a hex code. <code>background: #FFEFD5</code> tells you nothing until you preview it. For rapid prototyping where you will refine colors later, named colors are self-documenting.</p>
+
+<h2>Design system naming conventions</h2>
+
+<p>When building a design system, naming colors by their hex code is a maintenance nightmare. <code>--color-1A2B3C</code> means nothing. <code>--color-primary-600</code> is better but still abstract. <code>--color-slate-700</code> is best — it communicates both the hue family (slate = blue-grey) and the shade level (700 = relatively dark).</p>
+
+<p>Our <a href="/en/tools/color-names">color names tool</a> helps you find the right family name. Input <code>#64748B</code> and it returns "slate" or "storm grey" — now you have a semantic anchor for your design token naming. Combine the family name with a lightness scale (50-950, following Tailwind conventions), and your color system becomes both machine-parseable and human-readable.</p>
+
+<h2>Real scenarios where color names matter</h2>
+
+<p><strong>Communicating with non-technical stakeholders:</strong> "make the button #3B82F6" means nothing to a product manager. "Make the button blue, specifically this shade of blue — it is called 'royal blue'" communicates the intent and gives them a reference they can Google.</p>
+
+<p><strong>Writing documentation:</strong> "the error state uses <code>crimson</code> (#DC143C) for critical errors and <code>goldenrod</code> (#DAA520) for warnings." Documentation that only lists hex codes is unreadable. Documentation that pairs names with hex codes is skimmable.</p>
+
+<p><strong>Accessibility audits:</strong> "the <code>darkgray</code> text on <code>white</code> background fails WCAG AA." Named colors in audit reports make findings easier to discuss and fix than hex-code-only reports.</p>
+
+<p>For picking colors visually, our <a href="/en/tools/color-picker">color picker</a> extracts hex codes from any pixel on your screen. For checking contrast, see our <a href="/en/tools/color-contrast-checker">contrast checker</a>. And for the color picker versus contrast checker comparison, read our <a href="/en/blog/color-picker-vs-color-contrast-checker">guide to when you need each tool</a>.</p>
+`,
+  },
+  {
+    slug: "pregnancy-calculator-due-date-week-by-week",
+    title: "Pregnancy Calculator — Due Date, Trimesters, and What Each Week Actually Means",
+    description: "A due date is more than '9 months from now.' Pregnancy is counted in 40 weeks from the last period — not from conception. Here's why the math works that way and how to track each stage.",
+    date: "2026-06-27",
+    category: "Calculator",
+    tags: ["pregnancy calculator", "due date", "pregnancy weeks", "trimesters", "gestational age"],
+    relatedTools: ["pregnancy-calculator", "age-calculator", "bmi-calculator"],
+    content: `
+<p>You found out you are pregnant. The first question everyone asks: "When are you due?" You do some quick math — it is June, nine months from now is March, so… March? Then your doctor tells you the due date is actually calculated from your last menstrual period, not from conception, and suddenly your mental math is off by two weeks.</p>
+
+<p>Our <a href="/en/tools/pregnancy-calculator">free pregnancy calculator</a> gives you the due date, current week, trimester, and key milestones. Here is why the math works the way it does and what each stage actually means.</p>
+
+<h2>Why 40 weeks, not 9 months</h2>
+
+<p>Pregnancy is 40 weeks from the first day of your last menstrual period (LMP). Conception typically happens around week 2 of this count — during ovulation, roughly 14 days after the period started. So the first two weeks of "pregnancy" you are not actually pregnant yet. This sounds absurd, but it is the standard because the LMP date is usually known, while the exact conception date is usually not.</p>
+
+<p>This means when a pregnancy test shows positive at "4 weeks pregnant," the embryo has only existed for about 2 weeks. The math is confusing by design — it is a dating convention, not a biological measurement.</p>
+
+<h2>The three trimesters: what actually happens</h2>
+
+<p><strong>First trimester (weeks 1-13):</strong> all major organs and body systems form. The heart starts beating around week 6. By week 12, the fetus has fingers, toes, and a profile that looks recognizably human. This is also when miscarriage risk is highest (about 10-20% of known pregnancies), which is why many people wait until week 12 to announce.</p>
+
+<p><strong>Second trimester (weeks 14-27):</strong> the "golden period" for most people. Nausea typically subsides, energy returns, and the baby's movements become noticeable around weeks 18-22. The anatomy scan at week 20 checks all major structures and can usually determine sex if desired.</p>
+
+<p><strong>Third trimester (weeks 28-40):</strong> rapid weight gain, lung maturation, and preparation for birth. Babies born after 37 weeks are considered "full term." Babies born before 37 weeks are preterm and may need NICU support depending on how early they arrive.</p>
+
+<h2>Due date accuracy: it is an estimate</h2>
+
+<p>Only about 4% of babies arrive on their exact due date. The due date is the midpoint of a 5-week window: anytime between 37 and 42 weeks is considered "term." First-time mothers average 41 weeks + 1 day. The due date is useful for planning — when to stop working, when family should visit, when to schedule the last prenatal appointments — but it is not a deadline. The baby did not read the calendar.</p>
+
+<p><strong>Factors that shift the due date:</strong> irregular cycles make LMP-based dating less accurate (early ultrasound dating is more reliable), IVF pregnancies use the transfer date for precise dating, and twins typically arrive earlier (around 36-37 weeks on average).</p>
+
+<p>Our <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> gives you the standard 40-week estimate based on LMP. For more precise dating, your healthcare provider will use first-trimester ultrasound measurements, which are accurate to within 5-7 days.</p>
+
+<p>For calculating age after birth, our <a href="/en/tools/age-calculator">age calculator</a> gives exact years, months, and days. And for health metrics during pregnancy, our <a href="/en/tools/bmi-calculator">BMI calculator</a> provides pre-pregnancy BMI context.</p>
 `,
   },
 
@@ -304,4 +266,3 @@ else:
     print("ERROR: insertion marker not found")
     idx = content.rfind("];")
     print(f"Last '];' at index: {idx}")
-    print(content[idx-100:idx+100])
