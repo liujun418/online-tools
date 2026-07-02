@@ -1,4 +1,6 @@
-"""Add 6 blogs to free station (124→130) — June 30, 2026"""
+"""Add 6 blogs to free station (136→142) — July 2, 2026"""
+import os, sys
+
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,267 +10,231 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "lorem-ipsum-beyond-placeholder-text",
-    title: "Lorem Ipsum Generator — Beyond Placeholder Text, How Designers Actually Use Dummy Copy in Real Layouts",
-    description: "Lorem ipsum is not random gibberish — it's scrambled Latin from 45 BC. Here's why designers still use it, when real copy works better, and how to generate the right amount for any layout.",
-    date: "2026-06-30",
-    category: "Text",
-    tags: ["lorem ipsum", "placeholder text", "dummy copy", "design mockup", "content filler"],
-    relatedTools: ["lorem-ipsum", "word-counter", "text-to-slug"],
-    content: `
-<p>You are designing a website. The client has not sent the copy yet — they never have, they never will, not before the design deadline. You need text that looks like text so stakeholders focus on the layout, not the words. You type "Lorem ipsum dolor sit amet" and generate three paragraphs. The design meeting goes smoothly — nobody asks "what does this say," they ask about the spacing and the font choices. This is exactly what placeholder text is for.</p>
+    slug: "url-encoder-double-encoding-hidden-bug",
+    title: "URL Encoder Double Encoding The Hidden Bug That Breaks Your Links",
+    description: "Double encoding turns %20 into %2520 and breaks URLs silently. Here's why it happens, how to spot it, and how to fix it before your users notice.",
+    date: "2026-07-02",
+    category: "Developer Tools",
+    tags: ["URL encoder", "double encoding", "percent encoding", "query string", "web debugging"],
+    relatedTools: ["url-encoder", "url-decoder", "text-diff"],
+    content: `<p>You share a link with a colleague: <code>https://example.com/search?q=coffee+shop</code>. They click it and get a 404. You check the URL in their browser and see <code>%2520</code> where there should be a space. What happened? <strong>Double encoding</strong> — the URL got encoded twice, and now it's broken.</p>
 
-<p>Our <a href="/en/tools/lorem-ipsum">free lorem ipsum generator</a> produces dummy text in paragraphs, sentences, or words. Here is where lorem ipsum comes from, why it works better than "content goes here," and when you should use real copy instead.</p>
+<p>Double encoding is one of those bugs that's invisible in development, survives code review, and only appears when links pass through multiple systems. Here's how it happens and how to stop it.</p>
 
-<h2>Where lorem ipsum actually comes from</h2>
+<h2>How Double Encoding Happens</h2>
 
-<p>Lorem ipsum is not random. It is scrambled Latin from Cicero's "De Finibus Bonorum et Malorum" (On the Ends of Good and Evil), written in 45 BC. The original passage begins: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." A typesetter in the 1500s scrambled it to create a type specimen book. The scrambled version — starting with "Lorem ipsum" — became the printing industry's standard dummy text and survived into the digital age.</p>
+<p>URL encoding converts special characters into <code>%XX</code> format. A space becomes <code>%20</code>. An ampersand becomes <code>%26</code>. The problem starts when a URL that's already encoded passes through a second encoder.</p>
 
-<p><strong>Why it works:</strong> Latin looks like English from a distance (same alphabet, similar word lengths, similar letter frequency) but is not readable by English speakers. This is the key insight: placeholder text should look like real text without being readable. If you use "Content goes here, this is where the heading will be, the client will provide this later" — stakeholders read it. They comment on it. They ask "is this the actual copy?" Lorem ipsum prevents this because nobody reads Latin. The visual texture is preserved; the content is invisible.</p>
+<p>The second encoder sees the <code>%</code> character in <code>%20</code> and thinks "this percent sign needs to be encoded too." So it encodes <code>%</code> as <code>%25</code>, turning <code>%20</code> into <code>%2520</code>. Your browser now decodes <code>%25</code> back to <code>%</code>, leaving you with the literal string <code>%20</code> instead of a space.</p>
 
-<h2>When lorem ipsum is the right choice</h2>
+<p>This most commonly happens when: (1) your frontend encodes a query parameter, then your HTTP client encodes the entire URL again; (2) a redirect middleware re-encodes an already-encoded Location header; (3) you store encoded URLs in a database and encode them again on retrieval.</p>
 
-<p><strong>Early-stage wireframes and mockups:</strong> the layout is being decided. Font sizes, line heights, column widths, spacing — these need realistic text to evaluate. Lorem ipsum provides exactly the right visual weight without distracting anyone with meaning. Generate 2-3 paragraphs for body text, 3-5 words for headings, and 10-15 words for subheadings.</p>
+<h2>Spotting Double Encoding in the Wild</h2>
 
-<p><strong>Client presentations where copy is pending:</strong> the client needs to approve the design direction. If you use real copy, the meeting becomes about word choices. If you use lorem ipsum, the meeting stays about design. This is the single most practical benefit — it keeps stakeholders focused on what you are actually presenting.</p>
+<p>The telltale sign is <code>%25</code> in your URL. If you see <code>%2520</code>, <code>%2526</code>, or <code>%253D</code>, you're looking at double encoding. <code>%25</code> is the encoded version of <code>%</code>, so every double-encoded character starts with <code>%25</code>.</p>
 
-<p><strong>Font and typography testing:</strong> you are comparing two fonts and need to see how they handle real text density. Lorem ipsum provides consistent, neutral text that reveals kerning issues, line spacing problems, and readability differences without the content influencing your judgment.</p>
+<p>Quick diagnostic: decode the URL once. If the result still contains <code>%XX</code> sequences, decode it again. If the second decode produces readable text, you had double encoding. If the first decode already produces readable text, the URL was correctly single-encoded.</p>
 
-<h2>When real copy beats lorem ipsum</h2>
+<h2>The Query String Is the Most Common Victim</h2>
 
-<p><strong>Final design reviews:</strong> once the layout is approved, replace lorem ipsum with real copy. Real headlines are shorter or longer than placeholder ones. Real paragraphs have different rhythm. A design that looks perfect with lorem ipsum can break with real content — a headline that wraps to 3 lines instead of 1, a bullet list where items are uneven lengths. Test with real copy before development handoff.</p>
+<p>Query strings are where double encoding does the most damage. A user searches for "café & bakery" and the URL should be <code>?q=caf%C3%A9+%26+bakery</code>. If it gets double-encoded, <code>%C3%A9</code> becomes <code>%25C3%25A9</code> and your server receives gibberish.</p>
 
-<p><strong>Content-heavy pages:</strong> a blog post template, a product description page, an FAQ section. These live and die by their content. Designing them with lorem ipsum is designing in the dark — you are making layout decisions without knowing the content structure. Get real copy, or at least structurally realistic copy (actual questions for FAQ, actual product specs for product pages).</p>
+<p>This gets worse with <strong>multi-byte UTF-8 characters</strong>. Chinese, Arabic, and emoji characters produce multiple <code>%XX</code> sequences. Double-encoding a single Chinese character can produce 18+ characters of percent-encoded chaos.</p>
 
-<p><strong>Accessibility testing:</strong> screen readers read lorem ipsum as Latin. This tells you nothing about how a real user would experience the page. For accessibility reviews, use real or realistic copy in the correct language.</p>
+<h2>Prevention: Encode Once, At the Boundary</h2>
 
-<p><strong>SEO-critical pages:</strong> placeholder text on a landing page that accidentally goes live is an SEO disaster. Google indexes lorem ipsum, ranks it for nothing, and your page looks abandoned. Always replace placeholder text before publishing — and double-check that no lorem ipsum survived into production.</p>
+<p>The golden rule: <strong>encode at the last possible moment</strong>, when the URL leaves your system. Don't encode data before storing it in a database. Don't encode in your React state. Encode when you construct the final URL string that goes into an <code>&lt;a href&gt;</code> or <code>fetch()</code> call.</p>
 
-<p>For counting how many words of placeholder text you generated, our <a href="/en/tools/word-counter">word counter</a> checks paragraph and word counts. For converting placeholder headings to clean URL slugs, our <a href="/en/tools/text-to-slug">URL slug generator</a> handles the conversion. And for a guide to text tools, see our <a href="/en/blog/lorem-ipsum-generator-guide">lorem ipsum generator guide</a>.</p>
+<p>If you're building URLs programmatically, use the <code>URL</code> constructor or a URL-building library instead of string concatenation. <code>new URL('/search', base).searchParams.set('q', query)</code> handles encoding correctly and won't double-encode.</p>
+
+<p>For encoding URLs safely, use our <a href="/en/tools/url-encoder">URL encoder</a> which shows you exactly what gets encoded. For checking if a broken URL has been double-encoded, paste it into our <a href="/en/tools/text-diff">text diff tool</a> alongside the expected version. And for decoding URLs to see what they actually contain, decode in stages to spot the double-encoding layer.</p>
 `,
   },
   {
-    slug: "bing-wallpaper-4k-collection-guide",
-    title: "Bing Wallpaper Download — How to Build a Stunning 4K Wallpaper Collection Without Paying for Stock Photos",
-    description: "Bing updates its homepage image daily — a high-resolution photo from somewhere in the world. Here's how to download, organize, and use these images as wallpapers, screensavers, and design references.",
-    date: "2026-06-30",
-    category: "Reference",
-    tags: ["Bing wallpaper", "4K wallpaper", "daily wallpaper", "desktop background", "free wallpaper"],
-    relatedTools: ["bing-wallpaper", "nasa-apod", "pet-wallpaper"],
-    content: `
-<p>You search "free 4K wallpapers" and land on a site with 47 ads, 3 fake download buttons, and a 720p image labeled "4K." You just want a nice background for your desktop. Meanwhile, Microsoft has been quietly publishing a new high-resolution photograph every single day on Bing's homepage — no ads, no fake buttons, just genuinely good photography from around the world. You can download today's image in 30 seconds. You can also download the last week's images. Here is how to build a collection.</p>
+    slug: "text-diff-code-review-merge-conflict",
+    title: "Text Diff Code Review Merge Conflict Resolution Like a Senior Developer",
+    description: "How senior developers use text diff tools to review pull requests, resolve merge conflicts, and catch bugs that syntax highlighting hides.",
+    date: "2026-07-02",
+    category: "Developer Tools",
+    tags: ["text diff", "code review", "merge conflict", "PR review", "diff tool"],
+    relatedTools: ["text-diff", "json-formatter", "markdown-preview"],
+    content: `<p>Most developers use diff tools wrong. They scan the red and green lines in their PR, look for obvious mistakes, and click "Approve." Senior developers use diffs differently — they read them like a <strong>story of what changed and why</strong>, and they catch bugs that aren't visible in the final code.</p>
 
-<p>Our <a href="/en/tools/bing-wallpaper">free Bing wallpaper tool</a> shows today's image, the last 7 days, and download options in multiple resolutions. Here is how Bing's wallpaper system works, how to build a collection, and what these images are actually useful for beyond your desktop background.</p>
+<p>A good text diff tool shows you more than what lines were added and deleted. It shows you <strong>intent</strong>, <strong>side effects</strong>, and <strong>inconsistencies</strong> across a changeset. Here's how to read diffs at a senior level.</p>
 
-<h2>How Bing's daily image system works</h2>
+<h2>What to Look for in Every Diff</h2>
 
-<p>Every day, Bing features a new photograph on its homepage. These are not stock photos — they are curated from professional photographers, wildlife agencies, and cultural institutions worldwide. Each image includes metadata: location (where was this taken), photographer credit, a short description, and sometimes a quiz or trivia link related to the image subject.</p>
+<p><strong>Deleted error handling:</strong> A line of error checking was removed. Was it replaced with something better, or did the developer just delete it because it was annoying? If there's no replacement, that's a regression waiting to happen.</p>
 
-<p><strong>The resolution is genuine:</strong> Bing serves these images at up to 4K (3840×2160) resolution. This is not upscaled — the source photographs are high-resolution captures from professional equipment. For a desktop wallpaper on any monitor size, the quality is sufficient. For print, the resolution at 4K gives you about 13×7 inches at 300 DPI — fine for small prints, not for posters.</p>
+<p><strong>Changed constants:</strong> A timeout went from 5000ms to 1000ms. A retry count changed from 3 to 1. These look innocent in a diff but change system behavior dramatically. Every constant change needs a comment explaining why.</p>
 
-<p><strong>The curation is the hidden value:</strong> someone at Microsoft is selecting one photograph per day from thousands of submissions. The curation favors: stunning landscapes (New Zealand fjords, Norwegian northern lights, Patagonian peaks), wildlife close-ups (snow leopards, hummingbirds, sea turtles), architectural photography (Japanese temples, Italian coastal villages, modern landmarks), and cultural events (festivals, traditions, seasonal celebrations). The collection is globally diverse — it is not all Yosemite and the Eiffel Tower.</p>
+<p><strong>Copied code blocks:</strong> A 15-line block appears in the diff with minor variable name changes. That's duplicated logic. Flag it — it should be extracted into a function, not copy-pasted.</p>
 
-<h2>Building a wallpaper collection (beyond today's image)</h2>
+<p><strong>Accidental whitespace changes:</strong> A line shows as "changed" but only the indentation differs. This happens when someone's editor auto-formats code they didn't intend to modify. It clutters the diff and can mask real changes.</p>
 
-<p><strong>Download the last 7 days:</strong> our tool shows the current image plus the 6 previous days. Download the ones you like. In one week, you have 7 high-quality wallpapers — enough to rotate daily.</p>
+<h2>Resolving Merge Conflicts with Confidence</h2>
 
-<p><strong>Archive the images you like:</strong> Bing does not provide an official archive of past images (there are third-party archives, but their reliability varies). Save the images you want to keep — you cannot count on being able to find "that one photo of the Icelandic waterfall from last March" later.</p>
+<p>Merge conflicts happen when two branches changed the same lines. The diff shows you three versions: YOUR change, THEIR change, and the ORIGINAL. The key insight: <strong>don't just pick one side</strong>. Understand why both changes were made before deciding.</p>
 
-<p><strong>Organize by category:</strong> landscapes, wildlife, architecture, abstract, seasonal. After a few months, you will have 50-100 images. Categorizing them makes rotation easier — set your wallpaper to rotate through a specific category based on mood or season.</p>
+<p>A conflict on an import statement usually means both branches added a dependency. Keep both imports. A conflict on a function body is harder — one branch refactored the logic while the other added a feature. In that case, the refactored version needs to incorporate the feature addition, which means manual merging, not just picking a side.</p>
 
-<p><strong>Set up automatic rotation:</strong> both Windows and macOS support wallpaper slideshows. Point the slideshow at your Bing wallpaper folder, set the interval (1 hour, 6 hours, daily), and you have a constantly refreshing desktop. Combined with our tool's weekly downloads, your wallpaper collection stays current without manual effort.</p>
+<p>For complex conflicts, copy both versions into a side-by-side diff tool. Seeing them next to each other (not interleaved with conflict markers) makes the differences clearer and reduces the chance of losing someone's work.</p>
 
-<h2>What these images are useful for (beyond wallpaper)</h2>
+<h2>The Diff Check You're Probably Skipping</h2>
 
-<p><strong>Design reference and mood boards:</strong> Bing wallpapers are professionally composed photographs. The color palettes, lighting, and composition are reference-quality — useful for designers building mood boards, photographers studying composition, and artists collecting visual references. The location metadata tells you where each image was taken, which is useful for travel planning and location scouting.</p>
+<p>After resolving conflicts, <strong>diff the merge result against the original base branch</strong>. This shows you exactly what the merged code changed from the common ancestor. It catches: (1) code that was accidentally deleted during conflict resolution, (2) imports that were removed by one branch but still needed, and (3) duplicate code from both branches that wasn't deduplicated.</p>
 
-<p><strong>Video call backgrounds:</strong> a high-resolution landscape photo makes a better virtual background than your actual messy office. Bing wallpapers are ideal for this — wide-angle landscapes with clean compositions work perfectly as Zoom/Teams backgrounds.</p>
-
-<p><strong>Screen saver slideshows:</strong> if you still use a screen saver, a folder of Bing wallpapers on slideshow mode turns your idle screen into a rotating gallery of world-class photography.</p>
-
-<p><strong>What you cannot do:</strong> these images are licensed for personal use as wallpapers. They are not licensed for commercial use, redistribution, or incorporation into products. Microsoft's terms allow personal, non-commercial use. If you need images for a commercial project, use properly licensed stock photography.</p>
-
-<p>For space and astronomy wallpapers, our <a href="/en/tools/nasa-apod">NASA APOD viewer</a> shows NASA's Astronomy Picture of the Day. For animal wallpapers, our <a href="/en/tools/pet-wallpaper">pet wallpaper tool</a> provides animal photography. And for a comparison of daily image sources, see our <a href="/en/blog/nasa-apod-vs-bing-wallpaper-daily-images">NASA APOD vs Bing Wallpaper comparison</a>.</p>
+<p>For reviewing code changes, use our <a href="/en/tools/text-diff">text diff tool</a> with side-by-side view. For checking if JSON config files were changed correctly, our <a href="/en/tools/json-formatter">JSON formatter</a> pretty-prints nested data. And for reviewing documentation changes, our <a href="/en/tools/markdown-preview">Markdown preview</a> shows the rendered output.</p>
 `,
   },
   {
-    slug: "global-weather-read-forecast-meteorologist",
-    title: "Global Weather Checker — How to Read a 7-Day Forecast Like a Meteorologist, Not Just Check the Temperature",
-    description: "You check the weather, see '30% chance of rain,' and skip the umbrella. Then it rains. The problem is not the forecast — it is how you read it. Here's what each metric actually means.",
-    date: "2026-06-30",
-    category: "Reference",
-    tags: ["weather checker", "7-day forecast", "weather reading", "meteorology", "precipitation probability"],
-    relatedTools: ["global-weather", "unit-converter", "crypto-price"],
-    content: `
-<p>You open a weather app. It says 72°F, partly cloudy, 30% chance of rain. You think: "30% is low, I will skip the umbrella." Four hours later, you are walking home in the rain, annoyed at the "wrong" forecast. The forecast was not wrong — your interpretation was. A 30% chance of rain does not mean it will rain over 30% of the area or for 30% of the day. It means: on days with these exact atmospheric conditions, it rained 30% of the time. You rolled the dice and lost.</p>
+    slug: "color-names-hex-to-human-design-tokens",
+    title: "Color Names Hex to Human Readable Design Tokens for Your Design System",
+    description: "#1E90FF is dodgerblue, but what do you call your brand's specific shade? How color naming systems bridge the gap between hex codes and human-readable design tokens.",
+    date: "2026-07-02",
+    category: "Developer Tools",
+    tags: ["color names", "hex color", "design tokens", "CSS color", "design system"],
+    relatedTools: ["color-names", "color-picker", "color-contrast-checker"],
+    content: `<p>Open any CSS file and you'll find colors expressed three ways: hex codes like <code>#1E90FF</code>, RGB functions like <code>rgb(30, 144, 255)</code>, and named colors like <code>dodgerblue</code>. None of these tell you what the color <strong>means</strong> in your design system. Is <code>#1E90FF</code> your primary brand color, your link color, or your error state?</p>
 
-<p>Our <a href="/en/tools/global-weather">free global weather checker</a> shows temperature, precipitation, wind, humidity, and pressure for any city. Here is what each metric actually means, how to read a forecast like a meteorologist, and why "30% chance of rain" should probably make you bring the umbrella.</p>
+<p>This is the gap that <strong>design tokens</strong> fill — human-readable names that map to color values and carry semantic meaning. And a color name lookup tool is the bridge between the hex code your developer tools give you and the token name your design system expects.</p>
 
-<h2>Precipitation probability: the most misunderstood number in weather</h2>
+<h2>The Three Levels of Color Naming</h2>
 
-<p><strong>What PoP (Probability of Precipitation) actually means:</strong> it is the forecaster's confidence that rain will occur somewhere in the forecast area, multiplied by the percentage of the area expected to get rain. Confidence: 60%. Area coverage: 50%. PoP = 0.6 × 0.5 = 0.30 = 30%.</p>
+<p><strong>Level 1: CSS Named Colors.</strong> There are 148 named colors in CSS — red, dodgerblue, mediumspringgreen, papayawhip. They're fun but useless for design systems. "Dodgerblue" tells you nothing about when or where to use it. And 148 colors is a tiny fraction of the 16.7 million colors your screen can display.</p>
 
-<p><strong>What this means in practice:</strong> a 30% PoP is not "probably won't rain." It is "on 3 out of 10 days with these conditions, it rains somewhere in the forecast area." If you have 10 events planned this summer on days with a 30% PoP, 3 of them will likely get rained on. Bring the umbrella for any outdoor event where rain would ruin it — even at 20%.</p>
+<p><strong>Level 2: Design Token Names.</strong> These are semantic: <code>--color-primary-500</code>, <code>--color-surface-background</code>, <code>--color-text-muted</code>. The name tells you the color's <strong>role</strong> in the system. Primary-500 is the fifth shade in the primary palette. Text-muted is for secondary text. A designer can change the hex value of <code>--color-primary-500</code> from blue to green, and every component that uses it updates automatically.</p>
 
-<p><strong>The practical threshold:</strong> 0-20% = rain unlikely, skip umbrella unless the event is critical. 20-40% = rain possible, bring umbrella if getting wet would be more than mildly annoying. 40-60% = rain likely, bring umbrella. 60%+ = rain very likely, plan indoor alternatives.</p>
+<p><strong>Level 3: Functional Names.</strong> These are the most specific: <code>--color-button-primary-hover</code>, <code>--color-input-border-focus</code>, <code>--color-alert-error-background</code>. They map directly to a specific UI state. Functional names are verbose but impossible to misuse — a developer can't accidentally use the error color for a success message when the token is named <code>alert-error-background</code>.</p>
 
-<h2>Temperature is not what your skin feels</h2>
+<h2>Building the Bridge: Hex → Human</h2>
 
-<p><strong>Air temperature vs feels-like temperature:</strong> the air temperature is measured in the shade, 1.5 meters above ground, with no wind. Your skin does not experience this. Wind strips away the warm air layer next to your skin (wind chill). Humidity prevents sweat from evaporating, making it feel hotter (heat index). A 90°F day with 80% humidity feels like 113°F. A 30°F day with 20 mph wind feels like 17°F.</p>
+<p>Here's a scenario that happens constantly: your designer sends a Figma screenshot with a color circled and says "use this blue." You eyedropper it, get <code>#3B82F6</code>, and now need to know: is this already in our design system? What's the closest named CSS color? What should the token name be?</p>
 
-<p><strong>What to actually check:</strong> look at the "feels like" or "apparent" temperature, not the air temperature. This is the number that determines whether you need a jacket, whether your run will be miserable, and whether it is safe to exercise outdoors. The air temperature is a scientific measurement; the feels-like temperature is what your body experiences.</p>
+<p>A color name lookup tool answers all three. <code>#3B82F6</code> is closest to "dodgerblue" (CSS name), might already be <code>blue-500</code> in your system, and could be named <code>--color-action-primary</code> if it's used for primary buttons and links.</p>
 
-<h2>Wind speed and direction: the forecast within the forecast</h2>
+<h2>When Named Colors Beat Hex Codes</h2>
 
-<p><strong>Wind direction tells you what weather is coming:</strong> wind from the north (in the northern hemisphere) typically brings colder air. Wind from the south brings warmer, moister air. Wind from the west (in mid-latitudes) typically means weather systems are moving through — expect changes. Wind from the east can mean a stalled weather pattern. The wind direction is a crude but useful predictor of the next 12-24 hours.</p>
+<p>Hex codes are precise but <strong>impossible to discuss verbally</strong>. "Change the button to three-B-eight-two-F-six" is not a conversation anyone wants to have. Named colors are less precise but communicable: "use the primary blue, two shades darker." Design tokens give you both: the precision of a hex code and the communicability of a name.</p>
 
-<p><strong>Wind speed practical thresholds:</strong> 0-5 mph = calm, barely noticeable. 5-15 mph = breezy, pleasant for walking. 15-25 mph = windy, cycling becomes effort-dependent on direction, hats become projectiles. 25-35 mph = difficult to walk against, umbrellas are useless, small branches break. 35+ mph = stay indoors unless necessary, driving becomes hazardous for high-profile vehicles.</p>
-
-<h2>Atmospheric pressure: the trend that predicts rain</h2>
-
-<p><strong>Falling pressure = weather is getting worse.</strong> Rising pressure = weather is improving. The absolute pressure number matters less than the trend over the last 3-6 hours. A rapid pressure drop (more than 3 hPa in 3 hours) signals an approaching storm system. A steady rise signals clearing skies.</p>
-
-<p><strong>The amateur meteorologist's trick:</strong> check the pressure trend, not the absolute number. If pressure is falling and the wind is from the south (bringing moisture), rain is likely in the next 12-24 hours regardless of what the precipitation percentage says right now. The percentage will catch up as the system approaches — the pressure trend gives you advance warning.</p>
-
-<p>For converting between Celsius and Fahrenheit (most weather services let you switch, but if not), our <a href="/en/tools/unit-converter">unit converter</a> handles temperature conversions. For checking if weather is affecting crypto markets (extreme weather impacts mining and energy prices), our <a href="/en/tools/crypto-price">crypto price tracker</a> shows market movements. And for a guide to weather checking, see our <a href="/en/blog/global-weather-checker-guide">global weather checker guide</a>.</p>
+<p>For finding the name of any hex color, use our <a href="/en/tools/color-names">color names finder</a> which maps hex codes to CSS names and closest matches. For picking colors visually, our <a href="/en/tools/color-picker">color picker</a> gives you the hex code and RGB values. And for checking if your color combinations are accessible, our <a href="/en/tools/color-contrast-checker">color contrast checker</a> validates WCAG compliance.</p>
 `,
   },
   {
-    slug: "remove-duplicate-lines-vs-excel-dedup",
-    title: "Remove Duplicate Lines vs Excel Remove Duplicates — When a 2-Second Browser Tool Beats a Spreadsheet",
-    description: "Excel's Remove Duplicates works on rows, requires the data to be in a spreadsheet, and takes 5 clicks. A browser-based dedup tool works on any text you paste. Here's when each approach wins.",
-    date: "2026-06-30",
-    category: "Text",
-    tags: ["remove duplicate lines", "Excel dedup", "deduplicate text", "text cleaning", "data cleanup"],
-    relatedTools: ["remove-duplicate-lines", "json-to-csv", "word-counter"],
-    content: `
-<p>You have a list of 5,000 email addresses. Some appear twice. You need to deduplicate them. You could: open Excel, import the CSV, select the column, click Data > Remove Duplicates, confirm the dialog, export back to CSV — about 90 seconds and 8 clicks. Or you could paste the list into a browser tool, click one button, and copy the result — about 3 seconds. The output is identical. The time is not.</p>
+    slug: "json-to-csv-nested-data-flattening",
+    title: "JSON to CSV Nested Data Flattening vs Manual Excel Import",
+    description: "Nested JSON objects and arrays don't fit into flat CSV columns. Here's how flattening strategies compare to manual Excel data import for real-world datasets.",
+    date: "2026-07-02",
+    category: "Developer Tools",
+    tags: ["JSON to CSV", "nested JSON", "data flattening", "Excel import", "data pipeline"],
+    relatedTools: ["json-to-csv", "json-formatter", "csv-to-json"],
+    content: `<p>You exported your analytics data as JSON. It's a 200MB file with nested objects three levels deep. You need to open it in Excel for your manager, who wants a pivot table by end of day. You have two choices: (1) manually flatten it in Excel for four hours, or (2) use a <strong>JSON to CSV converter</strong> that handles nested data in 30 seconds.</p>
 
-<p>Our <a href="/en/tools/remove-duplicate-lines">free remove duplicate lines tool</a> deduplicates any text list instantly. Here is when the browser tool wins, when Excel (or Google Sheets) wins, and how to pick the right tool for your specific dedup scenario.</p>
+<p>The catch: JSON to CSV conversion of nested data isn't straightforward. You have to make decisions about how to flatten the structure, and each decision has trade-offs.</p>
 
-<h2>When the browser tool wins</h2>
+<h2>The Problem: JSON Trees vs CSV Tables</h2>
 
-<p><strong>Quick one-off dedup:</strong> someone Slack'd you a list. You need the unique values. You do not need a spreadsheet — you need this one operation on this one list. Paste, dedup, copy, done. The browser tool has zero setup cost. Excel has a setup cost (open app, import data, format columns) that is justified for complex operations but not for one click.</p>
+<p>JSON is a <strong>tree</strong>. Each object can contain other objects and arrays, which can contain more objects and arrays, to any depth. CSV is a <strong>table</strong>. Each row has the same columns, and each cell contains a single value. Converting a tree to a table requires <strong>flattening</strong> — deciding how to collapse nested structures into flat columns.</p>
 
-<p><strong>Text that is not tabular:</strong> a list of URLs, a list of hashtags, a list of names — single-column data with no structure. Excel treats this as a 1-column spreadsheet, which works but is overkill. The browser tool treats it as text — which is what it actually is.</p>
+<p>Consider a user object with an address: <code>{"name": "Alice", "address": {"street": "123 Main", "city": "Springfield", "zip": "62701"}}</code>. The simplest flattening creates columns like <code>address.street</code>, <code>address.city</code>, <code>address.zip</code>. This works for one level of nesting but gets unwieldy fast.</p>
 
-<p><strong>Dedup as part of a text processing pipeline:</strong> you are cleaning data before pasting it into another tool. Remove duplicates → count words → convert to JSON. Each step is a browser tool. Chaining browser tools is faster than importing to Excel, doing one operation, exporting, and importing to the next tool.</p>
+<h2>Arrays: The Real Headache</h2>
 
-<p><strong>Case-sensitive vs case-insensitive dedup:</strong> "John@Email.com" and "john@email.com" — are these duplicates? Email addresses are case-insensitive (they are duplicates). Names might be case-sensitive (John Smith and john smith could be different people). A good browser dedup tool lets you choose. Excel's Remove Duplicates is case-insensitive by default with no toggle.</p>
+<p>Objects nest neatly into dot-notation columns. Arrays are messier. A user with multiple phone numbers — <code>["555-0100", "555-0101"]</code> — doesn't fit into a single cell. Your options:</p>
 
-<h2>When Excel wins</h2>
+<p><strong>Explode into multiple rows:</strong> Create one row per array element. Alice with two phone numbers becomes two rows, each with one phone number and the rest of Alice's data duplicated. This preserves all data but inflates row count and makes aggregation harder.</p>
 
-<p><strong>Multi-column dedup:</strong> you need to remove rows where columns A, B, AND C are all identical — but rows where only A and B match should be kept. Excel's Remove Duplicates lets you select which columns to consider. Browser dedup tools work on one column at a time. For relational dedup, use a spreadsheet or database.</p>
+<p><strong>Join into a single cell:</strong> Store all phone numbers in one cell, separated by commas or pipes: <code>555-0100|555-0101</code>. This keeps one row per user but breaks Excel's ability to filter or sort by phone number.</p>
 
-<p><strong>Dedup with aggregation:</strong> you have duplicate customer entries and need to merge them — sum the purchase amounts, keep the most recent contact date, concatenate the notes. This is not dedup; it is dedup with aggregation. Excel (Power Query) or SQL handles this. Browser dedup tools only dedup.</p>
+<p><strong>Explode into multiple columns:</strong> Create <code>phone_0</code>, <code>phone_1</code>, <code>phone_2</code> columns up to the maximum array length. Clean but fragile — add a user with three phone numbers and your schema breaks.</p>
 
-<p><strong>Large datasets (100K+ rows):</strong> browser tools process text in memory. Paste 200,000 lines and the browser tab may freeze. Excel handles millions of rows. For large datasets, use the right tool for the scale.</p>
+<h2>Flattening Strategy Decision Tree</h2>
 
-<p><strong>Data you are already working with in a spreadsheet:</strong> if the data is already in Excel and you are doing other spreadsheet operations, use Excel's dedup. Switching to a browser tool mid-workflow costs more in context switching than it saves in clicks.</p>
+<p><strong>Use dot-notation columns</strong> (address.city) when: nesting depth ≤ 3, every object has the same keys, and column count stays under 50. This is the most Excel-friendly format.</p>
 
-<h2>The dedup edge cases that break both tools</h2>
+<p><strong>Use row explosion</strong> when: arrays contain the primary data you need to analyze, each array element is independently meaningful, and you're loading into a database or BI tool (not Excel).</p>
 
-<p><strong>Whitespace differences:</strong> "hello" and "hello " (trailing space) are different strings. The browser tool and Excel both treat them as unique. Solution: trim whitespace before dedup. Most browser tools have a trim option; in Excel, use =TRIM() first.</p>
+<p><strong>Use JSON columns</strong> (keep nested objects as JSON strings in cells) when: the nested data is metadata that won't be filtered or sorted, and you need to preserve the exact original structure for later programmatic processing.</p>
 
-<p><strong>Line ending differences:</strong> Windows (CR+LF), Mac (LF), Linux (LF) — a list pasted from a Windows text file might have invisible carriage returns. These make otherwise identical lines look different to the dedup algorithm. Solution: normalize line endings first. Good browser tools handle this automatically.</p>
+<h2>Manual Excel vs Automated Conversion</h2>
 
-<p><strong>Unicode normalization:</strong> "café" can be represented as "café" (single character) or "cafe" + combining accent (two characters). They look identical but are different strings. Most dedup tools do not normalize Unicode. Solution: if you are working with accented or non-Latin text, verify the dedup result manually on a sample before trusting it on the full dataset.</p>
+<p>Excel's "Get Data from JSON" (Power Query) handles one level of nesting automatically. Beyond that, you're manually expanding columns and writing M formulas. For a one-time conversion of a small file, Power Query is fine. For anything you'll do more than once, or files over 10MB, automated JSON to CSV conversion saves hours and produces consistent results.</p>
 
-<p>For converting deduplicated lists between formats, our <a href="/en/tools/json-to-csv">JSON to CSV converter</a> handles format conversion. For counting how many duplicates were removed, our <a href="/en/tools/word-counter">word counter</a> shows before and after line counts. And for a guide to text cleaning, see our <a href="/en/blog/remove-duplicate-lines-from-text">remove duplicate lines from text guide</a>.</p>
+<p>For converting nested JSON to CSV, use our <a href="/en/tools/json-to-csv">JSON to CSV converter</a> with flattening options. For inspecting the JSON structure before conversion, our <a href="/en/tools/json-formatter">JSON formatter</a> shows the full tree. And for converting CSV back to JSON after Excel editing, our <a href="/en/tools/csv-to-json">CSV to JSON converter</a> handles the reverse direction.</p>
 `,
   },
   {
-    slug: "fancy-text-generator-vs-custom-font",
-    title: "Fancy Text Generator vs Custom Web Font — Unicode Styles That Work Everywhere vs Fonts That Break on Half Your Audience's Devices",
-    description: "A custom font looks perfect on your machine and broken on 30% of your audience's devices. Unicode fancy text renders identically everywhere — Instagram, Twitter, email subject lines, even plain text files. Here's the tradeoff.",
-    date: "2026-06-30",
-    category: "Text",
-    tags: ["fancy text", "Unicode styles", "custom font", "text styling", "Instagram fonts"],
-    relatedTools: ["fancy-text-generator", "case-converter", "translate"],
-    content: `
-<p>You find a beautiful custom font for your Instagram bio. You install it, type your bio, screenshot it, post it. It looks amazing. Then someone opens your profile on an Android phone that does not have that font installed. They see a fallback font — probably Arial or Roboto — that completely changes the spacing, the weight, and the vibe of your carefully designed bio. Your font choice reached exactly one person: you. Everyone else saw the fallback.</p>
+    slug: "stopwatch-timer-deep-work-focus",
+    title: "Stopwatch Timer Deep Work Focus Sessions vs Pomodoro Apps",
+    description: "Pomodoro apps enforce 25-minute blocks. A simple stopwatch lets you measure real focus duration. Here's when each approach produces better deep work.",
+    date: "2026-07-02",
+    category: "Fun & Media",
+    tags: ["stopwatch", "timer", "deep work", "Pomodoro", "productivity", "focus"],
+    relatedTools: ["stopwatch-and-timer", "reaction-test", "scoreboard"],
+    content: `<p>The Pomodoro Technique is the default productivity advice: work for 25 minutes, take a 5-minute break, repeat. Apps enforce this rhythm with timers, notifications, and streak tracking. And for many people, it's the wrong approach.</p>
 
-<p>Our <a href="/en/tools/fancy-text-generator">fancy text generator</a> creates styled text using Unicode characters — not fonts. Unicode text renders identically on every device, every app, every platform. Here is the tradeoff between Unicode styles and custom fonts, and why Unicode wins for anywhere you cannot control the rendering environment.</p>
+<p>A simple <strong>stopwatch</strong> — one that counts UP, not down — can be a better tool for deep work. Here's why, and when to use each approach.</p>
 
-<h2>Unicode styles vs fonts: the fundamental difference</h2>
+<h2>The Problem with Fixed Intervals</h2>
 
-<p><strong>Fonts are software:</strong> a font file (.ttf, .otf, .woff2) contains instructions for how to draw each character. If the reader's device has the font installed (or the website loads it), they see your intended style. If not, they see a fallback. On the web, you can load custom fonts with @font-face — but this adds 50-200KB to your page load, may be blocked by ad blockers or corporate firewalls, and does not work in email, messaging apps, or social media bios.</p>
+<p>The 25-minute Pomodoro block was chosen arbitrarily by Francesco Cirillo in the 1980s using a tomato-shaped kitchen timer. It has no scientific basis. And the research we do have on attention spans suggests that <strong>focus duration varies dramatically</strong> by person, task, time of day, and experience level.</p>
 
-<p><strong>Unicode styles are characters:</strong> Unicode contains pre-styled character variants in specific blocks. 𝔗𝔥𝔦𝔰 is not "This" in a fancy font — it is a sequence of Mathematical Fraktur characters (U+1D513 through U+1D522). They are regular Unicode characters, just in a different code block. Any system that supports Unicode (all modern systems) renders them correctly — no font file needed, no fallback, no compatibility issues.</p>
+<p>A 25-minute timer interrupts you just as you're reaching <strong>flow state</strong> — the mental state where you're fully immersed and producing your best work. Cal Newport's research on deep work suggests that flow takes 15-20 minutes to achieve. A 25-minute Pomodoro gives you 5-10 minutes of actual flow before the timer breaks it.</p>
 
-<p><strong>The tradeoff:</strong> Unicode styles are limited to the character sets defined in the Unicode standard (bold, italic, bold italic, script, fraktur, monospace, circled, squared, and a few others — maybe 20 styles total). Custom fonts give you unlimited styles — but only for the subset of your audience whose devices can render them. Unicode gives you 20 styles that work for 100% of your audience. Fonts give you unlimited styles that work for 60-90% of your audience. Choose based on reach vs variety.</p>
+<p>Worse, the timer creates <strong>deadline anxiety</strong>. You watch the countdown: 8 minutes left, 5 minutes, 2 minutes. Your brain shifts from "solve the problem" to "beat the clock." That's productive for email triage, destructive for creative problem-solving.</p>
 
-<h2>Where Unicode fancy text wins (every time)</h2>
+<h2>What a Stopwatch Does Better</h2>
 
-<p><strong>Social media bios and posts:</strong> Instagram, Twitter, TikTok, LinkedIn — none let you change fonts. All support Unicode. A Unicode-styled bio renders correctly on every device. A font-based bio (screenshot as image) is not searchable text, not accessible to screen readers, and looks blurry on high-DPI screens.</p>
+<p>A stopwatch counts UP. You click "start" when you begin focused work and "stop" when you finish or get interrupted. There's no countdown, no deadline, no anxiety about the remaining time. You just measure how long you actually focused.</p>
 
-<p><strong>Email subject lines:</strong> email clients strip custom fonts from subject lines. Unicode characters survive. A 𝕭𝖔𝖑𝖉 subject line renders bold in Gmail, Outlook, Apple Mail, and every other client. Use sparingly — overusing fancy text in subject lines triggers spam filters and looks desperate. One styled word for emphasis works; an entire styled subject line does not.</p>
+<p>After a week of stopwatch tracking, you learn your <strong>actual focus patterns</strong>: you can sustain 90 minutes in the morning but only 20 minutes after lunch. You do your best coding between 9-11am and your best writing between 2-3pm. A Pomodoro app can't tell you this — it imposes a schedule instead of revealing your natural rhythm.</p>
 
-<p><strong>Messaging apps:</strong> WhatsApp, Telegram, Signal, iMessage — Unicode works. Custom fonts do not. If you want to send a styled message that looks the same on the recipient's phone as it does on yours, Unicode is the only option.</p>
+<p>The stopwatch also creates <strong>accountability without pressure</strong>. Seeing "42 minutes" on the clock when you get distracted is a gentle nudge to get back to work. Seeing "3 minutes left" on a Pomodoro timer is permission to slack off until the break.</p>
 
-<p><strong>Plain text environments:</strong> .txt files, code comments, terminal output, CSV files — these have no font support at all. Unicode fancy text is the only way to add visual hierarchy to plain text. Use bold Unicode for headers, italic for emphasis, monospace for code — all in a .txt file.</p>
+<h2>When Pomodoro Actually Works</h2>
 
-<h2>Where custom fonts still win</h2>
+<p>Pomodoro shines for <strong>tasks you're avoiding</strong>. When you really don't want to start something, "just 25 minutes" is psychologically manageable. It's also good for <strong>shallow work</strong> — email, admin, meetings prep — where flow state isn't relevant and frequent context switches are fine.</p>
 
-<p><strong>Brand identity on your own website:</strong> your brand font is part of your visual identity. Unicode cannot replicate your brand's custom typeface. Load your brand font with @font-face on your website — the performance cost is worth the brand consistency. But provide a reasonable fallback stack for the 5-10% of visitors whose browsers or networks block custom fonts.</p>
+<p>For deep work (coding, writing, designing, problem-solving), switch to a stopwatch. Start it, work until your attention naturally flags, and stop. Over time, you'll extend your focus duration — not because a timer told you to, but because you trained your attention span.</p>
 
-<p><strong>Print design:</strong> Unicode fancy text is screen-only. Print requires actual fonts with proper kerning, ligatures, and weight variations. Do not use Unicode mathematical letters in a printed document — the spacing will be wrong and the result will look amateurish.</p>
-
-<p><strong>Long-form reading:</strong> more than 1-2 words of Unicode fancy text is hard to read. The characters are designed for mathematical notation, not reading. Screen readers may spell out Mathematical Fraktur characters letter by letter instead of reading them as words — an accessibility disaster. Use fancy text for short emphasis (headlines, bios, captions), not for body text.</p>
-
-<p>For converting fancy text between cases, our <a href="/en/tools/case-converter">case converter</a> handles uppercase, lowercase, and title case. For translating fancy text (Unicode survives translation), our <a href="/en/tools/translate">online translator</a> preserves Unicode styling. And for a guide to Unicode text styles, see our <a href="/en/blog/what-is-fancy-text-generator">what is fancy text generator guide</a>.</p>
+<p>For tracking your focus sessions, use our <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> with both count-up and countdown modes. For measuring your mental performance after focus sessions, our <a href="/en/tools/reaction-test">reaction time test</a> shows cognitive fatigue. And for tracking scores in focus challenges with colleagues, our <a href="/en/tools/scoreboard">scoreboard</a> adds friendly competition.</p>
 `,
   },
   {
-    slug: "roi-calculator-irr-payback-period-difference",
-    title: "What ROI Actually Measures — The Difference Between ROI, IRR, and Payback Period and When to Use Each",
-    description: "ROI says your investment returned 50%. IRR says it returned 18% annually. Payback period says you'll break even in 3 years. They are all 'right' — here's what each metric actually tells you and which to use.",
-    date: "2026-06-30",
-    category: "Calculator",
-    tags: ["ROI", "IRR", "payback period", "investment metrics", "return on investment"],
-    relatedTools: ["roi-calculator", "compound-interest", "percentage-calculator"],
-    content: `
-<p>You invest $10,000 in a side business. After 3 years, you have made $15,000 in profit. Your ROI is 150% — sounds great. Your IRR is about 36% annually — also great. Your payback period was 2 years. Three different numbers, all describing the same investment, all technically correct. Which one should you use when someone asks "was it worth it?" The answer: it depends on what you are comparing it to. Each metric answers a different question.</p>
+    slug: "coin-flip-psychology-trust-random",
+    title: "The Psychology of Coin Flips Why We Trust a 50-50 Chance to Make Decisions",
+    description: "Coin flips don't actually produce 50-50 results. But the psychology of why we trust them to make hard decisions reveals something deeper about human nature.",
+    date: "2026-07-02",
+    category: "Fun & Media",
+    tags: ["coin flip", "randomness", "decision psychology", "probability", "cognitive bias"],
+    relatedTools: ["coin-flip", "random-number-generator", "dice-roller"],
+    content: `<p>You're torn between two choices — take the job offer or stay, move to the new city or don't, say yes or no. Someone says "just flip a coin." You flip, it lands on heads, and suddenly you know what you wanted all along — not because the coin decided, but because your <strong>emotional reaction to the result</strong> revealed your true preference.</p>
 
-<p>Our <a href="/en/tools/roi-calculator">free ROI calculator</a> computes return on investment. But ROI is one of several metrics, and using the wrong one leads to bad decisions. Here is what each metric actually measures, when to use each, and how to avoid the most common metric-manipulation tricks.</p>
+<p>This is the paradox of coin flips: they work not because they're random, but because they <strong>surface what you already want</strong>. And the psychology behind why we trust a piece of metal to make life decisions is more interesting than the probability.</p>
 
-<h2>ROI (Return on Investment): the simplest metric, the easiest to manipulate</h2>
+<h2>Coins Aren't Actually 50-50</h2>
 
-<p><strong>Formula:</strong> (Gain - Cost) / Cost × 100. A $10,000 investment that returns $15,000 has an ROI of 50%.</p>
+<p>Let's get the math out of the way first. A coin flip is not a perfect 50-50 proposition. Stanford mathematician Persi Diaconis showed that a coin has about a <strong>51% chance of landing on the same side it started on</strong>. The bias comes from precession — the coin wobbles as it spins, spending slightly more time with the starting side facing up.</p>
 
-<p><strong>What it tells you:</strong> how much total return you got relative to what you put in. Simple, intuitive, universally understood.</p>
+<p>This 1% bias is small enough that it doesn't matter for decision-making, but it means coin flips are not truly random. They're <strong>chaotic</strong> — deterministic in principle but unpredictable in practice because the initial conditions (force, angle, air resistance) are too complex to measure precisely.</p>
 
-<p><strong>What it hides:</strong> time. A 50% ROI over 1 year is excellent. A 50% ROI over 20 years is terrible (about 2% annualized). ROI without a time period is meaningless — but most people report ROI without specifying the time period. This is the most common metric manipulation: "Our fund returned 80%!" (over 15 years — about 4% annually, which is below market average).</p>
+<h2>Why We Trust Coins for Decisions</h2>
 
-<p><strong>When to use:</strong> comparing investments of different sizes over the same time period. $1,000 returning $1,500 (50% ROI) vs $10,000 returning $13,000 (30% ROI) — both over 1 year. The smaller investment had a higher ROI. But if the time periods differ, ROI is the wrong metric.</p>
+<p>Coin flips work for three psychological reasons that have nothing to do with probability.</p>
 
-<h2>IRR (Internal Rate of Return): the metric that accounts for time</h2>
+<p><strong>First: decision fatigue relief.</strong> When you've been weighing pros and cons for hours, your brain is exhausted. The coin offloads the decision to an external agent. It's not that the coin is wise — it's that <strong>any decision feels better than no decision</strong>, and the coin breaks the stalemate.</p>
 
-<p><strong>What it tells you:</strong> the annualized return rate, accounting for the timing of every cash flow. If you invested $10,000, received $3,000 after year 1, $5,000 after year 2, and $7,000 after year 3, your IRR is about 20% — meaning the investment grew at roughly 20% per year, compounding.</p>
+<p><strong>Second: the reaction test.</strong> The moment the coin lands, you feel either relief or disappointment. That flash of emotion is your true preference revealing itself. If it lands on "take the job" and your stomach drops, you didn't actually want the job. The coin didn't make the decision — it <strong>made your hidden preference visible</strong>.</p>
 
-<p><strong>Why it is better than ROI for multi-year investments:</strong> IRR accounts for when money goes in and when it comes out. Two investments with the same total ROI can have very different IRRs if one returned money faster. Money returned in year 1 is worth more than money returned in year 5 (you can reinvest it). IRR captures this; ROI does not.</p>
+<p><strong>Third: blame deflection.</strong> If the decision goes badly, you can blame the coin. This sounds silly, but it reduces anticipatory anxiety enough to actually make the decision. The coin absorbs the fear of being wrong.</p>
 
-<p><strong>When to use:</strong> comparing investments with different time horizons. A 3-year investment with 50% ROI vs a 5-year investment with 60% ROI — which is better? ROI says the 60% one. IRR might show the 3-year one was better (higher annualized return). Always use IRR (or CAGR for simple cases) when comparing investments of different durations.</p>
+<h2>When NOT to Flip a Coin</h2>
 
-<h2>Payback Period: the metric that measures risk, not return</h2>
+<p>Don't flip a coin for: decisions with asymmetric consequences (the downside of one option is catastrophic), decisions that affect other people without their input, decisions that are reversible (just pick one and change later if needed), and decisions where you have time to gather more information (uncertainty is not the same as indifference).</p>
 
-<p><strong>What it tells you:</strong> how long until you get your original investment back. Invest $10,000, earn $5,000/year profit — payback period is 2 years.</p>
+<p>Do flip a coin for: decisions where both options are genuinely acceptable, decisions where you've been stuck for more than 24 hours, and decisions where the cost of delay exceeds the cost of a wrong choice.</p>
 
-<p><strong>Why it matters:</strong> payback period measures risk, not return. A shorter payback period means you recover your money faster, which means less exposure to things going wrong. Two investments might have the same ROI and IRR, but the one with the 1-year payback is less risky than the one with the 5-year payback — you can walk away sooner if conditions change.</p>
-
-<p><strong>When to use:</strong> evaluating risk, especially for small businesses and side projects. "How long until I get my money back if this goes wrong?" is a different question from "how much will I make if this goes right?" Payback period answers the first question. ROI and IRR answer the second. Both questions matter.</p>
-
-<h2>The metric manipulation playbook (what to watch for)</h2>
-
-<p><strong>ROI without time period:</strong> "200% ROI!" (over 30 years = 3.7% annualized). Always ask "over what time period?" If they will not say, they are hiding weak annualized returns.</p>
-
-<p><strong>ROI on revenue, not profit:</strong> "We generated $1M in revenue on a $100K investment — 900% ROI!" Revenue is not profit. If costs were $900K, the actual ROI is 100%. Always check whether "return" means revenue or profit.</p>
-
-<p><strong>IRR with unrealistic reinvestment assumption:</strong> IRR assumes you can reinvest interim cash flows at the same rate. If an investment shows 40% IRR, it assumes you can reinvest the year-1 returns at 40% too — which may not be realistic. For investments with very high IRRs, use MIRR (Modified IRR) which assumes a more realistic reinvestment rate.</p>
-
-<p><strong>Cherry-picked time periods:</strong> "The fund returned 25% last year!" (It returned -10% the year before and 5% the year before that. The 5-year average is 8%.) Always ask for multi-year performance, not single-year highlights.</p>
-
-<p>For modeling compound growth over time, our <a href="/en/tools/compound-interest">compound interest calculator</a> shows how regular investments grow. For quick percentage calculations, our <a href="/en/tools/percentage-calculator">percentage calculator</a> handles ROI math. And for a guide to ROI calculations, see our <a href="/en/blog/roi-calculator-vs-manual-spreadsheet">ROI calculator vs spreadsheet comparison</a>.</p>
+<p>For your next tough decision, use our <a href="/en/tools/coin-flip">coin flip tool</a> — and pay attention to how you feel about the result. For generating random numbers for more complex decisions, our <a href="/en/tools/random-number-generator">random number generator</a> handles custom ranges. And for probability-based decision-making with multiple outcomes, try our <a href="/en/tools/dice-roller">dice roller</a>.</p>
 `,
   },
 
@@ -276,12 +242,15 @@ new_blogs = r"""
 
 export function getBlogPosts(): BlogPost[]"""
 
-if old in content:
-    content = content.replace(old, new_blogs)
-    with open(BLOG_FILE, "w", encoding="utf-8") as f:
-        f.write(content)
-    print("OK: 6 blogs inserted into free station blog.ts (124→130)")
-else:
-    print("ERROR: insertion marker not found")
-    idx = content.rfind("];")
-    print(f"Last '];' at index: {idx}")
+if old not in content:
+    print("ERROR: marker not found in free station blog.ts!")
+    print("Looking for:", repr(old))
+    sys.exit(1)
+
+content = content.replace(old, new_blogs)
+
+with open(BLOG_FILE, "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("Free station: 6 blogs inserted successfully (136 -> 142)")
+print(f"File size: {len(content)} chars")
