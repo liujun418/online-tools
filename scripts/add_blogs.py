@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (136→142) — July 2, 2026"""
+"""Add 6 blogs to free station (142→148) — July 3, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,231 +10,233 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "url-encoder-double-encoding-hidden-bug",
-    title: "URL Encoder Double Encoding The Hidden Bug That Breaks Your Links",
-    description: "Double encoding turns %20 into %2520 and breaks URLs silently. Here's why it happens, how to spot it, and how to fix it before your users notice.",
-    date: "2026-07-02",
+    slug: "qr-code-scanner-security-malicious-codes",
+    title: "QR Code Scanner Security Check Before You Scan That Restaurant Menu",
+    description: "QR codes replaced physical menus overnight. They also created a new attack vector. How to spot malicious QR codes before they compromise your device.",
+    date: "2026-07-03",
     category: "Developer Tools",
-    tags: ["URL encoder", "double encoding", "percent encoding", "query string", "web debugging"],
-    relatedTools: ["url-encoder", "url-decoder", "text-diff"],
-    content: `<p>You share a link with a colleague: <code>https://example.com/search?q=coffee+shop</code>. They click it and get a 404. You check the URL in their browser and see <code>%2520</code> where there should be a space. What happened? <strong>Double encoding</strong> — the URL got encoded twice, and now it's broken.</p>
+    tags: ["QR code scanner", "QR security", "malicious QR", "phishing", "cybersecurity"],
+    relatedTools: ["qr-code-scanner", "qr-code-generator", "barcode-generator"],
+    content: `<p>You sit down at a restaurant, scan the QR code on the table to see the menu, and a website loads. It looks like the restaurant's menu site. You browse, order, and pay through the link. Three days later, there's a $400 charge on your credit card from a website you've never heard of.</p>
 
-<p>Double encoding is one of those bugs that's invisible in development, survives code review, and only appears when links pass through multiple systems. Here's how it happens and how to stop it.</p>
+<p>You were <strong>QR code phished</strong>. The sticker on the table wasn't the restaurant's QR code — it was a fake one pasted on top by someone who walked in, sat down, and replaced it in under 10 seconds. QR code security isn't something most people think about, but it should be.</p>
 
-<h2>How Double Encoding Happens</h2>
+<h2>How QR Code Attacks Work</h2>
 
-<p>URL encoding converts special characters into <code>%XX</code> format. A space becomes <code>%20</code>. An ampersand becomes <code>%26</code>. The problem starts when a URL that's already encoded passes through a second encoder.</p>
+<p>A QR code is just a URL encoded as a pattern of black and white squares. Your phone's camera reads the pattern, decodes the URL, and opens it — usually without showing you the full URL first. This is the vulnerability: <strong>you don't know where you're going until you're already there</strong>.</p>
 
-<p>The second encoder sees the <code>%</code> character in <code>%20</code> and thinks "this percent sign needs to be encoded too." So it encodes <code>%</code> as <code>%25</code>, turning <code>%20</code> into <code>%2520</code>. Your browser now decodes <code>%25</code> back to <code>%</code>, leaving you with the literal string <code>%20</code> instead of a space.</p>
+<p>Attackers exploit this with three common techniques:</p>
 
-<p>This most commonly happens when: (1) your frontend encodes a query parameter, then your HTTP client encodes the entire URL again; (2) a redirect middleware re-encodes an already-encoded Location header; (3) you store encoded URLs in a database and encode them again on retrieval.</p>
+<p><strong>Sticker replacement:</strong> Printing a malicious QR code on a sticker and placing it over a legitimate one. Restaurants, parking meters, event posters, and public transport stops are common targets. The fake sticker looks identical to the real one — QR codes are designed to be visually indistinguishable.</p>
 
-<h2>Spotting Double Encoding in the Wild</h2>
+<p><strong>URL redirection:</strong> The QR code points to a legitimate-looking shortened URL (bit.ly, tinyurl.com) that redirects to a phishing site. Your phone shows "bit.ly/2Xk9mP" in the preview — that tells you nothing about the final destination.</p>
 
-<p>The telltale sign is <code>%25</code> in your URL. If you see <code>%2520</code>, <code>%2526</code>, or <code>%253D</code>, you're looking at double encoding. <code>%25</code> is the encoded version of <code>%</code>, so every double-encoded character starts with <code>%25</code>.</p>
+<p><strong>Homograph attacks:</strong> The URL in the QR code uses Unicode characters that look identical to Latin letters. <code>starbucks.com</code> with a Cyrillic 'а' instead of Latin 'a' looks identical but goes to a different domain entirely.</p>
 
-<p>Quick diagnostic: decode the URL once. If the result still contains <code>%XX</code> sequences, decode it again. If the second decode produces readable text, you had double encoding. If the first decode already produces readable text, the URL was correctly single-encoded.</p>
+<h2>What a Malicious QR Code Can Do</h2>
 
-<h2>The Query String Is the Most Common Victim</h2>
+<p>Scanning a malicious QR code can: (1) open a phishing site that steals login credentials or payment info, (2) trigger an automatic download of malware (less common on iOS, more common on Android with "install from unknown sources" enabled), (3) compose an email or text message with pre-filled content designed to phish your contacts, (4) connect your phone to a malicious WiFi network, or (5) initiate a payment or cryptocurrency transfer if your payment app auto-fills.</p>
 
-<p>Query strings are where double encoding does the most damage. A user searches for "café & bakery" and the URL should be <code>?q=caf%C3%A9+%26+bakery</code>. If it gets double-encoded, <code>%C3%A9</code> becomes <code>%25C3%25A9</code> and your server receives gibberish.</p>
+<h2>How to Check Before You Scan</h2>
 
-<p>This gets worse with <strong>multi-byte UTF-8 characters</strong>. Chinese, Arabic, and emoji characters produce multiple <code>%XX</code> sequences. Double-encoding a single Chinese character can produce 18+ characters of percent-encoded chaos.</p>
+<p><strong>Look at the physical sticker:</strong> Is it a sticker on top of another sticker? Does it look newer than the surface it's on? Run your fingernail across the edge — if it lifts, it's a sticker overlay.</p>
 
-<h2>Prevention: Encode Once, At the Boundary</h2>
+<p><strong>Preview the URL before opening:</strong> Most modern phones show a URL preview when you scan a QR code. Read it. If it's a shortened URL (bit.ly, t.co, ow.ly), be suspicious. If the domain doesn't match the business you're interacting with, don't open it.</p>
 
-<p>The golden rule: <strong>encode at the last possible moment</strong>, when the URL leaves your system. Don't encode data before storing it in a database. Don't encode in your React state. Encode when you construct the final URL string that goes into an <code>&lt;a href&gt;</code> or <code>fetch()</code> call.</p>
+<p><strong>Check the destination after opening:</strong> Look at the URL bar. Is the domain correct? Is there a padlock icon (HTTPS)? Does the page ask for permissions that make no sense (camera, contacts, location for a menu)?</p>
 
-<p>If you're building URLs programmatically, use the <code>URL</code> constructor or a URL-building library instead of string concatenation. <code>new URL('/search', base).searchParams.set('q', query)</code> handles encoding correctly and won't double-encode.</p>
+<p><strong>Use a QR scanner that shows the full decoded content:</strong> Not all scanner apps are equal. A good one shows the raw URL before offering to open it, giving you a chance to inspect it.</p>
 
-<p>For encoding URLs safely, use our <a href="/en/tools/url-encoder">URL encoder</a> which shows you exactly what gets encoded. For checking if a broken URL has been double-encoded, paste it into our <a href="/en/tools/text-diff">text diff tool</a> alongside the expected version. And for decoding URLs to see what they actually contain, decode in stages to spot the double-encoding layer.</p>
+<p>For scanning QR codes safely, use our <a href="/en/tools/qr-code-scanner">QR code scanner</a> which shows the decoded content before opening. For generating your own legitimate QR codes, our <a href="/en/tools/qr-code-generator">QR code generator</a> creates codes for URLs, WiFi, and vCards. For creating product barcodes, try our <a href="/en/tools/barcode-generator">barcode generator</a>.</p>
 `,
   },
   {
-    slug: "text-diff-code-review-merge-conflict",
-    title: "Text Diff Code Review Merge Conflict Resolution Like a Senior Developer",
-    description: "How senior developers use text diff tools to review pull requests, resolve merge conflicts, and catch bugs that syntax highlighting hides.",
-    date: "2026-07-02",
-    category: "Developer Tools",
-    tags: ["text diff", "code review", "merge conflict", "PR review", "diff tool"],
-    relatedTools: ["text-diff", "json-formatter", "markdown-preview"],
-    content: `<p>Most developers use diff tools wrong. They scan the red and green lines in their PR, look for obvious mistakes, and click "Approve." Senior developers use diffs differently — they read them like a <strong>story of what changed and why</strong>, and they catch bugs that aren't visible in the final code.</p>
+    slug: "emi-calculator-prepayment-vs-investment",
+    title: "EMI Calculator Prepayment vs Investment Which Saves More Money",
+    description: "Should you prepay your loan or invest the extra cash? The math isn't obvious — here's how to calculate which option leaves you with more money at the end.",
+    date: "2026-07-03",
+    category: "Calculators",
+    tags: ["EMI calculator", "loan prepayment", "investment", "interest savings", "financial planning"],
+    relatedTools: ["emi-calculator", "compound-interest", "roi-calculator"],
+    content: `<p>You get a $10,000 bonus. You have a $200,000 home loan at 6.5% interest with 18 years remaining. Should you: (a) prepay $10,000 toward the loan principal, or (b) invest $10,000 in an index fund averaging 9% annual returns? Your gut says "pay off debt." The math may disagree.</p>
 
-<p>A good text diff tool shows you more than what lines were added and deleted. It shows you <strong>intent</strong>, <strong>side effects</strong>, and <strong>inconsistencies</strong> across a changeset. Here's how to read diffs at a senior level.</p>
+<p>This is the <strong>prepayment vs investment dilemma</strong>, and an EMI calculator is the tool that actually answers it — not with rules of thumb, but with numbers specific to your loan.</p>
 
-<h2>What to Look for in Every Diff</h2>
+<h2>The Math: Interest Saved vs Interest Earned</h2>
 
-<p><strong>Deleted error handling:</strong> A line of error checking was removed. Was it replaced with something better, or did the developer just delete it because it was annoying? If there's no replacement, that's a regression waiting to happen.</p>
+<p>When you prepay a loan, you're effectively <strong>earning the loan's interest rate</strong> on that money — because you're avoiding paying that interest in the future. If your loan is at 6.5%, prepaying $10,000 "earns" you 6.5% annually in avoided interest. It's a guaranteed, tax-free return.</p>
 
-<p><strong>Changed constants:</strong> A timeout went from 5000ms to 1000ms. A retry count changed from 3 to 1. These look innocent in a diff but change system behavior dramatically. Every constant change needs a comment explaining why.</p>
+<p>When you invest the same $10,000 at 9%, you earn 9% — but you pay taxes on the gains (let's say 20% capital gains), bringing the effective return to 7.2%. And you continue paying 6.5% interest on the $10,000 you didn't prepay.</p>
 
-<p><strong>Copied code blocks:</strong> A 15-line block appears in the diff with minor variable name changes. That's duplicated logic. Flag it — it should be extracted into a function, not copy-pasted.</p>
+<p>The net benefit of investing = 7.2% (after-tax return) - 6.5% (loan interest still accruing) = <strong>0.7% net gain</strong>. On $10,000 over 18 years, that's about $1,300 — not nothing, but not life-changing either.</p>
 
-<p><strong>Accidental whitespace changes:</strong> A line shows as "changed" but only the indentation differs. This happens when someone's editor auto-formats code they didn't intend to modify. It clutters the diff and can mask real changes.</p>
+<h2>When Prepayment Wins</h2>
 
-<h2>Resolving Merge Conflicts with Confidence</h2>
+<p><strong>High interest rate loans:</strong> If your loan is above 8%, prepayment almost always beats investing. You'd need consistently high investment returns (10%+ after tax) to beat the guaranteed 8% return of debt reduction.</p>
 
-<p>Merge conflicts happen when two branches changed the same lines. The diff shows you three versions: YOUR change, THEIR change, and the ORIGINAL. The key insight: <strong>don't just pick one side</strong>. Understand why both changes were made before deciding.</p>
+<p><strong>Variable rate loans:</strong> If your interest rate can increase, prepaying now locks in savings at the current rate and reduces your exposure to future rate hikes.</p>
 
-<p>A conflict on an import statement usually means both branches added a dependency. Keep both imports. A conflict on a function body is harder — one branch refactored the logic while the other added a feature. In that case, the refactored version needs to incorporate the feature addition, which means manual merging, not just picking a side.</p>
+<p><strong>Cash flow is tight:</strong> Prepayment reduces your monthly EMI or shortens your loan tenure. If your monthly budget is strained, lowering the EMI gives you breathing room that an investment account doesn't.</p>
 
-<p>For complex conflicts, copy both versions into a side-by-side diff tool. Seeing them next to each other (not interleaved with conflict markers) makes the differences clearer and reduces the chance of losing someone's work.</p>
+<p><strong>You're risk-averse:</strong> Loan prepayment is a guaranteed return. The stock market is not. If you'd lose sleep over a market downturn, take the guaranteed win.</p>
 
-<h2>The Diff Check You're Probably Skipping</h2>
+<h2>When Investing Wins</h2>
 
-<p>After resolving conflicts, <strong>diff the merge result against the original base branch</strong>. This shows you exactly what the merged code changed from the common ancestor. It catches: (1) code that was accidentally deleted during conflict resolution, (2) imports that were removed by one branch but still needed, and (3) duplicate code from both branches that wasn't deduplicated.</p>
+<p><strong>Low interest rate loans:</strong> If your loan is below 5%, investing historically beats prepayment by a wide margin. The S&P 500 has averaged ~10% before inflation over the long term. Even after taxes, you're likely to come out ahead.</p>
 
-<p>For reviewing code changes, use our <a href="/en/tools/text-diff">text diff tool</a> with side-by-side view. For checking if JSON config files were changed correctly, our <a href="/en/tools/json-formatter">JSON formatter</a> pretty-prints nested data. And for reviewing documentation changes, our <a href="/en/tools/markdown-preview">Markdown preview</a> shows the rendered output.</p>
+<p><strong>Tax benefits on the loan:</strong> In some countries, home loan interest is tax-deductible. If you're in the 30% tax bracket, your effective interest rate on a 6.5% loan might be only 4.55% after tax deductions. At that rate, investing almost certainly wins.</p>
+
+<p><strong>Long time horizon:</strong> The longer your remaining loan tenure, the more time compound growth has to work in your favor. With 20+ years remaining, the probability that investing beats prepayment is very high.</p>
+
+<h2>Use the EMI Calculator to Decide</h2>
+
+<p>Run both scenarios: (1) calculate your current EMI and total interest over the remaining tenure; (2) calculate with the prepayment amount subtracted from principal — the EMI stays the same but the tenure shortens, reducing total interest; (3) compare the interest saved to what your prepayment amount would grow to if invested at a realistic after-tax return rate. Whichever number is bigger wins.</p>
+
+<p>For calculating your loan payments, use our <a href="/en/tools/emi-calculator">EMI calculator</a> with prepayment simulation. For projecting investment growth, our <a href="/en/tools/compound-interest">compound interest calculator</a> shows how your money grows over time. And for comparing overall returns, our <a href="/en/tools/roi-calculator">ROI calculator</a> calculates annualized returns.</p>
 `,
   },
   {
-    slug: "color-names-hex-to-human-design-tokens",
-    title: "Color Names Hex to Human Readable Design Tokens for Your Design System",
-    description: "#1E90FF is dodgerblue, but what do you call your brand's specific shade? How color naming systems bridge the gap between hex codes and human-readable design tokens.",
-    date: "2026-07-02",
-    category: "Developer Tools",
-    tags: ["color names", "hex color", "design tokens", "CSS color", "design system"],
-    relatedTools: ["color-names", "color-picker", "color-contrast-checker"],
-    content: `<p>Open any CSS file and you'll find colors expressed three ways: hex codes like <code>#1E90FF</code>, RGB functions like <code>rgb(30, 144, 255)</code>, and named colors like <code>dodgerblue</code>. None of these tell you what the color <strong>means</strong> in your design system. Is <code>#1E90FF</code> your primary brand color, your link color, or your error state?</p>
+    slug: "pregnancy-calculator-due-date-accuracy",
+    title: "Pregnancy Calculator Due Date Accuracy Why It's 40 Weeks Not 9 Months",
+    description: "Pregnancy is counted as 40 weeks from the last menstrual period — not 9 calendar months. Here's why the dating system exists and how accurate due dates actually are.",
+    date: "2026-07-03",
+    category: "Calculators",
+    tags: ["pregnancy calculator", "due date", "gestational age", "Naegele's rule", "trimester"],
+    relatedTools: ["pregnancy-calculator", "age-calculator", "bmi-calculator"],
+    content: `<p>Someone tells you they're "15 weeks pregnant." You do the math: 15 weeks is about 3.5 months. But they conceived roughly 13 weeks ago. Why the 2-week gap? Because <strong>pregnancy is counted from the first day of the last menstrual period (LMP)</strong>, not from conception — and that changes everything about how due dates work.</p>
 
-<p>This is the gap that <strong>design tokens</strong> fill — human-readable names that map to color values and carry semantic meaning. And a color name lookup tool is the bridge between the hex code your developer tools give you and the token name your design system expects.</p>
+<p>Pregnancy dating is one of those things that makes no sense until someone explains it, and then it makes perfect sense. Here's the system and why it exists.</p>
 
-<h2>The Three Levels of Color Naming</h2>
+<h2>Why 40 Weeks and Not 9 Months?</h2>
 
-<p><strong>Level 1: CSS Named Colors.</strong> There are 148 named colors in CSS — red, dodgerblue, mediumspringgreen, papayawhip. They're fun but useless for design systems. "Dodgerblue" tells you nothing about when or where to use it. And 148 colors is a tiny fraction of the 16.7 million colors your screen can display.</p>
+<p>The average pregnancy from conception to birth is about <strong>38 weeks</strong> (266 days). But since most people don't know their exact conception date, doctors count from the first day of the last menstrual period — which is typically about 2 weeks before ovulation and conception. That makes the "official" pregnancy length <strong>40 weeks</strong> (280 days).</p>
 
-<p><strong>Level 2: Design Token Names.</strong> These are semantic: <code>--color-primary-500</code>, <code>--color-surface-background</code>, <code>--color-text-muted</code>. The name tells you the color's <strong>role</strong> in the system. Primary-500 is the fifth shade in the primary palette. Text-muted is for secondary text. A designer can change the hex value of <code>--color-primary-500</code> from blue to green, and every component that uses it updates automatically.</p>
+<p>This system is called <strong>Naegele's rule</strong>, developed by German obstetrician Franz Naegele in 1812. He observed that adding 280 days (40 weeks) to the first day of the LMP predicted birth dates reasonably well for women with regular 28-day cycles. It's been the standard for over 200 years, despite its limitations.</p>
 
-<p><strong>Level 3: Functional Names.</strong> These are the most specific: <code>--color-button-primary-hover</code>, <code>--color-input-border-focus</code>, <code>--color-alert-error-background</code>. They map directly to a specific UI state. Functional names are verbose but impossible to misuse — a developer can't accidentally use the error color for a success message when the token is named <code>alert-error-background</code>.</p>
+<p>Why not just use 9 months? Because <strong>calendar months vary in length</strong> (28-31 days). Nine calendar months could be anywhere from 273 to 276 days — not the 280 days of a standard pregnancy. And lunar months (28 days) give you 10 months, not 9. Weeks are consistent: always 7 days, no exceptions.</p>
 
-<h2>Building the Bridge: Hex → Human</h2>
+<h2>How Accurate Are Due Dates?</h2>
 
-<p>Here's a scenario that happens constantly: your designer sends a Figma screenshot with a color circled and says "use this blue." You eyedropper it, get <code>#3B82F6</code>, and now need to know: is this already in our design system? What's the closest named CSS color? What should the token name be?</p>
+<p>Not very. Only about <strong>4-5% of babies are born on their exact due date</strong>. About 80% arrive within two weeks of the due date (38-42 weeks). The due date is best thought of as a <strong>due month</strong> — any time within about two weeks on either side is normal.</p>
 
-<p>A color name lookup tool answers all three. <code>#3B82F6</code> is closest to "dodgerblue" (CSS name), might already be <code>blue-500</code> in your system, and could be named <code>--color-action-primary</code> if it's used for primary buttons and links.</p>
+<p>First-trimester ultrasound dating is more accurate than LMP dating, especially for women with irregular cycles. An ultrasound at 8-12 weeks measures the crown-rump length of the embryo, which grows at a very consistent rate in early pregnancy. This measurement can date a pregnancy within 5-7 days.</p>
 
-<h2>When Named Colors Beat Hex Codes</h2>
+<p>Factors that affect due date accuracy: irregular menstrual cycles (LMP method overestimates or underestimates), late ovulation, maternal age (older mothers tend to deliver slightly earlier), first vs subsequent pregnancies (first babies average 41 weeks + 1 day), and ethnicity (some studies show small but consistent differences in average gestation length).</p>
 
-<p>Hex codes are precise but <strong>impossible to discuss verbally</strong>. "Change the button to three-B-eight-two-F-six" is not a conversation anyone wants to have. Named colors are less precise but communicable: "use the primary blue, two shades darker." Design tokens give you both: the precision of a hex code and the communicability of a name.</p>
+<h2>The Trimester System</h2>
 
-<p>For finding the name of any hex color, use our <a href="/en/tools/color-names">color names finder</a> which maps hex codes to CSS names and closest matches. For picking colors visually, our <a href="/en/tools/color-picker">color picker</a> gives you the hex code and RGB values. And for checking if your color combinations are accessible, our <a href="/en/tools/color-contrast-checker">color contrast checker</a> validates WCAG compliance.</p>
+<p>Pregnancy is divided into three trimesters of roughly 13 weeks each: <strong>First trimester</strong> (weeks 1-13): organ development, highest miscarriage risk. <strong>Second trimester</strong> (weeks 14-26): rapid growth, anatomy scan at 20 weeks. <strong>Third trimester</strong> (weeks 27-40): final growth, lung maturation, positioning for birth.</p>
+
+<p>The trimester system matters because medical care, screening tests, and risk profiles change at each stage. It's not just a convenient way to divide time — it reflects distinct phases of fetal development.</p>
+
+<p>For calculating your due date and tracking trimesters, use our <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> with LMP or conception date input. For calculating the exact age after birth, our <a href="/en/tools/age-calculator">age calculator</a> tracks years, months, and days. And for tracking healthy weight gain during pregnancy, our <a href="/en/tools/bmi-calculator">BMI calculator</a> provides pre-pregnancy baseline measurements.</p>
 `,
   },
   {
-    slug: "json-to-csv-nested-data-flattening",
-    title: "JSON to CSV Nested Data Flattening vs Manual Excel Import",
-    description: "Nested JSON objects and arrays don't fit into flat CSV columns. Here's how flattening strategies compare to manual Excel data import for real-world datasets.",
-    date: "2026-07-02",
+    slug: "markdown-preview-vs-wysiwyg-developer-writing",
+    title: "Markdown Preview vs WYSIWYG Editor Which Developers Actually Need for Documentation",
+    description: "WYSIWYG editors show exactly what you get. Markdown preview shows rendered output alongside source. For technical writing, the split matters more than you think.",
+    date: "2026-07-03",
     category: "Developer Tools",
-    tags: ["JSON to CSV", "nested JSON", "data flattening", "Excel import", "data pipeline"],
-    relatedTools: ["json-to-csv", "json-formatter", "csv-to-json"],
-    content: `<p>You exported your analytics data as JSON. It's a 200MB file with nested objects three levels deep. You need to open it in Excel for your manager, who wants a pivot table by end of day. You have two choices: (1) manually flatten it in Excel for four hours, or (2) use a <strong>JSON to CSV converter</strong> that handles nested data in 30 seconds.</p>
+    tags: ["markdown preview", "WYSIWYG", "technical writing", "documentation", "README"],
+    relatedTools: ["markdown-preview", "html-to-markdown", "text-diff"],
+    content: `<p>Open any developer tool and you'll find documentation written in Markdown. README files, API docs, wikis, static site generators — they all use plaintext Markdown that gets rendered into HTML. But when it's time to <strong>write</strong> that documentation, you have two very different choices: a Markdown preview that shows source and rendered output side by side, or a WYSIWYG editor that hides the Markdown entirely.</p>
 
-<p>The catch: JSON to CSV conversion of nested data isn't straightforward. You have to make decisions about how to flatten the structure, and each decision has trade-offs.</p>
+<p>For developers writing technical documentation, the choice isn't about which is "better" — it's about <strong>what kind of writing you're doing</strong> and what you need to see while you do it.</p>
 
-<h2>The Problem: JSON Trees vs CSV Tables</h2>
+<h2>What Markdown Preview Gets Right</h2>
 
-<p>JSON is a <strong>tree</strong>. Each object can contain other objects and arrays, which can contain more objects and arrays, to any depth. CSV is a <strong>table</strong>. Each row has the same columns, and each cell contains a single value. Converting a tree to a table requires <strong>flattening</strong> — deciding how to collapse nested structures into flat columns.</p>
+<p>A Markdown preview shows <strong>both the source and the rendered output</strong>, usually side by side. You type <code>## Installation</code> on the left and see a level-2 heading on the right. You write a code block with triple backticks and see it syntax-highlighted in the preview.</p>
 
-<p>Consider a user object with an address: <code>{"name": "Alice", "address": {"street": "123 Main", "city": "Springfield", "zip": "62701"}}</code>. The simplest flattening creates columns like <code>address.street</code>, <code>address.city</code>, <code>address.zip</code>. This works for one level of nesting but gets unwieldy fast.</p>
+<p>This dual view matters for technical writing because: (1) you can <strong>verify the Markdown syntax itself</strong> — a missing backtick or misplaced asterisk is obvious when you see the source; (2) you learn Markdown faster by seeing the mapping between syntax and output in real time; (3) you can copy-paste the raw Markdown into Git, Jira, Slack, or any other tool that accepts Markdown input; and (4) you maintain <strong>portability</strong> — your README.md works on GitHub, GitLab, and Bitbucket without platform-specific formatting quirks.</p>
 
-<h2>Arrays: The Real Headache</h2>
+<h2>Where WYSIWYG Falls Short for Developers</h2>
 
-<p>Objects nest neatly into dot-notation columns. Arrays are messier. A user with multiple phone numbers — <code>["555-0100", "555-0101"]</code> — doesn't fit into a single cell. Your options:</p>
+<p>WYSIWYG (What You See Is What You Get) editors like Google Docs, Notion, and Confluence hide the underlying markup. You bold text by pressing Ctrl+B, not by typing <code>**bold**</code>. This is great for non-technical writing but creates problems for developers:</p>
 
-<p><strong>Explode into multiple rows:</strong> Create one row per array element. Alice with two phone numbers becomes two rows, each with one phone number and the rest of Alice's data duplicated. This preserves all data but inflates row count and makes aggregation harder.</p>
+<p><strong>Formatting surprises:</strong> You paste content from a WYSIWYG editor into a Markdown file and the formatting doesn't survive. Or worse, it partially survives — headings become bold text, lists lose their nesting, and code blocks become regular paragraphs.</p>
 
-<p><strong>Join into a single cell:</strong> Store all phone numbers in one cell, separated by commas or pipes: <code>555-0100|555-0101</code>. This keeps one row per user but breaks Excel's ability to filter or sort by phone number.</p>
+<p><strong>Version control blindness:</strong> WYSIWYG editors store formatting in proprietary formats (JSON, HTML, custom XML). When you diff two versions in Git, you see structural changes mixed with formatting noise. Markdown diffs show exactly what changed — one line, one change, easy to review.</p>
 
-<p><strong>Explode into multiple columns:</strong> Create <code>phone_0</code>, <code>phone_1</code>, <code>phone_2</code> columns up to the maximum array length. Clean but fragile — add a user with three phone numbers and your schema breaks.</p>
+<p><strong>Platform lock-in:</strong> Content written in a WYSIWYG editor often can't be cleanly exported. Notion exports to Markdown, but code blocks lose language annotations. Confluence exports to HTML that's full of proprietary attributes. Markdown is a plaintext format that will be readable in 50 years.</p>
 
-<h2>Flattening Strategy Decision Tree</h2>
+<h2>When WYSIWYG Actually Makes Sense</h2>
 
-<p><strong>Use dot-notation columns</strong> (address.city) when: nesting depth ≤ 3, every object has the same keys, and column count stays under 50. This is the most Excel-friendly format.</p>
+<p>WYSIWYG wins for: <strong>collaborative editing</strong> with non-developers (designers, product managers, executives who shouldn't have to learn Markdown), <strong>heavily formatted documents</strong> with tables, images, and callouts that are tedious in Markdown, and <strong>design-heavy content</strong> like newsletters and landing pages where the visual layout is the primary concern.</p>
 
-<p><strong>Use row explosion</strong> when: arrays contain the primary data you need to analyze, each array element is independently meaningful, and you're loading into a database or BI tool (not Excel).</p>
+<p>For most developer documentation, the Markdown preview workflow is the right call: write in Markdown, preview the rendered output, commit the plaintext to version control. Your future self (and your teammates) will thank you.</p>
 
-<p><strong>Use JSON columns</strong> (keep nested objects as JSON strings in cells) when: the nested data is metadata that won't be filtered or sorted, and you need to preserve the exact original structure for later programmatic processing.</p>
-
-<h2>Manual Excel vs Automated Conversion</h2>
-
-<p>Excel's "Get Data from JSON" (Power Query) handles one level of nesting automatically. Beyond that, you're manually expanding columns and writing M formulas. For a one-time conversion of a small file, Power Query is fine. For anything you'll do more than once, or files over 10MB, automated JSON to CSV conversion saves hours and produces consistent results.</p>
-
-<p>For converting nested JSON to CSV, use our <a href="/en/tools/json-to-csv">JSON to CSV converter</a> with flattening options. For inspecting the JSON structure before conversion, our <a href="/en/tools/json-formatter">JSON formatter</a> shows the full tree. And for converting CSV back to JSON after Excel editing, our <a href="/en/tools/csv-to-json">CSV to JSON converter</a> handles the reverse direction.</p>
+<p>For writing and previewing Markdown, use our <a href="/en/tools/markdown-preview">Markdown preview tool</a> with live side-by-side rendering. For converting existing HTML content to Markdown, our <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> handles the migration. And for comparing documentation versions, our <a href="/en/tools/text-diff">text diff tool</a> shows exactly what changed.</p>
 `,
   },
   {
-    slug: "stopwatch-timer-deep-work-focus",
-    title: "Stopwatch Timer Deep Work Focus Sessions vs Pomodoro Apps",
-    description: "Pomodoro apps enforce 25-minute blocks. A simple stopwatch lets you measure real focus duration. Here's when each approach produces better deep work.",
-    date: "2026-07-02",
+    slug: "json-formatter-vs-code-formatter-debugging",
+    title: "JSON Formatter vs Code Formatter Structured Data Debugging Battle",
+    description: "JSON formatters and code formatters look similar but solve different problems. Here's when your minified API response needs a JSON-specific tool, not a general code beautifier.",
+    date: "2026-07-03",
+    category: "Developer Tools",
+    tags: ["JSON formatter", "code formatter", "JSON debugging", "API response", "pretty print"],
+    relatedTools: ["json-formatter", "code-formatter", "json-to-csv"],
+    content: `<p>You copy a one-line, 50,000-character JSON response from your browser's Network tab. You paste it into a code formatter and click "Format." It becomes... still mostly unreadable. The nesting is technically correct but visually useless. Arrays of 200 objects are each on one line. Deeply nested values are indented 14 levels with no visual grouping.</p>
+
+<p>A <strong>JSON formatter</strong> is not the same thing as a <strong>code formatter</strong>, and using the wrong one turns an API debugging session into a guessing game. Here's the difference and when each one matters.</p>
+
+<h2>What JSON Formatters Do That Code Formatters Don't</h2>
+
+<p>A code formatter (like Prettier) treats JSON as just another syntax to format. It applies consistent indentation, line breaks at a certain print width, and trailing comma rules. This works for <strong>human-written JSON</strong> like config files and package.json — documents that are a few hundred lines with shallow nesting.</p>
+
+<p>A JSON formatter treats JSON as <strong>structured data to explore</strong>. It adds: (1) <strong>tree view</strong> — collapsible sections so you can fold away the 200-element array and focus on the object structure; (2) <strong>path display</strong> — showing you're at <code>data.users[42].address.geo.lat</code> so you know exactly how deep you are; (3) <strong>syntax highlighting by data type</strong> — strings in green, numbers in blue, booleans in orange, null in gray; and (4) <strong>size indicators</strong> — showing that an array has 847 elements so you know the scale of what you're looking at.</p>
+
+<h2>The Real-World Scenario: Debugging an API Response</h2>
+
+<p>Your frontend is throwing <code>Cannot read property 'name' of undefined</code> somewhere in a deeply nested API response. The response is 15KB of minified JSON. Here's the workflow difference:</p>
+
+<p><strong>With a code formatter:</strong> Paste, format, get 400 lines of indented JSON. Scroll through looking for the <code>name</code> field. Realize there are 47 occurrences. Search for <code>"name": null</code>. Find three. None of them is the one causing the error. Realize the problem is that an entire parent object is missing, not that a field is null. Give up and add console.log statements.</p>
+
+<p><strong>With a JSON formatter:</strong> Paste, format, see tree view. Collapse the top-level objects one by one. Notice that <code>data.items[17]</code> is missing the <code>author</code> object that every other item has. There's your bug — the 18th item in the list has no author, and your code assumes every item has one. Time to fix: 2 minutes.</p>
+
+<h2>When You Need Both</h2>
+
+<p>Use a <strong>code formatter</strong> for: package.json, tsconfig.json, .prettierrc, and any JSON file you edit by hand. These are small, shallow, and benefit from consistent formatting that matches the rest of your codebase.</p>
+
+<p>Use a <strong>JSON formatter</strong> for: API responses, webhook payloads, database exports, GeoJSON files, and any JSON where the structure is more important than the formatting. These are large, deeply nested, and benefit from exploration tools, not just pretty printing.</p>
+
+<p>For exploring large JSON responses, use our <a href="/en/tools/json-formatter">JSON formatter</a> with tree view and path navigation. For formatting code files including JSON configs, our <a href="/en/tools/code-formatter">code formatter</a> handles JSON, JS, CSS, and HTML. And for converting API responses to spreadsheet format, our <a href="/en/tools/json-to-csv">JSON to CSV converter</a> flattens nested data.</p>
+`,
+  },
+  {
+    slug: "food-picker-decision-fatigue-psychology",
+    title: "The Decision Fatigue Epidemic Why a Random Food Picker Makes Better Choices Than You Do",
+    description: "By dinner time, you've made 200+ decisions and your brain is exhausted. A random food picker bypasses decision fatigue — here's the psychology behind why it works.",
+    date: "2026-07-03",
     category: "Fun & Media",
-    tags: ["stopwatch", "timer", "deep work", "Pomodoro", "productivity", "focus"],
-    relatedTools: ["stopwatch-and-timer", "reaction-test", "scoreboard"],
-    content: `<p>The Pomodoro Technique is the default productivity advice: work for 25 minutes, take a 5-minute break, repeat. Apps enforce this rhythm with timers, notifications, and streak tracking. And for many people, it's the wrong approach.</p>
+    tags: ["food picker", "decision fatigue", "random choice", "psychology", "cognitive load"],
+    relatedTools: ["food-picker", "coin-flip", "random-number-generator"],
+    content: `<p>It's 7pm. You've been making decisions since 7am: what to wear, which email to answer first, what to say in the meeting, whether to push back on the deadline, what to eat for lunch, which route to take home. By dinner time, your brain has burned through its daily <strong>decision-making budget</strong>. You stare at the fridge. You open a delivery app. You scroll for 20 minutes. You order the same thing you always order.</p>
 
-<p>A simple <strong>stopwatch</strong> — one that counts UP, not down — can be a better tool for deep work. Here's why, and when to use each approach.</p>
+<p>This is <strong>decision fatigue</strong>, and it's why a random food picker — a tool that literally just picks a restaurant or dish for you — can make better dinner choices than your exhausted brain.</p>
 
-<h2>The Problem with Fixed Intervals</h2>
+<h2>The Science of Decision Fatigue</h2>
 
-<p>The 25-minute Pomodoro block was chosen arbitrarily by Francesco Cirillo in the 1980s using a tomato-shaped kitchen timer. It has no scientific basis. And the research we do have on attention spans suggests that <strong>focus duration varies dramatically</strong> by person, task, time of day, and experience level.</p>
+<p>Decision fatigue is not a metaphor. The prefrontal cortex — the part of your brain responsible for deliberate decision-making — runs on glucose. Every decision you make consumes a small amount of this fuel. By the end of the day, your brain is running on empty, and it conserves energy by taking shortcuts: choosing the default option, avoiding decisions entirely, or making impulsive choices.</p>
 
-<p>A 25-minute timer interrupts you just as you're reaching <strong>flow state</strong> — the mental state where you're fully immersed and producing your best work. Cal Newport's research on deep work suggests that flow takes 15-20 minutes to achieve. A 25-minute Pomodoro gives you 5-10 minutes of actual flow before the timer breaks it.</p>
+<p>A famous 2011 study of Israeli parole judges found that prisoners who appeared early in the morning were granted parole about 65% of the time. By late morning, the rate dropped to near 0%. After lunch, it jumped back to 65%. By end of day, it was near 0% again. The judges weren't being cruel — their decision-making circuitry was depleted.</p>
 
-<p>Worse, the timer creates <strong>deadline anxiety</strong>. You watch the countdown: 8 minutes left, 5 minutes, 2 minutes. Your brain shifts from "solve the problem" to "beat the clock." That's productive for email triage, destructive for creative problem-solving.</p>
+<p>Your dinner decision goes through the same prefrontal cortex as a judge's parole ruling. By 7pm, you're functionally a worse decision-maker than you were at 9am.</p>
 
-<h2>What a Stopwatch Does Better</h2>
+<h2>Why Random Selection Bypasses the Bottleneck</h2>
 
-<p>A stopwatch counts UP. You click "start" when you begin focused work and "stop" when you finish or get interrupted. There's no countdown, no deadline, no anxiety about the remaining time. You just measure how long you actually focused.</p>
+<p>A random food picker doesn't make a "better" choice than you would — it makes <strong>any choice at all</strong>, which is the real goal when you're decision-fatigued. The benefit isn't that the random choice is optimal. The benefit is that <strong>the decision gets made</strong> in 2 seconds instead of 20 minutes of scrolling paralysis.</p>
 
-<p>After a week of stopwatch tracking, you learn your <strong>actual focus patterns</strong>: you can sustain 90 minutes in the morning but only 20 minutes after lunch. You do your best coding between 9-11am and your best writing between 2-3pm. A Pomodoro app can't tell you this — it imposes a schedule instead of revealing your natural rhythm.</p>
+<p>And here's the interesting part: people who use random food pickers report being <strong>more satisfied</strong> with their meals than people who deliberated. Not because the food was better, but because: (1) they didn't spend 20 minutes of their evening on the decision, (2) they tried something they wouldn't have chosen themselves (variety feels good), and (3) they can't regret the choice because they didn't make it — the tool did.</p>
 
-<p>The stopwatch also creates <strong>accountability without pressure</strong>. Seeing "42 minutes" on the clock when you get distracted is a gentle nudge to get back to work. Seeing "3 minutes left" on a Pomodoro timer is permission to slack off until the break.</p>
+<h2>Decision Fatigue Beyond Food</h2>
 
-<h2>When Pomodoro Actually Works</h2>
+<p>Food is the most visible symptom, but decision fatigue affects every evening decision: whether to exercise or skip, whether to work on the side project or watch TV, whether to read or scroll. The pattern is the same: your brain defaults to the <strong>easiest option</strong>, which is rarely the best one.</p>
 
-<p>Pomodoro shines for <strong>tasks you're avoiding</strong>. When you really don't want to start something, "just 25 minutes" is psychologically manageable. It's also good for <strong>shallow work</strong> — email, admin, meetings prep — where flow state isn't relevant and frequent context switches are fine.</p>
+<p>Strategies that work: (1) make important decisions in the morning, (2) reduce trivial daily decisions (Steve Jobs wore the same outfit every day for exactly this reason), (3) use randomization tools for low-stakes decisions to preserve mental energy for the ones that matter, and (4) batch similar decisions together instead of spreading them throughout the day.</p>
 
-<p>For deep work (coding, writing, designing, problem-solving), switch to a stopwatch. Start it, work until your attention naturally flags, and stop. Over time, you'll extend your focus duration — not because a timer told you to, but because you trained your attention span.</p>
-
-<p>For tracking your focus sessions, use our <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> with both count-up and countdown modes. For measuring your mental performance after focus sessions, our <a href="/en/tools/reaction-test">reaction time test</a> shows cognitive fatigue. And for tracking scores in focus challenges with colleagues, our <a href="/en/tools/scoreboard">scoreboard</a> adds friendly competition.</p>
-`,
-  },
-  {
-    slug: "coin-flip-psychology-trust-random",
-    title: "The Psychology of Coin Flips Why We Trust a 50-50 Chance to Make Decisions",
-    description: "Coin flips don't actually produce 50-50 results. But the psychology of why we trust them to make hard decisions reveals something deeper about human nature.",
-    date: "2026-07-02",
-    category: "Fun & Media",
-    tags: ["coin flip", "randomness", "decision psychology", "probability", "cognitive bias"],
-    relatedTools: ["coin-flip", "random-number-generator", "dice-roller"],
-    content: `<p>You're torn between two choices — take the job offer or stay, move to the new city or don't, say yes or no. Someone says "just flip a coin." You flip, it lands on heads, and suddenly you know what you wanted all along — not because the coin decided, but because your <strong>emotional reaction to the result</strong> revealed your true preference.</p>
-
-<p>This is the paradox of coin flips: they work not because they're random, but because they <strong>surface what you already want</strong>. And the psychology behind why we trust a piece of metal to make life decisions is more interesting than the probability.</p>
-
-<h2>Coins Aren't Actually 50-50</h2>
-
-<p>Let's get the math out of the way first. A coin flip is not a perfect 50-50 proposition. Stanford mathematician Persi Diaconis showed that a coin has about a <strong>51% chance of landing on the same side it started on</strong>. The bias comes from precession — the coin wobbles as it spins, spending slightly more time with the starting side facing up.</p>
-
-<p>This 1% bias is small enough that it doesn't matter for decision-making, but it means coin flips are not truly random. They're <strong>chaotic</strong> — deterministic in principle but unpredictable in practice because the initial conditions (force, angle, air resistance) are too complex to measure precisely.</p>
-
-<h2>Why We Trust Coins for Decisions</h2>
-
-<p>Coin flips work for three psychological reasons that have nothing to do with probability.</p>
-
-<p><strong>First: decision fatigue relief.</strong> When you've been weighing pros and cons for hours, your brain is exhausted. The coin offloads the decision to an external agent. It's not that the coin is wise — it's that <strong>any decision feels better than no decision</strong>, and the coin breaks the stalemate.</p>
-
-<p><strong>Second: the reaction test.</strong> The moment the coin lands, you feel either relief or disappointment. That flash of emotion is your true preference revealing itself. If it lands on "take the job" and your stomach drops, you didn't actually want the job. The coin didn't make the decision — it <strong>made your hidden preference visible</strong>.</p>
-
-<p><strong>Third: blame deflection.</strong> If the decision goes badly, you can blame the coin. This sounds silly, but it reduces anticipatory anxiety enough to actually make the decision. The coin absorbs the fear of being wrong.</p>
-
-<h2>When NOT to Flip a Coin</h2>
-
-<p>Don't flip a coin for: decisions with asymmetric consequences (the downside of one option is catastrophic), decisions that affect other people without their input, decisions that are reversible (just pick one and change later if needed), and decisions where you have time to gather more information (uncertainty is not the same as indifference).</p>
-
-<p>Do flip a coin for: decisions where both options are genuinely acceptable, decisions where you've been stuck for more than 24 hours, and decisions where the cost of delay exceeds the cost of a wrong choice.</p>
-
-<p>For your next tough decision, use our <a href="/en/tools/coin-flip">coin flip tool</a> — and pay attention to how you feel about the result. For generating random numbers for more complex decisions, our <a href="/en/tools/random-number-generator">random number generator</a> handles custom ranges. And for probability-based decision-making with multiple outcomes, try our <a href="/en/tools/dice-roller">dice roller</a>.</p>
+<p>For breaking dinner indecision, use our <a href="/en/tools/food-picker">random food picker</a> to make the choice in seconds. For other binary decisions, our <a href="/en/tools/coin-flip">coin flip tool</a> breaks the stalemate. And for generating random numbers for more complex random choices, try our <a href="/en/tools/random-number-generator">random number generator</a>.</p>
 `,
   },
 
@@ -243,14 +245,10 @@ new_blogs = r"""
 export function getBlogPosts(): BlogPost[]"""
 
 if old not in content:
-    print("ERROR: marker not found in free station blog.ts!")
-    print("Looking for:", repr(old))
+    print("ERROR: marker not found!")
     sys.exit(1)
 
 content = content.replace(old, new_blogs)
-
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
-
-print("Free station: 6 blogs inserted successfully (136 -> 142)")
-print(f"File size: {len(content)} chars")
+print("Free station: 6 blogs inserted (142 -> 148)")
