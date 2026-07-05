@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (148→154) — July 4, 2026"""
+"""Add 6 blogs to free station (154→160) — July 5, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,215 +10,209 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "free-translator-offline-vs-online",
-    title: "Free Online Translator Offline vs Online When Each Translation Method Wins",
-    description: "Online translators handle 100+ languages with neural models. Offline dictionaries work without internet. Here's when each approach produces better translations in real travel and work situations.",
-    date: "2026-07-04",
-    category: "Text Tools",
-    tags: ["free translator", "offline translation", "online translation", "travel", "language learning"],
-    relatedTools: ["translate", "case-converter", "text-to-slug"],
-    content: `<p>You're in a rural market in Oaxaca, trying to ask a vendor if the cheese contains rennet (you're vegetarian). You pull out Google Translate. No signal. You switch to the offline Spanish dictionary you downloaded. It gives you "cuajo" for rennet — but the vendor uses an indigenous Zapotec word you've never heard. Neither tool fully solves your problem, but one gets you closer.</p>
-
-<p>The <strong>online vs offline translation</strong> debate isn't about which is "better." It's about matching the tool to the situation — and most people use the wrong one at the wrong time.</p>
-
-<h2>What Online Translators Do Best</h2>
-
-<p>Online translators (Google Translate, DeepL, Bing Translator) run on <strong>neural machine translation models</strong> hosted on massive server farms. They process entire sentences as context units, not word-by-word. This means they: (1) handle idioms reasonably well — "it's raining cats and dogs" becomes the equivalent idiom in the target language, not a literal translation; (2) preserve grammatical gender and agreement across long sentences; and (3) support 100+ languages including low-resource languages with small training datasets.</p>
-
-<p>Online translation wins for: <strong>documents and emails</strong> where you need full-sentence fluency, <strong>unfamiliar languages</strong> where you can't verify the output yourself, and <strong>rare language pairs</strong> (Finnish to Korean) where offline dictionaries barely exist.</p>
-
-<h2>What Offline Translation Does Better</h2>
-
-<p>Offline translation — downloaded dictionaries, phrasebooks, and on-device translation models — wins in specific scenarios: <strong>No internet:</strong> Airplane mode, remote areas, international data roaming off. An offline dictionary with 50,000 entries is infinitely more useful than the world's best neural model with zero bars of signal.</p>
-
-<p><strong>Privacy:</strong> Your translation query never leaves your device. For business negotiations, legal documents, medical conversations — anything confidential — offline translation keeps your data local. Online translators process your text on their servers, and while Google claims not to use Translate queries for ad targeting, the data passes through their infrastructure.</p>
-
-<p><strong>Speed:</strong> Offline lookup is instantaneous — no network latency, no API call, no "waiting for translation" spinner. For quick word lookups during a conversation, the 50ms local lookup beats the 500ms-2000ms network round trip every time.</p>
-
-<h2>The Hybrid Strategy That Actually Works</h2>
-
-<p>Download offline language packs for your destination before traveling. Use offline mode for quick word lookups and privacy-sensitive situations. Switch to online when you need full-sentence fluency or encounter a word your offline dictionary doesn't have. And for both: learn to read the output critically — no translator handles sarcasm, cultural references, or tone reliably.</p>
-
-<p>For translating text between 100+ languages, use our <a href="/en/tools/translate">free online translator</a> with neural machine translation. For converting translated text to proper case, our <a href="/en/tools/case-converter">case converter</a> handles title case and sentence case. And for generating URL-friendly slugs from translated content, our <a href="/en/tools/text-to-slug">URL slug generator</a> creates clean permalinks.</p>
-`,
-  },
-  {
-    slug: "reaction-test-cognitive-decline-early-warning",
-    title: "Reaction Test Cognitive Decline Early Warning What Slowing Reflexes Actually Signal",
-    description: "Reaction time slows with age — but sudden changes can signal cognitive decline, sleep debt, or medication side effects. Here's how to use reaction tests as an early warning system.",
-    date: "2026-07-04",
-    category: "Fun & Media",
-    tags: ["reaction test", "cognitive decline", "brain health", "reflexes", "early warning"],
-    relatedTools: ["reaction-test", "stopwatch-and-timer", "scoreboard"],
-    content: `<p>Your average reaction time to a visual stimulus is 215 milliseconds. Last month it was 210. Three months ago it was 205. The trend is slow — 10 milliseconds over three months — but it's consistent. Is this normal aging, or is something wrong?</p>
-
-<p><strong>Reaction time</strong> is one of the most sensitive measures of brain function, and tracking it over time can reveal problems before you notice them in daily life. Here's what the numbers mean and when to pay attention.</p>
-
-<h2>What's Normal for Your Age</h2>
-
-<p>Simple visual reaction time (see a light, press a button) averages: <strong>20s: 190-200ms, 30s: 200-215ms, 40s: 215-230ms, 50s: 230-250ms, 60s: 250-270ms, 70s+: 270-300ms.</strong> These are population averages — individual baselines vary by 30-50ms. What matters is <strong>your personal trend</strong>, not the population number.</p>
-
-<p>F1 drivers can react in 150-180ms. That's not "faster than normal humans" — it's the result of training anticipation, not raw reaction speed. They're not reacting faster; they're <strong>predicting better</strong>. Your reaction time test measures raw reaction, not anticipation, so don't compare yourself to Lewis Hamilton.</p>
-
-<h2>When Slowing Reaction Time Is a Red Flag</h2>
-
-<p>A gradual slowdown of 1-3ms per year after age 30 is <strong>normal aging</strong>. A sudden slowdown of 20-30ms over a month is <strong>not normal</strong> and can indicate: (1) <strong>sleep debt</strong> — just one night of poor sleep increases reaction time by 20-50ms, equivalent to being legally drunk in some jurisdictions; (2) <strong>medication side effects</strong> — antihistamines, benzodiazepines, and some blood pressure medications slow reaction time measurably; (3) <strong>early cognitive decline</strong> — a 2018 study in the journal Neurology found that reaction time slowing preceded other cognitive symptoms by 2-3 years in some patients; or (4) <strong>concussion recovery</strong> — reaction time is one of the last functions to return to baseline after a concussion, often lagging 2-4 weeks behind symptom resolution.</p>
-
-<h2>How to Track Reaction Time Properly</h2>
-
-<p><strong>Test at the same time of day.</strong> Reaction time varies by 10-15ms throughout the day — fastest in late morning, slowest in early morning and late evening. Pick a consistent time.</p>
-
-<p><strong>Use the same device and test.</strong> Different screens have different input lag. Your phone touchscreen might have 50ms of latency; your laptop trackpad might have 30ms. The absolute number matters less than the trend on the same setup.</p>
-
-<p><strong>Take the average of 5-10 trials.</strong> Single-trial reaction time is too noisy. A 10-trial average gives a reliable measure. Discard any trial where you anticipated the stimulus (reaction under 100ms is almost certainly anticipation, not reaction).</p>
-
-<p><strong>Track weekly, not daily.</strong> Daily fluctuation is noise. Weekly averages over 3+ months reveal trends. If your 4-week moving average is consistently declining, mention it to your doctor.</p>
-
-<p>For measuring your reaction time, use our <a href="/en/tools/reaction-test">reaction time test</a> with multi-trial averaging. For timing your test sessions consistently, our <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> helps schedule regular testing. And for tracking scores over time, our <a href="/en/tools/scoreboard">scoreboard</a> records your history.</p>
-`,
-  },
-  {
-    slug: "bmi-calculator-body-fat-vs-bmi",
-    title: "BMI Calculator Body Fat Percentage vs BMI Which Number Actually Predicts Health",
-    description: "BMI labels athletes as obese and misses normal-weight obesity. Body fat percentage is harder to measure but far more useful. Here's how to use both numbers together.",
-    date: "2026-07-04",
+    slug: "compound-interest-5-percent-retirement-rule",
+    title: "Compound Interest The 5% Rule and Why Retirement Withdrawal Math Is Trickier Than You Think",
+    description: "The 4% rule says withdraw 4% yearly. The 5% rule is for growth projections. Here's why mixing them up costs retirees real money — and how to model both correctly.",
+    date: "2026-07-05",
     category: "Calculators",
-    tags: ["BMI calculator", "body fat percentage", "obesity", "health metrics", "body composition"],
-    relatedTools: ["bmi-calculator", "calorie-calculator", "percentage-calculator"],
-    content: `<p>Two people walk into a doctor's office. Person A: 5'10", 185 lbs, BMI 26.5 — "overweight." Person B: 5'10", 185 lbs, BMI 26.5 — "overweight." Same height, same weight, same BMI. But Person A has 12% body fat and deadlifts 400 pounds. Person B has 30% body fat and hasn't exercised in five years. Their <strong>health profiles are completely different</strong>, and BMI can't tell them apart.</p>
+    tags: ["compound interest", "retirement planning", "4% rule", "5% rule", "withdrawal strategy"],
+    relatedTools: ["compound-interest", "roi-calculator", "percentage-calculator"],
+    content: `<p>You read two pieces of financial advice in the same week. Article one: "Save 15% of your income and assume 5% annual growth — you'll retire comfortably." Article two: "Follow the 4% rule — withdraw 4% of your portfolio in year one of retirement, adjusted for inflation." These numbers sound similar but describe <strong>completely different things</strong>, and confusing them is one of the most expensive mistakes in personal finance.</p>
 
-<p>This is BMI's fundamental flaw: it measures <strong>weight relative to height</strong>, not body composition. A better number — body fat percentage — is harder to get but tells you infinitely more.</p>
+<p>The <strong>5% growth assumption</strong> is about accumulation — how fast your money grows while you're working. The <strong>4% withdrawal rule</strong> is about decumulation — how much you can safely spend without running out. They interact in ways that aren't obvious until you run the numbers.</p>
 
-<h2>The Problem BMI Was Never Designed to Solve</h2>
+<h2>The 5% Growth Assumption: Optimistic but Defensible</h2>
 
-<p>BMI was invented by Adolphe Quetelet, a Belgian mathematician, in the 1830s. He wasn't studying health — he was studying <strong>the "average man"</strong> as a statistical concept. BMI was designed to describe populations, not diagnose individuals. It was adopted by insurers and doctors in the 20th century because it's free and takes 5 seconds, not because it's accurate.</p>
+<p>Financial advisors often use 5-7% annual returns when projecting retirement savings growth. This is typically a <strong>real return</strong> (after inflation) assumption based on the S&P 500's historical average of about 10% nominal, minus 3% inflation, minus some conservatism. Over 30+ year horizons, 5% real is a reasonable planning number — not guaranteed, but historically defensible.</p>
 
-<p>BMI's known failure modes: (1) <strong>athletes classified as overweight/obese</strong> — muscle is denser than fat, so muscular people score higher; (2) <strong>"normal-weight obesity"</strong> — people with BMI under 25 but body fat over 30% (about 20% of "normal weight" adults by some estimates); (3) <strong>elderly people classified as normal when they've lost dangerous amounts of muscle</strong> — sarcopenia (muscle loss) can keep BMI "healthy" while metabolic health deteriorates; (4) <strong>racial differences ignored</strong> — the same BMI corresponds to different body fat percentages in different ethnic groups (e.g., at BMI 25, South Asians average 5-7% higher body fat than Europeans).</p>
+<p>The trap: people hear "5% growth" and think it's a smooth, reliable increase. It's not. The S&P 500 returned -37% in 2008, +32% in 2013, -4.4% in 2018, +29% in 2019. The 5% is a <strong>long-term average</strong> that includes years of dramatic losses. Your retirement calculator showing a smooth upward curve is a mathematical convenience, not reality.</p>
 
-<h2>Body Fat Percentage: The Better Number</h2>
+<h2>The 4% Withdrawal Rule: More Fragile Than It Looks</h2>
 
-<p>Body fat percentage directly measures what BMI approximates. Healthy ranges: <strong>men: 10-20% (athletes 6-13%), women: 18-28% (athletes 14-20%).</strong> Above 25% for men and 32% for women is generally considered obese, regardless of BMI.</p>
+<p>The 4% rule comes from the 1994 "Trinity Study" by three finance professors at Trinity University. They asked: if you retire with a portfolio split 50/50 between stocks and bonds, what percentage can you withdraw each year (adjusted for inflation) and have a 95% chance of not running out of money over 30 years? The answer was 4%.</p>
 
-<p>The problem: accurate body fat measurement requires equipment. DEXA scan (gold standard, $100-300 per scan), hydrostatic weighing (very accurate, hard to find), bioelectrical impedance (home scales, ±3-5% accuracy), and calipers (skill-dependent, ±3-5% with a trained operator). None of these are as quick or free as stepping on a scale.</p>
+<p>What most people miss about the 4% rule: (1) it was designed for <strong>30-year retirements</strong> — if you retire at 55 and live to 90, that's 35 years, and the 4% rule's success rate drops; (2) it assumes a <strong>US stock/bond portfolio</strong> — different countries, different asset allocations, different results; (3) the 95% success rate means 1 in 20 retirees following the rule still run out of money; (4) it was calculated using <strong>historical US data</strong> — future returns may be lower.</p>
 
-<h2>How to Use Both Numbers Together</h2>
+<h2>The Interaction: Why Sequence Matters</h2>
 
-<p><strong>Use BMI as a screening tool:</strong> If BMI is under 18.5 or over 30, investigate further. These extremes correlate with health risks even accounting for BMI's flaws.</p>
+<p>The 5% growth assumption and the 4% withdrawal rule interact through <strong>sequence of returns risk</strong>. If the market drops 30% in year one of retirement, and you withdraw 4% of the original portfolio value, you're actually withdrawing a much larger percentage of the now-depleted portfolio. This early damage compounds: even if the market recovers in years 3-10, you've locked in losses by selling at the bottom.</p>
 
-<p><strong>Use body fat percentage as the diagnostic tool:</strong> If BMI is in the gray zone (25-30), body fat percentage tells you whether you're muscular or overfat. Waist circumference adds another data point — over 40 inches for men or 35 inches for women indicates elevated risk regardless of BMI.</p>
+<p>A compound interest calculator that models <strong>variable returns</strong> (not just constant 5%) shows how dramatically sequence risk changes outcomes. Two retirees with identical 30-year average returns can have completely different results depending on whether the bad years came early or late in retirement.</p>
 
-<p><strong>Track trends, not single measurements:</strong> BMI increasing while body fat stays stable = you're gaining muscle. BMI stable while body fat increases = you're losing muscle and gaining fat (the worst combination).</p>
+<h2>How to Model Your Own Numbers</h2>
 
-<p>For calculating your BMI, use our <a href="/en/tools/bmi-calculator">BMI calculator</a> with instant results. For estimating your daily energy needs based on body composition, our <a href="/en/tools/calorie-calculator">calorie calculator</a> factors in activity level. And for tracking percentage changes in your measurements, our <a href="/en/tools/percentage-calculator">percentage calculator</a> computes the math.</p>
+<p>Don't trust a single "average return" projection. Run three scenarios: (1) optimistic (7% real return, 4% withdrawal), (2) baseline (5% real return, 4% withdrawal), (3) pessimistic (3% real return, 3.5% withdrawal — you spend less because returns are lower). If your plan works in all three, you have margin for error. If it only works in the optimistic scenario, you need to save more, retire later, or spend less.</p>
+
+<p>For modeling retirement savings growth, use our <a href="/en/tools/compound-interest">compound interest calculator</a> with variable contribution and rate inputs. For calculating annualized returns on your actual portfolio, our <a href="/en/tools/roi-calculator">ROI calculator</a> computes real performance. And for figuring out what percentage of income to save, our <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the math.</p>
 `,
   },
   {
-    slug: "css-minifier-vs-svg-minifier-performance",
-    title: "CSS Minifier vs SVG Minifier Web Performance Pipeline Two Tools One Goal",
-    description: "CSS minifiers strip whitespace from stylesheets. SVG minifiers strip metadata from vector graphics. Together they cut page weight — but the optimization strategies are completely different.",
-    date: "2026-07-04",
-    category: "Developer Tools",
-    tags: ["CSS minifier", "SVG minifier", "web performance", "page speed", "minification"],
-    relatedTools: ["css-minifier", "svg-minifier", "code-formatter"],
-    content: `<p>Your website's Lighthouse score is 72. The "Reduce unused CSS" warning is yellow. Your SVG icon sprite is 47KB for 12 icons. You know minification helps, but <strong>CSS minification and SVG minification are completely different processes</strong> with different tools, different risks, and different payoffs. Running your SVG through a CSS minifier does nothing. Running your CSS through an SVG optimizer breaks your styles.</p>
-
-<p>Here's what each tool actually does to your files, and how to use both in a performance pipeline.</p>
-
-<h2>CSS Minification: Strip the Syntax, Keep the Meaning</h2>
-
-<p>CSS minification is <strong>syntactic</strong> — it removes characters the browser doesn't need while preserving all functionality. The transformations: remove all comments (<code>/* This is a comment */</code>), remove whitespace (spaces, tabs, newlines), remove the last semicolon in each rule block (it's optional), shorten hex colors where possible (<code>#ffffff</code> → <code>#fff</code>), remove units from zero values (<code>0px</code> → <code>0</code>), and merge identical adjacent rules.</p>
-
-<p>A well-minified CSS file is <strong>30-50% smaller</strong> than the original. On a 100KB stylesheet, that's 30-50KB saved — about 0.1 seconds of load time on a 4G connection. Not transformative for a single file, but across 5-10 stylesheets on a typical site, it adds up.</p>
-
-<p>CSS minification is <strong>safe and lossless</strong>. The browser renders the minified CSS identically to the original. There's no reason not to minify CSS in production.</p>
-
-<h2>SVG Minification: Optimize the Drawing Instructions</h2>
-
-<p>SVG minification is <strong>structural</strong> — it optimizes the vector drawing instructions themselves. SVGs are XML files, and they accumulate bloat from: editor metadata (Adobe Illustrator adds 500+ bytes of generator comments and layer names), unused namespace declarations, unnecessary precision (path coordinates with 4 decimal places when 1 is visually identical), and redundant elements (groups that contain a single element, empty defs sections).</p>
-
-<p>SVG optimization also performs <strong>lossy transformations</strong>: rounding path coordinates to fewer decimal places, converting basic shapes to paths (which can be smaller), merging paths, and removing invisible elements. These can change the visual output slightly if pushed too aggressively — a path rounded to 0 decimal places will visibly shift from the original.</p>
-
-<p>A well-optimized SVG is <strong>20-70% smaller</strong> than the original. An Illustrator-exported icon that's 3KB can drop to 800 bytes. Across an icon set of 50 icons, that's 100KB+ saved — meaningful for page weight.</p>
-
-<h2>Building the Pipeline</h2>
-
-<p>In development: write readable CSS with comments and whitespace. Export SVGs from your design tool at default settings. <strong>In your build step:</strong> CSS minifier runs first (safe, lossless, can always run). SVG minifier runs second with conservative settings (2 decimal places for paths, remove metadata, keep viewBox). Test the optimized SVGs visually before deploying — a shifted icon is worse than a slightly larger icon.</p>
-
-<p>For minifying your CSS, use our <a href="/en/tools/css-minifier">CSS minifier</a> for instant compression. For optimizing SVG icons and illustrations, our <a href="/en/tools/svg-minifier">SVG minifier</a> strips metadata and optimizes paths. And for formatting minified code back to readable form during debugging, our <a href="/en/tools/code-formatter">code formatter</a> handles CSS, JS, and HTML.</p>
-`,
-  },
-  {
-    slug: "regex-tester-vs-text-diff-pattern-vs-line",
-    title: "Regex Tester vs Text Diff Pattern Matching vs Line-by-Line Comparison",
-    description: "Regex testers find patterns across text. Text diff tools compare two texts line by line. They solve different problems — here's when to reach for each tool and why using the wrong one wastes hours.",
-    date: "2026-07-04",
-    category: "Developer Tools",
-    tags: ["regex tester", "text diff", "pattern matching", "text comparison", "developer tools"],
-    relatedTools: ["regex-tester", "text-diff", "url-encoder"],
-    content: `<p>Your log file has 50,000 lines. You need to find all lines containing IP addresses that made more than 10 requests in a single second. A <strong>text diff tool</strong> can't do this — it compares two texts, it doesn't search within one text. A <strong>regex tester</strong> can find the pattern in seconds: <code>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b</code>.</p>
-
-<p>But if you have two versions of a configuration file and need to see exactly what changed between them, a regex tester is useless — you need a text diff. These two tools solve <strong>completely different problems</strong>, and developers waste hours using the wrong one.</p>
-
-<h2>When Regex Wins: Finding, Extracting, Validating</h2>
-
-<p>Regex (regular expressions) is a <strong>pattern-matching language</strong>. You describe a pattern, and the engine finds all matches in a text. Use regex when you need to: find all occurrences of a pattern across a large text (email addresses, phone numbers, IPs, dates in specific formats), extract specific data from structured text (pull all URLs from an HTML file, extract values from log entries), validate that text follows a format (is this a valid credit card number? is this a properly formatted API key?), or find-and-replace with pattern matching (replace all dates from MM/DD/YYYY to YYYY-MM-DD format).</p>
-
-<p>Regex is for <strong>intra-document pattern matching</strong>. It answers "where in this text does pattern X appear?" and "what are all the matches of pattern X?"</p>
-
-<h2>When Text Diff Wins: Comparing, Reviewing, Merging</h2>
-
-<p>Text diff is for <strong>inter-document comparison</strong>. It answers "what changed between version A and version B?" Use text diff when you need to: review code changes in a pull request (what lines were added, deleted, or modified?), compare two configuration files (what settings differ between staging and production?), merge two versions of a document (combine changes from two editors who worked simultaneously), or verify that a transformation was applied correctly (compare the input and output of a data processing step).</p>
-
-<p>Text diff operates on the <strong>line level</strong>. It doesn't understand patterns or semantics — it understands "this line exists in A but not B." This is exactly what you want for version comparison and exactly what you don't want for pattern search.</p>
-
-<h2>The Wrong Tool Penalty</h2>
-
-<p>Using regex to compare two files: you'd need to write a pattern that captures every possible change (additions, deletions, modifications, moved lines). This is effectively writing a diff algorithm in regex — which is theoretically impossible for arbitrary changes. Hours wasted.</p>
-
-<p>Using text diff to find patterns: you'd need to manually scan the diff output line by line looking for IP addresses. On a 50,000-line file, this is 500+ pages of output. Days wasted.</p>
-
-<p>For finding patterns in text, use our <a href="/en/tools/regex-tester">regex tester</a> with real-time match highlighting. For comparing two versions of any text, our <a href="/en/tools/text-diff">text diff tool</a> shows additions, deletions, and changes side by side. And for encoding special characters in your regex patterns, our <a href="/en/tools/url-encoder">URL encoder</a> handles percent encoding.</p>
-`,
-  },
-  {
-    slug: "history-of-measurement-systems-cubits-to-kg",
-    title: "The Bizarre History of Measurement Systems From Egyptian Cubits to the Modern Kilogram",
-    description: "The meter was defined as 1/10,000,000 of the distance from the equator to the North Pole. The kilogram was a platinum cylinder in Paris. How measurement evolved from body parts to universal constants.",
-    date: "2026-07-04",
+    slug: "crypto-price-tracker-alerts-no-charts",
+    title: "Crypto Price Tracker Set Alerts and Stop Watching Charts Every 5 Minutes",
+    description: "Checking crypto prices 50 times a day destroys your focus and leads to panic selling. Here's how to set price alerts and actually stop obsessing over the charts.",
+    date: "2026-07-05",
     category: "Reference",
-    tags: ["measurement history", "metric system", "imperial units", "SI units", "unit converter"],
-    relatedTools: ["unit-converter", "roman-numerals", "age-calculator"],
-    content: `<p>In 1793, two French astronomers set out to measure the distance from the North Pole to the equator through Paris. They spent six years triangulating their way across France and Spain during the French Revolution, getting arrested multiple times (surveying equipment looks suspicious during wartime), and ultimately made a <strong>mathematical error</strong> that made the meter 0.2 millimeters too short. That slightly-wrong meter became the foundation of the entire metric system.</p>
+    tags: ["crypto price", "Bitcoin tracker", "price alerts", "crypto investing", "focus"],
+    relatedTools: ["crypto-price", "roi-calculator", "percentage-calculator"],
+    content: `<p>You check Bitcoin's price when you wake up. Again during coffee. Again before your first meeting. You've checked it 12 times before lunch. Each check takes 20 seconds, but the <strong>cognitive switching cost</strong> — pulling your brain out of deep work to check a number that hasn't meaningfully changed — eats 5-10 minutes of productive focus each time. By end of day, you've lost an hour of deep work to price checking.</p>
 
-<p>The history of measurement is a history of <strong>humans trying to agree on anything</strong> — and mostly failing for thousands of years. Here's how we got from body parts to universal constants.</p>
+<p>The solution isn't willpower. It's <strong>price alerts</strong> — a system that tells you when something actually changed, so you can stop polling for changes that haven't happened.</p>
 
-<h2>Body Parts: The Original Measurement System</h2>
+<h2>Why You Check (It's Not About Information)</h2>
 
-<p>The <strong>cubit</strong> (ancient Egypt, ~3000 BCE): the length of the forearm from elbow to middle fingertip. About 52.5 cm, but every pharaoh had a different arm, so every construction project had a different cubit. The solution: a <strong>royal master cubit</strong> — a granite rod kept in the temple that all builders calibrated against. The first measurement standard.</p>
+<p>You're not checking prices for information — you're checking for <strong>emotional regulation</strong>. Price up 3%? Relief. Price down 5%? Anxiety that demands another check in 10 minutes. This is a dopamine loop identical to slot machine mechanics: variable rewards delivered at unpredictable intervals are the most addictive kind.</p>
 
-<p>The <strong>foot</strong> (ancient Rome): length of a human foot, standardized to about 29.6 cm under Emperor Augustus. Roman soldiers measured roads by counting paces (1 pace = 5 feet, 1,000 paces = 1 mile — literally "mille passus," a thousand paces). The Roman mile was about 1,480 meters, slightly shorter than the modern mile (1,609 meters).</p>
+<p>Crypto markets amplify this because they never close. Stocks give you 17.5 hours off per day (markets close, weekends off). Crypto gives you <strong>zero hours off</strong>. The price is moving right now, at 3am, on Christmas, during your kid's birthday party. The market's constant availability creates constant anxiety.</p>
 
-<p>The <strong>inch</strong> (medieval England): originally the width of a man's thumb. Standardized by King Edward II in 1324 as "three grains of barley, dry and round, placed end to end lengthwise." Agricultural standards were considered more reliable than royal thumbs.</p>
+<h2>The Alert System That Replaces Checking</h2>
 
-<h2>The French Revolution Gives Us the Metric System</h2>
+<p>Set three alert levels and then <strong>close the app</strong>: <strong>Level 1 — significant move:</strong> ±5% in 24 hours. This is "huh, something happened" territory. Worth a 5-minute check, not a trading decision. <strong>Level 2 — major move:</strong> ±15% in 24 hours. This is actual news — a regulatory announcement, a hack, a macroeconomic shock. Worth a 30-minute research session, not panic selling. <strong>Level 3 — portfolio rebalance trigger:</strong> ±30% from your average cost basis. This is the only level where you might actually do something — take profits, buy the dip, rebalance. Everything else is noise.</p>
 
-<p>The metric system was born from the French Revolution's desire to <strong>rationalize everything</strong> — including measurements. Pre-revolutionary France had an estimated 250,000 different measurement units across the country. A "pound" in Paris was different from a "pound" in Marseille. Tax collection was chaos.</p>
+<p>Most price movements are Level 0 — below your alert thresholds. Bitcoin moving from $63,400 to $63,800 is a 0.6% change. If you check 20 times a day, 19 of those checks will show you a number that hasn't meaningfully changed from the last check. Alerts eliminate the 19 useless checks and notify you about the 1 that matters.</p>
 
-<p>The new system was based on <strong>universal constants</strong>, not body parts or royal decrees: the meter = 1/10,000,000 of the distance from the equator to the North Pole (later refined), the gram = the mass of 1 cubic centimeter of water at 4°C, and the liter = 1,000 cubic centimeters. Everything derived from natural constants, not human anatomy.</p>
+<h2>What Actually Moves Crypto Prices</h2>
 
-<p>France made the metric system <strong>mandatory in 1799</strong> and then spent the next 40 years failing to enforce it. People kept using the old units. Napoleon himself reportedly hated the metric system and rolled back some of its requirements.</p>
+<p>Short-term crypto price movements are driven by: (1) <strong>leverage liquidations</strong> — cascading forced sells when overleveraged traders get margin called (these account for most sharp drops); (2) <strong>regulatory announcements</strong> — SEC rulings, ETF decisions, government bans; (3) <strong>macroeconomic data</strong> — inflation numbers, interest rate decisions (crypto increasingly correlates with tech stocks); (4) <strong>exchange hacks and scams</strong> — self-explanatory.</p>
 
-<h2>The Kilogram Problem</h2>
+<p>None of these are predictable by watching a price chart. An alert tells you something happened. The news tells you why. The chart just tells you what — and by the time you see it on a chart, it's already priced in.</p>
 
-<p>From 1889 to 2019, the kilogram was defined by a <strong>physical object</strong>: a platinum-iridium cylinder stored in a vault outside Paris called "Le Grand K" (The Big K). The problem: over time, Le Grand K lost mass — about 50 micrograms over 100 years, roughly the weight of an eyelash. This meant the kilogram was <strong>literally getting lighter</strong>, and every measurement in science that depended on the kilogram was drifting with it.</p>
+<p>For tracking crypto prices without constant checking, use our <a href="/en/tools/crypto-price">crypto price tracker</a> with real-time data. For calculating your actual returns (not just price watching), our <a href="/en/tools/roi-calculator">ROI calculator</a> computes annualized performance. And for measuring percentage moves from your buy-in price, our <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the math.</p>
+`,
+  },
+  {
+    slug: "base-converter-embedded-systems-firmware",
+    title: "Base Converter Decimal Binary Hex in Embedded Systems Why Firmware Engineers Live in Hexadecimal",
+    description: "Embedded systems engineers read hex dumps like prose. Here's why binary, hex, and decimal conversions are daily tools in firmware development — and what the rest of us can learn from their workflow.",
+    date: "2026-07-05",
+    category: "Developer Tools",
+    tags: ["base converter", "hexadecimal", "binary", "embedded systems", "firmware"],
+    relatedTools: ["base-converter", "hash-generator", "uuid-generator"],
+    content: `<p>Open a firmware engineer's terminal and you'll see screens full of numbers like <code>0x7F3A</code> and <code>0b1101_0010</code>. They don't convert these to decimal — they <strong>read hex directly</strong> the way most people read words. A hex dump of a microcontroller's memory tells them what the device is doing, what sensor just triggered, and whether the last SPI transfer succeeded.</p>
 
-<p>In 2019, scientists redefined the kilogram using <strong>Planck's constant</strong> — a fundamental constant of quantum physics that cannot change. The kilogram is no longer a physical object. It's a mathematical relationship defined by the speed of light, Planck's constant, and the frequency of cesium atoms. Your kitchen scale is calibrated against quantum mechanics.</p>
+<p>This isn't a party trick. It's a skill built on understanding <strong>why different number bases exist</strong> and when each one is the right tool for the job. And you don't need to be a firmware engineer to benefit from knowing which base to use when.</p>
 
-<h2>Why the US Still Uses Imperial</h2>
+<h2>Why Hexadecimal Wins for Hardware</h2>
 
-<p>The US is one of three countries (with Myanmar and Liberia) that hasn't officially adopted the metric system. Congress actually <strong>did</strong> pass the Metric Conversion Act in 1975, making metric the "preferred system" — but made conversion voluntary. Without a mandate, industries that benefited from switching (pharmaceuticals, science, auto manufacturing) did; industries that didn't (construction, home cooking) didn't. The result: Americans learn two systems and convert between them constantly.</p>
+<p>Hexadecimal (base-16) is the dominant number system in embedded systems for one reason: <strong>one hex digit = exactly four binary digits</strong>. <code>0xF</code> = <code>0b1111</code>. <code>0xA3</code> = <code>0b1010_0011</code>. This 1:4 mapping makes hex a compact, human-readable representation of binary.</p>
 
-<p>For converting between measurement systems, use our <a href="/en/tools/unit-converter">unit converter</a> with length, weight, temperature, and more. For understanding other historical numbering systems, our <a href="/en/tools/roman-numerals">Roman numerals converter</a> shows how Romans did math. And for calculating time spans across different calendar systems, our <a href="/en/tools/age-calculator">age calculator</a> handles exact date differences.</p>
+<p>Decimal (base-10) has no clean mapping to binary. What's <code>163</code> in binary? You can't tell by looking. You have to calculate: 128 + 32 + 2 + 1 = <code>0b1010_0011</code>. That's 10 seconds of mental math that hex gives you instantly: <code>0xA3</code> → A = 1010, 3 = 0011 → <code>0b1010_0011</code>. Two seconds, no math.</p>
+
+<p>This matters in firmware because <strong>hardware registers are bit-mapped</strong>. A single 8-bit register might control four different hardware features: bit 7 = enable, bits 6-4 = mode select, bits 3-0 = clock divider. Reading <code>0x93</code> tells you the register value instantly. Reading <code>147</code> tells you nothing without conversion.</p>
+
+<h2>Binary, Octal, and the Forgotten Bases</h2>
+
+<p><strong>Binary (base-2)</strong> is what the hardware actually uses. Every digital circuit is binary at the transistor level. Firmware engineers use binary when setting or reading individual bits: <code>0b0000_0100</code> sets bit 2. It's verbose but unambiguous.</p>
+
+<p><strong>Octal (base-8)</strong> was common in 1970s-80s computing because 8-bit bytes split cleanly into octal digits. Unix file permissions still use octal: <code>chmod 755</code> means owner=7 (rwx), group=5 (r-x), others=5 (r-x). This is why the leading zero in <code>0755</code> signals octal in C and Python — a convention that still trips up programmers who wonder why <code>0123</code> equals <code>83</code> in decimal.</p>
+
+<h2>When Decimal Actually Wins</h2>
+
+<p>Decimal wins for <strong>human-facing quantities</strong>: temperature, distance, money, time. Nobody wants to know the temperature is <code>0x19</code> degrees. But even here, decimal's dominance is historical, not mathematical. Base-12 advocates correctly point out that 12 divides evenly by 2, 3, 4, and 6 (decimal divides evenly only by 2 and 5). The base-10 system won because humans have 10 fingers, not because it's mathematically superior.</p>
+
+<h2>Practical Conversion Workflow</h2>
+
+<p>When debugging hardware or reading technical documentation: (1) keep a base converter open — you'll need decimal→hex, hex→binary, and binary→hex constantly; (2) learn the 16 hex-to-binary mappings by heart (0=0000 through F=1111) — it's 16 facts and saves hundreds of round-trips to the converter; (3) use underscores or spaces to group binary digits in fours (<code>0b1010_0011</code> not <code>0b10100011</code>) — grouping makes hex conversion visual instead of mental.</p>
+
+<p>For converting between number bases, use our <a href="/en/tools/base-converter">base converter</a> with decimal, binary, hex, and octal. For generating checksums and verifying firmware integrity, our <a href="/en/tools/hash-generator">hash generator</a> produces SHA-256 and MD5 hashes. And for generating unique device IDs in hex format, our <a href="/en/tools/uuid-generator">UUID generator</a> creates standard identifiers.</p>
+`,
+  },
+  {
+    slug: "lorem-ipsum-vs-real-content-wireframing",
+    title: "Lorem Ipsum vs Real Content Wireframing Which Actually Catches Design Flaws Earlier",
+    description: "Lorem ipsum is the default placeholder text for 500 years. But real content in wireframes catches layout bugs, truncation issues, and readability problems that dummy text hides.",
+    date: "2026-07-05",
+    category: "Text Tools",
+    tags: ["lorem ipsum", "wireframing", "placeholder text", "UX design", "content-first design"],
+    relatedTools: ["lorem-ipsum", "word-counter", "text-repeater"],
+    content: `<p>Every designer has done it: you create a beautiful card component with a title, a short description, and a button. You fill it with Lorem Ipsum — "Lorem ipsum dolor sit amet, consectetur adipiscing elit." It looks perfect. You ship it. Then real content goes in: "Premium Handcrafted Artisanal Small-Batch Organic Cold-Brew Coffee Concentrate — 32oz Amber Glass Bottle with Bamboo Cap." The title breaks to four lines, the description overflows, and the button disappears below the fold.</p>
+
+<p><strong>Lorem Ipsum hides layout problems</strong> that real content exposes. The 500-year-old placeholder text has a specific structure that's <strong>unlike any real content</strong> — and that's exactly why it fails as a design tool.</p>
+
+<h2>What Lorem Ipsum Gets Wrong About Real Content</h2>
+
+<p>Lorem Ipsum is scrambled Latin from Cicero's "De Finibus Bonorum et Malorum" (45 BCE). It has specific properties that make it a terrible stand-in for real content: (1) <strong>uniform word length</strong> — Lorem Ipsum words average 5-7 characters, similar to English, but with less variance (real English has short words like "a" and "I" mixed with long words like "comprehensive"); (2) <strong>no proper nouns</strong> — no capital letters mid-sentence, no acronyms, no product names that refuse to hyphenate; (3) <strong>no punctuation variety</strong> — no em dashes, no ampersands, no percentages, no currency symbols — all of which break differently at line endings; (4) <strong>consistent paragraph length</strong> — real content has one-sentence paragraphs, five-sentence paragraphs, bulleted lists, and blockquotes.</p>
+
+<p>All of these properties make Lorem Ipsum <strong>easier to lay out than real content</strong>. It flows smoothly. It doesn't create widows or orphans. It doesn't have strings of capital letters that refuse to break. Your design looks great with Lorem Ipsum because Lorem Ipsum was accidentally designed to make layouts look great.</p>
+
+<h2>What Real Content Catches That Lorem Ipsum Misses</h2>
+
+<p>Real content exposes: (1) <strong>truncation bugs</strong> — a product name that's 80 characters long breaks your card layout; (2) <strong>minimum content problems</strong> — a section with only 10 words of content looks lost in a design built for 50-word Lorem Ipsum paragraphs; (3) <strong>special character rendering</strong> — ampersands, trademark symbols, and emoji may render incorrectly in your chosen font; (4) <strong>line-breaking disasters</strong> — a long URL or email address in the middle of a paragraph creates an unbreakable string that overflows its container; (5) <strong>content hierarchy mismatch</strong> — real content might have three levels of headings when your design only provides two.</p>
+
+<h2>The Content-First Design Workflow</h2>
+
+<p>Content-first design reverses the typical process: (1) write the <strong>real content first</strong> — or at least realistic draft content with actual word counts, heading structures, and data types; (2) design the layout around the content; (3) use Lorem Ipsum only for <strong>stress testing</strong> — fill a component with 3× the expected content length to see where it breaks.</p>
+
+<p>For placeholder text generation, use Lorem Ipsum for visual stress testing: fill components with 2-3× expected content to find the break points. Then replace with realistic content for final validation. Our <a href="/en/tools/lorem-ipsum">Lorem Ipsum generator</a> creates variable-length placeholder text. For checking actual content length against your design specs, our <a href="/en/tools/word-counter">word counter</a> measures real content. And for testing how components handle repeated strings, our <a href="/en/tools/text-repeater">text repeater</a> stress-tests edge cases.</p>
+`,
+  },
+  {
+    slug: "hashtag-generator-algorithmic-vs-human-social-strategy",
+    title: "Hashtag Generator Algorithmic vs Human-Curated Social Media Strategy Which Gets More Reach",
+    description: "Algorithmic hashtag generators suggest popular tags. Human-curated strategies pick niche-specific ones. The data shows one approach consistently beats the other for actual engagement.",
+    date: "2026-07-05",
+    category: "Text Tools",
+    tags: ["hashtag generator", "social media strategy", "Instagram hashtags", "algorithm", "engagement"],
+    relatedTools: ["hashtag-generator", "fancy-text-generator", "translate"],
+    content: `<p>You post a photo on Instagram with 30 hashtags suggested by an algorithmic generator: #love, #instagood, #photooftheday, #beautiful, #fashion, #happy, #picoftheday, #follow, #nature, #art. These are among the <strong>most used hashtags on the platform</strong> — each has 500 million to 2 billion posts. Your post is immediately buried under 50,000 new posts using the same hashtags that hour. Your reach from hashtags: zero.</p>
+
+<p>Meanwhile, someone in your niche posts with 8 carefully chosen hashtags: #copperplatecalligraphy, #pointedpenpractice, #weddinginvitationdesign, #handletteredstationery. Their post reaches 400 people through hashtags alone. The difference isn't luck — it's <strong>hashtag strategy</strong>, and algorithmic generators get it wrong by design.</p>
+
+<h2>Why Algorithmic Generators Recommend the Wrong Hashtags</h2>
+
+<p>Algorithmic hashtag generators work by: (1) taking your input keyword, (2) finding hashtags that co-occur with it, and (3) ranking by popularity. The problem is step 3: <strong>ranking by popularity</strong> is exactly the wrong metric for reach.</p>
+
+<p>Popular hashtags (#love, #instagood) have the most posts — and the <strong>fastest turnover</strong>. Your post disappears from the "Recent" tab in seconds. Unless your post immediately gets high engagement (which it won't, because nobody saw it), it never reaches the "Top" tab. You're competing with professional creators, brands, and celebrities for visibility in a firehose of content.</p>
+
+<p>Algorithmic generators also ignore: (1) <strong>hashtag ban status</strong> — Instagram periodically bans hashtags that attract spam (using a banned hashtag limits your entire post's reach); (2) <strong>hashtag saturation level</strong> — a "medium" hashtag with 50K-500K posts gives you minutes of visibility instead of seconds; (3) <strong>audience match</strong> — a hashtag with high post count but low engagement rate means lots of people use it, but nobody browses it.</p>
+
+<h2>The Human-Curated Strategy That Actually Works</h2>
+
+<p>Build a <strong>hashtag ladder</strong> with three tiers: <strong>Tier 1 — 3-5 niche hashtags</strong> (5K-50K posts): #copperplatecalligraphy, #obliquepenholder. These are your core audience. People browse these hashtags actively. Your post stays visible for hours or days. <strong>Tier 2 — 3-5 medium hashtags</strong> (50K-500K posts): #calligraphypractice, #handletteringcommunity. Some competition, but still browsable. Your post is visible for minutes to hours. <strong>Tier 3 — 2-3 broad hashtags</strong> (500K-5M posts): #calligraphy, #lettering. High competition, but if your post gets enough engagement from Tiers 1-2, it might break into the Top tab here. These are aspirational, not reliable.</p>
+
+<p>The total is 8-13 hashtags, not 30. Instagram allows 30, but accounts using 20-30 hashtags look spammy and see <strong>lower engagement rates</strong> than accounts using 5-10 well-chosen ones. Quality beats quantity.</p>
+
+<h2>How to Find Your Tier 1 Hashtags</h2>
+
+<p>Algorithmic generators can help with <strong>discovery</strong> — use them to generate 50+ candidate hashtags, then manually filter: (1) remove any hashtag over 500K posts (too saturated for Tier 1-2), (2) remove any hashtag under 1K posts (not enough browsing activity), (3) check each remaining hashtag manually — look at the Top posts. Are they getting engagement? Is the content similar to yours? (4) test different combinations and track which hashtags actually drive profile visits and follows.</p>
+
+<p>For discovering hashtag candidates, use our <a href="/en/tools/hashtag-generator">hashtag generator</a> for keyword-based suggestions. For creating visually distinctive bio text, our <a href="/en/tools/fancy-text-generator">fancy text generator</a> creates Unicode styles. And for translating your hashtags for international audiences, our <a href="/en/tools/translate">free translator</a> handles 100+ languages.</p>
+`,
+  },
+  {
+    slug: "lateral-thinking-vs-vertical-logic-brain-modes",
+    title: "Lateral Thinking vs Vertical Logic How Your Brain Solves Problems in Two Completely Different Modes",
+    description: "Vertical thinking is step-by-step logic. Lateral thinking is sideways insight. Both are real cognitive modes, and the most creative problem-solvers switch between them deliberately.",
+    date: "2026-07-05",
+    category: "Fun & Media",
+    tags: ["lateral thinking", "vertical thinking", "creativity", "problem solving", "cognitive science"],
+    relatedTools: ["lateral-thinking", "coin-flip", "random-number-generator"],
+    content: `<p>You're stuck on a problem. You've been thinking about it for two hours, going over the same logical steps, and getting nowhere. Then you take a shower, go for a walk, or wake up at 3am with the answer fully formed. That's not magic — it's your brain switching from <strong>vertical thinking</strong> (logical, sequential, deliberate) to <strong>lateral thinking</strong> (associative, indirect, spontaneous).</p>
+
+<p>The terms were coined by Edward de Bono in 1967, but the underlying cognitive modes are real and measurable. Here's how they work and when to use each one.</p>
+
+<h2>Vertical Thinking: The Logic Engine</h2>
+
+<p>Vertical thinking is what most people mean by "thinking." It's <strong>sequential, analytical, and convergent</strong>: start with known facts, apply logical operations, arrive at a conclusion. If A > B and B > C, then A > C. Each step follows from the previous step. The path is straight down — vertical.</p>
+
+<p>Vertical thinking excels at: (1) problems with <strong>clear rules and known variables</strong> (math, engineering, accounting), (2) <strong>optimization</strong> within an existing framework (making a process 10% more efficient), (3) <strong>verification</strong> — checking whether an idea actually works, and (4) <strong>execution</strong> — turning a creative insight into a concrete plan.</p>
+
+<p>Vertical thinking fails when: the initial assumptions are wrong (logical steps from false premises produce false conclusions), the problem requires <strong>reframing</strong> (you're solving the wrong problem), or the solution space is <strong>discontinuous</strong> (the answer requires a leap, not a step).</p>
+
+<h2>Lateral Thinking: The Insight Generator</h2>
+
+<p>Lateral thinking is <strong>associative, generative, and divergent</strong>: make unexpected connections, challenge assumptions, generate possibilities without immediately judging them. The path is sideways — lateral. De Bono described it as "you can't dig a hole in a different place by digging the same hole deeper."</p>
+
+<p>Lateral thinking techniques: (1) <strong>random stimulation</strong> — introduce an unrelated concept and force a connection (how would a kindergarten teacher solve this? how would nature solve this?); (2) <strong>provocation</strong> — make a deliberately wrong statement and explore its implications ("what if cars had square wheels?" — leads to thinking about suspension differently); (3) <strong>reversal</strong> — flip the problem statement ("how do we get more customers?" → "how do we get fewer customers?" — reveals what's actually driving people away); (4) <strong>analogy</strong> — find a structurally similar problem in a completely different domain.</p>
+
+<p>Lateral thinking excels at: (1) <strong>breaking out of mental ruts</strong> (when you keep arriving at the same inadequate solution), (2) <strong>generating novel approaches</strong> (not just improving existing ones), (3) <strong>reframing problems</strong> (realizing the real problem is different from what you thought), and (4) <strong>creative ideation</strong> (brainstorming, design thinking, innovation workshops).</p>
+
+<h2>The Switch: When to Use Which Mode</h2>
+
+<p>The most effective problem-solvers <strong>deliberately switch between modes</strong>: (1) use lateral thinking to generate possibilities and reframe the problem; (2) use vertical thinking to evaluate, filter, and execute on the best possibilities; (3) if vertical thinking hits a dead end, switch back to lateral to find a new approach; (4) don't mix modes — judging ideas while generating them (using vertical thinking during a lateral phase) kills creativity. Separate generation from evaluation.</p>
+
+<p>Lateral thinking puzzles (riddles that require reframing assumptions) are one way to practice the switch. They force you to abandon your initial framing and approach from an unexpected angle — exactly the skill that transfers to real-world problem-solving.</p>
+
+<p>For practicing lateral thinking with puzzles, use our <a href="/en/tools/lateral-thinking">lateral thinking puzzles</a> with hints and solutions. For making decisions when both thinking modes leave you stuck, our <a href="/en/tools/coin-flip">coin flip tool</a> breaks analysis paralysis. And for introducing randomness into brainstorming, our <a href="/en/tools/random-number-generator">random number generator</a> provides the random stimulus that lateral thinking techniques use.</p>
 `,
   },
 
@@ -233,4 +227,4 @@ if old not in content:
 content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
-print("Free station: 6 blogs inserted (148 -> 154)")
+print("Free station: 6 blogs inserted (154 -> 160)")
