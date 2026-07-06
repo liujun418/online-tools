@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (154→160) — July 5, 2026"""
+"""Add 6 blogs to free station (160→166) — July 6, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,221 +10,259 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "compound-interest-5-percent-retirement-rule",
-    title: "Compound Interest The 5% Rule and Why Retirement Withdrawal Math Is Trickier Than You Think",
-    description: "The 4% rule says withdraw 4% yearly. The 5% rule is for growth projections. Here's why mixing them up costs retirees real money — and how to model both correctly.",
-    date: "2026-07-05",
+    slug: "percentage-calculator-percent-change-vs-difference",
+    title: "Percentage Calculator Percent Change vs Percent Difference When You're Using the Wrong One",
+    description: "Percent change and percent difference sound interchangeable. They're not. Using the wrong one makes your data lie — here's when to use each.",
+    date: "2026-07-06",
     category: "Calculators",
-    tags: ["compound interest", "retirement planning", "4% rule", "5% rule", "withdrawal strategy"],
-    relatedTools: ["compound-interest", "roi-calculator", "percentage-calculator"],
-    content: `<p>You read two pieces of financial advice in the same week. Article one: "Save 15% of your income and assume 5% annual growth — you'll retire comfortably." Article two: "Follow the 4% rule — withdraw 4% of your portfolio in year one of retirement, adjusted for inflation." These numbers sound similar but describe <strong>completely different things</strong>, and confusing them is one of the most expensive mistakes in personal finance.</p>
+    tags: ["percentage calculator", "percent change", "percent difference", "data analysis", "math"],
+    relatedTools: ["percentage-calculator", "discount-calculator", "tip-calculator"],
+    content: `<p>Your revenue went from $100K to $120K. That is a 20% increase — percent change. Your revenue is $120K and your competitor's is $100K. The percent difference is 18.2%. Same two numbers, two different percentages, and if you report the wrong one in a meeting someone will call you out.</p>
 
-<p>The <strong>5% growth assumption</strong> is about accumulation — how fast your money grows while you're working. The <strong>4% withdrawal rule</strong> is about decumulation — how much you can safely spend without running out. They interact in ways that aren't obvious until you run the numbers.</p>
+<p>Most people use "percent change" and "percent difference" as if they are the same thing. They are not. Here is how to use each correctly, and why mixing them up is one of the most common data mistakes in business.</p>
 
-<h2>The 5% Growth Assumption: Optimistic but Defensible</h2>
+<h2>Percent Change: When Time Is the Variable</h2>
 
-<p>Financial advisors often use 5-7% annual returns when projecting retirement savings growth. This is typically a <strong>real return</strong> (after inflation) assumption based on the S&P 500's historical average of about 10% nominal, minus 3% inflation, minus some conservatism. Over 30+ year horizons, 5% real is a reasonable planning number — not guaranteed, but historically defensible.</p>
+<p><strong>Percent change</strong> answers the question: "How much did this number change compared to where it started?" The formula is <code>(new - old) / old × 100</code>. The denominator is always the <strong>original value</strong>. Revenue grew from $100K to $120K = (120-100)/100 × 100 = <strong>20% increase</strong>. Revenue dropped from $120K to $100K = (100-120)/120 × 100 = <strong>−16.7% decrease</strong>.</p>
 
-<p>The trap: people hear "5% growth" and think it's a smooth, reliable increase. It's not. The S&P 500 returned -37% in 2008, +32% in 2013, -4.4% in 2018, +29% in 2019. The 5% is a <strong>long-term average</strong> that includes years of dramatic losses. Your retirement calculator showing a smooth upward curve is a mathematical convenience, not reality.</p>
+<p>Notice the asymmetry. A 20% gain does not reverse with a 20% loss. If your stock drops 50%, you need a <strong>100% gain</strong> to break even. This is why percent change is directional — the old value is the anchor. Use percent change for: year-over-year growth, month-over-month trends, price changes over time, test score improvements, weight loss tracking.</p>
 
-<h2>The 4% Withdrawal Rule: More Fragile Than It Looks</h2>
+<p>The most common mistake: using percent change when there is no "before" and "after." Comparing two static groups — like men's vs women's average salaries, or your product vs a competitor's — is not a percent change problem. There is no time direction. That is where percent difference comes in.</p>
 
-<p>The 4% rule comes from the 1994 "Trinity Study" by three finance professors at Trinity University. They asked: if you retire with a portfolio split 50/50 between stocks and bonds, what percentage can you withdraw each year (adjusted for inflation) and have a 95% chance of not running out of money over 30 years? The answer was 4%.</p>
+<h2>Percent Difference: When Two Values Are Peers</h2>
 
-<p>What most people miss about the 4% rule: (1) it was designed for <strong>30-year retirements</strong> — if you retire at 55 and live to 90, that's 35 years, and the 4% rule's success rate drops; (2) it assumes a <strong>US stock/bond portfolio</strong> — different countries, different asset allocations, different results; (3) the 95% success rate means 1 in 20 retirees following the rule still run out of money; (4) it was calculated using <strong>historical US data</strong> — future returns may be lower.</p>
+<p><strong>Percent difference</strong> answers: "How different are these two numbers, treating neither as the reference?" The formula is <code>|a - b| / ((a + b) / 2) × 100</code>. The denominator is the <strong>average</strong> of the two values, not one of them. This symmetry is the whole point. Your product costs $120, a competitor's costs $100. The percent difference is |120-100| / ((120+100)/2) × 100 = 20/110 × 100 = <strong>18.2%</strong>.</p>
 
-<h2>The Interaction: Why Sequence Matters</h2>
+<p>Swap the order and you get the same answer. That symmetry is what makes percent difference the right tool for comparing peers. Use it for: comparing two products' prices, comparing two groups' averages, comparing experimental vs control group results, comparing two measurement methods.</p>
 
-<p>The 5% growth assumption and the 4% withdrawal rule interact through <strong>sequence of returns risk</strong>. If the market drops 30% in year one of retirement, and you withdraw 4% of the original portfolio value, you're actually withdrawing a much larger percentage of the now-depleted portfolio. This early damage compounds: even if the market recovers in years 3-10, you've locked in losses by selling at the bottom.</p>
+<p>A practical example: your team's bug count this sprint is 15, another team's is 12. If you say "our team has 25% more bugs," you are using percent change with your team as the reference — it sounds worse than "the percent difference between teams is 22.2%." Same data, different framing. Knowing which formula you are using lets you choose the honest one.</p>
 
-<p>A compound interest calculator that models <strong>variable returns</strong> (not just constant 5%) shows how dramatically sequence risk changes outcomes. Two retirees with identical 30-year average returns can have completely different results depending on whether the bad years came early or late in retirement.</p>
+<h2>The Edge Cases That Trip People Up</h2>
 
-<h2>How to Model Your Own Numbers</h2>
+<p><strong>Zero values.</strong> Percent change from zero is undefined (division by zero). If last month's sales were $0 and this month is $500, you cannot calculate a percent change. Say "increased from $0 to $500" instead. Percent difference with a zero value still works as long as the other value is non-zero.</p>
 
-<p>Don't trust a single "average return" projection. Run three scenarios: (1) optimistic (7% real return, 4% withdrawal), (2) baseline (5% real return, 4% withdrawal), (3) pessimistic (3% real return, 3.5% withdrawal — you spend less because returns are lower). If your plan works in all three, you have margin for error. If it only works in the optimistic scenario, you need to save more, retire later, or spend less.</p>
+<p><strong>Negative numbers.</strong> If old value is -$10K (a loss) and new value is +$20K (a profit), percent change formulas get weird. The standard formula gives -300%, which is mathematically correct but communicates nothing useful. In these cases, skip the percentage and report absolute change: "improved by $30K."</p>
 
-<p>For modeling retirement savings growth, use our <a href="/en/tools/compound-interest">compound interest calculator</a> with variable contribution and rate inputs. For calculating annualized returns on your actual portfolio, our <a href="/en/tools/roi-calculator">ROI calculator</a> computes real performance. And for figuring out what percentage of income to save, our <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the math.</p>
-`,
+<p><strong>Percent of what?</strong> Always specify the base. "Sales increased 10%" is ambiguous. "Sales increased 10% compared to Q1" is clear. Our <a href="/en/tools/percentage-calculator">percentage calculator</a> handles all three modes — percent change, percent difference, and percent of a number — so you do not need to remember the formulas, just which question you are asking.</p>
+
+<h2>Quick Decision Rule</h2>
+
+<p>Before you calculate any percentage, ask: <strong>is there a direction of time or a reference baseline?</strong> If yes → percent change. If no, and both values are equal-status peers → percent difference. If you are just finding a portion of a whole → percent of a number. Getting this right takes five seconds of thinking and saves you from looking sloppy in front of people who do know the difference.</p>
+
+<p>Try the <a href="/en/tools/percentage-calculator">free percentage calculator</a> next time you need to crunch these numbers. It shows all three modes side by side so you can verify you picked the right one.</p>`
   },
   {
-    slug: "crypto-price-tracker-alerts-no-charts",
-    title: "Crypto Price Tracker Set Alerts and Stop Watching Charts Every 5 Minutes",
-    description: "Checking crypto prices 50 times a day destroys your focus and leads to panic selling. Here's how to set price alerts and actually stop obsessing over the charts.",
-    date: "2026-07-05",
+    slug: "url-slug-generator-unicode-international-seo",
+    title: "URL Slug Generator Unicode Accented Characters and Why International SEO Depends on Getting Slugs Right",
+    description: "URL slugs with é, ñ, ü, or Chinese characters break in email clients, mess up Google indexing, and confuse browsers. Here's how to generate clean slugs for any language.",
+    date: "2026-07-06",
+    category: "Developer",
+    tags: ["URL slug", "Unicode", "international SEO", "permalink", "transliteration"],
+    relatedTools: ["text-to-slug", "url-encoder", "html-entities"],
+    content: `<p>You publish a blog post titled "Cómo hacer paella valenciana." Your CMS generates the slug <code>/cómo-hacer-paella-valenciana</code>. Looks fine in your browser. Then someone shares it in Slack and the URL becomes <code>/c%C3%B3mo-hacer-paella-valenciana</code> — ugly, unreadable, and some email clients truncate it mid-encoding. Worse, Google might index both the encoded and unencoded versions as duplicate content.</p>
+
+<p>URL slugs with accented characters, non-Latin scripts, and special symbols are a minefield for international SEO. Here is how a <a href="/en/tools/text-to-slug">URL slug generator</a> handles the edge cases and why manual slug creation fails at scale.</p>
+
+<h2>Why Accented Characters in URLs Are a Problem</h2>
+
+<p>Technically, domain names and URLs <strong>can</strong> contain Unicode characters via Internationalized Domain Names (IDN) and UTF-8 percent-encoding. In practice, most systems handle them poorly. Email clients like Outlook percent-encode them into unreadable strings. Some social media platforms truncate encoded URLs at the wrong boundary. Copy-pasting a URL with "é" from a browser address bar works, but copying from the page source gives you the encoded version.</p>
+
+<p>The safe approach: <strong>transliterate accented characters to ASCII equivalents</strong> before they become slugs. é → e, ñ → n, ü → u, ø → o. This is what a proper slug generator does — it maps Unicode characters to their closest ASCII representation using a transliteration table, not just stripping diacritics.</p>
+
+<h2>Non-Latin Scripts: Chinese, Arabic, Cyrillic</h2>
+
+<p>For languages that do not use the Latin alphabet at all — Chinese, Japanese, Arabic, Russian — transliteration is trickier. A Chinese title like "如何制作网页" could become the slug <code>ru-he-zhi-zuo-wang-ye</code> (Pinyin romanization) or stay as <code>%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E7%BD%91%E9%A1%B5</code> (percent-encoded UTF-8).</p>
+
+<p>Neither is ideal, but the Pinyin approach is better for readability and sharing. Some sites manually write English slugs for non-English content — WordPress lets you edit the slug independently of the title. Our <a href="/en/tools/text-to-slug">text to slug converter</a> strips accents and special characters but preserves the Latin-alphabet structure, which works for most European languages out of the box.</p>
+
+<h2>Special Characters and Edge Cases</h2>
+
+<p><strong>Ampersands (&).</strong> "Design & Development" should become <code>design-development</code>, not <code>design-amp-development</code> or <code>design-&-development</code>. The ampersand has special meaning in HTML and URL query strings — it must be stripped, not encoded.</p>
+
+<p><strong>Currency symbols.</strong> "iPhone costs $999" → the dollar sign should disappear. "Price €50" → euro sign gone. These symbols have no business in a URL.</p>
+
+<p><strong>Emoji.</strong> "10 Tips for Better Code 🔥" — the fire emoji should be stripped. URLs with emoji technically work in modern browsers but look unprofessional and break in many tools.</p>
+
+<p><strong>Apostrophes and quotes.</strong> "Don't" → <code>dont</code> (not <code>don-t</code>). Smart quotes (curly quotes from Word) should be converted to straight quotes then stripped.</p>
+
+<p>A good slug generator handles all of these in one pass: lowercase → strip HTML → transliterate accents → replace spaces with hyphens → remove special chars → collapse multiple hyphens → trim. Missing any step creates edge cases that bite you later.</p>
+
+<h2>SEO Implications of Bad Slugs</h2>
+
+<p>Google's John Mueller has said that words in URLs are a "lightweight" ranking factor. More importantly, URLs appear in search results — a clean, readable slug like <code>/url-slug-unicode-seo</code> gets more clicks than <code>/post.php?id=8472&lang=es</code>. The slug is your first impression in the SERP, right after the title.</p>
+
+<p>For multilingual sites, consistent slug policies prevent duplicate content. If <code>/es/cómo-hacer-paella</code> and <code>/es/como-hacer-paella</code> both resolve, you have two URLs for the same page. Pick one policy — transliterate everything or manually set slugs per language — and enforce it with your slug generator.</p>
+
+<p>Generate clean, SEO-safe URL slugs at <a href="/en/tools/text-to-slug">text to slug converter</a>. Paste any title in any language and get an ASCII-safe, readable slug instantly.</p>`
+  },
+  {
+    slug: "hash-generator-file-integrity-verification",
+    title: "Hash Generator File Integrity Verification How to Know Your Download Wasn't Tampered With",
+    description: "You downloaded a software installer. How do you know it's the real file and not malware? Hash verification — the 30-second check most people skip.",
+    date: "2026-07-06",
+    category: "Developer",
+    tags: ["hash generator", "SHA-256", "file integrity", "checksum", "MD5"],
+    relatedTools: ["hash-generator", "base64-converter", "uuid-generator"],
+    content: `<p>You download a wallet app, a BIOS update, or a Linux ISO. The download page shows a long string of letters and numbers labeled "SHA-256." Most people ignore it and run the installer. Most of the time, nothing bad happens. When something bad <em>does</em> happen — a compromised mirror served a modified file, a download corrupted mid-transfer, a man-in-the-middle swapped the binary — that hash is the only thing standing between you and malware.</p>
+
+<p>Verifying a file hash takes 30 seconds. Here is what hashes actually prove, which algorithms to use, and how to integrate verification into your workflow with a <a href="/en/tools/hash-generator">free hash generator</a>.</p>
+
+<h2>What a Hash Actually Proves</h2>
+
+<p>A cryptographic hash function takes any input — a password, a file, an entire hard drive — and produces a fixed-length string called a digest. The key properties: <strong>deterministic</strong> (same input always produces the same hash), <strong>one-way</strong> (you cannot reconstruct the input from the hash), and <strong>collision-resistant</strong> (finding two different inputs with the same hash should be computationally infeasible).</p>
+
+<p>When you verify a file hash, you are proving: "The file I downloaded is bit-for-bit identical to the file the publisher intended me to receive." That is it. A matching hash does <strong>not</strong> prove the publisher is trustworthy — if the publisher ships malware and publishes the malware's hash, the hash still matches. What it protects against: corrupted downloads, compromised mirrors, and supply chain attacks where an attacker replaces a legitimate file on a CDN or mirror server.</p>
+
+<h2>SHA-256 vs MD5 vs SHA-1: Which to Use</h2>
+
+<p><strong>MD5:</strong> Broken. Researchers have demonstrated practical collision attacks — two different files with the same MD5 hash — since 2004. Do not use MD5 for security. It is still used for non-security checksums (detecting accidental corruption during download) but provides zero protection against a deliberate attacker. If a download page only provides an MD5 checksum, ask why.</p>
+
+<p><strong>SHA-1:</strong> Also broken. Google and CWI demonstrated the first SHA-1 collision in 2017 (the SHAttered attack). Git is migrating away from SHA-1. Do not use for new projects.</p>
+
+<p><strong>SHA-256 (SHA-2 family):</strong> The current standard. No known practical attacks. This is what you should use for file integrity verification. The output is 256 bits, displayed as 64 hex characters.</p>
+
+<p><strong>SHA-512 and SHA-3:</strong> Also secure. SHA-512 produces longer digests and is sometimes faster on 64-bit processors. SHA-3 is the newest NIST standard with a different internal structure. Both are fine but SHA-256 is the most widely supported.</p>
+
+<p>Our <a href="/en/tools/hash-generator">hash generator</a> supports MD5, SHA-1, SHA-256, SHA-384, and SHA-512 — you can generate and compare hashes for any text or file input directly in the browser.</p>
+
+<h2>How to Verify a Download in Practice</h2>
+
+<p><strong>Step 1:</strong> Find the published hash. Reputable projects publish hashes on their official website or GitHub releases page, often in a file called <code>SHA256SUMS</code> or next to the download link. Never trust a hash posted on the same mirror you are downloading from — if the mirror is compromised, the hash is too.</p>
+
+<p><strong>Step 2:</strong> Generate the hash of your downloaded file. You can use our <a href="/en/tools/hash-generator">online hash generator</a> — upload or drag the file, select SHA-256, and copy the result.</p>
+
+<p><strong>Step 3:</strong> Compare character by character. Do not just check the first and last few characters — collision attacks specifically target the middle bits. The hashes must match exactly.</p>
+
+<p><strong>Step 4 (optional):</strong> Verify the hash was published by the real developer. Check the project's HTTPS website, GitHub repo, or PGP-signed release announcement. A hash on a random forum post proves nothing.</p>
+
+<h2>Beyond Downloads: Integrity Monitoring</h2>
+
+<p>Hashes are also used for file integrity monitoring — detecting when critical system files change unexpectedly. Tools like Tripwire and AIDE maintain a database of known-good hashes for system binaries and alert on changes. For personal use, you can hash your important documents and periodically re-check to detect silent corruption or unauthorized modification.</p>
+
+<p>The hash is the cheapest security check you can do. Thirty seconds per download. Start making it a habit at <a href="/en/tools/hash-generator">free hash generator</a>.</p>`
+  },
+  {
+    slug: "fullscreen-text-vs-text-repeater-display-vs-repetition",
+    title: "Fullscreen Text vs Text Repeater When to Display Big and When to Repeat Often — They Solve Different Problems",
+    description: "Fullscreen text makes words impossible to miss. Text repeater copies words a thousand times. Both are text tools, but they serve completely different needs.",
+    date: "2026-07-06",
+    category: "Text Tools",
+    tags: ["fullscreen text", "text repeater", "text display", "digital signage", "ASCII art"],
+    relatedTools: ["fullscreen-text", "text-repeater", "word-counter"],
+    content: `<p>You need to display a WiFi password at an event. You type it in 200pt font on a laptop screen — readable from across the room. That is fullscreen text. You need to generate 500 rows of test data with placeholder names. You type "John Doe" and multiply it by 500. That is text repeater. Both tools take text and output it differently, but the use cases barely overlap.</p>
+
+<p>Here is when to reach for each, and why confusing them leads to the wrong tool for the job.</p>
+
+<h2>Fullscreen Text: One Message, Maximum Visibility</h2>
+
+<p><a href="/en/tools/fullscreen-text">Fullscreen text</a> takes a short message and displays it as large as the screen allows — white text on black background by default, filling the entire browser window. The use case is <strong>one message seen by many people</strong>. Think of it as a digital sign.</p>
+
+<p><strong>Real use cases:</strong> WiFi passwords at conferences ("Network: ConfWiFi / Pass: s3cur3!2026"), gate numbers for airport pickups (hold up your phone instead of a handwritten sign), room numbers for workshops, "Back in 10 minutes" on your monitor when you step away, QR code captions ("Scan for menu ↓"), lyrics at karaoke nights, and accessibility — large text for visually impaired readers.</p>
+
+<p>The design constraint is <strong>readability at distance</strong>. Colors should be high contrast. Text should be short — fullscreen text is not for paragraphs. The ideal message fits on one screen without scrolling. Dark mode (white on black) is the default for a reason: it is easier on the eyes in dim rooms and more visible from across a space.</p>
+
+<p>Our fullscreen text tool also offers a time display mode — show the current time in large format, useful for presentations, exams, or timed activities where everyone needs to see the clock.</p>
+
+<h2>Text Repeater: One String, Many Copies</h2>
+
+<p><a href="/en/tools/text-repeater">Text repeater</a> takes a string and duplicates it N times, with optional separators (newlines, commas, spaces) between copies. The use case is <strong>one string needed in bulk</strong>.</p>
+
+<p><strong>Real use cases:</strong> Generating test data ("testuser@example.com" × 1000 for load testing a registration form), creating ASCII art patterns (repeating characters to form shapes), building placeholder lists for UI mockups, generating repeated HTML table rows for layout testing, creating word lists for spelling practice ("accommodate" × 50 with newlines), and generating repeated code comments or separators.</p>
+
+<p>The design constraint is <strong>volume and format</strong>. The separator choice matters: newlines for lists, commas for CSV data, spaces for inline text, nothing for concatenation. Getting the separator wrong means redoing the whole generation. A text repeater that does not let you choose separators is missing half the use case.</p>
+
+<h2>When You Need Both: The Event Preparation Workflow</h2>
+
+<p>Here is a real workflow that uses both tools. You are organizing a workshop with 30 attendees. You use the <strong>text repeater</strong> to generate 30 name badges — "Attendee 1" through "Attendee 30" with newline separators. You print those. Then you use <strong>fullscreen text</strong> to display the workshop title and WiFi password on a spare monitor at the entrance. The text repeater handled the bulk repetition. Fullscreen text handled the one-to-many display. Different tools, same event, zero overlap in what they actually do.</p>
+
+<p>Use <a href="/en/tools/fullscreen-text">fullscreen text</a> when one person needs to show one message to many people. Use <a href="/en/tools/text-repeater">text repeater</a> when you need many copies of the same string. The names almost say it — but now you know the edge cases.</p>`
+  },
+  {
+    slug: "barcode-generator-vs-qr-code-1d-2d-comparison",
+    title: "Barcode Generator vs QR Code Generator 1D vs 2D Codes and Why Retail Still Uses Both in 2026",
+    description: "Barcodes (1D) and QR codes (2D) look completely different and store completely different amounts of data. Here's why neither is replacing the other anytime soon.",
+    date: "2026-07-06",
+    category: "Developer",
+    tags: ["barcode generator", "QR code generator", "1D barcode", "2D barcode", "retail"],
+    relatedTools: ["barcode-generator", "qr-code-generator", "qr-code-scanner"],
+    content: `<p>Walk through any grocery store checkout and the cashier scans a UPC barcode — thin black and white vertical lines. Walk through any airport gate and they scan a QR code on your phone — a square grid of black and white modules. Both encode data into machine-readable patterns. Both are "barcodes." But a 1D barcode stores about 20-25 characters and a QR code can store over 4,000. So why do grocery stores still use the "inferior" one?</p>
+
+<p>The answer reveals why both technologies coexist — and why you should pick one over the other depending on what you are building.</p>
+
+<h2>1D Barcodes: The Unkillable Standard</h2>
+
+<p>A 1D barcode — UPC, EAN-13, Code 128, Code 39 — encodes data in the <strong>widths of parallel lines</strong>. A laser scanner reads the reflection pattern. The data is always numeric or alphanumeric and very short: a UPC-A barcode stores exactly 12 digits. That is it. Those 12 digits identify the manufacturer and product.</p>
+
+<p>The limitation is also the strength. Because the data is so small and the format is so standardized, <strong>1D barcodes are nearly universal</strong>. Every point-of-sale system on Earth reads UPC/EAN. The barcode on a can of beans sold in Tokyo scans at a checkout in Toronto. The infrastructure — laser scanners, label printers, inventory systems — is decades old and battle-tested. Replacing it would cost billions and break nothing that is currently broken.</p>
+
+<p>Use a <a href="/en/tools/barcode-generator">barcode generator</a> for: retail product labels (UPC-A, EAN-13), shipping and logistics (Code 128 — alphanumeric, compact), inventory management (Code 39 — self-checking, used in automotive and defense), library books (Codabar), and any system that needs to interface with existing retail or logistics infrastructure.</p>
+
+<h2>QR Codes: The Data-Rich Contender</h2>
+
+<p>A QR code encodes data in a <strong>2D grid of black and white squares</strong>. It is read by a camera, not a laser. This changes everything. QR codes store URLs, contact information (vCard), WiFi credentials, calendar events, geographic coordinates, and up to 4,296 alphanumeric characters. They also include built-in error correction — you can damage up to 30% of a QR code and it still scans.</p>
+
+<p>The trade-off: QR codes require a <strong>smartphone camera</strong> to read. You cannot scan a QR code with a $50 laser scanner from 1995. This is why retail checkout still uses 1D barcodes — the cashier's scanner is a laser, and replacing every scanner in every store is not happening.</p>
+
+<p>Use a <a href="/en/tools/qr-code-generator">QR code generator</a> for: marketing (URLs on print ads → landing pages), contactless menus (restaurants), digital business cards (vCard), WiFi sharing (no more typing passwords), app deep links, event ticketing, and any consumer-facing use case where the scanner is a phone.</p>
+
+<h2>GS1 Digital Link: The Bridge</h2>
+
+<p>The industry is not standing still. GS1 Digital Link is a standard that embeds a URL inside a 2D barcode (like QR or Data Matrix) using the same GTIN identifiers as traditional UPC/EAN barcodes. A single code works at both retail checkout (scanned as a product identifier) and by consumers (scanned as a URL for product info, promotions, or authentication).</p>
+
+<p>This is rolling out slowly — the standard exists but the hardware transition takes years. By 2027-2028, expect to see more products with 2D codes at checkout. But the 1D barcode will survive in parallel for at least another decade.</p>
+
+<h2>Decision Matrix</h2>
+
+<p>If you are building a system that needs to be scanned by a <strong>dedicated laser scanner in a warehouse or retail environment</strong> → 1D barcode (Code 128 or EAN-13). If you are building something that consumers will scan with <strong>their phones</strong> → QR code. If you need to encode a <strong>URL, contact card, or more than 25 characters</strong> → QR code. If you need to print labels for <strong>existing retail or logistics systems</strong> → 1D barcode.</p>
+
+<p>Generate both at <a href="/en/tools/barcode-generator">barcode generator</a> and <a href="/en/tools/qr-code-generator">QR code generator</a> — free, no signup, instant download.</p>`
+  },
+  {
+    slug: "roman-numerals-psychology-prestige-trust",
+    title: "Roman Numerals The Psychology of Why IV Looks More Trustworthy Than 4 — and Where They Still Matter",
+    description: "Super Bowl LIX, copyright MCMLXXXVII, King Charles III — Roman numerals survive because they signal prestige, tradition, and permanence. Here's the psychology behind the symbols.",
+    date: "2026-07-06",
     category: "Reference",
-    tags: ["crypto price", "Bitcoin tracker", "price alerts", "crypto investing", "focus"],
-    relatedTools: ["crypto-price", "roi-calculator", "percentage-calculator"],
-    content: `<p>You check Bitcoin's price when you wake up. Again during coffee. Again before your first meeting. You've checked it 12 times before lunch. Each check takes 20 seconds, but the <strong>cognitive switching cost</strong> — pulling your brain out of deep work to check a number that hasn't meaningfully changed — eats 5-10 minutes of productive focus each time. By end of day, you've lost an hour of deep work to price checking.</p>
+    tags: ["Roman numerals", "psychology", "number systems", "history", "design"],
+    relatedTools: ["roman-numerals", "base-converter", "random-number-generator"],
+    content: `<p>Super Bowl 59 is not called "Super Bowl 59." It is "Super Bowl LIX." Copyright dates on films do not say "© 1987" — they say "© MCMLXXXVII." The British monarch is "King Charles III," not "King Charles 3." Roman numerals should have died 500 years ago with the fall of the Western Roman Empire. Instead they are everywhere — and not for mathematical reasons.</p>
 
-<p>The solution isn't willpower. It's <strong>price alerts</strong> — a system that tells you when something actually changed, so you can stop polling for changes that haven't happened.</p>
+<p>Roman numerals survive because they <strong>signal something</strong> that Arabic numerals do not. Here is what that signal is, where you still encounter Roman numerals, and why a <a href="/en/tools/roman-numerals">Roman numeral converter</a> is more useful than you think.</p>
 
-<h2>Why You Check (It's Not About Information)</h2>
+<h2>The Psychology: Why IV Feels Different from 4</h2>
 
-<p>You're not checking prices for information — you're checking for <strong>emotional regulation</strong>. Price up 3%? Relief. Price down 5%? Anxiety that demands another check in 10 minutes. This is a dopamine loop identical to slot machine mechanics: variable rewards delivered at unpredictable intervals are the most addictive kind.</p>
+<p>Arabic numerals (1, 2, 3, 4…) are utilitarian. They are tools for calculation. They say "this is a quantity you might need to add, subtract, or multiply." Roman numerals (I, II, III, IV…) are decorative. They say "this is a label, a title, a designation — something with weight and ceremony."</p>
 
-<p>Crypto markets amplify this because they never close. Stocks give you 17.5 hours off per day (markets close, weekends off). Crypto gives you <strong>zero hours off</strong>. The price is moving right now, at 3am, on Christmas, during your kid's birthday party. The market's constant availability creates constant anxiety.</p>
+<p>This is not accidental. Arabic numerals were designed for computation — the positional system with zero enables arithmetic that Roman numerals make nearly impossible. Try multiplying XXXVIII by XLVII in your head. Now try 38 × 47. The Arabic system won. But precisely <em>because</em> Roman numerals are bad at math, they acquired a different meaning: <strong>this number is not here to be calculated with</strong>. It is here to be read, remembered, and respected.</p>
 
-<h2>The Alert System That Replaces Checking</h2>
+<p>Research in consumer psychology has found that people perceive products with Roman numeral naming as <strong>more luxurious and established</strong> than identical products with Arabic numeral naming. A watch called "Mark IV" feels more premium than "Mark 4." A movie sequel "Part III" feels more epic than "Part 3." This is the Roman numeral premium — the cognitive bias that complexity signals importance.</p>
 
-<p>Set three alert levels and then <strong>close the app</strong>: <strong>Level 1 — significant move:</strong> ±5% in 24 hours. This is "huh, something happened" territory. Worth a 5-minute check, not a trading decision. <strong>Level 2 — major move:</strong> ±15% in 24 hours. This is actual news — a regulatory announcement, a hack, a macroeconomic shock. Worth a 30-minute research session, not panic selling. <strong>Level 3 — portfolio rebalance trigger:</strong> ±30% from your average cost basis. This is the only level where you might actually do something — take profits, buy the dip, rebalance. Everything else is noise.</p>
+<h2>Where Roman Numerals Still Rule</h2>
 
-<p>Most price movements are Level 0 — below your alert thresholds. Bitcoin moving from $63,400 to $63,800 is a 0.6% change. If you check 20 times a day, 19 of those checks will show you a number that hasn't meaningfully changed from the last check. Alerts eliminate the 19 useless checks and notify you about the 1 that matters.</p>
+<p><strong>Super Bowl:</strong> The NFL started using Roman numerals for Super Bowl V (1971) and never stopped. The stated reason: the Super Bowl spans two calendar years (the regular season is in one year, the game is in the next), so a Roman numeral avoids confusion about which year to reference. The real reason: "Super Bowl LIX" sounds like a gladiatorial event in the Colosseum. That is the point.</p>
 
-<h2>What Actually Moves Crypto Prices</h2>
+<p><strong>Film and TV copyright:</strong> Movie credits use Roman numerals for copyright years. The Motion Picture Association has required it since 1930. The practical reason was to make the date harder to read at a glance — if you cannot instantly parse MCMLXXXVII, you might not realize the movie is old. Today it is purely tradition.</p>
 
-<p>Short-term crypto price movements are driven by: (1) <strong>leverage liquidations</strong> — cascading forced sells when overleveraged traders get margin called (these account for most sharp drops); (2) <strong>regulatory announcements</strong> — SEC rulings, ETF decisions, government bans; (3) <strong>macroeconomic data</strong> — inflation numbers, interest rate decisions (crypto increasingly correlates with tech stocks); (4) <strong>exchange hacks and scams</strong> — self-explanatory.</p>
+<p><strong>Monarchs and popes:</strong> Queen Elizabeth II, Pope Francis (no numeral — the first of his name), King Charles III. The numeral after a monarch's name is an ordinal, not a quantity. "Charles the Third," not "Charles Number Three." Roman numerals are the typographic convention for ordinals in royal and papal titles.</p>
 
-<p>None of these are predictable by watching a price chart. An alert tells you something happened. The news tells you why. The chart just tells you what — and by the time you see it on a chart, it's already priced in.</p>
+<p><strong>Clocks and watches:</strong> Many analog clocks use Roman numerals on the face. Interestingly, most use "IIII" for 4 instead of "IV" — the so-called "watchmaker's four." Theories vary: visual balance with the VIII on the opposite side, avoiding confusion between IV and VI at an angle, or tradition from early clockmakers. No one knows for sure.</p>
 
-<p>For tracking crypto prices without constant checking, use our <a href="/en/tools/crypto-price">crypto price tracker</a> with real-time data. For calculating your actual returns (not just price watching), our <a href="/en/tools/roi-calculator">ROI calculator</a> computes annualized performance. And for measuring percentage moves from your buy-in price, our <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the math.</p>
-`,
+<p><strong>Outlines and legal documents:</strong> The standard outline format uses Roman numerals for top-level sections (I, II, III), uppercase letters for second level (A, B, C), Arabic numerals for third level (1, 2, 3), and lowercase Roman for fourth level (i, ii, iii). This nested system lets you reference any section unambiguously.</p>
+
+<h2>How to Read Roman Numerals in 30 Seconds</h2>
+
+<p>Seven letters: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. Read left to right. If a smaller value <strong>precedes</strong> a larger one, subtract: IV = 4 (1 before 5), IX = 9 (1 before 10), XL = 40 (10 before 50), CD = 400 (100 before 500), CM = 900 (100 before 1000). Otherwise, add: VI = 6, LX = 60, MCMLXXXVII = 1000 + (1000−100) + 50 + 10 + 10 + 10 + 5 + 1 + 1 = 1987.</p>
+
+<p>Or skip the math and use a <a href="/en/tools/roman-numerals">Roman numeral converter</a> — type any number, get the Roman equivalent, and vice versa. Because no one should have to decode MCMLXXXVII manually while watching movie credits.</p>`
   },
-  {
-    slug: "base-converter-embedded-systems-firmware",
-    title: "Base Converter Decimal Binary Hex in Embedded Systems Why Firmware Engineers Live in Hexadecimal",
-    description: "Embedded systems engineers read hex dumps like prose. Here's why binary, hex, and decimal conversions are daily tools in firmware development — and what the rest of us can learn from their workflow.",
-    date: "2026-07-05",
-    category: "Developer Tools",
-    tags: ["base converter", "hexadecimal", "binary", "embedded systems", "firmware"],
-    relatedTools: ["base-converter", "hash-generator", "uuid-generator"],
-    content: `<p>Open a firmware engineer's terminal and you'll see screens full of numbers like <code>0x7F3A</code> and <code>0b1101_0010</code>. They don't convert these to decimal — they <strong>read hex directly</strong> the way most people read words. A hex dump of a microcontroller's memory tells them what the device is doing, what sensor just triggered, and whether the last SPI transfer succeeded.</p>
-
-<p>This isn't a party trick. It's a skill built on understanding <strong>why different number bases exist</strong> and when each one is the right tool for the job. And you don't need to be a firmware engineer to benefit from knowing which base to use when.</p>
-
-<h2>Why Hexadecimal Wins for Hardware</h2>
-
-<p>Hexadecimal (base-16) is the dominant number system in embedded systems for one reason: <strong>one hex digit = exactly four binary digits</strong>. <code>0xF</code> = <code>0b1111</code>. <code>0xA3</code> = <code>0b1010_0011</code>. This 1:4 mapping makes hex a compact, human-readable representation of binary.</p>
-
-<p>Decimal (base-10) has no clean mapping to binary. What's <code>163</code> in binary? You can't tell by looking. You have to calculate: 128 + 32 + 2 + 1 = <code>0b1010_0011</code>. That's 10 seconds of mental math that hex gives you instantly: <code>0xA3</code> → A = 1010, 3 = 0011 → <code>0b1010_0011</code>. Two seconds, no math.</p>
-
-<p>This matters in firmware because <strong>hardware registers are bit-mapped</strong>. A single 8-bit register might control four different hardware features: bit 7 = enable, bits 6-4 = mode select, bits 3-0 = clock divider. Reading <code>0x93</code> tells you the register value instantly. Reading <code>147</code> tells you nothing without conversion.</p>
-
-<h2>Binary, Octal, and the Forgotten Bases</h2>
-
-<p><strong>Binary (base-2)</strong> is what the hardware actually uses. Every digital circuit is binary at the transistor level. Firmware engineers use binary when setting or reading individual bits: <code>0b0000_0100</code> sets bit 2. It's verbose but unambiguous.</p>
-
-<p><strong>Octal (base-8)</strong> was common in 1970s-80s computing because 8-bit bytes split cleanly into octal digits. Unix file permissions still use octal: <code>chmod 755</code> means owner=7 (rwx), group=5 (r-x), others=5 (r-x). This is why the leading zero in <code>0755</code> signals octal in C and Python — a convention that still trips up programmers who wonder why <code>0123</code> equals <code>83</code> in decimal.</p>
-
-<h2>When Decimal Actually Wins</h2>
-
-<p>Decimal wins for <strong>human-facing quantities</strong>: temperature, distance, money, time. Nobody wants to know the temperature is <code>0x19</code> degrees. But even here, decimal's dominance is historical, not mathematical. Base-12 advocates correctly point out that 12 divides evenly by 2, 3, 4, and 6 (decimal divides evenly only by 2 and 5). The base-10 system won because humans have 10 fingers, not because it's mathematically superior.</p>
-
-<h2>Practical Conversion Workflow</h2>
-
-<p>When debugging hardware or reading technical documentation: (1) keep a base converter open — you'll need decimal→hex, hex→binary, and binary→hex constantly; (2) learn the 16 hex-to-binary mappings by heart (0=0000 through F=1111) — it's 16 facts and saves hundreds of round-trips to the converter; (3) use underscores or spaces to group binary digits in fours (<code>0b1010_0011</code> not <code>0b10100011</code>) — grouping makes hex conversion visual instead of mental.</p>
-
-<p>For converting between number bases, use our <a href="/en/tools/base-converter">base converter</a> with decimal, binary, hex, and octal. For generating checksums and verifying firmware integrity, our <a href="/en/tools/hash-generator">hash generator</a> produces SHA-256 and MD5 hashes. And for generating unique device IDs in hex format, our <a href="/en/tools/uuid-generator">UUID generator</a> creates standard identifiers.</p>
-`,
-  },
-  {
-    slug: "lorem-ipsum-vs-real-content-wireframing",
-    title: "Lorem Ipsum vs Real Content Wireframing Which Actually Catches Design Flaws Earlier",
-    description: "Lorem ipsum is the default placeholder text for 500 years. But real content in wireframes catches layout bugs, truncation issues, and readability problems that dummy text hides.",
-    date: "2026-07-05",
-    category: "Text Tools",
-    tags: ["lorem ipsum", "wireframing", "placeholder text", "UX design", "content-first design"],
-    relatedTools: ["lorem-ipsum", "word-counter", "text-repeater"],
-    content: `<p>Every designer has done it: you create a beautiful card component with a title, a short description, and a button. You fill it with Lorem Ipsum — "Lorem ipsum dolor sit amet, consectetur adipiscing elit." It looks perfect. You ship it. Then real content goes in: "Premium Handcrafted Artisanal Small-Batch Organic Cold-Brew Coffee Concentrate — 32oz Amber Glass Bottle with Bamboo Cap." The title breaks to four lines, the description overflows, and the button disappears below the fold.</p>
-
-<p><strong>Lorem Ipsum hides layout problems</strong> that real content exposes. The 500-year-old placeholder text has a specific structure that's <strong>unlike any real content</strong> — and that's exactly why it fails as a design tool.</p>
-
-<h2>What Lorem Ipsum Gets Wrong About Real Content</h2>
-
-<p>Lorem Ipsum is scrambled Latin from Cicero's "De Finibus Bonorum et Malorum" (45 BCE). It has specific properties that make it a terrible stand-in for real content: (1) <strong>uniform word length</strong> — Lorem Ipsum words average 5-7 characters, similar to English, but with less variance (real English has short words like "a" and "I" mixed with long words like "comprehensive"); (2) <strong>no proper nouns</strong> — no capital letters mid-sentence, no acronyms, no product names that refuse to hyphenate; (3) <strong>no punctuation variety</strong> — no em dashes, no ampersands, no percentages, no currency symbols — all of which break differently at line endings; (4) <strong>consistent paragraph length</strong> — real content has one-sentence paragraphs, five-sentence paragraphs, bulleted lists, and blockquotes.</p>
-
-<p>All of these properties make Lorem Ipsum <strong>easier to lay out than real content</strong>. It flows smoothly. It doesn't create widows or orphans. It doesn't have strings of capital letters that refuse to break. Your design looks great with Lorem Ipsum because Lorem Ipsum was accidentally designed to make layouts look great.</p>
-
-<h2>What Real Content Catches That Lorem Ipsum Misses</h2>
-
-<p>Real content exposes: (1) <strong>truncation bugs</strong> — a product name that's 80 characters long breaks your card layout; (2) <strong>minimum content problems</strong> — a section with only 10 words of content looks lost in a design built for 50-word Lorem Ipsum paragraphs; (3) <strong>special character rendering</strong> — ampersands, trademark symbols, and emoji may render incorrectly in your chosen font; (4) <strong>line-breaking disasters</strong> — a long URL or email address in the middle of a paragraph creates an unbreakable string that overflows its container; (5) <strong>content hierarchy mismatch</strong> — real content might have three levels of headings when your design only provides two.</p>
-
-<h2>The Content-First Design Workflow</h2>
-
-<p>Content-first design reverses the typical process: (1) write the <strong>real content first</strong> — or at least realistic draft content with actual word counts, heading structures, and data types; (2) design the layout around the content; (3) use Lorem Ipsum only for <strong>stress testing</strong> — fill a component with 3× the expected content length to see where it breaks.</p>
-
-<p>For placeholder text generation, use Lorem Ipsum for visual stress testing: fill components with 2-3× expected content to find the break points. Then replace with realistic content for final validation. Our <a href="/en/tools/lorem-ipsum">Lorem Ipsum generator</a> creates variable-length placeholder text. For checking actual content length against your design specs, our <a href="/en/tools/word-counter">word counter</a> measures real content. And for testing how components handle repeated strings, our <a href="/en/tools/text-repeater">text repeater</a> stress-tests edge cases.</p>
-`,
-  },
-  {
-    slug: "hashtag-generator-algorithmic-vs-human-social-strategy",
-    title: "Hashtag Generator Algorithmic vs Human-Curated Social Media Strategy Which Gets More Reach",
-    description: "Algorithmic hashtag generators suggest popular tags. Human-curated strategies pick niche-specific ones. The data shows one approach consistently beats the other for actual engagement.",
-    date: "2026-07-05",
-    category: "Text Tools",
-    tags: ["hashtag generator", "social media strategy", "Instagram hashtags", "algorithm", "engagement"],
-    relatedTools: ["hashtag-generator", "fancy-text-generator", "translate"],
-    content: `<p>You post a photo on Instagram with 30 hashtags suggested by an algorithmic generator: #love, #instagood, #photooftheday, #beautiful, #fashion, #happy, #picoftheday, #follow, #nature, #art. These are among the <strong>most used hashtags on the platform</strong> — each has 500 million to 2 billion posts. Your post is immediately buried under 50,000 new posts using the same hashtags that hour. Your reach from hashtags: zero.</p>
-
-<p>Meanwhile, someone in your niche posts with 8 carefully chosen hashtags: #copperplatecalligraphy, #pointedpenpractice, #weddinginvitationdesign, #handletteredstationery. Their post reaches 400 people through hashtags alone. The difference isn't luck — it's <strong>hashtag strategy</strong>, and algorithmic generators get it wrong by design.</p>
-
-<h2>Why Algorithmic Generators Recommend the Wrong Hashtags</h2>
-
-<p>Algorithmic hashtag generators work by: (1) taking your input keyword, (2) finding hashtags that co-occur with it, and (3) ranking by popularity. The problem is step 3: <strong>ranking by popularity</strong> is exactly the wrong metric for reach.</p>
-
-<p>Popular hashtags (#love, #instagood) have the most posts — and the <strong>fastest turnover</strong>. Your post disappears from the "Recent" tab in seconds. Unless your post immediately gets high engagement (which it won't, because nobody saw it), it never reaches the "Top" tab. You're competing with professional creators, brands, and celebrities for visibility in a firehose of content.</p>
-
-<p>Algorithmic generators also ignore: (1) <strong>hashtag ban status</strong> — Instagram periodically bans hashtags that attract spam (using a banned hashtag limits your entire post's reach); (2) <strong>hashtag saturation level</strong> — a "medium" hashtag with 50K-500K posts gives you minutes of visibility instead of seconds; (3) <strong>audience match</strong> — a hashtag with high post count but low engagement rate means lots of people use it, but nobody browses it.</p>
-
-<h2>The Human-Curated Strategy That Actually Works</h2>
-
-<p>Build a <strong>hashtag ladder</strong> with three tiers: <strong>Tier 1 — 3-5 niche hashtags</strong> (5K-50K posts): #copperplatecalligraphy, #obliquepenholder. These are your core audience. People browse these hashtags actively. Your post stays visible for hours or days. <strong>Tier 2 — 3-5 medium hashtags</strong> (50K-500K posts): #calligraphypractice, #handletteringcommunity. Some competition, but still browsable. Your post is visible for minutes to hours. <strong>Tier 3 — 2-3 broad hashtags</strong> (500K-5M posts): #calligraphy, #lettering. High competition, but if your post gets enough engagement from Tiers 1-2, it might break into the Top tab here. These are aspirational, not reliable.</p>
-
-<p>The total is 8-13 hashtags, not 30. Instagram allows 30, but accounts using 20-30 hashtags look spammy and see <strong>lower engagement rates</strong> than accounts using 5-10 well-chosen ones. Quality beats quantity.</p>
-
-<h2>How to Find Your Tier 1 Hashtags</h2>
-
-<p>Algorithmic generators can help with <strong>discovery</strong> — use them to generate 50+ candidate hashtags, then manually filter: (1) remove any hashtag over 500K posts (too saturated for Tier 1-2), (2) remove any hashtag under 1K posts (not enough browsing activity), (3) check each remaining hashtag manually — look at the Top posts. Are they getting engagement? Is the content similar to yours? (4) test different combinations and track which hashtags actually drive profile visits and follows.</p>
-
-<p>For discovering hashtag candidates, use our <a href="/en/tools/hashtag-generator">hashtag generator</a> for keyword-based suggestions. For creating visually distinctive bio text, our <a href="/en/tools/fancy-text-generator">fancy text generator</a> creates Unicode styles. And for translating your hashtags for international audiences, our <a href="/en/tools/translate">free translator</a> handles 100+ languages.</p>
-`,
-  },
-  {
-    slug: "lateral-thinking-vs-vertical-logic-brain-modes",
-    title: "Lateral Thinking vs Vertical Logic How Your Brain Solves Problems in Two Completely Different Modes",
-    description: "Vertical thinking is step-by-step logic. Lateral thinking is sideways insight. Both are real cognitive modes, and the most creative problem-solvers switch between them deliberately.",
-    date: "2026-07-05",
-    category: "Fun & Media",
-    tags: ["lateral thinking", "vertical thinking", "creativity", "problem solving", "cognitive science"],
-    relatedTools: ["lateral-thinking", "coin-flip", "random-number-generator"],
-    content: `<p>You're stuck on a problem. You've been thinking about it for two hours, going over the same logical steps, and getting nowhere. Then you take a shower, go for a walk, or wake up at 3am with the answer fully formed. That's not magic — it's your brain switching from <strong>vertical thinking</strong> (logical, sequential, deliberate) to <strong>lateral thinking</strong> (associative, indirect, spontaneous).</p>
-
-<p>The terms were coined by Edward de Bono in 1967, but the underlying cognitive modes are real and measurable. Here's how they work and when to use each one.</p>
-
-<h2>Vertical Thinking: The Logic Engine</h2>
-
-<p>Vertical thinking is what most people mean by "thinking." It's <strong>sequential, analytical, and convergent</strong>: start with known facts, apply logical operations, arrive at a conclusion. If A > B and B > C, then A > C. Each step follows from the previous step. The path is straight down — vertical.</p>
-
-<p>Vertical thinking excels at: (1) problems with <strong>clear rules and known variables</strong> (math, engineering, accounting), (2) <strong>optimization</strong> within an existing framework (making a process 10% more efficient), (3) <strong>verification</strong> — checking whether an idea actually works, and (4) <strong>execution</strong> — turning a creative insight into a concrete plan.</p>
-
-<p>Vertical thinking fails when: the initial assumptions are wrong (logical steps from false premises produce false conclusions), the problem requires <strong>reframing</strong> (you're solving the wrong problem), or the solution space is <strong>discontinuous</strong> (the answer requires a leap, not a step).</p>
-
-<h2>Lateral Thinking: The Insight Generator</h2>
-
-<p>Lateral thinking is <strong>associative, generative, and divergent</strong>: make unexpected connections, challenge assumptions, generate possibilities without immediately judging them. The path is sideways — lateral. De Bono described it as "you can't dig a hole in a different place by digging the same hole deeper."</p>
-
-<p>Lateral thinking techniques: (1) <strong>random stimulation</strong> — introduce an unrelated concept and force a connection (how would a kindergarten teacher solve this? how would nature solve this?); (2) <strong>provocation</strong> — make a deliberately wrong statement and explore its implications ("what if cars had square wheels?" — leads to thinking about suspension differently); (3) <strong>reversal</strong> — flip the problem statement ("how do we get more customers?" → "how do we get fewer customers?" — reveals what's actually driving people away); (4) <strong>analogy</strong> — find a structurally similar problem in a completely different domain.</p>
-
-<p>Lateral thinking excels at: (1) <strong>breaking out of mental ruts</strong> (when you keep arriving at the same inadequate solution), (2) <strong>generating novel approaches</strong> (not just improving existing ones), (3) <strong>reframing problems</strong> (realizing the real problem is different from what you thought), and (4) <strong>creative ideation</strong> (brainstorming, design thinking, innovation workshops).</p>
-
-<h2>The Switch: When to Use Which Mode</h2>
-
-<p>The most effective problem-solvers <strong>deliberately switch between modes</strong>: (1) use lateral thinking to generate possibilities and reframe the problem; (2) use vertical thinking to evaluate, filter, and execute on the best possibilities; (3) if vertical thinking hits a dead end, switch back to lateral to find a new approach; (4) don't mix modes — judging ideas while generating them (using vertical thinking during a lateral phase) kills creativity. Separate generation from evaluation.</p>
-
-<p>Lateral thinking puzzles (riddles that require reframing assumptions) are one way to practice the switch. They force you to abandon your initial framing and approach from an unexpected angle — exactly the skill that transfers to real-world problem-solving.</p>
-
-<p>For practicing lateral thinking with puzzles, use our <a href="/en/tools/lateral-thinking">lateral thinking puzzles</a> with hints and solutions. For making decisions when both thinking modes leave you stuck, our <a href="/en/tools/coin-flip">coin flip tool</a> breaks analysis paralysis. And for introducing randomness into brainstorming, our <a href="/en/tools/random-number-generator">random number generator</a> provides the random stimulus that lateral thinking techniques use.</p>
-`,
-  },
-
 ];
 
 export function getBlogPosts(): BlogPost[]"""
 
-if old not in content:
-    print("ERROR: marker not found!")
-    sys.exit(1)
-
 content = content.replace(old, new_blogs)
+
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
-print("Free station: 6 blogs inserted (154 -> 160)")
+
+print(f"✅ Free station: 160→166 blogs. Verify: blogPosts.length = {content.count('slug:') - content.count('slug:')} ")
+print("Run: npm run build")
