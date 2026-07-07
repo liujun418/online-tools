@@ -1074,5 +1074,39 @@
 		"noCamera": "Cámara no disponible o permiso denegado.",
 		"noQrFound": "No se encontró código QR en esta imagen.",
 		"instructions": "Pega una imagen del portapapeles, sube un archivo o usa tu cámara para escanear."
+	},
+	"jwtDecoder": {
+		"placeholder": "Pega tu token JWT aquí...",
+		"header": "Encabezado",
+		"payload": "Carga útil",
+		"signature": "Firma",
+		"algorithm": "Algoritmo",
+		"expired": "Expirado",
+		"valid": "Válido",
+		"issuedAt": "Emitido",
+		"expiresAt": "Expira",
+		"invalidToken": "Token JWT inválido",
+		"copyPayload": "Copiar Carga Útil"
+	},
+	"cronParser": {
+		"placeholder": "Ingresa expresión cron... (ej. */5 * * * *)",
+		"nextExecutions": "Próximas Ejecuciones",
+		"description": "Descripción",
+		"invalidExpression": "Expresión cron inválida"
+	},
+	"textSorter": {
+		"placeholder": "Escribe o pega tu texto aquí...",
+		"sortAZ": "A → Z",
+		"sortZA": "Z → A",
+		"sortByLength": "Por Longitud",
+		"sortByLengthDesc": "Por Longitud ↓",
+		"randomize": "Aleatorio",
+		"reverseOrder": "Invertir",
+		"numericSort": "Numérico",
+		"removeDuplicates": "Eliminar Duplicados",
+		"ignoreCase": "Ignorar Mayúsculas",
+		"trimLines": "Recortar Líneas",
+		"clear": "Limpiar",
+		"emptyText": "Tu texto ordenado aparecerá aquí"
 	}
 }

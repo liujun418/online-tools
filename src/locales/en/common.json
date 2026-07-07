@@ -1122,5 +1122,39 @@
 		"noCamera": "Camera not available or permission denied.",
 		"noQrFound": "No QR code found in this image.",
 		"instructions": "Paste an image from clipboard, upload a file, or use your camera to scan."
+	},
+	"jwtDecoder": {
+		"placeholder": "Paste your JWT token here...",
+		"header": "Header",
+		"payload": "Payload",
+		"signature": "Signature",
+		"algorithm": "Algorithm",
+		"expired": "Expired",
+		"valid": "Valid",
+		"issuedAt": "Issued At",
+		"expiresAt": "Expires At",
+		"invalidToken": "Invalid JWT token",
+		"copyPayload": "Copy Payload"
+	},
+	"cronParser": {
+		"placeholder": "Enter cron expression... (e.g. */5 * * * *)",
+		"nextExecutions": "Next Executions",
+		"description": "Description",
+		"invalidExpression": "Invalid cron expression"
+	},
+	"textSorter": {
+		"placeholder": "Type or paste your text here...",
+		"sortAZ": "A → Z",
+		"sortZA": "Z → A",
+		"sortByLength": "By Length",
+		"sortByLengthDesc": "By Length ↓",
+		"randomize": "Randomize",
+		"reverseOrder": "Reverse",
+		"numericSort": "Numeric",
+		"removeDuplicates": "Remove Duplicates",
+		"ignoreCase": "Ignore Case",
+		"trimLines": "Trim Lines",
+		"clear": "Clear",
+		"emptyText": "Your sorted text will appear here"
 	}
 }

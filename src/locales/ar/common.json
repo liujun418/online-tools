@@ -1074,5 +1074,39 @@
 		"noCamera": "الكاميرا غير متاحة أو تم رفض الإذن.",
 		"noQrFound": "لم يتم العثور على رمز QR في هذه الصورة.",
 		"instructions": "الصق صورة من الحافظة، أو ارفع ملفاً، أو استخدم الكاميرا للمسح."
+	},
+	"jwtDecoder": {
+		"placeholder": "الصق رمز JWT هنا...",
+		"header": "الترويسة",
+		"payload": "الحمولة",
+		"signature": "التوقيع",
+		"algorithm": "الخوارزمية",
+		"expired": "منتهي",
+		"valid": "ساري",
+		"issuedAt": "صدر في",
+		"expiresAt": "ينتهي في",
+		"invalidToken": "رمز JWT غير صالح",
+		"copyPayload": "نسخ الحمولة"
+	},
+	"cronParser": {
+		"placeholder": "أدخل تعبير cron... (مثال: */5 * * * *)",
+		"nextExecutions": "أوقات التنفيذ القادمة",
+		"description": "الوصف",
+		"invalidExpression": "تعبير cron غير صالح"
+	},
+	"textSorter": {
+		"placeholder": "اكتب أو الصق النص هنا...",
+		"sortAZ": "أ → ي",
+		"sortZA": "ي → أ",
+		"sortByLength": "حسب الطول",
+		"sortByLengthDesc": "حسب الطول ↓",
+		"randomize": "عشوائي",
+		"reverseOrder": "عكسي",
+		"numericSort": "رقمي",
+		"removeDuplicates": "إزالة التكرارات",
+		"ignoreCase": "تجاهل حالة الأحرف",
+		"trimLines": "تقليم السطور",
+		"clear": "مسح",
+		"emptyText": "سيظهر نصك المرتب هنا"
 	}
 }
