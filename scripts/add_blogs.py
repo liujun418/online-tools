@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (170→176) — July 8, 2026"""
+"""Add 6 blogs to free station (176→182) — July 9, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,208 +10,208 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "jwt-decoder-debug-api-tokens-guide",
-    title: "JWT Decoder How to Debug API Tokens Without Writing a Single Line of Code — and Why You Should Never Paste JWTs into Random Websites",
-    description: "You got a JWT token from an API response. You need to see what's inside. Here's how to decode it safely — and the red flags that tell you a JWT decoder is trustworthy.",
-    date: "2026-07-08",
+    slug: "code-formatter-cicd-pipeline-integration",
+    title: "Code Formatter for CI/CD How to Auto-Format Code in Your Pipeline Without Prettier Taking Over Your Project",
+    description: "You want consistent code formatting across your team. You could ask everyone to install Prettier. Or you could enforce it in CI/CD — no installs, no excuses. Here's how to integrate an online formatter into your workflow.",
+    date: "2026-07-09",
     category: "Developer",
-    tags: ["JWT decoder", "API tokens", "debug", "JSON Web Token", "authentication"],
-    relatedTools: ["jwt-decoder", "base64-converter", "hash-generator"],
-    content: `<p>You are integrating a third-party API. The authentication endpoint returns a long string of gibberish: <code>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIi...</code> You know it is a JWT token. You know it contains user information. But you cannot read it — and you need to know what permissions this token grants, when it expires, and whether the API is sending the claims you expect.</p>
+    tags: ["code formatter", "CI/CD", "Prettier", "pipeline", "code quality"],
+    relatedTools: ["code-formatter", "json-formatter", "css-minifier"],
+    content: `<p>You join a new team and open the first file. It uses tabs. The second file uses spaces. The third file has a mix of both — and the indentation level changes randomly between 2 and 4 spaces. The codebase has been formatted by five different editors, three different IDE settings, and one developer who apparently configured their tab key to emit chaos.</p>
 
-<p>You could write a script to decode it. Or you could paste it into a <a href="/en/tools/jwt-decoder">JWT decoder</a> and see everything instantly. Here is what is inside a JWT, how to decode it safely, and the one question you should always ask before pasting a token anywhere.</p>
+<p>You could propose a Prettier config and ask everyone to install it. Four people will install it. Two will forget. One will configure their editor to override it. The inconsistency will continue. The alternative: enforce formatting in CI/CD. A <a href="/en/tools/code-formatter">code formatter</a> in your pipeline catches formatting violations before they merge — and the online version means nobody needs to install anything.</p>
 
-<h2>What Is Inside a JWT Token?</h2>
+<h2>Why CI/CD Formatting Beats Editor Configs</h2>
 
-<p>A JWT (JSON Web Token) has three parts separated by dots: <strong>header</strong>, <strong>payload</strong>, and <strong>signature</strong>. Each part is Base64url-encoded JSON. The header tells you the algorithm used to sign the token — typically HS256 (HMAC with SHA-256) or RS256 (RSA with SHA-256). The payload contains the <strong>claims</strong> — key-value pairs that describe the authenticated user or session. The signature is the cryptographic proof that the token was issued by a trusted authority and has not been tampered with.</p>
+<p>Editor configs are opt-in. Every developer must install the formatter, configure their editor, and remember to format before committing. One developer who skips this step introduces formatting noise into every file they touch. The noise accumulates. The git blame becomes useless because every commit reformats the file along with the actual changes.</p>
 
-<p>Common claims you will see: <code>sub</code> (subject — usually the user ID), <code>iss</code> (issuer — who created the token), <code>aud</code> (audience — who the token is intended for), <code>iat</code> (issued at — Unix timestamp), <code>exp</code> (expiration — Unix timestamp), and custom claims like <code>role</code>, <code>permissions</code>, or <code>email</code>.</p>
+<p>CI/CD formatting is opt-out — you must actively bypass it to merge unformatted code. The formatter runs on every pull request, checks the diff, and either approves or blocks. Zero developer setup. Zero forgotten formats. The rule is enforced by the machine, not by code review comments saying "please run Prettier."</p>
 
-<p>The <code>exp</code> claim is the one you check most often. A token that says it expires at 1718236800 — what does that mean? A <a href="/en/tools/jwt-decoder">JWT decoder</a> converts that Unix timestamp to a human-readable date in your local timezone and highlights whether the token has already expired. No mental math required.</p>
+<p>An <a href="/en/tools/code-formatter">online code formatter</a> fits into this workflow as a quick fix tool. Before pushing a branch, paste the file into the formatter, verify it looks right, and commit. The CI/CD check passes on the first try because you already formatted locally. The online tool is the local step. The pipeline is the enforcement step.</p>
 
-<h2>Why You Should Never Paste JWTs into Random Websites</h2>
+<h2>Setting Up the Pipeline: A Practical Approach</h2>
 
-<p>JWT tokens are <strong>bearer tokens</strong>. Anyone who possesses the token can use it to authenticate as you until it expires. If you paste a valid JWT into a malicious website, that website now has your token and can make API calls on your behalf. This is not theoretical — token theft is a common attack vector.</p>
+<p><strong>Step 1: Define the standard.</strong> Pick a formatting configuration and commit it to the repo. For JavaScript/TypeScript, Prettier's default config is the industry standard. For JSON, 2-space indentation. For CSS, consistent property ordering. The config file is the source of truth.</p>
 
-<p>The safety question to ask before using any online JWT decoder: <strong>"Does the decoding happen in my browser, or on a server?"</strong> If the tool sends your token to a server, it is a security risk. If it decodes entirely in the browser using JavaScript, your token never leaves your device. Our <a href="/en/tools/jwt-decoder">JWT decoder</a> does all processing locally — open the page, disconnect your internet, paste a token, and it still works. That is the test.</p>
+<p><strong>Step 2: Add the format check to CI.</strong> Add a pipeline step that runs the formatter in check mode. If the formatted output differs from the committed code, the pipeline fails. The error message includes a link to the online formatter: "Format your code here, then push again."</p>
 
-<p>Also: never paste production tokens with full permissions. Use a test token, a token that is about to expire, or a token with minimal scope. JWT decoding is for debugging, not for storing tokens in a browser tab indefinitely.</p>
+<p><strong>Step 3: Provide the escape hatch.</strong> For the rare case where unformatted code is intentional (generated code, vendored dependencies, template literals with specific whitespace), add a comment directive to skip formatting. The escape hatch is necessary for adoption — if the formatter blocks work, developers will disable it, not fix their code.</p>
 
-<h2>How to Spot a Good JWT Decoder</h2>
+<h2>The Online Formatter as the Quick Fix</h2>
 
-<p>A good decoder shows: the algorithm (so you can verify the token uses RS256 or HS256, not <code>none</code> — yes, some badly configured systems accept unsigned tokens), the header and payload as formatted JSON (not a single collapsed line), and the timestamps converted to your local timezone with color-coded expiration status. Bonus: a one-click copy of the decoded payload JSON so you can paste it into your debugging notes.</p>
+<p>When the pipeline fails with "Code not formatted," the developer opens the <a href="/en/tools/code-formatter">online code formatter</a>, pastes the file, clicks format, copies the output, and pushes. Total time: 30 seconds. No installing Prettier. No configuring editor plugins. No remembering which npm script runs the formatter. The online tool is the path of least resistance — and the path of least resistance is the one developers actually follow.</p>
 
-<p>If a decoder asks you to sign up, upload your token to a cloud service, or displays ads for "token validation services" — close the tab. The best JWT decoder is a simple, client-side tool that does one thing well. Try it at <a href="/en/tools/jwt-decoder">free JWT decoder</a> — paste, decode, copy, done.</p>`
+<p>Format your next file at <a href="/en/tools/code-formatter">free code formatter</a> — JSON, JS, CSS, HTML all in one tool, no install required.</p>`
   },
   {
-    slug: "cron-parser-crontab-schedules-explained",
-    title: "Cron Parser How to Read Crontab Schedules Without the Manual — and Why 0 0 * * 0 Is Not the Same as @weekly",
-    description: "You found a cron expression in a server config. Does it run at midnight every day, or midnight on Sundays? Here's how to decode cron syntax without the reference card.",
-    date: "2026-07-08",
+    slug: "base64-to-image-decode-api-thumbnails",
+    title: "Base64 to Image How to Decode Data URIs from API Responses and Recover Embedded Images Without Writing a Script",
+    description: "An API returned image data as a Base64 string. You need to see the actual image. Here's how to decode Base64 to an image file in seconds — no terminal, no script, no ImageMagick.",
+    date: "2026-07-09",
     category: "Developer",
-    tags: ["cron parser", "crontab", "cron expression", "scheduling", "server administration"],
-    relatedTools: ["cron-parser", "unix-timestamp", "hash-generator"],
-    content: `<p>You SSH into a production server and check the crontab: <code>30 2 * * 1 /usr/bin/backup.sh</code>. You know this runs a backup script. But when? 2:30 AM every day? 2:30 AM on Mondays? 2:30 AM on the 1st of every month? You could dig through the cron man page. Or you could paste the expression into a <a href="/en/tools/cron-parser">cron parser</a> and see "At 02:30 AM, every Monday" plus the next ten execution times.</p>
+    tags: ["base64 to image", "data URI", "API", "decode", "image recovery"],
+    relatedTools: ["base64-to-image", "image-to-base64", "base64-converter"],
+    content: `<p>You call an API endpoint and the response includes a field called <code>thumbnail</code>. Its value is a 50,000-character string starting with <code>iVBORw0KGgo...</code> That is a Base64-encoded PNG image. You need to see the actual image — to verify the API is returning the right data, to debug a rendering issue, or to extract the image for use elsewhere. You could write a script. Or you could paste the string into a <a href="/en/tools/base64-to-image">Base64 to image decoder</a> and see the image instantly.</p>
 
-<p>Cron syntax is deceptively simple — five fields, each with specific rules. But the special characters and overlapping day-of-month/day-of-week behavior create edge cases that trip up even experienced developers. Here is how to read any cron expression in seconds.</p>
+<p>Base64-encoded images are everywhere in modern APIs, emails, and databases. Here is when you encounter them, why they are used, and how to decode them without writing code every time.</p>
 
-<h2>The Five Fields, Explained in Plain English</h2>
+<h2>Where You Encounter Base64 Images in the Wild</h2>
 
-<p>A cron expression is five space-separated fields: <strong>minute (0-59), hour (0-23), day of month (1-31), month (1-12), day of week (0-7)</strong> — where 0 and 7 both mean Sunday. Each field can be a specific number, a wildcard (<code>*</code> means "every"), a range (<code>1-5</code> means "1 through 5"), a list (<code>1,3,5</code>), or a step value (<code>*/15</code> means "every 15").</p>
+<p><strong>API responses:</strong> REST APIs and GraphQL endpoints often return small images as Base64 strings instead of URLs. This eliminates the need for a separate image hosting service and keeps the data self-contained. A single API call returns the record and its associated image in one response. Common in: user avatars, product thumbnails, invoice PDFs, document previews.</p>
 
-<p><strong>The most common expressions:</strong> <code>*/5 * * * *</code> = every 5 minutes. <code>0 * * * *</code> = every hour at the top of the hour. <code>0 9 * * 1-5</code> = 9:00 AM, Monday through Friday. <code>0 0 1 * *</code> = midnight on the 1st of every month. <code>0 0 * * 0</code> = midnight every Sunday.</p>
+<p><strong>Email attachments:</strong> Email clients embed inline images (logos, signatures, icons) as Base64 data URIs in the HTML body. When you inspect the email source, you see <code>&lt;img src="data:image/png;base64,iVBOR..."&gt;</code>. The image is not a separate file — it is baked into the HTML.</p>
 
-<p>The <strong>day-of-month vs day-of-week trap:</strong> When both day-of-month and day-of-week are specified (not <code>*</code>), cron runs when <strong>either</strong> condition matches. <code>0 0 13 * 5</code> runs at midnight on every Friday AND on the 13th of every month — not just "Friday the 13th." This is the most common cron scheduling bug. If you want "Friday the 13th," you need logic inside the script, not in the cron expression.</p>
+<p><strong>Database blobs:</strong> Some databases store images as Base64 text in a VARCHAR or TEXT column. When you query the database, the image column is a long Base64 string. Converting it back to a viewable image requires a decoder.</p>
 
-<h2>Step Values: The Most Misunderstood Feature</h2>
+<p><strong>CSS background images:</strong> Inline CSS sometimes uses Base64 data URIs for small background images — icons, gradients, patterns. This reduces HTTP requests for tiny assets. The trade-off: the CSS file is larger, but the page loads faster because there are fewer round trips.</p>
 
-<p><code>*/5</code> in the minute field means "every 5 minutes" — specifically, at minutes 0, 5, 10, 15, 20, ... 55. It does NOT mean "every 5 minutes starting from whenever the system booted." Cron always starts counting from the beginning of the range. <code>*/7</code> means minutes 0, 7, 14, 21, 28, 35, 42, 49, 56 — an uneven pattern that most people do not intend. Use step values that divide evenly into the range (2, 3, 4, 5, 6, 10, 12, 15, 20, 30) unless you have a specific reason for an uneven pattern.</p>
+<h2>How to Decode Base64 to Image in Seconds</h2>
 
-<p>You can also combine ranges with steps: <code>1-30/10</code> in the minute field means minutes 1, 11, 21. This is useful for offsetting jobs — running at 1, 11, 21, 31, 41, 51 minutes past the hour instead of the more common 0, 10, 20, 30, 40, 50. Offsetting reduces load spikes when hundreds of cron jobs all fire at minute 0.</p>
+<p>Use a <a href="/en/tools/base64-to-image">Base64 to image converter</a>. Paste the Base64 string — with or without the <code>data:image/png;base64,</code> prefix. The tool detects the image format from the header bytes, decodes the Base64, and renders the image. You can then download it as a PNG, JPEG, or WebP file.</p>
 
-<h2>Using a Cron Parser as a Safety Check</h2>
+<p>The tool handles the edge cases that make manual decoding annoying: the data URI prefix (strip it automatically), whitespace and line breaks in the Base64 string (ignore them), and invalid padding (fix it). What takes 5 minutes of writing a Python script takes 5 seconds of pasting into a browser tool.</p>
 
-<p>Before you save a crontab, paste the expression into a <a href="/en/tools/cron-parser">cron parser</a>. The human-readable description tells you what the expression actually does — not what you intended it to do. The next-execution list shows you exactly when the job will fire in the next few hours or days. If the times look wrong, the expression is wrong.</p>
+<p>The reverse operation — encoding an image to Base64 — is equally useful when you need to embed an image in an API request, JSON payload, or HTML email. Use the <a href="/en/tools/image-to-base64">image to Base64 encoder</a> for that direction. The two tools together handle the full round trip: image → Base64 → transmission → Base64 → image.</p>
 
-<p>This 5-second check catches the most common mistakes: confusing day-of-month with day-of-week, using step values that produce unexpected patterns, forgetting that cron uses the server's timezone (not UTC necessarily), and accidentally scheduling jobs for times that do not exist (2:30 AM during daylight saving spring-forward).</p>
-
-<p>Parse your cron expressions at <a href="/en/tools/cron-parser">free cron parser</a> — paste, read, verify, save. Five seconds that prevents a 3 AM production incident.</p>`
+<p>Decode your next API response thumbnail at <a href="/en/tools/base64-to-image">Base64 to image decoder</a> — paste, preview, download. No script required.</p>`
   },
   {
-    slug: "text-sorter-organize-lists-clean-data",
-    title: "Text Sorter How to Organize Lists and Clean Data Without Excel — The 7 Sort Modes Every Data Cleaner Needs",
-    description: "You have a messy list of 500 items. You need them alphabetized, deduped, and trimmed. Excel is overkill. Here's how to sort, clean, and organize any text list in seconds.",
-    date: "2026-07-08",
-    category: "Text Tools",
-    tags: ["text sorter", "sort lines", "data cleaning", "alphabetical sort", "productivity"],
-    relatedTools: ["text-sorter", "remove-duplicate-lines", "word-counter"],
-    content: `<p>You have a CSV export of 500 email addresses. Some are duplicates. Some have trailing spaces. The order is whatever the database felt like returning. You need them alphabetized, deduped, and trimmed before importing into your email tool. You could open Excel, fight with the sort dialog, write a formula for dedup, and export. Or you could paste the list into a <a href="/en/tools/text-sorter">text sorter</a>, click A→Z, check Remove Duplicates and Trim Lines, and be done in three seconds.</p>
+    slug: "emi-calculator-loan-prepayment-strategy",
+    title: "EMI Calculator Loan Prepayment Strategy How to Save Thousands in Interest by Paying Off Loans the Smart Way — Not the Fast Way",
+    description: "Paying extra toward your loan principal saves interest. But paying extra at the beginning of the loan saves dramatically more than paying extra at the end. Here's the math and the strategy.",
+    date: "2026-07-09",
+    category: "Calculators",
+    tags: ["EMI calculator", "loan prepayment", "interest savings", "mortgage", "financial planning"],
+    relatedTools: ["emi-calculator", "loan-calculator", "mortgage-calculator"],
+    content: `<p>You have a 20-year home loan at 7% interest. You receive a year-end bonus and decide to put $5,000 toward the loan principal. Should you pay it now, in year 2 of the loan? Or save it and pay later, in year 15? The answer: paying in year 2 saves you roughly <strong>three times more interest</strong> than paying in year 15. Same $5,000. Completely different impact.</p>
 
-<p>Text sorting sounds trivial — every programming language has a <code>.sort()</code> method. But the difference between the seven sort modes matters more than you think, and the combination of sort + dedup + trim in one click is what makes a dedicated tool faster than writing code every time. Here is when to use each mode.</p>
+<p>This is the <strong>time value of prepayment</strong> — and it is the most misunderstood concept in personal loan management. An <a href="/en/tools/emi-calculator">EMI calculator</a> can model the difference. Here is the strategy that saves you the most money.</p>
 
-<h2>The Seven Sort Modes and When They Matter</h2>
+<h2>Why Early Prepayment Is So Much More Powerful</h2>
 
-<p><strong>A→Z (Alphabetical ascending):</strong> The default. Use for email lists, name lists, dictionary words, any text where alphabetical order is the natural organization. Combined with Remove Duplicates, it turns a messy list into a clean, deduped, alphabetized reference.</p>
+<p>Loan interest is front-loaded. In the early years of a loan, most of your EMI (Equated Monthly Installment) goes toward interest, not principal. On a $200,000, 20-year loan at 7%, your first EMI payment might be roughly $1,550 — of which about $1,167 is interest and only $383 is principal. The interest is calculated on the outstanding balance, and the outstanding balance is highest at the beginning.</p>
 
-<p><strong>Z→A (Alphabetical descending):</strong> Same as A→Z but reversed. Useful when you want to see the "end" of the alphabet first — Z-prefix usernames, last-to-first in a reverse directory, or simply when you need the opposite order for a specific workflow.</p>
+<p>When you prepay $5,000 in year 2, you permanently reduce the outstanding balance. Every subsequent month's interest is calculated on a smaller principal. The savings compound over the remaining 18 years of the loan. Prepay $5,000 in year 2 and you might save $12,000-$15,000 in total interest over the life of the loan. Prepay the same $5,000 in year 15 and you save only $3,000-$4,000 — because there are fewer remaining months for the interest savings to compound.</p>
 
-<p><strong>By Length:</strong> Sorts lines from shortest to longest. This reveals patterns you cannot see in alphabetical order. All the single-word entries cluster at the top. All the paragraph-length entries sink to the bottom. Use this to find abnormally short or long entries in a dataset — a customer name that is one character, a product description that is 5,000 characters, a URL that is suspiciously long.</p>
+<p>The math is not complicated. It is just <strong>time</strong>. The earlier you reduce the principal, the more months of interest you avoid. An <a href="/en/tools/emi-calculator">EMI calculator</a> with a prepayment feature shows the exact savings for any prepayment amount at any point in the loan term.</p>
 
-<p><strong>Numeric:</strong> Treats each line as a number and sorts by numeric value. Crucially, <code>1, 2, 10, 20</code> instead of <code>1, 10, 2, 20</code> (which is what alphabetical sort would produce). Use for version numbers, quantities, prices, IDs, any numeric data stored as text. Lines that are not valid numbers are pushed to the end, making it easy to spot non-numeric entries in what should be a numeric column.</p>
+<h2>The Prepayment Strategy: When to Pay Extra</h2>
 
-<p><strong>Randomize:</strong> Shuffles lines into random order using Fisher-Yates. Use for: randomizing quiz questions, creating randomized assignment or presentation order, picking a random winner from a list, generating random test data, or shuffling a playlist. Each click produces a different order.</p>
+<p><strong>Priority 1: Prepay in the first third of the loan term.</strong> Years 1-7 of a 20-year loan are when prepayment has the most impact. Every extra dollar you pay in this period avoids 13-19 years of interest. This is the highest-return use of your extra cash — better than most investments on a risk-adjusted basis.</p>
 
-<p><strong>Reverse:</strong> Simply reverses the current order — last line becomes first, first becomes last. Use when you need the opposite of whatever order the list is currently in, without re-sorting. Combined with sorting first, this gives you descending versions of any sort mode.</p>
+<p><strong>Priority 2: Prepay lump sums, not small monthly additions.</strong> A $5,000 lump sum prepayment saves more interest than twelve $417 monthly prepayments. The lump sum reduces the principal immediately, and every subsequent month's interest is calculated on the lower balance. The monthly additions reduce the principal gradually, and the interest savings accumulate more slowly. If you have a choice, pay the lump sum.</p>
 
-<h2>The Power Trio: Sort + Dedup + Trim</h2>
+<p><strong>Priority 3: Check for prepayment penalties.</strong> Some loans charge a penalty for early repayment — typically 1-2% of the prepaid amount. If the penalty is larger than the interest savings, prepayment is a net loss. Use the EMI calculator to calculate the interest savings, then compare to the penalty. If savings > penalty, prepay. If penalty > savings, invest the money elsewhere.</p>
 
-<p>The three checkboxes are what make a <a href="/en/tools/text-sorter">text sorter</a> a data cleaning tool, not just a sorting tool. <strong>Remove Duplicates</strong> eliminates repeated lines, keeping the first occurrence. Combined with Ignore Case, "Apple" and "apple" are treated as duplicates. <strong>Trim Lines</strong> strips leading and trailing whitespace from every line — "apple " and "apple" become the same word before sorting. This catches the most common source of "false duplicates" in real-world data: invisible spaces.</p>
+<h2>When NOT to Prepay</h2>
 
-<p>Use this trio together for the standard data-cleaning workflow: paste → Trim Lines → Remove Duplicates → A→Z → copy. The whole process takes under ten seconds and produces a clean, deduped, alphabetized, whitespace-normalized list ready for import into any system.</p>
+<p>If your loan interest rate is lower than the return you can earn elsewhere (after tax), prepayment is mathematically suboptimal. A 3% mortgage in a world of 5% savings account rates means you earn more by keeping the money in savings than by paying down the loan. The emotional benefit of being debt-free is real, but the math favors investing the difference.</p>
 
-<p>Clean your next list at <a href="/en/tools/text-sorter">free text sorter</a> — paste, sort, dedupe, done.</p>`
+<p>Also: maintain an emergency fund before prepaying. Prepaying $5,000 and then needing a $5,000 emergency loan at 15% interest is a net loss. Liquidity has value. The <a href="/en/tools/emi-calculator">EMI calculator</a> helps you quantify the interest savings — but only you can decide whether the savings outweigh the loss of liquidity.</p>
+
+<p>Calculate your prepayment savings at <a href="/en/tools/emi-calculator">free EMI calculator</a> — model the prepayment, see the savings, make the decision with numbers, not guesses.</p>`
   },
   {
-    slug: "uuid-generator-vs-random-number-unique-vs-random",
-    title: "UUID Generator vs Random Number Generator When Unique Matters More Than Random — and Why v4 UUIDs Are Not Actually Random Numbers",
-    description: "A UUID and a random number both look like strings of digits. But one is designed for global uniqueness and the other for statistical randomness. They solve different problems.",
-    date: "2026-07-08",
+    slug: "qr-code-generator-vs-qr-code-scanner-create-vs-read",
+    title: "QR Code Generator vs QR Code Scanner The Two Sides of Every QR Code — and Why You Need Both Tools in Your Workflow",
+    description: "A QR code generator creates codes. A QR code scanner reads them. They are two halves of the same technology — but the use cases are completely different, and confusing them leads to dead ends.",
+    date: "2026-07-09",
     category: "Developer",
-    tags: ["UUID generator", "random number generator", "unique ID", "GUID", "collision probability"],
-    relatedTools: ["uuid-generator", "random-number-generator", "hash-generator"],
-    content: `<p>You need to generate identifiers for database rows. You have two options: a <strong>random number</strong> (1 to 9,999,999,999) or a <strong>UUID</strong> (like <code>550e8400-e29b-41d4-a716-446655440000</code>). Both look arbitrary. Both are generated programmatically. But they solve fundamentally different problems — and using the wrong one leads to collisions, security vulnerabilities, or system failures.</p>
+    tags: ["QR code generator", "QR code scanner", "QR code", "barcode", "create vs read"],
+    relatedTools: ["qr-code-generator", "qr-code-scanner", "barcode-generator"],
+    content: `<p>You design a marketing flyer. You add a QR code linking to the product page. You use a <a href="/en/tools/qr-code-generator">QR code generator</a> — enter the URL, choose the size, download the PNG. Done. A week later, someone hands you a printed flyer with a QR code. You need to know where it links. You use a <a href="/en/tools/qr-code-scanner">QR code scanner</a> — point your camera, decode the URL, see the destination. Done.</p>
 
-<p>A <a href="/en/tools/random-number-generator">random number generator</a> gives you a value from a fixed range. A <a href="/en/tools/uuid-generator">UUID generator</a> gives you a globally unique identifier. The difference is not the format. It is the <strong>guarantee</strong>. Here is when each one makes sense.</p>
+<p>Generator and scanner. Create and read. They are two sides of the same QR code coin — but the tools, workflows, and use cases barely overlap. Here is when you need each one, and why having both in your toolset solves problems that neither can solve alone.</p>
 
-<h2>UUID v4: Designed for Uniqueness Across Space and Time</h2>
+<h2>QR Code Generator: Creating Information That Machines Can Read</h2>
 
-<p>A UUID v4 (Universally Unique Identifier version 4) is a 128-bit number, typically displayed as 36 characters: 32 hex digits separated by 4 hyphens. The "v4" means 122 of the 128 bits are randomly generated. The remaining 6 bits encode the version (4) and variant. This gives approximately 5.3 × 10³⁶ possible UUIDs — a number so large that the probability of generating a duplicate is effectively zero, even if every computer on Earth generated UUIDs continuously for decades.</p>
+<p>A QR code generator takes text — a URL, a WiFi password, a vCard contact, an email address, a calendar event — and encodes it into a 2D grid of black and white squares. The output is an image file (PNG, SVG) that can be printed, embedded in a design, or displayed on a screen.</p>
 
-<p>The key property: UUIDs are designed to be generated <strong>independently</strong> by different systems without coordination. Your web server, your mobile app, and your database replica can all generate UUIDs without talking to each other, and the probability of collision is negligible. This is why distributed systems use UUIDs as primary keys — no central ID generator, no sequence coordination, no bottleneck.</p>
+<p>The key decisions when generating: <strong>error correction level</strong> (L, M, Q, H — higher levels allow the code to be read even if partially damaged, but make the pattern denser), <strong>size</strong> (larger codes are easier to scan from a distance but take up more visual space), and <strong>format</strong> (PNG for most uses, SVG for scalable graphics, both available from our generator).</p>
 
-<p>UUIDs are not random numbers. They are <strong>unique identifiers</strong>. The randomness is a means to achieve uniqueness, not the goal. Using a UUID where you need a random number (like shuffling a list or picking a random winner) is wrong — UUIDs are biased by the version and variant bits, and their length makes them impractical for human-facing random selection.</p>
+<p>Common use cases: marketing materials (URL → landing page), WiFi access (SSID + password → instant connection), digital business cards (vCard → save to contacts), event ticketing (booking reference → gate check-in), and product packaging (serial number → warranty registration).</p>
 
-<h2>Random Number Generator: Statistical Randomness for Decisions</h2>
+<h2>QR Code Scanner: Reading Information That Machines Encoded</h2>
 
-<p>A <a href="/en/tools/random-number-generator">random number generator</a> produces values from a specified range (1-100, 1-10000, etc.) with a uniform distribution. Each value in the range has an equal probability of being selected. The goal is <strong>fairness and unpredictability</strong>, not uniqueness.</p>
+<p>A QR code scanner takes an image — from a camera, a screenshot, a photo, a clipboard paste — and decodes the 2D pattern back into the original text. The output is a string: a URL, a WiFi password, a contact card, a serial number.</p>
 
-<p>If you generate 10 random numbers from a range of 1-100, duplicates are expected — that is the birthday paradox at work. With only 23 people, the probability of a shared birthday exceeds 50%. With 10 random numbers from 1-100, the probability of at least one duplicate is about 37%. This is not a bug. It is the expected behavior of a system designed for fairness, not uniqueness.</p>
+<p>The key capabilities: <strong>camera scanning</strong> (real-time, uses the device camera), <strong>image upload</strong> (decode from a saved photo or screenshot), and <strong>clipboard paste</strong> (decode from an image already in the clipboard). The scanner works across all three input methods — the decoder is the same, only the source differs.</p>
 
-<p>Use random numbers for: A/B test group assignment, picking a random winner from a list, generating random sample data, simulating dice rolls, and any situation where you need an unbiased selection from a defined range. Use UUIDs for: database primary keys, request IDs in distributed systems, file names when users might upload files with the same name, and any situation where a collision would break something.</p>
+<p>Common use cases: security verification (what does this QR code on a random sticker actually link to?), decoding printed materials (what was the original URL or text?), recovering lost information (you have the QR code image but not the original data), and testing (does the QR code you generated actually encode the right information?).</p>
 
-<h2>The Quick Decision Rule</h2>
+<h2>The Verification Loop: Why You Need Both</h2>
 
-<p>If a collision would <strong>break your application</strong> (duplicate primary key, conflicting file name) → UUID. If a collision is <strong>expected and acceptable</strong> (random sampling, A/B testing, dice simulation) → random number generator. The tools are named for what they generate, but the decision is about what happens when — not if — a duplicate occurs.</p>
+<p>Every QR code you generate should be <strong>scanned and verified</strong> before it goes to print. Generate the code → scan it with the scanner → verify the decoded text matches your input. This 10-second verification loop catches: encoding errors (wrong URL), format errors (the code is too dense for the print size), and corruption (the PNG export introduced artifacts).</p>
 
-<p>Generate both at <a href="/en/tools/uuid-generator">UUID generator</a> and <a href="/en/tools/random-number-generator">random number generator</a> — understand the guarantee before you pick the tool.</p>`
+<p>A QR code on 5,000 printed flyers that links to the wrong URL is a $2,000 printing mistake. The verification loop costs 10 seconds. The reprint costs 500 times that. Use the <a href="/en/tools/qr-code-generator">QR generator</a> to create, the <a href="/en/tools/qr-code-scanner">QR scanner</a> to verify. Two sides of the same toolset. Both free, both instant.</p>`
   },
   {
-    slug: "color-contrast-checker-vs-color-picker-design-vs-accessibility",
-    title: "Color Contrast Checker vs Color Picker Design vs Accessibility — Why Picking Beautiful Colors Is Not Enough",
-    description: "You picked a gorgeous pale gray text on a white background. It looks elegant. It also fails WCAG contrast requirements and is unreadable for 12% of your users. Here's how to design for both beauty and accessibility.",
-    date: "2026-07-08",
+    slug: "json-formatter-vs-csv-to-json-data-format-pipeline",
+    title: "JSON Formatter vs CSV to JSON Data Format Conversion Pipeline — Why One Tool Is Not Enough for Real-World Data Work",
+    description: "You have a CSV file from an export. You need it as formatted JSON for an API. That's two steps: convert CSV to JSON, then format the JSON. Here's why the pipeline matters more than either tool alone.",
+    date: "2026-07-09",
     category: "Developer",
-    tags: ["color contrast checker", "color picker", "WCAG", "accessibility", "design"],
-    relatedTools: ["color-contrast-checker", "color-picker", "color-names"],
-    content: `<p>You design a landing page. The hero text is a subtle gray (#999999) on a white background (#FFFFFF). It looks elegant. It passes your designer's eye test. It also fails <strong>WCAG AA contrast requirements</strong> — the contrast ratio is 2.85:1, well below the 4.5:1 minimum for normal text. Approximately 12% of men and 0.5% of women have some form of color vision deficiency. For them, your elegant gray text is invisible.</p>
+    tags: ["JSON formatter", "CSV to JSON", "data conversion", "formatting", "pipeline"],
+    relatedTools: ["json-formatter", "csv-to-json", "json-to-csv"],
+    content: `<p>You export a list of 2,000 customers from your CRM. The file is CSV — rows and columns, comma-separated, clean. You need to import it into a system that accepts only JSON. You use a <a href="/en/tools/csv-to-json">CSV to JSON converter</a>. The output is valid JSON — but it is one giant line, 2,000 objects in a single collapsed array, 850,000 characters with no line breaks. You cannot read it. You cannot debug it. You need a <a href="/en/tools/json-formatter">JSON formatter</a> to make it human-readable.</p>
 
-<p>A <a href="/en/tools/color-picker">color picker</a> helps you choose beautiful colors. A <a href="/en/tools/color-contrast-checker">color contrast checker</a> tells you whether those colors are actually readable. They are complementary tools, not competitors. Here is why you need both in your design workflow.</p>
+<p>This is the <strong>data format pipeline</strong> — and it is the most common workflow that developers repeat without ever thinking about it as a pipeline. Here is why the pipeline matters, what each tool does in the chain, and the edge cases that break naive conversions.</p>
 
-<h2>What WCAG Contrast Ratios Actually Require</h2>
+<h2>Step 1: CSV to JSON — The Conversion</h2>
 
-<p>The Web Content Accessibility Guidelines (WCAG) 2.1 define three conformance levels for color contrast:</p>
+<p>CSV to JSON conversion sounds simple: read the header row as keys, map each subsequent row to an object with those keys. But real-world CSV files have edge cases that naive converters handle poorly.</p>
 
-<p><strong>AA Normal Text (4.5:1):</strong> The minimum for body text, form labels, button text, and any text smaller than 18pt (24px) or 14pt (18.7px) bold. Most of your website's text falls under this requirement. #999999 on white fails at 2.85:1. #767676 on white passes at exactly 4.54:1 — just barely. The safe minimum for gray text on white is #767676 or darker.</p>
+<p><strong>Commas inside quoted fields:</strong> A CSV row like <code>John,"Manager, Sales",50000</code> has a comma inside a quoted field. A naive converter splits on all commas and produces <code>["John", "Manager", "Sales", "50000"]</code> — four columns instead of three. A proper CSV parser respects quoted fields.</p>
 
-<p><strong>AA Large Text (3:1):</strong> For text larger than 18pt (24px) or bold text larger than 14pt (18.7px). Headlines and hero text often qualify for this lower threshold. #999999 on white — which failed for body text — passes for large text at 3:1.</p>
+<p><strong>Nested data:</strong> Some CSVs encode nested data in dot notation: <code>user.name, user.email, user.address.city</code>. A smart converter can detect this pattern and produce nested JSON objects: <code>{"user": {"name": "John", "email": "john@example.com", "address": {"city": "NYC"}}}</code>. A basic converter produces flat objects with dot-notation keys.</p>
 
-<p><strong>AAA Enhanced (7:1 for normal, 4.5:1 for large):</strong> The strictest level. Required for sites that serve elderly users, users with low vision, or accessibility-critical applications. At this level, even #595959 on white is borderline. Most commercial websites do not target AAA, but it is the gold standard.</p>
+<p><strong>Type inference:</strong> CSV has no types — everything is a string. <code>42</code> could be a number or a string. <code>true</code> could be a boolean or a string. The converter must decide whether to preserve everything as strings (safe) or infer types (convenient but risky). A good converter lets you choose.</p>
 
-<h2>The Color Picker + Contrast Checker Workflow</h2>
+<h2>Step 2: JSON Formatter — The Beautification</h2>
 
-<p><strong>Step 1: Pick with the color picker.</strong> Use the <a href="/en/tools/color-picker">color picker</a> to visually select a foreground color (text) and background color (background, button, banner). The picker gives you the hex code, RGB, and HSL values. This is the creative step — you are choosing colors that look good together.</p>
+<p>The converted JSON is valid but unreadable. The <a href="/en/tools/json-formatter">JSON formatter</a> adds indentation, line breaks, and syntax highlighting. It also validates the JSON — catching syntax errors introduced during conversion (trailing commas, unescaped quotes, missing brackets).</p>
 
-<p><strong>Step 2: Verify with the contrast checker.</strong> Paste the hex codes into the <a href="/en/tools/color-contrast-checker">contrast checker</a>. It instantly shows the contrast ratio and whether it passes AA, AAA, or fails each level. If it fails, adjust the lightness of the foreground color — making text darker on light backgrounds is the simplest fix.</p>
+<p>The formatter's tree view is the killer feature for large datasets. A collapsed 2,000-object array is a single line. The tree view lets you expand individual objects, drill into nested fields, and inspect specific records without scrolling through 850,000 characters. You can spot data issues — missing fields, unexpected nulls, wrong types — that would be invisible in the collapsed view.</p>
 
-<p><strong>Step 3: Iterate until both criteria are met.</strong> For a given background color, there is a range of foreground colors that both look good AND pass contrast requirements. The contrast checker helps you find the boundary. The color picker helps you stay on the aesthetically pleasing side of it.</p>
+<h2>Step 3: The Reverse Pipeline</h2>
 
-<h2>The Business Case for Contrast</h2>
+<p>The reverse pipeline — JSON to CSV — is equally common. You receive a JSON API response and need to open it in Excel. The <a href="/en/tools/json-to-csv">JSON to CSV converter</a> flattens nested objects into columns, then the CSV opens in any spreadsheet. The pipeline runs in both directions: CSV → JSON → format for API consumption, JSON → CSV → Excel for human analysis.</p>
 
-<p>This is not just about compliance. Low-contrast text <strong>reduces conversion rates</strong>. If users cannot read your call-to-action button text, they do not click. If they cannot read your pricing table, they do not buy. A study by the Nielsen Norman Group found that users read low-contrast text 26% slower and make more errors. The accessibility fix is also a business optimization.</p>
-
-<p>Check your colors at <a href="/en/tools/color-contrast-checker">color contrast checker</a> and pick new ones at <a href="/en/tools/color-picker">color picker</a> — design and accessibility are not opposites. They are two steps in the same workflow.</p>`
+<p>Each tool does one thing. The pipeline — converted data, then formatted for readability — is where the real work happens. Use <a href="/en/tools/csv-to-json">CSV to JSON</a> to convert, then <a href="/en/tools/json-formatter">JSON formatter</a> to inspect. Two tools, one workflow, zero data left unreadable.</p>`
   },
   {
-    slug: "life-hacks-psychology-of-simple-shortcuts",
-    title: "The Psychology of Life Hacks Why Simple Shortcuts Feel So Satisfying — and Why Some of Them Actually Work",
-    description: "Life hacks are tiny optimizations that feel disproportionately good. A binder clip for a toothpaste tube, a rubber band for a stripped screw. The psychological payoff is real — here's the science behind why shortcuts make us happy.",
-    date: "2026-07-08",
-    category: "Reference",
-    tags: ["life hacks", "psychology", "productivity", "mental shortcuts", "everyday tips"],
-    relatedTools: ["life-hacks", "book-of-answers", "lateral-thinking"],
-    content: `<p>You use a binder clip to squeeze the last bit of toothpaste out of the tube. The hack saves you maybe 30 cents worth of toothpaste. But the satisfaction you feel is completely disproportionate to the financial savings. You feel clever. You feel efficient. You feel like you <strong>won</strong> against the designed obsolescence of a toothpaste tube. This is the psychology of life hacks — and it explains why a collection of <a href="/en/tools/life-hacks">100 life hacks</a> is one of the most popular pages on the internet.</p>
+    slug: "coin-flip-probability-not-fair-50-50",
+    title: "The Probability of Coin Flips Why 50/50 Is Not Exactly Fair — and What That Reveals About Randomness",
+    description: "A coin flip is the universal symbol of fairness — 50% heads, 50% tails. But researchers have found a tiny bias that makes coin flips 51/49. Here's the physics and the math behind the imperfection.",
+    date: "2026-07-09",
+    category: "Fun & Media",
+    tags: ["coin flip", "probability", "randomness", "statistics", "physics"],
+    relatedTools: ["coin-flip", "dice-roller", "random-number-generator"],
+    content: `<p>A coin flip is the universal symbol of fairness. Two possible outcomes. Equal probability. The fairest decision mechanism ever invented. Except it is not exactly 50/50. In 2023, researchers led by František Bartoš at the University of Amsterdam conducted a massive study: 48 people flipped coins 350,757 times. The result: coins land on the <strong>same side they started on</strong> about 50.8% of the time. The bias is tiny — less than 1% — but it is real, it is statistically significant, and it has been hiding in plain sight for centuries.</p>
 
-<p>Life hacks are not really about saving time or money. They are about the <strong>psychological reward of finding a clever solution</strong>. Here is the science behind why tiny shortcuts feel so good, and why some of them actually work.</p>
+<p>Here is the physics behind the bias, what it means for the concept of randomness, and why a <a href="/en/tools/coin-flip">coin flip simulator</a> is actually fairer than a real coin.</p>
 
-<h2>The Insight Aha Moment: Dopamine on a Micro Scale</h2>
+<h2>The Physics: Why the Same-Side Bias Exists</h2>
 
-<p>When you learn a life hack — "use a rubber band to remove a stripped screw" — your brain experiences a small <strong>insight moment</strong>. Neuroscientists call this the "aha effect." It triggers a release of dopamine in the nucleus accumbens, the same reward pathway activated by food, money, and social approval. The insight does not need to be profound. It just needs to be <strong>unexpected and useful</strong>.</p>
+<p>The bias comes from <strong>precession</strong> — the wobble of the coin's rotation axis as it flips. When a coin is flipped, it does not rotate perfectly around a single axis. The axis wobbles slightly, which means the coin spends slightly more time with the initial side facing up during its trajectory. The effect was predicted by a 2007 physics model by Diaconis, Holmes, and Montgomery at Stanford, but the 2023 study was the first to confirm it experimentally at massive scale.</p>
 
-<p>The life hack format is perfectly engineered for this. It is a problem you recognize ("yes, stripped screws are annoying"), followed by a solution you did not expect ("a rubber band — really?"), followed by immediate applicability ("I have a rubber band in my desk drawer right now"). The entire cycle — recognition, surprise, utility — happens in under five seconds. That is a micro-dose of dopamine, and it is genuinely addictive.</p>
+<p>The bias is about 0.8% in favor of the same side — meaning if you start with heads up, the coin lands heads about 50.8% of the time. This is not enough to exploit in a single bet. But over 1,000 coin flips, the same-side bias would produce about 508 same-side results instead of the expected 500 — a swing of 8 extra wins. Over a lifetime of coin flips, the bias is real.</p>
 
-<h2>Why Grouped Hacks Feel More Valuable</h2>
+<p>The practical implication: if someone offers to flip a coin for a decision, and you can see which side is facing up before the flip, <strong>call the same side</strong>. You have a 50.8% chance of winning — a tiny edge, but an edge. If you cannot see the starting position, the coin flip is fair from your perspective.</p>
 
-<p>A single life hack is a tip. A curated collection of 100 life hacks is a <strong>resource</strong>. The difference is psychological. When you browse a <a href="/en/tools/life-hacks">life hacks collection</a>, you are not looking for one specific solution. You are browsing for the <strong>possibility of discovering something useful</strong>. The anticipation of finding a relevant hack is itself rewarding — the same mechanism that makes scrolling social media or flipping through a magazine satisfying.</p>
+<h2>What This Reveals About Randomness</h2>
 
-<p>This is also why life hack collections are organized by category. Cleaning hacks, kitchen hacks, travel hacks, tech hacks — each category primes your brain for a specific context. "I cook. There might be something here for me." The categorization makes the browsing feel productive rather than random.</p>
+<p>The coin flip bias is not a flaw in coin flips. It is a flaw in our <strong>model of coin flips</strong>. We model a coin flip as "two equally likely outcomes." But a real coin flip is a physical process governed by Newtonian mechanics — initial position, force, angular momentum, air resistance, landing surface. If you could measure all the initial conditions precisely enough, a coin flip would be deterministic, not random.</p>
 
-<h2>Which Life Hacks Actually Work (and Which Are Just for Fun)</h2>
+<p>The randomness we perceive is <strong>sensitivity to initial conditions</strong> — a tiny difference in the flip force produces a completely different outcome. This is chaos theory, not probability theory. The coin does not "choose" heads or tails. It follows the laws of physics from the moment it leaves your thumb. We call it random because we cannot predict it, not because it is fundamentally unpredictable.</p>
 
-<p>Not all life hacks are created equal. Some are genuinely useful optimizations: using a wooden spoon across a boiling pot to prevent it from boiling over (physics — the spoon pops the bubbles), putting a wet paper towel under a cutting board to stop it from sliding (friction), or using bread to pick up broken glass shards (the porous surface catches tiny splinters). These work because they exploit real physical principles.</p>
+<p>This is true of most "random" processes in everyday life. Dice rolls. Card shuffles. Lottery balls. They are all deterministic physical processes that we treat as random because measuring the initial conditions is impractical. The randomness is in our ignorance, not in the physics.</p>
 
-<p>Others are placebo dressed as cleverness. Using a hair straightener to iron a shirt collar saves you from getting out the ironing board, but the time spent heating the straightener and carefully pressing the collar is often longer than just ironing the shirt. The hack <em>feels</em> clever, which is the point — but the actual time savings are imaginary.</p>
+<h2>When You Actually Need Fair Randomness</h2>
 
-<p>The best life hacks combine <strong>real utility with the aha moment</strong>. They work, and they make you feel smart for knowing them. That is the sweet spot. Browse the full collection at <a href="/en/tools/life-hacks">100 life hacks</a> — you will find at least three that you will actually use, and a dozen more that will make you smile.</p>`
+<p>For a decision between two restaurants, a coin flip is fine — the 0.8% bias is meaningless. For a cryptographic key, a coin flip is terrible — the bias, however small, is a vulnerability. For anything in between, use a <a href="/en/tools/coin-flip">digital coin flip</a> powered by a cryptographically secure random number generator. The digital coin is not subject to precession, wobble, or the bias of physics. It is the truly fair 50/50 that real coins only approximate.</p>
+
+<p>Flip a truly fair coin at <a href="/en/tools/coin-flip">free coin flip</a> — no physics bias, no precession, just mathematics.</p>`
   },
 ];
 
@@ -222,4 +222,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 170->done.")
+print("Free station: 176->done.")
