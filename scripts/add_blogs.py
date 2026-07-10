@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (176→182) — July 9, 2026"""
+"""Add 6 blogs to free station (182→188) — July 10, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,208 +10,216 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "code-formatter-cicd-pipeline-integration",
-    title: "Code Formatter for CI/CD How to Auto-Format Code in Your Pipeline Without Prettier Taking Over Your Project",
-    description: "You want consistent code formatting across your team. You could ask everyone to install Prettier. Or you could enforce it in CI/CD — no installs, no excuses. Here's how to integrate an online formatter into your workflow.",
-    date: "2026-07-09",
+    slug: "case-converter-api-programming-naming-conventions",
+    title: "Case Converter for Programmers Snake Case Camel Case Pascal Case Kebab Case — A Complete Guide to Code Naming Conventions",
+    description: "Your API uses snake_case. Your frontend uses camelCase. Your CSS uses kebab-case. Converting between them manually is error-prone. Here's a case converter that handles all four.",
+    date: "2026-07-10",
+    category: "Text Tools",
+    tags: ["case converter", "snake case", "camel case", "pascal case", "naming conventions"],
+    relatedTools: ["case-converter", "text-to-slug", "code-formatter"],
+    content: `<p>You write a backend API in Python. The JSON response uses snake_case: <code>user_id</code>, <code>created_at</code>, <code>is_active</code>. Your frontend is JavaScript, which conventionally uses camelCase: <code>userId</code>, <code>createdAt</code>, <code>isActive</code>. You now have to convert every field name manually — or write a mapping layer that doubles your code. Neither is fun.</p>
+
+<p>Programming naming conventions are not just cosmetic. Each convention signals something about the language, framework, and context. A <a href="/en/tools/case-converter">case converter</a> that handles all four major conventions saves you from the most tedious kind of refactoring: renaming things one character at a time. Here is a guide to the naming conventions every developer encounters.</p>
+
+<h2>The Four Major Code Naming Conventions</h2>
+
+<p><strong>camelCase:</strong> First word lowercase, subsequent words capitalized. <code>getUserName</code>, <code>fetchOrderHistory</code>, <code>isAuthenticated</code>. Used in: JavaScript, TypeScript, Java (methods and variables), Swift (variables). The dominant convention for frontend development. The name comes from the humped shape — the capital letters look like a camel's humps.</p>
+
+<p><strong>PascalCase:</strong> Every word capitalized, including the first. <code>UserName</code>, <code>OrderHistory</code>, <code>HttpClient</code>. Used in: C# (class names), TypeScript (interfaces and types), React (component names), Java (class names). PascalCase signals "this is a type or a class, not a variable." When you see <code>UserProfile</code> in code, your brain expects a class definition, not a variable assignment.</p>
+
+<p><strong>snake_case:</strong> All lowercase, words separated by underscores. <code>user_name</code>, <code>order_history</code>, <code>http_client</code>. Used in: Python (variables, functions, methods), Ruby, PostgreSQL (column names by convention), C (standard library). The dominant convention for backend and data work. Snake case is the most readable for long identifiers because the underscores provide clear word boundaries.</p>
+
+<p><strong>kebab-case:</strong> All lowercase, words separated by hyphens. <code>user-name</code>, <code>order-history</code>, <code>http-client</code>. Used in: CSS (class names, IDs), URLs (slugs), HTML (attributes like <code>data-user-id</code>), CLI arguments (<code>--output-dir</code>). Kebab case is the web's naming convention — it appears in more places than any other, but never in actual code because hyphens are subtraction operators in most languages.</p>
+
+<h2>The Cross-Stack Conversion Problem</h2>
+
+<p>A full-stack feature touches every naming convention. The database column is <code>user_birth_date</code> (snake_case). The API response field is <code>user_birth_date</code> (snake_case, matching the DB). The TypeScript interface is <code>userBirthDate</code> (camelCase, JavaScript convention). The React component is <code>UserBirthDate</code> (PascalCase). The CSS class is <code>.user-birth-date</code> (kebab-case).</p>
+
+<p>Four different representations of the same piece of data. A <a href="/en/tools/case-converter">case converter</a> handles the conversion in one click: paste the snake_case version, click camelCase, copy to your frontend. Paste the camelCase version, click PascalCase, use in your component. The converter does not just change case — it handles the special characters (underscores, hyphens, spaces) that separate words in each convention.</p>
+
+<h2>When to Use Each Convention (and When to Break the Rules)</h2>
+
+<p>Follow the language's convention. It is not about personal preference. It is about <strong>other developers being able to read your code without context-switching</strong>. When a Python developer sees <code>getUserName</code>, they pause. The camelCase signals "this was written by someone who is thinking in JavaScript." The pause is tiny — a fraction of a second — but it accumulates across thousands of lines of code.</p>
+
+<p>The exception: when integrating with an external system, match the external system's convention. If your Python backend receives camelCase JSON from a third-party API, keep it camelCase in the data layer. Convert to snake_case only at the boundary between external data and internal logic. The conversion layer is where the <a href="/en/tools/case-converter">case converter</a> earns its place in your workflow.</p>
+
+<p>Convert between all four naming conventions at <a href="/en/tools/case-converter">free case converter</a> — snake to camel, camel to Pascal, any direction, one click.</p>`
+  },
+  {
+    slug: "html-entities-special-characters-cross-platform-encoding",
+    title: "HTML Entities Special Characters Guide How to Encode & < > and © So They Display Correctly Across Every Browser Email and Platform",
+    description: "You typed an ampersand in your HTML. It broke the page. You typed a copyright symbol in your email. It showed as ?. HTML entities prevent these failures — here's when and how to use them.",
+    date: "2026-07-10",
     category: "Developer",
-    tags: ["code formatter", "CI/CD", "Prettier", "pipeline", "code quality"],
-    relatedTools: ["code-formatter", "json-formatter", "css-minifier"],
-    content: `<p>You join a new team and open the first file. It uses tabs. The second file uses spaces. The third file has a mix of both — and the indentation level changes randomly between 2 and 4 spaces. The codebase has been formatted by five different editors, three different IDE settings, and one developer who apparently configured their tab key to emit chaos.</p>
+    tags: ["HTML entities", "special characters", "encoding", "ampersand", "cross-platform"],
+    relatedTools: ["html-entities", "url-encoder", "html-to-markdown"],
+    content: `<p>You write a blog post that mentions "AT&T." The page breaks because the browser interprets <code>&amp;</code> as the start of an HTML entity and tries to parse the rest of the text as one. You write a privacy policy that includes the copyright symbol ©. It looks fine in your browser but shows as a garbled character in Outlook 2016 and as a blank square on an older Android phone. You write a tutorial that includes <code>&lt;div&gt;</code> in a code example. The browser renders an actual div instead of displaying the text.</p>
 
-<p>You could propose a Prettier config and ask everyone to install it. Four people will install it. Two will forget. One will configure their editor to override it. The inconsistency will continue. The alternative: enforce formatting in CI/CD. A <a href="/en/tools/code-formatter">code formatter</a> in your pipeline catches formatting violations before they merge — and the online version means nobody needs to install anything.</p>
+<p>Special characters are the most common source of cross-platform rendering failures — and the fix is <strong>HTML entities</strong>. A <a href="/en/tools/html-entities">HTML entities converter</a> encodes characters into their safe, universal representations. Here is which characters need encoding and why.</p>
 
-<h2>Why CI/CD Formatting Beats Editor Configs</h2>
+<h2>The Three Characters You Must Always Encode</h2>
 
-<p>Editor configs are opt-in. Every developer must install the formatter, configure their editor, and remember to format before committing. One developer who skips this step introduces formatting noise into every file they touch. The noise accumulates. The git blame becomes useless because every commit reformats the file along with the actual changes.</p>
+<p><strong>Ampersand (&amp; → <code>&amp;amp;</code>):</strong> The ampersand is the escape character in HTML. It signals the start of an entity. If you want to display a literal ampersand — in "AT&T," "Procter &amp; Gamble," "Simon &amp; Schuster" — you must encode it. An unencoded ampersand in HTML is a syntax error. Browsers are forgiving and often recover, but email clients and older browsers are not. Always encode ampersands in any text that will be rendered as HTML.</p>
 
-<p>CI/CD formatting is opt-out — you must actively bypass it to merge unformatted code. The formatter runs on every pull request, checks the diff, and either approves or blocks. Zero developer setup. Zero forgotten formats. The rule is enforced by the machine, not by code review comments saying "please run Prettier."</p>
+<p><strong>Less than (&lt; → <code>&amp;lt;</code>):</strong> The less-than sign starts an HTML tag. If you write <code>&lt;div&gt;</code> in a blog post about HTML, the browser sees a tag, not text. Encode it as <code>&amp;lt;div&amp;gt;</code> to display the literal characters. This is especially important in code tutorials, documentation, and any content that includes HTML or XML examples.</p>
 
-<p>An <a href="/en/tools/code-formatter">online code formatter</a> fits into this workflow as a quick fix tool. Before pushing a branch, paste the file into the formatter, verify it looks right, and commit. The CI/CD check passes on the first try because you already formatted locally. The online tool is the local step. The pipeline is the enforcement step.</p>
+<p><strong>Greater than (&gt; → <code>&amp;gt;</code>):</strong> The greater-than sign ends an HTML tag. It is less dangerous than &lt; (browsers handle unencoded &gt; better) but it should still be encoded for consistency and safety. In practice, always encode both &lt; and &gt; together.</p>
 
-<h2>Setting Up the Pipeline: A Practical Approach</h2>
+<h2>Characters That Need Encoding in Specific Contexts</h2>
 
-<p><strong>Step 1: Define the standard.</strong> Pick a formatting configuration and commit it to the repo. For JavaScript/TypeScript, Prettier's default config is the industry standard. For JSON, 2-space indentation. For CSS, consistent property ordering. The config file is the source of truth.</p>
+<p><strong>Quotes in attributes:</strong> If your HTML attribute value contains a double quote, encode it as <code>&amp;quot;</code>. Otherwise the quote terminates the attribute early. <code>&lt;img alt="He said &amp;quot;hello&amp;quot;"&gt;</code> — the encoded quotes are part of the alt text, not the end of the attribute.</p>
 
-<p><strong>Step 2: Add the format check to CI.</strong> Add a pipeline step that runs the formatter in check mode. If the formatted output differs from the committed code, the pipeline fails. The error message includes a link to the online formatter: "Format your code here, then push again."</p>
+<p><strong>Non-breaking space:</strong> <code>&amp;nbsp;</code> creates a space that prevents line breaks. Use it to keep words together: <code>Dr.&amp;nbsp;Smith</code> ensures "Dr." and "Smith" never split across lines. Overusing &amp;nbsp; for layout (instead of CSS margins/padding) is a classic beginner mistake — it is a content character, not a layout tool.</p>
 
-<p><strong>Step 3: Provide the escape hatch.</strong> For the rare case where unformatted code is intentional (generated code, vendored dependencies, template literals with specific whitespace), add a comment directive to skip formatting. The escape hatch is necessary for adoption — if the formatter blocks work, developers will disable it, not fix their code.</p>
+<p><strong>Copyright, trademark, and special symbols:</strong> © → <code>&amp;copy;</code>, ® → <code>&amp;reg;</code>, ™ → <code>&amp;trade;</code>, € → <code>&amp;euro;</code>, £ → <code>&amp;pound;</code>, ¥ → <code>&amp;yen;</code>. These symbols have named entities that are easier to remember than numeric codes. Named entities work in all browsers and email clients, while the raw Unicode characters sometimes fail in older systems.</p>
 
-<h2>The Online Formatter as the Quick Fix</h2>
+<h2>HTML Entities in Email: The Strictest Rendering Environment</h2>
 
-<p>When the pipeline fails with "Code not formatted," the developer opens the <a href="/en/tools/code-formatter">online code formatter</a>, pastes the file, clicks format, copies the output, and pushes. Total time: 30 seconds. No installing Prettier. No configuring editor plugins. No remembering which npm script runs the formatter. The online tool is the path of least resistance — and the path of least resistance is the one developers actually follow.</p>
+<p>Email clients are the most hostile rendering environment for special characters. Outlook uses Word's HTML rendering engine (not a browser engine), which has incomplete Unicode support. Some Android email clients use stripped-down renderers that lack entire character ranges. The solution: encode <strong>all</strong> non-ASCII characters as HTML entities in email HTML. The copyright symbol, the em dash, the curly quotes from a word processor — encode them all. It makes the HTML source uglier but ensures the rendered email looks correct everywhere.</p>
 
-<p>Format your next file at <a href="/en/tools/code-formatter">free code formatter</a> — JSON, JS, CSS, HTML all in one tool, no install required.</p>`
+<p>Use the <a href="/en/tools/html-entities">HTML entities converter</a> to encode and decode any text. Paste your content, see the encoded version, and copy the safe representation that renders correctly on every platform.</p>`
   },
   {
-    slug: "base64-to-image-decode-api-thumbnails",
-    title: "Base64 to Image How to Decode Data URIs from API Responses and Recover Embedded Images Without Writing a Script",
-    description: "An API returned image data as a Base64 string. You need to see the actual image. Here's how to decode Base64 to an image file in seconds — no terminal, no script, no ImageMagick.",
-    date: "2026-07-09",
+    slug: "nasa-apod-classroom-education-resource",
+    title: "NASA APOD Astronomy Picture of the Day How Teachers Use Space Images to Make Science Unforgettable",
+    description: "Every day since 1995, NASA has published one astronomy image with an explanation written by a professional astronomer. It's the longest-running daily science communication project on the internet — and a free classroom resource.",
+    date: "2026-07-10",
+    category: "Reference",
+    tags: ["NASA APOD", "astronomy", "education", "classroom", "science communication"],
+    relatedTools: ["nasa-apod", "bing-wallpaper", "global-weather"],
+    content: `<p>On June 16, 1995, NASA published the first Astronomy Picture of the Day (APOD): an image of the Earth from space, accompanied by a paragraph explaining what you were looking at. They have published a new image every single day since — over 11,000 consecutive days, spanning 30 years. The project has outlasted the Space Shuttle program, the rise and fall of Internet Explorer, the entire existence of MySpace and Vine, and three generations of web technology.</p>
+
+<p>APOD is the <strong>longest-running daily science communication project on the internet</strong> — and it is completely free, updated daily, and accessible through a <a href="/en/tools/nasa-apod">NASA APOD viewer</a> that shows today's image and the full archive. Here is why teachers, students, and space enthusiasts keep coming back after 30 years.</p>
+
+<h2>What Makes APOD Different from Every Other Science Website</h2>
+
+<p>APOD is not a database of astronomy facts. It is a <strong>daily narrative</strong>. Each image is chosen by a professional astronomer — Robert Nemiroff and Jerry Bonnell have been the editors since day one — and each explanation is written in clear, accessible language that assumes curiosity but not expertise. A typical APOD entry: a stunning image of a nebula, a galaxy, or a planetary surface, followed by 200-400 words explaining what you are seeing, how it was photographed, and why it matters.</p>
+
+<p>The explanations are written by professional astronomers, not journalists or content marketers. They are accurate, specific, and free of hype. They do not say "This mind-blowing image will change everything you know about the universe." They say "NGC 7023, also known as the Iris Nebula, is a reflection nebula located about 1,300 light-years away in the constellation Cepheus. The blue color comes from starlight reflecting off microscopic dust particles." The difference is the difference between science and science-flavored content.</p>
+
+<h2>How Teachers Use APOD in the Classroom</h2>
+
+<p><strong>Daily warm-up:</strong> Start every science class by showing today's APOD image. Ask students: what do you see? What do you think this is? Read the explanation together. Five minutes of curiosity before the lesson begins. Over a school year, students are exposed to 180 astronomy images — galaxies, nebulae, planets, comets, eclipses, spacecraft, and historical astronomy photographs. The cumulative exposure builds a mental model of the universe that no textbook chapter can match.</p>
+
+<p><strong>Writing prompts:</strong> Show an APOD image without the explanation. Ask students to write their own description — what they see, what they think it is, what questions they have. Then read the actual explanation and compare. This teaches scientific observation, descriptive writing, and the habit of asking questions before seeking answers.</p>
+
+<p><strong>Research projects:</strong> Each APOD image is a potential research topic. A student sees an image of Europa, Jupiter's moon, and wants to learn more. The APOD explanation provides the starting point and the key vocabulary. The student researches further, writes a report, presents to the class. The image sparked the curiosity. The explanation provided the on-ramp.</p>
+
+<h2>The 30-Year Archive as a Time Capsule</h2>
+
+<p>APOD's archive — every image since June 16, 1995 — is a <strong>history of astronomy</strong> told in daily images. You can browse the archive by date, search by keyword, or explore randomly. The images document three decades of astronomical discoveries: the first exoplanets, the Hubble Deep Field, the Cassini mission to Saturn, the New Horizons flyby of Pluto, the first image of a black hole. Each discovery appeared on APOD within days, explained by the astronomers who study it.</p>
+
+<p>Browse today's image and the complete archive at <a href="/en/tools/nasa-apod">NASA APOD viewer</a> — 30 years of the universe, one day at a time, free for everyone.</p>`
+  },
+  {
+    slug: "css-minifier-vs-svg-minifier-different-optimization",
+    title: "CSS Minifier vs SVG Minifier Different File Types Require Different Optimization Strategies — Why One Tool Cannot Optimize Both",
+    description: "CSS minification removes whitespace and comments. SVG minification does that too — but also removes editor metadata, simplifies paths, and rounds coordinates. Different file types, different optimizations.",
+    date: "2026-07-10",
     category: "Developer",
-    tags: ["base64 to image", "data URI", "API", "decode", "image recovery"],
-    relatedTools: ["base64-to-image", "image-to-base64", "base64-converter"],
-    content: `<p>You call an API endpoint and the response includes a field called <code>thumbnail</code>. Its value is a 50,000-character string starting with <code>iVBORw0KGgo...</code> That is a Base64-encoded PNG image. You need to see the actual image — to verify the API is returning the right data, to debug a rendering issue, or to extract the image for use elsewhere. You could write a script. Or you could paste the string into a <a href="/en/tools/base64-to-image">Base64 to image decoder</a> and see the image instantly.</p>
+    tags: ["CSS minifier", "SVG minifier", "optimization", "web performance", "file compression"],
+    relatedTools: ["css-minifier", "svg-minifier", "code-formatter"],
+    content: `<p>You have a CSS file that is 45KB — mostly comments and whitespace. You run it through a <a href="/en/tools/css-minifier">CSS minifier</a>. It becomes 18KB. Comments gone, whitespace collapsed, semicolons stripped where optional. The file is smaller but functionally identical. Good.</p>
 
-<p>Base64-encoded images are everywhere in modern APIs, emails, and databases. Here is when you encounter them, why they are used, and how to decode them without writing code every time.</p>
+<p>Now you have an SVG file exported from Illustrator — 120KB. You run it through the same CSS minifier. It becomes 115KB. The whitespace is gone, but the file is still bloated with editor metadata, unused namespace declarations, and unnecessarily precise path coordinates like <code>M12.847392,45.123847</code> that could be <code>M12.8,45.1</code> with no visible difference. The CSS minifier did its job. It is just the wrong job.</p>
 
-<h2>Where You Encounter Base64 Images in the Wild</h2>
+<p>An <a href="/en/tools/svg-minifier">SVG minifier</a> does things that a CSS minifier cannot do — because SVG files are fundamentally different from CSS files. Here is why different file types need different optimizers.</p>
 
-<p><strong>API responses:</strong> REST APIs and GraphQL endpoints often return small images as Base64 strings instead of URLs. This eliminates the need for a separate image hosting service and keeps the data self-contained. A single API call returns the record and its associated image in one response. Common in: user avatars, product thumbnails, invoice PDFs, document previews.</p>
+<h2>What a CSS Minifier Does (and Does Not Do)</h2>
 
-<p><strong>Email attachments:</strong> Email clients embed inline images (logos, signatures, icons) as Base64 data URIs in the HTML body. When you inspect the email source, you see <code>&lt;img src="data:image/png;base64,iVBOR..."&gt;</code>. The image is not a separate file — it is baked into the HTML.</p>
+<p>A CSS minifier processes text according to CSS syntax rules. It removes comments (<code>/* like this */</code>), collapses whitespace (spaces, tabs, newlines become single spaces), removes the last semicolon before a closing brace (<code>{color: red;}</code> → <code>{color:red}</code>), shortens hex colors where possible (<code>#ffffff</code> → <code>#fff</code>), and removes unnecessary units (<code>0px</code> → <code>0</code>).</p>
 
-<p><strong>Database blobs:</strong> Some databases store images as Base64 text in a VARCHAR or TEXT column. When you query the database, the image column is a long Base64 string. Converting it back to a viewable image requires a decoder.</p>
+<p>These are <strong>syntactic optimizations</strong>. The minifier reads the CSS grammar, finds redundancy, and removes it. The optimizations are safe because they are based on the rules of CSS, not on guesswork. A CSS minifier does not need to understand your design. It just needs to understand CSS syntax.</p>
 
-<p><strong>CSS background images:</strong> Inline CSS sometimes uses Base64 data URIs for small background images — icons, gradients, patterns. This reduces HTTP requests for tiny assets. The trade-off: the CSS file is larger, but the page loads faster because there are fewer round trips.</p>
+<h2>What an SVG Minifier Does That a CSS Minifier Cannot</h2>
 
-<h2>How to Decode Base64 to Image in Seconds</h2>
+<p>An SVG minifier performs <strong>semantic optimizations</strong> that require understanding what an SVG file actually contains. It removes: editor-specific metadata (Illustrator and Inkscape embed their own namespaces, export timestamps, and UI state — kilobytes of data that browsers ignore), XML declarations and DOCTYPE declarations (optional for inline SVG), comments, and unnecessary namespace declarations.</p>
 
-<p>Use a <a href="/en/tools/base64-to-image">Base64 to image converter</a>. Paste the Base64 string — with or without the <code>data:image/png;base64,</code> prefix. The tool detects the image format from the header bytes, decodes the Base64, and renders the image. You can then download it as a PNG, JPEG, or WebP file.</p>
+<p>But the real value of an SVG-specific minifier is in <strong>numeric precision reduction</strong>. SVG path data contains coordinates like <code>M12.847392,45.123847 C12.928374,45.293847...</code> — eight decimal places of precision that no human can see and no screen can render. An SVG minifier rounds these to 1-2 decimal places: <code>M12.8,45.1 C12.9,45.3...</code>. The visual difference is zero. The file size reduction is 30-50% on complex paths.</p>
 
-<p>The tool handles the edge cases that make manual decoding annoying: the data URI prefix (strip it automatically), whitespace and line breaks in the Base64 string (ignore them), and invalid padding (fix it). What takes 5 minutes of writing a Python script takes 5 seconds of pasting into a browser tool.</p>
+<p>The minifier also collapses redundant groups, removes empty elements, and simplifies transformations. These are SVG-specific optimizations that require understanding the SVG DOM structure, not just parsing text. A CSS minifier does not know what a <code>&lt;path&gt;</code> element is or what <code>d="M..."</code> means. It just sees text. The SVG minifier sees geometry.</p>
 
-<p>The reverse operation — encoding an image to Base64 — is equally useful when you need to embed an image in an API request, JSON payload, or HTML email. Use the <a href="/en/tools/image-to-base64">image to Base64 encoder</a> for that direction. The two tools together handle the full round trip: image → Base64 → transmission → Base64 → image.</p>
+<h2>When to Use Each (and When to Use Both)</h2>
 
-<p>Decode your next API response thumbnail at <a href="/en/tools/base64-to-image">Base64 to image decoder</a> — paste, preview, download. No script required.</p>`
+<p><strong>CSS files:</strong> Use the CSS minifier. The SVG minifier would not know what to do with CSS syntax.</p>
+
+<p><strong>SVG files:</strong> Use the SVG minifier. The CSS minifier would only remove whitespace and leave 80% of the bloat untouched.</p>
+
+<p><strong>HTML files with inline CSS and inline SVG:</strong> Use both. Minify the CSS blocks with the CSS minifier, minify the SVG blocks with the SVG minifier, then minify the HTML wrapper. Three tools, three file types, three different optimization strategies.</p>
+
+<p>Optimize your files at <a href="/en/tools/css-minifier">CSS minifier</a> and <a href="/en/tools/svg-minifier">SVG minifier</a> — different tools for different file types. The right tool saves kilobytes. The wrong tool saves nothing.</p>`
   },
   {
-    slug: "emi-calculator-loan-prepayment-strategy",
-    title: "EMI Calculator Loan Prepayment Strategy How to Save Thousands in Interest by Paying Off Loans the Smart Way — Not the Fast Way",
-    description: "Paying extra toward your loan principal saves interest. But paying extra at the beginning of the loan saves dramatically more than paying extra at the end. Here's the math and the strategy.",
-    date: "2026-07-09",
-    category: "Calculators",
-    tags: ["EMI calculator", "loan prepayment", "interest savings", "mortgage", "financial planning"],
-    relatedTools: ["emi-calculator", "loan-calculator", "mortgage-calculator"],
-    content: `<p>You have a 20-year home loan at 7% interest. You receive a year-end bonus and decide to put $5,000 toward the loan principal. Should you pay it now, in year 2 of the loan? Or save it and pay later, in year 15? The answer: paying in year 2 saves you roughly <strong>three times more interest</strong> than paying in year 15. Same $5,000. Completely different impact.</p>
-
-<p>This is the <strong>time value of prepayment</strong> — and it is the most misunderstood concept in personal loan management. An <a href="/en/tools/emi-calculator">EMI calculator</a> can model the difference. Here is the strategy that saves you the most money.</p>
-
-<h2>Why Early Prepayment Is So Much More Powerful</h2>
-
-<p>Loan interest is front-loaded. In the early years of a loan, most of your EMI (Equated Monthly Installment) goes toward interest, not principal. On a $200,000, 20-year loan at 7%, your first EMI payment might be roughly $1,550 — of which about $1,167 is interest and only $383 is principal. The interest is calculated on the outstanding balance, and the outstanding balance is highest at the beginning.</p>
-
-<p>When you prepay $5,000 in year 2, you permanently reduce the outstanding balance. Every subsequent month's interest is calculated on a smaller principal. The savings compound over the remaining 18 years of the loan. Prepay $5,000 in year 2 and you might save $12,000-$15,000 in total interest over the life of the loan. Prepay the same $5,000 in year 15 and you save only $3,000-$4,000 — because there are fewer remaining months for the interest savings to compound.</p>
-
-<p>The math is not complicated. It is just <strong>time</strong>. The earlier you reduce the principal, the more months of interest you avoid. An <a href="/en/tools/emi-calculator">EMI calculator</a> with a prepayment feature shows the exact savings for any prepayment amount at any point in the loan term.</p>
-
-<h2>The Prepayment Strategy: When to Pay Extra</h2>
-
-<p><strong>Priority 1: Prepay in the first third of the loan term.</strong> Years 1-7 of a 20-year loan are when prepayment has the most impact. Every extra dollar you pay in this period avoids 13-19 years of interest. This is the highest-return use of your extra cash — better than most investments on a risk-adjusted basis.</p>
-
-<p><strong>Priority 2: Prepay lump sums, not small monthly additions.</strong> A $5,000 lump sum prepayment saves more interest than twelve $417 monthly prepayments. The lump sum reduces the principal immediately, and every subsequent month's interest is calculated on the lower balance. The monthly additions reduce the principal gradually, and the interest savings accumulate more slowly. If you have a choice, pay the lump sum.</p>
-
-<p><strong>Priority 3: Check for prepayment penalties.</strong> Some loans charge a penalty for early repayment — typically 1-2% of the prepaid amount. If the penalty is larger than the interest savings, prepayment is a net loss. Use the EMI calculator to calculate the interest savings, then compare to the penalty. If savings > penalty, prepay. If penalty > savings, invest the money elsewhere.</p>
-
-<h2>When NOT to Prepay</h2>
-
-<p>If your loan interest rate is lower than the return you can earn elsewhere (after tax), prepayment is mathematically suboptimal. A 3% mortgage in a world of 5% savings account rates means you earn more by keeping the money in savings than by paying down the loan. The emotional benefit of being debt-free is real, but the math favors investing the difference.</p>
-
-<p>Also: maintain an emergency fund before prepaying. Prepaying $5,000 and then needing a $5,000 emergency loan at 15% interest is a net loss. Liquidity has value. The <a href="/en/tools/emi-calculator">EMI calculator</a> helps you quantify the interest savings — but only you can decide whether the savings outweigh the loss of liquidity.</p>
-
-<p>Calculate your prepayment savings at <a href="/en/tools/emi-calculator">free EMI calculator</a> — model the prepayment, see the savings, make the decision with numbers, not guesses.</p>`
-  },
-  {
-    slug: "qr-code-generator-vs-qr-code-scanner-create-vs-read",
-    title: "QR Code Generator vs QR Code Scanner The Two Sides of Every QR Code — and Why You Need Both Tools in Your Workflow",
-    description: "A QR code generator creates codes. A QR code scanner reads them. They are two halves of the same technology — but the use cases are completely different, and confusing them leads to dead ends.",
-    date: "2026-07-09",
-    category: "Developer",
-    tags: ["QR code generator", "QR code scanner", "QR code", "barcode", "create vs read"],
-    relatedTools: ["qr-code-generator", "qr-code-scanner", "barcode-generator"],
-    content: `<p>You design a marketing flyer. You add a QR code linking to the product page. You use a <a href="/en/tools/qr-code-generator">QR code generator</a> — enter the URL, choose the size, download the PNG. Done. A week later, someone hands you a printed flyer with a QR code. You need to know where it links. You use a <a href="/en/tools/qr-code-scanner">QR code scanner</a> — point your camera, decode the URL, see the destination. Done.</p>
-
-<p>Generator and scanner. Create and read. They are two sides of the same QR code coin — but the tools, workflows, and use cases barely overlap. Here is when you need each one, and why having both in your toolset solves problems that neither can solve alone.</p>
-
-<h2>QR Code Generator: Creating Information That Machines Can Read</h2>
-
-<p>A QR code generator takes text — a URL, a WiFi password, a vCard contact, an email address, a calendar event — and encodes it into a 2D grid of black and white squares. The output is an image file (PNG, SVG) that can be printed, embedded in a design, or displayed on a screen.</p>
-
-<p>The key decisions when generating: <strong>error correction level</strong> (L, M, Q, H — higher levels allow the code to be read even if partially damaged, but make the pattern denser), <strong>size</strong> (larger codes are easier to scan from a distance but take up more visual space), and <strong>format</strong> (PNG for most uses, SVG for scalable graphics, both available from our generator).</p>
-
-<p>Common use cases: marketing materials (URL → landing page), WiFi access (SSID + password → instant connection), digital business cards (vCard → save to contacts), event ticketing (booking reference → gate check-in), and product packaging (serial number → warranty registration).</p>
-
-<h2>QR Code Scanner: Reading Information That Machines Encoded</h2>
-
-<p>A QR code scanner takes an image — from a camera, a screenshot, a photo, a clipboard paste — and decodes the 2D pattern back into the original text. The output is a string: a URL, a WiFi password, a contact card, a serial number.</p>
-
-<p>The key capabilities: <strong>camera scanning</strong> (real-time, uses the device camera), <strong>image upload</strong> (decode from a saved photo or screenshot), and <strong>clipboard paste</strong> (decode from an image already in the clipboard). The scanner works across all three input methods — the decoder is the same, only the source differs.</p>
-
-<p>Common use cases: security verification (what does this QR code on a random sticker actually link to?), decoding printed materials (what was the original URL or text?), recovering lost information (you have the QR code image but not the original data), and testing (does the QR code you generated actually encode the right information?).</p>
-
-<h2>The Verification Loop: Why You Need Both</h2>
-
-<p>Every QR code you generate should be <strong>scanned and verified</strong> before it goes to print. Generate the code → scan it with the scanner → verify the decoded text matches your input. This 10-second verification loop catches: encoding errors (wrong URL), format errors (the code is too dense for the print size), and corruption (the PNG export introduced artifacts).</p>
-
-<p>A QR code on 5,000 printed flyers that links to the wrong URL is a $2,000 printing mistake. The verification loop costs 10 seconds. The reprint costs 500 times that. Use the <a href="/en/tools/qr-code-generator">QR generator</a> to create, the <a href="/en/tools/qr-code-scanner">QR scanner</a> to verify. Two sides of the same toolset. Both free, both instant.</p>`
-  },
-  {
-    slug: "json-formatter-vs-csv-to-json-data-format-pipeline",
-    title: "JSON Formatter vs CSV to JSON Data Format Conversion Pipeline — Why One Tool Is Not Enough for Real-World Data Work",
-    description: "You have a CSV file from an export. You need it as formatted JSON for an API. That's two steps: convert CSV to JSON, then format the JSON. Here's why the pipeline matters more than either tool alone.",
-    date: "2026-07-09",
-    category: "Developer",
-    tags: ["JSON formatter", "CSV to JSON", "data conversion", "formatting", "pipeline"],
-    relatedTools: ["json-formatter", "csv-to-json", "json-to-csv"],
-    content: `<p>You export a list of 2,000 customers from your CRM. The file is CSV — rows and columns, comma-separated, clean. You need to import it into a system that accepts only JSON. You use a <a href="/en/tools/csv-to-json">CSV to JSON converter</a>. The output is valid JSON — but it is one giant line, 2,000 objects in a single collapsed array, 850,000 characters with no line breaks. You cannot read it. You cannot debug it. You need a <a href="/en/tools/json-formatter">JSON formatter</a> to make it human-readable.</p>
-
-<p>This is the <strong>data format pipeline</strong> — and it is the most common workflow that developers repeat without ever thinking about it as a pipeline. Here is why the pipeline matters, what each tool does in the chain, and the edge cases that break naive conversions.</p>
-
-<h2>Step 1: CSV to JSON — The Conversion</h2>
-
-<p>CSV to JSON conversion sounds simple: read the header row as keys, map each subsequent row to an object with those keys. But real-world CSV files have edge cases that naive converters handle poorly.</p>
-
-<p><strong>Commas inside quoted fields:</strong> A CSV row like <code>John,"Manager, Sales",50000</code> has a comma inside a quoted field. A naive converter splits on all commas and produces <code>["John", "Manager", "Sales", "50000"]</code> — four columns instead of three. A proper CSV parser respects quoted fields.</p>
-
-<p><strong>Nested data:</strong> Some CSVs encode nested data in dot notation: <code>user.name, user.email, user.address.city</code>. A smart converter can detect this pattern and produce nested JSON objects: <code>{"user": {"name": "John", "email": "john@example.com", "address": {"city": "NYC"}}}</code>. A basic converter produces flat objects with dot-notation keys.</p>
-
-<p><strong>Type inference:</strong> CSV has no types — everything is a string. <code>42</code> could be a number or a string. <code>true</code> could be a boolean or a string. The converter must decide whether to preserve everything as strings (safe) or infer types (convenient but risky). A good converter lets you choose.</p>
-
-<h2>Step 2: JSON Formatter — The Beautification</h2>
-
-<p>The converted JSON is valid but unreadable. The <a href="/en/tools/json-formatter">JSON formatter</a> adds indentation, line breaks, and syntax highlighting. It also validates the JSON — catching syntax errors introduced during conversion (trailing commas, unescaped quotes, missing brackets).</p>
-
-<p>The formatter's tree view is the killer feature for large datasets. A collapsed 2,000-object array is a single line. The tree view lets you expand individual objects, drill into nested fields, and inspect specific records without scrolling through 850,000 characters. You can spot data issues — missing fields, unexpected nulls, wrong types — that would be invisible in the collapsed view.</p>
-
-<h2>Step 3: The Reverse Pipeline</h2>
-
-<p>The reverse pipeline — JSON to CSV — is equally common. You receive a JSON API response and need to open it in Excel. The <a href="/en/tools/json-to-csv">JSON to CSV converter</a> flattens nested objects into columns, then the CSV opens in any spreadsheet. The pipeline runs in both directions: CSV → JSON → format for API consumption, JSON → CSV → Excel for human analysis.</p>
-
-<p>Each tool does one thing. The pipeline — converted data, then formatted for readability — is where the real work happens. Use <a href="/en/tools/csv-to-json">CSV to JSON</a> to convert, then <a href="/en/tools/json-formatter">JSON formatter</a> to inspect. Two tools, one workflow, zero data left unreadable.</p>`
-  },
-  {
-    slug: "coin-flip-probability-not-fair-50-50",
-    title: "The Probability of Coin Flips Why 50/50 Is Not Exactly Fair — and What That Reveals About Randomness",
-    description: "A coin flip is the universal symbol of fairness — 50% heads, 50% tails. But researchers have found a tiny bias that makes coin flips 51/49. Here's the physics and the math behind the imperfection.",
-    date: "2026-07-09",
+    slug: "random-number-generator-vs-dice-roller-true-random-vs-bell-curve",
+    title: "Random Number Generator vs Dice Roller True Random vs Bell Curve Simulation — Why 1d100 Is Not the Same as 2d50",
+    description: "A random number between 1 and 100 gives every value equal probability. Rolling 2d50 gives a bell curve peaking at 51. Different tools, different probability distributions, different use cases.",
+    date: "2026-07-10",
     category: "Fun & Media",
-    tags: ["coin flip", "probability", "randomness", "statistics", "physics"],
-    relatedTools: ["coin-flip", "dice-roller", "random-number-generator"],
-    content: `<p>A coin flip is the universal symbol of fairness. Two possible outcomes. Equal probability. The fairest decision mechanism ever invented. Except it is not exactly 50/50. In 2023, researchers led by František Bartoš at the University of Amsterdam conducted a massive study: 48 people flipped coins 350,757 times. The result: coins land on the <strong>same side they started on</strong> about 50.8% of the time. The bias is tiny — less than 1% — but it is real, it is statistically significant, and it has been hiding in plain sight for centuries.</p>
+    tags: ["random number generator", "dice roller", "probability", "bell curve", "game design"],
+    relatedTools: ["random-number-generator", "dice-roller", "coin-flip"],
+    content: `<p>You need to generate a number between 1 and 100. You have two options: use a <a href="/en/tools/random-number-generator">random number generator</a> set to 1-100, or use a <a href="/en/tools/dice-roller">dice roller</a> to roll 2d50. The ranges are the same — 1 to 100 for the RNG, 2 to 100 for the dice. But the <strong>probability distributions</strong> are completely different. The RNG gives every number a 1% chance. The dice roll gives 51 a roughly 4% chance and 2 a 0.04% chance. Same range. Radically different behavior.</p>
 
-<p>Here is the physics behind the bias, what it means for the concept of randomness, and why a <a href="/en/tools/coin-flip">coin flip simulator</a> is actually fairer than a real coin.</p>
+<p>Here is why the difference matters for game design, simulations, and any system that uses randomness to make decisions.</p>
 
-<h2>The Physics: Why the Same-Side Bias Exists</h2>
+<h2>Uniform Distribution: The Random Number Generator</h2>
 
-<p>The bias comes from <strong>precession</strong> — the wobble of the coin's rotation axis as it flips. When a coin is flipped, it does not rotate perfectly around a single axis. The axis wobbles slightly, which means the coin spends slightly more time with the initial side facing up during its trajectory. The effect was predicted by a 2007 physics model by Diaconis, Holmes, and Montgomery at Stanford, but the 2023 study was the first to confirm it experimentally at massive scale.</p>
+<p>A random number generator set to 1-100 produces a <strong>uniform distribution</strong> — every number in the range has exactly the same probability. Roll a 1: 1% chance. Roll a 50: 1% chance. Roll a 100: 1% chance. The results are completely unpredictable. Over a large number of rolls, every number appears roughly the same number of times.</p>
 
-<p>The bias is about 0.8% in favor of the same side — meaning if you start with heads up, the coin lands heads about 50.8% of the time. This is not enough to exploit in a single bet. But over 1,000 coin flips, the same-side bias would produce about 508 same-side results instead of the expected 500 — a swing of 8 extra wins. Over a lifetime of coin flips, the bias is real.</p>
+<p>Use a uniform distribution when: every outcome <strong>should</strong> be equally likely. Picking a random winner from a list of 100 entrants — every person should have the same chance. Generating a random percentage for a scientific simulation — every percentage should be equally probable. A/B testing — every user should have an equal chance of being assigned to group A or B. The RNG is the tool of fairness and unpredictability.</p>
 
-<p>The practical implication: if someone offers to flip a coin for a decision, and you can see which side is facing up before the flip, <strong>call the same side</strong>. You have a 50.8% chance of winning — a tiny edge, but an edge. If you cannot see the starting position, the coin flip is fair from your perspective.</p>
+<p>The RNG is also the right tool when you need <strong>cryptographic randomness</strong> — though browser-based RNGs use <code>Math.random()</code> which is not cryptographically secure. For security-critical applications, use a CSPRNG (Cryptographically Secure Pseudo-Random Number Generator). For everyday use — games, simulations, random selections — the browser RNG is sufficient.</p>
 
-<h2>What This Reveals About Randomness</h2>
+<h2>Bell Curve Distribution: The Dice Roller</h2>
 
-<p>The coin flip bias is not a flaw in coin flips. It is a flaw in our <strong>model of coin flips</strong>. We model a coin flip as "two equally likely outcomes." But a real coin flip is a physical process governed by Newtonian mechanics — initial position, force, angular momentum, air resistance, landing surface. If you could measure all the initial conditions precisely enough, a coin flip would be deterministic, not random.</p>
+<p>Rolling multiple dice and summing the results produces a <strong>bell curve distribution</strong> (technically a normal distribution approximated by the sum of uniform distributions). The more dice you roll, the more the distribution concentrates around the mean. 2d50 produces a triangular distribution peaking at 51. 3d6 produces a bell curve peaking at 10-11. 10d10 produces a tight bell curve where values below 30 and above 80 are astronomically unlikely.</p>
 
-<p>The randomness we perceive is <strong>sensitivity to initial conditions</strong> — a tiny difference in the flip force produces a completely different outcome. This is chaos theory, not probability theory. The coin does not "choose" heads or tails. It follows the laws of physics from the moment it leaves your thumb. We call it random because we cannot predict it, not because it is fundamentally unpredictable.</p>
+<p>Use a bell curve distribution when: you want <strong>reliable, middling results</strong> with rare extremes. Critical hits in a role-playing game — rolling 1d20 gives a 5% chance of a natural 20 (critical hit) and a 5% chance of a natural 1 (critical fail). Rolling 3d6 gives a 0.46% chance of an 18 and a 0.46% chance of a 3. The bell curve makes critical hits <strong>rare and exciting</strong> while the uniform distribution makes them <strong>frequent and expected</strong>.</p>
 
-<p>This is true of most "random" processes in everyday life. Dice rolls. Card shuffles. Lottery balls. They are all deterministic physical processes that we treat as random because measuring the initial conditions is impractical. The randomness is in our ignorance, not in the physics.</p>
+<p>Game designers choose between uniform and bell curve distributions to shape the <strong>emotional experience</strong> of the game. Uniform = swingy, dramatic, unpredictable. Bell curve = steady, predictable, strategic. The math is the same. The feeling is completely different.</p>
 
-<h2>When You Actually Need Fair Randomness</h2>
+<h2>When to Use Each (and When to Use Both)</h2>
 
-<p>For a decision between two restaurants, a coin flip is fine — the 0.8% bias is meaningless. For a cryptographic key, a coin flip is terrible — the bias, however small, is a vulnerability. For anything in between, use a <a href="/en/tools/coin-flip">digital coin flip</a> powered by a cryptographically secure random number generator. The digital coin is not subject to precession, wobble, or the bias of physics. It is the truly fair 50/50 that real coins only approximate.</p>
+<p><strong>Random number generator:</strong> equal probability is the goal. Fairness, unpredictability, simple random selection.</p>
 
-<p>Flip a truly fair coin at <a href="/en/tools/coin-flip">free coin flip</a> — no physics bias, no precession, just mathematics.</p>`
+<p><strong>Dice roller:</strong> a bell curve distribution is the goal. Game mechanics, character creation (rolling stats), simulating natural phenomena (most results cluster around the average, extremes are rare).</p>
+
+<p><strong>Both together:</strong> use the RNG to determine which dice to roll, then roll the dice. A game might use the RNG to pick a random event from a table (equal probability), then use the dice roller to determine the outcome of that event (bell curve). The tools are complementary, not competitive.</p>
+
+<p>Generate random numbers at <a href="/en/tools/random-number-generator">random number generator</a> and roll dice at <a href="/en/tools/dice-roller">dice roller</a> — understand the distribution before you build the mechanic.</p>`
+  },
+  {
+    slug: "morse-code-why-180-year-old-system-still-works",
+    title: "Morse Code Why a 180-Year-Old Communication System Still Works When Everything Else Fails — and the Surprising Places You Still Encounter It",
+    description: "Satellites fail. Internet goes down. Cell towers lose power. But a flashlight, a radio tone, or a blinking light can still send Morse code across any distance. Here's why the simplest encoding system refuses to die.",
+    date: "2026-07-10",
+    category: "Developer",
+    tags: ["Morse code", "communication", "history", "emergency", "encoding"],
+    relatedTools: ["morse-code", "base-converter", "url-encoder"],
+    content: `<p>In 1844, Samuel Morse sent the first telegraph message: "What hath God wrought." The message traveled from Washington D.C. to Baltimore — about 40 miles — encoded as dots and dashes along a single wire. The telegraph revolutionized communication, shrinking the world from weeks of mail delivery to seconds of electrical pulses. Then the telephone replaced it. Then the internet replaced the telephone. Morse code should have died in the 20th century alongside the telegraph.</p>
+
+<p>It did not. Morse code is still used by amateur radio operators, aviation navigation beacons, assistive technology for people with disabilities, and emergency signaling when everything else fails. A <a href="/en/tools/morse-code">Morse code translator</a> that converts text to dots and dashes is not a historical curiosity. It is a tool for understanding a communication system that works when nothing else does. Here is why Morse code refuses to die.</p>
+
+<h2>Why Morse Code Survives: The Simplicity Advantage</h2>
+
+<p>Morse code has one property that no modern communication system can match: it can be transmitted and received with <strong>any signaling mechanism</strong>. A flashlight. A buzzer. A radio tone. A tapped finger. A blinking LED. A reflected mirror. An electrical pulse on a wire. Sound. Light. Touch. Any medium that can produce two states — on and off, long and short — can encode Morse code.</p>
+
+<p>This is the simplicity advantage. A WiFi signal requires a complex stack of hardware, firmware, protocols, and infrastructure. Morse code requires a switch. When infrastructure fails — natural disaster, power outage, remote location — Morse code still works. The minimal hardware requirement is the reason Morse code is still taught in pilot training, ham radio licensing, and military communications courses.</p>
+
+<h2>Where You Still Encounter Morse Code in 2026</h2>
+
+<p><strong>Aviation navigation beacons:</strong> VOR (VHF Omnidirectional Range) navigation stations transmit a three-letter Morse code identifier alongside their navigation signal. Pilots listen to the Morse code to verify they are tuned to the correct station. The code is audible in the cockpit. Every pilot learns to recognize Morse code identifiers — not the full alphabet, just enough to confirm the station ID.</p>
+
+<p><strong>Amateur radio:</strong> Ham radio operators still use Morse code (CW — Continuous Wave) for long-distance communication. The advantage: Morse code signals can be decoded by the human ear at much lower signal-to-noise ratios than voice. When voice is buried in static, Morse code is still readable. A skilled operator can copy Morse code at 20-30 words per minute — faster than most people type.</p>
+
+<p><strong>Assistive technology:</strong> Morse code is used as an input method for people with severe motor disabilities. A single switch — a sip-and-puff tube, a head switch, an eye-blink sensor — can produce dots and dashes. The computer translates the Morse code into text. For someone who cannot use a keyboard or voice input, Morse code provides a communication channel that requires only one binary input.</p>
+
+<p><strong>Emergency signaling:</strong> SOS (... --- ...) is the most recognized Morse code sequence in the world. It can be signaled with a flashlight, a whistle, a mirror, or by banging on a pipe. The simplicity of SOS — three dots, three dashes, three dots — is by design. It is easy to remember, easy to produce, and unmistakable once recognized.</p>
+
+<h2>How to Learn Morse Code in 10 Minutes</h2>
+
+<p>You do not need to learn the entire alphabet. Learn SOS (... --- ...) and your initials. That is enough for emergency signaling and basic identification. The <a href="/en/tools/morse-code">Morse code translator</a> handles the rest — type any text, see the dots and dashes, hear the audio. Use it to encode a message, decode a received signal, or practice recognition.</p>
+
+<p>Morse code is not the fastest communication system. It is not the most efficient. It is the <strong>most reliable</strong> — because it makes the fewest assumptions about what technology is available. Sometimes the simplest tool is the one that survives.</p>`
   },
 ];
 
@@ -222,4 +230,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 176->done.")
+print("Free station: 182->done.")
