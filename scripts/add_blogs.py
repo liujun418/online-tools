@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (182→188) — July 10, 2026"""
+"""Add 6 blogs to free station (188→194) — July 11, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,216 +10,216 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "case-converter-api-programming-naming-conventions",
-    title: "Case Converter for Programmers Snake Case Camel Case Pascal Case Kebab Case — A Complete Guide to Code Naming Conventions",
-    description: "Your API uses snake_case. Your frontend uses camelCase. Your CSS uses kebab-case. Converting between them manually is error-prone. Here's a case converter that handles all four.",
-    date: "2026-07-10",
+    slug: "free-translator-vs-paid-api-when-free-is-good-enough",
+    title: "Free Online Translator vs Paid Translation APIs When Free Machine Translation Is Good Enough — and When You Need a Human",
+    description: "Google Translate and DeepL are free and handle 90% of casual translation needs. But the last 10% — legal documents, medical instructions, literary prose — still needs human judgment. Here's the boundary.",
+    date: "2026-07-11",
     category: "Text Tools",
-    tags: ["case converter", "snake case", "camel case", "pascal case", "naming conventions"],
-    relatedTools: ["case-converter", "text-to-slug", "code-formatter"],
-    content: `<p>You write a backend API in Python. The JSON response uses snake_case: <code>user_id</code>, <code>created_at</code>, <code>is_active</code>. Your frontend is JavaScript, which conventionally uses camelCase: <code>userId</code>, <code>createdAt</code>, <code>isActive</code>. You now have to convert every field name manually — or write a mapping layer that doubles your code. Neither is fun.</p>
+    tags: ["free translator", "machine translation", "Google Translate", "DeepL", "translation quality"],
+    relatedTools: ["translate", "text-polish", "case-converter"],
+    content: `<p>You need to translate a product description into Spanish for your e-commerce site. A <a href="/en/tools/translate">free online translator</a> handles it in seconds. The translation is accurate, the grammar is correct, and the product details are preserved. A Spanish speaker reads it and says it looks fine. Cost: zero. Time: five seconds.</p>
 
-<p>Programming naming conventions are not just cosmetic. Each convention signals something about the language, framework, and context. A <a href="/en/tools/case-converter">case converter</a> that handles all four major conventions saves you from the most tedious kind of refactoring: renaming things one character at a time. Here is a guide to the naming conventions every developer encounters.</p>
+<p>Now you need to translate a legal contract from Japanese to English for a business partnership. The free translator produces a grammatically correct translation. But the Japanese legal term "善意の第三者" is translated as "good faith third party" — which is literally correct but legally meaningless in English contract law, where the correct term is "bona fide third party." The free translator did not know the legal context. It translated the words, not the meaning.</p>
 
-<h2>The Four Major Code Naming Conventions</h2>
+<p>This is the boundary between free machine translation and professional translation. Here is when free is good enough, when you need to pay, and how to tell the difference before you publish something that makes you look incompetent.</p>
 
-<p><strong>camelCase:</strong> First word lowercase, subsequent words capitalized. <code>getUserName</code>, <code>fetchOrderHistory</code>, <code>isAuthenticated</code>. Used in: JavaScript, TypeScript, Java (methods and variables), Swift (variables). The dominant convention for frontend development. The name comes from the humped shape — the capital letters look like a camel's humps.</p>
+<h2>What Free Machine Translation Does Well</h2>
 
-<p><strong>PascalCase:</strong> Every word capitalized, including the first. <code>UserName</code>, <code>OrderHistory</code>, <code>HttpClient</code>. Used in: C# (class names), TypeScript (interfaces and types), React (component names), Java (class names). PascalCase signals "this is a type or a class, not a variable." When you see <code>UserProfile</code> in code, your brain expects a class definition, not a variable assignment.</p>
+<p>Modern neural machine translation (NMT) — the technology behind Google Translate, DeepL, and our <a href="/en/tools/translate">free translator</a> — is remarkably good at: everyday conversational language, straightforward factual descriptions (product listings, news articles, travel information), common business correspondence (emails, meeting notes, status updates), and languages with large training datasets (Spanish, French, German, Chinese, Japanese — the more training data, the better the translation).</p>
 
-<p><strong>snake_case:</strong> All lowercase, words separated by underscores. <code>user_name</code>, <code>order_history</code>, <code>http_client</code>. Used in: Python (variables, functions, methods), Ruby, PostgreSQL (column names by convention), C (standard library). The dominant convention for backend and data work. Snake case is the most readable for long identifiers because the underscores provide clear word boundaries.</p>
+<p>For these use cases, free translation is not just good enough — it is often indistinguishable from a human translation for the average reader. A Spanish speaker reading your translated product description will not know it was machine-translated. The grammar is correct. The vocabulary is natural. The meaning is preserved.</p>
 
-<p><strong>kebab-case:</strong> All lowercase, words separated by hyphens. <code>user-name</code>, <code>order-history</code>, <code>http-client</code>. Used in: CSS (class names, IDs), URLs (slugs), HTML (attributes like <code>data-user-id</code>), CLI arguments (<code>--output-dir</code>). Kebab case is the web's naming convention — it appears in more places than any other, but never in actual code because hyphens are subtraction operators in most languages.</p>
+<h2>Where Free Translation Still Fails</h2>
 
-<h2>The Cross-Stack Conversion Problem</h2>
+<p><strong>Domain-specific terminology:</strong> Legal, medical, technical, and financial documents use specialized vocabulary that has precise meanings. A machine translator knows the common meaning of "consideration" but not its specific legal meaning (something of value exchanged in a contract). It translates the word, not the term of art.</p>
 
-<p>A full-stack feature touches every naming convention. The database column is <code>user_birth_date</code> (snake_case). The API response field is <code>user_birth_date</code> (snake_case, matching the DB). The TypeScript interface is <code>userBirthDate</code> (camelCase, JavaScript convention). The React component is <code>UserBirthDate</code> (PascalCase). The CSS class is <code>.user-birth-date</code> (kebab-case).</p>
+<p><strong>Idioms and cultural references:</strong> "It's raining cats and dogs" translates literally to "Está lloviendo gatos y perros" — which is nonsense in Spanish. The correct translation is "Está lloviendo a cántaros" (it's raining from pitchers). Machine translators are getting better at idioms, but they still fail on culture-specific references, jokes, and wordplay.</p>
 
-<p>Four different representations of the same piece of data. A <a href="/en/tools/case-converter">case converter</a> handles the conversion in one click: paste the snake_case version, click camelCase, copy to your frontend. Paste the camelCase version, click PascalCase, use in your component. The converter does not just change case — it handles the special characters (underscores, hyphens, spaces) that separate words in each convention.</p>
+<p><strong>Tone and register:</strong> A machine translator does not know whether your email should be formal or casual, deferential or direct. It translates the words. It does not adjust the social dynamics. In Japanese, the difference between polite and casual speech is encoded in verb endings — and using the wrong one can be offensive. The machine translator picks the most common form, which is often wrong for the context.</p>
 
-<h2>When to Use Each Convention (and When to Break the Rules)</h2>
+<p><strong>Low-resource languages:</strong> Languages with limited training data — Icelandic, Swahili, Bengali, many indigenous languages — produce noticeably worse machine translations. The model has fewer examples to learn from. The translations are comprehensible but clearly non-native.</p>
 
-<p>Follow the language's convention. It is not about personal preference. It is about <strong>other developers being able to read your code without context-switching</strong>. When a Python developer sees <code>getUserName</code>, they pause. The camelCase signals "this was written by someone who is thinking in JavaScript." The pause is tiny — a fraction of a second — but it accumulates across thousands of lines of code.</p>
+<h2>The Decision Framework</h2>
 
-<p>The exception: when integrating with an external system, match the external system's convention. If your Python backend receives camelCase JSON from a third-party API, keep it camelCase in the data layer. Convert to snake_case only at the boundary between external data and internal logic. The conversion layer is where the <a href="/en/tools/case-converter">case converter</a> earns its place in your workflow.</p>
+<p>Ask: <strong>what is the cost of a mistranslation?</strong> If the answer is "someone might chuckle at a slightly awkward phrase" → free translation is fine. If the answer is "someone might sign the wrong contract, take the wrong medication, or be offended" → hire a human translator. The free tool handles 90% of translation needs. The remaining 10% is where professional translators earn their fees — not by translating words, but by understanding context, culture, and consequence.</p>
 
-<p>Convert between all four naming conventions at <a href="/en/tools/case-converter">free case converter</a> — snake to camel, camel to Pascal, any direction, one click.</p>`
+<p>Translate your next document at <a href="/en/tools/translate">free online translator</a> — know when it is good enough, and know when to call a human.</p>`
   },
   {
-    slug: "html-entities-special-characters-cross-platform-encoding",
-    title: "HTML Entities Special Characters Guide How to Encode & < > and © So They Display Correctly Across Every Browser Email and Platform",
-    description: "You typed an ampersand in your HTML. It broke the page. You typed a copyright symbol in your email. It showed as ?. HTML entities prevent these failures — here's when and how to use them.",
-    date: "2026-07-10",
-    category: "Developer",
-    tags: ["HTML entities", "special characters", "encoding", "ampersand", "cross-platform"],
-    relatedTools: ["html-entities", "url-encoder", "html-to-markdown"],
-    content: `<p>You write a blog post that mentions "AT&T." The page breaks because the browser interprets <code>&amp;</code> as the start of an HTML entity and tries to parse the rest of the text as one. You write a privacy policy that includes the copyright symbol ©. It looks fine in your browser but shows as a garbled character in Outlook 2016 and as a blank square on an older Android phone. You write a tutorial that includes <code>&lt;div&gt;</code> in a code example. The browser renders an actual div instead of displaying the text.</p>
-
-<p>Special characters are the most common source of cross-platform rendering failures — and the fix is <strong>HTML entities</strong>. A <a href="/en/tools/html-entities">HTML entities converter</a> encodes characters into their safe, universal representations. Here is which characters need encoding and why.</p>
-
-<h2>The Three Characters You Must Always Encode</h2>
-
-<p><strong>Ampersand (&amp; → <code>&amp;amp;</code>):</strong> The ampersand is the escape character in HTML. It signals the start of an entity. If you want to display a literal ampersand — in "AT&T," "Procter &amp; Gamble," "Simon &amp; Schuster" — you must encode it. An unencoded ampersand in HTML is a syntax error. Browsers are forgiving and often recover, but email clients and older browsers are not. Always encode ampersands in any text that will be rendered as HTML.</p>
-
-<p><strong>Less than (&lt; → <code>&amp;lt;</code>):</strong> The less-than sign starts an HTML tag. If you write <code>&lt;div&gt;</code> in a blog post about HTML, the browser sees a tag, not text. Encode it as <code>&amp;lt;div&amp;gt;</code> to display the literal characters. This is especially important in code tutorials, documentation, and any content that includes HTML or XML examples.</p>
-
-<p><strong>Greater than (&gt; → <code>&amp;gt;</code>):</strong> The greater-than sign ends an HTML tag. It is less dangerous than &lt; (browsers handle unencoded &gt; better) but it should still be encoded for consistency and safety. In practice, always encode both &lt; and &gt; together.</p>
-
-<h2>Characters That Need Encoding in Specific Contexts</h2>
-
-<p><strong>Quotes in attributes:</strong> If your HTML attribute value contains a double quote, encode it as <code>&amp;quot;</code>. Otherwise the quote terminates the attribute early. <code>&lt;img alt="He said &amp;quot;hello&amp;quot;"&gt;</code> — the encoded quotes are part of the alt text, not the end of the attribute.</p>
-
-<p><strong>Non-breaking space:</strong> <code>&amp;nbsp;</code> creates a space that prevents line breaks. Use it to keep words together: <code>Dr.&amp;nbsp;Smith</code> ensures "Dr." and "Smith" never split across lines. Overusing &amp;nbsp; for layout (instead of CSS margins/padding) is a classic beginner mistake — it is a content character, not a layout tool.</p>
-
-<p><strong>Copyright, trademark, and special symbols:</strong> © → <code>&amp;copy;</code>, ® → <code>&amp;reg;</code>, ™ → <code>&amp;trade;</code>, € → <code>&amp;euro;</code>, £ → <code>&amp;pound;</code>, ¥ → <code>&amp;yen;</code>. These symbols have named entities that are easier to remember than numeric codes. Named entities work in all browsers and email clients, while the raw Unicode characters sometimes fail in older systems.</p>
-
-<h2>HTML Entities in Email: The Strictest Rendering Environment</h2>
-
-<p>Email clients are the most hostile rendering environment for special characters. Outlook uses Word's HTML rendering engine (not a browser engine), which has incomplete Unicode support. Some Android email clients use stripped-down renderers that lack entire character ranges. The solution: encode <strong>all</strong> non-ASCII characters as HTML entities in email HTML. The copyright symbol, the em dash, the curly quotes from a word processor — encode them all. It makes the HTML source uglier but ensures the rendered email looks correct everywhere.</p>
-
-<p>Use the <a href="/en/tools/html-entities">HTML entities converter</a> to encode and decode any text. Paste your content, see the encoded version, and copy the safe representation that renders correctly on every platform.</p>`
-  },
-  {
-    slug: "nasa-apod-classroom-education-resource",
-    title: "NASA APOD Astronomy Picture of the Day How Teachers Use Space Images to Make Science Unforgettable",
-    description: "Every day since 1995, NASA has published one astronomy image with an explanation written by a professional astronomer. It's the longest-running daily science communication project on the internet — and a free classroom resource.",
-    date: "2026-07-10",
-    category: "Reference",
-    tags: ["NASA APOD", "astronomy", "education", "classroom", "science communication"],
-    relatedTools: ["nasa-apod", "bing-wallpaper", "global-weather"],
-    content: `<p>On June 16, 1995, NASA published the first Astronomy Picture of the Day (APOD): an image of the Earth from space, accompanied by a paragraph explaining what you were looking at. They have published a new image every single day since — over 11,000 consecutive days, spanning 30 years. The project has outlasted the Space Shuttle program, the rise and fall of Internet Explorer, the entire existence of MySpace and Vine, and three generations of web technology.</p>
-
-<p>APOD is the <strong>longest-running daily science communication project on the internet</strong> — and it is completely free, updated daily, and accessible through a <a href="/en/tools/nasa-apod">NASA APOD viewer</a> that shows today's image and the full archive. Here is why teachers, students, and space enthusiasts keep coming back after 30 years.</p>
-
-<h2>What Makes APOD Different from Every Other Science Website</h2>
-
-<p>APOD is not a database of astronomy facts. It is a <strong>daily narrative</strong>. Each image is chosen by a professional astronomer — Robert Nemiroff and Jerry Bonnell have been the editors since day one — and each explanation is written in clear, accessible language that assumes curiosity but not expertise. A typical APOD entry: a stunning image of a nebula, a galaxy, or a planetary surface, followed by 200-400 words explaining what you are seeing, how it was photographed, and why it matters.</p>
-
-<p>The explanations are written by professional astronomers, not journalists or content marketers. They are accurate, specific, and free of hype. They do not say "This mind-blowing image will change everything you know about the universe." They say "NGC 7023, also known as the Iris Nebula, is a reflection nebula located about 1,300 light-years away in the constellation Cepheus. The blue color comes from starlight reflecting off microscopic dust particles." The difference is the difference between science and science-flavored content.</p>
-
-<h2>How Teachers Use APOD in the Classroom</h2>
-
-<p><strong>Daily warm-up:</strong> Start every science class by showing today's APOD image. Ask students: what do you see? What do you think this is? Read the explanation together. Five minutes of curiosity before the lesson begins. Over a school year, students are exposed to 180 astronomy images — galaxies, nebulae, planets, comets, eclipses, spacecraft, and historical astronomy photographs. The cumulative exposure builds a mental model of the universe that no textbook chapter can match.</p>
-
-<p><strong>Writing prompts:</strong> Show an APOD image without the explanation. Ask students to write their own description — what they see, what they think it is, what questions they have. Then read the actual explanation and compare. This teaches scientific observation, descriptive writing, and the habit of asking questions before seeking answers.</p>
-
-<p><strong>Research projects:</strong> Each APOD image is a potential research topic. A student sees an image of Europa, Jupiter's moon, and wants to learn more. The APOD explanation provides the starting point and the key vocabulary. The student researches further, writes a report, presents to the class. The image sparked the curiosity. The explanation provided the on-ramp.</p>
-
-<h2>The 30-Year Archive as a Time Capsule</h2>
-
-<p>APOD's archive — every image since June 16, 1995 — is a <strong>history of astronomy</strong> told in daily images. You can browse the archive by date, search by keyword, or explore randomly. The images document three decades of astronomical discoveries: the first exoplanets, the Hubble Deep Field, the Cassini mission to Saturn, the New Horizons flyby of Pluto, the first image of a black hole. Each discovery appeared on APOD within days, explained by the astronomers who study it.</p>
-
-<p>Browse today's image and the complete archive at <a href="/en/tools/nasa-apod">NASA APOD viewer</a> — 30 years of the universe, one day at a time, free for everyone.</p>`
-  },
-  {
-    slug: "css-minifier-vs-svg-minifier-different-optimization",
-    title: "CSS Minifier vs SVG Minifier Different File Types Require Different Optimization Strategies — Why One Tool Cannot Optimize Both",
-    description: "CSS minification removes whitespace and comments. SVG minification does that too — but also removes editor metadata, simplifies paths, and rounds coordinates. Different file types, different optimizations.",
-    date: "2026-07-10",
-    category: "Developer",
-    tags: ["CSS minifier", "SVG minifier", "optimization", "web performance", "file compression"],
-    relatedTools: ["css-minifier", "svg-minifier", "code-formatter"],
-    content: `<p>You have a CSS file that is 45KB — mostly comments and whitespace. You run it through a <a href="/en/tools/css-minifier">CSS minifier</a>. It becomes 18KB. Comments gone, whitespace collapsed, semicolons stripped where optional. The file is smaller but functionally identical. Good.</p>
-
-<p>Now you have an SVG file exported from Illustrator — 120KB. You run it through the same CSS minifier. It becomes 115KB. The whitespace is gone, but the file is still bloated with editor metadata, unused namespace declarations, and unnecessarily precise path coordinates like <code>M12.847392,45.123847</code> that could be <code>M12.8,45.1</code> with no visible difference. The CSS minifier did its job. It is just the wrong job.</p>
-
-<p>An <a href="/en/tools/svg-minifier">SVG minifier</a> does things that a CSS minifier cannot do — because SVG files are fundamentally different from CSS files. Here is why different file types need different optimizers.</p>
-
-<h2>What a CSS Minifier Does (and Does Not Do)</h2>
-
-<p>A CSS minifier processes text according to CSS syntax rules. It removes comments (<code>/* like this */</code>), collapses whitespace (spaces, tabs, newlines become single spaces), removes the last semicolon before a closing brace (<code>{color: red;}</code> → <code>{color:red}</code>), shortens hex colors where possible (<code>#ffffff</code> → <code>#fff</code>), and removes unnecessary units (<code>0px</code> → <code>0</code>).</p>
-
-<p>These are <strong>syntactic optimizations</strong>. The minifier reads the CSS grammar, finds redundancy, and removes it. The optimizations are safe because they are based on the rules of CSS, not on guesswork. A CSS minifier does not need to understand your design. It just needs to understand CSS syntax.</p>
-
-<h2>What an SVG Minifier Does That a CSS Minifier Cannot</h2>
-
-<p>An SVG minifier performs <strong>semantic optimizations</strong> that require understanding what an SVG file actually contains. It removes: editor-specific metadata (Illustrator and Inkscape embed their own namespaces, export timestamps, and UI state — kilobytes of data that browsers ignore), XML declarations and DOCTYPE declarations (optional for inline SVG), comments, and unnecessary namespace declarations.</p>
-
-<p>But the real value of an SVG-specific minifier is in <strong>numeric precision reduction</strong>. SVG path data contains coordinates like <code>M12.847392,45.123847 C12.928374,45.293847...</code> — eight decimal places of precision that no human can see and no screen can render. An SVG minifier rounds these to 1-2 decimal places: <code>M12.8,45.1 C12.9,45.3...</code>. The visual difference is zero. The file size reduction is 30-50% on complex paths.</p>
-
-<p>The minifier also collapses redundant groups, removes empty elements, and simplifies transformations. These are SVG-specific optimizations that require understanding the SVG DOM structure, not just parsing text. A CSS minifier does not know what a <code>&lt;path&gt;</code> element is or what <code>d="M..."</code> means. It just sees text. The SVG minifier sees geometry.</p>
-
-<h2>When to Use Each (and When to Use Both)</h2>
-
-<p><strong>CSS files:</strong> Use the CSS minifier. The SVG minifier would not know what to do with CSS syntax.</p>
-
-<p><strong>SVG files:</strong> Use the SVG minifier. The CSS minifier would only remove whitespace and leave 80% of the bloat untouched.</p>
-
-<p><strong>HTML files with inline CSS and inline SVG:</strong> Use both. Minify the CSS blocks with the CSS minifier, minify the SVG blocks with the SVG minifier, then minify the HTML wrapper. Three tools, three file types, three different optimization strategies.</p>
-
-<p>Optimize your files at <a href="/en/tools/css-minifier">CSS minifier</a> and <a href="/en/tools/svg-minifier">SVG minifier</a> — different tools for different file types. The right tool saves kilobytes. The wrong tool saves nothing.</p>`
-  },
-  {
-    slug: "random-number-generator-vs-dice-roller-true-random-vs-bell-curve",
-    title: "Random Number Generator vs Dice Roller True Random vs Bell Curve Simulation — Why 1d100 Is Not the Same as 2d50",
-    description: "A random number between 1 and 100 gives every value equal probability. Rolling 2d50 gives a bell curve peaking at 51. Different tools, different probability distributions, different use cases.",
-    date: "2026-07-10",
+    slug: "reaction-test-gaming-performance-reflex-training",
+    title: "Reaction Test Gaming Performance How Pro Gamers Train Their Reflexes — and What the Average Person's Reaction Time Actually Is",
+    description: "The average human reaction time to visual stimulus is 250 milliseconds. Pro gamers average 150-180ms. F1 drivers react in 100ms. Here's what reaction tests measure, how to improve, and where the biological limits are.",
+    date: "2026-07-11",
     category: "Fun & Media",
-    tags: ["random number generator", "dice roller", "probability", "bell curve", "game design"],
-    relatedTools: ["random-number-generator", "dice-roller", "coin-flip"],
-    content: `<p>You need to generate a number between 1 and 100. You have two options: use a <a href="/en/tools/random-number-generator">random number generator</a> set to 1-100, or use a <a href="/en/tools/dice-roller">dice roller</a> to roll 2d50. The ranges are the same — 1 to 100 for the RNG, 2 to 100 for the dice. But the <strong>probability distributions</strong> are completely different. The RNG gives every number a 1% chance. The dice roll gives 51 a roughly 4% chance and 2 a 0.04% chance. Same range. Radically different behavior.</p>
+    tags: ["reaction test", "gaming", "reflexes", "performance", "neuroscience"],
+    relatedTools: ["reaction-test", "stopwatch-and-timer", "scoreboard"],
+    content: `<p>You click the red-green box on a <a href="/en/tools/reaction-test">reaction test</a>. The screen turns green. You click. Your time: 285 milliseconds. Is that good? The average human visual reaction time is about 250ms. You are slightly slower than average. A pro gamer — someone who plays first-person shooters competitively — averages 150-180ms. An F1 driver reacting to a start light averages 100-150ms. An Olympic sprinter reacting to a starting gun: 100-120ms.</p>
 
-<p>Here is why the difference matters for game design, simulations, and any system that uses randomness to make decisions.</p>
+<p>Reaction time is one of the few cognitive metrics that is both measurable in seconds and improvable with training. Here is what the test actually measures, what the biological limits are, and how to train your way from 285ms to under 200ms.</p>
 
-<h2>Uniform Distribution: The Random Number Generator</h2>
+<h2>What Reaction Time Actually Measures</h2>
 
-<p>A random number generator set to 1-100 produces a <strong>uniform distribution</strong> — every number in the range has exactly the same probability. Roll a 1: 1% chance. Roll a 50: 1% chance. Roll a 100: 1% chance. The results are completely unpredictable. Over a large number of rolls, every number appears roughly the same number of times.</p>
+<p>A simple reaction time test — like the red-green box — measures the total time from <strong>stimulus onset</strong> (the screen turns green) to <strong>motor response</strong> (you click). This time includes: the light hitting your retina (10ms), the signal traveling from your eye to your visual cortex (20-40ms), your brain processing the signal and deciding to act (100-150ms), the signal traveling from your motor cortex to your finger (20-30ms), and your finger muscle contracting to click (30-50ms).</p>
 
-<p>Use a uniform distribution when: every outcome <strong>should</strong> be equally likely. Picking a random winner from a list of 100 entrants — every person should have the same chance. Generating a random percentage for a scientific simulation — every percentage should be equally probable. A/B testing — every user should have an equal chance of being assigned to group A or B. The RNG is the tool of fairness and unpredictability.</p>
+<p>The biological bottleneck is the <strong>decision-making stage</strong> — your brain recognizing that the screen changed color and deciding to click. This stage accounts for roughly half of your total reaction time. The rest is physics and biology — signal transmission speeds that cannot be meaningfully improved.</p>
 
-<p>The RNG is also the right tool when you need <strong>cryptographic randomness</strong> — though browser-based RNGs use <code>Math.random()</code> which is not cryptographically secure. For security-critical applications, use a CSPRNG (Cryptographically Secure Pseudo-Random Number Generator). For everyday use — games, simulations, random selections — the browser RNG is sufficient.</p>
+<p>Reaction time is not the same as reflexes. Reflexes (like pulling your hand away from a hot surface) bypass the brain entirely — the signal goes from your spinal cord directly to your muscles. Reaction time requires conscious processing. Reflexes are faster (50-100ms) but limited to pre-wired responses. Reaction time is slower but flexible — you can react to any stimulus you are trained to recognize.</p>
 
-<h2>Bell Curve Distribution: The Dice Roller</h2>
+<h2>How to Improve Your Reaction Time</h2>
 
-<p>Rolling multiple dice and summing the results produces a <strong>bell curve distribution</strong> (technically a normal distribution approximated by the sum of uniform distributions). The more dice you roll, the more the distribution concentrates around the mean. 2d50 produces a triangular distribution peaking at 51. 3d6 produces a bell curve peaking at 10-11. 10d10 produces a tight bell curve where values below 30 and above 80 are astronomically unlikely.</p>
+<p><strong>Practice the specific task.</strong> Reaction time improvement is task-specific. Practicing the red-green box test will improve your score on the red-green box test. It will not improve your reaction time in a video game, in a car, or on a starting block. The brain optimizes for the specific stimulus-response pair it practices. If you want to improve your gaming reaction time, play the game. If you want to improve your driving reaction time, drive. The <a href="/en/tools/reaction-test">reaction test</a> measures your baseline. It does not train you for anything except the test itself.</p>
 
-<p>Use a bell curve distribution when: you want <strong>reliable, middling results</strong> with rare extremes. Critical hits in a role-playing game — rolling 1d20 gives a 5% chance of a natural 20 (critical hit) and a 5% chance of a natural 1 (critical fail). Rolling 3d6 gives a 0.46% chance of an 18 and a 0.46% chance of a 3. The bell curve makes critical hits <strong>rare and exciting</strong> while the uniform distribution makes them <strong>frequent and expected</strong>.</p>
+<p><strong>Sleep, caffeine, and physical fitness.</strong> Reaction time degrades with fatigue. A sleep-deprived person has a reaction time comparable to someone legally intoxicated. Caffeine improves reaction time by 5-10% for most people. Physical fitness improves reaction time indirectly — better cardiovascular health means better oxygen delivery to the brain. The effects are small but cumulative.</p>
 
-<p>Game designers choose between uniform and bell curve distributions to shape the <strong>emotional experience</strong> of the game. Uniform = swingy, dramatic, unpredictable. Bell curve = steady, predictable, strategic. The math is the same. The feeling is completely different.</p>
+<p><strong>Age and the inevitable decline.</strong> Reaction time peaks in the early 20s and declines by about 2-6ms per decade. A 20-year-old averaging 250ms will average 270-280ms by age 40 and 300-320ms by age 60. The decline is biological and cannot be reversed. But the decline is smaller than the difference between a trained and untrained person — a 50-year-old who trains can still out-react a 20-year-old who does not.</p>
 
-<h2>When to Use Each (and When to Use Both)</h2>
+<h2>What the Numbers Mean</h2>
 
-<p><strong>Random number generator:</strong> equal probability is the goal. Fairness, unpredictability, simple random selection.</p>
+<p><strong>Under 150ms:</strong> Elite. You are in the top 1% of the population. This is pro gamer / professional athlete territory. <strong>150-200ms:</strong> Excellent. Above average for the general population, competitive for amateur gaming. <strong>200-250ms:</strong> Average. This is where most healthy adults fall. <strong>250-300ms:</strong> Below average. Could be improved with practice, sleep, or caffeine. <strong>Over 300ms:</strong> Well below average. Check your sleep, your device latency (phone screens add 50-100ms), and whether you were distracted during the test.</p>
 
-<p><strong>Dice roller:</strong> a bell curve distribution is the goal. Game mechanics, character creation (rolling stats), simulating natural phenomena (most results cluster around the average, extremes are rare).</p>
-
-<p><strong>Both together:</strong> use the RNG to determine which dice to roll, then roll the dice. A game might use the RNG to pick a random event from a table (equal probability), then use the dice roller to determine the outcome of that event (bell curve). The tools are complementary, not competitive.</p>
-
-<p>Generate random numbers at <a href="/en/tools/random-number-generator">random number generator</a> and roll dice at <a href="/en/tools/dice-roller">dice roller</a> — understand the distribution before you build the mechanic.</p>`
+<p>Test your reaction time at <a href="/en/tools/reaction-test">free reaction test</a> — take it five times, average the results, and see where you fall on the curve.</p>`
   },
   {
-    slug: "morse-code-why-180-year-old-system-still-works",
-    title: "Morse Code Why a 180-Year-Old Communication System Still Works When Everything Else Fails — and the Surprising Places You Still Encounter It",
-    description: "Satellites fail. Internet goes down. Cell towers lose power. But a flashlight, a radio tone, or a blinking light can still send Morse code across any distance. Here's why the simplest encoding system refuses to die.",
-    date: "2026-07-10",
+    slug: "password-generator-memorizable-passphrase-method",
+    title: "Password Generator Memorizable vs Random Passwords Why CorrectHorseBatteryStaple Beats xK9#mP2v — and When You Still Need Both",
+    description: "A random 12-character password is uncrackable but unmemorable. A 4-word passphrase is also uncrackable and you can actually remember it. Here's the math behind both methods.",
+    date: "2026-07-11",
     category: "Developer",
-    tags: ["Morse code", "communication", "history", "emergency", "encoding"],
-    relatedTools: ["morse-code", "base-converter", "url-encoder"],
-    content: `<p>In 1844, Samuel Morse sent the first telegraph message: "What hath God wrought." The message traveled from Washington D.C. to Baltimore — about 40 miles — encoded as dots and dashes along a single wire. The telegraph revolutionized communication, shrinking the world from weeks of mail delivery to seconds of electrical pulses. Then the telephone replaced it. Then the internet replaced the telephone. Morse code should have died in the 20th century alongside the telegraph.</p>
+    tags: ["password generator", "passphrase", "password security", "memorizable", "entropy"],
+    relatedTools: ["password-generator", "hash-generator", "uuid-generator"],
+    content: `<p>You sign up for a new service. The <a href="/en/tools/password-generator">password generator</a> offers you two options: <code>xK9#mP2v!qL5</code> (random, 12 characters) or <code>correct-horse-battery-staple</code> (passphrase, 4 words). Which one is more secure? The answer: they are roughly equivalent, and the passphrase is infinitely easier to remember.</p>
 
-<p>It did not. Morse code is still used by amateur radio operators, aviation navigation beacons, assistive technology for people with disabilities, and emergency signaling when everything else fails. A <a href="/en/tools/morse-code">Morse code translator</a> that converts text to dots and dashes is not a historical curiosity. It is a tool for understanding a communication system that works when nothing else does. Here is why Morse code refuses to die.</p>
+<p>The random password has 12 characters from a set of roughly 72 possible characters (uppercase, lowercase, digits, symbols). The passphrase has 4 words from a dictionary of roughly 7,776 common words. The math: 72¹² ≈ 1.9 × 10²² possible random passwords. 7776⁴ ≈ 3.7 × 10¹⁵ possible passphrases. The random password has more entropy — about 74 bits vs 52 bits. But 52 bits of entropy still means an attacker making 1 trillion guesses per second (the upper limit of current hardware) would need about 1.5 years to crack it. For most people, 52 bits is plenty.</p>
 
-<h2>Why Morse Code Survives: The Simplicity Advantage</h2>
+<p>Here is when to use each method, and why the best password strategy uses both.</p>
 
-<p>Morse code has one property that no modern communication system can match: it can be transmitted and received with <strong>any signaling mechanism</strong>. A flashlight. A buzzer. A radio tone. A tapped finger. A blinking LED. A reflected mirror. An electrical pulse on a wire. Sound. Light. Touch. Any medium that can produce two states — on and off, long and short — can encode Morse code.</p>
+<h2>Random Passwords: Maximum Entropy, Minimum Memorability</h2>
 
-<p>This is the simplicity advantage. A WiFi signal requires a complex stack of hardware, firmware, protocols, and infrastructure. Morse code requires a switch. When infrastructure fails — natural disaster, power outage, remote location — Morse code still works. The minimal hardware requirement is the reason Morse code is still taught in pilot training, ham radio licensing, and military communications courses.</p>
+<p>A 16-character random password from a set of 72 characters has about 98 bits of entropy. At 1 trillion guesses per second, cracking it would take longer than the age of the universe. It is mathematically uncrackable by any current or foreseeable technology. It is also completely unmemorable. You will not remember <code>vJ9#kL2@mP5!xR8</code>. You will store it in a password manager.</p>
 
-<h2>Where You Still Encounter Morse Code in 2026</h2>
+<p>Use random passwords for: accounts stored in a password manager (you never need to type them), accounts with high security requirements (banking, email, domain registrar), and any account where you can paste the password and never think about it again. The password manager remembers it. You do not need to.</p>
 
-<p><strong>Aviation navigation beacons:</strong> VOR (VHF Omnidirectional Range) navigation stations transmit a three-letter Morse code identifier alongside their navigation signal. Pilots listen to the Morse code to verify they are tuned to the correct station. The code is audible in the cockpit. Every pilot learns to recognize Morse code identifiers — not the full alphabet, just enough to confirm the station ID.</p>
+<p>Use a <a href="/en/tools/password-generator">password generator</a> to generate random passwords. Do not make up your own "random" passwords — humans are terrible at generating randomness. Your "random" password almost certainly follows a pattern that a password cracker will exploit.</p>
 
-<p><strong>Amateur radio:</strong> Ham radio operators still use Morse code (CW — Continuous Wave) for long-distance communication. The advantage: Morse code signals can be decoded by the human ear at much lower signal-to-noise ratios than voice. When voice is buried in static, Morse code is still readable. A skilled operator can copy Morse code at 20-30 words per minute — faster than most people type.</p>
+<h2>Passphrases: High Entropy, High Memorability</h2>
 
-<p><strong>Assistive technology:</strong> Morse code is used as an input method for people with severe motor disabilities. A single switch — a sip-and-puff tube, a head switch, an eye-blink sensor — can produce dots and dashes. The computer translates the Morse code into text. For someone who cannot use a keyboard or voice input, Morse code provides a communication channel that requires only one binary input.</p>
+<p>A 4-word passphrase from a 7,776-word dictionary has about 52 bits of entropy. A 5-word passphrase has about 65 bits. A 6-word passphrase has about 78 bits. The words are randomly selected, not chosen by you — "correct horse battery staple" is the famous example from the XKCD comic that popularized this method. The words have no logical connection. They are just four random words from the dictionary.</p>
 
-<p><strong>Emergency signaling:</strong> SOS (... --- ...) is the most recognized Morse code sequence in the world. It can be signaled with a flashlight, a whistle, a mirror, or by banging on a pipe. The simplicity of SOS — three dots, three dashes, three dots — is by design. It is easy to remember, easy to produce, and unmistakable once recognized.</p>
+<p>The security comes from the <strong>randomness of the selection</strong>, not from the words themselves. If you choose the words — "my dog's name, my birthday, my favorite band" — the passphrase is weak because your choices are predictable. If the generator randomly selects the words, the passphrase is strong. The randomness is the security. The words are just the encoding.</p>
 
-<h2>How to Learn Morse Code in 10 Minutes</h2>
+<p>Use passphrases for: accounts you need to type manually (your computer login, your phone unlock code), accounts where you cannot use a password manager (smart TV, game console), and the master password for your password manager itself — the one password you actually need to memorize. Four to six random words, separated by hyphens or spaces, is both secure and memorable.</p>
 
-<p>You do not need to learn the entire alphabet. Learn SOS (... --- ...) and your initials. That is enough for emergency signaling and basic identification. The <a href="/en/tools/morse-code">Morse code translator</a> handles the rest — type any text, see the dots and dashes, hear the audio. Use it to encode a message, decode a received signal, or practice recognition.</p>
+<h2>The Strategy: Passphrase for the Vault, Random for Everything Else</h2>
 
-<p>Morse code is not the fastest communication system. It is not the most efficient. It is the <strong>most reliable</strong> — because it makes the fewest assumptions about what technology is available. Sometimes the simplest tool is the one that survives.</p>`
+<p>Memorize one strong 5-6 word passphrase — the master password for your password manager. Use random 16-character passwords, generated by the <a href="/en/tools/password-generator">password generator</a>, for every other account. Store them in the password manager. You never need to type them. You never need to remember them. You only need to remember the one passphrase that unlocks the vault.</p>
+
+<p>This is the security strategy that maximizes both security and convenience. One memorable passphrase. Hundreds of unmemorable random passwords. The best of both worlds.</p>`
+  },
+  {
+    slug: "regex-tester-vs-text-diff-pattern-vs-line",
+    title: "Regex Tester vs Text Diff Pattern Matching vs Line-by-Line Comparison — Two Developer Tools That Look Similar but Solve Completely Different Problems",
+    description: "Regex tester finds patterns within text. Text diff compares two texts line by line. They are both text analysis tools — but using the wrong one means you find nothing or compare everything.",
+    date: "2026-07-11",
+    category: "Developer",
+    tags: ["regex tester", "text diff", "pattern matching", "comparison", "developer tools"],
+    relatedTools: ["regex-tester", "text-diff", "text-sorter"],
+    content: `<p>You have a 50,000-line log file. You need to find every line that contains an IP address. You use a <a href="/en/tools/regex-tester">regex tester</a> with the pattern <code>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}</code>. It matches 847 lines in under a second. You copy the matches and move on with your debugging.</p>
+
+<p>Now you have two versions of a configuration file — before and after a deployment. You need to see what changed. You could use a regex tester to search for... what? You do not know what changed. That is the point. You need a <a href="/en/tools/text-diff">text diff</a> tool — it compares the two files line by line and highlights every addition, deletion, and modification. No pattern required. No prior knowledge of what changed. Just the two files, compared.</p>
+
+<p>Regex tester and text diff are both text analysis tools. They both process text and produce output. But they solve <strong>fundamentally different problems</strong> — and using the wrong one is like using a metal detector to find your car keys. Technically possible. Practically useless. Here is when to use each.</p>
+
+<h2>Regex Tester: You Know the Pattern, You Need the Matches</h2>
+
+<p>A regex tester answers the question: <strong>"Where in this text does this pattern appear?"</strong> You provide the pattern and the text. The tool finds every match. Use it when you know exactly what you are looking for. The pattern is the question. The matches are the answer.</p>
+
+<p>Common use cases: extracting all email addresses from a document, finding all function definitions in a code file, validating that a string matches a specific format (phone number, postal code, credit card number), finding and replacing text that matches a pattern across multiple files, and extracting structured data from unstructured text.</p>
+
+<p>The regex tester is a <strong>search tool</strong>. It finds what you tell it to find. It does not tell you what is different between two texts. It does not compare. It matches. The distinction is fundamental.</p>
+
+<h2>Text Diff: You Have Two Versions, You Need the Differences</h2>
+
+<p>A text diff tool answers the question: <strong>"What is different between these two texts?"</strong> You provide two versions of the same document. The tool compares them line by line (or word by word) and highlights: lines added (green), lines removed (red), and lines modified (yellow or side-by-side).</p>
+
+<p>Common use cases: reviewing code changes before a pull request, comparing configuration files before and after a deployment, finding what changed in a document between drafts, and checking whether two versions of a file are identical.</p>
+
+<p>The text diff tool is a <strong>comparison tool</strong>. It finds differences without being told what to look for. It does not search for patterns. It does not match. It compares. Using a regex tester to find differences between two files would require you to write a pattern that matches every possible difference — which is impossible, because you do not know what changed.</p>
+
+<h2>When to Use Both Together</h2>
+
+<p>A common debugging workflow: use the text diff to find what changed between two log files. Then use the regex tester to search for specific patterns within the changed lines. The diff tells you <strong>where</strong> to look. The regex tells you <strong>what</strong> you are looking at. Two tools. Two steps. One workflow.</p>
+
+<p>Try both at <a href="/en/tools/regex-tester">regex tester</a> and <a href="/en/tools/text-diff">text diff</a> — pattern matching and comparison are different operations. The right tool for the right question.</p>`
+  },
+  {
+    slug: "pet-wallpaper-vs-bing-wallpaper-cute-vs-wonder",
+    title: "Pet Wallpaper vs Bing Wallpaper Daily Cute vs Daily Wonder — Two Free Wallpaper Sources That Serve Different Emotional Needs",
+    description: "Bing Wallpaper shows you a stunning landscape from somewhere on Earth. Pet Wallpaper shows you an adorable animal. Both are free, daily, and high-resolution. But they serve different moods.",
+    date: "2026-07-11",
+    category: "Fun & Media",
+    tags: ["pet wallpaper", "Bing wallpaper", "wallpaper", "daily", "mood"],
+    relatedTools: ["pet-wallpaper", "bing-wallpaper", "nasa-apod"],
+    content: `<p>You open your laptop on a Monday morning. Your desktop background is a stunning aerial view of the Lofoten Islands in Norway — jagged peaks, deep fjords, the Northern Lights shimmering above. The image is from <a href="/en/tools/bing-wallpaper">Bing Wallpaper</a>. It fills you with a sense of wonder. You stare at it for ten seconds before opening your email. The world is vast and beautiful. Your inbox can wait.</p>
+
+<p>On Wednesday, you have a stressful meeting. Your desktop background is a golden retriever puppy sleeping on a pile of blankets. The image is from <a href="/en/tools/pet-wallpaper">Pet Wallpaper</a>. It fills you with a sense of warmth. You look at it for five seconds, exhale, and join the meeting. The world is soft and cute. The meeting is survivable.</p>
+
+<p>Both wallpaper services are free, daily, and high-resolution. Both replace your desktop background with something beautiful. But they serve <strong>different emotional needs</strong> — and understanding the difference helps you choose the right one for the right moment.</p>
+
+<h2>Bing Wallpaper: Awe and Perspective</h2>
+
+<p>Bing Wallpaper publishes one high-resolution photograph every day — landscapes, wildlife, architecture, cultural events, and natural phenomena from around the world. Each image is accompanied by a short description explaining what you are looking at and where it is. The images are curated by a team of photo editors who select for visual impact, geographic diversity, and educational value.</p>
+
+<p>The emotional effect is <strong>awe</strong> — the feeling of being in the presence of something vast and beautiful that transcends your individual experience. Psychologists have studied the effects of awe extensively. Experiencing awe reduces stress, increases prosocial behavior, and expands your perception of time. A 2015 study found that people who experienced awe reported feeling like they had more time available — the opposite of the time-scarcity feeling that dominates modern work life.</p>
+
+<p>Bing Wallpaper is the <strong>perspective</strong> wallpaper. It reminds you that the world is bigger than your to-do list. Use it when you need to zoom out — Monday mornings, before big presentations, after difficult conversations.</p>
+
+<h2>Pet Wallpaper: Warmth and Connection</h2>
+
+<p>Pet Wallpaper publishes high-resolution photographs of animals — dogs, cats, rabbits, birds, and occasionally wildlife. The images are sourced from photographers and stock libraries, curated for maximum cuteness. Unlike Bing Wallpaper, there is no educational description. The image is the message. The message is: <strong>look at this adorable animal</strong>.</p>
+
+<p>The emotional effect is <strong>mood elevation</strong> — a quick, reliable boost of positive emotion. Research on the "cute response" shows that viewing images of baby animals improves focus and fine motor performance. A 2012 study found that participants who viewed cute animal images performed better on tasks requiring careful attention than those who viewed adult animal images or food images. The effect is real and measurable.</p>
+
+<p>Pet Wallpaper is the <strong>comfort</strong> wallpaper. It does not inspire awe. It inspires a smile. Use it when you need a small emotional lift — stressful workdays, creative blocks, or any moment when a puppy's face would improve your outlook.</p>
+
+<h2>The Strategy: Switch Based on What You Need</h2>
+
+<p>You do not have to choose one. Set <a href="/en/tools/bing-wallpaper">Bing Wallpaper</a> as your default for perspective and discovery. Switch to <a href="/en/tools/pet-wallpaper">Pet Wallpaper</a> on days when you need comfort, not awe. The two services are not competitors. They are complementary emotional tools — two different kinds of beauty, free, every day.</p>`
+  },
+  {
+    slug: "perpetual-calendar-mathematics-february-29-2100",
+    title: "The Mathematics of Perpetual Calendars Why February 29 2100 Will Not Exist — and the 400-Year Cycle That Keeps Our Calendars in Sync",
+    description: "A perpetual calendar can tell you the day of the week for any date — past or future. The math behind it is elegant, and the exceptions (like 2100 not being a leap year) reveal the genius of the Gregorian reform.",
+    date: "2026-07-11",
+    category: "Reference",
+    tags: ["perpetual calendar", "Gregorian calendar", "leap year", "mathematics", "history"],
+    relatedTools: ["perpetual-calendar", "age-calculator", "unix-timestamp"],
+    content: `<p>You look up your birth date on a <a href="/en/tools/perpetual-calendar">perpetual calendar</a>. It tells you you were born on a Thursday. You look up your 100th birthday. It tells you that day will be a Tuesday. You look up February 29, 2100. It tells you that date does not exist. The calendar is not broken. It is correctly applying the Gregorian leap year rule — and the exception that most people have never heard of.</p>
+
+<p>A perpetual calendar is a mathematical system that can determine the day of the week for any date in any year — past, present, or future. The math is elegant. The exceptions are where the history gets interesting. Here is how perpetual calendars work, why February 29, 2100 will not exist, and the 400-year cycle that keeps our calendar aligned with the seasons.</p>
+
+<h2>The Basic Leap Year Rule (and Why It Is Not Enough)</h2>
+
+<p>A year is approximately 365.2422 days — the time it takes Earth to orbit the Sun. A calendar year of 365 days is about 0.2422 days too short. After four years, the calendar is roughly one day behind the seasons. The solution: add an extra day every four years — February 29, the leap year.</p>
+
+<p>But the correction is slightly too large. A year is not exactly 365.25 days. It is 365.2422 days. Adding a leap day every four years overcorrects by about 0.0078 days per year, or roughly one day every 128 years. After a few centuries, the calendar would drift ahead of the seasons. This is exactly what happened with the Julian calendar, introduced by Julius Caesar in 45 BCE. By 1582, the calendar had drifted 10 days ahead of the seasons. The spring equinox, which determines the date of Easter, was falling on March 11 instead of March 21.</p>
+
+<h2>The Gregorian Reform: The 400-Year Rule</h2>
+
+<p>In 1582, Pope Gregory XIII introduced the Gregorian calendar — the calendar most of the world uses today. The reform: <strong>century years are only leap years if they are divisible by 400</strong>. 1600 was a leap year. 2000 was a leap year. 1700, 1800, and 1900 were not leap years — they were skipped to correct the accumulated drift. 2100, 2200, and 2300 will not be leap years. 2400 will be.</p>
+
+<p>The full leap year rule: a year is a leap year if it is divisible by 4, <strong>except</strong> if it is divisible by 100, <strong>unless</strong> it is also divisible by 400. The three conditions produce a 400-year cycle of 97 leap years and 303 common years. The average year length in this system is 365 + 97/400 = 365.2425 days — within 0.0003 days of the actual solar year. The calendar will not drift by a full day for over 3,000 years.</p>
+
+<p>February 29, 2100 will not exist because 2100 is divisible by 100 but not by 400. The last time a century year was skipped was 1900. The next time will be 2100 — a date that most people alive today will not see, but the <a href="/en/tools/perpetual-calendar">perpetual calendar</a> already knows about.</p>
+
+<h2>How the Perpetual Calendar Actually Works</h2>
+
+<p>The math behind a perpetual calendar is based on <strong>modular arithmetic</strong> — the same math that underlies cryptography and computer science. Each month has a known offset from January. Each year advances the day of the week by one (two for leap years). The cumulative offset from a known reference date (like January 1, 1900, which was a Monday) determines the day of the week for any date.</p>
+
+<p>The algorithm: calculate the number of days between the reference date and the target date, accounting for leap years using the Gregorian rule, then divide by 7 and take the remainder. Remainder 0 = same day as reference. Remainder 1 = next day. And so on. The math is simple enough to do by hand, which is why people have been calculating days of the week for centuries — long before computers.</p>
+
+<p>The perpetual calendar is a reminder that the calendar we take for granted is a <strong>mathematical construct</strong> — a system of rules and exceptions designed to keep human timekeeping aligned with astronomical reality. The fact that it works, within 0.0003 days per year, after 400 years of accumulated corrections, is a quiet triumph of applied mathematics.</p>
+
+<p>Look up any date at <a href="/en/tools/perpetual-calendar">perpetual calendar</a> — past, present, or future. The math knows what day of the week it will be, even if you do not.</p>`
   },
 ];
 
@@ -230,4 +230,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 182->done.")
+print("Free station: 188->done.")
