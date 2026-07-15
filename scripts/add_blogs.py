@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (200→206) — July 14, 2026"""
+"""Add 6 blogs to free station (206→212) — July 15, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,230 +10,206 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "stopwatch-timer-productivity-deep-work-pomodoro",
-    title: "Stopwatch and Timer Productivity Guide Deep Work vs Pomodoro vs Timeboxing — Which Time Management Method Actually Works",
-    description: "The Pomodoro Technique says 25 minutes of focus. Deep Work says 90 minutes. Timeboxing says schedule everything. Here's what the research says about which method actually improves productivity.",
-    date: "2026-07-14",
+    slug: "text-repeater-ascii-art-creative-text-patterns",
+    title: "Text Repeater Beyond Spam How to Create ASCII Art Repetitive Patterns and Test Data with a Text Multiplier",
+    description: "A text repeater sounds like a tool for spamming. But it is secretly a creative tool for ASCII art, test data generation, and decorative text patterns. Here are the legitimate uses nobody talks about.",
+    date: "2026-07-15",
+    category: "Text Tools",
+    tags: ["text repeater", "ASCII art", "test data", "patterns", "creative"],
+    relatedTools: ["text-repeater", "fullscreen-text", "text-sorter"],
+    content: `<p>You see a text repeater and think: "Why would anyone need to repeat text 100 times?" The answer is not spam. It is <strong>ASCII art</strong> — creating pictures from repeated characters. It is <strong>test data generation</strong> — filling a database with placeholder content. It is <strong>decorative text</strong> — creating borders, separators, and patterns for plain-text documents. A <a href="/en/tools/text-repeater">text repeater</a> is a creative tool that happens to look like a spam tool. Here are the legitimate uses that nobody talks about.</p>
+
+<h2>ASCII Art: Painting with Characters</h2>
+
+<p>ASCII art is the practice of creating images using only text characters — letters, numbers, and symbols arranged on a grid. A simple heart: repeated "<" and "3" characters. A complex landscape: hundreds of characters arranged to form mountains, trees, and sky. The text repeater is the ASCII artist's brush — it generates the repeated characters that form the shapes.</p>
+
+<p>Example: a horizontal line of stars across a flyer. Instead of typing <code>********************</code> manually, you type <code>*</code> and repeat it 50 times. The result is a perfectly straight line of stars. A vertical line of pipes: <code>|</code> repeated with newline separators creates a vertical border. The text repeater generates the repetition. The artist arranges it into art.</p>
+
+<p>ASCII art is used in: plain-text email signatures (a decorative border around your name and title), README files (a logo or banner made of text characters), terminal applications (decorative headers and dividers), and old-school internet culture (signature blocks, forum posts, and status updates).</p>
+
+<h2>Test Data Generation: Filling Databases with Realistic Content</h2>
+
+<p>Every developer needs test data. You are building a search feature that needs to handle 10,000 results. You need 10,000 rows in the database. You could write a script. Or you could use the text repeater to generate: 10,000 email addresses, 10,000 names, 10,000 product descriptions. The text repeater multiplies a template into a dataset.</p>
+
+<p>Example: generate 100 test email addresses. Type <code>testuser@example.com</code> and repeat it 100 times with newline separators. The output is a list of 100 identical email addresses. Not realistic — but fast. For more realistic data, vary the template: <code>user1@example.com</code>, <code>user2@example.com</code> — the text repeater generates the repetition, and you manually vary the numbers.</p>
+
+<p>Use the text repeater for: load testing (fill a database with placeholder data), UI testing (fill a form with repeated text to test overflow behavior), and API testing (generate repeated JSON payloads to test rate limiting).</p>
+
+<h2>Decorative Text: Borders, Separators, and Patterns</h2>
+
+<p>Plain-text documents need visual structure. A horizontal rule of dashes: <code>--------------------</code>. A double-line separator: <code>====================</code>. A decorative border of asterisks: <code>********************</code>. The text repeater generates these in one click. No manual typing. No copy-paste. Just the character, the count, and the separator.</p>
+
+<p>Use the text repeater for: plain-text emails (decorative separators between sections), forum posts (structured headers and dividers), code comments (a banner comment that spans 80 characters), and any context where you need visual structure in a plain-text environment.</p>
+
+<p>The <a href="/en/tools/text-repeater">text repeater</a> is not a spam tool. It is a <strong>text generation tool</strong>. ASCII art, test data, and decorative text are the legitimate uses. The tool does not care what you use it for. But now you know what it is actually good at.</p>`
+  },
+  {
+    slug: "scoreboard-beyond-sports-classroom-quiz-trivia",
+    title: "Scoreboard Tool Beyond Sports How to Use a Digital Scoreboard for Classroom Quizzes Trivia Nights and Habit Tracking",
+    description: "A scoreboard is not just for basketball. It is for quiz bowls, pub trivia, classroom competitions, and personal habit tracking. Here are the creative uses of a simple two-team scoreboard.",
+    date: "2026-07-15",
     category: "Fun & Media",
-    tags: ["stopwatch", "timer", "productivity", "deep work", "Pomodoro"],
-    relatedTools: ["stopwatch-and-timer", "fullscreen-text", "time-screen"],
-    content: `<p>You open a <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> to start a focused work session. You have three choices: set a 25-minute Pomodoro timer, set a 90-minute deep work timer, or just start the stopwatch and see how long you can focus. Three different methods. Three different philosophies about how human attention works. Which one is actually backed by research?</p>
+    tags: ["scoreboard", "classroom", "trivia", "quiz", "habit tracking"],
+    relatedTools: ["scoreboard", "stopwatch-and-timer", "dice-roller"],
+    content: `<p>You see a scoreboard and think "sports." Two teams, points, a timer. But a <a href="/en/tools/scoreboard">digital scoreboard</a> is a general-purpose <strong>counting and comparison tool</strong>. It tracks two numbers over time. The numbers can represent anything: quiz scores, trivia points, daily habits, productivity metrics. The scoreboard does not care what the numbers mean. It just displays them. Here are the creative uses beyond sports.</p>
 
-<p>The answer: all three work — but for different types of work and different types of people. The mistake is using the wrong method for the wrong task. Here is what the research says about each method, and how to match the timer to the work.</p>
+<h2>Classroom Quiz Competitions</h2>
 
-<h2>Pomodoro: 25 Minutes of Forced Focus</h2>
+<p>Split the class into two teams. Team A vs Team B. Each correct answer adds a point. The scoreboard tracks the scores in real time, displayed on the projector for the whole class to see. The visual feedback of watching the score change is more engaging than a teacher silently tallying points on a notepad. Students pay attention. They compete. They learn.</p>
 
-<p>The Pomodoro Technique, developed by Francesco Cirillo in the late 1980s, is simple: set a timer for 25 minutes, work without interruption, take a 5-minute break, repeat. After four cycles, take a longer break (15-30 minutes). The method is named after the tomato-shaped kitchen timer Cirillo used as a student.</p>
+<p>Use the scoreboard for: vocabulary quizzes (Team A vs Team B, first to 10 points wins), math drills (each correct answer earns a point, first team to solve the problem gets the point), and review sessions (before a test, quiz the class on the material and track which team is leading).</p>
 
-<p>The research: the Pomodoro Technique works by <strong>reducing the activation energy</strong> required to start working. "I will work for 25 minutes" is a smaller commitment than "I will work until this is done." The smaller commitment is easier to start. Once you start, momentum often carries you past the 25-minute mark. The timer creates an artificial deadline that triggers focused attention — the same mechanism that makes you productive the day before a vacation.</p>
+<p>The scoreboard is a <strong>gamification tool</strong>. It adds competition to any activity that can be scored. The competition increases engagement. The engagement increases learning. The scoreboard is the visual representation of the game.</p>
 
-<p>Best for: tasks you are avoiding (the low activation energy helps you start), administrative work (email, invoicing, data entry — tasks that benefit from short bursts), and creative work in the early stages (brainstorming, outlining, drafting — where the time constraint prevents perfectionism).</p>
+<h2>Pub Trivia and Game Nights</h2>
 
-<p>Worst for: deep analytical work (25 minutes is not enough to load the problem into your working memory), flow state activities (the timer interrupts flow), and collaborative work (meetings and pair programming do not fit the Pomodoro structure).</p>
+<p>You are hosting a trivia night at home. Six teams, six rounds. You need a scoreboard that everyone can see. The <a href="/en/tools/scoreboard">scoreboard</a> displays on a TV or projector. After each round, update the scores. The visual tally builds tension. The leading team feels the pressure. The trailing team feels the motivation to catch up. The scoreboard is the <strong>narrative engine</strong> of the trivia night.</p>
 
-<h2>Deep Work: 90 Minutes of Uninterrupted Concentration</h2>
+<p>Use the scoreboard for: pub trivia (track scores across multiple rounds), board game tournaments (track wins and losses across multiple games), and family game nights (track cumulative scores across different games).</p>
 
-<p>Cal Newport's concept of Deep Work argues that the most valuable cognitive work requires long, uninterrupted periods of concentration — typically 60-90 minutes. The brain needs time to load context into working memory, explore the problem space, and reach a state of flow. A 25-minute timer interrupts this process before it reaches peak productivity.</p>
+<h2>Personal Habit Tracking</h2>
 
-<p>The research: studies of elite performers — musicians, athletes, chess players — show that they practice in focused sessions of 60-90 minutes, followed by breaks. They rarely exceed 4 hours of total focused practice per day. The brain's capacity for deep concentration is limited. Deep work sessions maximize the value of that limited capacity by eliminating interruptions and context switches.</p>
+<p>You are trying to build a habit — reading every day, exercising, practicing an instrument. You and a friend decide to hold each other accountable. Each day you complete the habit, you earn a point. The scoreboard tracks who is ahead. The competition is friendly. The accountability is real. The scoreboard is a <strong>social accountability tool</strong> disguised as a game.</p>
 
-<p>Best for: programming, writing, research, analysis, design — any task that requires holding complex information in working memory. The 90-minute session is long enough to make meaningful progress and short enough to maintain focus.</p>
+<p>Use the scoreboard for: reading challenges (points for each book finished), fitness challenges (points for each workout completed), and productivity challenges (points for each day of focused work).</p>
 
-<p>Worst for: reactive work (customer support, operations), highly fragmented work (checking multiple small tasks off a list), and any task that requires frequent collaboration or communication.</p>
+<h2>Custom Labels, Not Just Team Names</h2>
 
-<h2>Timeboxing: Schedule Every Minute</h2>
+<p>The scoreboard lets you customize the labels. They do not have to be "Team A" and "Team B." They can be: "Me" vs "My Goals," "This Week" vs "Last Week," "Before" vs "After," or any two categories you want to compare. The labels make the scoreboard meaningful. The numbers make it measurable. The combination makes it a <strong>personal analytics tool</strong> — not just a sports scoreboard.</p>
 
-<p>Timeboxing is the most extreme method: schedule every minute of your day in advance, assigning specific tasks to specific time blocks. Elon Musk is famous for scheduling his day in 5-minute blocks. The method is not about timers. It is about <strong>commitment</strong> — you decide in advance what you will do and when, eliminating the decision cost of "what should I work on now?"</p>
-
-<p>The research: timeboxing works by reducing decision fatigue. You make the decisions once (during planning) instead of continuously (throughout the day). The schedule is a commitment device. It is harder to procrastinate when the calendar says "write report: 10:00-11:30" than when the to-do list says "write report" with no time attached.</p>
-
-<p>Best for: people with high autonomy and predictable work (executives, freelancers, academics), days with many different types of tasks (timeboxing ensures each type gets attention), and people who struggle with "what should I do next?" decision paralysis.</p>
-
-<p>Worst for: unpredictable work (emergencies, customer requests, anything reactive), people who find rigid schedules demotivating, and days when you need creative flexibility.</p>
-
-<h2>How to Use the Timer for Each Method</h2>
-
-<p>Use the <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> for all three: Pomodoro mode (25-minute countdown with 5-minute break), deep work mode (90-minute countdown), and the stopwatch (start it and see how long you naturally focus — track your baseline before choosing a method). The tool supports all three methods. The method you choose depends on the work. Match the timer to the task, not the task to the timer.</p>`
+<p>Track anything with two categories at <a href="/en/tools/scoreboard">free scoreboard</a> — quiz scores, trivia points, daily habits. The scoreboard does not care what the numbers mean. You do.</p>`
   },
   {
-    slug: "pregnancy-calculator-due-date-accuracy-ultrasound-vs-lmp",
-    title: "Pregnancy Calculator Due Date Accuracy Ultrasound Dating vs Last Menstrual Period — Why the Two Methods Often Disagree",
-    description: "Your doctor gave you a due date based on your last period. The ultrasound gave you a different due date — 5 days later. Both are standard medical practice. Here's why they differ and which one is more accurate.",
-    date: "2026-07-14",
+    slug: "book-of-answers-decision-making-random-nudge",
+    title: "Book of Answers Decision Making Tool When You Need a Random Nudge Not a Definitive Answer",
+    description: "You are stuck between two choices. Both are fine. You need a nudge, not a solution. The Book of Answers gives you a random response — and the trick is that your reaction to the answer tells you what you really wanted.",
+    date: "2026-07-15",
+    category: "Fun & Media",
+    tags: ["book of answers", "decision making", "random", "psychology", "intuition"],
+    relatedTools: ["book-of-answers", "coin-flip", "food-picker"],
+    content: `<p>You are torn between two job offers. Job A pays more. Job B has better work-life balance. You have analyzed the pros and cons. You have talked to friends. You have made a spreadsheet. You are still stuck. You open a <a href="/en/tools/book-of-answers">Book of Answers</a> — a digital version of the classic decision-making book — and ask: "Should I take Job A?" The answer: "The answer is not what you seek." Frustrating. Useless. But then you notice: you are <strong>disappointed</strong> that the answer was not "Yes." You wanted it to say yes. You realize: you already knew which job you wanted. You just needed the Book of Answers to reveal it to you.</p>
+
+<p>This is the real purpose of random decision-making tools. They do not make decisions for you. They reveal the decisions you have already made. Here is the psychology behind the Book of Answers — and why it works even though you know it is random.</p>
+
+<h2>The Coin Flip Revelation Effect</h2>
+
+<p>There is a famous psychological trick: when you cannot decide between two options, flip a coin. Assign heads to Option A, tails to Option B. Flip the coin. But do not look at the result. Instead, ask yourself: <strong>which outcome were you hoping for while the coin was in the air?</strong> That is your answer. The coin did not decide. It revealed.</p>
+
+<p>The Book of Answers works the same way. You ask a question. The book gives a random response. Your emotional reaction to the response — relief, disappointment, excitement, frustration — tells you what you actually wanted. The answer is not the answer. Your <strong>reaction to the answer</strong> is the answer. The book is a mirror. It reflects your own preferences back at you.</p>
+
+<p>This is not mysticism. It is a well-documented psychological phenomenon called <strong>affective forecasting</strong> — your emotional reaction to a predicted outcome reveals your true preferences. The Book of Answers triggers this reaction. The randomness is the mechanism. Your emotional response is the result.</p>
+
+<h2>When to Use the Book of Answers</h2>
+
+<p>Use the Book of Answers when: you are stuck between two roughly equal options (neither is clearly better, so the decision is about preference, not analysis), you have already analyzed the decision and the analysis did not help (more information will not solve the problem — the problem is emotional, not informational), and you need permission to trust your intuition (the Book of Answers gives you an external "answer" that you can use as permission to follow your gut).</p>
+
+<p>Do not use the Book of Answers for: decisions with objectively better options (if one job pays $50K and the other pays $500K, you do not need a random answer), decisions with serious consequences (medical decisions, legal decisions, financial decisions with life-changing amounts of money), and decisions where you are avoiding responsibility (the Book of Answers is a tool for self-reflection, not for abdicating responsibility).</p>
+
+<h2>The History of the Book of Answers</h2>
+
+<p>The original Book of Answers was published in 1999 by Carol Bolt. It was a physical book — you held it in your hands, concentrated on a question, opened to a random page, and read the answer. The book sold millions of copies. It was translated into dozens of languages. People used it seriously, knowing it was random, because the mechanism worked. The <a href="/en/tools/book-of-answers">digital Book of Answers</a> is the same concept — a collection of ambiguous, thought-provoking responses that trigger self-reflection. The technology changed. The psychology did not.</p>
+
+<p>Ask your question at <a href="/en/tools/book-of-answers">Book of Answers</a> — the answer is not the answer. Your reaction is.</p>`
+  },
+  {
+    slug: "loan-calculator-vs-mortgage-calculator-personal-vs-home",
+    title: "Loan Calculator vs Mortgage Calculator Personal Loans vs Home Loans — Why the Calculators Are Different Even Though the Math Is the Same",
+    description: "A loan calculator and a mortgage calculator both compute monthly payments from principal, interest rate, and term. The math is identical. But the use cases, assumptions, and extra costs are completely different.",
+    date: "2026-07-15",
     category: "Calculators",
-    tags: ["pregnancy calculator", "due date", "ultrasound", "LMP", "gestational age"],
-    relatedTools: ["pregnancy-calculator", "age-calculator", "perpetual-calendar"],
-    content: `<p>You enter your last menstrual period (LMP) into a <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a>. It gives you a due date: October 15. At your first ultrasound, the doctor measures the fetus and calculates a different due date: October 20 — five days later. Both dates are based on standard medical practice. Both are "correct" in the sense that they follow established guidelines. But they disagree. Which one is more accurate?</p>
+    tags: ["loan calculator", "mortgage calculator", "personal loan", "home loan", "comparison"],
+    relatedTools: ["loan-calculator", "mortgage-calculator", "emi-calculator"],
+    content: `<p>You need to borrow $30,000. You open a <a href="/en/tools/loan-calculator">loan calculator</a> and a <a href="/en/tools/mortgage-calculator">mortgage calculator</a>. Both ask for the same three inputs: principal, interest rate, and term. Both calculate the same output: monthly payment. The math is identical. The results are identical. So why do these two calculators exist as separate tools?</p>
 
-<p>The short answer: <strong>early ultrasound dating is more accurate than LMP dating</strong> — but only when performed in the first trimester. Here is why the two methods disagree, what the research says about their accuracy, and why the difference matters for pregnancy management.</p>
+<p>Because the <strong>math is the same, but the assumptions are completely different</strong>. A personal loan of $30,000 at 8% for 5 years is calculated the same way as a mortgage of $30,000 at 8% for 5 years — but the personal loan has no property taxes, no insurance, no PMI, and no closing costs. The mortgage has all of them. The monthly payment from the calculator is the starting point. The true cost of the loan is the starting point plus everything else. Here is the difference.</p>
 
-<h2>LMP Dating: The Traditional Method (and Its Limitations)</h2>
+<h2>Personal Loan Calculator: The Simple Math</h2>
 
-<p>LMP-based dating assumes that conception occurred 14 days after the first day of your last menstrual period — the "standard" 28-day cycle with ovulation on day 14. The due date is calculated as LMP + 280 days (40 weeks). This is Naegele's rule, named after the German obstetrician Franz Naegele who proposed it in 1812.</p>
+<p>A personal loan is an <strong>unsecured</strong> loan — no collateral, no property, no insurance requirements. The monthly payment is the only cost. The personal loan calculator gives you the complete answer: principal + interest = monthly payment. No hidden costs. No additional fees. The number you see is the number you pay.</p>
 
-<p>The limitation: <strong>most women do not have a 28-day cycle with ovulation on day 14.</strong> Cycle length varies from 21 to 35 days. Ovulation can occur anywhere from day 10 to day 21. If you ovulate on day 21 (a week later than the standard assumption), the LMP-based due date will be a week too early. The pregnancy is actually a week younger than the calculator assumes.</p>
+<p>Personal loans are used for: debt consolidation, home improvement (small projects, not whole-house renovations), major purchases (appliances, furniture, medical expenses), and unexpected expenses (emergency repairs, temporary cash flow gaps).</p>
 
-<p>Additional sources of error: irregular cycles (the standard formula assumes regularity), uncertain LMP date (many women do not track their periods precisely), and early pregnancy bleeding (which can be mistaken for a period, throwing off the LMP date entirely).</p>
+<p>The personal loan calculator is the <strong>truth-teller</strong>. It tells you exactly what you will pay each month. No asterisks. No fine print. The simplicity is the point.</p>
 
-<p>LMP dating is accurate to within about <strong>±2 weeks</strong> for most pregnancies. That is a wide range. The due date from LMP is a rough estimate, not a precise prediction. This is why obstetricians use ultrasound to confirm or adjust the LMP-based date.</p>
+<h2>Mortgage Calculator: The Starting Point, Not the Final Answer</h2>
 
-<h2>Ultrasound Dating: The More Accurate Method</h2>
+<p>A mortgage is a <strong>secured</strong> loan — the property is the collateral. The monthly payment includes: principal and interest (the mortgage calculator's output), property taxes (1-3% of the home's value annually, divided by 12), homeowner's insurance ($500-2,000 annually, divided by 12), and PMI (Private Mortgage Insurance, required if your down payment is less than 20% — typically 0.5-1% of the loan amount annually).</p>
 
-<p>First-trimester ultrasound measures the <strong>crown-rump length</strong> (CRL) — the distance from the top of the fetus's head to the bottom of its torso. The CRL grows at a highly predictable rate during the first trimester, corresponding to gestational age with an accuracy of <strong>±5-7 days</strong>. This is significantly more precise than LMP dating.</p>
+<p>The mortgage calculator gives you the principal and interest payment. The <strong>true monthly cost</strong> is 30-50% higher when you include taxes, insurance, and PMI. The mortgage calculator is the starting point, not the final answer. It tells you the loan payment. It does not tell you the homeownership payment.</p>
 
-<p>The accuracy is highest between 8 and 14 weeks of pregnancy. After 20 weeks, ultrasound dating becomes less accurate because fetal growth varies more between individuals — some babies are naturally larger, some are naturally smaller. The ultrasound measures size, not age. In the first trimester, size and age are closely correlated. Later in pregnancy, the correlation weakens.</p>
+<p>Additional mortgage costs that the calculator does not include: closing costs (2-5% of the loan amount, paid upfront), maintenance and repairs (1-2% of the home's value annually), and HOA fees (if applicable, $100-500 monthly). The mortgage calculator gives you the <strong>loan payment</strong>. The true cost of homeownership is the loan payment plus all of these. The gap between the two is the most common financial surprise for first-time homebuyers.</p>
 
-<p>The American College of Obstetricians and Gynecologists (ACOG) recommends using the LMP-based due date unless the ultrasound date differs by more than: <strong>7 days in the first trimester</strong> (if the ultrasound date differs by more than a week, use the ultrasound date), or <strong>14 days in the second trimester</strong> (if the ultrasound date differs by more than two weeks, use the ultrasound date).</p>
+<h2>When to Use Each Calculator</h2>
 
-<h2>Why the Difference Matters</h2>
+<p>Use the <a href="/en/tools/loan-calculator">loan calculator</a> for: personal loans, auto loans, student loans, and any unsecured or simple-interest loan. The calculator gives you the complete monthly payment. No hidden costs.</p>
 
-<p>A due date that is off by a week can affect: induction timing (inducing labor at 41 weeks instead of 42), prematurity classification (a baby born at 36 weeks and 6 days is "preterm" while one at 37 weeks is "term"), and the timing of prenatal tests that are only valid within specific gestational age windows.</p>
-
-<p>Use the <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> for the LMP-based estimate. Then confirm with your doctor's ultrasound. The calculator gives you the traditional estimate. The ultrasound gives you the more accurate date. Both together give you a range — and the range is more honest than a single date. Only about 4% of babies are born on their actual due date. The due date is an estimate. The baby decides the real date.</p>`
+<p>Use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> for: home loans, refinancing analysis, and comparing mortgage offers. The calculator gives you the principal and interest payment. Then add 30-50% for taxes, insurance, and PMI to get the true monthly cost. The calculator is the starting point. The additional costs are the reality.</p>`
   },
   {
-    slug: "color-picker-hsl-vs-rgb-vs-hex-color-space-guide",
-    title: "Color Picker for Web Design HSL vs RGB vs HEX Which Color Format Should You Actually Use — and Why Designers Are Switching to HSL",
-    description: "HEX is compact. RGB is machine-readable. HSL is human-thinkable. A color picker that shows all three formats lets you choose the right one for the right task. Here's when to use each.",
-    date: "2026-07-14",
-    category: "Developer",
-    tags: ["color picker", "HSL", "RGB", "HEX", "web design"],
-    relatedTools: ["color-picker", "color-contrast-checker", "color-names"],
-    content: `<p>You open a <a href="/en/tools/color-picker">color picker</a> and select a shade of blue. The tool shows three formats: <code>#3B82F6</code> (HEX), <code>rgb(59, 130, 246)</code> (RGB), and <code>hsl(217, 91%, 60%)</code> (HSL). They all represent the exact same color. But they are useful for completely different tasks. Using the wrong format makes simple adjustments unnecessarily difficult.</p>
-
-<p>Here is when to use each format, why HSL is gaining popularity among designers, and how a color picker that shows all three formats saves you from converting between them manually.</p>
-
-<h2>HEX: The Web's Default Format</h2>
-
-<p>HEX (hexadecimal) represents colors as a six-character string: <code>#RRGGBB</code> — two hex digits each for red, green, and blue. <code>#3B82F6</code> means red=3B (59), green=82 (130), blue=F6 (246). The format is <strong>compact and URL-safe</strong> — it uses only characters that work in CSS, HTML, and anywhere a string is expected.</p>
-
-<p>Use HEX for: CSS color values (the most widely supported format), copying and pasting between design tools and code (one string, no spaces or commas), and any context where compactness matters (configuration files, data attributes, JSON).</p>
-
-<p>Do not use HEX for: adjusting colors manually. "Make this blue slightly lighter" is a simple operation in HSL (increase lightness) and nearly impossible in HEX (what hex value is "slightly lighter" than #3B82F6?). HEX is the best format for <strong>storing</strong> colors. It is the worst format for <strong>thinking</strong> about colors.</p>
-
-<h2>RGB: The Machine's Format</h2>
-
-<p>RGB represents colors as three numbers (0-255) for red, green, and blue. <code>rgb(59, 130, 246)</code> means 59 red, 130 green, 246 blue. The format maps directly to how screens work — each pixel has red, green, and blue subpixels at varying intensities.</p>
-
-<p>Use RGB for: programmatic color manipulation (adding an alpha channel: <code>rgba(59, 130, 246, 0.5)</code>), WebGL and canvas operations (the API expects RGB values), and anything that interacts with screen hardware or image processing.</p>
-
-<p>Do not use RGB for: choosing colors intuitively. "I want a pastel version of this blue" requires adjusting saturation and lightness — which are not directly accessible in RGB. RGB is the best format for <strong>machines</strong>. It is the most intuitive format for <strong>none of the humans</strong> using it.</p>
-
-<h2>HSL: The Human's Format</h2>
-
-<p>HSL represents colors as three values: <strong>Hue</strong> (the color on the color wheel, 0-360 degrees), <strong>Saturation</strong> (the intensity of the color, 0-100%), and <strong>Lightness</strong> (how light or dark, 0-100%). <code>hsl(217, 91%, 60%)</code> means a blue hue (217°), highly saturated (91%), and medium-light (60%).</p>
-
-<p>HSL is designed around how humans think about color. "Make it darker" = decrease lightness. "Make it less intense" = decrease saturation. "Make it warmer" = shift hue toward red/orange. Each adjustment maps to a single parameter. No mental conversion between RGB coordinates and color perception.</p>
-
-<p>Use HSL for: creating color palettes (generate variations by adjusting saturation and lightness while keeping the hue constant), creating accessible color variants (a darker version for text on a light background, a lighter version for hover states), and any design task where you need to think about color relationships.</p>
-
-<p>The <a href="/en/tools/color-picker">color picker</a> shows all three formats simultaneously. Pick the color visually. Use HEX in your CSS. Use RGB in your JavaScript. Use HSL when you need to adjust the color. The right format for the right task — no manual conversion required.</p>`
-  },
-  {
-    slug: "ip-lookup-vs-world-map-digital-vs-geographic",
-    title: "IP Lookup vs World Map Digital Location vs Geographic Exploration — Two Reference Tools That Answer Completely Different 'Where' Questions",
-    description: "IP Lookup tells you where a server is located. World Map lets you explore any place on Earth. Both answer 'where' questions — but for completely different purposes.",
-    date: "2026-07-14",
+    slug: "ai-tools-directory-vs-random-quote-discovery-vs-serendipity",
+    title: "AI Tools Directory vs Random Quote Structured Discovery vs Serendipitous Inspiration — How to Find the Right Tool for the Right Moment",
+    description: "An AI tools directory helps you find the specific tool you need. A random quote gives you inspiration you were not looking for. Both are discovery tools. Both serve different mindsets.",
+    date: "2026-07-15",
     category: "Reference",
-    tags: ["IP lookup", "world map", "geolocation", "geography", "reference"],
-    relatedTools: ["ip-lookup", "world-map", "global-weather"],
-    content: `<p>You receive a suspicious login notification: "New sign-in from IP address 203.0.113.42." You want to know where that is. You use an <a href="/en/tools/ip-lookup">IP lookup</a> tool. It tells you: Singapore, region 01, ISP: SingTel. The login is legitimate — your colleague is traveling. Crisis averted. The IP lookup answered the question: <strong>"Where is this server?"</strong></p>
+    tags: ["AI tools", "random quote", "discovery", "inspiration", "serendipity"],
+    relatedTools: ["ai-tools", "random-quote", "quotes"],
+    content: `<p>You need an AI image generator for a specific project. You open an <a href="/en/tools/ai-tools">AI tools directory</a> — a curated list of AI tools organized by category. You browse the Image Generation category, find a tool that fits your needs, and start using it. The directory gave you exactly what you were looking for. The discovery was <strong>directed</strong> — you knew the category, you found the tool.</p>
 
-<p>Now you are planning a trip to Singapore. You open a <a href="/en/tools/world-map">world map</a> and explore the city. Where is Marina Bay in relation to the airport? What neighborhoods are near the conference venue? The world map answers the question: <strong>"What is this place like?"</strong></p>
+<p>Now you are not looking for anything specific. You open a <a href="/en/tools/random-quote">random quote</a> generator. It gives you a quote from Carl Sagan: "Somewhere, something incredible is waiting to be known." You were not looking for inspiration. The quote found you. The discovery was <strong>serendipitous</strong> — you did not know what you needed until you found it.</p>
 
-<p>Both tools answer "where" questions. Both are in the Reference category. But they operate in completely different domains — one traces digital infrastructure, the other explores physical geography. Here is when to use each.</p>
+<p>Both tools are in the Reference category. Both are discovery tools. But they serve completely different mindsets — one is for when you know what you want, the other is for when you do not. Here is when to use each.</p>
 
-<h2>IP Lookup: Tracing Digital Location</h2>
+<h2>AI Tools Directory: Directed Discovery</h2>
 
-<p>An IP lookup tool maps an IP address to a geographic location using publicly available IP geolocation databases. The data includes: country, region, city, Internet Service Provider, and sometimes latitude/longitude coordinates. The accuracy is generally at the city level — IP geolocation can identify the city about 80-90% of the time, but it rarely identifies the exact street address.</p>
+<p>An AI tools directory is a <strong>curated catalog</strong> of AI-powered tools organized by category: image generation, text generation, audio processing, video editing, code generation, and more. Each tool listing includes the tool name, a brief description, and a link. The directory is a <strong>problem-solving tool</strong> — you have a specific need, and you browse the relevant category to find a tool that solves it.</p>
 
-<p>Use IP lookup for: security (verifying the origin of suspicious login attempts), debugging (checking if a CDN is routing traffic to the correct region), compliance (verifying that users are located in regions where your service is authorized), and analytics (understanding the geographic distribution of your users).</p>
-
-<p>Limitations: IP addresses can be spoofed through VPNs, proxies, and Tor. The IP location might show the VPN server's location, not the user's actual location. Mobile IPs are especially unreliable — a phone on a cellular network might show an IP registered to a city hundreds of miles away. The IP lookup is a <strong>clue</strong>, not a <strong>proof</strong> of location.</p>
-
-<h2>World Map: Exploring Physical Geography</h2>
-
-<p>A world map is an interactive geographic visualization of the Earth. You can pan, zoom, search for locations, and explore the relationships between places. The map shows: countries, cities, roads, bodies of water, terrain, and points of interest.</p>
-
-<p>Use world map for: travel planning (exploring destinations, measuring distances, understanding geography), education (teaching geography, history, and social studies), research (understanding the spatial relationships between places), and general curiosity (exploring the world from your desk).</p>
-
-<p>The world map does not know about IP addresses, servers, or digital infrastructure. It knows about mountains, rivers, cities, and borders. The IP lookup does not know about terrain, landmarks, or travel routes. It knows about ISPs, data centers, and IP ranges. The tools are complementary — the IP lookup tells you where a device is connected. The world map tells you what that place is like.</p>
-
-<h2>Using Both Together</h2>
-
-<p>A security analyst investigating a suspicious login: use the IP lookup to identify the city. Then use the world map to understand the context — is this city near the user's home? Is it in a country where the user travels? The IP lookup gives the coordinates. The world map gives the context. Together, they provide a complete picture of digital and physical location.</p>
-
-<p>Explore at <a href="/en/tools/ip-lookup">IP lookup</a> and <a href="/en/tools/world-map">world map</a> — digital location and physical geography. Two different "where" questions. Two different tools.</p>`
-  },
-  {
-    slug: "quotes-directory-vs-random-quote-curated-vs-serendipity",
-    title: "Quotes Directory vs Random Quote Curated Search vs Serendipitous Discovery — When You Need the Perfect Quote and When You Need Any Quote",
-    description: "A quotes directory lets you search 50,000 quotes by author, topic, or keyword. A random quote generator gives you one unexpected quote. Different tools. Different needs. Same human desire for wisdom.",
-    date: "2026-07-14",
-    category: "Reference",
-    tags: ["quotes", "random quote", "inspiration", "wisdom", "search"],
-    relatedTools: ["quotes", "random-quote", "book-of-answers"],
-    content: `<p>You are writing a speech about resilience. You need a quote from a specific person — Maya Angelou, Nelson Mandela, or Winston Churchill — about overcoming adversity. You open a <a href="/en/tools/quotes">quotes directory</a>, search for "resilience," filter by author, and find the perfect quote. It fits the speech. It supports the message. It took 30 seconds of directed search.</p>
-
-<p>Now you are starting your morning, opening your laptop, and you want a brief moment of inspiration before diving into email. You open a <a href="/en/tools/random-quote">random quote generator</a>. It gives you a quote from Marcus Aurelius that you have never read before. It is not what you were looking for — because you were not looking for anything. It is what you <strong>needed to hear</strong>. The serendipity is the point.</p>
-
-<p>Both tools deliver quotes. Both are in the Reference category. But they serve completely different psychological needs. Here is when to use each — and why having both in your toolset serves both the planned and the unplanned moments of inspiration.</p>
-
-<h2>Quotes Directory: Precision Search for the Right Quote</h2>
-
-<p>A quotes directory is a searchable database of thousands of quotes — organized by author, topic, and keyword. You search for a specific idea, by a specific person, for a specific purpose. The tool is a <strong>research instrument</strong>. You know what you need. You find the best match.</p>
-
-<p>Use the quotes directory for: speeches and presentations (finding supporting quotes that add authority and emotional resonance), writing (articles, essays, books — using quotes to introduce ideas, support arguments, or provide epigraphs), social media content (finding shareable quotes that resonate with your audience), and academic work (citing authoritative sources to support your thesis).</p>
-
-<p>The quotes directory is the <strong>librarian</strong> of quotes. It helps you find exactly what you are looking for. The quality of the result depends on the quality of your search. "Resilience" returns 500 quotes. "Resilience" + "Maya Angelou" returns 5. The specificity of the search determines the relevance of the result.</p>
+<p>Use the AI tools directory when: you have a specific task and need a tool to complete it, you want to explore what is available in a particular category, and you are comparing multiple tools for the same purpose. The directory is the <strong>librarian</strong> of AI tools. It helps you find exactly what you are looking for.</p>
 
 <h2>Random Quote: Serendipitous Discovery</h2>
 
-<p>A random quote generator gives you one unexpected quote from the entire collection — no search, no filter, no choice. The tool is a <strong>serendipity engine</strong>. You do not know what you need. The tool gives you something you were not looking for. The value is in the surprise.</p>
+<p>A random quote generator is a <strong>serendipity engine</strong>. It gives you one unexpected quote from a vast collection — no search, no filter, no choice. The value is in the surprise. The quote you did not know you needed to hear. The perspective you did not know you were missing. The tool is a <strong>reflection tool</strong> — you are not solving a problem, you are opening yourself to inspiration.</p>
 
-<p>Use the random quote for: daily inspiration (a brief moment of reflection before starting the day), creative unblocking (a random quote can spark an idea that has nothing to do with the quote itself), perspective shifting (a quote from a Stoic philosopher can reframe a modern problem), and moments of uncertainty (when you do not know what you need to hear, a random quote might provide it).</p>
+<p>Use the random quote generator when: you need a moment of inspiration before starting work, you are creatively blocked and need something unexpected to spark an idea, and you want to start your day with a thought-provoking idea. The random quote is the <strong>wise stranger</strong> — it gives you what you need, not what you want.</p>
 
-<p>The random quote is the <strong>wise stranger</strong> of quotes. It gives you what you need, not what you want. The quality of the result does not depend on your search. It depends on your openness to receiving unexpected wisdom.</p>
+<h2>The Two Modes of Discovery</h2>
 
-<h2>The Psychological Difference</h2>
+<p>Directed discovery and serendipitous discovery are complementary. The AI tools directory serves the <strong>planning mind</strong> — the part of you that knows what you need and is looking for the best solution. The random quote serves the <strong>receptive mind</strong> — the part of you that is open to unexpected inspiration. You need both modes because you are both. The directory helps you find the right tool. The random quote helps you find the right mindset. Different tools. Different discoveries. Same human.</p>
 
-<p>Searching for a quote is an act of <strong>control</strong>. You know the message. You find the words that support it. Receiving a random quote is an act of <strong>receptivity</strong>. You do not know the message. The words find you. Both modes are valuable. The quotes directory serves the planning mind. The random quote serves the reflective mind. You need both because you are both.</p>
-
-<p>Find your quote at <a href="/en/tools/quotes">quotes directory</a> or let a quote find you at <a href="/en/tools/random-quote">random quote</a> — search and serendipity. Two paths to the same destination: the right words at the right moment.</p>`
+<p>Explore at <a href="/en/tools/ai-tools">AI tools directory</a> and find inspiration at <a href="/en/tools/random-quote">random quote</a> — directed discovery and serendipitous inspiration. Two paths to what you need.</p>`
   },
   {
-    slug: "time-screen-fullscreen-clock-psychology-of-time",
-    title: "The Psychology of Fullscreen Clocks Why Seeing Time in Large Format Changes Your Relationship With It — and the Surprising Popularity of Time Displays",
-    description: "A fullscreen clock shows nothing but the time — large, centered, and impossible to ignore. It is the most popular time display tool on the internet. Why does stripping away everything else make time feel different?",
-    date: "2026-07-14",
-    category: "Fun & Media",
-    tags: ["time screen", "fullscreen clock", "psychology", "time perception", "focus"],
-    relatedTools: ["time-screen", "fullscreen-text", "stopwatch-and-timer"],
-    content: `<p>You open a <a href="/en/tools/time-screen">fullscreen time display</a>. The screen goes dark. The current time appears in large white digits, centered, filling the screen. There is nothing else — no notifications, no taskbar, no browser tabs, no news headlines. Just the time. 10:47 AM. You watch it for a few seconds. Then it changes: 10:48 AM. The minute has passed. You felt it pass. You did not just read the time. You <strong>experienced</strong> the passage of time.</p>
+    slug: "md5-hash-broken-algorithm-still-everywhere",
+    title: "MD5 Hash Why a Cryptographically Broken Algorithm Still Appears Everywhere — from File Downloads to Database Indexing",
+    description: "MD5 was broken in 2004. Researchers can create two different files with the same MD5 hash. Yet MD5 is still used for checksums, database indexing, and caching. Here's why it refuses to die.",
+    date: "2026-07-15",
+    category: "Developer",
+    tags: ["MD5", "hash", "cryptography", "checksum", "security"],
+    relatedTools: ["md5-generator", "hash-generator", "password-generator"],
+    content: `<p>In 2004, Chinese researchers Xiaoyun Wang and Hongbo Yu demonstrated a practical collision attack on MD5. They could create two different files with the same MD5 hash — a cryptographic death sentence. The security community declared MD5 broken. Every security guideline since 2005 has said: "Do not use MD5. Use SHA-256." Yet in 2026, MD5 is still everywhere. File download pages still list MD5 checksums. Database systems still use MD5 for indexing. Content delivery networks still use MD5 for cache keys. A <a href="/en/tools/md5-generator">MD5 hash generator</a> is still one of the most-used developer tools.</p>
 
-<p>Fullscreen time displays are among the most popular tools on the internet — and also the most philosophically interesting. Why does stripping away everything except the time change how time feels? Here is the psychology behind the fullscreen clock, and why people keep opening it even though their phone, computer, watch, and microwave all already show the time.</p>
+<p>Why does a broken algorithm refuse to die? The answer reveals the difference between <strong>cryptographic security</strong> and <strong>practical utility</strong> — and why MD5 is still perfectly fine for most of the things people actually use it for. Here is what MD5 can still do, what it cannot do, and when to use SHA-256 instead.</p>
 
-<h2>The Difference Between Checking Time and Experiencing Time</h2>
+<h2>What MD5 Cannot Do (and Why It Was Declared Dead)</h2>
 
-<p>Checking the time is a glance — a split-second extraction of information. You look at the corner of your screen, read "10:47," and return to your task. The time is data. You consumed it. You moved on. The experience is transactional and forgettable.</p>
+<p>MD5 is broken for <strong>collision resistance</strong> — the property that prevents an attacker from creating two different inputs with the same hash. A collision attack on MD5 takes seconds on modern hardware. This means: a malicious actor can create a fake software update with the same MD5 hash as the legitimate update, a forged digital certificate with the same MD5 hash as a trusted certificate, and two different documents with the same MD5-based digital signature. In all of these cases, the attacker exploits the collision to make a malicious file appear legitimate.</p>
 
-<p>Experiencing time is different. A fullscreen time display removes everything else from your visual field. The time is not a data point in the corner. It is <strong>the only thing</strong> you can see. Your brain has nothing else to process. The time becomes the focus of your attention, not a background detail. The experience is contemplative, not transactional. You are not checking the time. You are <strong>being with</strong> the time.</p>
+<p>Do not use MD5 for: digital signatures, SSL/TLS certificates, password hashing (use bcrypt, scrypt, or Argon2), and any security context where an attacker might try to create a collision. In these cases, MD5 is not just weak — it is actively dangerous.</p>
 
-<p>This is the same psychological mechanism that makes a fireplace video or an aquarium screen saver compelling — removing distraction allows the mind to settle on a single, simple stimulus. The fullscreen clock is a <strong>focus tool</strong>, not a time-telling tool. The time is the content. The focus is the point.</p>
+<h2>What MD5 Can Still Do (and Why It Survives)</h2>
 
-<h2>Why People Use Fullscreen Time Displays</h2>
+<p>MD5 is still perfectly fine for <strong>non-adversarial</strong> use cases — situations where no one is trying to attack the hash. These include: <strong>file integrity checksums</strong> (detecting accidental corruption during download, not deliberate tampering), <strong>database indexing</strong> (MD5 produces a fixed-size hash of variable-length data, which is useful for creating compact index keys), <strong>cache keys</strong> (CDNs and caching systems use MD5 to generate unique keys from URLs or content), and <strong>deduplication</strong> (identifying duplicate files by comparing their MD5 hashes).</p>
 
-<p><strong>Exams and timed tests:</strong> A teacher projects a fullscreen clock during an exam. Students can see the remaining time without looking at their own devices. The clock is large enough to read from the back of the room. The fullscreen format prevents distractions — no notifications, no wallpaper, no screensaver.</p>
+<p>In all of these cases, the threat model is <strong>accidental collision</strong>, not <strong>deliberate attack</strong>. The probability of two random files having the same MD5 hash by accident is 1 in 2¹²⁸ — astronomically small. The collision attacks that broke MD5 require the attacker to deliberately craft both files. In a non-adversarial context, MD5 is still perfectly reliable.</p>
 
-<p><strong>Presentations and meetings:</strong> A presenter keeps a fullscreen time display on a secondary monitor. They can see the time at a glance without turning away from the audience or minimizing the presentation. The large format is readable from across the stage.</p>
+<p>MD5 survives because it is: fast (MD5 is faster than SHA-256, which matters for high-throughput systems), compact (128-bit output vs 256-bit for SHA-256 — smaller cache keys and index entries), and universally supported (every programming language and platform has an MD5 implementation).</p>
 
-<p><strong>Focus and deep work:</strong> A writer opens a fullscreen time display on a spare monitor. The time fills the screen. The writer works. The time is visible without being distracting. It is a <strong>time anchor</strong> — a constant, calm presence that keeps you oriented without demanding your attention.</p>
+<h2>When to Use MD5 vs SHA-256</h2>
 
-<p><strong>Mindfulness and presence:</strong> Some people open a fullscreen clock and simply watch it for a minute — watching the digits change, feeling the seconds pass. It is a form of time meditation. The clock becomes a focus object, like a candle flame or a mandala. The goal is not to check the time. The goal is to be present with the passage of time.</p>
+<p>Use MD5 for: file integrity checksums (detecting accidental corruption), database indexing and cache keys, deduplication of non-security-critical data, and any non-adversarial hashing where speed and compactness matter. Use SHA-256 for: digital signatures, certificate validation, password hashing (with a proper salt), and any security context where an attacker might try to create a collision. The <a href="/en/tools/hash-generator">hash generator</a> supports both algorithms. Use the right one for your threat model.</p>
 
-<h2>The Paradox of the Digital Clock</h2>
+<p>MD5 is cryptographically broken and practically immortal. It will outlive every security guideline that says not to use it. Not because the guidelines are wrong — they are right about the security risks. But because most of the things people use MD5 for are not security risks. The algorithm is broken for the thing it was designed for and perfectly fine for the things people actually use it for. That is why it refuses to die.</p>
 
-<p>A fullscreen digital clock is the most accurate time-telling device ever invented — and it is used primarily for purposes that have nothing to do with accuracy. People do not open a fullscreen time display because they need to know the time. They open it because they need to <strong>feel</strong> the time. The accuracy is the mechanism. The experience is the purpose. The fullscreen clock is a tool for time perception, not time measurement. Try it at <a href="/en/tools/time-screen">free time screen</a> — open it, go fullscreen, and watch a minute pass. You will feel it differently than you expected.</p>`
+<p>Generate hashes at <a href="/en/tools/md5-generator">MD5 generator</a> and <a href="/en/tools/hash-generator">hash generator</a> — know the difference between what MD5 cannot do and what it still does perfectly well.</p>`
   },
 ];
 
@@ -244,4 +220,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 200->done.")
+print("Free station: 206->done.")
