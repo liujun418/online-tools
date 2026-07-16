@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (206→212) — July 15, 2026"""
+"""Add 6 blogs to free station (212→218) — July 16, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,206 +10,190 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "text-repeater-ascii-art-creative-text-patterns",
-    title: "Text Repeater Beyond Spam How to Create ASCII Art Repetitive Patterns and Test Data with a Text Multiplier",
-    description: "A text repeater sounds like a tool for spamming. But it is secretly a creative tool for ASCII art, test data generation, and decorative text patterns. Here are the legitimate uses nobody talks about.",
-    date: "2026-07-15",
-    category: "Text Tools",
-    tags: ["text repeater", "ASCII art", "test data", "patterns", "creative"],
-    relatedTools: ["text-repeater", "fullscreen-text", "text-sorter"],
-    content: `<p>You see a text repeater and think: "Why would anyone need to repeat text 100 times?" The answer is not spam. It is <strong>ASCII art</strong> — creating pictures from repeated characters. It is <strong>test data generation</strong> — filling a database with placeholder content. It is <strong>decorative text</strong> — creating borders, separators, and patterns for plain-text documents. A <a href="/en/tools/text-repeater">text repeater</a> is a creative tool that happens to look like a spam tool. Here are the legitimate uses that nobody talks about.</p>
-
-<h2>ASCII Art: Painting with Characters</h2>
-
-<p>ASCII art is the practice of creating images using only text characters — letters, numbers, and symbols arranged on a grid. A simple heart: repeated "<" and "3" characters. A complex landscape: hundreds of characters arranged to form mountains, trees, and sky. The text repeater is the ASCII artist's brush — it generates the repeated characters that form the shapes.</p>
-
-<p>Example: a horizontal line of stars across a flyer. Instead of typing <code>********************</code> manually, you type <code>*</code> and repeat it 50 times. The result is a perfectly straight line of stars. A vertical line of pipes: <code>|</code> repeated with newline separators creates a vertical border. The text repeater generates the repetition. The artist arranges it into art.</p>
-
-<p>ASCII art is used in: plain-text email signatures (a decorative border around your name and title), README files (a logo or banner made of text characters), terminal applications (decorative headers and dividers), and old-school internet culture (signature blocks, forum posts, and status updates).</p>
-
-<h2>Test Data Generation: Filling Databases with Realistic Content</h2>
-
-<p>Every developer needs test data. You are building a search feature that needs to handle 10,000 results. You need 10,000 rows in the database. You could write a script. Or you could use the text repeater to generate: 10,000 email addresses, 10,000 names, 10,000 product descriptions. The text repeater multiplies a template into a dataset.</p>
-
-<p>Example: generate 100 test email addresses. Type <code>testuser@example.com</code> and repeat it 100 times with newline separators. The output is a list of 100 identical email addresses. Not realistic — but fast. For more realistic data, vary the template: <code>user1@example.com</code>, <code>user2@example.com</code> — the text repeater generates the repetition, and you manually vary the numbers.</p>
-
-<p>Use the text repeater for: load testing (fill a database with placeholder data), UI testing (fill a form with repeated text to test overflow behavior), and API testing (generate repeated JSON payloads to test rate limiting).</p>
-
-<h2>Decorative Text: Borders, Separators, and Patterns</h2>
-
-<p>Plain-text documents need visual structure. A horizontal rule of dashes: <code>--------------------</code>. A double-line separator: <code>====================</code>. A decorative border of asterisks: <code>********************</code>. The text repeater generates these in one click. No manual typing. No copy-paste. Just the character, the count, and the separator.</p>
-
-<p>Use the text repeater for: plain-text emails (decorative separators between sections), forum posts (structured headers and dividers), code comments (a banner comment that spans 80 characters), and any context where you need visual structure in a plain-text environment.</p>
-
-<p>The <a href="/en/tools/text-repeater">text repeater</a> is not a spam tool. It is a <strong>text generation tool</strong>. ASCII art, test data, and decorative text are the legitimate uses. The tool does not care what you use it for. But now you know what it is actually good at.</p>`
-  },
-  {
-    slug: "scoreboard-beyond-sports-classroom-quiz-trivia",
-    title: "Scoreboard Tool Beyond Sports How to Use a Digital Scoreboard for Classroom Quizzes Trivia Nights and Habit Tracking",
-    description: "A scoreboard is not just for basketball. It is for quiz bowls, pub trivia, classroom competitions, and personal habit tracking. Here are the creative uses of a simple two-team scoreboard.",
-    date: "2026-07-15",
-    category: "Fun & Media",
-    tags: ["scoreboard", "classroom", "trivia", "quiz", "habit tracking"],
-    relatedTools: ["scoreboard", "stopwatch-and-timer", "dice-roller"],
-    content: `<p>You see a scoreboard and think "sports." Two teams, points, a timer. But a <a href="/en/tools/scoreboard">digital scoreboard</a> is a general-purpose <strong>counting and comparison tool</strong>. It tracks two numbers over time. The numbers can represent anything: quiz scores, trivia points, daily habits, productivity metrics. The scoreboard does not care what the numbers mean. It just displays them. Here are the creative uses beyond sports.</p>
-
-<h2>Classroom Quiz Competitions</h2>
-
-<p>Split the class into two teams. Team A vs Team B. Each correct answer adds a point. The scoreboard tracks the scores in real time, displayed on the projector for the whole class to see. The visual feedback of watching the score change is more engaging than a teacher silently tallying points on a notepad. Students pay attention. They compete. They learn.</p>
-
-<p>Use the scoreboard for: vocabulary quizzes (Team A vs Team B, first to 10 points wins), math drills (each correct answer earns a point, first team to solve the problem gets the point), and review sessions (before a test, quiz the class on the material and track which team is leading).</p>
-
-<p>The scoreboard is a <strong>gamification tool</strong>. It adds competition to any activity that can be scored. The competition increases engagement. The engagement increases learning. The scoreboard is the visual representation of the game.</p>
-
-<h2>Pub Trivia and Game Nights</h2>
-
-<p>You are hosting a trivia night at home. Six teams, six rounds. You need a scoreboard that everyone can see. The <a href="/en/tools/scoreboard">scoreboard</a> displays on a TV or projector. After each round, update the scores. The visual tally builds tension. The leading team feels the pressure. The trailing team feels the motivation to catch up. The scoreboard is the <strong>narrative engine</strong> of the trivia night.</p>
-
-<p>Use the scoreboard for: pub trivia (track scores across multiple rounds), board game tournaments (track wins and losses across multiple games), and family game nights (track cumulative scores across different games).</p>
-
-<h2>Personal Habit Tracking</h2>
-
-<p>You are trying to build a habit — reading every day, exercising, practicing an instrument. You and a friend decide to hold each other accountable. Each day you complete the habit, you earn a point. The scoreboard tracks who is ahead. The competition is friendly. The accountability is real. The scoreboard is a <strong>social accountability tool</strong> disguised as a game.</p>
-
-<p>Use the scoreboard for: reading challenges (points for each book finished), fitness challenges (points for each workout completed), and productivity challenges (points for each day of focused work).</p>
-
-<h2>Custom Labels, Not Just Team Names</h2>
-
-<p>The scoreboard lets you customize the labels. They do not have to be "Team A" and "Team B." They can be: "Me" vs "My Goals," "This Week" vs "Last Week," "Before" vs "After," or any two categories you want to compare. The labels make the scoreboard meaningful. The numbers make it measurable. The combination makes it a <strong>personal analytics tool</strong> — not just a sports scoreboard.</p>
-
-<p>Track anything with two categories at <a href="/en/tools/scoreboard">free scoreboard</a> — quiz scores, trivia points, daily habits. The scoreboard does not care what the numbers mean. You do.</p>`
-  },
-  {
-    slug: "book-of-answers-decision-making-random-nudge",
-    title: "Book of Answers Decision Making Tool When You Need a Random Nudge Not a Definitive Answer",
-    description: "You are stuck between two choices. Both are fine. You need a nudge, not a solution. The Book of Answers gives you a random response — and the trick is that your reaction to the answer tells you what you really wanted.",
-    date: "2026-07-15",
-    category: "Fun & Media",
-    tags: ["book of answers", "decision making", "random", "psychology", "intuition"],
-    relatedTools: ["book-of-answers", "coin-flip", "food-picker"],
-    content: `<p>You are torn between two job offers. Job A pays more. Job B has better work-life balance. You have analyzed the pros and cons. You have talked to friends. You have made a spreadsheet. You are still stuck. You open a <a href="/en/tools/book-of-answers">Book of Answers</a> — a digital version of the classic decision-making book — and ask: "Should I take Job A?" The answer: "The answer is not what you seek." Frustrating. Useless. But then you notice: you are <strong>disappointed</strong> that the answer was not "Yes." You wanted it to say yes. You realize: you already knew which job you wanted. You just needed the Book of Answers to reveal it to you.</p>
-
-<p>This is the real purpose of random decision-making tools. They do not make decisions for you. They reveal the decisions you have already made. Here is the psychology behind the Book of Answers — and why it works even though you know it is random.</p>
-
-<h2>The Coin Flip Revelation Effect</h2>
-
-<p>There is a famous psychological trick: when you cannot decide between two options, flip a coin. Assign heads to Option A, tails to Option B. Flip the coin. But do not look at the result. Instead, ask yourself: <strong>which outcome were you hoping for while the coin was in the air?</strong> That is your answer. The coin did not decide. It revealed.</p>
-
-<p>The Book of Answers works the same way. You ask a question. The book gives a random response. Your emotional reaction to the response — relief, disappointment, excitement, frustration — tells you what you actually wanted. The answer is not the answer. Your <strong>reaction to the answer</strong> is the answer. The book is a mirror. It reflects your own preferences back at you.</p>
-
-<p>This is not mysticism. It is a well-documented psychological phenomenon called <strong>affective forecasting</strong> — your emotional reaction to a predicted outcome reveals your true preferences. The Book of Answers triggers this reaction. The randomness is the mechanism. Your emotional response is the result.</p>
-
-<h2>When to Use the Book of Answers</h2>
-
-<p>Use the Book of Answers when: you are stuck between two roughly equal options (neither is clearly better, so the decision is about preference, not analysis), you have already analyzed the decision and the analysis did not help (more information will not solve the problem — the problem is emotional, not informational), and you need permission to trust your intuition (the Book of Answers gives you an external "answer" that you can use as permission to follow your gut).</p>
-
-<p>Do not use the Book of Answers for: decisions with objectively better options (if one job pays $50K and the other pays $500K, you do not need a random answer), decisions with serious consequences (medical decisions, legal decisions, financial decisions with life-changing amounts of money), and decisions where you are avoiding responsibility (the Book of Answers is a tool for self-reflection, not for abdicating responsibility).</p>
-
-<h2>The History of the Book of Answers</h2>
-
-<p>The original Book of Answers was published in 1999 by Carol Bolt. It was a physical book — you held it in your hands, concentrated on a question, opened to a random page, and read the answer. The book sold millions of copies. It was translated into dozens of languages. People used it seriously, knowing it was random, because the mechanism worked. The <a href="/en/tools/book-of-answers">digital Book of Answers</a> is the same concept — a collection of ambiguous, thought-provoking responses that trigger self-reflection. The technology changed. The psychology did not.</p>
-
-<p>Ask your question at <a href="/en/tools/book-of-answers">Book of Answers</a> — the answer is not the answer. Your reaction is.</p>`
-  },
-  {
-    slug: "loan-calculator-vs-mortgage-calculator-personal-vs-home",
-    title: "Loan Calculator vs Mortgage Calculator Personal Loans vs Home Loans — Why the Calculators Are Different Even Though the Math Is the Same",
-    description: "A loan calculator and a mortgage calculator both compute monthly payments from principal, interest rate, and term. The math is identical. But the use cases, assumptions, and extra costs are completely different.",
-    date: "2026-07-15",
+    slug: "compound-interest-inflation-real-vs-nominal-returns",
+    title: "Compound Interest and Inflation Why Your 7% Return Is Really Only 4% — Understanding Real vs Nominal Returns",
+    description: "Your investment calculator says you'll have $1 million in 30 years. But inflation at 3% means that $1 million will only buy what $412,000 buys today. Here's how to calculate real returns.",
+    date: "2026-07-16",
     category: "Calculators",
-    tags: ["loan calculator", "mortgage calculator", "personal loan", "home loan", "comparison"],
-    relatedTools: ["loan-calculator", "mortgage-calculator", "emi-calculator"],
-    content: `<p>You need to borrow $30,000. You open a <a href="/en/tools/loan-calculator">loan calculator</a> and a <a href="/en/tools/mortgage-calculator">mortgage calculator</a>. Both ask for the same three inputs: principal, interest rate, and term. Both calculate the same output: monthly payment. The math is identical. The results are identical. So why do these two calculators exist as separate tools?</p>
+    tags: ["compound interest", "inflation", "real returns", "nominal returns", "investing"],
+    relatedTools: ["compound-interest", "roi-calculator", "percentage-calculator"],
+    content: `<p>You use a <a href="/en/tools/compound-interest">compound interest calculator</a>. You invest $500 per month for 30 years at 7% annual return. The calculator says: $609,000. You feel good. You are on track. But the calculator is showing you <strong>nominal returns</strong> — the raw dollar amount before inflation. At 3% average inflation, $609,000 in 30 years will only buy what <strong>$250,000 buys today</strong>. Your retirement plan is not as solid as the calculator made it look.</p>
 
-<p>Because the <strong>math is the same, but the assumptions are completely different</strong>. A personal loan of $30,000 at 8% for 5 years is calculated the same way as a mortgage of $30,000 at 8% for 5 years — but the personal loan has no property taxes, no insurance, no PMI, and no closing costs. The mortgage has all of them. The monthly payment from the calculator is the starting point. The true cost of the loan is the starting point plus everything else. Here is the difference.</p>
+<p>The difference between nominal returns and real returns is the most important concept in long-term investing — and the one that most calculators do not show you. Here is how to calculate real returns, why inflation is a wealth tax that compounds just like interest, and how to adjust your retirement planning accordingly.</p>
 
-<h2>Personal Loan Calculator: The Simple Math</h2>
+<h2>Nominal vs Real Returns: The Inflation Tax</h2>
 
-<p>A personal loan is an <strong>unsecured</strong> loan — no collateral, no property, no insurance requirements. The monthly payment is the only cost. The personal loan calculator gives you the complete answer: principal + interest = monthly payment. No hidden costs. No additional fees. The number you see is the number you pay.</p>
+<p><strong>Nominal return</strong> is the raw percentage your investment grows. If your portfolio goes from $10,000 to $10,700 in a year, your nominal return is 7%. This is the number your brokerage statement shows you and the number the compound interest calculator uses.</p>
 
-<p>Personal loans are used for: debt consolidation, home improvement (small projects, not whole-house renovations), major purchases (appliances, furniture, medical expenses), and unexpected expenses (emergency repairs, temporary cash flow gaps).</p>
+<p><strong>Real return</strong> is the nominal return minus inflation — the actual increase in your purchasing power. If your nominal return is 7% and inflation is 3%, your real return is approximately 4% (the exact formula: (1 + 0.07) / (1 + 0.03) - 1 = 3.88%). Your money grew by 7%. Your purchasing power grew by 3.88%. The difference — 3.12% — was consumed by inflation. The inflation tax is silent and invisible. You do not see it on any statement. But it compounds every year, just like interest.</p>
 
-<p>The personal loan calculator is the <strong>truth-teller</strong>. It tells you exactly what you will pay each month. No asterisks. No fine print. The simplicity is the point.</p>
+<p>Over 30 years, the difference between 7% nominal and 4% real is enormous. $500 per month at 7% nominal for 30 years = $609,000. $500 per month at 4% real for 30 years = $347,000. The inflation tax consumed $262,000 of your retirement savings — 43% of the total. You did not lose it. It was never there. The nominal return was always an illusion.</p>
 
-<h2>Mortgage Calculator: The Starting Point, Not the Final Answer</h2>
+<h2>How to Use the Compound Interest Calculator with Inflation</h2>
 
-<p>A mortgage is a <strong>secured</strong> loan — the property is the collateral. The monthly payment includes: principal and interest (the mortgage calculator's output), property taxes (1-3% of the home's value annually, divided by 12), homeowner's insurance ($500-2,000 annually, divided by 12), and PMI (Private Mortgage Insurance, required if your down payment is less than 20% — typically 0.5-1% of the loan amount annually).</p>
+<p>Use the <a href="/en/tools/compound-interest">compound interest calculator</a> with the <strong>real return rate</strong>, not the nominal rate. If you expect 7% nominal returns and 3% inflation, enter 4% as the interest rate. The calculator will show you the real value of your future savings in today's dollars. This is the number that actually matters for retirement planning.</p>
 
-<p>The mortgage calculator gives you the principal and interest payment. The <strong>true monthly cost</strong> is 30-50% higher when you include taxes, insurance, and PMI. The mortgage calculator is the starting point, not the final answer. It tells you the loan payment. It does not tell you the homeownership payment.</p>
+<p>Alternatively, use the nominal rate but mentally adjust the result. A rough rule of thumb: at 3% inflation, money loses half its purchasing power every 24 years. If you are 30 years from retirement, your future savings will buy about half of what the nominal number suggests. If you are 48 years from retirement, about one quarter. The rule of 72: divide 72 by the inflation rate to get the number of years it takes for prices to double (or purchasing power to halve). At 3% inflation: 72 / 3 = 24 years.</p>
 
-<p>Additional mortgage costs that the calculator does not include: closing costs (2-5% of the loan amount, paid upfront), maintenance and repairs (1-2% of the home's value annually), and HOA fees (if applicable, $100-500 monthly). The mortgage calculator gives you the <strong>loan payment</strong>. The true cost of homeownership is the loan payment plus all of these. The gap between the two is the most common financial surprise for first-time homebuyers.</p>
+<h2>Why This Matters More Than You Think</h2>
 
-<h2>When to Use Each Calculator</h2>
+<p>Most retirement calculators show nominal returns. Most people plan based on nominal returns. Most people retire with less purchasing power than they expected. The gap between nominal and real is not a technical detail. It is the difference between "I can afford to retire" and "I need to work five more years." Use the real return rate. Plan in today's dollars. The compound interest calculator is a tool. The inflation adjustment is the wisdom.</p>
 
-<p>Use the <a href="/en/tools/loan-calculator">loan calculator</a> for: personal loans, auto loans, student loans, and any unsecured or simple-interest loan. The calculator gives you the complete monthly payment. No hidden costs.</p>
-
-<p>Use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> for: home loans, refinancing analysis, and comparing mortgage offers. The calculator gives you the principal and interest payment. Then add 30-50% for taxes, insurance, and PMI to get the true monthly cost. The calculator is the starting point. The additional costs are the reality.</p>`
+<p>Calculate your real returns at <a href="/en/tools/compound-interest">compound interest calculator</a> — use the real rate, not the nominal rate. Your future self will thank you for the honesty.</p>`
   },
   {
-    slug: "ai-tools-directory-vs-random-quote-discovery-vs-serendipity",
-    title: "AI Tools Directory vs Random Quote Structured Discovery vs Serendipitous Inspiration — How to Find the Right Tool for the Right Moment",
-    description: "An AI tools directory helps you find the specific tool you need. A random quote gives you inspiration you were not looking for. Both are discovery tools. Both serve different mindsets.",
-    date: "2026-07-15",
-    category: "Reference",
-    tags: ["AI tools", "random quote", "discovery", "inspiration", "serendipity"],
-    relatedTools: ["ai-tools", "random-quote", "quotes"],
-    content: `<p>You need an AI image generator for a specific project. You open an <a href="/en/tools/ai-tools">AI tools directory</a> — a curated list of AI tools organized by category. You browse the Image Generation category, find a tool that fits your needs, and start using it. The directory gave you exactly what you were looking for. The discovery was <strong>directed</strong> — you knew the category, you found the tool.</p>
+    slug: "lorem-ipsum-ux-design-placeholder-best-practices",
+    title: "Lorem Ipsum Generator for UX Design Placeholder Text Best Practices — When to Use Dummy Text and When to Use Real Content",
+    description: "Lorem ipsum is the universal placeholder text for design mockups. But using it incorrectly creates designs that break when real content is added. Here's when dummy text helps and when it hurts.",
+    date: "2026-07-16",
+    category: "Text Tools",
+    tags: ["lorem ipsum", "UX design", "placeholder text", "mockup", "content design"],
+    relatedTools: ["lorem-ipsum", "word-counter", "text-repeater"],
+    content: `<p>You are designing a website. The content is not ready yet — the copywriter is still working on it. You need placeholder text to fill the design and show the client how the layout will look. You use a <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> to generate three paragraphs of dummy text. The design looks great. The client approves it. The copywriter delivers the real content. You replace the lorem ipsum. The design breaks. The real headline is longer than the placeholder. The real paragraph is shorter. The button text wraps to two lines. The spacing is wrong. The design that looked perfect with lorem ipsum looks broken with real content.</p>
 
-<p>Now you are not looking for anything specific. You open a <a href="/en/tools/random-quote">random quote</a> generator. It gives you a quote from Carl Sagan: "Somewhere, something incredible is waiting to be known." You were not looking for inspiration. The quote found you. The discovery was <strong>serendipitous</strong> — you did not know what you needed until you found it.</p>
+<p>This is the most common UX design mistake — and it is caused by using placeholder text incorrectly. Here is when lorem ipsum helps, when it hurts, and how to use it without creating designs that break on real content.</p>
 
-<p>Both tools are in the Reference category. Both are discovery tools. But they serve completely different mindsets — one is for when you know what you want, the other is for when you do not. Here is when to use each.</p>
+<h2>When Lorem Ipsum Helps</h2>
 
-<h2>AI Tools Directory: Directed Discovery</h2>
+<p>Lorem ipsum is useful for: <strong>early-stage wireframes</strong> (when the content strategy is not yet defined, dummy text fills the space and lets you focus on layout), <strong>visual design exploration</strong> (testing typography, font sizes, line heights, and color schemes without real content distracting from the visual choices), and <strong>client presentations</strong> (showing the overall layout and structure before the content is finalized).</p>
 
-<p>An AI tools directory is a <strong>curated catalog</strong> of AI-powered tools organized by category: image generation, text generation, audio processing, video editing, code generation, and more. Each tool listing includes the tool name, a brief description, and a link. The directory is a <strong>problem-solving tool</strong> — you have a specific need, and you browse the relevant category to find a tool that solves it.</p>
+<p>In these cases, lorem ipsum is a <strong>placeholder for content that does not exist yet</strong>. It is temporary. It will be replaced. The design is expected to change when real content arrives. The lorem ipsum is a stand-in, not a simulation.</p>
 
-<p>Use the AI tools directory when: you have a specific task and need a tool to complete it, you want to explore what is available in a particular category, and you are comparing multiple tools for the same purpose. The directory is the <strong>librarian</strong> of AI tools. It helps you find exactly what you are looking for.</p>
+<h2>When Lorem Ipsum Hurts</h2>
 
-<h2>Random Quote: Serendipitous Discovery</h2>
+<p>Lorem ipsum is harmful for: <strong>late-stage design</strong> (when the design is nearly final, real content should be used to verify that the layout works with actual text), <strong>content-heavy designs</strong> (blogs, news sites, e-commerce — where the content is the design, and lorem ipsum cannot simulate the actual content density and structure), and <strong>responsive design testing</strong> (lorem ipsum does not simulate how real content will reflow at different screen sizes).</p>
 
-<p>A random quote generator is a <strong>serendipity engine</strong>. It gives you one unexpected quote from a vast collection — no search, no filter, no choice. The value is in the surprise. The quote you did not know you needed to hear. The perspective you did not know you were missing. The tool is a <strong>reflection tool</strong> — you are not solving a problem, you are opening yourself to inspiration.</p>
+<p>The problem: lorem ipsum is <strong>too uniform</strong>. Real content has: varying word lengths (some words are short, some are long — lorem ipsum has a consistent distribution), varying sentence lengths (real sentences vary from a few words to dozens — lorem ipsum sentences are artificially consistent), and meaningful line breaks (real content has natural paragraph breaks based on meaning — lorem ipsum breaks are arbitrary). A design that works with lorem ipsum's uniform text will break when real, varied content is inserted. The headlines will be too long. The paragraphs will be too short. The spacing will be optimized for text that does not exist.</p>
 
-<p>Use the random quote generator when: you need a moment of inspiration before starting work, you are creatively blocked and need something unexpected to spark an idea, and you want to start your day with a thought-provoking idea. The random quote is the <strong>wise stranger</strong> — it gives you what you need, not what you want.</p>
+<h2>The Best Practice: Use Real Content as Early as Possible</h2>
 
-<h2>The Two Modes of Discovery</h2>
-
-<p>Directed discovery and serendipitous discovery are complementary. The AI tools directory serves the <strong>planning mind</strong> — the part of you that knows what you need and is looking for the best solution. The random quote serves the <strong>receptive mind</strong> — the part of you that is open to unexpected inspiration. You need both modes because you are both. The directory helps you find the right tool. The random quote helps you find the right mindset. Different tools. Different discoveries. Same human.</p>
-
-<p>Explore at <a href="/en/tools/ai-tools">AI tools directory</a> and find inspiration at <a href="/en/tools/random-quote">random quote</a> — directed discovery and serendipitous inspiration. Two paths to what you need.</p>`
+<p>Use lorem ipsum for the first draft. Replace it with real content as soon as the copywriter delivers the first version. Even a rough draft of real content is better than lorem ipsum for testing the design. The real content reveals the problems that lorem ipsum hides. The <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> is a starting point, not a finishing tool. Generate the dummy text. Build the layout. Replace with real content. Fix the layout. The lorem ipsum is the scaffold. The real content is the building. The scaffold comes down before anyone moves in.</p>`
   },
   {
-    slug: "md5-hash-broken-algorithm-still-everywhere",
-    title: "MD5 Hash Why a Cryptographically Broken Algorithm Still Appears Everywhere — from File Downloads to Database Indexing",
-    description: "MD5 was broken in 2004. Researchers can create two different files with the same MD5 hash. Yet MD5 is still used for checksums, database indexing, and caching. Here's why it refuses to die.",
-    date: "2026-07-15",
+    slug: "color-names-html-css-named-colors-guide",
+    title: "Color Names Guide Beyond Basic Colors The Complete HTML CSS Named Colors Reference — and Why You Should Know More Than Just Red Green Blue",
+    description: "CSS supports 148 named colors — from 'coral' to 'peru' to 'gainsboro.' Most developers know 10. Here's the complete reference and when to use named colors vs hex codes.",
+    date: "2026-07-16",
     category: "Developer",
-    tags: ["MD5", "hash", "cryptography", "checksum", "security"],
-    relatedTools: ["md5-generator", "hash-generator", "password-generator"],
-    content: `<p>In 2004, Chinese researchers Xiaoyun Wang and Hongbo Yu demonstrated a practical collision attack on MD5. They could create two different files with the same MD5 hash — a cryptographic death sentence. The security community declared MD5 broken. Every security guideline since 2005 has said: "Do not use MD5. Use SHA-256." Yet in 2026, MD5 is still everywhere. File download pages still list MD5 checksums. Database systems still use MD5 for indexing. Content delivery networks still use MD5 for cache keys. A <a href="/en/tools/md5-generator">MD5 hash generator</a> is still one of the most-used developer tools.</p>
+    tags: ["color names", "HTML", "CSS", "named colors", "web design"],
+    relatedTools: ["color-names", "color-picker", "color-contrast-checker"],
+    content: `<p>You write CSS and need a shade of blue. You type <code>background-color: blue;</code> The result is a harsh, saturated, #0000FF blue that looks like it was designed in 1995. You wanted a softer, more elegant blue. You open a <a href="/en/tools/color-names">color names reference</a> and discover: <code>cornflowerblue</code> (#6495ED — a soft, muted blue), <code>steelblue</code> (#4682B4 — a professional, gray-blue), <code>lightsteelblue</code> (#B0C4DE — a pale, airy blue), and <code>cadetblue</code> (#5F9EA0 — a teal-leaning blue). You did not know any of these existed. You have been writing hex codes for colors that already have names.</p>
 
-<p>Why does a broken algorithm refuse to die? The answer reveals the difference between <strong>cryptographic security</strong> and <strong>practical utility</strong> — and why MD5 is still perfectly fine for most of the things people actually use it for. Here is what MD5 can still do, what it cannot do, and when to use SHA-256 instead.</p>
+<p>CSS supports 148 named colors. Most developers know about 10. Here is the complete reference, grouped by usefulness, and when to use named colors vs hex codes.</p>
 
-<h2>What MD5 Cannot Do (and Why It Was Declared Dead)</h2>
+<h2>The Most Useful Named Colors You Are Not Using</h2>
 
-<p>MD5 is broken for <strong>collision resistance</strong> — the property that prevents an attacker from creating two different inputs with the same hash. A collision attack on MD5 takes seconds on modern hardware. This means: a malicious actor can create a fake software update with the same MD5 hash as the legitimate update, a forged digital certificate with the same MD5 hash as a trusted certificate, and two different documents with the same MD5-based digital signature. In all of these cases, the attacker exploits the collision to make a malicious file appear legitimate.</p>
+<p><strong>Warm neutrals:</strong> <code>cornsilk</code> (#FFF8DC — a warm, off-white that is easier on the eyes than pure white), <code>linen</code> (#FAF0E6 — a slightly warmer off-white), <code>oldlace</code> (#FDF5E6 — a warm, vintage white). These are better than <code>white</code> for backgrounds that will be read for extended periods. Pure white creates glare. Warm off-whites reduce eye strain.</p>
 
-<p>Do not use MD5 for: digital signatures, SSL/TLS certificates, password hashing (use bcrypt, scrypt, or Argon2), and any security context where an attacker might try to create a collision. In these cases, MD5 is not just weak — it is actively dangerous.</p>
+<p><strong>Sophisticated colors:</strong> <code>crimson</code> (#DC143C — a deep, rich red), <code>goldenrod</code> (#DAA520 — a dark gold, not the bright yellow of <code>gold</code>), <code>indigo</code> (#4B0082 — a deep purple-blue), <code>teal</code> (#008080 — a blue-green that works beautifully for accents). These are more sophisticated than the primary colors (<code>red</code>, <code>blue</code>, <code>green</code>) and convey a more professional design sensibility.</p>
 
-<h2>What MD5 Can Still Do (and Why It Survives)</h2>
+<p><strong>Neutral grays:</strong> <code>gainsboro</code> (#DCDCDC — a light gray), <code>silver</code> (#C0C0C0 — a medium gray), <code>darkgray</code> (#A9A9A9 — a darker gray), <code>dimgray</code> (#696969 — a very dark gray), <code>slategray</code> (#708090 — a blue-gray). Grays are the most-used colors in web design after white and black. Knowing the named grays means you can write readable CSS without a color picker.</p>
 
-<p>MD5 is still perfectly fine for <strong>non-adversarial</strong> use cases — situations where no one is trying to attack the hash. These include: <strong>file integrity checksums</strong> (detecting accidental corruption during download, not deliberate tampering), <strong>database indexing</strong> (MD5 produces a fixed-size hash of variable-length data, which is useful for creating compact index keys), <strong>cache keys</strong> (CDNs and caching systems use MD5 to generate unique keys from URLs or content), and <strong>deduplication</strong> (identifying duplicate files by comparing their MD5 hashes).</p>
+<h2>When to Use Named Colors vs Hex Codes</h2>
 
-<p>In all of these cases, the threat model is <strong>accidental collision</strong>, not <strong>deliberate attack</strong>. The probability of two random files having the same MD5 hash by accident is 1 in 2¹²⁸ — astronomically small. The collision attacks that broke MD5 require the attacker to deliberately craft both files. In a non-adversarial context, MD5 is still perfectly reliable.</p>
+<p><strong>Use named colors for:</strong> quick prototyping (typing <code>tomato</code> is faster than looking up #FF6347), learning and teaching (named colors are easier to remember and discuss), and CSS that you want to be readable at a glance (<code>background: linen;</code> communicates the intent better than <code>background: #FAF0E6;</code>).</p>
 
-<p>MD5 survives because it is: fast (MD5 is faster than SHA-256, which matters for high-throughput systems), compact (128-bit output vs 256-bit for SHA-256 — smaller cache keys and index entries), and universally supported (every programming language and platform has an MD5 implementation).</p>
+<p><strong>Use hex codes for:</strong> production CSS (hex codes are more precise and consistent across teams), design systems (brand colors should be defined as hex or HSL, not named colors), and any color that needs to match a specific brand or design specification. Named colors are a <strong>convenience</strong>. Hex codes are the <strong>standard</strong>.</p>
 
-<h2>When to Use MD5 vs SHA-256</h2>
+<p>The <a href="/en/tools/color-names">color names tool</a> is a reference — search for a color by name, see its hex code, and browse the complete list of 148 CSS named colors. It is the tool you open when you know what color you want but not what it is called, or when you know the name but not the hex code. Bookmark it. You will use it more than you expect.</p>`
+  },
+  {
+    slug: "url-slug-generator-vs-url-encoder-clean-vs-encoded",
+    title: "URL Slug Generator vs URL Encoder Clean URLs vs Encoded URLs — When to Make URLs Readable and When to Make Them Safe",
+    description: "A URL slug generator turns 'My Article Title!' into 'my-article-title'. A URL encoder turns 'hello world' into 'hello%20world'. Both process URLs. Both are essential. But they solve opposite problems.",
+    date: "2026-07-16",
+    category: "Developer",
+    tags: ["URL slug", "URL encoder", "clean URL", "percent encoding", "SEO"],
+    relatedTools: ["text-to-slug", "url-encoder", "html-entities"],
+    content: `<p>You create a blog post titled "Café Review: The Best Coffee in Montréal." The URL slug should be <code>/cafe-review-best-coffee-montreal</code> — clean, readable, and SEO-friendly. You use a <a href="/en/tools/text-to-slug">URL slug generator</a> to convert the title into a slug. The accents are removed, the spaces become hyphens, and the punctuation is stripped. The result is a URL that humans can read and search engines can index.</p>
 
-<p>Use MD5 for: file integrity checksums (detecting accidental corruption), database indexing and cache keys, deduplication of non-security-critical data, and any non-adversarial hashing where speed and compactness matter. Use SHA-256 for: digital signatures, certificate validation, password hashing (with a proper salt), and any security context where an attacker might try to create a collision. The <a href="/en/tools/hash-generator">hash generator</a> supports both algorithms. Use the right one for your threat model.</p>
+<p>Now you need to pass the same title as a query parameter in an API request: <code>?q=Café Review: The Best Coffee in Montréal</code>. The spaces, accents, and punctuation will break the URL. You use a <a href="/en/tools/url-encoder">URL encoder</a> to convert the string to <code>?q=Caf%C3%A9%20Review%3A%20The%20Best%20Coffee%20in%20Montr%C3%A9al</code> — safe for transmission, but unreadable to humans. Both tools process URLs. Both are essential for web development. But they solve <strong>opposite problems</strong>. Here is when to use each.</p>
 
-<p>MD5 is cryptographically broken and practically immortal. It will outlive every security guideline that says not to use it. Not because the guidelines are wrong — they are right about the security risks. But because most of the things people use MD5 for are not security risks. The algorithm is broken for the thing it was designed for and perfectly fine for the things people actually use it for. That is why it refuses to die.</p>
+<h2>URL Slug Generator: Making URLs Readable</h2>
 
-<p>Generate hashes at <a href="/en/tools/md5-generator">MD5 generator</a> and <a href="/en/tools/hash-generator">hash generator</a> — know the difference between what MD5 cannot do and what it still does perfectly well.</p>`
+<p>A URL slug generator takes human-readable text and converts it to a URL-safe format optimized for <strong>readability</strong>. The process: lowercase the text, remove or transliterate accents and special characters (é → e, ñ → n), replace spaces and punctuation with hyphens, collapse multiple hyphens into one, and trim leading and trailing hyphens.</p>
+
+<p>The goal is a URL that: a human can read and understand at a glance, a search engine can parse for keywords, and someone can type manually if needed. A good slug is a <strong>summary</strong> of the page content in URL form. <code>/blog/url-slug-generator-vs-url-encoder</code> tells you what the page is about before you click. <code>/blog/post.php?id=8472</code> tells you nothing.</p>
+
+<p>Use the URL slug generator for: blog post URLs, product page URLs, category and tag URLs, and any URL that will be visible to users and indexed by search engines.</p>
+
+<h2>URL Encoder: Making URLs Safe</h2>
+
+<p>A URL encoder takes any string and converts it to a format that is <strong>safe for transmission</strong> in a URL. Characters that have special meaning in URLs (spaces, ampersands, question marks, equals signs) are replaced with percent-encoded equivalents. The goal is not readability. The goal is <strong>correctness</strong> — the encoded string will not break the URL structure or be misinterpreted by the server.</p>
+
+<p>Use the URL encoder for: query parameters in API requests, form data submitted via GET, encoding special characters in URLs, and any context where the data must survive transmission through the URL without being corrupted or misinterpreted.</p>
+
+<h2>When to Use Both</h2>
+
+<p>A common workflow: use the slug generator to create the base URL path (<code>/blog/my-article</code>). Use the URL encoder to encode query parameters appended to that path (<code>?utm_source=twitter&utm_campaign=launch</code>). The path is readable. The parameters are safe. Both tools. One URL. The slug generator handles the <strong>structure</strong>. The URL encoder handles the <strong>data</strong>.</p>
+
+<p>Use <a href="/en/tools/text-to-slug">URL slug generator</a> for readable paths and <a href="/en/tools/url-encoder">URL encoder</a> for safe parameters. Clean URLs and safe URLs. Different goals. Different tools.</p>`
+  },
+  {
+    slug: "global-weather-vs-crypto-price-natural-vs-digital",
+    title: "Global Weather vs Crypto Price Tracker Natural Data vs Digital Data — Two Real-Time Trackers That Could Not Be More Different",
+    description: "Global weather tracks temperature, humidity, and wind speed — natural phenomena governed by physics. Crypto price tracks Bitcoin and Ethereum — digital assets governed by market psychology. Both are real-time. Both are data.",
+    date: "2026-07-16",
+    category: "Reference",
+    tags: ["global weather", "crypto price", "real-time data", "tracking", "comparison"],
+    relatedTools: ["global-weather", "crypto-price", "world-map"],
+    content: `<p>You open a <a href="/en/tools/global-weather">global weather</a> tracker. It shows: Tokyo, 28°C, partly cloudy, 65% humidity, wind 12 km/h. The data comes from weather stations, satellites, and meteorological models. It is a measurement of <strong>physical reality</strong> — the temperature of the air, the moisture in the atmosphere, the movement of the wind. The weather exists whether or not anyone is measuring it. The tracker simply reports what is already true.</p>
+
+<p>You open a <a href="/en/tools/crypto-price">crypto price tracker</a>. It shows: Bitcoin $67,342, up 2.3% in the last 24 hours. The data comes from exchange APIs — the price at which the last trade occurred. It is a measurement of <strong>human behavior</strong> — the collective belief about what a digital asset is worth. The price exists only because people agree it exists. The tracker reports what people believe, not what is physically true.</p>
+
+<p>Both tools are real-time data trackers. Both display numbers that change throughout the day. Both are in the Reference category. But they track fundamentally different kinds of reality. Here is the difference.</p>
+
+<h2>Global Weather: Tracking Physical Reality</h2>
+
+<p>Weather data is <strong>objective</strong>. The temperature in Tokyo is 28°C. You can go outside and verify it with a thermometer. The measurement might be slightly off — the weather station might be in a different part of the city — but the underlying phenomenon is real and measurable. The weather exists independently of the measurement. The tracker is a <strong>window</strong> onto physical reality.</p>
+
+<p>Weather data is also <strong>predictable</strong> (within limits). Meteorologists can forecast the weather 3-7 days in advance with reasonable accuracy. The predictions are based on physics — fluid dynamics, thermodynamics, atmospheric science. The forecast is a <strong>model</strong> of a physical system. The model is imperfect but grounded in reality.</p>
+
+<p>Use the global weather tracker for: travel planning, outdoor event planning, understanding climate patterns, and satisfying curiosity about the world.</p>
+
+<h2>Crypto Price Tracker: Tracking Human Belief</h2>
+
+<p>Crypto prices are <strong>intersubjective</strong>. Bitcoin is worth $67,342 because enough people believe it is worth approximately that much and are willing to trade at that price. The price is real — you can buy and sell at that price — but it is real in the way that a language is real. It exists because enough people agree it exists. The tracker is a <strong>mirror</strong> of collective human belief.</p>
+
+<p>Crypto prices are also <strong>unpredictable</strong>. No model can reliably forecast Bitcoin's price 7 days in advance. The price is driven by news, sentiment, regulation, technological changes, and market manipulation — none of which follow physical laws. The price chart is a history of human emotion, not a model of a physical system.</p>
+
+<p>Use the crypto price tracker for: monitoring your investments, tracking market trends, and understanding the volatility of digital assets.</p>
+
+<h2>The Philosophical Difference</h2>
+
+<p>The weather tracker measures a world that exists whether or not we measure it. The crypto tracker measures a world that exists only because we collectively believe in it. Both are useful. Both are real. But they are real in different ways. The weather is real like a mountain. Crypto is real like a marriage. You cannot touch a marriage. But it is real. The same is true of a Bitcoin. The tracker reports the number. The number is real. The reality it measures is a collective human agreement.</p>
+
+<p>Check the weather at <a href="/en/tools/global-weather">global weather</a> and the markets at <a href="/en/tools/crypto-price">crypto price tracker</a> — physical reality and digital belief. Two different kinds of real-time data.</p>`
+  },
+  {
+    slug: "youtube-thumbnail-psychology-faces-bright-colors",
+    title: "The Psychology of YouTube Thumbnails Why Faces with Exaggerated Expressions and Bright Colors Get More Clicks — and What the Research Says",
+    description: "YouTube thumbnails with faces get 30% more clicks. Faces with exaggerated expressions get even more. Bright yellow and red backgrounds outperform blue and gray. Here's the psychology behind the patterns.",
+    date: "2026-07-16",
+    category: "Fun & Media",
+    tags: ["YouTube thumbnail", "psychology", "click-through rate", "faces", "color"],
+    relatedTools: ["youtube-thumbnail", "gif-search", "color-picker"],
+    content: `<p>You scroll through YouTube. Hundreds of thumbnails compete for your attention. Which ones do you click? Research from YouTube analytics firms and academic studies reveals consistent patterns: thumbnails with <strong>faces</strong> get 30% more clicks than thumbnails without. Faces with <strong>exaggerated expressions</strong> (surprise, excitement, shock) get even more. <strong>Bright yellow and red</strong> backgrounds outperform blue and gray. <strong>High contrast</strong> thumbnails outperform flat, low-contrast ones. These patterns are not random. They are driven by deep-seated psychological responses that content creators have learned to exploit.</p>
+
+<p>A <a href="/en/tools/youtube-thumbnail">YouTube thumbnail preview</a> tool helps you test how your thumbnail looks at different sizes. But understanding <strong>why</strong> some thumbnails work better than others helps you design the right thumbnail in the first place. Here is the psychology behind the patterns.</p>
+
+<h2>Faces: The Hardwired Attention Magnet</h2>
+
+<p>The human brain has a specialized region — the fusiform face area (FFA) — dedicated to processing faces. Newborns preferentially look at face-like patterns within hours of birth. Faces are the most <strong>attention-grabbing visual stimulus</strong> in the human cognitive repertoire. This is not a learned behavior. It is hardwired.</p>
+
+<p>YouTube thumbnails exploit this: a face in the thumbnail triggers the FFA, drawing the viewer's attention away from the other thumbnails and toward yours. The face does not need to be attractive. It needs to be <strong>expressive</strong>. Exaggerated expressions — eyes wide open, mouth in an "O" shape, eyebrows raised — trigger the brain's emotion recognition system. The viewer's brain processes the expression before the viewer consciously decides to click. The emotional reaction is automatic. The click follows.</p>
+
+<p>The most effective thumbnail expressions: surprise (wide eyes, open mouth), excitement (big smile, raised eyebrows), curiosity (head tilted, squinting slightly), and urgency (intense stare, furrowed brows). Neutral expressions are less effective than exaggerated ones. A face that looks like it is reacting to something interesting makes the viewer want to know what that something is.</p>
+
+<h2>Color: The Contrast Advantage</h2>
+
+<p>YouTube's background is white (light mode) or dark gray (dark mode). Thumbnails with <strong>high contrast</strong> against both backgrounds stand out regardless of the viewer's theme setting. The most effective colors: bright yellow (#FFCC00 range — the most attention-grabbing color in the visible spectrum), bright red (#FF0000 range — triggers arousal and urgency), and bright green (#00FF00 range — stands out against both white and dark backgrounds).</p>
+
+<p>Blue and gray thumbnails blend into the background. They are less visible. They get fewer clicks. This is not because blue is a bad color. It is because blue is <strong>low contrast</strong> against YouTube's interface. The color choice is not about aesthetics. It is about <strong>visibility</strong>. The thumbnail that is most visible gets the most clicks, regardless of whether it is the most beautiful.</p>
+
+<h2>The Thumbnail Size Problem</h2>
+
+<p>Most viewers see thumbnails at 200×113 pixels on mobile — smaller than a postage stamp. The thumbnail that looks great at 1280×720 on your desktop design screen might be illegible at mobile size. The face becomes a blur. The text becomes unreadable. The contrast disappears. Use the <a href="/en/tools/youtube-thumbnail">YouTube thumbnail preview</a> to check your thumbnail at mobile size before publishing. If it is not clear at 200×113, redesign it. The mobile view is the view that matters. Most views come from mobile devices. Design for the size your audience actually sees.</p>`
   },
 ];
 
@@ -220,4 +204,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 206->done.")
+print("Free station: 212->done.")
