@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (212→218) — July 16, 2026"""
+"""Add 6 blogs to free station (218→224) — July 17, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,190 +10,220 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "compound-interest-inflation-real-vs-nominal-returns",
-    title: "Compound Interest and Inflation Why Your 7% Return Is Really Only 4% — Understanding Real vs Nominal Returns",
-    description: "Your investment calculator says you'll have $1 million in 30 years. But inflation at 3% means that $1 million will only buy what $412,000 buys today. Here's how to calculate real returns.",
-    date: "2026-07-16",
-    category: "Calculators",
-    tags: ["compound interest", "inflation", "real returns", "nominal returns", "investing"],
-    relatedTools: ["compound-interest", "roi-calculator", "percentage-calculator"],
-    content: `<p>You use a <a href="/en/tools/compound-interest">compound interest calculator</a>. You invest $500 per month for 30 years at 7% annual return. The calculator says: $609,000. You feel good. You are on track. But the calculator is showing you <strong>nominal returns</strong> — the raw dollar amount before inflation. At 3% average inflation, $609,000 in 30 years will only buy what <strong>$250,000 buys today</strong>. Your retirement plan is not as solid as the calculator made it look.</p>
-
-<p>The difference between nominal returns and real returns is the most important concept in long-term investing — and the one that most calculators do not show you. Here is how to calculate real returns, why inflation is a wealth tax that compounds just like interest, and how to adjust your retirement planning accordingly.</p>
-
-<h2>Nominal vs Real Returns: The Inflation Tax</h2>
-
-<p><strong>Nominal return</strong> is the raw percentage your investment grows. If your portfolio goes from $10,000 to $10,700 in a year, your nominal return is 7%. This is the number your brokerage statement shows you and the number the compound interest calculator uses.</p>
-
-<p><strong>Real return</strong> is the nominal return minus inflation — the actual increase in your purchasing power. If your nominal return is 7% and inflation is 3%, your real return is approximately 4% (the exact formula: (1 + 0.07) / (1 + 0.03) - 1 = 3.88%). Your money grew by 7%. Your purchasing power grew by 3.88%. The difference — 3.12% — was consumed by inflation. The inflation tax is silent and invisible. You do not see it on any statement. But it compounds every year, just like interest.</p>
-
-<p>Over 30 years, the difference between 7% nominal and 4% real is enormous. $500 per month at 7% nominal for 30 years = $609,000. $500 per month at 4% real for 30 years = $347,000. The inflation tax consumed $262,000 of your retirement savings — 43% of the total. You did not lose it. It was never there. The nominal return was always an illusion.</p>
-
-<h2>How to Use the Compound Interest Calculator with Inflation</h2>
-
-<p>Use the <a href="/en/tools/compound-interest">compound interest calculator</a> with the <strong>real return rate</strong>, not the nominal rate. If you expect 7% nominal returns and 3% inflation, enter 4% as the interest rate. The calculator will show you the real value of your future savings in today's dollars. This is the number that actually matters for retirement planning.</p>
-
-<p>Alternatively, use the nominal rate but mentally adjust the result. A rough rule of thumb: at 3% inflation, money loses half its purchasing power every 24 years. If you are 30 years from retirement, your future savings will buy about half of what the nominal number suggests. If you are 48 years from retirement, about one quarter. The rule of 72: divide 72 by the inflation rate to get the number of years it takes for prices to double (or purchasing power to halve). At 3% inflation: 72 / 3 = 24 years.</p>
-
-<h2>Why This Matters More Than You Think</h2>
-
-<p>Most retirement calculators show nominal returns. Most people plan based on nominal returns. Most people retire with less purchasing power than they expected. The gap between nominal and real is not a technical detail. It is the difference between "I can afford to retire" and "I need to work five more years." Use the real return rate. Plan in today's dollars. The compound interest calculator is a tool. The inflation adjustment is the wisdom.</p>
-
-<p>Calculate your real returns at <a href="/en/tools/compound-interest">compound interest calculator</a> — use the real rate, not the nominal rate. Your future self will thank you for the honesty.</p>`
-  },
-  {
-    slug: "lorem-ipsum-ux-design-placeholder-best-practices",
-    title: "Lorem Ipsum Generator for UX Design Placeholder Text Best Practices — When to Use Dummy Text and When to Use Real Content",
-    description: "Lorem ipsum is the universal placeholder text for design mockups. But using it incorrectly creates designs that break when real content is added. Here's when dummy text helps and when it hurts.",
-    date: "2026-07-16",
+    slug: "text-sorter-data-cleaning-csv-log-normalization",
+    title: "Text Sorter for Data Cleaning How to Normalize CSV Exports and Log Files Before Analysis — Beyond Simple A-to-Z Sorting",
+    description: "A CSV export has 50,000 rows in random order, with duplicates and trailing spaces. Before you can analyze it, you need to sort, dedupe, and trim. Here's the data cleaning pipeline.",
+    date: "2026-07-17",
     category: "Text Tools",
-    tags: ["lorem ipsum", "UX design", "placeholder text", "mockup", "content design"],
-    relatedTools: ["lorem-ipsum", "word-counter", "text-repeater"],
-    content: `<p>You are designing a website. The content is not ready yet — the copywriter is still working on it. You need placeholder text to fill the design and show the client how the layout will look. You use a <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> to generate three paragraphs of dummy text. The design looks great. The client approves it. The copywriter delivers the real content. You replace the lorem ipsum. The design breaks. The real headline is longer than the placeholder. The real paragraph is shorter. The button text wraps to two lines. The spacing is wrong. The design that looked perfect with lorem ipsum looks broken with real content.</p>
+    tags: ["text sorter", "data cleaning", "CSV", "normalization", "log files"],
+    relatedTools: ["text-sorter", "remove-duplicate-lines", "json-to-csv"],
+    content: `<p>You export 50,000 rows of customer data from your CRM. The CSV is technically valid — commas in the right places, rows on separate lines. But the data is messy: rows are in random order (whatever the database felt like returning), duplicate entries exist (the same customer appears three times with slightly different spellings), and trailing spaces are everywhere ("John Smith " vs "John Smith" — same person, different string). Before you can analyze this data, you need to <strong>clean</strong> it.</p>
 
-<p>This is the most common UX design mistake — and it is caused by using placeholder text incorrectly. Here is when lorem ipsum helps, when it hurts, and how to use it without creating designs that break on real content.</p>
+<p>A <a href="/en/tools/text-sorter">text sorter</a> is not just for alphabetizing lists. It is a <strong>data cleaning tool</strong> — and when combined with deduplication and trimming, it transforms messy exports into analysis-ready datasets. Here is the data cleaning pipeline for CSV and log file normalization.</p>
 
-<h2>When Lorem Ipsum Helps</h2>
+<h2>The Three-Step Data Cleaning Pipeline</h2>
 
-<p>Lorem ipsum is useful for: <strong>early-stage wireframes</strong> (when the content strategy is not yet defined, dummy text fills the space and lets you focus on layout), <strong>visual design exploration</strong> (testing typography, font sizes, line heights, and color schemes without real content distracting from the visual choices), and <strong>client presentations</strong> (showing the overall layout and structure before the content is finalized).</p>
+<p><strong>Step 1: Trim lines.</strong> Enable the Trim Lines option. This removes leading and trailing whitespace from every line. "John Smith " becomes "John Smith." " john.smith@email.com" becomes "john.smith@email.com." Trailing spaces are the most common source of "false duplicates" in exported data — two rows that look identical but differ by invisible whitespace. Trimming eliminates this problem before it causes confusion.</p>
 
-<p>In these cases, lorem ipsum is a <strong>placeholder for content that does not exist yet</strong>. It is temporary. It will be replaced. The design is expected to change when real content arrives. The lorem ipsum is a stand-in, not a simulation.</p>
+<p><strong>Step 2: Sort by the relevant column.</strong> Use the sort mode that matches your analysis goal. A→Z for alphabetical sorting (names, email addresses, product codes). Numeric sort for values (prices, quantities, IDs). By Length to find abnormally short or long entries (a name that is one character, a description that is 5,000 characters). The sort organizes the data so that: duplicates are adjacent (making them easy to spot), anomalies stand out (the one row that does not fit the pattern), and the data is easier to scan and understand.</p>
 
-<h2>When Lorem Ipsum Hurts</h2>
+<p><strong>Step 3: Remove duplicates.</strong> Enable Remove Duplicates. This eliminates repeated lines, keeping the first occurrence. After trimming and sorting, duplicates are adjacent and identical. The deduplication catches them all. The result: a deduped, sorted, trimmed dataset ready for analysis.</p>
 
-<p>Lorem ipsum is harmful for: <strong>late-stage design</strong> (when the design is nearly final, real content should be used to verify that the layout works with actual text), <strong>content-heavy designs</strong> (blogs, news sites, e-commerce — where the content is the design, and lorem ipsum cannot simulate the actual content density and structure), and <strong>responsive design testing</strong> (lorem ipsum does not simulate how real content will reflow at different screen sizes).</p>
+<p>This three-step pipeline is the standard preprocessing workflow for: email lists (before importing into an email marketing tool), product catalogs (before uploading to an e-commerce platform), log files (before analyzing error patterns), and any text-based dataset that needs to be clean before it can be analyzed.</p>
 
-<p>The problem: lorem ipsum is <strong>too uniform</strong>. Real content has: varying word lengths (some words are short, some are long — lorem ipsum has a consistent distribution), varying sentence lengths (real sentences vary from a few words to dozens — lorem ipsum sentences are artificially consistent), and meaningful line breaks (real content has natural paragraph breaks based on meaning — lorem ipsum breaks are arbitrary). A design that works with lorem ipsum's uniform text will break when real, varied content is inserted. The headlines will be too long. The paragraphs will be too short. The spacing will be optimized for text that does not exist.</p>
+<h2>Real-World Example: Cleaning an Email List</h2>
 
-<h2>The Best Practice: Use Real Content as Early as Possible</h2>
+<p>You export 5,000 email addresses from your old system. The list has: duplicates (the same email appears 3-5 times), inconsistent case ("John@Email.com" vs "john@email.com"), and trailing spaces. You paste the list into the <a href="/en/tools/text-sorter">text sorter</a>. Enable Ignore Case, Trim Lines, and Remove Duplicates. Sort A→Z. The result: a clean, deduped, alphabetized, case-normalized list of unique email addresses. 5,000 rows in. 3,200 unique, clean rows out. Ready for import into your new email marketing tool. The entire process takes 30 seconds.</p>
 
-<p>Use lorem ipsum for the first draft. Replace it with real content as soon as the copywriter delivers the first version. Even a rough draft of real content is better than lorem ipsum for testing the design. The real content reveals the problems that lorem ipsum hides. The <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> is a starting point, not a finishing tool. Generate the dummy text. Build the layout. Replace with real content. Fix the layout. The lorem ipsum is the scaffold. The real content is the building. The scaffold comes down before anyone moves in.</p>`
+<h2>Real-World Example: Analyzing Log Files</h2>
+
+<p>Your server generated a 200MB log file. You need to find all unique error messages. You paste the log into the text sorter. Sort A→Z (all error lines cluster together under "ERROR"). Remove Duplicates (each unique error message appears once). The result: a deduped list of every unique error in the log file. You can now count how many distinct errors occurred, identify the most frequent patterns, and prioritize fixes. The text sorter turned an unreadable 200MB log into a clean list of error messages. The analysis that would have taken hours manually takes minutes with sorting and deduplication.</p>
+
+<p>Clean your data at <a href="/en/tools/text-sorter">free text sorter</a> — trim, sort, dedupe. The three-step pipeline for analysis-ready data.</p>`
   },
   {
-    slug: "color-names-html-css-named-colors-guide",
-    title: "Color Names Guide Beyond Basic Colors The Complete HTML CSS Named Colors Reference — and Why You Should Know More Than Just Red Green Blue",
-    description: "CSS supports 148 named colors — from 'coral' to 'peru' to 'gainsboro.' Most developers know 10. Here's the complete reference and when to use named colors vs hex codes.",
-    date: "2026-07-16",
+    slug: "color-contrast-checker-wcag-2-2-new-standards",
+    title: "Color Contrast Checker WCAG 2.2 Compliance Guide What the New Accessibility Standards Mean for Your Website",
+    description: "WCAG 2.2 introduced new contrast requirements for focus indicators, target sizes, and accessibility. A contrast checker helps you verify compliance. Here's what changed and how to check your site.",
+    date: "2026-07-17",
     category: "Developer",
-    tags: ["color names", "HTML", "CSS", "named colors", "web design"],
-    relatedTools: ["color-names", "color-picker", "color-contrast-checker"],
-    content: `<p>You write CSS and need a shade of blue. You type <code>background-color: blue;</code> The result is a harsh, saturated, #0000FF blue that looks like it was designed in 1995. You wanted a softer, more elegant blue. You open a <a href="/en/tools/color-names">color names reference</a> and discover: <code>cornflowerblue</code> (#6495ED — a soft, muted blue), <code>steelblue</code> (#4682B4 — a professional, gray-blue), <code>lightsteelblue</code> (#B0C4DE — a pale, airy blue), and <code>cadetblue</code> (#5F9EA0 — a teal-leaning blue). You did not know any of these existed. You have been writing hex codes for colors that already have names.</p>
+    tags: ["color contrast checker", "WCAG 2.2", "accessibility", "compliance", "web standards"],
+    relatedTools: ["color-contrast-checker", "color-picker", "color-names"],
+    content: `<p>WCAG 2.1 was published in 2018. WCAG 2.2 was published in 2023. If your website was built to WCAG 2.1 standards, you might assume you are compliant with the latest accessibility guidelines. You might be wrong. WCAG 2.2 added new success criteria — and a <a href="/en/tools/color-contrast-checker">color contrast checker</a> is still the first tool you need to verify compliance. Here is what changed, what stayed the same, and how to check your site against the latest standards.</p>
 
-<p>CSS supports 148 named colors. Most developers know about 10. Here is the complete reference, grouped by usefulness, and when to use named colors vs hex codes.</p>
+<h2>What WCAG 2.2 Added (and Why Contrast Still Matters)</h2>
 
-<h2>The Most Useful Named Colors You Are Not Using</h2>
+<p>WCAG 2.2 introduced several new success criteria: <strong>Focus Appearance (2.4.11)</strong> — keyboard focus indicators must have a contrast ratio of at least 3:1 against the surrounding area, and the focus indicator must be at least 2 CSS pixels thick. This is a <strong>contrast requirement</strong> for an element that most websites style minimally or not at all. The default browser focus indicator (a thin dotted line) does not meet this requirement. You need to design a custom focus indicator with sufficient contrast.</p>
 
-<p><strong>Warm neutrals:</strong> <code>cornsilk</code> (#FFF8DC — a warm, off-white that is easier on the eyes than pure white), <code>linen</code> (#FAF0E6 — a slightly warmer off-white), <code>oldlace</code> (#FDF5E6 — a warm, vintage white). These are better than <code>white</code> for backgrounds that will be read for extended periods. Pure white creates glare. Warm off-whites reduce eye strain.</p>
+<p><strong>Target Size (2.5.8):</strong> Interactive elements (buttons, links, form controls) must have a target size of at least 24×24 CSS pixels. This is not a contrast requirement, but it affects how you design buttons — the colors you choose for your buttons must now work on a minimum 24×24 pixel area, which is larger than many existing button designs.</p>
 
-<p><strong>Sophisticated colors:</strong> <code>crimson</code> (#DC143C — a deep, rich red), <code>goldenrod</code> (#DAA520 — a dark gold, not the bright yellow of <code>gold</code>), <code>indigo</code> (#4B0082 — a deep purple-blue), <code>teal</code> (#008080 — a blue-green that works beautifully for accents). These are more sophisticated than the primary colors (<code>red</code>, <code>blue</code>, <code>green</code>) and convey a more professional design sensibility.</p>
+<p><strong>Consistent Help (3.2.6):</strong> Help mechanisms (contact forms, chat, documentation links) must appear in the same relative order across pages. This is a structural requirement, not a visual one. But the help mechanism must also meet contrast requirements — the link or button to access help must have sufficient contrast against its background.</p>
 
-<p><strong>Neutral grays:</strong> <code>gainsboro</code> (#DCDCDC — a light gray), <code>silver</code> (#C0C0C0 — a medium gray), <code>darkgray</code> (#A9A9A9 — a darker gray), <code>dimgray</code> (#696969 — a very dark gray), <code>slategray</code> (#708090 — a blue-gray). Grays are the most-used colors in web design after white and black. Knowing the named grays means you can write readable CSS without a color picker.</p>
+<p>All existing WCAG 2.1 contrast requirements remain in effect: 4.5:1 for normal text, 3:1 for large text, and 3:1 for UI components and graphical objects. The new criteria add to these requirements. They do not replace them.</p>
 
-<h2>When to Use Named Colors vs Hex Codes</h2>
+<h2>How to Check Your Site Against WCAG 2.2</h2>
 
-<p><strong>Use named colors for:</strong> quick prototyping (typing <code>tomato</code> is faster than looking up #FF6347), learning and teaching (named colors are easier to remember and discuss), and CSS that you want to be readable at a glance (<code>background: linen;</code> communicates the intent better than <code>background: #FAF0E6;</code>).</p>
+<p><strong>Step 1: Check text contrast (existing requirement, still required).</strong> Use the <a href="/en/tools/color-contrast-checker">contrast checker</a> to verify all text elements meet the 4.5:1 (normal) or 3:1 (large) ratio. Check: body text, headings, links (including hover and visited states), button text, form labels, and placeholder text in input fields. These are the most common contrast failures.</p>
 
-<p><strong>Use hex codes for:</strong> production CSS (hex codes are more precise and consistent across teams), design systems (brand colors should be defined as hex or HSL, not named colors), and any color that needs to match a specific brand or design specification. Named colors are a <strong>convenience</strong>. Hex codes are the <strong>standard</strong>.</p>
+<p><strong>Step 2: Check UI component contrast (existing requirement, still required).</strong> Verify that all interactive elements have 3:1 contrast against adjacent colors. Check: button backgrounds vs page backgrounds, form input borders vs page backgrounds, and icon colors vs their backgrounds.</p>
 
-<p>The <a href="/en/tools/color-names">color names tool</a> is a reference — search for a color by name, see its hex code, and browse the complete list of 148 CSS named colors. It is the tool you open when you know what color you want but not what it is called, or when you know the name but not the hex code. Bookmark it. You will use it more than you expect.</p>`
+<p><strong>Step 3: Check focus indicator contrast (new WCAG 2.2 requirement).</strong> This is the most commonly missed new requirement. Verify that your keyboard focus indicator has 3:1 contrast against both: the element's background and the surrounding page background. The focus indicator must be visible regardless of what it is on top of. A focus indicator that is visible against a white background might be invisible against a dark section of the page. Check it against all backgrounds on your site.</p>
+
+<p><strong>Step 4: Check target size (new WCAG 2.2 requirement).</strong> Measure your interactive elements. They must be at least 24×24 pixels. Small icons, tiny close buttons, and inline text links are the most common failures.</p>
+
+<h2>Why This Matters Beyond Compliance</h2>
+
+<p>WCAG 2.2 compliance is not just about avoiding lawsuits. It is about: reaching more users (15-20% of the population has some form of disability — visual, motor, cognitive, or auditory), improving usability for everyone (accessible design is better design — higher contrast text is easier for everyone to read, larger buttons are easier for everyone to click), and improving SEO (Google ranks accessible sites higher — accessibility is a ranking factor).</p>
+
+<p>Check your site at <a href="/en/tools/color-contrast-checker">color contrast checker</a> — WCAG 2.2 compliance starts with contrast. The new requirements are in addition to the old ones. Both matter. Both are checkable in seconds.</p>`
   },
   {
-    slug: "url-slug-generator-vs-url-encoder-clean-vs-encoded",
-    title: "URL Slug Generator vs URL Encoder Clean URLs vs Encoded URLs — When to Make URLs Readable and When to Make Them Safe",
-    description: "A URL slug generator turns 'My Article Title!' into 'my-article-title'. A URL encoder turns 'hello world' into 'hello%20world'. Both process URLs. Both are essential. But they solve opposite problems.",
-    date: "2026-07-16",
+    slug: "password-generator-enterprise-it-policy-compliance",
+    title: "Password Generator for Enterprise IT Policy Compliance How to Generate Bulk Passwords That Meet Corporate Security Requirements",
+    description: "Your company password policy requires 14+ characters, upper+lower+digits+symbols, no dictionary words, and unique per system. A password generator enforces these rules automatically. Here's the IT workflow.",
+    date: "2026-07-17",
     category: "Developer",
-    tags: ["URL slug", "URL encoder", "clean URL", "percent encoding", "SEO"],
-    relatedTools: ["text-to-slug", "url-encoder", "html-entities"],
-    content: `<p>You create a blog post titled "Café Review: The Best Coffee in Montréal." The URL slug should be <code>/cafe-review-best-coffee-montreal</code> — clean, readable, and SEO-friendly. You use a <a href="/en/tools/text-to-slug">URL slug generator</a> to convert the title into a slug. The accents are removed, the spaces become hyphens, and the punctuation is stripped. The result is a URL that humans can read and search engines can index.</p>
+    tags: ["password generator", "enterprise", "IT policy", "compliance", "security"],
+    relatedTools: ["password-generator", "hash-generator", "uuid-generator"],
+    content: `<p>Your company password policy: minimum 14 characters, at least one uppercase letter, one lowercase letter, one digit, and one symbol, no dictionary words, no personally identifiable information, must be unique across all systems, and must be changed every 90 days. Employees respond to this policy by: writing passwords on sticky notes, using "Password123!" with incremental numbers, and calling IT to reset passwords they have forgotten. The policy is secure on paper. It is a disaster in practice.</p>
 
-<p>Now you need to pass the same title as a query parameter in an API request: <code>?q=Café Review: The Best Coffee in Montréal</code>. The spaces, accents, and punctuation will break the URL. You use a <a href="/en/tools/url-encoder">URL encoder</a> to convert the string to <code>?q=Caf%C3%A9%20Review%3A%20The%20Best%20Coffee%20in%20Montr%C3%A9al</code> — safe for transmission, but unreadable to humans. Both tools process URLs. Both are essential for web development. But they solve <strong>opposite problems</strong>. Here is when to use each.</p>
+<p>A <a href="/en/tools/password-generator">password generator</a> that enforces the policy automatically solves the employee problem. The generator creates compliant passwords. The employee stores them in a password manager. Nobody writes anything on a sticky note. Here is the enterprise password management workflow.</p>
 
-<h2>URL Slug Generator: Making URLs Readable</h2>
+<h2>Why Password Policies Fail Without Generation Tools</h2>
 
-<p>A URL slug generator takes human-readable text and converts it to a URL-safe format optimized for <strong>readability</strong>. The process: lowercase the text, remove or transliterate accents and special characters (é → e, ñ → n), replace spaces and punctuation with hyphens, collapse multiple hyphens into one, and trim leading and trailing hyphens.</p>
+<p>Password policies are written by security teams who understand cryptography and threat models. Password policies are used by employees who understand neither. The gap between the policy and the user is wide enough to drive a truck through. Employees respond to complex password requirements with <strong>workarounds</strong>: predictable patterns ("January2026!", "February2026!", "March2026!"), the minimum acceptable password ("P@ssword12345678" — meets all requirements, is in every password cracking dictionary), and password reuse across systems (the same "secure" password for email, CRM, and expense reporting).</p>
 
-<p>The goal is a URL that: a human can read and understand at a glance, a search engine can parse for keywords, and someone can type manually if needed. A good slug is a <strong>summary</strong> of the page content in URL form. <code>/blog/url-slug-generator-vs-url-encoder</code> tells you what the page is about before you click. <code>/blog/post.php?id=8472</code> tells you nothing.</p>
+<p>The workarounds defeat the policy. The policy is correct — 14-character random passwords are genuinely more secure than 8-character ones. The implementation is the failure. Giving employees a tool that generates compliant passwords eliminates the workarounds. The employee does not create the password. The generator does. The employee stores it. The generator enforces the policy at the point of creation.</p>
 
-<p>Use the URL slug generator for: blog post URLs, product page URLs, category and tag URLs, and any URL that will be visible to users and indexed by search engines.</p>
+<h2>The Enterprise Password Generation Workflow</h2>
 
-<h2>URL Encoder: Making URLs Safe</h2>
+<p><strong>Step 1: Configure the generator to match the policy.</strong> Use the <a href="/en/tools/password-generator">password generator</a> with the settings that match your company policy: length (14, 16, 20, or more characters), character sets (uppercase, lowercase, digits, symbols — toggle as needed), and exclude ambiguous characters (1 vs l vs I, 0 vs O — avoid confusion when passwords are typed manually).</p>
 
-<p>A URL encoder takes any string and converts it to a format that is <strong>safe for transmission</strong> in a URL. Characters that have special meaning in URLs (spaces, ampersands, question marks, equals signs) are replaced with percent-encoded equivalents. The goal is not readability. The goal is <strong>correctness</strong> — the encoded string will not break the URL structure or be misinterpreted by the server.</p>
+<p><strong>Step 2: Generate passwords in bulk.</strong> For new employee onboarding, generate a batch of passwords — one for each system the employee needs access to. Each password is unique. Each password complies with the policy. The employee imports them into their password manager. The employee never sees the passwords — the password manager auto-fills them. The employee memorizes only one password: the master password for the password manager.</p>
 
-<p>Use the URL encoder for: query parameters in API requests, form data submitted via GET, encoding special characters in URLs, and any context where the data must survive transmission through the URL without being corrupted or misinterpreted.</p>
+<p><strong>Step 3: Use the generator for periodic resets.</strong> When the 90-day reset cycle arrives, employees use the generator to create a new compliant password. No incremental numbers. No predictable patterns. No sticky notes. The generator handles compliance. The password manager handles storage. The employee handles nothing — which is exactly what you want for security.</p>
 
-<h2>When to Use Both</h2>
+<h2>What the Generator Cannot Fix</h2>
 
-<p>A common workflow: use the slug generator to create the base URL path (<code>/blog/my-article</code>). Use the URL encoder to encode query parameters appended to that path (<code>?utm_source=twitter&utm_campaign=launch</code>). The path is readable. The parameters are safe. Both tools. One URL. The slug generator handles the <strong>structure</strong>. The URL encoder handles the <strong>data</strong>.</p>
+<p>The password generator creates secure passwords. It cannot fix: phishing (an employee who enters their password on a fake login page defeats any password policy), password sharing (an employee who tells a colleague their password defeats any password policy), and master password weakness (an employee who sets their password manager master password to "password123" defeats the entire system).</p>
 
-<p>Use <a href="/en/tools/text-to-slug">URL slug generator</a> for readable paths and <a href="/en/tools/url-encoder">URL encoder</a> for safe parameters. Clean URLs and safe URLs. Different goals. Different tools.</p>`
+<p>The generator is one component of a comprehensive security strategy. It handles password creation. It does not handle password usage. Train employees on phishing awareness, password sharing policies, and master password best practices. The generator creates the secure passwords. The employees must use them securely.</p>
+
+<p>Generate compliant passwords at <a href="/en/tools/password-generator">password generator</a> — configure the policy, generate the passwords, and give employees a tool that makes compliance easier than workarounds.</p>`
   },
   {
-    slug: "global-weather-vs-crypto-price-natural-vs-digital",
-    title: "Global Weather vs Crypto Price Tracker Natural Data vs Digital Data — Two Real-Time Trackers That Could Not Be More Different",
-    description: "Global weather tracks temperature, humidity, and wind speed — natural phenomena governed by physics. Crypto price tracks Bitcoin and Ethereum — digital assets governed by market psychology. Both are real-time. Both are data.",
-    date: "2026-07-16",
-    category: "Reference",
-    tags: ["global weather", "crypto price", "real-time data", "tracking", "comparison"],
-    relatedTools: ["global-weather", "crypto-price", "world-map"],
-    content: `<p>You open a <a href="/en/tools/global-weather">global weather</a> tracker. It shows: Tokyo, 28°C, partly cloudy, 65% humidity, wind 12 km/h. The data comes from weather stations, satellites, and meteorological models. It is a measurement of <strong>physical reality</strong> — the temperature of the air, the moisture in the atmosphere, the movement of the wind. The weather exists whether or not anyone is measuring it. The tracker simply reports what is already true.</p>
+    slug: "json-formatter-vs-code-formatter-data-vs-code",
+    title: "JSON Formatter vs Code Formatter Data Serialization vs Code Pretty Printing — Two Formatting Tools That Look Identical but Serve Different Audiences",
+    description: "JSON formatter beautifies data for API debugging. Code formatter beautifies code for readability. Both add indentation and line breaks. But the use cases, users, and error modes are completely different.",
+    date: "2026-07-17",
+    category: "Developer",
+    tags: ["JSON formatter", "code formatter", "formatting", "data", "code"],
+    relatedTools: ["json-formatter", "code-formatter", "css-minifier"],
+    content: `<p>You receive an API response: one giant line of JSON, 850,000 characters with no line breaks. You paste it into a <a href="/en/tools/json-formatter">JSON formatter</a>. The tool adds indentation, line breaks, and syntax highlighting. The data becomes readable. You can now see the structure, find the field you need, and debug the API response.</p>
 
-<p>You open a <a href="/en/tools/crypto-price">crypto price tracker</a>. It shows: Bitcoin $67,342, up 2.3% in the last 24 hours. The data comes from exchange APIs — the price at which the last trade occurred. It is a measurement of <strong>human behavior</strong> — the collective belief about what a digital asset is worth. The price exists only because people agree it exists. The tracker reports what people believe, not what is physically true.</p>
+<p>Now you open a JavaScript file that has inconsistent indentation — tabs mixed with spaces, random line breaks, no consistent style. You paste it into a <a href="/en/tools/code-formatter">code formatter</a>. The tool standardizes the indentation, adds consistent line breaks, and enforces a uniform style. The code becomes readable. You can now understand the logic, find the bug, and fix it.</p>
 
-<p>Both tools are real-time data trackers. Both display numbers that change throughout the day. Both are in the Reference category. But they track fundamentally different kinds of reality. Here is the difference.</p>
+<p>Both tools are "formatters." Both add indentation and line breaks. Both make text readable. But they serve completely different audiences, handle completely different types of text, and fail in completely different ways. Here is the difference.</p>
 
-<h2>Global Weather: Tracking Physical Reality</h2>
+<h2>JSON Formatter: Formatting Data</h2>
 
-<p>Weather data is <strong>objective</strong>. The temperature in Tokyo is 28°C. You can go outside and verify it with a thermometer. The measurement might be slightly off — the weather station might be in a different part of the city — but the underlying phenomenon is real and measurable. The weather exists independently of the measurement. The tracker is a <strong>window</strong> onto physical reality.</p>
+<p>A JSON formatter processes <strong>structured data</strong> — text that follows the JSON specification (key-value pairs, arrays, nested objects, strings, numbers, booleans, null). The formatter parses the JSON into an abstract syntax tree and then pretty-prints the tree with consistent indentation. The result is a human-readable representation of the data structure.</p>
 
-<p>Weather data is also <strong>predictable</strong> (within limits). Meteorologists can forecast the weather 3-7 days in advance with reasonable accuracy. The predictions are based on physics — fluid dynamics, thermodynamics, atmospheric science. The forecast is a <strong>model</strong> of a physical system. The model is imperfect but grounded in reality.</p>
+<p>The JSON formatter's primary function is <strong>validation</strong>. If the JSON is invalid — missing comma, trailing comma, unclosed bracket — the formatter reports the error with a line number. You fix the error. The formatting is secondary to the validation. The validator is the feature. The formatter is the presentation.</p>
 
-<p>Use the global weather tracker for: travel planning, outdoor event planning, understanding climate patterns, and satisfying curiosity about the world.</p>
+<p>Use JSON formatter when: you are debugging API responses, you need to inspect a JSON configuration file, you are working with JSON data that arrived in a single collapsed line, or you need to validate that JSON is syntactically correct before submitting it to an API.</p>
 
-<h2>Crypto Price Tracker: Tracking Human Belief</h2>
+<h2>Code Formatter: Formatting Code</h2>
 
-<p>Crypto prices are <strong>intersubjective</strong>. Bitcoin is worth $67,342 because enough people believe it is worth approximately that much and are willing to trade at that price. The price is real — you can buy and sell at that price — but it is real in the way that a language is real. It exists because enough people agree it exists. The tracker is a <strong>mirror</strong> of collective human belief.</p>
+<p>A code formatter processes <strong>programming language source code</strong> — JavaScript, TypeScript, CSS, HTML. The formatter parses the code into an abstract syntax tree, applies formatting rules (indentation, line breaks, spacing, quote style), and outputs consistently formatted code. The result is code that follows a uniform style.</p>
 
-<p>Crypto prices are also <strong>unpredictable</strong>. No model can reliably forecast Bitcoin's price 7 days in advance. The price is driven by news, sentiment, regulation, technological changes, and market manipulation — none of which follow physical laws. The price chart is a history of human emotion, not a model of a physical system.</p>
+<p>The code formatter's primary function is <strong>consistency</strong>. The code is already syntactically valid (if it were not, the compiler would have rejected it). The problem is not validity. The problem is <strong>readability</strong> — inconsistent indentation, mixed style conventions, and formatting that obscures the logic. The formatter enforces a consistent style. The consistency is the feature. The formatting is the mechanism.</p>
 
-<p>Use the crypto price tracker for: monitoring your investments, tracking market trends, and understanding the volatility of digital assets.</p>
+<p>Use code formatter when: you inherit code with inconsistent formatting, you want to enforce a team style guide automatically, or you need to make unreadable code readable before debugging it.</p>
 
-<h2>The Philosophical Difference</h2>
+<h2>Why Confusing Them Produces Errors</h2>
 
-<p>The weather tracker measures a world that exists whether or not we measure it. The crypto tracker measures a world that exists only because we collectively believe in it. Both are useful. Both are real. But they are real in different ways. The weather is real like a mountain. Crypto is real like a marriage. You cannot touch a marriage. But it is real. The same is true of a Bitcoin. The tracker reports the number. The number is real. The reality it measures is a collective human agreement.</p>
+<p>If you paste JavaScript code into a JSON formatter, the formatter will attempt to parse it as JSON. The code is not valid JSON. The formatter will report a syntax error. It will not format the code. It does not understand JavaScript syntax. It only understands JSON syntax.</p>
 
-<p>Check the weather at <a href="/en/tools/global-weather">global weather</a> and the markets at <a href="/en/tools/crypto-price">crypto price tracker</a> — physical reality and digital belief. Two different kinds of real-time data.</p>`
+<p>If you paste JSON data into a code formatter set to JavaScript mode, the formatter will attempt to parse the JSON as JavaScript. JSON is valid JavaScript (with rare exceptions). The formatter will format it — adding semicolons, adjusting spacing, and applying JavaScript formatting rules. The output will be syntactically valid but semantically wrong — a JSON object with JavaScript formatting conventions. Not what you wanted.</p>
+
+<p>The rule: JSON goes in the JSON formatter. Code goes in the code formatter. The tools look similar. The inputs are different. The outputs are different. Use the right one.</p>
+
+<p>Format your data at <a href="/en/tools/json-formatter">JSON formatter</a> and your code at <a href="/en/tools/code-formatter">code formatter</a>. Data formatting and code formatting. Different inputs. Different tools.</p>`
   },
   {
-    slug: "youtube-thumbnail-psychology-faces-bright-colors",
-    title: "The Psychology of YouTube Thumbnails Why Faces with Exaggerated Expressions and Bright Colors Get More Clicks — and What the Research Says",
-    description: "YouTube thumbnails with faces get 30% more clicks. Faces with exaggerated expressions get even more. Bright yellow and red backgrounds outperform blue and gray. Here's the psychology behind the patterns.",
-    date: "2026-07-16",
-    category: "Fun & Media",
-    tags: ["YouTube thumbnail", "psychology", "click-through rate", "faces", "color"],
-    relatedTools: ["youtube-thumbnail", "gif-search", "color-picker"],
-    content: `<p>You scroll through YouTube. Hundreds of thumbnails compete for your attention. Which ones do you click? Research from YouTube analytics firms and academic studies reveals consistent patterns: thumbnails with <strong>faces</strong> get 30% more clicks than thumbnails without. Faces with <strong>exaggerated expressions</strong> (surprise, excitement, shock) get even more. <strong>Bright yellow and red</strong> backgrounds outperform blue and gray. <strong>High contrast</strong> thumbnails outperform flat, low-contrast ones. These patterns are not random. They are driven by deep-seated psychological responses that content creators have learned to exploit.</p>
+    slug: "crypto-price-vs-roi-calculator-speculation-vs-investment",
+    title: "Crypto Price Tracker vs ROI Calculator Speculation vs Investment — Two Financial Tools That Measure Completely Different Things",
+    description: "A crypto price tracker shows what Bitcoin is worth right now — a snapshot of market sentiment. An ROI calculator shows what an investment returned over time — a measurement of actual performance. Different data. Different decisions.",
+    date: "2026-07-17",
+    category: "Calculators",
+    tags: ["crypto price", "ROI calculator", "speculation", "investment", "comparison"],
+    relatedTools: ["crypto-price", "roi-calculator", "compound-interest"],
+    content: `<p>You open a <a href="/en/tools/crypto-price">crypto price tracker</a>. Bitcoin is at $67,342 — up 2.3% today. The price is a <strong>snapshot of market sentiment</strong>. It tells you what the market believes Bitcoin is worth at this exact moment. It does not tell you: what Bitcoin was worth last year, what Bitcoin will be worth next year, what return you would have earned if you had bought at any specific point in the past, or what return you might earn in the future. The price is a data point. It is not an analysis.</p>
 
-<p>A <a href="/en/tools/youtube-thumbnail">YouTube thumbnail preview</a> tool helps you test how your thumbnail looks at different sizes. But understanding <strong>why</strong> some thumbnails work better than others helps you design the right thumbnail in the first place. Here is the psychology behind the patterns.</p>
+<p>You open an <a href="/en/tools/roi-calculator">ROI calculator</a>. You enter: invested $10,000 in an S&P 500 index fund in January 2020, value today is $18,400. The calculator tells you: 84% total return, 14.3% annualized return. This is a <strong>measurement of actual performance</strong> — how much money you made over a specific time period. It tells you what happened. It does not tell you what will happen.</p>
 
-<h2>Faces: The Hardwired Attention Magnet</h2>
+<p>Both tools deal with money. Both are in the Calculators category. But they measure completely different things. Here is the difference — and why confusing price tracking with return calculation leads to bad financial decisions.</p>
 
-<p>The human brain has a specialized region — the fusiform face area (FFA) — dedicated to processing faces. Newborns preferentially look at face-like patterns within hours of birth. Faces are the most <strong>attention-grabbing visual stimulus</strong> in the human cognitive repertoire. This is not a learned behavior. It is hardwired.</p>
+<h2>Crypto Price Tracker: A Mirror of Market Sentiment</h2>
 
-<p>YouTube thumbnails exploit this: a face in the thumbnail triggers the FFA, drawing the viewer's attention away from the other thumbnails and toward yours. The face does not need to be attractive. It needs to be <strong>expressive</strong>. Exaggerated expressions — eyes wide open, mouth in an "O" shape, eyebrows raised — trigger the brain's emotion recognition system. The viewer's brain processes the expression before the viewer consciously decides to click. The emotional reaction is automatic. The click follows.</p>
+<p>A crypto price tracker displays the current market price of cryptocurrencies — Bitcoin, Ethereum, and other digital assets. The price is determined by: the last trade on an exchange, aggregated across multiple exchanges, and updated in real time (or near-real time) as trades occur. The price is a <strong>consensus</strong> — the point where buyers and sellers agree to transact.</p>
 
-<p>The most effective thumbnail expressions: surprise (wide eyes, open mouth), excitement (big smile, raised eyebrows), curiosity (head tilted, squinting slightly), and urgency (intense stare, furrowed brows). Neutral expressions are less effective than exaggerated ones. A face that looks like it is reacting to something interesting makes the viewer want to know what that something is.</p>
+<p>The price tracker answers: "What is this asset worth right now?" It does not answer: "Is this a good investment?" "Should I buy now or wait?" "How much would I have made if I bought at a different time?" The price is information. The investment decision is judgment. The tracker provides the information. You provide the judgment.</p>
 
-<h2>Color: The Contrast Advantage</h2>
+<p>Use the crypto price tracker for: monitoring your portfolio, checking prices before buying or selling, tracking market trends, and satisfying curiosity about the crypto market. It is a <strong>pulse check</strong>, not an investment analysis.</p>
 
-<p>YouTube's background is white (light mode) or dark gray (dark mode). Thumbnails with <strong>high contrast</strong> against both backgrounds stand out regardless of the viewer's theme setting. The most effective colors: bright yellow (#FFCC00 range — the most attention-grabbing color in the visible spectrum), bright red (#FF0000 range — triggers arousal and urgency), and bright green (#00FF00 range — stands out against both white and dark backgrounds).</p>
+<h2>ROI Calculator: A Measurement of Past Performance</h2>
 
-<p>Blue and gray thumbnails blend into the background. They are less visible. They get fewer clicks. This is not because blue is a bad color. It is because blue is <strong>low contrast</strong> against YouTube's interface. The color choice is not about aesthetics. It is about <strong>visibility</strong>. The thumbnail that is most visible gets the most clicks, regardless of whether it is the most beautiful.</p>
+<p>An ROI (Return on Investment) calculator computes the return on an investment over a specific time period. The formula: ROI = (Current Value - Initial Investment) / Initial Investment × 100. The calculator tells you: what percentage return you earned and what annualized return that represents.</p>
 
-<h2>The Thumbnail Size Problem</h2>
+<p>The ROI calculator answers: "How well did this investment perform?" It does not answer: "How will this investment perform in the future?" Past performance does not guarantee future results. The ROI calculator is a <strong>hindsight tool</strong>. It tells you what happened. It does not predict what will happen.</p>
 
-<p>Most viewers see thumbnails at 200×113 pixels on mobile — smaller than a postage stamp. The thumbnail that looks great at 1280×720 on your desktop design screen might be illegible at mobile size. The face becomes a blur. The text becomes unreadable. The contrast disappears. Use the <a href="/en/tools/youtube-thumbnail">YouTube thumbnail preview</a> to check your thumbnail at mobile size before publishing. If it is not clear at 200×113, redesign it. The mobile view is the view that matters. Most views come from mobile devices. Design for the size your audience actually sees.</p>`
+<p>Use the ROI calculator for: evaluating past investment decisions, comparing the performance of different investments, calculating returns for tax reporting, and setting realistic expectations based on historical returns. It is a <strong>performance measurement</strong>, not a prediction.</p>
+
+<h2>The Danger of Confusing Price with Return</h2>
+
+<p>Bitcoin is up 2.3% today. The price tracker shows a green number. It feels like you made money. But you do not know: is this a sustainable increase or a temporary spike? Is this part of a larger trend or random noise? What is your actual return since you bought? The price tracker cannot tell you. The ROI calculator can — if you enter your purchase date and amount. The price shows the moment. The ROI shows the period. Confusing the moment with the period leads to: buying because the price went up (FOMO), selling because the price went down (panic), and making decisions based on emotions triggered by price movements rather than analysis based on actual returns.</p>
+
+<p>Use the <a href="/en/tools/crypto-price">crypto tracker</a> for the moment and the <a href="/en/tools/roi-calculator">ROI calculator</a> for the period. Price and return. Information and analysis. Different tools. Different decisions.</p>`
+  },
+  {
+    slug: "base-converter-history-number-bases-decimal-vs-binary",
+    title: "The History of Number Bases Why Base-10 Dominated Human Civilization and Base-2 Conquered Computing — a 5,000-Year Story",
+    description: "Humans count in base-10 because we have 10 fingers. Computers count in base-2 because they have 2 states (on/off). The history of number bases is the history of the tools we use to count. Here's the 5,000-year story.",
+    date: "2026-07-17",
+    category: "Calculator",
+    tags: ["base converter", "number bases", "history", "binary", "decimal"],
+    relatedTools: ["base-converter", "roman-numerals", "unix-timestamp"],
+    content: `<p>You open a <a href="/en/tools/base-converter">base converter</a> and type "42." The tool shows: binary (101010), hexadecimal (2A), octal (52), and base-3 (1120). All represent the same number — forty-two. The representations are different. The quantity is the same. This is the fundamental insight of positional number systems: the value of a number is independent of the base used to represent it. The number exists. The base is just how we write it down.</p>
+
+<p>But why do humans use base-10? Why do computers use base-2? Why did the Babylonians use base-60 — and why do we still use base-60 for minutes and seconds? The history of number bases is a 5,000-year story about the tools we use to count. Here it is.</p>
+
+<h2>Base-10: The Finger Base (Invention: Prehistoric)</h2>
+
+<p>Humans use base-10 because we have 10 fingers. This is not a coincidence. Almost every human culture independently developed a base-10 counting system. The words for "ten" and "two" share roots across unrelated language families, suggesting that finger counting is a universal human behavior that predates language. The base-10 system is: a biological accident (10 fingers), not a mathematical choice, and so universal that we think of it as "natural" — but a species with 8 fingers would consider base-8 natural. The base is arbitrary. The math is universal.</p>
+
+<p>Base-10's strength: intuitive (counting on fingers is the first mathematical operation humans learn). Base-10's weakness: poor divisibility (10 is divisible only by 2 and 5 — a third of something in base-10 is 0.3333... repeating infinitely).</p>
+
+<h2>Base-60: The Babylonian Legacy (Invention: ~2000 BCE)</h2>
+
+<p>The Babylonians used base-60 — a sexagesimal system. Why 60? The leading theory: 60 is divisible by 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30 — more divisors than any smaller number. In a base-60 system, a third is 20 — an integer, not a repeating fraction. This made Babylonian mathematics exceptionally practical for commerce, astronomy, and construction.</p>
+
+<p>The Babylonian base-60 system survives today in: time (60 seconds per minute, 60 minutes per hour), angles (360 degrees in a circle — 6 × 60), and geographic coordinates (degrees, minutes, seconds). Every time you look at a clock, you are using a 4,000-year-old number system invented by people who have been dead for 150 generations. The base-60 system is the oldest continuously used mathematical convention in human history.</p>
+
+<h2>Base-2: The Computer Base (Invention: 17th Century, Conquered: 20th Century)</h2>
+
+<p>Binary — base-2 — was described by Gottfried Wilhelm Leibniz in the 17th century. Leibniz was fascinated by the elegance of a system with only two digits (0 and 1). He saw it as a philosophical ideal — a representation of creation from nothing (0) and something (1). He did not imagine it would become the foundation of all digital computation.</p>
+
+<p>Binary conquered computing because: electronic circuits have two stable states (on/off, high voltage/low voltage, magnetized/demagnetized). Two states map perfectly to two digits. The transistor — the fundamental building block of all modern computers — is a binary device. It is either conducting (1) or not conducting (0). The binary system is not a mathematical preference. It is a <strong>physical necessity</strong>. Computers do not "choose" to use binary. They are built from binary components. The base-2 system is the interface between mathematics and physics.</p>
+
+<h2>Base-16: The Human-Readable Binary (Invention: 20th Century)</h2>
+
+<p>Hexadecimal (base-16) is a compromise between binary (machine-native but unreadable to humans) and decimal (human-native but unreadable to machines). One hex digit represents exactly 4 binary digits. The binary number 1010 1100 1111 0001 is AC F1 in hex. The hex representation is 75% shorter and far less error-prone for humans to read. Programmers use hex for: memory addresses, color codes (#3B82F6), and binary data representation. Hex is the <strong>human interface</strong> to binary data.</p>
+
+<h2>What the History Teaches</h2>
+
+<p>Number bases are not mathematical truths. They are <strong>tools</strong> — shaped by human anatomy (base-10), practical commerce (base-60), and physical engineering (base-2). The same number — forty-two — is the same quantity regardless of how you write it. The base is the notation. The number is the reality. The <a href="/en/tools/base-converter">base converter</a> translates between notations. The quantity stays the same. The notation changes. The history of number bases is the history of the tools we built to count — our fingers, our markets, our machines. The tools changed. The math did not.</p>`
   },
 ];
 
@@ -204,4 +234,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 212->done.")
+print("Free station: 218->done.")
