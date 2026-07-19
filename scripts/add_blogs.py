@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (224→230) — July 18, 2026"""
+"""Add 6 blogs to free station (230→236) — July 19, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,194 +10,192 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "crypto-price-tracker-market-volatility-alerts",
-    title: "Crypto Price Tracker How to Set Alerts and Understand Market Volatility Without Obsessively Checking Prices Every Five Minutes",
-    description: "You check Bitcoin's price 47 times a day. Each check costs you attention and emotional energy. A crypto price tracker with a healthy relationship to volatility is the solution.",
-    date: "2026-07-18",
+    slug: "calendar-date-planning-event-scheduling-guide",
+    title: "Perpetual Calendar Date Planning Guide How to Schedule Events Plan Deadlines and Calculate Future Dates Beyond the Current Year",
+    description: "You need to know what day of the week June 15, 2032 falls on. Your phone calendar only goes to 2030. A perpetual calendar handles any date — past or future. Here's how to use it for long-range planning.",
+    date: "2026-07-19",
     category: "Reference",
-    tags: ["crypto price", "Bitcoin", "volatility", "alerts", "psychology"],
-    relatedTools: ["crypto-price", "roi-calculator", "compound-interest"],
-    content: `<p>You check Bitcoin's price. It is up 3%. You feel good. You check again 15 minutes later. It is down 2%. You feel anxious. You check again. And again. You are checking 47 times a day. Each check takes 15 seconds. That is 73 hours per year spent looking at a number you cannot control. The price is going to do what the price is going to do. Your attention is the only thing you can control.</p>
+    tags: ["calendar", "date planning", "scheduling", "perpetual", "long-range"],
+    relatedTools: ["perpetual-calendar", "age-calculator", "unix-timestamp"],
+    content: `<p>You are planning a 10-year anniversary event. The anniversary is June 15, 2032. You need to know: what day of the week is June 15, 2032? (It is a Tuesday — book the venue accordingly.) Your phone calendar only reaches 2030. Your project management software only handles recurring events within the current year. You need a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> — a tool that calculates the day of the week for any date, past or future, with no range limit.</p>
 
-<p>A <a href="/en/tools/crypto-price">crypto price tracker</a> is useful when it informs decisions. It is harmful when it triggers emotional reactions to noise. Here is how to track crypto prices without letting the prices track you.</p>
+<p>A perpetual calendar is not just for looking up historical dates. It is a <strong>long-range planning tool</strong>. Here is how to use it for scheduling, deadline calculation, and date planning beyond the current year.</p>
 
-<h2>Understanding Crypto Volatility</h2>
+<h2>Why Standard Calendars Fail at Long-Range Planning</h2>
 
-<p>Bitcoin's average daily price change is about 2-3% — in either direction. The stock market's average daily change is 0.5-1%. Bitcoin is 3-5× more volatile. This means: a 5% drop is a normal Tuesday, a 10% drop happens several times per year, a 20% drop happens at least once per year, and a 50%+ drop has happened multiple times and will happen again. The volatility is a feature of the asset class, not a temporary aberration. If you cannot tolerate a 50% drawdown, you should not own crypto.</p>
+<p>Digital calendars (Google Calendar, Outlook, Apple Calendar) have practical limits: they typically support dates up to 2030-2038, they struggle with events that span decades, and they are designed for recurring events within the current year ("every Tuesday"), not for one-time events years in the future. A perpetual calendar has no range limit. It calculates the day of the week for any date using the Gregorian calendar rules — including the 400-year leap year cycle. June 15, 2032? Tuesday. January 1, 2100? Friday (and not a leap year — 2100 is divisible by 100 but not by 400). The perpetual calendar knows the rules. The standard calendar knows the current year.</p>
 
-<p>The chart that causes the most anxiety is the 24-hour chart. A 2% move looks like a cliff on a compressed time scale. The same 2% move on a 1-year chart looks like a tiny blip. Zoom out. The <a href="/en/tools/crypto-price">crypto price tracker</a> shows the current price. The context is yours to provide.</p>
+<h2>Practical Long-Range Planning Uses</h2>
 
-<h2>The Healthy Tracking Strategy</h2>
+<p><strong>Event planning:</strong> Weddings, anniversaries, reunions. You want to book a venue 2-3 years in advance. The venue asks: "What day of the week?" You need to know before you can negotiate pricing. Saturdays cost more than Tuesdays. The perpetual calendar tells you the day of the week for any future date. You can plan the date around the budget.</p>
 
-<p><strong>Check once per day, at the same time.</strong> Pick a time — morning coffee, lunch break, end of workday. Check the price once. Note it. Close the tracker. The daily ritual satisfies the need to know without feeding the compulsion to check. You will miss some spikes and some dips. You will also miss the anxiety of watching every tick. The trade is worth it.</p>
+<p><strong>Deadline calculation:</strong> Contracts, legal agreements, regulatory compliance. A contract says "within 90 days of the effective date." What is the exact date 90 days from October 15, 2026? The perpetual calendar calculates it: January 13, 2027 — a Wednesday. You can calculate any deadline from any starting date. The calendar handles the math. You handle the compliance.</p>
 
-<p><strong>Set price alerts for extreme moves.</strong> The tracker lets you know when something significant happens — a 10% move in either direction. The alert removes the need to check constantly. If nothing significant has happened, there is nothing to see. The alert is the signal. The constant checking is the noise. Replace the noise with the signal.</p>
+<p><strong>Birthday and anniversary tracking:</strong> You want to know what day of the week your 50th birthday will fall on. Your 100th birthday. Your 200th birthday (the perpetual calendar can calculate it, even though you will not be there). The calendar satisfies curiosity and enables planning for milestone events years in advance.</p>
 
-<p><strong>Track your portfolio value, not individual coin prices.</strong> The portfolio view provides perspective that individual coin prices cannot. A 10% drop in one coin is less alarming if the rest of the portfolio is stable or up.</p>
+<p><strong>Historical research:</strong> You read that a historical event occurred on "Tuesday, March 15, 1927." The perpetual calendar confirms it: March 15, 1927 was indeed a Tuesday. The calendar verifies historical dates and helps researchers establish timelines.</p>
 
-<h2>What the Price Tracker Cannot Tell You</h2>
+<h2>The Math Behind the Calendar</h2>
 
-<p>The price tracker tells you what the market believes an asset is worth right now. It cannot tell you: whether the price will go up or down tomorrow, whether now is a good time to buy or sell, or whether the current price is fair or a bubble. The price is information. The investment decision is judgment. Confuse the two, and you will buy when the price is high because it feels like it will keep going up, and sell when the price is low because it feels like it will keep going down.</p>
-
-<p>Track responsibly at <a href="/en/tools/crypto-price">crypto price tracker</a> — once a day, with alerts for extremes, and the zoomed-out perspective of a long-term holder.</p>`
+<p>The perpetual calendar uses modular arithmetic: calculate the number of days between a known reference date (January 1, 1900 was a Monday) and the target date, accounting for leap years using the Gregorian rule, divide by 7, and take the remainder. Remainder 0 = same day as reference. Remainder 1 = next day. The math is simple. The leap year rules are the complexity. The perpetual calendar handles both. The <a href="/en/tools/perpetual-calendar">perpetual calendar tool</a> does the math instantly. You enter the date. It tells you the day. No manual calculation. No range limit. Any date. Past or future.</p>`
   },
   {
-    slug: "hashtag-generator-social-media-niche-vs-trending",
-    title: "Hashtag Generator Social Media Strategy Niche vs Trending Tags — Why Smaller Hashtags Often Deliver Better Engagement Than Viral Ones",
-    description: "#love has 2 billion posts. Your post will be buried in seconds. #handmadeceramicmugs has 5,000 posts. Your post will be discovered for weeks. Here's the niche hashtag strategy.",
-    date: "2026-07-18",
-    category: "Text Tools",
-    tags: ["hashtag generator", "social media", "niche", "engagement", "strategy"],
-    relatedTools: ["hashtag-generator", "text-sorter", "word-counter"],
-    content: `<p>You post a photo of a ceramic mug you made. You add hashtags: #love (2 billion posts), #art (950 million), #handmade (300 million). Your post receives 12 likes — all from people you know. Your post was buried in the flood of content within seconds. The hashtags were too big. They did not help you get discovered. They helped you get <strong>lost</strong>.</p>
-
-<p>Now you post the same photo with different hashtags: #handmadeceramicmugs (5,000 posts), #stonewarepottery (12,000), #smallbatchceramics (8,000). Your post receives 47 likes — including from people you have never met. Your post is discovered for weeks, not seconds. The hashtags were smaller. The reach was larger — because the audience was <strong>targeted</strong>, not generic.</p>
-
-<p>A <a href="/en/tools/hashtag-generator">hashtag generator</a> helps you find relevant tags. But the strategy — niche vs trending — determines whether those tags actually work. Here is the niche hashtag strategy for social media growth.</p>
-
-<h2>Why Niche Hashtags Outperform Trending Hashtags</h2>
-
-<p>Trending hashtags have massive audiences and massive competition. Millions of posts per day. Your post is visible for seconds. The audience is broad and untargeted. Niche hashtags have small audiences and low competition. Dozens or hundreds of posts per day. Your post stays visible for hours, days, or weeks. The audience is targeted — the people following #handmadeceramicmugs are specifically interested in handmade ceramic mugs. They are your ideal customer.</p>
-
-<p>The paradox of social media: smaller audience = larger reach. The niche is the advantage. The hashtag with 400,000× fewer posts delivers more engagement.</p>
-
-<h2>The 3-Tier Hashtag Strategy</h2>
-
-<p>Use 3 tiers for each post: 5 niche tags (1K-50K posts — your direct community), 5 mid-size tags (50K-500K — your broader niche), and 5 broad tags (500K+ — the lottery ticket). The niche tags deliver targeted discovery. The mid-size tags deliver broader reach. The broad tags are a lottery ticket — sometimes they work, usually they do not, but they cost nothing.</p>
-
-<p>Use the <a href="/en/tools/hashtag-generator">hashtag generator</a> to find tags at each tier. Search your specific topic. Look for related suggestions. The generator finds the tags. The strategy determines which ones to use. Niche for discovery. Mid-size for reach. Broad for the lottery.</p>
-
-<h2>How to Know If Your Strategy Is Working</h2>
-
-<p>Check your post insights: how many impressions came from hashtags? If under 10%, your hashtags are too broad or irrelevant. Adjust toward niche. Test different combinations on different posts. Track which combinations deliver the most impressions. The data tells you which tags work. The strategy tells you to focus on niche.</p>
-
-<p>Generate your hashtags at <a href="/en/tools/hashtag-generator">free hashtag generator</a> — find the niche tags, build the 3-tier strategy, and let the small audiences deliver the big results.</p>`
-  },
-  {
-    slug: "income-tax-calculator-self-employed-freelancer-quarterly",
-    title: "Income Tax Calculator for Self-Employed Freelancers How to Estimate Your Quarterly Taxes and Avoid the April Surprise",
-    description: "You earned $80,000 as a freelancer this year. No employer withheld taxes. The IRS expects quarterly estimated payments — and the penalty for not paying is 7% interest. Here's how to estimate and pay on time.",
-    date: "2026-07-18",
-    category: "Calculators",
-    tags: ["income tax calculator", "freelancer", "self-employed", "quarterly taxes", "estimated payments"],
-    relatedTools: ["income-tax-calculator", "percentage-calculator", "roi-calculator"],
-    content: `<p>You quit your job in January to freelance full-time. It is now December. You earned $80,000 this year. No taxes were withheld from any of it. You do your taxes and discover: you owe $18,200 in income tax and self-employment tax, plus a $640 penalty for not making quarterly estimated payments, plus interest. The total bill is as much as a used car. You were not prepared. Nobody told you about quarterly taxes.</p>
-
-<p>An <a href="/en/tools/income-tax-calculator">income tax calculator</a> estimates your tax liability — but the freelancer's real challenge is not calculating the tax. It is <strong>paying it on time</strong>. Here is the quarterly estimated tax system for self-employed workers.</p>
-
-<h2>Why Freelancers Have to Pay Quarterly</h2>
-
-<p>The US tax system is pay-as-you-go. Employees have taxes withheld from every paycheck. Self-employed workers have no employer, no withholding, no automatic payments. The IRS requires estimated tax payments four times per year: April 15 (Jan-Mar), June 15 (Apr-May), September 15 (Jun-Aug), and January 15 of the following year (Sep-Dec).</p>
-
-<p>If you do not make estimated payments — or if you underpay — the IRS charges a penalty. The penalty rate is currently about 7%, calculated from each quarterly deadline. The penalty is avoidable. The calculator tells you how much to pay. The calendar tells you when.</p>
-
-<h2>How to Calculate Your Quarterly Estimated Taxes</h2>
-
-<p><strong>Step 1: Estimate your annual income.</strong> Look at your earnings so far this year. Project them forward. If your income varies, use a conservative estimate — it is better to overpay slightly and get a refund than underpay and owe a penalty.</p>
-
-<p><strong>Step 2: Estimate your deductions.</strong> Self-employed workers can deduct: business expenses (equipment, software, home office, travel), health insurance premiums, retirement contributions (SEP IRA, Solo 401k), and half of the self-employment tax.</p>
-
-<p><strong>Step 3: Calculate your total tax liability.</strong> Use the <a href="/en/tools/income-tax-calculator">income tax calculator</a> with your estimated income and deductions. The calculator estimates federal income tax, self-employment tax (15.3% — Social Security and Medicare), and state income tax. The total is your estimated annual liability.</p>
-
-<p><strong>Step 4: Divide by 4 and pay quarterly.</strong> Estimated annual tax ÷ 4 = quarterly payment. If your income changes, adjust the remaining payments. The IRS provides Form 1040-ES for calculating and paying estimated taxes.</p>
-
-<h2>The Safe Harbor Rule: How to Avoid Penalties Entirely</h2>
-
-<p>If you pay at least 100% of last year's tax liability (or 110% if your AGI was over $150,000), you will not owe a penalty — even if you underpay for the current year. The safe harbor is the simplest strategy: pay 100% (or 110%) of last year's tax in equal quarterly installments. Conservative. Penalty-proof.</p>
-
-<p>Calculate your estimated taxes at <a href="/en/tools/income-tax-calculator">income tax calculator</a> — estimate, calculate, divide by 4, and pay quarterly. The April surprise is avoidable.</p>`
-  },
-  {
-    slug: "dice-roller-vs-random-name-generator-probability-vs-creativity",
-    title: "Dice Roller vs Random Name Generator Probability vs Creativity — Two Random Tools That Serve Completely Different Creative Needs",
-    description: "A dice roller gives numbers with predictable probability distributions. A random name generator gives names with no probability distribution — just variety. Both random. Both creative. But different.",
-    date: "2026-07-18",
+    slug: "stopwatch-timer-interval-training-athletic-performance",
+    title: "Stopwatch and Timer for Interval Training How Athletes Use Precision Timing to Optimize Workouts and Track Performance Gains",
+    description: "High-intensity interval training requires precise work/rest ratios — 30 seconds on, 15 seconds off, repeat. A stopwatch and timer with interval mode handles this. Here's the athletic training guide.",
+    date: "2026-07-19",
     category: "Fun & Media",
-    tags: ["dice roller", "random name generator", "probability", "creativity", "comparison"],
-    relatedTools: ["dice-roller", "random-name-generator", "random-number-generator"],
-    content: `<p>You are designing a role-playing game. You need two systems: a <strong>combat mechanic</strong> (how much damage does the sword do?) and a <strong>character naming system</strong> (what is the innkeeper called?). For combat, you use a <a href="/en/tools/dice-roller">dice roller</a>. The dice produce numbers with a predictable probability distribution — 2d6 produces 7 most often, 2 and 12 least often. The probability is the mechanic. The mechanic shapes the gameplay.</p>
+    tags: ["stopwatch", "timer", "interval training", "athletic", "performance"],
+    relatedTools: ["stopwatch-and-timer", "scoreboard", "reaction-test"],
+    content: `<p>You are doing high-intensity interval training (HIIT). The protocol: 30 seconds of maximum effort, 15 seconds of rest, repeat 8 times. You start the workout. You try to track the intervals by glancing at the clock on the wall. After the second interval, you lose count. After the fourth, you cannot remember if you are on interval 4 or 5. You rest too long between intervals because you are not tracking the rest period precisely. The workout is supposed to be 8 intervals of 30/15. It becomes "some intervals of approximately 30/20-ish." The precision is lost. The training effect is diminished.</p>
 
-<p>For naming, you use a <a href="/en/tools/random-name-generator">random name generator</a>. The generator produces names — Elara, Thorne, Kael. They have no probability distribution. They are just <strong>different</strong>. Variety is the mechanic. Variety shapes the world-building.</p>
+<p>A <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> with interval tracking eliminates the guesswork. Set the work period. Set the rest period. Set the number of intervals. The timer handles the rest. You handle the effort. Here is the interval training guide for athletes and fitness enthusiasts.</p>
 
-<p>Both tools are "random." Both serve creativity. But they serve completely different creative needs — and confusing probability with variety leads to game mechanics that feel unfair and naming systems that feel repetitive. Here is the difference.</p>
+<h2>Why Precision Timing Matters for Training</h2>
 
-<h2>Dice Roller: Controlled Randomness</h2>
+<p>Interval training works by manipulating the <strong>work-to-rest ratio</strong>. Different ratios target different energy systems: 1:1 ratio (30s work, 30s rest) — aerobic endurance, 2:1 ratio (30s work, 15s rest) — lactate threshold, 3:1 or higher (45s work, 15s rest) — anaerobic power. The ratio determines the training effect. If the rest period is too long, the training effect shifts from anaerobic to aerobic. If the rest period is too short, the athlete cannot complete the intervals at the target intensity. The precision of the timing determines the precision of the training effect.</p>
 
-<p>A dice roller produces numbers with a <strong>known probability distribution</strong>. Roll 1d20: every number has a 5% chance. Roll 2d6: 7 has 16.7%, 2 has 2.8%. The distribution is predictable. The outcomes are bounded. The probabilities are known. This is <strong>controlled randomness</strong> — the designer chooses the dice to create the desired probability curve.</p>
+<p>A timer that enforces the exact work/rest ratio ensures: the training effect matches the intended goal, the athlete can track progress over time (consistent intervals = comparable workouts), and the workout is reproducible (the same protocol produces the same training stimulus).</p>
 
-<p>Dice are used for: game mechanics (damage, skill checks, encounters), simulation (modeling natural phenomena), and decision-making (random selection with known probabilities).</p>
+<h2>Common Interval Training Protocols</h2>
 
-<h2>Random Name Generator: Creative Randomness</h2>
+<p><strong>Tabata:</strong> 20 seconds work, 10 seconds rest, 8 rounds (4 minutes total). One of the most researched HIIT protocols. Targets maximum aerobic and anaerobic capacity. The 20/10 split is unforgiving — the timer is essential.</p>
 
-<p>A random name generator produces names from a pool of possibilities — a database of name components, cultural patterns, and linguistic rules. The generator does not produce "numbers." It produces <strong>creative options</strong>. The probability of any specific name is irrelevant. The variety is the point.</p>
+<p><strong>30/15 HIIT:</strong> 30 seconds work, 15 seconds rest, 8-12 rounds. A balanced protocol that builds both aerobic and anaerobic fitness. The 2:1 ratio is the most versatile for general fitness.</p>
 
-<p>The dice roller says: "Here are the odds. Plan your strategy accordingly." The name generator says: "Here is an option you would not have thought of. Use it or generate another." The dice inform decisions. The names suggest possibilities. Both are random. Both serve creativity. The difference is in what the randomness <strong>does</strong>.</p>
+<p><strong>Sprint intervals:</strong> 15-30 seconds maximum sprint, 2-4 minutes rest (full recovery), 6-10 rounds. The long rest period allows full recovery between sprints. The goal is maximum speed on every interval. The timer ensures the rest period is long enough for full recovery.</p>
 
-<h2>When to Use Each (and When to Use Both)</h2>
+<p><strong>EMOM (Every Minute on the Minute):</strong> Complete a set amount of work at the start of each minute. Rest for the remainder of the minute. The work time shrinks as you fatigue. The timer enforces the minute boundary. EMOM is self-regulating — the work is fixed, the rest adjusts to your fitness level.</p>
 
-<p>Use the dice roller when: you need a random outcome with a known probability distribution, you are designing a game mechanic, or you need fair random selection. Use the random name generator when: you need creative inspiration, you are building a fictional world, or your imagination is drawing a blank.</p>
+<h2>Using the Stopwatch for Performance Tracking</h2>
 
-<p>Use both together for RPG world-building: the dice roller determines how many NPCs are in the tavern (1d6+3). The name generator names each one. The dice create the structure. The names fill it with life. Probability and creativity. Dice and names. The random number makes the world consistent. The random name makes the world feel real.</p>
-
-<p>Roll dice at <a href="/en/tools/dice-roller">dice roller</a> and generate names at <a href="/en/tools/random-name-generator">random name generator</a> — probability and creativity. Different randomness. Different creative tools.</p>`
+<p>The stopwatch mode is for: time trials (how fast can you complete a fixed distance or workout?), benchmark workouts (tracking the same workout over time to measure improvement), and rest periods between sets (enforcing consistent rest between strength training sets). The timer mode is for intervals. The stopwatch mode is for continuous effort. The <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> supports both. Use the timer for structured intervals. Use the stopwatch for tracking continuous performance. The precision of the timing determines the quality of the training. The quality of the training determines the rate of improvement.</p>`
   },
   {
-    slug: "qr-code-generator-vs-barcode-generator-design-guide",
-    title: "QR Code Generator vs Barcode Generator How to Design Codes That Actually Scan — Size Color and Contrast Guidelines for Print and Digital",
-    description: "A QR code that is too small, too low-contrast, or printed on a curved surface will not scan. Here's how to design scannable codes that actually work in the real world.",
-    date: "2026-07-18",
+    slug: "free-translator-browser-extension-vs-website-workflow",
+    title: "Free Online Translator Browser Extension vs Website Tool Which Translation Workflow Is Faster for Different Types of Content",
+    description: "A browser extension translates web pages inline. A website translator handles long-form documents and custom text. Both are free. Both use the same AI. But the workflow is completely different.",
+    date: "2026-07-19",
+    category: "Text Tools",
+    tags: ["free translator", "browser extension", "workflow", "comparison", "productivity"],
+    relatedTools: ["translate", "text-to-slug", "word-counter"],
+    content: `<p>You need to translate a Spanish news article. You could: right-click in your browser and select "Translate to English" — the extension translates the entire page inline, preserving the formatting. Or you could copy the text, paste it into a <a href="/en/tools/translate">free online translator</a>, and read the translation alongside the original. Both are free. Both use neural machine translation. Both produce the same translation quality. But the <strong>workflow</strong> is completely different — and the right choice depends on what you are translating and why.</p>
+
+<p>Here is when to use each translation workflow, and how to combine them for different types of content.</p>
+
+<h2>Browser Extension Translation: Inline, Instant, Immersive</h2>
+
+<p>Browser-based translation (Chrome's built-in translator, browser extensions) translates entire web pages inline — the translated text replaces the original on the page. The formatting is preserved. The images are preserved. The layout is preserved. You read the translated page as if it were originally written in your language.</p>
+
+<p>Best for: reading foreign-language news articles and blog posts (you want to consume the content, not study the language), browsing foreign-language websites (shopping, research, travel planning), and getting the gist of a page quickly (the inline translation is fast — one click, and the entire page is translated).</p>
+
+<p>Worst for: comparing original and translation (the original text is hidden — you cannot see both versions side by side), copying and saving the translation (the translated text is ephemeral — it disappears when you refresh the page), and translating custom text (you cannot paste your own text into a browser extension — it only translates pages).</p>
+
+<h2>Website Translator Tool: Deliberate, Side-by-Side, Customizable</h2>
+
+<p>A website-based <a href="/en/tools/translate">free online translator</a> is a dedicated tool: you paste text into the input box, select the source and target languages, and the translation appears in the output box. The original and translation are visible side by side. You can edit the input. You can copy the output. You can translate any text — not just web pages.</p>
+
+<p>Best for: translating specific text (emails, documents, messages, custom content), comparing original and translation (side-by-side view for language learning or verification), and translating long-form content (paste an entire document and get a complete translation).</p>
+
+<p>Worst for: translating entire web pages (you have to copy and paste the content manually — the browser extension does this automatically), and quick browsing (opening a separate tab and pasting text is slower than inline translation).</p>
+
+<h2>The Hybrid Workflow: Use Both</h2>
+
+<p>Use the browser extension for: browsing and discovering content in foreign languages. When you find a page worth reading in detail, use the website translator for: deep reading and comparison. The extension is for exploration. The website tool is for study. The extension handles the 90% of translations where you just need the gist. The website tool handles the 10% where you need precision, comparison, or a saved copy of the translation.</p>
+
+<p>Both tools are free. Both use the same neural machine translation technology. The difference is the workflow. Use the right workflow for the right task. Translate at <a href="/en/tools/translate">free online translator</a> — for when you need more than inline translation.</p>`
+  },
+  {
+    slug: "json-to-csv-vs-csv-to-json-data-conversion-round-trip",
+    title: "JSON to CSV vs CSV to JSON The Data Conversion Round Trip — What Gets Lost When You Convert Between Formats and Why the Original Is Always Better",
+    description: "You convert JSON to CSV for Excel analysis, then back to JSON for your API. The round trip is lossy — nested objects flatten, arrays become strings, and types disappear. Here's what gets lost in each direction.",
+    date: "2026-07-19",
     category: "Developer",
-    tags: ["QR code generator", "barcode generator", "design", "scanning", "guidelines"],
-    relatedTools: ["qr-code-generator", "barcode-generator", "qr-code-scanner"],
-    content: `<p>You generate a QR code for a marketing flyer. It looks perfect on your screen. You print 5,000 copies. The QR code does not scan on any of them. The problem: the code is printed at 1×1 cm — too small. The contrast is too low — the printer's ink made dark modules lighter and the paper's off-white made the background darker. Error correction was set to L (7%) — not enough to compensate. Three design choices. Three failures. Five thousand unusable flyers.</p>
+    tags: ["JSON to CSV", "CSV to JSON", "data conversion", "round trip", "lossy"],
+    relatedTools: ["json-to-csv", "csv-to-json", "json-formatter"],
+    content: `<p>You receive a JSON file from an API: 2,000 customer records, each with nested objects (address, preferences, order history) and typed fields (dates, numbers, booleans). You need to analyze the data in Excel. Excel does not read JSON natively. You use a <a href="/en/tools/json-to-csv">JSON to CSV converter</a> to flatten the JSON into a CSV file. The CSV opens in Excel. You analyze the data. You make changes. You convert the CSV back to JSON with a <a href="/en/tools/csv-to-json">CSV to JSON converter</a>. The round-trip JSON looks different from the original. The nested objects are gone — flattened into dot-notation keys. The types are gone — everything is a string. The arrays are gone — converted to comma-separated strings. The round trip was <strong>lossy</strong>. Information was destroyed in both directions.</p>
 
-<p>A <a href="/en/tools/qr-code-generator">QR code generator</a> and a <a href="/en/tools/barcode-generator">barcode generator</a> create scannable codes. But <strong>designing</strong> codes that actually scan in the real world — on paper, on products, in variable lighting, at different distances — requires following specific guidelines. Here is the design guide for scannable codes.</p>
+<p>Here is exactly what gets lost when you convert between JSON and CSV — and why the original JSON is always better than the round-tripped version.</p>
 
-<h2>QR Code Design Guidelines</h2>
+<h2>JSON → CSV: What Gets Lost</h2>
 
-<p><strong>Size:</strong> Minimum size = scanning distance ÷ 10. A code scanned from 10 cm away needs to be at least 1×1 cm. Scanned from 1 meter away needs to be at least 10×10 cm. Measure the expected scanning distance. Divide by 10. That is the minimum size.</p>
+<p><strong>Nested objects:</strong> JSON supports nested structures — objects within objects, objects within arrays. CSV is a flat table — rows and columns. Nested objects are flattened using dot notation: <code>{"user": {"name": "John", "address": {"city": "NYC"}}}</code> becomes columns <code>user.name</code> and <code>user.address.city</code>. The structure is represented. The hierarchy is lost. You cannot reconstruct the original nesting from the flattened keys — the converter guesses at the structure, and the guess might be wrong.</p>
 
-<p><strong>Contrast:</strong> Dark modules on a light background. Black on white is ideal. Dark blue on light gray usually works. Light gray on white does not. Red on green does not work for color-blind users. The safe choice: black on white.</p>
+<p><strong>Arrays:</strong> JSON supports arrays — ordered lists of values. CSV does not. Arrays are converted to comma-separated strings: <code>[1, 2, 3]</code> becomes <code>"1,2,3"</code>. The array is represented as a string. The types of the elements are lost. The array structure is lost. You cannot reconstruct the original array from the string — the converter does not know whether "1,2,3" was an array of numbers or a single string that happens to contain commas.</p>
 
-<p><strong>Quiet zone:</strong> A white border around the code equal to 4 modules wide. Without it, the scanner cannot identify where the code begins and ends. Do not crop into the quiet zone.</p>
+<p><strong>Data types:</strong> JSON has types — strings, numbers, booleans, null. CSV has no types — everything is a string. <code>42</code> becomes <code>"42"</code>. <code>true</code> becomes <code>"true"</code>. <code>null</code> becomes <code>""</code> or <code>"null"</code>. The type information is lost. When you convert back to JSON, the converter must guess the types. The guess is based on heuristics — if a value looks like a number, it becomes a number. The heuristic is usually correct. When it is wrong, the data is corrupted.</p>
 
-<p><strong>Error correction:</strong> L (7%) for screen display. M (15%) for flat print. Q (25%) for products that may get scratched. H (30%) for harsh environments. Higher correction = denser code. For most print, M or Q is right.</p>
+<h2>CSV → JSON: What Gets Added (That Was Not There Before)</h2>
 
-<h2>Barcode Design Guidelines</h2>
+<p>The CSV to JSON converter makes assumptions about the data: every row becomes a JSON object, the first row is assumed to be headers, and all values are strings unless the converter infers types. The assumptions are usually correct. When they are wrong: the first row was not headers but data — the converter used the data as keys, and the actual data is lost. A column contained mixed types — some numbers, some strings. The converter inferred the type from the first value and mishandled the rest. A column contained empty values — the converter converted them to empty strings, null, or omitted them entirely, depending on the converter's configuration.</p>
 
-<p><strong>Orientation:</strong> Barcode bars run perpendicular to the long edge of the product. A horizontal barcode is scanned by a vertical laser. Do not rotate unless the scanning system expects it.</p>
+<h2>The Golden Rule of Data Conversion</h2>
 
-<p><strong>Color:</strong> Dark bars on a light background. Never white bars on dark — most scanners cannot read reversed barcodes. Never red bars — many laser scanners use red light, invisible against red.</p>
+<p>Always preserve the original JSON. The CSV is a <strong>working copy</strong> for analysis. The original JSON is the <strong>authoritative version</strong>. The round trip is lossy. The original is lossless. When you need to edit the data, edit the original JSON — not the CSV. The CSV is for reading. The JSON is for storing. Confuse the two, and you will lose data in the conversion.</p>
 
-<p><strong>Placement:</strong> Flat, smooth surfaces only. Avoid: curved surfaces (distorts bar widths), edges and corners (wrapping), and textured surfaces (interferes with laser reflection). On a product, place on the back or bottom — flat and unobstructed.</p>
-
-<p>Generate scannable codes at <a href="/en/tools/qr-code-generator">QR code generator</a> and <a href="/en/tools/barcode-generator">barcode generator</a> — and design them to scan in the real world, not just on your screen.</p>`
+<p>Convert at <a href="/en/tools/json-to-csv">JSON to CSV</a> for analysis and <a href="/en/tools/csv-to-json">CSV to JSON</a> for API compatibility. But always keep the original JSON. The round trip is lossy. The original is the truth.</p>`
   },
   {
-    slug: "world-map-history-ptolemy-to-google-maps",
-    title: "The History of World Maps From Ptolemy's Geography to Google Maps — How Humans Have Been Drawing the World for 2,000 Years",
-    description: "In 150 CE, Ptolemy drew a world map showing Europe, Asia, and Africa — and a giant unknown southern continent. In 2026, you open a world map tool and see your house from space. Here's the 2,000-year journey.",
-    date: "2026-07-18",
+    slug: "nasa-apod-vs-bing-wallpaper-space-vs-earth",
+    title: "NASA APOD vs Bing Wallpaper Space vs Earth Daily Images — Two Free Daily Photo Services That Expand Your Mind in Different Directions",
+    description: "NASA APOD shows you the universe — galaxies, nebulae, black holes. Bing Wallpaper shows you the Earth — landscapes, wildlife, cultures. Both are free, daily, and high-resolution. Both change how you see the world.",
+    date: "2026-07-19",
     category: "Reference",
-    tags: ["world map", "history", "cartography", "Ptolemy", "Google Maps"],
-    relatedTools: ["world-map", "ip-lookup", "global-weather"],
-    content: `<p>In 150 CE, Claudius Ptolemy wrote "Geography" — an 8-volume treatise with instructions for drawing a map of the known world. His map showed Europe, Asia, and Africa around the Mediterranean, the Indian Ocean as an enclosed sea, and a massive unknown southern continent — "Terra Australis Incognita." Ptolemy was wrong about almost everything. But his method — latitude and longitude, a coordinate system for the entire world — was correct. His map was the foundation of Western cartography for 1,400 years.</p>
+    tags: ["NASA APOD", "Bing wallpaper", "astronomy", "photography", "daily"],
+    relatedTools: ["nasa-apod", "bing-wallpaper", "pet-wallpaper"],
+    content: `<p>You open your laptop on Monday. The desktop background is a <a href="/en/tools/nasa-apod">NASA APOD</a> image: the Carina Nebula — 7,500 light-years away, a cloud of gas and dust 300 light-years across, where stars are being born. The image was captured by the James Webb Space Telescope. You stare at it for a moment. You are a tiny creature on a tiny planet in a tiny solar system in a galaxy of 100 billion stars. The image expands your mind outward — toward the cosmos.</p>
 
-<p>In 2026, you open a <a href="/en/tools/world-map">world map tool</a> on your phone. It shows your exact location in real time, satellite imagery of your house, street-level views of any city, and directions anywhere. The journey from Ptolemy's speculation to Google Maps' precision is a 2,000-year story of human ingenuity. Here it is.</p>
+<p>On Tuesday, the desktop background is a <a href="/en/tools/bing-wallpaper">Bing Wallpaper</a> image: a rice terrace in Bali, Indonesia — layers of green descending a hillside, a farmer in a conical hat, morning mist rising from the valley. The image was captured by a professional photographer. You stare at it for a moment. This is a real place on Earth. A real person is working in that field right now. The image expands your mind outward — toward the planet you live on.</p>
 
-<h2>150-1500: The Age of Speculation</h2>
+<p>Both services are free, daily, and high-resolution. Both change your desktop background to something beautiful. But they expand your mind in different directions. Here is the difference.</p>
 
-<p>Medieval European maps — "mappae mundi" — were religious documents, not geographical ones. The Hereford Mappa Mundi (c. 1300) placed Jerusalem at the center and Eden at the top. Geography was theology. Meanwhile, Arab and Chinese cartographers produced more accurate maps. Al-Idrisi's "Tabula Rogeriana" (1154) was the most accurate world map of the medieval period, showing Europe, Asia, and North Africa with remarkable precision.</p>
+<h2>NASA APOD: The Universe Perspective</h2>
 
-<h2>1500-1900: The Age of Exploration</h2>
+<p>The Astronomy Picture of the Day has been published every single day since June 16, 1995 — over 11,000 consecutive days. Each image is chosen by professional astronomers and accompanied by a clear, accessible explanation. The images show: galaxies, nebulae, and star clusters (the large-scale structure of the universe), planets, moons, and comets (our solar system neighbors), and spacecraft, telescopes, and astronauts (the human tools we use to explore space).</p>
 
-<p>European voyages to the Americas, Africa, and Asia filled in the blank spaces. In 1507, Martin Waldseemüller's world map was the first to use the name "America" and the first to show the Americas as a separate continent. It was a radical act — redrawing the world based on evidence, not tradition. By the 19th century, the world's coastlines were accurately mapped. The basic shape of the world was established. The map was no longer speculative. It was <strong>measured</strong>.</p>
+<p>The emotional effect of APOD is <strong>awe</strong> — the feeling of being in the presence of something vast and incomprehensible. The Carina Nebula is 300 light-years across. Light takes 300 years to travel from one side to the other. You are looking at a structure so large that your brain cannot process the scale. The awe is humbling. It is also perspective-giving. Your problems are small compared to the Carina Nebula. The universe does not care about your quarterly review. The APOD image is a daily reminder of scale.</p>
 
-<h2>1900-Present: The Age of Precision</h2>
+<h2>Bing Wallpaper: The Earth Perspective</h2>
 
-<p>Aerial photography (WWI), satellite imagery (Cold War), and GPS (1990s) transformed cartography. Key milestones: Landsat 1 (1972) — the first Earth-observing satellite. GPS becomes civilian (2000). Google Maps (2005) combines satellite imagery, street maps, and navigation. Smartphone mapping (2010s) makes detailed maps ubiquitous.</p>
+<p>Bing Wallpaper publishes one high-resolution photograph every day — landscapes, wildlife, architecture, and cultural events from around the world. Each image includes a short description of what you are seeing and where it is. The images are curated by a team of photo editors. The images show: natural wonders (mountains, oceans, forests, deserts), human culture (festivals, architecture, daily life), and wildlife (animals in their natural habitats).</p>
 
-<p>The map on your phone is the product of: Ptolemy's coordinate system, Waldseemüller's willingness to challenge tradition, centuries of exploration, and decades of satellite and GPS technology. Each generation corrected the errors of the previous one. Each added new layers of precision. The map is never finished. It is always being redrawn. The <a href="/en/tools/world-map">world map tool</a> is the latest draft.</p>`
+<p>The emotional effect of Bing Wallpaper is <strong>wonder</strong> — the feeling of discovering something beautiful and new about the planet you live on. The rice terrace in Bali is a real place. You could go there. You could see it with your own eyes. The wonder is aspirational. It is also connecting. The image reminds you that Earth is full of beauty worth exploring. The Bing Wallpaper is a daily reminder of the planet.</p>
+
+<h2>The Complementary Pair</h2>
+
+<p>NASA APOD shows you the universe. Bing Wallpaper shows you the Earth. One reminds you how small you are. The other reminds you how beautiful your home is. Both are free. Both are daily. Both are worth setting as your rotating desktop background. Start your day with the universe at <a href="/en/tools/nasa-apod">NASA APOD</a> and with the Earth at <a href="/en/tools/bing-wallpaper">Bing Wallpaper</a>. The cosmos and the planet. Two daily reminders of scale and beauty.</p>`
+  },
+  {
+    slug: "zodiac-sign-astronomy-vs-astrology-science-divide",
+    title: "The Astronomy vs Astrology Divide Why Your Zodiac Sign Is Not Where You Think It Is — and the 2,000-Year Drift That Changed Everything",
+    description: "You think you are a Leo. But the Sun was actually in Cancer on your birthday. The zodiac signs have drifted by about one full sign over 2,000 years. Here's the astronomy behind the astrology.",
+    date: "2026-07-19",
+    category: "Reference",
+    tags: ["zodiac sign", "astronomy", "astrology", "precession", "science"],
+    relatedTools: ["zodiac-sign", "perpetual-calendar", "nasa-apod"],
+    content: `<p>You were born on August 10. Your zodiac sign is Leo. You have identified as a Leo your entire life. You have read Leo horoscopes. You have agreed with Leo personality descriptions. There is one problem: on August 10, the Sun is actually in the constellation <strong>Cancer</strong> — not Leo. The zodiac signs used by astrologers are off by about one full sign. The Leo you think you are is, astronomically, a Cancer. The horoscope you have been reading was for the wrong sign.</p>
+
+<p>This is not a conspiracy. It is a 2,000-year-old astronomical error caused by the <strong>precession of the equinoxes</strong> — the slow wobble of Earth's axis. A <a href="/en/tools/zodiac-sign">zodiac sign finder</a> tells you your traditional astrological sign. The astronomy tells you where the Sun actually was. Here is the science behind the divide.</p>
+
+<h2>The Precession Problem: Why the Zodiac Drifted</h2>
+
+<p>Earth's axis wobbles — like a spinning top slowing down. One complete wobble takes about 26,000 years. This wobble is called <strong>axial precession</strong>. The effect: the position of the Sun against the background stars on any given date shifts by about 1 degree every 72 years. Over 2,000 years — the time since the zodiac was formalized by the Babylonians and Greeks — the shift is approximately 28 degrees, or about <strong>one full zodiac constellation</strong>.</p>
+
+<p>The zodiac was defined around 500 BCE, when the Sun was in Aries on the spring equinox. Today, the Sun is in <strong>Pisces</strong> on the spring equinox. The zodiac signs have drifted by one full sign. The astrological calendar has not been updated. The astronomical calendar has. The result: most people's astrological sign is one sign behind their astronomical constellation.</p>
+
+<h2>There Are Actually 13 Zodiac Constellations</h2>
+
+<p>The traditional zodiac has 12 signs. The Sun's path across the sky — the ecliptic — actually passes through <strong>13 constellations</strong>. The 13th is <strong>Ophiuchus</strong> — the Serpent Bearer. The Sun is in Ophiuchus from approximately November 29 to December 17. If you were born between those dates, your Sun was in Ophiuchus — a constellation that does not exist in traditional astrology. The Babylonians knew about Ophiuchus. They excluded it to keep the zodiac at 12 signs — one for each month of their calendar. The exclusion was a calendar convenience, not an astronomical reality.</p>
+
+<h2>Why Astrology and Astronomy Diverged</h2>
+
+<p>Astrology and astronomy were once the same discipline. Babylonian priest-astronomers tracked the movements of the planets and stars for both religious and practical purposes — predicting seasons, scheduling planting, interpreting omens. The distinction between "what the stars do" (astronomy) and "what the stars mean" (astrology) did not exist.</p>
+
+<p>The split occurred during the Scientific Revolution (1500-1700). Astronomy became a science — based on observation, mathematics, and falsifiable predictions. Astrology remained a belief system — based on tradition, interpretation, and unfalsifiable claims. Astronomy updated its models when new data arrived (the precession of the equinoxes was discovered by Hipparchus in 127 BCE — the zodiac was not updated). Astrology did not update its models. The divergence was not about accuracy. It was about <strong>willingness to update based on evidence</strong>.</p>
+
+<h2>What This Means for Your Zodiac Sign</h2>
+
+<p>Your zodiac sign is a <strong>cultural tradition</strong>, not an astronomical fact. It reflects the sky as it was 2,000 years ago, not the sky as it is today. You can identify with your traditional sign as a cultural practice. You can also recognize that the Sun was actually in a different constellation on your birthday. The two facts are not contradictory. They are different frameworks for different purposes. The <a href="/en/tools/zodiac-sign">zodiac sign finder</a> tells you your traditional sign. The astronomy tells you where the Sun actually was. Culture and science. Both are real. They just describe different things.</p>`
   },
 ];
 
@@ -208,4 +206,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 224->done.")
+print("Free station: 230->done.")
