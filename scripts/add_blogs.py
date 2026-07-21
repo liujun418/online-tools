@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (236→242) — July 20, 2026"""
+"""Add 6 blogs to free station (242→248) — July 21, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,184 +10,186 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "mortgage-calculator-first-time-home-buyer-guide",
-    title: "Mortgage Calculator for First-Time Home Buyers How to Estimate Your True Monthly Payment Including PMI Taxes and Insurance",
-    description: "The mortgage calculator says $1,800/month. Your actual payment will be $2,400. Here's what the calculator leaves out — and how to estimate the real number before you make an offer.",
-    date: "2026-07-20",
+    slug: "emi-calculator-car-loan-vs-personal-loan-vs-home",
+    title: "EMI Calculator Car Loan vs Personal Loan vs Home Loan How Interest Rates and Terms Differ Across Loan Types — and How to Compare Them",
+    description: "A car loan at 6% for 5 years, a personal loan at 12% for 3 years, and a home loan at 7% for 20 years. The EMI calculator gives you the monthly payment. The strategy tells you which loan to choose.",
+    date: "2026-07-21",
     category: "Calculators",
-    tags: ["mortgage calculator", "first-time home buyer", "PMI", "closing costs", "monthly payment"],
-    relatedTools: ["mortgage-calculator", "loan-calculator", "emi-calculator"],
-    content: `<p>You open a <a href="/en/tools/mortgage-calculator">mortgage calculator</a>. You enter: $300,000 home price, 20% down ($60,000), 6.5% interest rate, 30-year fixed. The calculator says: $1,517 per month. You budget $1,800 to be safe. You buy the house. Your first mortgage statement arrives: $2,410. You are $610 over budget — $7,320 per year — because the mortgage calculator showed you the <strong>principal and interest payment</strong>, not the <strong>total monthly housing payment</strong>.</p>
+    tags: ["EMI calculator", "car loan", "personal loan", "home loan", "comparison"],
+    relatedTools: ["emi-calculator", "loan-calculator", "mortgage-calculator"],
+    content: `<p>You need to borrow $30,000. You have three options: a car loan at 6% for 5 years ($580/month), a personal loan at 12% for 3 years ($996/month), or a home equity loan at 7% for 20 years ($233/month). The <a href="/en/tools/emi-calculator">EMI calculator</a> gives you the monthly payment for each option. The monthly payment is the number. The strategy is how you choose between them.</p>
 
-<p>The mortgage calculator is correct. It is also incomplete. Here is what it leaves out, why the gap between the calculator's number and the real number surprises almost every first-time buyer, and how to estimate the true cost before you make an offer.</p>
+<p>The lowest monthly payment is not always the best choice. The lowest interest rate is not always the best choice. The best choice depends on: the total interest paid, the loan term, and the purpose of the loan. Here is how to compare loans across types — and how the EMI calculator helps you make the right decision.</p>
 
-<h2>What the Mortgage Calculator Shows (and What It Does Not)</h2>
+<h2>The Three Loan Types, Compared</h2>
 
-<p>A mortgage calculator computes the monthly payment for principal and interest — the cost of borrowing the money. It does not include: <strong>property taxes</strong> (1-3% of the home's value annually, divided by 12 months — on a $300,000 home at 1.5%, that is $375/month), <strong>homeowners insurance</strong> ($500-2,000 annually, depending on location and coverage — roughly $80/month for a typical home), and <strong>PMI</strong> (Private Mortgage Insurance, required if your down payment is less than 20% — typically 0.5-1% of the loan amount annually, or $100-200/month).</p>
+<p><strong>Car loan:</strong> Lower interest rate (6-8%), shorter term (3-7 years), secured (the car is collateral). The interest rate is lower because the loan is secured — if you default, the lender repossesses the car. The term is shorter because cars depreciate quickly. A 7-year car loan on a car that is worth 50% of its original value after 5 years is a bad deal for the lender. Use the EMI calculator to compare: total interest paid vs the car's depreciated value. If the total interest exceeds the car's value at the end of the loan, you are paying more in interest than the car is worth.</p>
 
-<p>These three items add $555/month to the example above. The $1,517 principal and interest payment becomes $2,072. And that does not include: HOA fees ($100-500/month in condos and planned communities), maintenance and repairs (budget 1-2% of the home's value annually, or $250-500/month), and utility cost differences (your apartment's $80 electric bill might become $200 in a house).</p>
+<p><strong>Personal loan:</strong> Higher interest rate (10-15%), shorter term (1-5 years), unsecured (no collateral). The interest rate is higher because the loan is unsecured — the lender has no collateral to seize if you default. The term is shorter because the lender wants their money back quickly. Use the EMI calculator to check: can you afford the higher monthly payment? A $30,000 personal loan at 12% for 3 years is $996/month — nearly double the car loan payment. The higher payment must fit in your budget.</p>
 
-<h2>How to Use the Mortgage Calculator Correctly</h2>
+<p><strong>Home equity loan:</strong> Moderate interest rate (6-8%), longest term (10-30 years), secured (your home is collateral). The interest rate is lower because the loan is secured by your home — the lender's risk is low. The term is longer because homes appreciate (unlike cars) and the loan amounts are larger. The risk: you are putting your home at risk. If you default, you lose your home. The lower monthly payment is tempting. The risk is real.</p>
 
-<p><strong>Step 1: Calculate principal and interest.</strong> Use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> with the home price, down payment, interest rate, and loan term. This gives you the base payment. This is the only number the calculator provides. The rest is up to you.</p>
+<h2>How to Use the EMI Calculator to Compare</h2>
 
-<p><strong>Step 2: Add property taxes.</strong> Look up the property tax rate for the county you are buying in. It is public information — usually on the county assessor's website. Multiply the home price by the tax rate. Divide by 12. Add this to the monthly payment.</p>
+<p>For each loan option, enter the same principal amount, the loan's interest rate, and the loan's term. The calculator gives you: monthly payment, total interest paid over the life of the loan, and total amount paid (principal + interest). Compare the three options across these three numbers. The monthly payment tells you what fits your budget. The total interest tells you what the loan actually costs. The total amount tells you the full financial commitment.</p>
 
-<p><strong>Step 3: Add homeowners insurance.</strong> Get a quote from an insurance company before you make an offer. A 5-minute phone call gives you a real number. Budget $80-150/month for a typical single-family home. Add this.</p>
-
-<p><strong>Step 4: Add PMI if your down payment is under 20%.</strong> PMI costs roughly 0.5-1% of the loan amount annually. On a $270,000 loan (10% down on $300,000), PMI is roughly $135-225/month. Add this. PMI can be removed once you reach 20% equity — but you have to request it. The lender will not remove it automatically.</p>
-
-<p><strong>Step 5: The total is your real monthly payment.</strong> This is the number you should budget for. The mortgage calculator gave you the starting point. You added the real costs. The gap between the calculator's number and the real number is the most common financial surprise for first-time home buyers. Now you know. The <a href="/en/tools/mortgage-calculator">mortgage calculator</a> is the starting point. The additional costs are the reality.</p>`
+<p>The decision: if you can afford the higher monthly payment, the personal loan's shorter term saves you the most total interest (but costs the most per month). If you need the lowest monthly payment, the home equity loan wins (but you are putting your home at risk). The car loan is the middle ground — moderate payment, moderate interest, secured by the car. The <a href="/en/tools/emi-calculator">EMI calculator</a> gives you the numbers. The strategy tells you which numbers matter. The decision is yours.</p>`
   },
   {
-    slug: "css-minifier-build-tool-integration-webpack-vite-next",
-    title: "CSS Minifier Build Tool Integration How to Add CSS Minification to Your Webpack Vite or Next.js Pipeline — and When an Online Minifier Is the Better Choice",
-    description: "Your build tool can minify CSS automatically. But for one-off files, debugging, or legacy projects without a build step, an online CSS minifier is faster. Here's when to use each.",
-    date: "2026-07-20",
+    slug: "html-to-markdown-content-migration-wordpress-static",
+    title: "HTML to Markdown for Content Migration How to Move Your Blog from WordPress to a Static Site Generator Without Losing Your Formatting",
+    description: "You have 500 blog posts in WordPress HTML. You want to migrate to a static site generator that uses Markdown. An HTML to Markdown converter handles the bulk conversion. Here's the migration workflow.",
+    date: "2026-07-21",
     category: "Developer",
-    tags: ["CSS minifier", "build tool", "webpack", "Vite", "pipeline"],
-    relatedTools: ["css-minifier", "svg-minifier", "code-formatter"],
-    content: `<p>You have a CSS file that is 85KB — mostly comments, whitespace, and verbose property values. You need the minified version for production. You have two options: configure your build tool (Webpack, Vite, Next.js) to minify automatically, or paste the file into a <a href="/en/tools/css-minifier">CSS minifier</a> and get the minified version instantly. Both produce the same minified CSS. The decision is about <strong>workflow</strong>, not technology.</p>
+    tags: ["HTML to Markdown", "content migration", "WordPress", "static site", "Markdown"],
+    relatedTools: ["html-to-markdown", "markdown-preview", "text-diff"],
+    content: `<p>You have been blogging on WordPress for 10 years. 500 posts. All written in HTML — some in the Classic Editor, some in Gutenberg blocks, some in a page builder you no longer remember the name of. You want to migrate to a static site generator — Hugo, Astro, or Next.js with Markdown. The new platform is faster, cheaper, and more secure. But it requires your content to be in Markdown, not HTML. You have 500 HTML posts. You need them in Markdown by the end of the week.</p>
 
-<p>Here is when to configure automatic minification in your build pipeline — and when the online minifier is the better choice.</p>
+<p>An <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> handles the bulk conversion. But the conversion is a starting point, not a finished product. Here is the content migration workflow from WordPress HTML to static site Markdown.</p>
 
-<h2>Build Tool Minification: The Automatic Solution</h2>
+<h2>Step 1: Export Your WordPress Content</h2>
 
-<p>Modern build tools include CSS minification out of the box or with minimal configuration. Next.js uses PostCSS with cssnano by default in production builds. Vite uses esbuild for CSS minification. Webpack uses css-minimizer-webpack-plugin (which wraps cssnano). In all cases, the minification happens automatically when you build for production. You write unminified CSS. The build tool minifies it. You deploy the minified version. The workflow is seamless — once configured.</p>
+<p>WordPress provides a built-in export tool: Tools → Export → Export All Content. This downloads an XML file containing all your posts, pages, and metadata. The XML file is the master copy of your content. Every post's title, date, category, tags, and HTML body is in this file. Do not lose this file. The export is the source of truth for the migration.</p>
 
-<p>The advantage: set it and forget it. Every production build automatically minifies all CSS files. No manual steps. No forgotten files. The entire CSS output is consistently minified. The disadvantage: configuration overhead. Setting up a build tool requires installing dependencies, writing config files, and debugging the occasional incompatibility. For a new project, this is standard practice. For a legacy project without a build step, or a one-off CSS file, the overhead is not worth it.</p>
+<h2>Step 2: Extract and Convert Each Post</h2>
 
-<p>Use build tool minification for: projects that already have a build step (Next.js, Vite, Webpack), projects with multiple CSS files that need consistent minification, and any project where you are setting up the build tool anyway.</p>
+<p>For each post in the XML export: extract the post title, date, slug, categories, and HTML body. Use the <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> to convert the HTML body to Markdown. The converter handles: headings (h1-h6 → # through ######), links and images (a href and img src → Markdown link and image syntax), lists (ul/ol/li → Markdown list syntax), bold and italic (strong/em → ** and *), and code blocks (pre/code → Markdown code block syntax).</p>
 
-<h2>Online CSS Minifier: The Manual Solution</h2>
+<p>The converter handles 90% of the conversion. The remaining 10% requires manual attention: embedded content (YouTube embeds, Twitter embeds, Gutenberg blocks — these may not convert cleanly), shortcodes (WordPress-specific shortcodes like [gallery] or [caption] — these have no Markdown equivalent and must be manually replaced), and tables (complex HTML tables with merged cells, alignment, and nested content may not convert cleanly).</p>
 
-<p>An online <a href="/en/tools/css-minifier">CSS minifier</a> is the zero-configuration alternative. Paste your CSS. Click minify. Copy the output. The minifier removes comments, whitespace, unnecessary semicolons, and trailing zeros. It shortens hex colors where possible (#ffffff → #fff). It converts 0px to 0. The output is functionally identical to what a build tool produces. The workflow is manual — but it takes 10 seconds per file.</p>
+<h2>Step 3: Review and Fix the Converted Markdown</h2>
 
-<p>The advantage: zero setup. No config files. No dependencies. No build step. Works on any CSS file, from any project, on any computer. The disadvantage: manual process. You must remember to minify before deploying. If you forget, the unminified CSS goes to production. For a single file, this is fine. For a project with dozens of CSS files, build tool automation is better.</p>
+<p>For each converted post: preview the Markdown with the <a href="/en/tools/markdown-preview">Markdown preview</a> tool. Compare the preview to the original WordPress post. Look for: broken links (URLs that were relative in WordPress and are now absolute — or vice versa), missing images (image URLs that point to the old WordPress site), and formatting errors (headings that did not convert, lists that lost their nesting, code blocks that lost their language tags).</p>
 
-<p>Use the online minifier for: one-off CSS files (a single stylesheet for a static site), legacy projects without a build step (minify manually before each deploy), debugging (minify a file to check if a bug is caused by the minification process), and learning (see exactly what the minifier does to your CSS — the online tool shows before-and-after stats so you can learn what changes).</p>
+<p>For a 500-post migration, you cannot manually review every post in detail. Triage: spot-check 10-20% of posts (50-100 posts) at 100% detail. For the remaining 80%, check the title, first paragraph, and any complex elements (tables, embeds, code blocks). The bulk conversion handles the straightforward content. The manual review catches the edge cases. The combination produces a migrated blog that is 95% clean — with the remaining 5% of issues fixable as you discover them.</p>
 
-<h2>The Hybrid Strategy</h2>
+<h2>Step 4: Import into Your Static Site Generator</h2>
 
-<p>Use build tool minification for your project's own CSS — the styles you write and maintain. Use the online minifier for third-party CSS — vendor stylesheets, framework files, or any CSS you did not write but need to minify. The build tool handles your code. The online tool handles everything else. The hybrid strategy gives you automation where it matters and flexibility where you need it.</p>
-
-<p>Minify your CSS at <a href="/en/tools/css-minifier">CSS minifier</a> — for when the build tool is not an option, or when you just need one file minified in 10 seconds.</p>`
+<p>Each converted post becomes a Markdown file with frontmatter: the title, date, slug, categories, and tags as YAML frontmatter, and the converted Markdown as the file body. The static site generator reads the Markdown files and generates the static site. The migration is complete. The blog is now running on a static site generator — faster, cheaper, and more secure than WordPress. The <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> handled the bulk of the work. You handled the edge cases. The migration took a week instead of a month.</p>`
   },
   {
-    slug: "base64-encoder-decoder-data-uri-binary-string-guide",
-    title: "Base64 Encoder Decoder Complete Guide How to Convert Between Text Binary Data URIs and Files — and Why Base64 Adds 33% to Your File Size",
-    description: "Base64 turns binary data into text — making images embeddable in HTML, files transmittable in JSON, and data copyable as plain text. Here's how encoding works, when to use it, and why it costs you 33% extra size.",
-    date: "2026-07-20",
+    slug: "life-hacks-remote-workers-home-office-productivity",
+    title: "Life Hacks for Remote Workers Home Office Productivity Desk Setup Tips and the Psychology of Working Where You Live",
+    description: "Your bed is 10 feet from your desk. The refrigerator is 20 feet. The boundary between work and life has collapsed. Here are the life hacks that actually help remote workers stay productive and sane.",
+    date: "2026-07-21",
+    category: "Reference",
+    tags: ["life hacks", "remote work", "home office", "productivity", "work-life balance"],
+    relatedTools: ["life-hacks", "stopwatch-and-timer", "fullscreen-text"],
+    content: `<p>You roll out of bed at 8:55 AM. You walk 10 feet to your desk. You are at work by 9:00 AM. You have not changed out of your pajamas. You have not seen the sun. You have not spoken to another human being. You work until 6:30 PM — because there is no commute to signal the end of the workday. You close your laptop. You are still at the same desk. You are now "home." But you never left "work." The boundary between work and life has collapsed. The bed is 10 feet away. The refrigerator is 20 feet. The world outside is... somewhere. You have not been out there in three days.</p>
+
+<p>Remote work promised freedom. For many people, it delivered <strong>boundary collapse</strong>. The physical separation between work and life — the commute, the office, the change of environment — was doing more psychological work than we realized. Here are the life hacks that actually help remote workers rebuild the boundaries that remote work dissolved.</p>
+
+<h2>Hack #1: The Fake Commute</h2>
+
+<p>Before you start work, leave your home. Walk around the block — 10 minutes. Do not look at your phone. Do not check email. Just walk. This is your "commute." It signals to your brain: "We are transitioning from home mode to work mode." At the end of the workday, do the same walk. This is your "commute home." It signals: "We are transitioning from work mode to home mode." The walk is the boundary. The walk is the commute. The walk is the psychological separation that your home office cannot provide. Fifteen minutes of walking per day. Two transitions. One boundary. The fake commute is the most effective remote work life hack ever invented — because it replaces the one thing remote work took away: the physical separation between work and life.</p>
+
+<h2>Hack #2: The Dedicated Work Space</h2>
+
+<p>Do not work in your bedroom. Do not work on your couch. Do not work at the kitchen table. Have a dedicated workspace — even if it is a corner of a room. The dedicated space signals: "This is where work happens. Everywhere else is where life happens." When you are at the desk, you are working. When you are not at the desk, you are not working. The desk is the boundary. The desk is small. The psychological effect is large.</p>
+
+<h2>Hack #3: The Hard Stop</h2>
+
+<p>Set a hard stop time. When the time arrives, close your laptop. Do not "just finish this one thing." The hard stop is the boundary between work and life. Without a hard stop, work expands to fill all available time. The hard stop is the fence. The work is the pasture. Without the fence, the pasture is infinite. Set the fence. Close the laptop. The <a href="/en/tools/stopwatch-and-timer">timer</a> enforces the hard stop. The alarm is the boundary. The boundary is the sanity.</p>
+
+<h2>Hack #4: The Social Lifeline</h2>
+
+<p>Remote work is socially isolating. You do not see colleagues in the hallway. You do not have lunch with coworkers. You do not have casual conversations at the coffee machine. The isolation accumulates. The fix: schedule at least one social interaction per day. A phone call. A video chat. A coffee with a friend. A co-working session. The social interaction is not a distraction from work. It is a <strong>requirement</strong> for sustainable remote work. Humans are social animals. Remote work removes the social environment. The social lifeline rebuilds it — one deliberate interaction at a time.</p>
+
+<p>Browse more life hacks at <a href="/en/tools/life-hacks">100 life hacks</a> — the remote work section has 20 more tips for surviving and thriving in the home office.</p>`
+  },
+  {
+    slug: "barcode-generator-vs-md5-hash-product-id-vs-integrity",
+    title: "Barcode Generator vs MD5 Hash Product Identification vs Data Integrity — Two Encoding Tools That Serve Completely Different Purposes",
+    description: "A barcode identifies a product for a scanner. An MD5 hash verifies a file hasn't been corrupted. Both encode data. Both produce strings. But the purposes, algorithms, and use cases are unrelated.",
+    date: "2026-07-21",
     category: "Developer",
-    tags: ["Base64", "encode", "decode", "data URI", "binary"],
-    relatedTools: ["base64-converter", "image-to-base64", "base64-to-image"],
-    content: `<p>You need to embed a small icon in an HTML email. You could: host the image on a CDN (requires an external HTTP request — and email clients block external images by default), or encode the image as a Base64 data URI and embed it directly in the HTML (no external request, image displays immediately). You choose Base64. You paste the icon into a <a href="/en/tools/base64-converter">Base64 encoder</a>. The tool outputs a string starting with <code>iVBORw0KGgo...</code> — thousands of characters that represent your 3KB icon. You embed it in your HTML. The email loads. The icon displays. No external requests. No blocked images.</p>
+    tags: ["barcode generator", "MD5", "hash", "product identification", "data integrity"],
+    relatedTools: ["barcode-generator", "md5-generator", "hash-generator"],
+    content: `<p>You scan a product at the grocery store. The barcode — a series of black and white lines — encodes a 12-digit number. The scanner reads the lines. The register looks up the price. The transaction is complete. The barcode is a <strong>product identifier</strong>. It answers: "What product is this?"</p>
 
-<p>Base64 is the universal translator between binary data and text. It powers data URIs, email attachments, API payloads, and JSON data transport. Here is how it works, when to use it, and why it makes your data 33% larger.</p>
+<p>Now you download a software installer. The download page lists an MD5 hash: <code>d41d8cd98f00b204e9800998ecf8427e</code>. You run the installer through an <a href="/en/tools/md5-generator">MD5 generator</a>. The hash matches. The file is verified — it has not been corrupted or tampered with. The MD5 hash is a <strong>data integrity check</strong>. It answers: "Is this file exactly what it is supposed to be?"</p>
 
-<h2>How Base64 Works: The 4-to-3 Ratio</h2>
+<p>Both tools encode data into strings. Both produce outputs that look like gibberish. But the purposes, algorithms, and use cases are completely different. Here is the difference.</p>
 
-<p>Base64 encoding takes binary data — a sequence of bytes — and converts it to a sequence of 64 printable ASCII characters: A-Z, a-z, 0-9, +, and /. The conversion: every 3 bytes (24 bits) of binary data become 4 Base64 characters (4 × 6 bits = 24 bits). The output is always 33% larger than the input — because every 3 input bytes produce 4 output characters. A 100KB image becomes approximately 133KB of Base64 text.</p>
+<h2>Barcode Generator: Encoding for Scanning</h2>
 
-<p>The 33% overhead is the cost of making binary data text-safe. Base64 characters are all printable ASCII — they survive transmission through email, JSON, XML, and any text-based protocol. Binary data (bytes 0-255) does not survive these transmissions — control characters, non-ASCII bytes, and null bytes are corrupted or stripped. Base64 solves this by encoding binary data into a subset of ASCII that every system can handle. The overhead is the price of compatibility.</p>
+<p>A <a href="/en/tools/barcode-generator">barcode generator</a> converts a number (like a UPC product code) into a pattern of black and white lines that a laser scanner can read. The pattern is <strong>decodable</strong> — the scanner reads the pattern and recovers the original number. The encoding is one-to-one — each number produces a specific, unique barcode pattern. The barcode is designed to be read by a specific device (a laser scanner) in a specific context (retail checkout, inventory management, shipping).</p>
 
-<h2>When to Use Base64 (and When Not To)</h2>
+<p>Use barcode generator for: product identification, retail labeling, inventory tracking, and any context where a physical object needs to be identified by a scanner.</p>
 
-<p><strong>Use Base64 for:</strong> embedding small images in HTML/CSS (data URIs for icons, logos, and email images — eliminates HTTP requests), transmitting binary data in JSON APIs (the JSON format does not support binary — Base64 encodes the binary as a string), email attachments (MIME encoding uses Base64 for file attachments), and storing binary data in text-only databases (if you cannot use a BLOB column, Base64 encode the binary data as text).</p>
+<h2>MD5 Hash: Encoding for Verification</h2>
 
-<p><strong>Do not use Base64 for:</strong> large files (the 33% overhead is significant — a 50MB file becomes 66MB of Base64), files that will be transmitted as binary anyway (HTTP file downloads, FTP transfers — these protocols handle binary natively), and performance-critical applications (encoding and decoding Base64 takes CPU time — for large volumes, the overhead adds up).</p>
+<p>An <a href="/en/tools/md5-generator">MD5 hash generator</a> converts any data (a file, a string, a password) into a 32-character hexadecimal string. The hash is <strong>non-reversible</strong> — you cannot recover the original data from the hash. The encoding is many-to-one — many different inputs can produce the same hash (though this is extremely unlikely for non-malicious uses). The hash is designed to verify that data has not changed — if the hash of the downloaded file matches the published hash, the file is intact.</p>
 
-<p><strong>Base64 vs Base64url:</strong> Standard Base64 uses + and / as the last two characters, and = for padding. These characters have special meanings in URLs (+ means space, / is a path separator). Base64url replaces + with - and / with _, and omits the = padding. Use Base64url for URLs, JWT tokens, and query parameters. The <a href="/en/tools/base64-converter">Base64 encoder/decoder</a> supports both formats. Encode for data. Decode for viewing. Choose the right format for the destination.</p>`
+<p>Use MD5 hash for: file integrity verification, checksums, and non-security data deduplication. Do NOT use MD5 for security purposes — it is cryptographically broken for collision resistance. Use SHA-256 for security.</p>
+
+<h2>Why Confusing Them Produces Nonsense</h2>
+
+<p>If you try to scan an MD5 hash with a barcode scanner: the scanner reads the pattern, but the hash is 32 characters — too long for a standard barcode format, and the scanner does not know what to do with a hexadecimal string. If you try to verify a product with an MD5 hash: the hash of the product's barcode number is a 32-character string. It tells you nothing about the product. The hash verifies the data. The barcode identifies the product. Different tools. Different purposes.</p>
+
+<p>Use <a href="/en/tools/barcode-generator">barcode generator</a> for identification and <a href="/en/tools/md5-generator">MD5 hash</a> for verification. Product identification and data integrity. Different encoding. Different purposes.</p>`
   },
   {
-    slug: "image-to-base64-vs-base64-to-image-encoding-vs-decoding",
-    title: "Image to Base64 vs Base64 to Image Encoding vs Decoding — Two Tools That Are Opposites but Belong in the Same Workflow",
-    description: "One converts images to text for embedding. The other converts text back to images for viewing. They are mathematical inverses — and confusing them turns your image into gibberish text or your text into a broken image.",
-    date: "2026-07-20",
+    slug: "base64-to-image-vs-image-to-base64-round-trip",
+    title: "Base64 to Image vs Image to Base64 The Complete Image Encoding Round Trip — What Gets Preserved and What Gets Lost",
+    description: "You encode an image to Base64 for transmission, then decode it back to an image. The round trip is lossless for the image data — but the file size grows by 33%. Here's what happens at each step.",
+    date: "2026-07-21",
     category: "Developer",
-    tags: ["image to Base64", "Base64 to image", "encoding", "decoding", "data URI"],
-    relatedTools: ["image-to-base64", "base64-to-image", "base64-converter"],
-    content: `<p>You receive an API response. The thumbnail field contains: <code>iVBORw0KGgoAAAANSUhEUgAA...</code> — a 50,000-character Base64 string. This is an image, encoded as text. You need to see the actual image — to verify the API is returning the right data, to debug a rendering issue, or to extract the image for use elsewhere. You use a <a href="/en/tools/base64-to-image">Base64 to image</a> decoder. The tool converts the text back to an image. You see the thumbnail. It is the correct image. The API is working.</p>
+    tags: ["Base64 to image", "image to Base64", "encoding", "decoding", "round trip"],
+    relatedTools: ["base64-to-image", "image-to-base64", "base64-converter"],
+    content: `<p>You have a 100KB PNG image. You encode it to Base64 with an <a href="/en/tools/image-to-base64">image to Base64</a> encoder. The output is a 133KB text string — 33% larger. You transmit the string through a JSON API. The recipient decodes it with a <a href="/en/tools/base64-to-image">Base64 to image</a> decoder. The output is a 100KB PNG image — identical to the original. The round trip is <strong>lossless</strong> for the image data. The 33% overhead is the cost of making binary data text-safe. The round trip works. But the overhead is permanent.</p>
 
-<p>Now you need to do the reverse. You have a small logo file. You need to embed it in an HTML email as a data URI. You use an <a href="/en/tools/image-to-base64">image to Base64</a> encoder. The tool converts the image to a Base64 string. You embed the string in the HTML. The email loads. The logo displays. No external image requests.</p>
+<p>Here is exactly what happens at each step of the image encoding round trip — and when the round trip is NOT lossless.</p>
 
-<p>These two tools are <strong>mathematical inverses</strong>. One converts image → text. The other converts text → image. They are the encoding and decoding halves of the same process. Here is when to use each — and why you usually need both.</p>
+<h2>Step 1: Image → Base64 (Encoding)</h2>
 
-<h2>Image to Base64: Encoding for Transport</h2>
+<p>The encoding process: read the binary image file (PNG, JPEG, WebP, etc.), convert every 3 bytes (24 bits) of binary data into 4 Base64 characters (4 × 6 bits = 24 bits), and prepend the data URI prefix if needed: <code>data:image/png;base64,</code> followed by the encoded string. The output is 33% larger than the input. Every 3 bytes of the original image become 4 characters of Base64 text. The overhead is deterministic — you can calculate it exactly: encoded size = original size × 4/3, rounded up to the nearest multiple of 4.</p>
 
-<p>The encoder answers: <strong>"How do I send this image through a text-only channel?"</strong> You have an image file (PNG, JPEG, WebP). You need to embed it in HTML, transmit it in JSON, or store it in a text column. The encoder converts the binary image data to a Base64 text string. The string is 33% larger than the original image, but it can travel through any text-based system.</p>
+<p>The encoded string is <strong>text-safe</strong>. It can be transmitted through: JSON (as a string value), HTML (as a data URI), email (as an embedded image), and any text-based protocol (XML, YAML, CSV). The Base64 string is the image, expressed in a format that any text system can handle.</p>
 
-<p>Use the encoder for: embedding images in HTML emails (logos, icons, signature images — no blocked external images), sending images in JSON API payloads (the image travels as a string in the JSON body), and storing small images in text databases (Base64-encode the image and store it in a VARCHAR column).</p>
+<h2>Step 2: Base64 → Image (Decoding)</h2>
 
-<h2>Base64 to Image: Decoding for Viewing</h2>
+<p>The decoding process: remove the data URI prefix if present, convert every 4 Base64 characters back to 3 bytes of binary data, handle padding (= characters at the end of the string), and write the binary data to an image file. The output is identical to the original image — <strong>if the Base64 string was encoded correctly and transmitted without corruption</strong>. The image data is preserved exactly. PNG is still PNG. JPEG is still JPEG. The compression, the metadata, the color profile — all preserved.</p>
 
-<p>The decoder answers: <strong>"What does this Base64 string look like as an image?"</strong> You have a Base64 string — from an API response, a database query, or an email source. You need to see the actual image. The decoder converts the Base64 text back to an image file. You can view it, save it, or use it in your application.</p>
+<h2>When the Round Trip Is NOT Lossless</h2>
 
-<p>Use the decoder for: debugging API responses (verify the image data is correct by viewing it), extracting images from emails (save the embedded logo or attachment as an image file), and recovering images from databases (decode Base64-stored images back to viewable files).</p>
+<p>The round trip is lossless for the image data. But it is NOT lossless for: the file name (the original file name is not part of the Base64 encoding — it is lost), the file metadata (creation date, modification date, and other file system metadata are not encoded), and the image format (if the encoder strips the data URI prefix, the decoder needs to know the image format — PNG, JPEG, WebP — to write the correct file extension). The image pixels are preserved. The file metadata is lost. The round trip is lossless for the content. It is lossy for the context.</p>
 
-<h2>The Complete Round Trip</h2>
+<h2>When to Use the Round Trip (and When Not To)</h2>
 
-<p>The workflow that uses both tools: encode an image to Base64 → transmit the Base64 string (API, email, database) → decode the Base64 back to an image → view or use the image. The encoder prepares the image for transport. The decoder recovers the image after transport. The two tools are halves of the same process. You cannot encode without eventually needing to decode — unless the image is never viewed by a human again. The encoder and decoder are a pair. Use <a href="/en/tools/image-to-base64">image to Base64</a> to encode and <a href="/en/tools/base64-to-image">Base64 to image</a> to decode. Encoding and decoding. Two directions. One workflow.</p>`
+<p>Use the round trip when: you need to transmit an image through a text-only channel, you need to embed an image in HTML or JSON, or you need to store an image in a text database. Do not use the round trip when: the image is large (the 33% overhead is significant), the image will be transmitted as binary anyway (HTTP file downloads, FTP), or performance is critical (encoding and decoding take CPU time).</p>
+
+<p>Use <a href="/en/tools/image-to-base64">image to Base64</a> to encode and <a href="/en/tools/base64-to-image">Base64 to image</a> to decode. The round trip is lossless. The overhead is 33%. The convenience is the trade-off.</p>`
   },
   {
-    slug: "word-counter-vs-text-diff-analysis-vs-comparison",
-    title: "Word Counter vs Text Diff Analysis vs Comparison — Two Text Tools That Look at the Same Text and See Completely Different Things",
-    description: "Word counter analyzes a single text — words, characters, readability. Text diff compares two texts — additions, deletions, modifications. Both work on text. Both produce insights. But the insights are unrelated.",
-    date: "2026-07-20",
-    category: "Text Tools",
-    tags: ["word counter", "text diff", "analysis", "comparison", "text"],
-    relatedTools: ["word-counter", "text-diff", "case-converter"],
-    content: `<p>You have a 5,000-word essay. You want to know: how many words? What is the reading level? How long will it take to read? You use a <a href="/en/tools/word-counter">word counter</a>. The tool analyzes the text and reports: 5,127 words, Flesch-Kincaid grade level 10.2, estimated reading time 21 minutes. The word counter analyzed <strong>one text</strong> and generated statistics about it.</p>
+    slug: "ip-lookup-history-arpanet-to-modern-geolocation",
+    title: "The History of IP Geolocation From ARPANET to Modern IP Lookup — How We Learned to Map the Internet to the Physical World",
+    description: "In 1969, ARPANET had 4 nodes — all in the US. Today, there are billions of IP addresses distributed across every country. IP lookup tells you where any of them is. Here's the 50-year history.",
+    date: "2026-07-21",
+    category: "Reference",
+    tags: ["IP lookup", "geolocation", "history", "ARPANET", "internet"],
+    relatedTools: ["ip-lookup", "world-map", "ip-lookup"],
+    content: `<p>In 1969, the ARPANET — the predecessor of the internet — connected four computers: UCLA, Stanford Research Institute, UC Santa Barbara, and the University of Utah. Every computer on the network had an IP address. You could look at the address and know exactly where the computer was — because there were only four of them, and they were all in the western United States. IP geolocation was trivial. The map was the network. The network was the map.</p>
 
-<p>Now you have two versions of the same essay — the original draft and the edited version. You want to know: what changed? You use a <a href="/en/tools/text-diff">text diff</a> tool. The tool compares the two texts and highlights: lines added (green), lines removed (red), and lines modified (yellow). The text diff compared <strong>two texts</strong> and generated a difference report.</p>
+<p>Today, there are billions of IP addresses distributed across every country on Earth. An <a href="/en/tools/ip-lookup">IP lookup</a> tool can tell you the approximate location of any of them — country, region, city, ISP. The tool is instant. The infrastructure behind it is the result of 50 years of internet history. Here is how IP geolocation evolved from a trivial lookup of four computers to a global system that maps billions of addresses to physical locations.</p>
 
-<p>Both tools work on text. Both produce insights. But they answer completely different questions. Here is when to use each — and why confusing analysis with comparison leads to useless results.</p>
+<h2>1969-1990: The Era of Manual Mapping</h2>
 
-<h2>Word Counter: Single-Text Analysis</h2>
+<p>Hosts.txt — a single text file maintained by the Stanford Research Institute — mapped every hostname to its IP address. The file was manually updated. When a new computer joined the network, someone at SRI added its entry to the file. The file was distributed to every computer on the network. Every computer knew the address of every other computer. The system worked because the network was small — hundreds of computers, not billions. The hosts.txt file was the first IP geolocation database. It was maintained by hand. It was the size of a phone book — for a very small town.</p>
 
-<p>A word counter answers: <strong>"What are the properties of this text?"</strong> It counts words, characters, sentences, and paragraphs. It estimates reading time and speaking time. It calculates readability scores (Flesch-Kincaid, Gunning Fog, SMOG). All from a single input text.</p>
+<p>The Domain Name System (DNS), introduced in 1983, replaced hosts.txt with a distributed, hierarchical system. DNS did not provide geolocation. It provided hostname-to-IP mapping. The geolocation problem — "where is this IP address physically located?" — was not yet a problem. The network was still small enough that you could roughly know where each IP was based on which institution owned it.</p>
 
-<p>Use word counter for: checking if you meet a word count requirement (essay, article, report), estimating how long your content will take to read or present, checking if your writing is at the right grade level for your audience, and tracking your writing productivity over time.</p>
+<h2>1990-2010: The Era of Commercial Geolocation</h2>
 
-<h2>Text Diff: Two-Text Comparison</h2>
+<p>The commercialization of the internet in the 1990s created the geolocation industry. Companies like MaxMind, IP2Location, and IPinfo emerged to answer the question: "Where is this IP address?" They built databases by: querying WHOIS records (which organization owns this IP block? Where is the organization located?), analyzing network latency (how long does it take for a signal to reach this IP? The latency correlates with physical distance), and purchasing data from ISPs (which customer is using this IP address at this time?).</p>
 
-<p>A text diff answers: <strong>"What is different between these two texts?"</strong> It compares two versions of a document and highlights every difference — words added, removed, or modified. The output is a visual representation of the changes.</p>
+<p>The databases were approximate. An IP address might be mapped to the ISP's headquarters, not the user's actual location. A mobile IP might be mapped to a city hundreds of miles away. The accuracy was: country level (95-99% accurate), region/state level (80-90% accurate), and city level (60-80% accurate). The IP lookup was a <strong>clue</strong>, not a <strong>proof</strong> of location. The accuracy was good enough for content localization (show the right language and currency). It was not good enough for law enforcement (do not send the police to the ISP's headquarters).</p>
 
-<p>Use text diff for: reviewing edits (what did your editor change?), comparing document versions (before and after a revision), code review (what changed in this commit?), and verifying that changes are correct (the diff shows exactly what was modified).</p>
+<h2>2010-Present: The Era of Mobile and Privacy</h2>
 
-<h2>Why You Sometimes Need Both</h2>
+<p>Smartphones, VPNs, and privacy regulations changed IP geolocation. Mobile IPs are especially unreliable — a phone on a cellular network might show an IP registered to a city hundreds of miles away. VPNs route traffic through servers in different countries — the IP location shows the VPN server, not the user. Privacy regulations (GDPR, CCPA) limit the collection and use of IP geolocation data. The accuracy of IP geolocation has <strong>decreased</strong> in the mobile era. The IP address is still a useful signal. It is no longer a reliable indicator of physical location.</p>
 
-<p>A common workflow: after editing a document, use the text diff to see what changed. Then use the word counter on the final version to verify the word count, reading time, and readability. The diff tells you what was changed. The counter tells you whether the final version meets your requirements. Two tools. Two questions. One document. Analysis and comparison are different operations. The word counter analyzes. The text diff compares. Use <a href="/en/tools/word-counter">word counter</a> for analysis and <a href="/en/tools/text-diff">text diff</a> for comparison. Different questions. Different tools.</p>`
-  },
-  {
-    slug: "random-number-generator-history-dice-to-quantum",
-    title: "The History of Random Number Generation From Dice to Quantum RNG — How Humans Have Been Trying to Be Random for 5,000 Years",
-    description: "The oldest dice were found in a 5,000-year-old Mesopotamian tomb. Today, quantum random number generators use subatomic particles to produce true randomness. Here's the 5,000-year quest to be unpredictable.",
-    date: "2026-07-20",
-    category: "Fun & Media",
-    tags: ["random number", "history", "dice", "quantum", "RNG"],
-    relatedTools: ["random-number-generator", "dice-roller", "coin-flip"],
-    content: `<p>The oldest known dice were excavated from a 5,000-year-old tomb in Mesopotamia. They were made of bone — knucklebones from sheep, carved into six-sided cubes. The markers on each face were simple indentations. The dice were not fair — the bone was not uniform, the faces were not perfectly square, and the weight was not evenly distributed. But they were random enough for games of chance, divination rituals, and distributing inheritance among heirs. For 5,000 years, humans have been trying to generate randomness — and for most of that time, we have been using dice.</p>
-
-<p>Today, a <a href="/en/tools/random-number-generator">random number generator</a> produces numbers with a click. It uses a pseudo-random algorithm seeded by system entropy. It is fast, convenient, and fair. But it is not truly random — and the difference between pseudo-random and truly random is one of the most fascinating stories in the history of computing. Here is the 5,000-year quest to be unpredictable.</p>
-
-<h2>Era 1: Physical Randomness (3000 BCE - 1940s) — The Age of Dice</h2>
-
-<p>For most of human history, randomness came from physical objects: dice (Mesopotamia, 3000 BCE), coin flips (ancient Rome — "navia aut caput," ship or head), drawing lots (used in elections, land distribution, and criminal sentencing across cultures), and shuffled cards and tiles (China, 9th century CE — the predecessors of modern playing cards).</p>
-
-<p>Physical randomness has one fundamental problem: <strong>bias</strong>. No physical object is perfectly fair. Dice are slightly weighted toward certain faces. Coins land on the same side they started on about 50.8% of the time. Card shuffles are imperfect — a study found that most people do not shuffle enough to truly randomize a deck. The randomness is approximate. The bias is real. For games, approximate is good enough. For cryptography, it is a disaster.</p>
-
-<h2>Era 2: Mathematical Randomness (1940s - Present) — The Age of Algorithms</h2>
-
-<p>The first pseudo-random number generators (PRNGs) were developed in the 1940s for the Manhattan Project — nuclear weapons simulations required vast quantities of random numbers. John von Neumann developed the "middle-square method" in 1949: take a number, square it, extract the middle digits as the next "random" number. The method was simple and fast. It was also terrible — the sequences were short, predictable, and prone to degenerating into repeating patterns. Von Neumann himself said: "Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin."</p>
-
-<p>Modern PRNGs use sophisticated algorithms like the Mersenne Twister. They produce sequences that pass statistical tests for randomness. But they are still deterministic — given the same seed, they produce the same sequence. The randomness is in the seed. The output is a mathematical consequence of the seed and the algorithm. This is fine for games, simulations, and everyday use — including the <a href="/en/tools/random-number-generator">random number generator</a> on this site. It is not fine for cryptography, where unpredictability is a security requirement.</p>
-
-<h2>Era 3: True Randomness (2010s - Present) — The Age of Quantum RNG</h2>
-
-<p>Quantum random number generators (QRNGs) use subatomic particles to produce true randomness. The principle: at the quantum level, certain events are fundamentally unpredictable — not just unknown, but unknowable. When a photon hits a half-silvered mirror, it either passes through or reflects. The outcome is truly random. A QRNG measures these quantum events and converts them to random bits. The output is not pseudo-random. It is not deterministic. It is <strong>truly random</strong> — the first time in human history that we have been able to generate unpredictability from fundamental physics rather than from imperfect physical objects or deterministic algorithms.</p>
-
-<p>The practical difference: a PRNG can be predicted if you know the seed and the algorithm. A QRNG cannot be predicted — not even in principle. For everyday use, the PRNG in the <a href="/en/tools/random-number-generator">random number generator</a> is more than sufficient. For cryptographic keys, national security, and applications where predictability would be catastrophic, QRNGs are the standard. The 5,000-year quest from sheep knucklebones to quantum photons is complete. We can now generate true randomness from the fabric of reality itself.</p>`
+<p>The <a href="/en/tools/ip-lookup">IP lookup tool</a> gives you the approximate location of any IP address — country, region, city, ISP. The tool is instant. The accuracy is approximate. The IP address is a clue about location, not a proof of location. The 50-year journey from four computers in the western US to billions of IP addresses worldwide ended where it began: the IP address tells you where the computer is connected to the network. It does not tell you where the person using the computer is physically located. The distinction is the difference between the network and the world. The IP lookup maps the network. The world is still inferred.</p>`
   },
 ];
 
@@ -198,4 +200,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 236->done.")
+print("Free station: 242->done.")
