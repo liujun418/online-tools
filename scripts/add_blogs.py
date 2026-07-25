@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (260→266) — July 24, 2026"""
+"""Add 6 blogs to free station (266→272) — July 25, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,172 +10,184 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "svg-minifier-icon-libraries-feather-heroicons-optimization",
-    title: "SVG Minifier for Icon Libraries How to Optimize Feather Heroicons and Custom Icon Sets for Production",
-    description: "Your icon library is 200 SVG files totaling 480KB. 60% of that is editor metadata and whitespace. An SVG minifier reduces it to 180KB. Here's the icon library optimization workflow.",
-    date: "2026-07-24",
+    slug: "online-translator-international-business-email-guide",
+    title: "Online Translator for International Business Email How to Communicate Professionally Across Languages Without Hiring a Translator",
+    description: "You need to email a client in Japan, a supplier in Germany, and a partner in Brazil. An online translator handles the language. Here's the international business communication workflow.",
+    date: "2026-07-25",
+    category: "Text Tools",
+    tags: ["online translator", "business email", "international", "multilingual", "communication"],
+    relatedTools: ["translate", "case-converter", "text-to-slug"],
+    content: `<p>You run a small business. Today you need to: email a client in Japan about a delayed shipment, negotiate pricing with a supplier in Germany, and send a partnership proposal to a company in Brazil. You speak English. They speak Japanese, German, and Portuguese. Hiring a professional translator for three emails would cost $150-300 and take 24-48 hours. You need the emails sent today. You need them to be accurate, professional, and appropriate for the business culture of each recipient.</p>
+
+<p>A <a href="/en/tools/translate">free online translator</a> handles the language. You handle the business context. Here is the international business communication workflow.</p>
+
+<h2>Step 1: Write the Email in Clear, Simple English</h2>
+
+<p>The quality of the translation depends on the quality of the input. Write for translation: short sentences (15-20 words maximum), simple grammar (subject-verb-object — avoid embedded clauses), no idioms ("think outside the box," "touch base," "circle back" — these translate literally and become nonsense), and no cultural references ("like a Super Bowl commercial" — meaningless outside the US). The simpler the English, the better the translation. The better the translation, the more professional you appear.</p>
+
+<h2>Step 2: Translate with the Online Translator</h2>
+
+<p>Use the <a href="/en/tools/translate">translator</a> to convert your English email to the recipient's language. The translator produces accurate, grammatically correct output for: straightforward business communication (schedules, pricing, specifications, requests), common business phrases (the translator handles these well because they appear frequently in training data), and polite, formal language (the translator defaults to neutral-polite register — appropriate for business). The translator is weakest on: industry-specific jargon, complex negotiations with nuance, and humor or casual tone.</p>
+
+<h2>Step 3: Verify the Translation (the Cultural Check)</h2>
+
+<p>Run the translated email back through the translator to English. Read the back-translation. Does it say what you intended? The back-translation reveals translation errors and lost nuance. The back-translation is a safety check. It takes 10 seconds. It catches the most common translation failures.</p>
+
+<h2>Step 4: Send with a Disclaimer</h2>
+
+<p>If the email is critical — a contract, a legal notice, a high-stakes negotiation — add a brief disclaimer: "This email was translated from English using automated translation. Please contact us if anything is unclear." The disclaimer: shows respect (you acknowledge the translation may be imperfect), prevents misunderstandings (the recipient knows to ask for clarification), and protects you (if the translation contains an error, the disclaimer provides context). For routine business communication, the disclaimer is optional. For anything legally or financially significant, it is recommended.</p>
+
+<p>Communicate globally at <a href="/en/tools/translate">free online translator</a> — write clear English, translate accurately, verify with back-translation, and send with confidence.</p>`
+  },
+  {
+    slug: "morse-code-modern-applications-emergency-ham-radio",
+    title: "Morse Code Translator Modern Applications Emergency Preparedness Ham Radio and Why a 180-Year-Old System Still Matters",
+    description: "When cell towers fail and the internet goes down, Morse code still works — with a flashlight, a radio tone, or a tapped finger. Here's why Morse code is still taught, still used, and still saving lives.",
+    date: "2026-07-25",
     category: "Developer",
-    tags: ["SVG minifier", "icon library", "Feather", "Heroicons", "optimization"],
-    relatedTools: ["svg-minifier", "css-minifier", "code-formatter"],
-    content: `<p>You use 200 SVG icons in your web application — a mix of Feather Icons, Heroicons, and custom-designed icons. The total file size is 480KB. That is 480KB of SVG being parsed, rendered, and shipped to every user on every page load. The icons are small. The cumulative size is not. You open a few SVG files and see: editor metadata (Illustrator and Figma export comments — kilobytes of data browsers ignore), excessive precision (path coordinates like <code>M12.847392,45.123847</code> — eight decimal places no screen can render), and whitespace and indentation (beautiful for humans, useless for browsers).</p>
+    tags: ["Morse code", "emergency", "ham radio", "preparedness", "SOS"],
+    relatedTools: ["morse-code", "base-converter", "url-encoder"],
+    content: `<p>In 2023, a hiker in a remote area of Oregon broke her leg and had no cell service. She used a flashlight to signal SOS in Morse code (... --- ...) toward a distant fire lookout tower. The ranger recognized the signal, dispatched a rescue team, and saved her life. The hiker did not know Morse code. She knew SOS — the only Morse code sequence that matters in an emergency. Three dots, three dashes, three dots. Universal. Unmistakable. The signal that has saved more lives than any app.</p>
 
-<p>An <a href="/en/tools/svg-minifier">SVG minifier</a> strips the bloat. 480KB becomes 180KB — a 62% reduction. Here is the icon library optimization workflow.</p>
+<p>A <a href="/en/tools/morse-code">Morse code translator</a> converts text to dots and dashes and back. It is not just a historical curiosity. It is an emergency preparedness tool. Here is why Morse code is still taught, still used, and still saving lives in 2026.</p>
 
-<h2>What SVG Minification Actually Removes</h2>
+<h2>Why Morse Code Survives in the Digital Age</h2>
 
-<p>SVG minification removes: comments (both HTML-style and SVG-specific), XML declarations and DOCTYPE (optional for inline SVG), editor metadata (Illustrator, Figma, Inkscape each embed their own namespaces), unnecessary namespace declarations, whitespace and indentation, and excessive numeric precision (rounding path coordinates from 8 decimal places to 1-2 — visually identical, significantly smaller).</p>
+<p>Morse code has one property that no digital communication system can match: it works with <strong>any signaling mechanism</strong>. A flashlight. A buzzer. A radio tone. A tapped finger. A blinking LED. A reflected mirror. Sound. Light. Touch. Any medium that can produce two states — on/off, long/short — can encode Morse code. When cell towers are down, when the internet is out, when you have no signal, Morse code still works. The minimal hardware requirement is the reason Morse code is still part of: ham radio licensing (amateur radio operators must demonstrate Morse code proficiency in many countries), aviation navigation (VOR stations transmit Morse code identifiers), and military communications (Morse code is taught as a backup communication method).</p>
 
-<p>The minifier does NOT change: the visual appearance of the SVG, the paths, shapes, and elements, the viewBox and dimensions, or any functional attributes. The minified SVG looks identical to the original. It is just smaller. The optimization is invisible. The performance improvement is measurable.</p>
+<h2>How to Learn Enough Morse Code to Matter</h2>
 
-<h2>The Icon Library Optimization Workflow</h2>
+<p>You do not need to learn the entire alphabet. Learn: SOS (... --- ...) — the universal distress signal, your initials (identify yourself in a signal), and YES (Y) and NO (N) — basic acknowledgments. Five sequences. Five minutes to learn. Enough to signal for help in an emergency. Use the <a href="/en/tools/morse-code">Morse code translator</a> to look up any sequence you do not know. Practice with the audio playback feature — listen to the dots and dashes until you can recognize them by ear. The translator is the learning tool. Your memory is the emergency backup.</p>
 
-<p><strong>Step 1: Minify all SVG files.</strong> Process every SVG in your icon library through the <a href="/en/tools/svg-minifier">SVG minifier</a>. The minifier handles each file individually. Keep the original files in a separate directory — the minified versions are for production, the originals are for editing.</p>
+<h2>Modern Uses You Did Not Expect</h2>
 
-<p><strong>Step 2: Verify visual quality.</strong> Spot-check 10-20% of the minified icons. Open them in a browser. Do they look identical to the originals? The minifier should change nothing visually. If an icon looks different, the path rounding was too aggressive (unlikely at 1-2 decimal places, but possible for very small icons). Increase the precision for that specific icon.</p>
+<p><strong>Assistive technology:</strong> People with severe motor disabilities use Morse code as an input method. A single switch — a sip-and-puff tube, a head switch, an eye-blink sensor — can produce dots and dashes. The computer translates to text. For someone who cannot use a keyboard or voice input, Morse code provides a communication channel requiring only one binary input.</p>
 
-<p><strong>Step 3: Integrate into the build pipeline.</strong> Add SVG minification to your production build step. Clean SVG files in, minified SVG out. The build pipeline handles the minification automatically. You edit the clean originals. The pipeline produces the minified versions. The workflow is: edit → commit → build (auto-minifies) → deploy (minified SVGs).</p>
+<p><strong>Underwater communication:</strong> Divers use acoustic Morse code — tapping on tanks or using underwater buzzers — to communicate when radios do not work underwater.</p>
 
-<p><strong>Step 4: Bundle into a sprite sheet (optional).</strong> For maximum performance, combine all minified SVGs into a single SVG sprite sheet. One HTTP request for all icons. The sprite sheet is the final optimization step. The minified SVGs are the input. The sprite sheet is the output. The combination of minification + spriting reduces 200 HTTP requests (one per icon) to 1 HTTP request (the sprite sheet).</p>
+<p><strong>Special forces and survival situations:</strong> Morse code is taught to special forces as a silent, low-tech communication method — a flashlight click, a radio burst, a tapped surface.</p>
 
-<p>Optimize your icons at <a href="/en/tools/svg-minifier">SVG minifier</a> — 480KB to 180KB, 200 files to 200 optimized files. The icons look the same. The page loads faster.</p>`
+<p>Learn Morse code at <a href="/en/tools/morse-code">Morse code translator</a> — SOS, your initials, YES, NO. Five sequences. Five minutes. The backup communication system that works when nothing else does.</p>`
   },
   {
-    slug: "code-formatter-legacy-projects-style-guide-migration",
-    title: "Code Formatter for Legacy Projects How to Enforce a Consistent Style Guide Without Rewriting Your Entire Codebase",
-    description: "Your legacy codebase has 3 different indentation styles in 500 files. A code formatter enforces consistency incrementally — format one file at a time, or format everything at once. Here's the slow migration strategy.",
-    date: "2026-07-24",
+    slug: "scoreboard-remote-team-building-virtual-office-games",
+    title: "Scoreboard Tool for Remote Team Building How to Run Virtual Office Competitions and Games That Actually Engage Your Team",
+    description: "Your remote team is burned out on Zoom happy hours. A scoreboard turns team activities into friendly competitions — trivia, fitness challenges, cooking contests. Here's the remote team engagement playbook.",
+    date: "2026-07-25",
+    category: "Fun & Media",
+    tags: ["scoreboard", "remote team", "virtual games", "engagement", "team building"],
+    relatedTools: ["scoreboard", "dice-roller", "random-name-generator"],
+    content: `<p>Your team has been remote for three years. The initial wave of virtual team building — Zoom happy hours, online trivia, "show us your pet" meetings — has run its course. Attendance at optional social events is down to 20%. The team is connected by work. They are disconnected by distance. You need a way to bring them together that is: voluntary (not mandatory fun), lightweight (no complex setup or long time commitment), and ongoing (not a one-time event — a recurring source of connection).</p>
+
+<p>A <a href="/en/tools/scoreboard">scoreboard tool</a> — simple, customizable, and visible to everyone — turns team activities into friendly competitions. Here is the remote team engagement playbook.</p>
+
+<h2>Why Scoreboards Work for Remote Teams</h2>
+
+<p>A scoreboard does three things: creates visibility (everyone sees the scores — the competition is transparent), creates momentum (scores change over time — there is always a reason to check back), and creates conversation (scores are a topic of discussion — "How did you get 10,000 steps yesterday?"). The scoreboard is the <strong>social object</strong> around which remote team interactions form. The work is the primary connection. The scoreboard is the secondary connection — the water cooler, the hallway conversation, the shared experience that remote work eliminated.</p>
+
+<h2>Remote Team Competition Ideas</h2>
+
+<p><strong>Fitness challenge:</strong> Step count, workout minutes, or distance run per week. Teams of 2-3. The scoreboard tracks cumulative totals. The competition is friendly. The accountability is real. The health benefit is the side effect.</p>
+
+<p><strong>Trivia league:</strong> Weekly trivia during a 30-minute team meeting. The scoreboard tracks standings across the season. The trivia is the content. The scoreboard creates the narrative — who is rising, who is falling, who will win the season.</p>
+
+<p><strong>Photo challenge:</strong> Weekly theme — "best home office setup," "best cooking creation," "best nature photo from a walk." The team votes. The scoreboard tracks points. The photos are the content. The scoreboard creates the game.</p>
+
+<p><strong>Learning challenge:</strong> Points for completing courses, reading books, or learning new skills. The scoreboard tracks professional development. The competition is for personal growth.</p>
+
+<h2>How to Run the Scoreboard</h2>
+
+<p><strong>Keep it visible:</strong> Share the <a href="/en/tools/scoreboard">scoreboard</a> link in the team chat. Update scores weekly. The visibility maintains momentum. An invisible scoreboard is a forgotten scoreboard.</p>
+
+<p><strong>Keep it light:</strong> The competition is for fun, not for performance evaluation. Prizes should be symbolic — a trophy emoji, bragging rights, choosing the next challenge theme. If the competition feels like work, participation will drop.</p>
+
+<p><strong>Keep it voluntary:</strong> Mandatory fun is not fun. The scoreboard is an invitation, not a requirement. The team members who participate do so because they want to. The team members who do not participate are not judged. The scoreboard creates connection for those who seek it.</p>
+
+<p>Engage your remote team at <a href="/en/tools/scoreboard">scoreboard tool</a> — visible, lightweight, voluntary. The competition that brings a distributed team together.</p>`
+  },
+  {
+    slug: "text-repeater-vs-word-counter-multiplication-vs-counting",
+    title: "Text Repeater vs Word Counter Multiplication vs Counting — Two Text Tools That Operate on Completely Different Principles",
+    description: "Text repeater takes input and multiplies it. Word counter takes input and counts it. One produces text. One analyzes text. They are opposites — and they serve opposite needs in the same workflow.",
+    date: "2026-07-25",
+    category: "Text Tools",
+    tags: ["text repeater", "word counter", "multiplication", "counting", "comparison"],
+    relatedTools: ["text-repeater", "word-counter", "text-sorter"],
+    content: `<p>You need to generate 500 rows of test data. You type a template email address and use a <a href="/en/tools/text-repeater">text repeater</a> to multiply it 500 times. The tool produced 500 lines from one input. The operation was <strong>multiplication</strong>.</p>
+
+<p>Now you have the 500-row dataset. You need to know how many rows it contains and how long the average row is. You paste it into a <a href="/en/tools/word-counter">word counter</a>. The tool counted 500 lines, 3,500 words, and 28,000 characters. The operation was <strong>counting</strong>.</p>
+
+<p>Both tools work on text. But they operate on completely different principles. One produces. One analyzes. They are opposites — and they serve opposite needs. Here is the difference.</p>
+
+<h2>Text Repeater: Multiplication</h2>
+
+<p>The text repeater answers: <strong>"What does this text look like when multiplied N times?"</strong> It takes one input and produces many copies. The input is the template. The output is the multiplied result. The repeater is a <strong>production</strong> tool. It creates more text from less.</p>
+
+<p>Use for: generating test data, ASCII art patterns, and placeholder content. The repeater creates.</p>
+
+<h2>Word Counter: Counting</h2>
+
+<p>The word counter answers: <strong>"What are the properties of this text?"</strong> It takes one input and analyzes it — word count, character count, reading time, readability. The input is the text. The output is the statistics. The counter is an <strong>analysis</strong> tool. It extracts information from text.</p>
+
+<p>Use for: checking word count requirements, estimating reading time, and analyzing readability. The counter measures.</p>
+
+<h2>Using Both Together</h2>
+
+<p>A common workflow: use the text repeater to generate test data, then use the word counter to verify the data meets your requirements. Multiplication then counting. Production then analysis. Opposite tools. Same workflow. Use <a href="/en/tools/text-repeater">text repeater</a> to multiply and <a href="/en/tools/word-counter">word counter</a> to count.</p>`
+  },
+  {
+    slug: "age-calculator-vs-pregnancy-calculator-chronological-vs-gestational",
+    title: "Age Calculator vs Pregnancy Calculator Chronological Age vs Gestational Age — Two Date Calculators That Measure Completely Different Kinds of Time",
+    description: "An age calculator tells you how long you have been alive. A pregnancy calculator tells you how far along a pregnancy is. Both calculate time from a starting date — but the time they measure is unrelated.",
+    date: "2026-07-25",
+    category: "Calculators",
+    tags: ["age calculator", "pregnancy calculator", "dates", "time", "comparison"],
+    relatedTools: ["age-calculator", "pregnancy-calculator", "perpetual-calendar"],
+    content: `<p>You enter your birth date into an <a href="/en/tools/age-calculator">age calculator</a>: June 15, 1990. The result: 36 years, 1 month, and 10 days. The calculator measured your <strong>chronological age</strong> — the time elapsed since you were born.</p>
+
+<p>Now you enter the first day of your last menstrual period into a <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a>: March 1, 2026. The result: 20 weeks and 5 days pregnant, estimated due date December 6, 2026. The calculator measured <strong>gestational age</strong> — the time elapsed since the start of the pregnancy, which is approximately two weeks before conception. The counting starts before the event being counted. This is unique in all of time measurement.</p>
+
+<p>Both tools calculate time from a starting date. But the time they measure — and the way they measure it — is completely different. Here is the difference.</p>
+
+<h2>Age Calculator: Chronological Time</h2>
+
+<p>Chronological age is the simplest time calculation: today's date minus the birth date. The result is the exact time a person has been alive. The calculation must account for: leap years (the person has lived through 9 leap years since 1990), month lengths (not all months have the same number of days), and the current date (age changes daily). The age calculator handles all of this. The result is exact to the day. Chronological age is used for: legal purposes (voting, drinking, driving), medical records, and personal reference.</p>
+
+<h2>Pregnancy Calculator: Gestational Time</h2>
+
+<p>Gestational age is measured from the first day of the last menstrual period (LMP) — not from conception. This convention exists because: the LMP date is usually known (it is observable), while the conception date is usually not known (it is unobservable without medical testing). The convention adds approximately two weeks to the pregnancy: a pregnancy at "20 weeks" gestational age means conception occurred approximately 18 weeks ago. The due date is calculated as: LMP + 280 days (40 weeks) — Naegele's rule, from 1812.</p>
+
+<p>The pregnancy calculator handles: the standard gestational age convention (LMP-based), ultrasound dating adjustments (ultrasound measurement of the fetus provides a more accurate due date), and trimester boundaries. Gestational age is used for: prenatal care scheduling, fetal development tracking, and due date estimation.</p>
+
+<h2>Why the Distinction Matters</h2>
+
+<p>Confusing chronological age with gestational age leads to: incorrect due date calculations (if you use an age calculator for pregnancy, the result is meaningless), and incorrect medical decisions (gestational age determines the timing of prenatal tests — using the wrong age could miss a critical test window). The calculators look similar. The time they measure is unrelated. Use <a href="/en/tools/age-calculator">age calculator</a> for chronological age and <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> for gestational age. Different time. Different tools.</p>`
+  },
+  {
+    slug: "qr-code-generator-physics-encoding-information-guide",
+    title: "The Physics of QR Codes How a Grid of Black and White Squares Encodes Information — and Why They Still Work When Damaged",
+    description: "A QR code is a physical encoding of digital information — readable by light, resilient to damage, and scannable from any angle. Here's the physics and mathematics behind the squares.",
+    date: "2026-07-25",
     category: "Developer",
-    tags: ["code formatter", "legacy code", "style guide", "migration", "consistency"],
-    relatedTools: ["code-formatter", "json-formatter", "css-minifier"],
-    content: `<p>You inherit a codebase. It is 500 files of JavaScript, CSS, and JSON — written by 8 different developers over 5 years. Some files use 2-space indentation. Some use 4-space. Some use tabs. Three files mix tabs and spaces within the same function. The style guide was "whatever your IDE defaults to." There was no enforcement. The codebase is functional. It is also <strong>unreadable</strong>. New developers spend their first week learning not the code, but which files use which formatting style.</p>
+    tags: ["QR code", "physics", "encoding", "error correction", "information theory"],
+    relatedTools: ["qr-code-generator", "qr-code-scanner", "barcode-generator"],
+    content: `<p>You scan a QR code on a restaurant table. Your phone camera reads the pattern of black and white squares. In under a second, it decodes the pattern into a URL. The restaurant menu appears on your screen. The QR code just transmitted information from a physical object (a printed sticker) to a digital device (your phone) using nothing but <strong>light</strong>. No radio waves. No Bluetooth. No WiFi. Just a pattern of squares, a camera, and some elegant mathematics. This is one of the most remarkable and underappreciated technologies in daily life.</p>
 
-<p>You propose: "Let's format the entire codebase with a <a href="/en/tools/code-formatter">code formatter</a>." The team objects: "That will create 500 files of formatting-only changes. We will lose git blame. We will never be able to merge our existing branches." The objection is valid. The solution is not to format everything at once. It is to format <strong>incrementally</strong>. Here is the slow migration strategy.</p>
+<p>How does a grid of black and white squares encode a URL? How does the code still work when 30% of it is damaged? How does your phone read it from any angle? A <a href="/en/tools/qr-code-generator">QR code generator</a> creates the pattern. The physics and mathematics explain how it works. Here is the science behind the squares.</p>
 
-<h2>Why "Format Everything at Once" Fails</h2>
+<h2>How a QR Code Encodes Information</h2>
 
-<p>Formatting the entire codebase in one commit has real costs: git blame becomes useless (every line in every file now has the same commit — the format commit), active branches become unmergeable (every open pull request now conflicts with the format commit), and the diff is unreadable (500 files changed with formatting-only changes — no human can review it). The format-everything approach is fast. It is also destructive. The damage to the git history and the team's workflow outweighs the benefit of consistent formatting.</p>
+<p>A QR code (Quick Response code) is a two-dimensional matrix barcode. It encodes information as a grid of black and white "modules" — small squares that represent binary data: black = 1, white = 0 (or vice versa, depending on the encoding). The data is encoded in a specific pattern: finder patterns (the three large squares in the corners — tell the scanner where the code is and what orientation it is in), timing patterns (alternating black and white modules between the finder patterns — tell the scanner the size of each module), alignment patterns (smaller squares that help the scanner correct for distortion when the code is printed on a curved surface), and the data area (the remaining modules — encode the actual information using Reed-Solomon error correction codes).</p>
 
-<h2>The Incremental Migration Strategy</h2>
+<p>The encoding process: the data (a URL, text, or other information) is converted to binary, error correction codes are added (redundant data that allows the code to be read even if damaged), the combined data is arranged in the QR code grid, and the finder, timing, and alignment patterns are added. The result is a QR code — a physical encoding of digital information.</p>
 
-<p><strong>Rule 1: Format only the files you touch.</strong> When a developer opens a file to fix a bug or add a feature, they format that file first — in a separate commit: "Format: utils.js." Then they make their changes in a second commit. The format commit and the change commit are separate. The git blame for the format commit points to "formatting." The git blame for the change commit points to the actual code change. The history is preserved.</p>
+<h2>How Error Correction Works</h2>
 
-<p><strong>Rule 2: Use the online formatter for one-off files.</strong> When a developer needs to format a single file, they paste it into the <a href="/en/tools/code-formatter">code formatter</a>, copy the output, and commit. No build tool configuration. No npm install. No dependency conflicts. The online formatter handles the file. The developer handles the commit. The workflow is: open file → paste into formatter → copy output → commit → make changes → commit.</p>
+<p>Reed-Solomon error correction is the mathematics that makes QR codes resilient to damage. The basic principle: add redundant data so that the original data can be reconstructed even if some of it is lost. The error correction levels: L (Low — 7% recovery. For screen display, where there is no physical damage), M (Medium — 15% recovery. For print on flat surfaces), Q (Quartile — 25% recovery. For products that may get scratched), and H (High — 30% recovery. For harsh environments). Higher error correction = more redundant data = denser QR code = more modules. The trade-off: more recovery vs more visual complexity. The <a href="/en/tools/qr-code-generator">QR code generator</a> handles this automatically. You choose the level. The generator adds the appropriate error correction.</p>
 
-<p><strong>Rule 3: Track progress.</strong> Count how many files have been formatted vs total files. 100/500 = 20% formatted. The metric shows progress. The metric motivates. Without the metric, formatting is an invisible goal that never feels closer. With the metric, every formatted file moves the number.</p>
+<h2>How Your Phone Reads a QR Code</h2>
 
-<h2>When to Format Everything at Once (the Exception)</h2>
-
-<p>Format everything at once when: the codebase is small (under 50 files), there are no active branches, and the team agrees. In all other cases, the incremental strategy preserves git history, avoids merge conflicts, and actually gets adopted. Use the <a href="/en/tools/code-formatter">code formatter</a> for one file at a time. Format the files you touch. Watch the percentage climb. One file at a time, the codebase becomes consistent.</p>`
-  },
-  {
-    slug: "base64-to-image-email-forensics-recovering-embedded-images",
-    title: "Base64 to Image for Email Forensics How to Recover Embedded Images from Email Source Code and HTML Archives",
-    description: "You have an old email archive. The images are embedded as Base64 data URIs in the HTML source. You need to extract them as viewable image files. Here's the email forensics recovery workflow.",
-    date: "2026-07-24",
-    category: "Developer",
-    tags: ["Base64 to image", "email forensics", "recovery", "archive", "data URI"],
-    relatedTools: ["base64-to-image", "image-to-base64", "base64-converter"],
-    content: `<p>You are migrating your company's email archives from an old system to a new one. The old system stored emails as raw HTML files. Inline images — logos, signatures, product photos — were embedded as Base64 data URIs in the HTML source. The new system expects image attachments. You have 50,000 emails. Each email has 2-10 embedded images. You need to extract roughly 250,000 Base64-encoded images from HTML source and convert them to image files. Manual extraction is impossible. You need a <a href="/en/tools/base64-to-image">Base64 to image</a> decoder.</p>
-
-<p>Here is the email forensics and archive recovery workflow — how to extract embedded images from HTML source and convert them to viewable, usable image files.</p>
-
-<h2>How to Find Base64 Images in Email Source</h2>
-
-<p>Open the email's raw HTML source (View Source in most email clients, or the .eml/.html file in a text editor). Search for: <code>data:image/</code> — the standard prefix for Base64-encoded images in HTML. A data URI looks like: <code>&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANS..."&gt;</code>. The <code>data:image/png;base64,</code> prefix identifies: it is a data URI (inline content, not an external URL), the MIME type is image/png, the encoding is Base64, and the actual image data follows the comma. Copy everything after the comma — the Base64 string. That is the encoded image.</p>
-
-<h2>The Bulk Recovery Workflow</h2>
-
-<p><strong>Step 1: Extract all data URIs from the HTML archive.</strong> Search all email files for <code>data:image/</code>. Extract each Base64 string — everything between the comma and the closing quote of the src attribute. Each extracted string is one embedded image.</p>
-
-<p><strong>Step 2: Decode each Base64 string to an image.</strong> Paste each extracted string into the <a href="/en/tools/base64-to-image">Base64 to image decoder</a>. The tool decodes the Base64 and renders the image. Download the decoded image as a PNG or JPEG file. The image is now a standalone file — no longer embedded in HTML.</p>
-
-<p><strong>Step 3: Verify the decoded images.</strong> Spot-check the recovered images. Do they look correct? Are they complete (not truncated)? Is the image format correct (PNG vs JPEG)? The decoder detects the image format automatically from the Base64 header bytes. The output format should match the original format specified in the data URI prefix.</p>
-
-<p><strong>Step 4: Import into the new email system.</strong> Attach the recovered images to the corresponding emails in the new system. The emails are now migrated with their images intact. The Base64 data URIs that were embedded in the HTML are now standalone image attachments. The migration is complete.</p>
-
-<h2>When Base64 Recovery Is Not Possible</h2>
-
-<p>Base64 recovery fails when: the data URI is truncated (the Base64 string is incomplete — the image is partially or fully corrupted), the MIME type is missing or incorrect (the decoder guesses the format, but may guess wrong), and the Base64 string contains line breaks or other corruption (the decoder strips whitespace, but other corruption may prevent decoding). For corrupted Base64 strings, the original image is lost. The decoder can only recover what is present in the source. If the source is corrupted, the recovery is partial at best.</p>
-
-<p>Recover your embedded images at <a href="/en/tools/base64-to-image">Base64 to image decoder</a> — from embedded data URI to standalone image file. 250,000 images. One decoder.</p>`
-  },
-  {
-    slug: "svg-minifier-vs-code-formatter-graphics-vs-code",
-    title: "SVG Minifier vs Code Formatter Graphics Optimization vs Code Formatting — Two Tools That Both 'Format' but Serve Completely Different Files",
-    description: "SVG minifier optimizes vector graphics. Code formatter formats programming source code. Both process text. Both improve readability. But the files they process and the optimizations they apply are unrelated.",
-    date: "2026-07-24",
-    category: "Developer",
-    tags: ["SVG minifier", "code formatter", "graphics", "code", "comparison"],
-    relatedTools: ["svg-minifier", "code-formatter", "css-minifier"],
-    content: `<p>You have an SVG file exported from Illustrator: 45KB of XML with editor metadata, 8-decimal path coordinates, and excessive whitespace. You run it through an <a href="/en/tools/svg-minifier">SVG minifier</a>. Output: 12KB. The minifier rounded coordinates, stripped metadata, and collapsed whitespace. The file is smaller and functionally identical.</p>
-
-<p>Now you have a JavaScript file: 15KB of code with inconsistent indentation and mixed style conventions. You run it through a <a href="/en/tools/code-formatter">code formatter</a>. Output: 15KB. The formatter fixed the indentation and style. The file size did not change significantly. The file is more readable and functionally identical.</p>
-
-<p>Both tools process text. Both produce "formatted" or "optimized" output. But they serve completely different purposes. Here is the difference — and why using an SVG minifier on code or a code formatter on SVG produces garbage.</p>
-
-<h2>SVG Minifier: Graphics Optimization</h2>
-
-<p>An SVG minifier reduces file size by removing non-functional content from SVG files. It performs: numeric precision reduction (rounding path coordinates), metadata stripping (removing editor-specific tags), and whitespace collapsing. The goal is <strong>smaller file size</strong> for faster page loads. The minifier is a performance tool. It optimizes for bandwidth and parsing speed.</p>
-
-<h2>Code Formatter: Code Readability</h2>
-
-<p>A code formatter improves readability by enforcing consistent formatting rules. It adds: indentation, line breaks, and spacing. It does not reduce file size. It may increase it (adding line breaks where the original had none). The goal is <strong>human readability</strong> — for code review, debugging, and collaboration. The formatter is a communication tool. It optimizes for human understanding.</p>
-
-<h2>Why Confusing Them Produces Garbage</h2>
-
-<p>If you run SVG code through a code formatter: the formatter will add indentation and line breaks — increasing the file size, not reducing it. It will not round path coordinates or strip metadata. The SVG will be more readable but no smaller. If you run JavaScript code through an SVG minifier: the minifier will strip whitespace and comments — making the code unreadable. It may also try to "round" numeric values in the code, potentially changing logic.</p>
-
-<p>The rule: SVG goes in the SVG minifier. Code goes in the code formatter. Use <a href="/en/tools/svg-minifier">SVG minifier</a> for graphics and <a href="/en/tools/code-formatter">code formatter</a> for code. Different files. Different purposes. Different tools.</p>`
-  },
-  {
-    slug: "quotes-directory-vs-random-quote-search-vs-serendipity",
-    title: "Quotes Directory vs Random Quote Search vs Serendipity — When You Need the Perfect Quote and When You Need Any Quote",
-    description: "A quotes directory helps you find the perfect quote by author or topic. A random quote generator gives you an unexpected piece of wisdom. Different needs. Different tools.",
-    date: "2026-07-24",
-    category: "Reference",
-    tags: ["quotes", "random quote", "search", "serendipity", "inspiration"],
-    relatedTools: ["quotes", "random-quote", "book-of-answers"],
-    content: `<p>You are writing a speech about perseverance. You need a quote from Winston Churchill. You open a <a href="/en/tools/quotes">quotes directory</a>, search for "Churchill" + "perseverance," and find: "Success is not final, failure is not fatal: it is the courage to continue that counts." Perfect. The directory answered a <strong>specific</strong> question: "What did Winston Churchill say about perseverance?" The answer was factual and exactly what you needed.</p>
-
-<p>Now you are starting your morning. You open a <a href="/en/tools/random-quote">random quote generator</a>. It gives you: "The only way to do great work is to love what you do." — Steve Jobs. You were not looking for anything. The quote found you. The generator answered an <strong>unspoken</strong> question: "What do I need to hear right now?" The answer was unexpected and exactly what you needed.</p>
-
-<p>Both tools deliver quotes. But they serve completely different needs. Here is when to use each.</p>
-
-<h2>Quotes Directory: Precision Discovery</h2>
-
-<p>A quotes directory is a searchable database. You search by: author, keyword, or topic. You find specific quotes for specific purposes. The directory is a <strong>research tool</strong>. Use when: writing a speech, article, or presentation, you need a specific type of quote, or you need to find and verify the exact wording of a quote.</p>
-
-<h2>Random Quote: Serendipitous Discovery</h2>
-
-<p>A random quote generator gives you one unexpected quote. No search. No filter. The value is in the <strong>surprise</strong>. Use when: you need daily inspiration, you are creatively blocked, or you want a moment of reflection. The random quote is the <strong>wise stranger</strong>. It gives you what you need, not what you want.</p>
-
-<p>Use <a href="/en/tools/quotes">quotes directory</a> to search and <a href="/en/tools/random-quote">random quote</a> for serendipity. Precision and surprise. Different needs. Different tools.</p>`
-  },
-  {
-    slug: "unit-converter-history-metric-vs-imperial-divide",
-    title: "The History of Measurement The Metric vs Imperial Divide How Two Measurement Systems Came to Dominate the World — and Why the US Still Uses Inches",
-    description: "Every country on Earth uses the metric system — except the US, Liberia, and Myanmar. The divide is not about math. It is about history, politics, and the cost of switching. Here's the 200-year story.",
-    date: "2026-07-24",
-    category: "Reference",
-    tags: ["unit converter", "metric system", "imperial system", "history", "measurement"],
-    relatedTools: ["unit-converter", "base-converter", "roman-numerals"],
-    content: `<p>Every country on Earth uses the metric system — except three: the United States, Liberia, and Myanmar. The metric system is simpler (base-10, consistent prefixes), more universal (used by 95% of the world's population), and legally sanctioned (the US has officially permitted metric since 1866, and metric is the legal standard for US trade). And yet, Americans measure height in feet, weight in pounds, and temperature in Fahrenheit. The divide is not about math. It is about history, politics, and the staggering cost of switching.</p>
-
-<p>A <a href="/en/tools/unit-converter">unit converter</a> bridges the divide. You enter inches. It outputs centimeters. The converter is the daily tool that millions of people use to navigate a world split between two measurement systems. Here is the 200-year story of how the divide was created — and why it persists.</p>
-
-<h2>The French Revolution: The Birth of Metric</h2>
-
-<p>Before the metric system, France alone had approximately 250,000 different units of measurement — varying by region, by town, and by trade. A "pound" of bread in Paris was a different weight than a "pound" in Marseille. The confusion was not an accident. It was a tool of control — local lords and merchants used the confusion to cheat customers. The French Revolution (1789) sought to sweep away not just the monarchy, but the entire apparatus of feudal privilege — including the chaotic system of measurement. The metric system was born from revolutionary ideals: a system based on nature (the meter was defined as 1/10,000,000 of the distance from the North Pole to the equator), not on the length of a king's foot. A system that was rational. A system that was <strong>universal</strong>. A system that could not be manipulated by local authorities.</p>
-
-<h2>Why the US Did Not Switch</h2>
-
-<p>The US considered switching to metric multiple times. Thomas Jefferson, as Secretary of State, proposed a decimal-based measurement system in 1790. Congress debated metric adoption in the 1820s, 1860s, and 1970s. The 1975 Metric Conversion Act declared metric the "preferred system" for US trade — but made conversion voluntary. Voluntary conversion failed. The reason: the cost of switching. Replacing every mile marker, every scale, every measuring cup, every textbook, every manufacturing specification, and every person's intuitive understanding of measurement would cost billions and take decades. The cost was always higher than the political will. The metric system is better. The imperial system is <strong>entrenched</strong>. Better does not always win. Entrenched usually wins.</p>
-
-<h2>Where the Divide Actually Matters</h2>
-
-<p>The metric-imperial divide has real consequences: NASA's Mars Climate Orbiter (1999) — a $327 million spacecraft was lost because one team used metric units and another used imperial. The spacecraft entered the Martian atmosphere at the wrong altitude and burned up. Medicine dosing errors — an incorrect conversion between pounds and kilograms can result in a 2.2× dosing error. Manufacturing and trade — American companies exporting to metric countries must convert all specifications. The <a href="/en/tools/unit-converter">unit converter</a> is the tool that prevents these errors. Enter the value. Select the units. The converter does the math. The conversion is correct. The spacecraft survives.</p>
-
-<p>Convert at <a href="/en/tools/unit-converter">unit converter</a> — navigating the metric-imperial divide, one conversion at a time.</p>`
+<p>Your phone camera captures the QR code as an image. The QR scanning software: finds the three finder patterns (locates the code in the image and determines its orientation — the code can be read from any angle), uses the timing patterns (determines the module size and grid dimensions), reads the data modules (black=1, white=0 — extracts the binary data), applies Reed-Solomon error correction (reconstructs any damaged or unreadable data), and decodes the binary data into the original text or URL. The entire process takes under a second. The phone just read information encoded as light and dark squares — transmitted from a physical surface to a digital device through the physics of reflected light. The QR code is a bridge between the physical and digital worlds. The physics is the bridge.</p>`
   },
 ];
 
@@ -186,4 +198,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 260->done.")
+print("Free station: 266->done.")
