@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (278→284) — July 27, 2026"""
+"""Add 6 blogs to free station (284→290) — July 28, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,106 +10,100 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "base-converter-computer-science-students-binary-hex",
-    title: "Base Converter for Computer Science Students How to Master Binary Hex and Decimal Conversions Without a Calculator",
-    description: "Your CS exam requires manual binary-to-hex conversion. A base converter helps you practice — but the real skill is understanding the patterns. Here's the computer science student's guide to number bases.",
-    date: "2026-07-27",
-    category: "Developer",
-    tags: ["base converter", "computer science", "binary", "hex", "students"],
-    relatedTools: ["base-converter", "binary-converter", "hex-converter"],
-    content: `<p>You are a computer science student. Your exam requires you to convert between binary, hexadecimal, and decimal — by hand, without a calculator. You open a <a href="/en/tools/base-converter">base converter</a> to check your answers. The converter is the verification tool. The understanding is the exam skill. Here is the computer science student's guide to number bases.</p>
-
-<h2>The Three Bases You Actually Need</h2>
-
-<p><strong>Binary (base-2):</strong> The language of computers. Every digital system is built on binary. You need to read binary to understand: bitwise operations, memory addresses, and data representation. The pattern: each position is a power of 2. 1010 = 8 + 0 + 2 + 0 = 10 in decimal.</p>
-
-<p><strong>Hexadecimal (base-16):</strong> The human-readable shorthand for binary. One hex digit = 4 binary digits. 1010 1100 = AC in hex. Hex is used for: color codes (#3B82F6), memory addresses (0x7FFF), and binary data display. The pattern: hex digits 0-9 and A-F represent 0-15. The conversion from binary to hex is the easiest: group binary digits into 4-bit chunks, convert each chunk to hex. This is the skill you need for the exam.</p>
-
-<p><strong>Decimal (base-10):</strong> The human number system. You already know it. The skill is converting between decimal and binary/hex. The method: repeated division by the target base, collecting remainders. Convert 42 to binary: 42 ÷ 2 = 21 remainder 0, 21 ÷ 2 = 10 remainder 1, 10 ÷ 2 = 5 remainder 0, 5 ÷ 2 = 2 remainder 1, 2 ÷ 2 = 1 remainder 0, 1 ÷ 2 = 0 remainder 1. Read remainders bottom to top: 101010. The <a href="/en/tools/base-converter">base converter</a> verifies your answer. The method is the exam skill. The converter is the practice tool.</p>`
-  },
-  {
-    slug: "roman-numerals-modern-design-typography-branding-tattoo",
-    title: "Roman Numerals in Modern Design How Typography Branding and Tattoo Culture Keep an Ancient Number System Alive",
-    description: "Super Bowl LIX. Copyright MCMLXXXVII. King Charles III. Roman numerals survive because they look prestigious. Here's how designers use Roman numerals in the 21st century.",
-    date: "2026-07-27",
+    slug: "perpetual-calendar-genealogy-research-dating-documents",
+    title: "Perpetual Calendar for Genealogy Research How to Date Historical Documents and Verify Family Events",
+    description: "A family Bible says your ancestor was born on 'Tuesday, March 15, 1887.' A perpetual calendar confirms: March 15, 1887 was indeed a Tuesday. The document is authentic. Here's the genealogy dating guide.",
+    date: "2026-07-28",
     category: "Reference",
-    tags: ["Roman numerals", "design", "typography", "branding", "tattoo"],
-    relatedTools: ["roman-numerals", "base-converter", "perpetual-calendar"],
-    content: `<p>Super Bowl LIX. Copyright MCMLXXXVII on a film. A tattoo reading "IV.XVII.MMXX" on someone's forearm. Roman numerals should have died 500 years ago. Instead, they are everywhere in modern design — not for mathematical reasons, but for <strong>aesthetic</strong> reasons. Roman numerals signal prestige, tradition, and permanence. A <a href="/en/tools/roman-numerals">Roman numeral converter</a> helps you generate the correct numerals. The design sense tells you when to use them.</p>
+    tags: ["perpetual calendar", "genealogy", "historical", "dating", "verification"],
+    relatedTools: ["perpetual-calendar", "age-calculator", "pregnancy-calculator"],
+    content: `<p>You are researching your family history. You find a family Bible with a handwritten record: "John William Thompson, born Tuesday, March 15, 1887." The date is specific. The day of the week is included. This is a clue to authenticity. You open a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> and check: March 15, 1887. The calendar confirms: it was a Tuesday. The document is likely authentic — someone who was fabricating a birth date would not typically include the correct day of the week. The perpetual calendar verified the document. The genealogy research moved forward.</p>
 
-<h2>Roman Numerals in Branding</h2>
+<p>Here is how genealogists use perpetual calendars to date and verify historical documents.</p>
 
-<p>Luxury brands use Roman numerals to signal heritage and exclusivity. A watch with "IV" on the face feels more prestigious than one with "4." A product line named "Mark III" feels more established than "Mark 3." The Roman numeral premium is the cognitive bias that complexity signals importance. The converter generates the correct numeral. The brand strategy deploys it effectively.</p>
+<h2>Verifying Dates with Day-of-Week Matching</h2>
 
-<h2>Roman Numerals in Tattoos</h2>
+<p>Historical documents often include the day of the week along with the date. This is a built-in verification check. If a document says "Thursday, June 10, 1921" and the perpetual calendar confirms June 10, 1921 was a Thursday, the document is likely authentic. If the days do not match, the document may be: misdated, a transcription error, or a fabrication. The perpetual calendar is the verification tool. The day of the week is the authenticity check. The match is the evidence.</p>
 
-<p>Roman numeral tattoos are one of the most popular tattoo genres — dates of birth, wedding anniversaries, memorial dates. The Roman numeral format transforms a date from a piece of data into a piece of art. "6.15.1990" is a date on a form. "VI.XV.MCMXC" is a permanent inscription. The <a href="/en/tools/roman-numerals">Roman numeral converter</a> ensures the date is correct. The tattoo artist ensures it is beautiful. The permanence is the point.</p>
+<h2>Dating Undated Documents</h2>
 
-<h2>Roman Numerals in Film and Television</h2>
+<p>Some historical documents have a day of the week and a partial date: "Monday, the 15th of [month missing], 1902." The perpetual calendar can find all months in 1902 where the 15th fell on a Monday. The result narrows the possibilities. Combined with other clues (the document's content, the paper type, the handwriting), the date can be narrowed to a specific month. The perpetual calendar is the dating tool. The historical context is the confirmation.</p>
 
-<p>The Motion Picture Association has required Roman numeral copyright dates since 1930. The practical reason was to make the date harder to read at a glance. Today it is purely tradition. The Super Bowl uses Roman numerals to sound like a gladiatorial event. The converter generates the numerals. The tradition preserves them. Roman numerals are not a number system anymore. They are a <strong>design language</strong>. The converter ensures the grammar is correct. The design ensures the impact is felt.</p>`
+<h2>Calculating Ages at Historical Events</h2>
+
+<p>You find a census record from June 1, 1900 that lists your ancestor's age as 35. You know their birth date was March 15, 1865. The perpetual calendar confirms: they would have been 35 years, 2 months, and 17 days old on June 1, 1900 — consistent with the census record. The perpetual calendar verified the age. The census record is corroborated. The <a href="/en/tools/perpetual-calendar">perpetual calendar</a> is the genealogy researcher's verification tool. Dates, days, and ages — all confirmed with one tool.</p>`
   },
   {
-    slug: "password-generator-developers-api-key-token-creation",
-    title: "Password Generator for Developers How to Create Secure API Keys Access Tokens and Cryptographic Salts",
-    description: "Your API needs secure access tokens. Your database needs cryptographic salts. A password generator creates cryptographically random strings for all of them. Here's the developer's guide.",
-    date: "2026-07-27",
-    category: "Developer",
-    tags: ["password generator", "API key", "token", "cryptographic", "developer"],
-    relatedTools: ["password-generator", "uuid-generator", "hash-generator"],
-    content: `<p>You are building an API. You need: access tokens for authentication, API keys for third-party integrations, and cryptographic salts for password hashing. Each requires a long, random, unguessable string. You could type random characters on your keyboard. That is not random. Human-generated "randomness" follows patterns — patterns that attackers exploit. You need a <a href="/en/tools/password-generator">password generator</a> configured for cryptographic randomness.</p>
-
-<h2>What Developers Need from a Password Generator</h2>
-
-<p><strong>Access tokens:</strong> 32-64 characters, mixed case + digits, no symbols (symbols can cause issues in HTTP headers). Example: a 64-character token has 384 bits of entropy — effectively unguessable. Use the generator with these settings.</p>
-
-<p><strong>API keys:</strong> 32-40 characters, mixed case + digits, often with a prefix for identification. Example: <code>sk_live_</code> + 32 random characters. The prefix identifies the key type. The random string is the secret. The generator creates the random string. You add the prefix.</p>
-
-<p><strong>Cryptographic salts:</strong> 16-32 characters, full character set including symbols. The salt is combined with the password before hashing. Each password gets a unique salt. The generator creates a unique salt for each password. The salt prevents rainbow table attacks. The generator ensures the salt is truly random.</p>
-
-<h2>The Difference Between Passwords and Developer Tokens</h2>
-
-<p>Passwords are for humans to remember (or store in a password manager). Developer tokens are for machines to use. They should be: longer (64+ characters — machines do not need to remember them), fully random (no patterns, no dictionary words), and never displayed to users. The <a href="/en/tools/password-generator">password generator</a> handles both. Configure the length and character set. The generator creates the random string. You integrate it into your application.</p>`
-  },
-  {
-    slug: "md5-generator-vs-uuid-generator-hash-vs-unique-id",
-    title: "MD5 Generator vs UUID Generator Hash vs Unique Identifier — Two Tools That Produce Strings but Serve Completely Different Purposes",
-    description: "MD5 generates a hash of data for verification. UUID generates a unique identifier for databases. Both produce strings. Both look random. But the purposes are unrelated.",
-    date: "2026-07-27",
-    category: "Developer",
-    tags: ["MD5", "UUID", "hash", "unique ID", "comparison"],
-    relatedTools: ["md5-generator", "uuid-generator", "hash-generator"],
-    content: `<p>You need to verify a downloaded file is intact. You use an <a href="/en/tools/md5-generator">MD5 generator</a> to hash the file. The hash matches the published hash. The file is verified. The MD5 hash is a <strong>fingerprint</strong> of the file's content. Same input always produces the same hash. Different input produces a different hash.</p>
-
-<p>Now you need a unique identifier for a database record. You use a <a href="/en/tools/uuid-generator">UUID generator</a> to create a UUID. The UUID is guaranteed to be unique. The UUID is a <strong>random identifier</strong>. Each call produces a different UUID. The same input is never seen again.</p>
-
-<p>Both produce strings. Both look random. But the purposes are completely different. MD5 is deterministic — same input = same output. UUID is random — each call = different output. MD5 is for verification. UUID is for identification. Use MD5 when you need to verify data integrity. Use UUID when you need a unique identifier. Different purposes. Different tools.</p>`
-  },
-  {
-    slug: "time-screen-vs-stopwatch-clock-display-vs-elapsed-time",
-    title: "Time Screen vs Stopwatch Clock Display vs Elapsed Time — Two Time Tools That Show You Time in Completely Different Ways",
-    description: "Time screen shows the current time — large, bold, and impossible to ignore. Stopwatch measures elapsed time — from zero to whenever you stop. Both are time tools. Both show numbers. But the numbers mean different things.",
-    date: "2026-07-27",
+    slug: "stopwatch-timer-cooking-professional-kitchen-timing",
+    title: "Stopwatch and Timer for Cooking Professional Kitchen Timing Without a Chef's Watch",
+    description: "Your recipe requires precise timing — 3 minutes sear, 8 minutes simmer, 12 minutes bake. A stopwatch and timer tracks every stage. Here's the home cook's precision timing guide.",
+    date: "2026-07-28",
     category: "Fun & Media",
-    tags: ["time screen", "stopwatch", "clock", "elapsed", "comparison"],
-    relatedTools: ["time-screen", "stopwatch-and-timer", "fullscreen-text"],
-    content: `<p>You open a <a href="/en/tools/time-screen">time screen</a>. The current time fills the display: 10:47 AM. The time updates every second. You leave it open on a spare monitor. The time is always visible. The tool is a <strong>clock</strong> — it tells you what time it is now.</p>
+    tags: ["stopwatch", "timer", "cooking", "kitchen", "precision"],
+    relatedTools: ["stopwatch-and-timer", "time-screen", "scoreboard"],
+    content: `<p>You are cooking a complex meal: seared scallops (3 minutes per side), risotto (18 minutes, stirring constantly), roasted vegetables (22 minutes at 400°F), and a chocolate soufflé (12 minutes — do not open the oven). Four dishes. Four different timing requirements. Your phone timer can handle one thing at a time. A <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> handles all of them. Here is the home cook's precision timing guide.</p>
 
-<p>Now you start a <a href="/en/tools/stopwatch-and-timer">stopwatch</a>. The display shows 00:00:00. You click start. The numbers begin counting up: 00:00:01, 00:00:02, 00:00:03... The stopwatch measures <strong>elapsed time</strong> — how long something takes. The tool is a <strong>measurement device</strong> — it tells you how long something took.</p>
+<h2>The Multi-Dish Timing Problem</h2>
 
-<p>Both are time tools. Both show numbers. But the numbers mean completely different things. The time screen answers: "What time is it?" The stopwatch answers: "How long did that take?" The time screen is for orientation. The stopwatch is for measurement. Use the <a href="/en/tools/time-screen">time screen</a> to know the time. Use the <a href="/en/tools/stopwatch-and-timer">stopwatch</a> to measure duration. Clock and stopwatch. Different questions. Different tools.</p>`
+<p>Professional kitchens have a chef or expediter who calls out times. Home cooks have a phone timer that tracks one thing. The multi-dish timing problem: the scallops need 3 minutes, the risotto needs 18 minutes, the vegetables need 22 minutes, and the soufflé needs 12 minutes. You need to start each at the right time so everything finishes together. The timer tracks each dish. You track the overall plan. The timer is the precision tool. The plan is the strategy.</p>
+
+<h2>The Timing Strategy: Work Backwards</h2>
+
+<p>Start with the dish that takes the longest (roasted vegetables, 22 minutes). Work backwards: vegetables in at T-22, soufflé in at T-12, risotto started at T-20 (2 minutes prep, 18 minutes stirring), and scallops seared at T-6 (3 minutes per side, 1 minute rest). The timer tracks each stage. You follow the plan. Everything finishes at the same time. The meal is served hot. The <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> is the precision tool that makes multi-dish cooking possible. The phone timer is for one dish. The multi-timer is for a feast.</p>`
   },
   {
-    slug: "book-of-answers-history-divination-i-ching-to-digital",
-    title: "The History of Divination Tools From the I Ching to the Book of Answers — How Humans Have Been Seeking Random Guidance for 3,000 Years",
-    description: "The I Ching (1000 BCE) used yarrow stalks to generate random hexagrams. The Book of Answers uses a random number generator. Different tools. Same human need: guidance in the face of uncertainty.",
-    date: "2026-07-27",
-    category: "Reference",
-    tags: ["book of answers", "divination", "history", "I Ching", "randomness"],
-    relatedTools: ["book-of-answers", "coin-flip", "random-number-generator"],
-    content: `<p>The I Ching (Book of Changes), dating to approximately 1000 BCE, is one of the oldest divination tools in human history. The method: toss 50 yarrow stalks, divide them into piles, count the remainders, and generate a hexagram — a pattern of six lines, each either broken or unbroken. The hexagram corresponds to one of 64 readings — philosophical texts that offer guidance. The randomness of the yarrow stalks generated the hexagram. The wisdom of the text provided the guidance. The I Ching did not predict the future. It provided a <strong>framework for reflection</strong> — a random prompt that helped the user think about their situation from a new perspective.</p>
+    slug: "hash-generator-blockchain-developers-merkle-trees",
+    title: "Hash Generator for Blockchain Developers How to Verify Transactions and Understand Merkle Trees",
+    description: "Blockchain technology is built on cryptographic hashes. Every transaction, every block, every Merkle tree depends on hash functions. A hash generator helps you understand the foundation. Here's the developer's guide.",
+    date: "2026-07-28",
+    category: "Developer",
+    tags: ["hash generator", "blockchain", "Merkle tree", "SHA-256", "cryptography"],
+    relatedTools: ["hash-generator", "md5-generator", "uuid-generator"],
+    content: `<p>Blockchain technology — Bitcoin, Ethereum, and thousands of other cryptocurrencies — is built on a foundation of cryptographic hashes. Every transaction is hashed. Every block is hashed. The Merkle tree that summarizes all transactions in a block is built from hashes. Understanding hashes is understanding blockchain. A <a href="/en/tools/hash-generator">hash generator</a> lets you experiment with the fundamental building block. Here is the developer's guide.</p>
 
-<p>Three thousand years later, the <a href="/en/tools/book-of-answers">Book of Answers</a> does the same thing. You ask a question. The tool generates a random response. The response is not a prediction. It is a <strong>provocation</strong> — a random prompt that helps you reflect on your situation. The technology changed from yarrow stalks to random number generators. The purpose did not change: guidance in the face of uncertainty. The yarrow stalks were random. The algorithm is random. The randomness is the mechanism. The reflection is the purpose. The I Ching and the Book of Answers are the same tool — separated by 3,000 years of technology. The human need for guidance is the constant. The tools for generating randomness are the variable.</p>`
+<h2>What a Hash Does in Blockchain</h2>
+
+<p>A cryptographic hash function takes any input and produces a fixed-size output — a hash. The key properties that make hashes useful for blockchain: deterministic (same input always produces the same hash), one-way (you cannot reconstruct the input from the hash), and avalanche effect (changing one bit of the input changes the entire hash). These properties enable: transaction verification (the hash of a transaction proves it has not been altered), block chaining (each block contains the hash of the previous block — changing one block changes all subsequent blocks), and Merkle trees (transactions are hashed, then the hashes are hashed together, producing a single root hash that summarizes all transactions).</p>
+
+<h2>Experimenting with the Hash Generator</h2>
+
+<p>Use the <a href="/en/tools/hash-generator">hash generator</a> to understand hashing: hash a transaction string, change one character, hash again — observe the avalanche effect. Hash two transaction hashes together — this is how Merkle trees work. Hash a block header — this is how block chaining works. The hash generator is the learning tool. The blockchain is the application. The hash is the foundation.</p>`
+  },
+  {
+    slug: "text-sorter-vs-remove-duplicate-lines-sorting-vs-dedup",
+    title: "Text Sorter vs Remove Duplicate Lines Sorting vs Deduplication — Two Text Tools That Often Work Together but Serve Different Purposes",
+    description: "Text sorter organizes lines by order. Remove duplicate lines eliminates repeated lines. Both clean text. Both are essential for data preparation. But they do different things.",
+    date: "2026-07-28",
+    category: "Text Tools",
+    tags: ["text sorter", "remove duplicates", "sorting", "deduplication", "comparison"],
+    relatedTools: ["text-sorter", "remove-duplicate-lines", "word-counter"],
+    content: `<p>You have a list of 5,000 email addresses: unsorted, with duplicates. You need: the list alphabetized, and duplicates removed. You use a <a href="/en/tools/text-sorter">text sorter</a> to alphabetize. You use a <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> tool to deduplicate. Two tools. Two operations. One clean list.</p>
+
+<p>Text sorter organizes. Remove duplicate lines eliminates. Both clean text. Both are essential for data preparation. But they do different things. The text sorter answers: "What order are these lines in?" The remove duplicate lines tool answers: "Which lines appear more than once?" Sorting makes duplicates adjacent. Deduplication removes the adjacent copies. The two tools are sequential: sort first, deduplicate second. Sorting without deduplication leaves duplicates. Deduplication without sorting misses non-adjacent duplicates. Together, they produce a clean, sorted, deduplicated list. Use <a href="/en/tools/text-sorter">text sorter</a> to sort and <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> to deduplicate. Order and uniqueness. Two tools. One clean dataset.</p>`
+  },
+  {
+    slug: "gif-search-vs-youtube-thumbnail-animated-vs-static",
+    title: "GIF Search vs YouTube Thumbnail Animated Expression vs Static Preview — Two Media Tools for Different Moments in Content Creation",
+    description: "GIF search finds the perfect reaction animation for a tweet. YouTube thumbnail preview checks how your video thumbnail looks at every size. Both are media tools. Both are free. But they serve different creative moments.",
+    date: "2026-07-28",
+    category: "Fun & Media",
+    tags: ["GIF search", "YouTube thumbnail", "animated", "static", "comparison"],
+    relatedTools: ["gif-search", "youtube-thumbnail", "pet-wallpaper"],
+    content: `<p>You are promoting your new YouTube video. You need two things: a reaction GIF for the announcement tweet, and a verified thumbnail for the video itself. You use <a href="/en/tools/gif-search">GIF search</a> for the tweet. You use <a href="/en/tools/youtube-thumbnail">YouTube thumbnail preview</a> for the video. Both are media tools. Both are free. But they serve different moments in the content creation workflow.</p>
+
+<p>GIF search is for <strong>expression</strong> — finding the perfect animated reaction to communicate emotion. YouTube thumbnail preview is for <strong>optimization</strong> — verifying your thumbnail is readable at every size. The GIF is the social media amplifier. The thumbnail is the click-through driver. Different tools. Different moments. Same creator. Use <a href="/en/tools/gif-search">GIF search</a> for the tweet and <a href="/en/tools/youtube-thumbnail">thumbnail preview</a> for the video.</p>`
+  },
+  {
+    slug: "uuid-mathematics-version-4-collision-probability",
+    title: "The Mathematics of UUIDs Why Version 4 UUIDs Will Never Collide — and the Mind-Boggling Scale of 2^122",
+    description: "A UUID v4 has 122 random bits. That is 5.3 × 10^36 possible values. If every person on Earth generated 1 billion UUIDs per second, it would take 10 billion years to have a 50% chance of a single collision. Here's the math.",
+    date: "2026-07-28",
+    category: "Developer",
+    tags: ["UUID", "mathematics", "collision", "probability", "GUID"],
+    relatedTools: ["uuid-generator", "random-number-generator", "hash-generator"],
+    content: `<p>You generate a UUID v4 with a <a href="/en/tools/uuid-generator">UUID generator</a>: <code>550e8400-e29b-41d4-a716-446655440000</code>. The UUID is 36 characters, 32 hex digits, 128 bits total. 122 of those bits are random. That is 2^122 possible values — approximately 5.3 × 10^36. This number is so large that the human brain cannot intuitively grasp it. Here is an attempt: if every person on Earth (8 billion) generated 1 billion UUIDs per second, it would take approximately 10 billion years to have a 50% chance of a single collision. The universe is 13.8 billion years old. A UUID collision is less likely than the universe ending before you finish reading this sentence.</p>
+
+<p>The UUID v4 is designed for one purpose: to be generated independently by different systems without coordination, with a negligible probability of collision. Your web server, your mobile app, and your database replica can all generate UUIDs without talking to each other. The mathematics guarantees they will not collide. The <a href="/en/tools/uuid-generator">UUID generator</a> produces a UUID v4 in milliseconds. The mathematics guarantees it will be unique. The scale of 2^122 is the guarantee.</p>`
   },
 ];
 
@@ -120,4 +114,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 278->done.")
+print("Free station: 284->done.")
