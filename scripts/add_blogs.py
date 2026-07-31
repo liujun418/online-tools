@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (289→295) — July 30, 2026"""
+"""Add 6 blogs to free station (295→301) — July 31, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,96 +10,94 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "svg-minifier-web-performance-core-web-vitals-lcp-optimization",
-    title: "SVG Minifier for Web Performance How to Optimize SVGs to Improve Core Web Vitals and LCP Scores",
-    description: "Your website has 50 SVG icons. They add 200KB to every page load. An SVG minifier reduces them to 80KB — improving your LCP score. Here's the web performance optimization workflow.",
-    date: "2026-07-30",
-    category: "Developer",
-    tags: ["SVG minifier", "web performance", "Core Web Vitals", "LCP", "optimization"],
-    relatedTools: ["svg-minifier", "css-minifier", "code-formatter"],
-    content: `<p>Your website loads 50 SVG icons on every page. The total file size is 200KB. That is 200KB of SVG being parsed and rendered before the page becomes interactive. Google's Core Web Vitals measure your Largest Contentful Paint (LCP) — the time it takes for the largest visible element to render. A good LCP score is under 2.5 seconds. Your 200KB of SVG icons is adding 300-500ms to your LCP. The fix: an <a href="/en/tools/svg-minifier">SVG minifier</a>. Minify the icons. Reduce the file size. Improve the LCP score.</p>
+    slug: "online-translator-travel-essential-phrases-real-time-conversation",
+    title: "Online Translator for Travel How to Communicate in Any Country with Just Your Phone",
+    description: "You are in a country where you do not speak the language. An online translator turns your phone into a real-time communication tool. Here's the essential travel translation guide.",
+    date: "2026-07-31",
+    category: "Text Tools",
+    tags: ["online translator", "travel", "phrases", "real-time", "communication"],
+    relatedTools: ["translate", "morse-code", "text-to-slug"],
+    content: `<p>You arrive in a country where you do not speak the language. You need to: ask for directions, order food, negotiate a taxi fare, and handle an emergency. You do not have time to learn the language. You have a phone and a <a href="/en/tools/translate">free online translator</a>. Here is the essential travel translation guide.</p>
 
-<h2>How SVG Size Affects LCP</h2>
+<h2>The 10 Phrases You Actually Need</h2>
 
-<p>Every SVG file on your page must be: downloaded (network time), parsed (CPU time), and rendered (paint time). The larger the SVG, the longer each step takes. Minification reduces all three: smaller files download faster, simpler markup parses faster, and fewer elements render faster. A 60% size reduction typically translates to a 30-40% LCP improvement for SVG-heavy pages.</p>
+<p>You do not need to learn the language. You need 10 phrases, translated and saved: "Hello," "Thank you," "Where is...", "How much?", "The bill, please," "I need help," "Do you speak English?", "Sorry, I don't understand," "Where is the bathroom?", and "Call a doctor." These 10 phrases cover 80% of travel communication. Use the <a href="/en/tools/translate">translator</a> to translate them before your trip. Save them on your phone. The translator handles everything else — real-time translation of responses, menus, signs, and unexpected situations. The 10 phrases are the essentials. The translator is the backup for everything else.</p>
 
-<h2>The Optimization Workflow</h2>
+<h2>Real-Time Conversation Mode</h2>
 
-<p>Run every SVG through the <a href="/en/tools/svg-minifier">SVG minifier</a>. The minifier removes: editor metadata, comments, whitespace, and excessive numeric precision. Integrate minification into your build pipeline. The minified SVGs are the production assets. The original SVGs are the source files. The build pipeline handles the optimization automatically. Your LCP score improves. Your users experience a faster page load.</p>`
+<p>For conversations, type what you want to say in English. Translate to the local language. Show the translation to the person you are speaking with. They respond. Type their response (or use voice input) back into English. The conversation is slow but functional. The translator bridges the language gap. The conversation happens. The <a href="/en/tools/translate">free online translator</a> is the universal communication tool — no language learning required.</p>`
   },
   {
-    slug: "json-to-csv-data-analysts-api-export-spreadsheet-analysis",
-    title: "JSON to CSV for Data Analysts How to Export API Data to Spreadsheets for Analysis",
-    description: "An API returns JSON. Excel reads CSV. A JSON to CSV converter bridges the gap. Here's the data analyst's API-to-spreadsheet workflow.",
-    date: "2026-07-30",
+    slug: "text-repeater-developer-load-testing-data-generation",
+    title: "Text Repeater for Developers How to Generate Test Data and Simulate Load with Simple Text Multiplication",
+    description: "You need 10,000 rows of test data for a load test. A text repeater generates them in seconds. Here's the developer's test data generation guide.",
+    date: "2026-07-31",
     category: "Developer",
-    tags: ["JSON to CSV", "data analysis", "API", "spreadsheet", "Excel"],
-    relatedTools: ["json-to-csv", "csv-to-json", "json-formatter"],
-    content: `<p>You query an API. The response is a JSON array of 5,000 customer records — nested objects, typed fields, and arrays. You need to analyze this data in Excel. Excel does not read JSON natively. You need CSV. A <a href="/en/tools/json-to-csv">JSON to CSV converter</a> flattens the nested JSON into a flat table. The CSV opens in Excel. The analysis begins.</p>
+    tags: ["text repeater", "load testing", "test data", "generation", "developer"],
+    relatedTools: ["text-repeater", "word-counter", "text-sorter"],
+    content: `<p>You are load-testing a registration API. You need 10,000 test email addresses. You could write a script. Or you could use a <a href="/en/tools/text-repeater">text repeater</a> — type a template email, multiply it 10,000 times with newline separators, and paste the output into your load testing tool. The generation took 10 seconds. The script would have taken 10 minutes to write and debug. The text repeater is the faster tool for one-off test data generation.</p>
 
-<h2>The API-to-Spreadsheet Pipeline</h2>
+<h2>When to Use a Text Repeater vs a Script</h2>
 
-<p>Query the API and get the JSON response. Paste into the <a href="/en/tools/json-to-csv">JSON to CSV converter</a>. The converter: flattens nested objects into dot-notation columns, converts arrays to comma-separated strings, and preserves data types where possible. Download the CSV. Open in Excel. The data that was locked in JSON is now analyzable in a spreadsheet. The converter bridged the format gap between API data and spreadsheet tools.</p>`
+<p>Use the text repeater for: one-time test data generation (a few thousand rows), simple patterns (repeated strings, incremental IDs), and quick placeholder content. Write a script for: complex data generation (names, addresses, varied data), data that requires randomization or uniqueness, and repeatable test data pipelines. The text repeater is the quick tool. The script is the comprehensive tool. Use the right one for the job.</p>`
   },
   {
-    slug: "base64-encoder-decoder-websocket-binary-data-text-transport",
-    title: "Base64 Encoder Decoder for WebSocket Communication How to Transport Binary Data Through Text-Based Protocols",
-    description: "WebSocket connections are text-based. Binary data like images and files must be Base64-encoded for transmission. Here's the WebSocket binary data transport guide.",
-    date: "2026-07-30",
+    slug: "url-encoder-seo-canonical-urls-parameter-management",
+    title: "URL Encoder for SEO How to Manage Canonical URLs Query Parameters and Special Characters",
+    description: "Your URL contains spaces, ampersands, and non-ASCII characters. A URL encoder makes them safe for search engines. Here's the SEO URL management guide.",
+    date: "2026-07-31",
     category: "Developer",
-    tags: ["Base64", "WebSocket", "binary", "text", "transport"],
-    relatedTools: ["base64-converter", "base64-to-image", "image-to-base64"],
-    content: `<p>You are building a real-time chat application with file sharing. The WebSocket connection transmits text messages. When a user sends an image, the binary image data must be encoded as text for transmission through the WebSocket. The receiver decodes the text back to binary. The encoding is Base64. The <a href="/en/tools/base64-converter">Base64 encoder/decoder</a> is the transport layer between binary data and the text-based WebSocket protocol.</p>
+    tags: ["URL encoder", "SEO", "canonical", "parameters", "encoding"],
+    relatedTools: ["url-encoder", "text-to-slug", "html-entities"],
+    content: `<p>Your website generates URLs with query parameters: <code>?q=coffee & tea&page=1</code>. The space and ampersand will break the URL structure. Search engines may index the broken URL — or worse, index multiple versions of the same page with different parameter encodings. A <a href="/en/tools/url-encoder">URL encoder</a> makes URLs safe for search engines by converting special characters to percent-encoded equivalents. The encoded URL is: <code>?q=coffee%20%26%20tea&page=1</code>. The URL is valid. The search engine indexes it correctly. The encoding is invisible to users. It is essential for SEO.</p>
 
-<h2>How Binary Data Travels Through Text Protocols</h2>
+<h2>When to Encode URLs for SEO</h2>
 
-<p>WebSocket messages are text or binary frames. Text frames are universally supported. Binary frames have better performance but less compatibility. When binary frames are not available, Base64 encoding bridges the gap: the sender encodes the binary image to a Base64 string, transmits the string through the WebSocket, and the receiver decodes the string back to binary. The overhead is 33% — every 3 bytes of binary become 4 characters of Base64. The trade-off is compatibility. The <a href="/en/tools/base64-converter">Base64 encoder</a> handles the encoding. The WebSocket handles the transport. The decoder recovers the binary data.</p>`
+<p>Encode when: URLs contain spaces or special characters, URLs contain non-ASCII characters (accents, non-Latin scripts), or you are setting canonical URL tags. The <a href="/en/tools/url-encoder">URL encoder</a> handles the encoding automatically. Paste the URL. Copy the encoded version. Use it in your canonical tags, sitemaps, and internal links. The encoded URL is the canonical version. The unencoded URL redirects to the encoded version. The search engine indexes one URL. The SEO value is consolidated.</p>`
   },
   {
-    slug: "markdown-preview-vs-html-to-markdown-render-vs-convert",
-    title: "Markdown Preview vs HTML to Markdown Render vs Convert — Two Markdown Tools That Work in Opposite Directions",
-    description: "Markdown preview renders Markdown as formatted text. HTML to Markdown converts HTML to Markdown syntax. One creates the view. One creates the source. They are inverse operations.",
-    date: "2026-07-30",
+    slug: "text-diff-vs-json-formatter-line-comparison-vs-data-structure",
+    title: "Text Diff vs JSON Formatter Line Comparison vs Data Structure — Two Developer Tools for Completely Different Debugging Tasks",
+    description: "Text diff compares two files line by line. JSON formatter structures data for readability. Both are debugging tools. Both work on text. But they solve completely different problems.",
+    date: "2026-07-31",
     category: "Developer",
-    tags: ["Markdown preview", "HTML to Markdown", "render", "convert", "comparison"],
-    relatedTools: ["markdown-preview", "html-to-markdown", "text-diff"],
-    content: `<p>You write documentation in Markdown. You use a <a href="/en/tools/markdown-preview">Markdown preview</a> to see how it will render. The preview shows you the formatted output. You are looking at the <strong>rendered view</strong>.</p>
+    tags: ["text diff", "JSON formatter", "comparison", "structure", "debugging"],
+    relatedTools: ["text-diff", "json-formatter", "code-formatter"],
+    content: `<p>You have two versions of a configuration file — before and after a deployment. What changed? You use a <a href="/en/tools/text-diff">text diff</a> tool. It compares the files line by line and highlights every difference. The diff shows exactly what changed between the two versions.</p>
 
-<p>Now you have an old HTML document. You want to convert it to Markdown so you can edit it in a text editor. You use an <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a>. The converter produces Markdown syntax from HTML. You are creating the <strong>source code</strong>.</p>
+<p>Now you have a single JSON response from an API — 200,000 characters in one collapsed line. What is in this data? You use a <a href="/en/tools/json-formatter">JSON formatter</a>. It adds structure, indentation, and tree view. The formatter makes the data readable.</p>
 
-<p>The two tools are inverse operations. Markdown preview: Markdown → HTML (render). HTML to Markdown: HTML → Markdown (convert). One goes from source to view. The other goes from view to source. Use the preview to check your work. Use the converter to migrate content. Different directions. Different tools.</p>`
+<p>Text diff answers: "What changed between these two files?" JSON formatter answers: "What is the structure of this data?" Both work on text. Both are essential developer tools. But the questions they answer are completely different. Use <a href="/en/tools/text-diff">text diff</a> for comparison and <a href="/en/tools/json-formatter">JSON formatter</a> for structure.</p>`
   },
   {
-    slug: "color-picker-vs-color-names-visual-selection-vs-named-reference",
-    title: "Color Picker vs Color Names Visual Selection vs Named Reference — Two Color Tools for Different Design Workflows",
-    description: "Color picker lets you visually select any color. Color names reference provides the 148 CSS named colors. One is for exploration. One is for quick reference. Both are essential for web design.",
-    date: "2026-07-30",
-    category: "Developer",
-    tags: ["color picker", "color names", "visual", "reference", "comparison"],
-    relatedTools: ["color-picker", "color-names", "color-contrast-checker"],
-    content: `<p>You need a shade of blue for a button. You open a <a href="/en/tools/color-picker">color picker</a>. You visually select a blue that looks right. The picker gives you the hex code: #3B82F6. The picker is for <strong>exploration</strong> — finding the right color by looking at it.</p>
+    slug: "dice-roller-vs-coin-flip-probability-distribution-vs-binary-outcome",
+    title: "Dice Roller vs Coin Flip Probability Distribution vs Binary Outcome — Two Random Tools for Different Types of Decisions",
+    description: "Dice produce numbers with bell curve distributions. Coin flips produce binary outcomes. Both are random. Both help make decisions. But the types of decisions they support are completely different.",
+    date: "2026-07-31",
+    category: "Fun & Media",
+    tags: ["dice roller", "coin flip", "probability", "random", "comparison"],
+    relatedTools: ["dice-roller", "coin-flip", "random-number-generator"],
+    content: `<p>You need to decide between two restaurants. You flip a <a href="/en/tools/coin-flip">coin</a>. Heads = Restaurant A. Tails = Restaurant B. The coin lands on heads. You go to Restaurant A. The decision was binary. The tool was a coin flip.</p>
 
-<p>Now you need a named blue for quick CSS prototyping. You open a <a href="/en/tools/color-names">color names reference</a>. You find "cornflowerblue" — a soft, elegant blue. The reference is for <strong>speed</strong> — typing a name is faster than looking up a hex code. The picker is the exploration tool. The names reference is the efficiency tool. Use the picker when you are designing. Use the names reference when you are coding. Different workflows. Different tools.</p>`
+<p>Now you are designing a game mechanic. You need to determine how much damage a sword does — with a predictable average and rare extreme outcomes. You roll <a href="/en/tools/dice-roller">dice</a>. 2d6 produces damage from 2-12, with 7 being most common and 2 and 12 being rare. The decision was probabilistic. The tool was dice.</p>
+
+<p>Both are random. Both help make decisions. But a coin flip is for binary choices — yes/no, A/B. Dice are for multi-outcome choices with probability distributions. Use the <a href="/en/tools/coin-flip">coin flip</a> for yes/no. Use the <a href="/en/tools/dice-roller">dice roller</a> for distributions.</p>`
   },
   {
-    slug: "barcode-history-morse-code-to-upc-to-qr-code",
-    title: "The History of Barcodes From Morse Code to UPC to QR Codes — How Lines and Squares Changed Global Commerce",
-    description: "The first barcode was inspired by Morse code — extended dots and dashes. Today, 6 billion barcodes are scanned every day. Here's the 70-year history of the technology that runs the global supply chain.",
-    date: "2026-07-30",
-    category: "Developer",
-    tags: ["barcode", "history", "UPC", "QR code", "commerce"],
-    relatedTools: ["barcode-generator", "qr-code-generator", "qr-code-scanner"],
-    content: `<p>In 1948, Norman Woodland, a graduate student at Drexel Institute, was inspired by Morse code to create a system for encoding product information. He extended the dots and dashes downward — creating the first barcode concept. The patent was filed in 1949 and granted in 1952. The first commercial barcode scan occurred on June 26, 1974: a pack of Wrigley's Juicy Fruit gum at a Marsh supermarket in Troy, Ohio. The pack of gum is now in the Smithsonian. The barcode is everywhere.</p>
+    slug: "pet-wallpaper-science-animal-cuteness-psychology",
+    title: "The Science of Animal Photography Why We Find Certain Animals Cute — and Why Looking at Pet Photos Reduces Stress",
+    description: "Looking at photos of cute animals lowers cortisol, increases dopamine, and improves focus. The effect is measurable. Here's the neuroscience of why pet photos make us feel better.",
+    date: "2026-07-31",
+    category: "Fun & Media",
+    tags: ["pet wallpaper", "cute", "neuroscience", "stress", "psychology"],
+    relatedTools: ["pet-wallpaper", "bing-wallpaper", "nasa-apod"],
+    content: `<p>You have a stressful day. You open a <a href="/en/tools/pet-wallpaper">pet wallpaper</a> and look at a photo of a golden retriever puppy. You feel better. This is not a placebo. Research shows that viewing images of cute animals: lowers cortisol (the stress hormone), increases dopamine (the reward neurotransmitter), and improves focus and fine motor performance. The effect is measurable, consistent, and documented in multiple studies. Here is the science.</p>
 
-<p>Today, approximately 6 billion barcodes are scanned every day — on products, packages, tickets, and documents. The barcode is the invisible infrastructure of global commerce. Here is the 70-year history.</p>
+<h2>The Neuroscience of Cute</h2>
 
-<h2>1948-1974: From Concept to Commerce</h2>
+<p>The human brain responds to "cute" features — large eyes relative to face size, round face, small nose and mouth — with a dopamine release in the nucleus accumbens, the brain's reward center. These features are characteristic of infant mammals, including human babies. The brain's response to cuteness is an evolutionary adaptation: caring for infants is essential for species survival, so the brain rewards the behavior with dopamine. The response triggers for any cute stimulus — human babies, animal babies, or adult animals with neotenous (infant-like) features. Looking at cute animal photos hijacks the brain's caregiving reward system. The dopamine release feels good. The cortisol reduction reduces stress. The combination improves mood and cognitive performance.</p>
 
-<p>Woodland's first barcode was a "bullseye" pattern — concentric circles. It was inspired by Morse code: narrow lines were dots, wide lines were dashes. The bullseye was functional but impractical — it required a complex scanner. The linear barcode (the familiar vertical lines) replaced it. The Universal Product Code (UPC) was adopted in 1973. The first scan in 1974 launched a revolution in inventory management, checkout speed, and supply chain visibility.</p>
-
-<h2>1974-Present: From Lines to Squares</h2>
-
-<p>The barcode encoded a 12-digit number. The QR code (1994) encoded thousands of characters — URLs, contact cards, WiFi passwords. The barcode was for commerce. The QR code was for consumers. The barcode scanner was a laser. The QR code scanner was a phone camera. The technology changed. The principle — encode information in a machine-readable pattern — remained the same. The <a href="/en/tools/barcode-generator">barcode generator</a> creates the codes that run the global supply chain. The QR code puts the same principle in every consumer's pocket. Seventy years after Norman Woodland drew lines in the sand, his idea is scanned 6 billion times a day.</p>`
+<p>The <a href="/en/tools/pet-wallpaper">pet wallpaper</a> is not just decoration. It is a micro-dose of dopamine — scientifically validated, side-effect free. The puppy photo is medicine.</p>`
   },
 ];
 
@@ -110,4 +108,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 289->done.")
+print("Free station: 295->done.")
