@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (295→301) — July 31, 2026"""
+"""Add 6 blogs to free station (301→307) — August 1, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,94 +10,110 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "online-translator-travel-essential-phrases-real-time-conversation",
-    title: "Online Translator for Travel How to Communicate in Any Country with Just Your Phone",
-    description: "You are in a country where you do not speak the language. An online translator turns your phone into a real-time communication tool. Here's the essential travel translation guide.",
-    date: "2026-07-31",
+    slug: "tip-calculator-international-tipping-customs-by-country",
+    title: "Tip Calculator for International Travel How to Navigate Tipping Customs in 20 Countries Without Embarrassing Yourself",
+    description: "Tipping rules vary wildly by country — 20% in the US, 0% in Japan, 10% in France. A tip calculator handles the math. But you still need to know the rules. Here's the international tipping guide.",
+    date: "2026-08-01",
+    category: "Calculator",
+    tags: ["tip calculator", "international travel", "tipping customs", "countries", "etiquette"],
+    relatedTools: ["tip-calculator", "percentage-calculator", "translate"],
+    content: `<p>You are at a restaurant in Tokyo. The service is excellent. You reach for your wallet to leave a tip. Your Japanese friend puts a hand on your arm. "No," they say quietly. "It's insulting." In Japan, tipping is not just unnecessary — it is offensive. Good service is a professional obligation, not something to be rewarded with extra money. A tip suggests the worker needs a bribe to do their job. You put your wallet away. You learned the rule just in time.</p>
+
+<p>Now you are in New York. The bill is $87. You need to tip. The standard is 15-20%. You use a <a href="/en/tools/tip-calculator">tip calculator</a> to figure out exactly what to leave. The math is easy. The rules are hard. Here is the international tipping guide.</p>
+
+<h2>Tipping Rules by Region</h2>
+
+<p><strong>United States and Canada:</strong> 15-20% at restaurants. Tip on the pre-tax amount. Bartenders: $1-2 per drink. Hotel housekeeping: $2-5 per night. Taxi: 10-15%. The US has the most aggressive tipping culture in the world because tipped workers are paid below minimum wage — tips are their income, not a bonus.</p>
+
+<p><strong>Europe:</strong> Service is usually included in the bill (check for "service compris"). If not, 5-10%. In France, a 15% service charge is legally included. Leaving a small extra (1-2 euros) is appreciated but not required. In Germany, round up to the nearest euro. In the UK, 10-12.5% is standard if service is not included.</p>
+
+<p><strong>East Asia:</strong> Generally no tipping. In Japan, tipping is considered rude. In China, tipping is not expected and may be refused. In South Korea, no tipping at restaurants or taxis. The exception: high-end international hotels may accept tips in all three countries.</p>
+
+<p><strong>Southeast Asia:</strong> Varies. Thailand: 10% at tourist restaurants, round up at local spots. Vietnam: not expected but appreciated. Singapore: 10% service charge is usually included. Indonesia: 5-10% at tourist restaurants.</p>
+
+<p>The <a href="/en/tools/tip-calculator">tip calculator</a> handles the math. You handle the cultural knowledge. The combination keeps you from embarrassing yourself in 20 countries.</p>`
+  },
+  {
+    slug: "fancy-text-generator-social-media-bio-profile-optimization",
+    title: "Fancy Text Generator for Social Media How to Optimize Your Bio and Profile with Unicode Text Styles That Stand Out",
+    description: "Your social media bio is the most valuable 150 characters you own. Fancy text makes it stand out in a sea of plain text. Here's the bio optimization guide for every platform.",
+    date: "2026-08-01",
     category: "Text Tools",
-    tags: ["online translator", "travel", "phrases", "real-time", "communication"],
-    relatedTools: ["translate", "morse-code", "text-to-slug"],
-    content: `<p>You arrive in a country where you do not speak the language. You need to: ask for directions, order food, negotiate a taxi fare, and handle an emergency. You do not have time to learn the language. You have a phone and a <a href="/en/tools/translate">free online translator</a>. Here is the essential travel translation guide.</p>
+    tags: ["fancy text generator", "social media", "bio", "profile", "Unicode"],
+    relatedTools: ["fancy-text-generator", "hashtag-generator", "word-counter"],
+    content: `<p>Your social media bio is 150 characters. It is the first thing people see after your profile picture. It determines whether they follow you, click your link, or scroll past. Most bios are plain text. They blend in. A <a href="/en/tools/fancy-text-generator">fancy text generator</a> makes your bio visually distinct — using Unicode text styles that render natively on every platform without images or special formatting.</p>
 
-<h2>The 10 Phrases You Actually Need</h2>
+<h2>Platform-by-Platform Bio Strategy</h2>
 
-<p>You do not need to learn the language. You need 10 phrases, translated and saved: "Hello," "Thank you," "Where is...", "How much?", "The bill, please," "I need help," "Do you speak English?", "Sorry, I don't understand," "Where is the bathroom?", and "Call a doctor." These 10 phrases cover 80% of travel communication. Use the <a href="/en/tools/translate">translator</a> to translate them before your trip. Save them on your phone. The translator handles everything else — real-time translation of responses, menus, signs, and unexpected situations. The 10 phrases are the essentials. The translator is the backup for everything else.</p>
+<p><strong>Instagram:</strong> 150 characters. Use fancy text for your name field (the bold text under your profile picture), not the bio itself. The name field is searchable. 𝔹𝕠𝕝𝕕 𝕟𝕒𝕞𝕖𝕤 catch the eye. The bio stays readable. Break lines with emojis as bullet points.</p>
 
-<h2>Real-Time Conversation Mode</h2>
+<p><strong>Twitter/X:</strong> 160 characters. Use one fancy text element — your headline or a keyword. Ｆｕｌｌｗｉｄｔｈ text stands out in the timeline. Do not over-style. One element is interesting. Two is cluttered.</p>
 
-<p>For conversations, type what you want to say in English. Translate to the local language. Show the translation to the person you are speaking with. They respond. Type their response (or use voice input) back into English. The conversation is slow but functional. The translator bridges the language gap. The conversation happens. The <a href="/en/tools/translate">free online translator</a> is the universal communication tool — no language learning required.</p>`
+<p><strong>TikTok:</strong> 80 characters. Extremely short. Use fancy text for exactly one word — the key descriptor. "𝔽𝕚𝕥𝕟𝕖𝕤𝕤 coach | Helping you get stronger" is stronger than "Fitness coach | Helping you get stronger." The fancy text creates a visual anchor. The eye goes there first.</p>
+
+<p><strong>LinkedIn:</strong> Use sparingly. LinkedIn is professional. A single fancy text element in the headline — like a bolded keyword — can work. 𝔽𝕦𝕝𝕝-𝕤𝕥𝕒𝕔𝕜 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕣 is memorable. A full bio in script font is not. Professionalism first.</p>
+
+<p>The <a href="/en/tools/fancy-text-generator">fancy text generator</a> converts plain text to Unicode styles in one click. Type your text. Choose a style. Paste into your bio. The effect is immediate. The bio is transformed. In a sea of plain text, fancy text is the signal.</p>`
   },
   {
-    slug: "text-repeater-developer-load-testing-data-generation",
-    title: "Text Repeater for Developers How to Generate Test Data and Simulate Load with Simple Text Multiplication",
-    description: "You need 10,000 rows of test data for a load test. A text repeater generates them in seconds. Here's the developer's test data generation guide.",
-    date: "2026-07-31",
-    category: "Developer",
-    tags: ["text repeater", "load testing", "test data", "generation", "developer"],
-    relatedTools: ["text-repeater", "word-counter", "text-sorter"],
-    content: `<p>You are load-testing a registration API. You need 10,000 test email addresses. You could write a script. Or you could use a <a href="/en/tools/text-repeater">text repeater</a> — type a template email, multiply it 10,000 times with newline separators, and paste the output into your load testing tool. The generation took 10 seconds. The script would have taken 10 minutes to write and debug. The text repeater is the faster tool for one-off test data generation.</p>
-
-<h2>When to Use a Text Repeater vs a Script</h2>
-
-<p>Use the text repeater for: one-time test data generation (a few thousand rows), simple patterns (repeated strings, incremental IDs), and quick placeholder content. Write a script for: complex data generation (names, addresses, varied data), data that requires randomization or uniqueness, and repeatable test data pipelines. The text repeater is the quick tool. The script is the comprehensive tool. Use the right one for the job.</p>`
-  },
-  {
-    slug: "url-encoder-seo-canonical-urls-parameter-management",
-    title: "URL Encoder for SEO How to Manage Canonical URLs Query Parameters and Special Characters",
-    description: "Your URL contains spaces, ampersands, and non-ASCII characters. A URL encoder makes them safe for search engines. Here's the SEO URL management guide.",
-    date: "2026-07-31",
-    category: "Developer",
-    tags: ["URL encoder", "SEO", "canonical", "parameters", "encoding"],
-    relatedTools: ["url-encoder", "text-to-slug", "html-entities"],
-    content: `<p>Your website generates URLs with query parameters: <code>?q=coffee & tea&page=1</code>. The space and ampersand will break the URL structure. Search engines may index the broken URL — or worse, index multiple versions of the same page with different parameter encodings. A <a href="/en/tools/url-encoder">URL encoder</a> makes URLs safe for search engines by converting special characters to percent-encoded equivalents. The encoded URL is: <code>?q=coffee%20%26%20tea&page=1</code>. The URL is valid. The search engine indexes it correctly. The encoding is invisible to users. It is essential for SEO.</p>
-
-<h2>When to Encode URLs for SEO</h2>
-
-<p>Encode when: URLs contain spaces or special characters, URLs contain non-ASCII characters (accents, non-Latin scripts), or you are setting canonical URL tags. The <a href="/en/tools/url-encoder">URL encoder</a> handles the encoding automatically. Paste the URL. Copy the encoded version. Use it in your canonical tags, sitemaps, and internal links. The encoded URL is the canonical version. The unencoded URL redirects to the encoded version. The search engine indexes one URL. The SEO value is consolidated.</p>`
-  },
-  {
-    slug: "text-diff-vs-json-formatter-line-comparison-vs-data-structure",
-    title: "Text Diff vs JSON Formatter Line Comparison vs Data Structure — Two Developer Tools for Completely Different Debugging Tasks",
-    description: "Text diff compares two files line by line. JSON formatter structures data for readability. Both are debugging tools. Both work on text. But they solve completely different problems.",
-    date: "2026-07-31",
-    category: "Developer",
-    tags: ["text diff", "JSON formatter", "comparison", "structure", "debugging"],
-    relatedTools: ["text-diff", "json-formatter", "code-formatter"],
-    content: `<p>You have two versions of a configuration file — before and after a deployment. What changed? You use a <a href="/en/tools/text-diff">text diff</a> tool. It compares the files line by line and highlights every difference. The diff shows exactly what changed between the two versions.</p>
-
-<p>Now you have a single JSON response from an API — 200,000 characters in one collapsed line. What is in this data? You use a <a href="/en/tools/json-formatter">JSON formatter</a>. It adds structure, indentation, and tree view. The formatter makes the data readable.</p>
-
-<p>Text diff answers: "What changed between these two files?" JSON formatter answers: "What is the structure of this data?" Both work on text. Both are essential developer tools. But the questions they answer are completely different. Use <a href="/en/tools/text-diff">text diff</a> for comparison and <a href="/en/tools/json-formatter">JSON formatter</a> for structure.</p>`
-  },
-  {
-    slug: "dice-roller-vs-coin-flip-probability-distribution-vs-binary-outcome",
-    title: "Dice Roller vs Coin Flip Probability Distribution vs Binary Outcome — Two Random Tools for Different Types of Decisions",
-    description: "Dice produce numbers with bell curve distributions. Coin flips produce binary outcomes. Both are random. Both help make decisions. But the types of decisions they support are completely different.",
-    date: "2026-07-31",
+    slug: "random-name-generator-fiction-writers-character-naming",
+    title: "Random Name Generator for Fiction Writers How to Name Characters That Feel Real — Without Spending Hours on Baby Name Websites",
+    description: "You need to name 30 characters for your novel. Baby name websites give you the same 100 names. A random name generator gives you thousands of combinations in seconds. Here's the character naming guide.",
+    date: "2026-08-01",
     category: "Fun & Media",
-    tags: ["dice roller", "coin flip", "probability", "random", "comparison"],
-    relatedTools: ["dice-roller", "coin-flip", "random-number-generator"],
-    content: `<p>You need to decide between two restaurants. You flip a <a href="/en/tools/coin-flip">coin</a>. Heads = Restaurant A. Tails = Restaurant B. The coin lands on heads. You go to Restaurant A. The decision was binary. The tool was a coin flip.</p>
+    tags: ["random name generator", "fiction", "writing", "character", "naming"],
+    relatedTools: ["random-name-generator", "fancy-text-generator", "dice-roller"],
+    content: `<p>You are writing a novel. You have 30 characters. Each needs a name. You open a baby name website. The top 10 names for boys: Liam, Noah, Oliver, James, Elijah, Mateo, Theodore, Henry, Lucas, William. The top 10 for girls: Olivia, Emma, Charlotte, Amelia, Sophia, Mia, Isabella, Ava, Evelyn, Luna. These are real names. Real people have them. But every other writer is using the same list. Your characters sound like a preschool class roster from 2024.</p>
 
-<p>Now you are designing a game mechanic. You need to determine how much damage a sword does — with a predictable average and rare extreme outcomes. You roll <a href="/en/tools/dice-roller">dice</a>. 2d6 produces damage from 2-12, with 7 being most common and 2 and 12 being rare. The decision was probabilistic. The tool was dice.</p>
+<p>A <a href="/en/tools/random-name-generator">random name generator</a> gives you variety. It combines first names and last names from a broader pool. It generates combinations you would not think of. It does not replace your judgment. It expands your options.</p>
 
-<p>Both are random. Both help make decisions. But a coin flip is for binary choices — yes/no, A/B. Dice are for multi-outcome choices with probability distributions. Use the <a href="/en/tools/coin-flip">coin flip</a> for yes/no. Use the <a href="/en/tools/dice-roller">dice roller</a> for distributions.</p>`
+<h2>How to Use a Name Generator for Fiction</h2>
+
+<p><strong>Generate 50 names.</strong> Do not stop at the first 10. The first 10 will feel like random combinations. By name 30, patterns emerge. You start seeing which names fit your characters. <strong>Filter by era.</strong> A character born in 1920 should not be named Jayden. A character born in 2020 should not be named Gertrude. The name generator does not know your character's age. You do. <strong>Check meaning.</strong> A name's meaning can add subtext. A character named "Mara" (bitter in Hebrew) carries a different weight than "Beatrice" (bringer of happiness). <strong>Vary the cast.</strong> Your 30 characters should not all have 5-letter names starting with different letters. Variety is realism. <strong>Say them out loud.</strong> A name that looks good on paper might be awkward to pronounce. The <a href="/en/tools/random-name-generator">random name generator</a> gives you options. You choose. The generator accelerates brainstorming. The writer makes the final call.</p>`
   },
   {
-    slug: "pet-wallpaper-science-animal-cuteness-psychology",
-    title: "The Science of Animal Photography Why We Find Certain Animals Cute — and Why Looking at Pet Photos Reduces Stress",
-    description: "Looking at photos of cute animals lowers cortisol, increases dopamine, and improves focus. The effect is measurable. Here's the neuroscience of why pet photos make us feel better.",
-    date: "2026-07-31",
+    slug: "unix-timestamp-vs-perpetual-calendar-machine-time-vs-human-time",
+    title: "Unix Timestamp vs Perpetual Calendar Machine Time vs Human Time — Two Time Tools for Completely Different Audiences",
+    description: "Unix timestamp counts seconds since 1970. Perpetual calendar shows any date in any year. Both handle time. But one is for machines. One is for humans.",
+    date: "2026-08-01",
+    category: "Developer",
+    tags: ["Unix timestamp", "perpetual calendar", "time", "machine", "comparison"],
+    relatedTools: ["unix-timestamp", "perpetual-calendar", "time-screen"],
+    content: `<p>A server logs an error: "timestamp: 1722499200." A developer uses a <a href="/en/tools/unix-timestamp">Unix timestamp converter</a> to translate it: August 1, 2024, 12:00:00 UTC. The timestamp is a single number. The converter turns it into a human-readable date. The tool is for machines speaking to humans.</p>
+
+<p>Now a genealogist is researching a family record from 1752. "Born: September 3, 1752." The genealogist uses a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> to check: what day of the week was September 3, 1752? The answer: it did not exist in Britain and its colonies. September 1752 skipped 11 days when Britain adopted the Gregorian calendar. September 2 was followed by September 14. The perpetual calendar reveals this. The tool is for humans navigating history.</p>
+
+<p>Both tools handle time. Both are essential. But the audiences are completely different. The Unix timestamp converter is for developers debugging systems. The perpetual calendar is for researchers, historians, and planners navigating human calendars. The Unix timestamp is a single number — efficient, universal, machine-readable. The perpetual calendar is a visual grid — comprehensive, contextual, human-readable. Machine time is linear and absolute. Human time is irregular and political — with leap years, calendar reforms, and cultural variations. The <a href="/en/tools/unix-timestamp">Unix timestamp</a> and the <a href="/en/tools/perpetual-calendar">perpetual calendar</a> are the bridge between these two worlds of time.</p>`
+  },
+  {
+    slug: "percentage-calculator-vs-discount-calculator-general-math-vs-shopping-math",
+    title: "Percentage Calculator vs Discount Calculator General Math vs Shopping Math — When to Use Which Tool",
+    description: "Percentage calculator handles any percent problem. Discount calculator is specialized for shopping. Both use the same math. But the use cases are completely different.",
+    date: "2026-08-01",
+    category: "Calculator",
+    tags: ["percentage calculator", "discount calculator", "shopping", "math", "comparison"],
+    relatedTools: ["percentage-calculator", "discount-calculator", "tip-calculator"],
+    content: `<p>You need to calculate what 17% of 340 is. You use a <a href="/en/tools/percentage-calculator">percentage calculator</a>. The answer: 57.8. The tool solved a general math problem. You could have been calculating a test score, a tax rate, or a statistical percentage. The percentage calculator handles any percent problem.</p>
+
+<p>Now you are shopping. A jacket is $85 with a 30% discount. You use a <a href="/en/tools/discount-calculator">discount calculator</a>. You enter the original price and the discount percentage. The tool tells you: you save $25.50, and the final price is $59.50. The discount calculator solved a specific shopping problem. It is specialized for the retail context.</p>
+
+<p>Both tools use the same math: <code>amount × percentage / 100</code>. The percentage calculator is the general tool. The discount calculator is the specialized tool. Use the percentage calculator when you need to calculate any percent of any number — test scores, commissions, tax rates, growth rates, and statistical proportions. Use the discount calculator when you are shopping and want to know the final price after a discount. The specialized tool gives you the final price directly. The general tool gives you the percent value. The math is the same. The context is different. The right tool depends on what you are doing.</p>`
+  },
+  {
+    slug: "morse-code-neuroscience-pattern-recognition-brain-auditory-processing",
+    title: "The Neuroscience of Morse Code How Your Brain Learns to Hear Patterns in Dots and Dashes — and Why It's Surprisingly Good for Cognitive Health",
+    description: "Learning Morse code activates brain regions for pattern recognition, auditory processing, and motor planning. Research shows it may improve working memory and cognitive flexibility. Here's the neuroscience.",
+    date: "2026-08-01",
     category: "Fun & Media",
-    tags: ["pet wallpaper", "cute", "neuroscience", "stress", "psychology"],
-    relatedTools: ["pet-wallpaper", "bing-wallpaper", "nasa-apod"],
-    content: `<p>You have a stressful day. You open a <a href="/en/tools/pet-wallpaper">pet wallpaper</a> and look at a photo of a golden retriever puppy. You feel better. This is not a placebo. Research shows that viewing images of cute animals: lowers cortisol (the stress hormone), increases dopamine (the reward neurotransmitter), and improves focus and fine motor performance. The effect is measurable, consistent, and documented in multiple studies. Here is the science.</p>
+    tags: ["morse code", "neuroscience", "brain", "pattern recognition", "cognitive health"],
+    relatedTools: ["morse-code", "text-repeater", "reaction-test"],
+    content: `<p>Morse code is 180 years old. It was invented for the telegraph. It should have died with it. But Morse code survived — through radio, through aviation, through the digital age. Pilots still learn it. Ham radio operators still use it. And now neuroscientists are discovering something surprising: learning Morse code is good for your brain.</p>
 
-<h2>The Neuroscience of Cute</h2>
+<h2>What Happens in Your Brain When You Learn Morse Code</h2>
 
-<p>The human brain responds to "cute" features — large eyes relative to face size, round face, small nose and mouth — with a dopamine release in the nucleus accumbens, the brain's reward center. These features are characteristic of infant mammals, including human babies. The brain's response to cuteness is an evolutionary adaptation: caring for infants is essential for species survival, so the brain rewards the behavior with dopamine. The response triggers for any cute stimulus — human babies, animal babies, or adult animals with neotenous (infant-like) features. Looking at cute animal photos hijacks the brain's caregiving reward system. The dopamine release feels good. The cortisol reduction reduces stress. The combination improves mood and cognitive performance.</p>
+<p>Learning Morse code activates three brain networks simultaneously. <strong>Auditory processing:</strong> the brain learns to distinguish short tones (dots) from long tones (dashes). The temporal lobe — specifically the primary auditory cortex — becomes more efficient at rapid temporal discrimination. <strong>Pattern recognition:</strong> the brain maps sequences of dots and dashes to letters. This is not rote memorization. It is pattern learning. The brain's pattern recognition systems — distributed across the parietal and frontal lobes — strengthen with practice. <strong>Motor planning:</strong> sending Morse code requires precise timing of finger movements. The motor cortex and cerebellum coordinate the rhythm. The result: three brain networks are exercised simultaneously. This is cross-network training.</p>
 
-<p>The <a href="/en/tools/pet-wallpaper">pet wallpaper</a> is not just decoration. It is a micro-dose of dopamine — scientifically validated, side-effect free. The puppy photo is medicine.</p>`
+<p>Research on older adults learning Morse code shows improvements in working memory and cognitive flexibility — the ability to switch between mental tasks. The mechanism is not fully understood. The hypothesis: learning a new symbolic system in adulthood triggers neuroplasticity — the brain's ability to form new connections. The <a href="/en/tools/morse-code">Morse code translator</a> is the entry point. You do not need to memorize the code to use it. But if you choose to learn it, your brain will thank you. The 180-year-old code is a cognitive workout in disguise.</p>`
   },
 ];
 
@@ -108,4 +124,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 295->done.")
+print("Free station: 301->307 done.")
