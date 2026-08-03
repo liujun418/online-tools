@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (301→307) — August 1, 2026"""
+"""Add 6 blogs to free station (307→313) — August 3, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,110 +10,98 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "tip-calculator-international-tipping-customs-by-country",
-    title: "Tip Calculator for International Travel How to Navigate Tipping Customs in 20 Countries Without Embarrassing Yourself",
-    description: "Tipping rules vary wildly by country — 20% in the US, 0% in Japan, 10% in France. A tip calculator handles the math. But you still need to know the rules. Here's the international tipping guide.",
-    date: "2026-08-01",
+    slug: "income-tax-calculator-freelancer-quarterly-estimated-tax-guide",
+    title: "Income Tax Calculator for Freelancers How to Estimate Quarterly Tax Payments and Avoid the IRS Penalty Surprise",
+    description: "You made $80,000 as a freelancer. You owe $18,000 in taxes. You saved nothing. The penalty is $1,200. An income tax calculator prevents this. Here's the quarterly tax estimation guide.",
+    date: "2026-08-03",
     category: "Calculator",
-    tags: ["tip calculator", "international travel", "tipping customs", "countries", "etiquette"],
-    relatedTools: ["tip-calculator", "percentage-calculator", "translate"],
-    content: `<p>You are at a restaurant in Tokyo. The service is excellent. You reach for your wallet to leave a tip. Your Japanese friend puts a hand on your arm. "No," they say quietly. "It's insulting." In Japan, tipping is not just unnecessary — it is offensive. Good service is a professional obligation, not something to be rewarded with extra money. A tip suggests the worker needs a bribe to do their job. You put your wallet away. You learned the rule just in time.</p>
+    tags: ["income tax calculator", "freelancer", "quarterly", "estimated tax", "IRS"],
+    relatedTools: ["income-tax-calculator", "percentage-calculator", "roi-calculator"],
+    content: `<p>You start freelancing in January. You earn $20,000 in Q1. You spend $3,000 on business expenses. You do not pay estimated taxes because you are busy working. In April, you file your return and owe $18,000. You have $3,000 saved. The IRS charges a penalty for underpayment — $1,200. The penalty is avoidable. An <a href="/en/tools/income-tax-calculator">income tax calculator</a> tells you exactly how much to set aside each quarter.</p>
 
-<p>Now you are in New York. The bill is $87. You need to tip. The standard is 15-20%. You use a <a href="/en/tools/tip-calculator">tip calculator</a> to figure out exactly what to leave. The math is easy. The rules are hard. Here is the international tipping guide.</p>
+<h2>The Quarterly Tax Workflow</h2>
 
-<h2>Tipping Rules by Region</h2>
-
-<p><strong>United States and Canada:</strong> 15-20% at restaurants. Tip on the pre-tax amount. Bartenders: $1-2 per drink. Hotel housekeeping: $2-5 per night. Taxi: 10-15%. The US has the most aggressive tipping culture in the world because tipped workers are paid below minimum wage — tips are their income, not a bonus.</p>
-
-<p><strong>Europe:</strong> Service is usually included in the bill (check for "service compris"). If not, 5-10%. In France, a 15% service charge is legally included. Leaving a small extra (1-2 euros) is appreciated but not required. In Germany, round up to the nearest euro. In the UK, 10-12.5% is standard if service is not included.</p>
-
-<p><strong>East Asia:</strong> Generally no tipping. In Japan, tipping is considered rude. In China, tipping is not expected and may be refused. In South Korea, no tipping at restaurants or taxis. The exception: high-end international hotels may accept tips in all three countries.</p>
-
-<p><strong>Southeast Asia:</strong> Varies. Thailand: 10% at tourist restaurants, round up at local spots. Vietnam: not expected but appreciated. Singapore: 10% service charge is usually included. Indonesia: 5-10% at tourist restaurants.</p>
-
-<p>The <a href="/en/tools/tip-calculator">tip calculator</a> handles the math. You handle the cultural knowledge. The combination keeps you from embarrassing yourself in 20 countries.</p>`
+<p><strong>Step 1: Estimate your annual income.</strong> In January, project your freelance income for the year. Be conservative. Underestimate by 10-20% to avoid a surprise at tax time. If you earned $20,000 in Q1, your annual projection is $80,000. <strong>Step 2: Subtract deductions.</strong> The standard deduction for 2026 is $15,000 for single filers. Self-employment tax (15.3% of net income) is deductible. Business expenses reduce your taxable income. Total deductions: $15,000 (standard) + $3,000 (business expenses) = $18,000. Estimated taxable income: $80,000 - $18,000 = $62,000. <strong>Step 3: Calculate the tax.</strong> Use the <a href="/en/tools/income-tax-calculator">income tax calculator</a>. Enter your estimated taxable income. The calculator applies the marginal tax brackets. For $62,000: the first $11,600 is taxed at 10% ($1,160), the next $35,550 at 12% ($4,266), and the remaining $14,850 at 22% ($3,267). Total income tax: $8,693. Self-employment tax: $62,000 × 15.3% = $9,486. Total tax: ~$18,179. <strong>Step 4: Divide by 4.</strong> Pay $4,545 per quarter. The <a href="/en/tools/income-tax-calculator">income tax calculator</a> does the math. You set aside the money. The penalty is avoided. The surprise is eliminated.</p>`
   },
   {
-    slug: "fancy-text-generator-social-media-bio-profile-optimization",
-    title: "Fancy Text Generator for Social Media How to Optimize Your Bio and Profile with Unicode Text Styles That Stand Out",
-    description: "Your social media bio is the most valuable 150 characters you own. Fancy text makes it stand out in a sea of plain text. Here's the bio optimization guide for every platform.",
-    date: "2026-08-01",
-    category: "Text Tools",
-    tags: ["fancy text generator", "social media", "bio", "profile", "Unicode"],
-    relatedTools: ["fancy-text-generator", "hashtag-generator", "word-counter"],
-    content: `<p>Your social media bio is 150 characters. It is the first thing people see after your profile picture. It determines whether they follow you, click your link, or scroll past. Most bios are plain text. They blend in. A <a href="/en/tools/fancy-text-generator">fancy text generator</a> makes your bio visually distinct — using Unicode text styles that render natively on every platform without images or special formatting.</p>
-
-<h2>Platform-by-Platform Bio Strategy</h2>
-
-<p><strong>Instagram:</strong> 150 characters. Use fancy text for your name field (the bold text under your profile picture), not the bio itself. The name field is searchable. 𝔹𝕠𝕝𝕕 𝕟𝕒𝕞𝕖𝕤 catch the eye. The bio stays readable. Break lines with emojis as bullet points.</p>
-
-<p><strong>Twitter/X:</strong> 160 characters. Use one fancy text element — your headline or a keyword. Ｆｕｌｌｗｉｄｔｈ text stands out in the timeline. Do not over-style. One element is interesting. Two is cluttered.</p>
-
-<p><strong>TikTok:</strong> 80 characters. Extremely short. Use fancy text for exactly one word — the key descriptor. "𝔽𝕚𝕥𝕟𝕖𝕤𝕤 coach | Helping you get stronger" is stronger than "Fitness coach | Helping you get stronger." The fancy text creates a visual anchor. The eye goes there first.</p>
-
-<p><strong>LinkedIn:</strong> Use sparingly. LinkedIn is professional. A single fancy text element in the headline — like a bolded keyword — can work. 𝔽𝕦𝕝𝕝-𝕤𝕥𝕒𝕔𝕜 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕣 is memorable. A full bio in script font is not. Professionalism first.</p>
-
-<p>The <a href="/en/tools/fancy-text-generator">fancy text generator</a> converts plain text to Unicode styles in one click. Type your text. Choose a style. Paste into your bio. The effect is immediate. The bio is transformed. In a sea of plain text, fancy text is the signal.</p>`
-  },
-  {
-    slug: "random-name-generator-fiction-writers-character-naming",
-    title: "Random Name Generator for Fiction Writers How to Name Characters That Feel Real — Without Spending Hours on Baby Name Websites",
-    description: "You need to name 30 characters for your novel. Baby name websites give you the same 100 names. A random name generator gives you thousands of combinations in seconds. Here's the character naming guide.",
-    date: "2026-08-01",
+    slug: "life-hacks-morning-routine-productivity-science-based",
+    title: "Life Hacks for Morning Routines How to Optimize Your First 60 Minutes Using Behavioral Science and Circadian Biology",
+    description: "The first 60 minutes of your day set the tone for the next 15 hours. Behavioral science and circadian biology reveal specific hacks that work. Here's the science-based morning routine guide.",
+    date: "2026-08-03",
     category: "Fun & Media",
-    tags: ["random name generator", "fiction", "writing", "character", "naming"],
-    relatedTools: ["random-name-generator", "fancy-text-generator", "dice-roller"],
-    content: `<p>You are writing a novel. You have 30 characters. Each needs a name. You open a baby name website. The top 10 names for boys: Liam, Noah, Oliver, James, Elijah, Mateo, Theodore, Henry, Lucas, William. The top 10 for girls: Olivia, Emma, Charlotte, Amelia, Sophia, Mia, Isabella, Ava, Evelyn, Luna. These are real names. Real people have them. But every other writer is using the same list. Your characters sound like a preschool class roster from 2024.</p>
+    tags: ["life hacks", "morning routine", "productivity", "circadian", "behavioral science"],
+    relatedTools: ["life-hacks", "time-screen", "stopwatch-timer"],
+    content: `<p>Your morning routine determines your productivity. The research is clear. The first 60 minutes set cognitive baseline for the next 15 hours. A bad morning compounds. A good morning amplifies. Here is the science-based morning routine — backed by circadian biology, behavioral psychology, and sleep research.</p>
 
-<p>A <a href="/en/tools/random-name-generator">random name generator</a> gives you variety. It combines first names and last names from a broader pool. It generates combinations you would not think of. It does not replace your judgment. It expands your options.</p>
+<h2>The 60-Minute Science-Based Morning Routine</h2>
 
-<h2>How to Use a Name Generator for Fiction</h2>
+<p><strong>Minute 0-5: Wake up at the same time.</strong> Your circadian rhythm runs on a 24.1-hour cycle. Light exposure resets it to 24 hours. Waking at the same time every day — including weekends — strengthens the entrainment. Irregular wake times cause "social jet lag" — equivalent to flying across 2 time zones every weekend. The effect: reduced cognitive performance on Monday comparable to mild sleep deprivation.</p>
 
-<p><strong>Generate 50 names.</strong> Do not stop at the first 10. The first 10 will feel like random combinations. By name 30, patterns emerge. You start seeing which names fit your characters. <strong>Filter by era.</strong> A character born in 1920 should not be named Jayden. A character born in 2020 should not be named Gertrude. The name generator does not know your character's age. You do. <strong>Check meaning.</strong> A name's meaning can add subtext. A character named "Mara" (bitter in Hebrew) carries a different weight than "Beatrice" (bringer of happiness). <strong>Vary the cast.</strong> Your 30 characters should not all have 5-letter names starting with different letters. Variety is realism. <strong>Say them out loud.</strong> A name that looks good on paper might be awkward to pronounce. The <a href="/en/tools/random-name-generator">random name generator</a> gives you options. You choose. The generator accelerates brainstorming. The writer makes the final call.</p>`
+<p><strong>Minute 5-15: Light exposure.</strong> Morning light triggers the suprachiasmatic nucleus (SCN) — the brain's master clock. Bright light suppresses melatonin and increases cortisol (healthy morning cortisol spike, not the chronic stress kind). The effect: alertness increases, mood improves, and sleep quality the next night improves. The ideal: 10-15 minutes of outdoor light (even cloudy). The <a href="/en/tools/time-screen">time screen</a> helps you track the minutes without picking up your phone (phone light is too dim).</p>
+
+<p><strong>Minute 15-30: No phone.</strong> Checking email or social media in the first 30 minutes triggers the brain's stress response. The prefrontal cortex — responsible for decision-making — is hijacked by the amygdala's threat detection. The effect: reactive rather than proactive mindset for the rest of the morning. The hack: use a <a href="/en/tools/stopwatch-timer">stopwatch timer</a> to track 30 minutes of phone-free time. The timer is the boundary. The boundary protects the routine.</p>
+
+<p>The <a href="/en/tools/life-hacks">life hacks collection</a> has more science-backed tips. The morning routine is the most important one. The science says: wake consistently, get light, delay the phone. The first 60 minutes set the tone. The rest of the day follows.</p>`
   },
   {
-    slug: "unix-timestamp-vs-perpetual-calendar-machine-time-vs-human-time",
-    title: "Unix Timestamp vs Perpetual Calendar Machine Time vs Human Time — Two Time Tools for Completely Different Audiences",
-    description: "Unix timestamp counts seconds since 1970. Perpetual calendar shows any date in any year. Both handle time. But one is for machines. One is for humans.",
-    date: "2026-08-01",
-    category: "Developer",
-    tags: ["Unix timestamp", "perpetual calendar", "time", "machine", "comparison"],
-    relatedTools: ["unix-timestamp", "perpetual-calendar", "time-screen"],
-    content: `<p>A server logs an error: "timestamp: 1722499200." A developer uses a <a href="/en/tools/unix-timestamp">Unix timestamp converter</a> to translate it: August 1, 2024, 12:00:00 UTC. The timestamp is a single number. The converter turns it into a human-readable date. The tool is for machines speaking to humans.</p>
-
-<p>Now a genealogist is researching a family record from 1752. "Born: September 3, 1752." The genealogist uses a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> to check: what day of the week was September 3, 1752? The answer: it did not exist in Britain and its colonies. September 1752 skipped 11 days when Britain adopted the Gregorian calendar. September 2 was followed by September 14. The perpetual calendar reveals this. The tool is for humans navigating history.</p>
-
-<p>Both tools handle time. Both are essential. But the audiences are completely different. The Unix timestamp converter is for developers debugging systems. The perpetual calendar is for researchers, historians, and planners navigating human calendars. The Unix timestamp is a single number — efficient, universal, machine-readable. The perpetual calendar is a visual grid — comprehensive, contextual, human-readable. Machine time is linear and absolute. Human time is irregular and political — with leap years, calendar reforms, and cultural variations. The <a href="/en/tools/unix-timestamp">Unix timestamp</a> and the <a href="/en/tools/perpetual-calendar">perpetual calendar</a> are the bridge between these two worlds of time.</p>`
-  },
-  {
-    slug: "percentage-calculator-vs-discount-calculator-general-math-vs-shopping-math",
-    title: "Percentage Calculator vs Discount Calculator General Math vs Shopping Math — When to Use Which Tool",
-    description: "Percentage calculator handles any percent problem. Discount calculator is specialized for shopping. Both use the same math. But the use cases are completely different.",
-    date: "2026-08-01",
+    slug: "calorie-calculator-restaurant-menu-estimation-strategy",
+    title: "Calorie Calculator for Restaurant Dining How to Estimate Calories from Any Menu When Nutritional Information Is Hidden",
+    description: "A restaurant meal can contain 1,500-2,500 calories — more than your entire daily intake. Most menus don't show the numbers. A calorie calculator with estimation strategy helps you make informed choices. Here's the guide.",
+    date: "2026-08-03",
     category: "Calculator",
-    tags: ["percentage calculator", "discount calculator", "shopping", "math", "comparison"],
-    relatedTools: ["percentage-calculator", "discount-calculator", "tip-calculator"],
-    content: `<p>You need to calculate what 17% of 340 is. You use a <a href="/en/tools/percentage-calculator">percentage calculator</a>. The answer: 57.8. The tool solved a general math problem. You could have been calculating a test score, a tax rate, or a statistical percentage. The percentage calculator handles any percent problem.</p>
+    tags: ["calorie calculator", "restaurant", "menu", "estimation", "dining"],
+    relatedTools: ["calorie-calculator", "bmi-calculator", "food-picker"],
+    content: `<p>You order a chicken Caesar salad at a restaurant. The salad is 660 calories. You order a side of garlic bread — 310 calories. You drink a glass of wine — 125 calories. You skip dessert. Total: 1,095 calories. A reasonable lunch. But if you ordered the chef's special burger (1,250 calories), fries (490 calories), and a milkshake (780 calories), the total is 2,520 calories — more than an entire day's intake for most people. The difference is 1,425 calories. The menu does not show this. A <a href="/en/tools/calorie-calculator">calorie calculator</a> with estimation strategy bridges the gap.</p>
 
-<p>Now you are shopping. A jacket is $85 with a 30% discount. You use a <a href="/en/tools/discount-calculator">discount calculator</a>. You enter the original price and the discount percentage. The tool tells you: you save $25.50, and the final price is $59.50. The discount calculator solved a specific shopping problem. It is specialized for the retail context.</p>
+<h2>The Restaurant Calorie Estimation Strategy</h2>
 
-<p>Both tools use the same math: <code>amount × percentage / 100</code>. The percentage calculator is the general tool. The discount calculator is the specialized tool. Use the percentage calculator when you need to calculate any percent of any number — test scores, commissions, tax rates, growth rates, and statistical proportions. Use the discount calculator when you are shopping and want to know the final price after a discount. The specialized tool gives you the final price directly. The general tool gives you the percent value. The math is the same. The context is different. The right tool depends on what you are doing.</p>`
+<p><strong>Protein.</strong> A serving of meat, fish, or chicken is about the size of your palm — 3-4 ounces cooked, roughly 200-300 calories. Double that if the menu says "large" or "jumbo." <strong>Starches.</strong> A cup of rice or pasta is 200-250 calories. Restaurant portions are 2-3 cups. A side of fries is 400-500 calories. <strong>Fats and sauces.</strong> This is where hidden calories live. A tablespoon of oil is 120 calories. Restaurant cooking uses 2-4 tablespoons per serving. Cream-based sauces add 200-400 calories per serving. Vinaigrette dressing adds 150-250 calories. <strong>Vegetables.</strong> Minimal calories (50-100 per serving) unless cooked in oil or butter. <strong>Beverages.</strong> Soda: 150-200 calories per glass. Alcohol: 100-200 calories per serving. Sweetened tea: 150-250 calories.</p>
+
+<p>Enter your estimates into the <a href="/en/tools/calorie-calculator">calorie calculator</a>. The calculator adds them up. The total is an estimate — not exact. But an estimate is better than no information. The strategy turns an opaque menu into a transparent choice. The <a href="/en/tools/calorie-calculator">calorie calculator</a> is the tool. The estimation strategy is the method. Together, they make restaurant dining an informed decision.</p>`
   },
   {
-    slug: "morse-code-neuroscience-pattern-recognition-brain-auditory-processing",
-    title: "The Neuroscience of Morse Code How Your Brain Learns to Hear Patterns in Dots and Dashes — and Why It's Surprisingly Good for Cognitive Health",
-    description: "Learning Morse code activates brain regions for pattern recognition, auditory processing, and motor planning. Research shows it may improve working memory and cognitive flexibility. Here's the neuroscience.",
-    date: "2026-08-01",
+    slug: "crypto-price-vs-world-map-digital-markets-vs-geographic-exploration",
+    title: "Crypto Price Tracker vs World Map Explorer Digital Assets vs Geographic Data — Two Data Tools for Completely Different Types of Exploration",
+    description: "Crypto price tracker shows real-time cryptocurrency values. World map explorer shows countries, capitals, and geography. Both display data. But one tracks markets. One explores the planet.",
+    date: "2026-08-03",
+    category: "Reference",
+    tags: ["crypto price", "world map", "digital", "geographic", "comparison"],
+    relatedTools: ["crypto-price", "world-map", "ip-lookup"],
+    content: `<p>You open a <a href="/en/tools/crypto-price">crypto price tracker</a>. Bitcoin is at $67,432. Ethereum is at $3,218. The values change every second. The screen updates in real-time. The data is about digital assets — decentralized, global, and volatile. The tool is for investors, traders, and anyone tracking the cryptocurrency market.</p>
+
+<p>Now you open a <a href="/en/tools/world-map">world map explorer</a>. You click on Mongolia. The capital is Ulaanbaatar. The population is 3.3 million. The map shows the Gobi Desert in the south and the Altai Mountains in the west. The data does not change every second. It has been stable for decades. The tool is for travelers, students, and geography enthusiasts.</p>
+
+<p>Both tools display data. Both are interactive. But the data is fundamentally different. The crypto price tracker shows real-time, volatile, market-driven data where every second changes the value. The world map explorer shows stable, geographic, reference data where the information is accurate for years. The crypto trader needs the price tracker. The traveler needs the world map. One is for navigating the digital economy. One is for navigating the physical planet. Different worlds. Different tools.</p>`
+  },
+  {
+    slug: "scoreboard-vs-reaction-test-tracking-performance-vs-testing-reflexes",
+    title: "Scoreboard vs Reaction Test Tracking Performance vs Testing Reflexes — Two Gamified Tools for Measuring Yourself Differently",
+    description: "Scoreboard tracks cumulative performance over time. Reaction test measures your reflexes in milliseconds. Both measure you. But one looks backward at what you did. One looks forward at what you can do.",
+    date: "2026-08-03",
     category: "Fun & Media",
-    tags: ["morse code", "neuroscience", "brain", "pattern recognition", "cognitive health"],
-    relatedTools: ["morse-code", "text-repeater", "reaction-test"],
-    content: `<p>Morse code is 180 years old. It was invented for the telegraph. It should have died with it. But Morse code survived — through radio, through aviation, through the digital age. Pilots still learn it. Ham radio operators still use it. And now neuroscientists are discovering something surprising: learning Morse code is good for your brain.</p>
+    tags: ["scoreboard", "reaction test", "performance", "reflexes", "comparison"],
+    relatedTools: ["scoreboard", "reaction-test", "stopwatch-timer"],
+    content: `<p>You are running a remote team meeting. You need to keep score for a quiz. You open a <a href="/en/tools/scoreboard">scoreboard</a>. You add points as teams answer questions. The scoreboard tracks cumulative performance. After 10 rounds, Team A has 85 points and Team B has 72 points. The scoreboard shows who performed best over time. It is a tool for tracking sustained performance.</p>
 
-<h2>What Happens in Your Brain When You Learn Morse Code</h2>
+<p>Now you want to test your reflexes. You open a <a href="/en/tools/reaction-test">reaction test</a>. The screen changes color. You click as fast as you can. Your reaction time is 215 milliseconds. The average is 250ms. You are in the 70th percentile. The reaction test measures your instantaneous response. It is a tool for testing raw ability.</p>
 
-<p>Learning Morse code activates three brain networks simultaneously. <strong>Auditory processing:</strong> the brain learns to distinguish short tones (dots) from long tones (dashes). The temporal lobe — specifically the primary auditory cortex — becomes more efficient at rapid temporal discrimination. <strong>Pattern recognition:</strong> the brain maps sequences of dots and dashes to letters. This is not rote memorization. It is pattern learning. The brain's pattern recognition systems — distributed across the parietal and frontal lobes — strengthen with practice. <strong>Motor planning:</strong> sending Morse code requires precise timing of finger movements. The motor cortex and cerebellum coordinate the rhythm. The result: three brain networks are exercised simultaneously. This is cross-network training.</p>
+<p>Both tools measure you. But they measure different things. The scoreboard tracks cumulative performance — how well you sustain effort over time. The reaction test measures instantaneous response — how fast your brain can react. The scoreboard is retrospective. It looks backward at what you accomplished. The reaction test is prospective. It measures what your body can do right now. The scoreboard is for games, competitions, and team activities. The reaction test is for self-assessment, cognitive monitoring, and personal challenge. Use the <a href="/en/tools/scoreboard">scoreboard</a> to track what you did. Use the <a href="/en/tools/reaction-test">reaction test</a> to measure what you can do.</p>`
+  },
+  {
+    slug: "food-picker-psychology-decision-fatigue-daily-choices",
+    title: "The Psychology of Food Choice Why Decision Fatigue Makes You Eat Worse — and How a Random Food Picker Can Break the Cycle",
+    description: "You spend 30 minutes deciding what to eat for lunch. The decision drains your willpower. By dinner, you order pizza. A random food picker eliminates the decision. Here's the psychology of food choice.",
+    date: "2026-08-03",
+    category: "Fun & Media",
+    tags: ["food picker", "decision fatigue", "psychology", "food choice", "willpower"],
+    relatedTools: ["food-picker", "dice-roller", "coin-flip"],
+    content: `<p>It is 12:30 PM. You are hungry. You open three food delivery apps. You scroll through 50 restaurants. You cannot decide. You close the apps. You open them again. You narrow it to two options. You still cannot decide. It is 1:00 PM. You are hangry and out of time. You order the same thing you always order. The decision took 30 minutes. It drained your willpower. By dinner, you are too tired to cook. You order pizza. The lunch decision cost you two meals.</p>
 
-<p>Research on older adults learning Morse code shows improvements in working memory and cognitive flexibility — the ability to switch between mental tasks. The mechanism is not fully understood. The hypothesis: learning a new symbolic system in adulthood triggers neuroplasticity — the brain's ability to form new connections. The <a href="/en/tools/morse-code">Morse code translator</a> is the entry point. You do not need to memorize the code to use it. But if you choose to learn it, your brain will thank you. The 180-year-old code is a cognitive workout in disguise.</p>`
+<h2>Decision Fatigue and Food</h2>
+
+<p>Decision fatigue is a well-documented psychological phenomenon. The more decisions you make, the worse your decision quality becomes. Each decision depletes a limited resource — willpower. By the end of the day, your willpower is depleted. You make the easiest choice, not the healthiest one. A <a href="/en/tools/food-picker">food picker</a> breaks the cycle by eliminating the decision entirely. You enter your options. The tool picks one randomly. The decision is made. No willpower is spent. Your willpower is preserved for the dinner decision.</p>
+
+<p>The <a href="/en/tools/food-picker">food picker</a> is not just for food. It is a tool for managing decision fatigue. Random selection is a legitimate strategy when the options are equally good. The random picker removes the emotional burden of choosing. The research shows that people who use random selection for low-stakes decisions report higher satisfaction with their choices — because they stop second-guessing. The <a href="/en/tools/food-picker">food picker</a> is the psychological hack. The decision fatigue is the problem. The random picker is the solution.</p>`
   },
 ];
 
@@ -124,4 +112,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 301->307 done.")
+print("Free station: 307->313 done.")
