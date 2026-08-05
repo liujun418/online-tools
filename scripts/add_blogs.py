@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (313→319) — August 4, 2026"""
+"""Add 6 blogs to free station (319→325) — August 5, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,96 +10,90 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "zodiac-sign-astronomy-vs-astrology-educational-science-guide",
-    title: "Zodiac Sign Finder Through the Lens of Astronomy Why the Constellations Don't Match the Horoscope Dates Anymore",
-    description: "Your zodiac sign is wrong. Precession of the equinoxes has shifted the constellations by about a month since horoscopes were standardized. Here's the astronomy vs astrology guide.",
-    date: "2026-08-04",
+    slug: "ai-tools-directory-small-business-owner-guide",
+    title: "Free AI Tools Directory for Small Business Owners How to Find the Right AI Tool for Your Specific Business Problem",
+    description: "There are 10,000+ AI tools. Most are useless for your business. A curated directory of free AI tools helps you find the right one. Here's the small business owner's AI tool discovery guide.",
+    date: "2026-08-05",
     category: "Reference",
-    tags: ["zodiac sign", "astronomy", "astrology", "precession", "constellations"],
-    relatedTools: ["zodiac-sign", "perpetual-calendar", "world-map"],
-    content: `<p>You are a Virgo. At least, that is what your horoscope says. You were born on September 10. According to astronomy, the Sun was in <strong>Leo</strong> on September 10 — not Virgo. The zodiac dates used by horoscopes are 2,000 years out of date. The constellations have shifted. The science is clear. Here is why your zodiac sign is probably wrong.</p>
+    tags: ["AI tools", "directory", "small business", "discovery", "curated"],
+    relatedTools: ["ai-tools", "translate", "word-counter"],
+    content: `<p>You own a small business. You hear about AI tools every day. "AI will transform your business." "You need to adopt AI or get left behind." The advice is overwhelming. There are 10,000+ AI tools. Most are useless for your specific business. You do not have time to evaluate 10,000 tools. You need a curated directory of free AI tools organized by business problem. A <a href="/en/tools/ai-tools">free AI tools directory</a> gives you exactly that.</p>
 
-<h2>The Precession Problem</h2>
+<h2>How to Find the Right AI Tool for Your Business</h2>
 
-<p>The Earth's axis rotates slowly — like a spinning top wobbling before it stops. One full wobble takes 26,000 years. This is called precession of the equinoxes. When the Babylonians standardized the zodiac signs around 500 BCE, the Sun aligned with the constellations on the dates they recorded. In 2,500 years, the axis has shifted by about 36 degrees — roughly one month. The Sun is now in a different constellation on the same date. The result: the dates used by modern horoscopes are off by approximately one month. If you were born between September 10 and October 30, you are a Leo — not a Virgo. If you were born between August 10 and September 15, you are a Cancer — not a Leo.</p>
-
-<p>Use the <a href="/en/tools/zodiac-sign">zodiac sign finder</a> to check your astronomy-based sign. The calculator uses the astronomical dates — not the astrological ones. The difference is education. The <a href="/en/tools/zodiac-sign">zodiac sign finder</a> shows you both: the astrological sign (what your horoscope uses) and the astronomical sign (where the Sun actually was). The two are different. The precession is the reason. The <a href="/en/tools/zodiac-sign">zodiac sign finder</a> is the bridge between astronomy and astrology — between what we believe and what is true.</p>`
+<p><strong>Start with the problem, not the tool.</strong> Do not search for "AI tools." Search for "AI for [your specific problem]." The <a href="/en/tools/ai-tools">AI tools directory</a> is organized by category: writing, image, productivity, data, and more. Each category answers a specific business need. <strong>Test with a real task.</strong> Do not test AI tools with demo data. Use a real business task. If you need to translate a customer email, test the <a href="/en/tools/translate">translator</a> with a real email. The test reveals whether the tool is actually useful. <strong>Check the cost.</strong> Many AI tools have free tiers. The free tier is often enough for a small business. The directory lists free tools. The free tier is the entry point. <strong>One tool at a time.</strong> Do not adopt 5 AI tools in one week. Pick one tool. Use it for a week. See if it saves time. The <a href="/en/tools/ai-tools">free AI tools directory</a> is the starting point. The problem is the guide. The tool is the solution. The small business owner does not need to be an AI expert. They need to be a problem-solver. The directory helps them solve problems.</p>`
   },
   {
-    slug: "random-quote-stoic-philosophy-daily-practice-guide",
-    title: "Random Quote Generator for Stoic Practice How to Use Daily Stoic Quotes to Build Resilience and Mental Clarity",
-    description: "Stoic philosophy is having a resurgence. A random quote generator delivers Marcus Aurelius, Seneca, and Epictetus directly to your screen. Here's how to use daily quotes for mental training.",
-    date: "2026-08-04",
-    category: "Reference",
-    tags: ["random quote", "stoic", "philosophy", "daily practice", "resilience"],
-    relatedTools: ["random-quote", "quotes", "book-of-answers"],
-    content: `<p>Marcus Aurelius wrote: "You have power over your mind — not outside events. Realize this, and you will find strength." This is stoic philosophy. It is practical. It is immediate. It is as relevant in 2026 as it was in 180 CE. A <a href="/en/tools/random-quote">random quote generator</a> delivers stoic wisdom to your screen daily. Here is how to use it as a mental training tool.</p>
-
-<h2>How to Practice Stoicism with a Random Quote</h2>
-
-<p><strong>Your morning thought.</strong> Open the <a href="/en/tools/random-quote">random quote generator</a> each morning. Read the quote. Spend 60 seconds thinking about its application to your day. Marcus Aurelius wrote his Meditations as personal notes — not as published philosophy. Each entry was a reminder. The random quote generator is the same tool. A daily reminder of a principle. <strong>Journal.</strong> Write the quote and your interpretation. Three sentences: what the quote says, what it means, and how it applies to your current situation. The act of writing anchors the principle. <strong>Apply.</strong> When you encounter a difficult situation during the day, recall the morning quote. "Choose not to be harmed — and you won't feel harmed." The quote is a cognitive anchor. The adversity is the test. The principle is the tool.</p>
-
-<p>The <a href="/en/tools/random-quote">random quote generator</a> is not a replacement for reading the Meditations or Seneca's Letters. It is a supplement — a daily dose of practical philosophy. The <a href="/en/tools/quotes">quotes directory</a> has a curated collection organized by theme. Use the generator for surprise. Use the directory for depth. The combination builds a daily practice of stoic reflection.</p>`
-  },
-  {
-    slug: "bing-wallpaper-daily-design-inspiration-creative-guide",
-    title: "Bing Wallpaper as a Daily Design Inspiration Tool How Photographers and Designers Use Microsoft's Daily Images for Creative Reference",
-    description: "Every day, Bing publishes a new high-resolution photograph. For designers, it's a daily masterclass in composition, color, and lighting. Here's how to use Bing wallpapers as creative reference.",
-    date: "2026-08-04",
-    category: "Fun & Media",
-    tags: ["bing wallpaper", "design", "inspiration", "photography", "creative"],
-    relatedTools: ["bing-wallpaper", "pet-wallpaper", "nasa-apod"],
-    content: `<p>Every morning, Bing publishes a new photograph. It is always high-resolution. It is always beautiful. It is always free. For most users, it is a pretty desktop background. For photographers and designers, it is a daily masterclass. A <a href="/en/tools/bing-wallpaper">Bing wallpaper downloader</a> gives you access to the full archive. Here is how to use it as a creative reference tool.</p>
-
-<h2>Using Bing Wallpapers for Design Education</h2>
-
-<p><strong>Composition analysis.</strong> Every Bing wallpaper is carefully composed by a professional photographer. Analyze each image: where is the subject placed? What is the rule of thirds doing? Is there leading space? The daily habit of analyzing one composition trains your eye. After 30 days, you will see composition everywhere. <strong>Color palette extraction.</strong> Download the daily wallpaper. Extract the dominant colors. The Bing wallpaper is a daily color palette. The landscape of Patagonia gives you greens and blues. The aurora borealis gives you greens and purples. The autumn foliage gives you oranges and reds. Save the palettes as reference for your next design project. <strong>Lighting study.</strong> The difference between a good photo and a great photo is often lighting. Golden hour, blue hour, overcast diffused light, and dramatic shadows. The daily wallpaper is a lighting reference. Emulate the lighting in your own work.</p>
-
-<p>The <a href="/en/tools/bing-wallpaper">Bing wallpaper downloader</a> gives you access to the archive. The daily wallpaper is free. The design education is priceless. The <a href="/en/tools/nasa-apod">NASA APOD</a> and <a href="/en/tools/pet-wallpaper">pet wallpaper</a> offer different creative perspectives. The Bing wallpaper is the daily design tool. The discipline is the practice. The result is a better eye.</p>`
-  },
-  {
-    slug: "loan-calculator-vs-mortgage-calculator-personal-loan-vs-home-loan",
-    title: "Loan Calculator vs Mortgage Calculator Personal Financing vs Home Financing — Two Financial Tools for Completely Different Borrowing Scenarios",
-    description: "Loan calculator handles any loan. Mortgage calculator is specialized for home loans. Both calculate payments. But the scenarios are completely different — and using the wrong one gives wrong answers.",
-    date: "2026-08-04",
+    slug: "unit-converter-cooking-measurement-conversion-guide",
+    title: "Unit Converter for Cooking and Baking How to Convert Between Metric and Imperial Measurements Without Math Errors",
+    description: "A British recipe calls for 500ml of milk. Your measuring cup is in cups. A unit converter handles the conversion instantly. Here's the cooking measurement conversion guide for international recipes.",
+    date: "2026-08-05",
     category: "Calculator",
-    tags: ["loan calculator", "mortgage calculator", "personal", "home", "comparison"],
-    relatedTools: ["loan-calculator", "mortgage-calculator", "compound-interest"],
-    content: `<p>You need to borrow $5,000 for a car repair. The interest rate is 8%. The term is 3 years. You use a <a href="/en/tools/loan-calculator">loan calculator</a>. The monthly payment is $156.68. The total interest is $640.58. The loan calculator handles this perfectly. The inputs are simple: amount, rate, term. The output is accurate. The tool is for personal loans, auto loans, student loans, and any other fixed-term borrowing.</p>
+    tags: ["unit converter", "cooking", "baking", "measurement", "metric imperial"],
+    relatedTools: ["unit-converter", "calorie-calculator", "percentage-calculator"],
+    content: `<p>You find a recipe for sourdough bread. The recipe is in grams and milliliters. Your measuring cups are in cups and teaspoons. The recipe calls for 500g of flour. You have no idea how many cups that is. You guess. The bread fails. The problem is not the recipe. The problem is the conversion. A <a href="/en/tools/unit-converter">unit converter</a> handles the conversion instantly. Here is the cooking measurement guide.</p>
 
-<p>Now you are buying a house. The price is $350,000. You have a 20% down payment ($70,000). The interest rate is 6.5%. The term is 30 years. You use a <a href="/en/tools/mortgage-calculator">mortgage calculator</a>. The monthly payment is $1,769.68. But that is not the full cost. The mortgage calculator also shows: property taxes ($350/month), homeowner's insurance ($100/month), and PMI (eliminated because you have 20% down). The full monthly payment is $2,219.68. The mortgage calculator includes the additional costs. The loan calculator does not.</p>
+<h2>Essential Cooking Conversions</h2>
 
-<p>Both tools calculate monthly payments. Both use the same amortization formula. But the mortgage calculator is specialized for the home-buying scenario. It accounts for property taxes, insurance, PMI, and HOA fees. The loan calculator is a general tool. Use the <a href="/en/tools/loan-calculator">loan calculator</a> for any fixed-term loan. Use the <a href="/en/tools/mortgage-calculator">mortgage calculator</a> when you are buying a home. The wrong tool gives you an incomplete picture. The right tool gives you the full truth.</p>`
+<p><strong>Volume.</strong> 1 cup = 237ml (US). This is the most common conversion. A British recipe uses milliliters. An American kitchen uses cups. The <a href="/en/tools/unit-converter">unit converter</a> converts instantly. 500ml of milk = 2.1 cups. 250ml of water = 1.05 cups. <strong>Weight.</strong> 1 cup of all-purpose flour = 120-125g. This is the most variable conversion. Different ingredients have different densities. 1 cup of honey = 340g. 1 cup of butter = 227g. The unit converter handles weight conversions. The density is the variable. <strong>Temperature.</strong> 350°F = 177°C. This is the most common baking temperature. Gas mark conversions add another layer of complexity. The unit converter handles all three scales. <strong>Volume vs weight.</strong> Weight is more accurate for baking. A cup of flour can vary by 20g depending on how you scoop it. A scale is better. But if you only have measuring cups, the unit converter is the next best thing. The <a href="/en/tools/unit-converter">unit converter</a> bridges the gap between metric and imperial. The recipe is international. The kitchen is local. The conversion is the bridge.</p>`
   },
   {
-    slug: "color-converter-vs-color-picker-hex-conversion-vs-visual-selection",
-    title: "Color Converter vs Color Picker Hex Values vs Visual Selection — Two Color Tools for Different Stages of the Design Workflow",
-    description: "Color converter translates between hex, RGB, HSL, and named colors. Color picker lets you visually select a color from anywhere. Both work with color. But one is for precision. One is for exploration.",
-    date: "2026-08-04",
-    category: "Developer",
-    tags: ["color converter", "color picker", "hex", "visual", "comparison"],
-    relatedTools: ["color-converter", "color-contrast-checker", "color-names"],
-    content: `<p>A developer specifies a button color: <code>#3B82F6</code>. The designer asks for the HSL equivalent. The developer uses a <a href="/en/tools/color-converter">color converter</a>. The result: <code>hsl(217, 91%, 60%)</code>. The converter is about precision — translating between color formats with exact values. The tool is for developers, designers, and anyone who needs a specific color in a specific format.</p>
+    slug: "translate-idioms-cultural-references-accurate-translation",
+    title: "Online Translator for Idioms and Cultural References How to Translate Phrases That Don't Make Sense When Translated Word for Word",
+    description: "\"It's raining cats and dogs\" becomes \"Il pleut des cordes\" in French — literally \"it's raining ropes.\" A translator that handles idioms needs cultural context. Here's the guide to translating what can't be translated literally.",
+    date: "2026-08-05",
+    category: "Text Tools",
+    tags: ["translate", "idioms", "cultural references", "literal", "context"],
+    relatedTools: ["translate", "text-polish", "word-counter"],
+    content: `<p>A business partner in France sends you an email. They write: "Je suis dans le creux de la vague." You use a <a href="/en/tools/translate">translator</a>. The literal translation: "I am in the hollow of the wave." The actual meaning: "I am going through a difficult time." The translator handled the idiom correctly. The literal translation was useless. The contextual translation was accurate. Here is the guide to translating what cannot be translated literally.</p>
 
-<p>Now a designer is working on a new website. They see a beautiful blue in a photograph — the sky in a landscape shot. They want to use that blue in the website. They use a <a href="color-converter">color picker</a> to select the exact blue from the image. The result: <code>#4A90D9</code>. The color picker is about exploration — finding and capturing colors from the visual world. The tool is for designers, artists, and anyone who works with color visually.</p>
+<h2>How to Handle Idioms in Translation</h2>
 
-<p>Both tools work with color. Both are essential. But they serve different stages of the design workflow. The color converter is for the <strong>implementation</strong> stage — when you have a color and need to translate it. The color picker is for the <strong>exploration</strong> stage — when you are looking for a color and need to capture it. The color converter is precise. The color picker is visual. One is a calculator. One is a camera. Use the <a href="/en/tools/color-converter">color converter</a> when you have a value and need a different format. Use the color picker when you have a visual and need to extract the value. The <a href="/en/tools/color-contrast-checker">color contrast checker</a> is the third tool — verifying that the color you picked meets accessibility standards.</p>`
+<p><strong>Recognize the idiom.</strong> The first step is knowing that a phrase is an idiom. "It's raining cats and dogs" is clearly not literal. But "I'm in the hollow of the wave" sounds like it could be literal. The <a href="/en/tools/translate">translator</a> recognizes idioms and translates them contextually. The literal translation is a warning sign. If the translation sounds strange, the phrase is likely an idiom. <strong>Provide context.</strong> Idioms need context. Translate a single sentence and the translator may miss the idiom. Translate the full paragraph and the translator has context. The context helps the AI recognize the idiom and choose the correct equivalent. <strong>Check the cultural equivalent.</strong> Different languages have different idioms for the same meaning. English: "It's raining cats and dogs." French: "Il pleut des cordes" (it's raining ropes). German: "Es regnet Bindfäden" (it's raining strings). The <a href="/en/tools/translate">translator</a> handles the cultural mapping. The user gets the meaning. The literal translation is a curiosity. The contextual translation is the communication tool. The <a href="/en/tools/text-polish">text polisher</a> can refine the translated text for natural flow. The combination is a cross-cultural communication tool.</p>`
   },
   {
-    slug: "ip-lookup-history-internet-geolocation-technology",
-    title: "The Hidden Geography of the Internet How IP Geolocation Works — From ARPANET to Modern Geo-Aware Services",
-    description: "When you visit a website, it knows your city. Not your street address — but close. IP geolocation has become a core technology of the modern web. Here's how it works, what it gets right, and what it gets wrong.",
-    date: "2026-08-04",
-    category: "Reference",
-    tags: ["IP lookup", "geolocation", "internet", "history", "privacy"],
-    relatedTools: ["ip-lookup", "world-map", "global-weather"],
-    content: `<p>You visit a website. It shows you the weather in your city. It offers prices in your local currency. It displays the correct language. The website did not ask you where you are. It knows. The technology is IP geolocation — mapping your IP address to a physical location. An <a href="/en/tools/ip-lookup">IP lookup tool</a> shows you what the internet knows about your location. The accuracy may surprise you.</p>
+    slug: "bmi-calculator-vs-pregnancy-calculator-general-health-vs-life-stage",
+    title: "BMI Calculator vs Pregnancy Calculator General Health Assessment vs Life Stage Tracking — Two Health Calculators for Completely Different Purposes",
+    description: "BMI calculator assesses body composition for any adult. Pregnancy calculator tracks a specific nine-month journey. Both are health calculators. But one is universal. One is specialized.",
+    date: "2026-08-05",
+    category: "Calculator",
+    tags: ["BMI calculator", "pregnancy calculator", "health", "comparison", "life stage"],
+    relatedTools: ["bmi-calculator", "pregnancy-calculator", "calorie-calculator"],
+    content: `<p>Your doctor recommends checking your BMI. You are 5'10" and 175 pounds. You use a <a href="/en/tools/bmi-calculator">BMI calculator</a>. Your BMI is 25.1 — overweight. The calculator is a general health assessment tool. It works for any adult, any age, any gender. The output is a number between 15 and 40. The interpretation is universal: underweight, normal, overweight, obese. The BMI calculator is a screening tool — not a diagnostic one. It asks three questions: height, weight, and whether you want metric or imperial.</p>
 
-<h2>How IP Geolocation Works</h2>
+<p>Now you are pregnant. You are due on April 15. You want to know what week you are in. You use a <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a>. The calculator asks: first day of your last period. The output: you are in week 23. The calculator shows your current week, the trimester, and the baby's development stage. The pregnancy calculator is a specialized tracking tool. It works for one specific life stage — pregnancy. The output is a personalized timeline. The BMI calculator is a snapshot. The pregnancy calculator is a journey. One measures your body at a moment. One tracks a process over nine months. Both are essential. Both are specific to their purpose. The <a href="/en/tools/bmi-calculator">BMI calculator</a> is for general health awareness. The <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> is for expecting parents. Different calculators. Different purposes. Both valuable.</p>`
+  },
+  {
+    slug: "youtube-thumbnail-vs-gif-search-static-visual-vs-animated-content",
+    title: "YouTube Thumbnail vs GIF Search Static Visual vs Animated Content — Two Visual Tools for Different Moments in Content Creation",
+    description: "YouTube thumbnail grabs attention in a feed. GIF communicates emotion in a message. Both are visual. But one is a billboard. One is a reaction.",
+    date: "2026-08-05",
+    category: "Fun & Media",
+    tags: ["YouTube thumbnail", "GIF search", "visual", "static", "animated", "comparison"],
+    relatedTools: ["youtube-thumbnail", "gif-search", "fancy-text-generator"],
+    content: `<p>You are creating a YouTube video. The thumbnail is the first thing viewers see. A bright, high-contrast thumbnail with a face and minimal text can increase CTR from 3% to 8%. You use a <a href="/en/tools/youtube-thumbnail">YouTube thumbnail downloader</a> to preview how your thumbnail will look at different sizes. The thumbnail is a static image. It is a billboard. It has one job: stop the scroll.</p>
 
-<p>IP addresses are not random. They are allocated in blocks by regional registries. The registry for North America (ARIN) allocates blocks to ISPs. The ISPs allocate blocks to regional networks. A block of IPs in Dallas, Texas, is assigned to a specific ISP in that region. The geolocation database maps the IP block to Dallas. The mapping is accurate at the city level for most residential IPs. It is less accurate for mobile IPs (which route through regional hubs) and corporate IPs (which may route through headquarters in a different city). The accuracy is: city-level: 95%+ for residential IPs, 70-80% for mobile IPs, and 50-60% for corporate VPNs. Street-level: almost never. IP geolocation maps to a city, not a street address.</p>
+<p>Now you are in a group chat. A friend says something funny. You want to respond. You use a <a href="/en/tools/gif-search">GIF search</a> tool. You type "laughing." The tool returns animated GIFs. You pick one. The GIF is animated. It communicates emotion. The GIF has one job: express a reaction.</p>
 
-<p>The <a href="/en/tools/ip-lookup">IP lookup tool</a> shows you what the internet knows about your location. The result is a city — not a street address. The map shows the approximate location. The accuracy varies. The <a href="/en/tools/world-map">world map explorer</a> shows the geographic context. The <a href="/en/tools/global-weather">global weather checker</a> uses your location for weather data. The combination of IP geolocation and these tools creates a personalized web experience. The technology is remarkable. The limitations are important to understand.</p>`
+<p>Both tools are visual. Both are essential for content creators. But the use cases are completely different. The YouTube thumbnail is a <strong>static</strong> visual — designed to be seen in a feed, competing for attention against other static images. The GIF is an <strong>animated</strong> visual — designed to be seen in a message, communicating emotion through motion. The YouTube thumbnail works at small sizes (the YouTube feed shows thumbnails at ~200px wide). The GIF works at any size — the animation itself is the content. The YouTube thumbnail is a tool for marketing. The GIF is a tool for communication. The <a href="/en/tools/youtube-thumbnail">YouTube thumbnail tool</a> helps you optimize the static visual. The <a href="/en/tools/gif-search">GIF search</a> helps you find the animated reaction. Different tools for different visual moments.</p>`
+  },
+  {
+    slug: "compound-interest-math-rule-of-72-exponential-growth",
+    title: "The Mathematics of Compound Interest How the Rule of 72 and Exponential Growth Explain Why Time Is Your Most Valuable Asset",
+    description: "Albert Einstein called compound interest the eighth wonder of the world. The math is simple. The implications are profound. Here's how the rule of 72 and exponential growth work — and why starting early matters more than investing more.",
+    date: "2026-08-05",
+    category: "Calculator",
+    tags: ["compound interest", "rule of 72", "mathematics", "exponential growth", "investing"],
+    relatedTools: ["compound-interest", "roi-calculator", "percentage-calculator"],
+    content: `<p>Albert Einstein reportedly called compound interest the eighth wonder of the world. He may not have said it. But the sentiment is correct. Compound interest is the most powerful force in personal finance. The math is simple. The implications are profound. A <a href="/en/tools/compound-interest">compound interest calculator</a> shows you the power of exponential growth. Here is the math.</p>
+
+<h2>The Rule of 72</h2>
+
+<p>The rule of 72 is a simple mental math shortcut. Divide 72 by the annual interest rate. The result is the number of years it takes for your money to double. At 6% interest: 72 ÷ 6 = 12 years. Your money doubles every 12 years. At 10% interest: 72 ÷ 10 = 7.2 years. Your money doubles every 7.2 years. The rule is approximate. It is accurate enough for planning. The <a href="/en/tools/compound-interest">compound interest calculator</a> gives you the exact numbers.</p>
+
+<h2>Why Starting Early Matters More Than Investing More</h2>
+
+<p>Two investors. Alice starts investing at age 25. She invests $5,000 per year for 10 years — total $50,000. Then she stops. She never invests another dollar. Bob starts investing at age 35. He invests $5,000 per year for 30 years — total $150,000. He invested three times as much. At age 65, with 7% annual returns: Alice has $564,000. Bob has $511,000. Alice invested $50,000 and ended with more than Bob, who invested $150,000. The difference is 10 years of compounding. The <a href="/en/tools/compound-interest">compound interest calculator</a> shows the numbers. The rule of 72 explains the mechanism. The lesson: start early. The <a href="/en/tools/roi-calculator">ROI calculator</a> helps you compare different investment scenarios. The <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the percentage math. The math is simple. The discipline is hard. The compound interest calculator is the tool. The rule of 72 is the shortcut. The lesson: start today.</p>`
   },
 ];
 
@@ -110,4 +104,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 313->319 done.")
+print("Free station: 319->325 done.")
