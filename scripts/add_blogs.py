@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (319→325) — August 5, 2026"""
+"""Add 6 blogs to free station (325→331) — August 6, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,90 +10,94 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "ai-tools-directory-small-business-owner-guide",
-    title: "Free AI Tools Directory for Small Business Owners How to Find the Right AI Tool for Your Specific Business Problem",
-    description: "There are 10,000+ AI tools. Most are useless for your business. A curated directory of free AI tools helps you find the right one. Here's the small business owner's AI tool discovery guide.",
-    date: "2026-08-05",
-    category: "Reference",
-    tags: ["AI tools", "directory", "small business", "discovery", "curated"],
-    relatedTools: ["ai-tools", "translate", "word-counter"],
-    content: `<p>You own a small business. You hear about AI tools every day. "AI will transform your business." "You need to adopt AI or get left behind." The advice is overwhelming. There are 10,000+ AI tools. Most are useless for your specific business. You do not have time to evaluate 10,000 tools. You need a curated directory of free AI tools organized by business problem. A <a href="/en/tools/ai-tools">free AI tools directory</a> gives you exactly that.</p>
-
-<h2>How to Find the Right AI Tool for Your Business</h2>
-
-<p><strong>Start with the problem, not the tool.</strong> Do not search for "AI tools." Search for "AI for [your specific problem]." The <a href="/en/tools/ai-tools">AI tools directory</a> is organized by category: writing, image, productivity, data, and more. Each category answers a specific business need. <strong>Test with a real task.</strong> Do not test AI tools with demo data. Use a real business task. If you need to translate a customer email, test the <a href="/en/tools/translate">translator</a> with a real email. The test reveals whether the tool is actually useful. <strong>Check the cost.</strong> Many AI tools have free tiers. The free tier is often enough for a small business. The directory lists free tools. The free tier is the entry point. <strong>One tool at a time.</strong> Do not adopt 5 AI tools in one week. Pick one tool. Use it for a week. See if it saves time. The <a href="/en/tools/ai-tools">free AI tools directory</a> is the starting point. The problem is the guide. The tool is the solution. The small business owner does not need to be an AI expert. They need to be a problem-solver. The directory helps them solve problems.</p>`
-  },
-  {
-    slug: "unit-converter-cooking-measurement-conversion-guide",
-    title: "Unit Converter for Cooking and Baking How to Convert Between Metric and Imperial Measurements Without Math Errors",
-    description: "A British recipe calls for 500ml of milk. Your measuring cup is in cups. A unit converter handles the conversion instantly. Here's the cooking measurement conversion guide for international recipes.",
-    date: "2026-08-05",
-    category: "Calculator",
-    tags: ["unit converter", "cooking", "baking", "measurement", "metric imperial"],
-    relatedTools: ["unit-converter", "calorie-calculator", "percentage-calculator"],
-    content: `<p>You find a recipe for sourdough bread. The recipe is in grams and milliliters. Your measuring cups are in cups and teaspoons. The recipe calls for 500g of flour. You have no idea how many cups that is. You guess. The bread fails. The problem is not the recipe. The problem is the conversion. A <a href="/en/tools/unit-converter">unit converter</a> handles the conversion instantly. Here is the cooking measurement guide.</p>
-
-<h2>Essential Cooking Conversions</h2>
-
-<p><strong>Volume.</strong> 1 cup = 237ml (US). This is the most common conversion. A British recipe uses milliliters. An American kitchen uses cups. The <a href="/en/tools/unit-converter">unit converter</a> converts instantly. 500ml of milk = 2.1 cups. 250ml of water = 1.05 cups. <strong>Weight.</strong> 1 cup of all-purpose flour = 120-125g. This is the most variable conversion. Different ingredients have different densities. 1 cup of honey = 340g. 1 cup of butter = 227g. The unit converter handles weight conversions. The density is the variable. <strong>Temperature.</strong> 350°F = 177°C. This is the most common baking temperature. Gas mark conversions add another layer of complexity. The unit converter handles all three scales. <strong>Volume vs weight.</strong> Weight is more accurate for baking. A cup of flour can vary by 20g depending on how you scoop it. A scale is better. But if you only have measuring cups, the unit converter is the next best thing. The <a href="/en/tools/unit-converter">unit converter</a> bridges the gap between metric and imperial. The recipe is international. The kitchen is local. The conversion is the bridge.</p>`
-  },
-  {
-    slug: "translate-idioms-cultural-references-accurate-translation",
-    title: "Online Translator for Idioms and Cultural References How to Translate Phrases That Don't Make Sense When Translated Word for Word",
-    description: "\"It's raining cats and dogs\" becomes \"Il pleut des cordes\" in French — literally \"it's raining ropes.\" A translator that handles idioms needs cultural context. Here's the guide to translating what can't be translated literally.",
-    date: "2026-08-05",
+    slug: "word-counter-academic-writing-word-count-requirements",
+    title: "Word Counter for Academic Writing How to Meet Word Count Requirements Without Sacrificing Quality",
+    description: "Your professor requires 2,500 words. You have 1,800. You need to expand without adding fluff. A word counter helps you track every paragraph. Here's the academic writing word count strategy.",
+    date: "2026-08-06",
     category: "Text Tools",
-    tags: ["translate", "idioms", "cultural references", "literal", "context"],
-    relatedTools: ["translate", "text-polish", "word-counter"],
-    content: `<p>A business partner in France sends you an email. They write: "Je suis dans le creux de la vague." You use a <a href="/en/tools/translate">translator</a>. The literal translation: "I am in the hollow of the wave." The actual meaning: "I am going through a difficult time." The translator handled the idiom correctly. The literal translation was useless. The contextual translation was accurate. Here is the guide to translating what cannot be translated literally.</p>
+    tags: ["word counter", "academic writing", "word count", "essay", "writing tips"],
+    relatedTools: ["word-counter", "text-polish", "case-converter"],
+    content: `<p>Your professor requires 2,500 words. You have written 1,800. You need 700 more words. The deadline is tomorrow. The temptation: add fluff, repeat yourself, use long sentences. The better approach: use a <a href="/en/tools/word-counter">word counter</a> to track your progress and identify underdeveloped sections. Here is the academic writing word count strategy.</p>
 
-<h2>How to Handle Idioms in Translation</h2>
+<h2>How to Meet Word Count Without Sacrificing Quality</h2>
 
-<p><strong>Recognize the idiom.</strong> The first step is knowing that a phrase is an idiom. "It's raining cats and dogs" is clearly not literal. But "I'm in the hollow of the wave" sounds like it could be literal. The <a href="/en/tools/translate">translator</a> recognizes idioms and translates them contextually. The literal translation is a warning sign. If the translation sounds strange, the phrase is likely an idiom. <strong>Provide context.</strong> Idioms need context. Translate a single sentence and the translator may miss the idiom. Translate the full paragraph and the translator has context. The context helps the AI recognize the idiom and choose the correct equivalent. <strong>Check the cultural equivalent.</strong> Different languages have different idioms for the same meaning. English: "It's raining cats and dogs." French: "Il pleut des cordes" (it's raining ropes). German: "Es regnet Bindfäden" (it's raining strings). The <a href="/en/tools/translate">translator</a> handles the cultural mapping. The user gets the meaning. The literal translation is a curiosity. The contextual translation is the communication tool. The <a href="/en/tools/text-polish">text polisher</a> can refine the translated text for natural flow. The combination is a cross-cultural communication tool.</p>`
+<p><strong>Track paragraph by paragraph.</strong> Do not check the total word count at the end. Check each paragraph as you write. A <a href="/en/tools/word-counter">word counter</a> gives you instant feedback. If a paragraph is 50 words and the idea deserves 200 words, expand it. If a paragraph is 300 words and the idea is simple, trim it. The paragraph-level tracking keeps the essay balanced. <strong>Identify underdeveloped arguments.</strong> The word counter reveals which sections are thin. A 2,500-word essay typically has 5-7 paragraphs of 300-500 words each. If one paragraph is 100 words, the argument is underdeveloped. Add evidence, examples, or counterarguments. <strong>Use the text polisher for expansion.</strong> The <a href="/en/tools/text-polish">text polisher</a> can help you rephrase thin sentences into more substantive ones. Write a simple sentence. Run it through the polisher. The result is a more detailed version. <strong>Check character count for headlines.</strong> Some academic formats have headline character limits. The <a href="/en/tools/case-converter">case converter</a> helps with title case formatting. The word counter handles the body. The combination keeps the essay on track. The <a href="/en/tools/word-counter">word counter</a> is the tracking tool. The writer is the quality engine. The strategy is: write, check, expand, check again.</p>`
   },
   {
-    slug: "bmi-calculator-vs-pregnancy-calculator-general-health-vs-life-stage",
-    title: "BMI Calculator vs Pregnancy Calculator General Health Assessment vs Life Stage Tracking — Two Health Calculators for Completely Different Purposes",
-    description: "BMI calculator assesses body composition for any adult. Pregnancy calculator tracks a specific nine-month journey. Both are health calculators. But one is universal. One is specialized.",
-    date: "2026-08-05",
+    slug: "password-generator-online-security-strong-memorable-passwords",
+    title: "Password Generator for Online Security How to Create Strong, Memorable Passwords for Every Account Without Reusing the Same One",
+    description: "You have 100 online accounts. You use the same password for 80 of them. One breach compromises everything. A password generator creates unique passwords for every account. Here's the online security guide.",
+    date: "2026-08-06",
+    category: "Developer Tools",
+    tags: ["password generator", "online security", "strong passwords", "account security", "password manager"],
+    relatedTools: ["password-generator", "uuid-generator", "hash-generator"],
+    content: `<p>You have 100 online accounts. You use the same password for 80 of them. One service gets breached. The hacker has your email and password. They try it on your bank account. Your bank account is compromised. The problem is not the breach. The problem is password reuse. A <a href="/en/tools/password-generator">password generator</a> creates unique, strong passwords for every account. Here is the online security strategy.</p>
+
+<h2>How to Create and Manage Strong Passwords</h2>
+
+<p><strong>Use a password generator.</strong> A <a href="/en/tools/password-generator">password generator</a> creates random strings of characters. The password includes uppercase letters, lowercase letters, numbers, and symbols. The password is 16-20 characters long. The password is impossible to guess. The password is unique to each account. The generator handles the complexity. <strong>Do not memorize passwords.</strong> You cannot remember 100 unique 16-character passwords. Do not try. Use a password manager. The password manager stores all your passwords. You only need to remember one master password. The <a href="/en/tools/password-generator">password generator</a> creates the passwords. The password manager stores them. <strong>Use a UUID for account IDs.</strong> The <a href="/en/tools/uuid-generator">UUID generator</a> creates unique identifiers for account references. The <a href="/en/tools/hash-generator">hash generator</a> can verify password integrity. The combination is a complete security toolkit. <strong>Change passwords immediately after a breach.</strong> When a service announces a breach, change the password immediately. Use the password generator to create a new one. The old password is compromised. The new password is safe. The <a href="/en/tools/password-generator">password generator</a> is the creation tool. The password manager is the storage tool. The combination is: one strong password per account, all stored securely, all unique.</p>`
+  },
+  {
+    slug: "calorie-calculator-meal-planning-weight-management",
+    title: "Calorie Calculator for Meal Planning How to Track Your Daily Caloric Intake for Weight Management Without Obsessive Counting",
+    description: "You want to lose weight. You need to eat fewer calories than you burn. But how many calories do you burn? A calorie calculator estimates your daily needs. Here's the meal planning guide for weight management.",
+    date: "2026-08-06",
     category: "Calculator",
-    tags: ["BMI calculator", "pregnancy calculator", "health", "comparison", "life stage"],
-    relatedTools: ["bmi-calculator", "pregnancy-calculator", "calorie-calculator"],
-    content: `<p>Your doctor recommends checking your BMI. You are 5'10" and 175 pounds. You use a <a href="/en/tools/bmi-calculator">BMI calculator</a>. Your BMI is 25.1 — overweight. The calculator is a general health assessment tool. It works for any adult, any age, any gender. The output is a number between 15 and 40. The interpretation is universal: underweight, normal, overweight, obese. The BMI calculator is a screening tool — not a diagnostic one. It asks three questions: height, weight, and whether you want metric or imperial.</p>
+    tags: ["calorie calculator", "meal planning", "weight management", "calories", "nutrition"],
+    relatedTools: ["calorie-calculator", "bmi-calculator", "percentage-calculator"],
+    content: `<p>You want to lose weight. You know the principle: eat fewer calories than you burn. But how many calories do you burn? The answer depends on your age, gender, weight, height, and activity level. A <a href="/en/tools/calorie-calculator">calorie calculator</a> estimates your Total Daily Energy Expenditure (TDEE). Here is the meal planning guide for weight management.</p>
 
-<p>Now you are pregnant. You are due on April 15. You want to know what week you are in. You use a <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a>. The calculator asks: first day of your last period. The output: you are in week 23. The calculator shows your current week, the trimester, and the baby's development stage. The pregnancy calculator is a specialized tracking tool. It works for one specific life stage — pregnancy. The output is a personalized timeline. The BMI calculator is a snapshot. The pregnancy calculator is a journey. One measures your body at a moment. One tracks a process over nine months. Both are essential. Both are specific to their purpose. The <a href="/en/tools/bmi-calculator">BMI calculator</a> is for general health awareness. The <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> is for expecting parents. Different calculators. Different purposes. Both valuable.</p>`
+<h2>How to Use a Calorie Calculator for Meal Planning</h2>
+
+<p><strong>Calculate your baseline.</strong> Use the <a href="/en/tools/calorie-calculator">calorie calculator</a> to estimate your TDEE. A 30-year-old woman who is 5'5" and 150 pounds with moderate exercise burns approximately 2,100 calories per day. A 35-year-old man who is 5'10" and 180 pounds with light exercise burns approximately 2,400 calories per day. The calculator gives you the starting point. <strong>Set your goal.</strong> Weight loss: eat 300-500 calories below your TDEE. Weight gain: eat 300-500 calories above your TDEE. Weight maintenance: eat at your TDEE. The percentage is simple math. The <a href="/en/tools/percentage-calculator">percentage calculator</a> helps you calculate the exact numbers. <strong>Track for one week.</strong> Do not track forever. Track for one week to understand your eating patterns. Use a food diary app. Write down everything you eat. Compare the total to your TDEE. The <a href="/en/tools/calorie-calculator">calorie calculator</a> is the planning tool. The food diary is the tracking tool. <strong>Check your BMI.</strong> Use the <a href="/en/tools/bmi-calculator">BMI calculator</a> to track your progress over time. The BMI is a screening tool. The calorie calculator is the planning tool. The combination is a complete weight management system. The <a href="/en/tools/calorie-calculator">calorie calculator</a> gives you the numbers. The discipline gives you the results.</p>`
   },
   {
-    slug: "youtube-thumbnail-vs-gif-search-static-visual-vs-animated-content",
-    title: "YouTube Thumbnail vs GIF Search Static Visual vs Animated Content — Two Visual Tools for Different Moments in Content Creation",
-    description: "YouTube thumbnail grabs attention in a feed. GIF communicates emotion in a message. Both are visual. But one is a billboard. One is a reaction.",
-    date: "2026-08-05",
-    category: "Fun & Media",
-    tags: ["YouTube thumbnail", "GIF search", "visual", "static", "animated", "comparison"],
-    relatedTools: ["youtube-thumbnail", "gif-search", "fancy-text-generator"],
-    content: `<p>You are creating a YouTube video. The thumbnail is the first thing viewers see. A bright, high-contrast thumbnail with a face and minimal text can increase CTR from 3% to 8%. You use a <a href="/en/tools/youtube-thumbnail">YouTube thumbnail downloader</a> to preview how your thumbnail will look at different sizes. The thumbnail is a static image. It is a billboard. It has one job: stop the scroll.</p>
+    slug: "qr-code-generator-vs-qr-code-scanner-create-vs-read",
+    title: "QR Code Generator vs QR Code Scanner Create vs Read — Two QR Code Tools for Different Moments in Digital Communication",
+    description: "QR code generator creates codes from URLs. QR code scanner reads codes from images. Both are QR code tools. But one is for sending. One is for receiving.",
+    date: "2026-08-06",
+    category: "Developer Tools",
+    tags: ["QR code generator", "QR code scanner", "QR code", "comparison", "digital communication"],
+    relatedTools: ["qr-code-generator", "qr-code-scanner", "url-encoder"],
+    content: `<p>You are a restaurant owner. You want customers to see your menu. You create a QR code that links to your menu page. You put the QR code on the table. Customers scan the QR code with their phones. They see the menu. The transaction is complete. The <a href="/en/tools/qr-code-generator">QR code generator</a> created the code. The customer's phone scanned it. Two different tools for two different moments.</p>
 
-<p>Now you are in a group chat. A friend says something funny. You want to respond. You use a <a href="/en/tools/gif-search">GIF search</a> tool. You type "laughing." The tool returns animated GIFs. You pick one. The GIF is animated. It communicates emotion. The GIF has one job: express a reaction.</p>
+<p>The <a href="/en/tools/qr-code-generator">QR code generator</a> is a creation tool. You input a URL. The tool generates a QR code image. You download the image. You print it on a menu, a business card, a poster, or a product label. The QR code is a bridge. It connects the physical world to the digital world. The generator is the bridge builder.</p>
 
-<p>Both tools are visual. Both are essential for content creators. But the use cases are completely different. The YouTube thumbnail is a <strong>static</strong> visual — designed to be seen in a feed, competing for attention against other static images. The GIF is an <strong>animated</strong> visual — designed to be seen in a message, communicating emotion through motion. The YouTube thumbnail works at small sizes (the YouTube feed shows thumbnails at ~200px wide). The GIF works at any size — the animation itself is the content. The YouTube thumbnail is a tool for marketing. The GIF is a tool for communication. The <a href="/en/tools/youtube-thumbnail">YouTube thumbnail tool</a> helps you optimize the static visual. The <a href="/en/tools/gif-search">GIF search</a> helps you find the animated reaction. Different tools for different visual moments.</p>`
+<p>The <a href="/en/tools/qr-code-scanner">QR code scanner</a> is a reading tool. You upload an image containing a QR code. The tool decodes the QR code. It shows you the URL or text embedded in the code. The scanner is useful when you receive a QR code in an image file and cannot scan it with your phone. You upload the image. The scanner reads the code. You get the URL. The scanner is the bridge crosser.</p>
+
+<p>Both tools are essential. The <a href="/en/tools/qr-code-generator">QR code generator</a> creates the bridge. The <a href="/en/tools/qr-code-scanner">QR code scanner</a> crosses it. The <a href="/en/tools/url-encoder">URL encoder</a> helps prepare URLs for QR code embedding. The generator is for content creators. The scanner is for content consumers. Different tools. Different moments. Both QR code tools.</p>`
   },
   {
-    slug: "compound-interest-math-rule-of-72-exponential-growth",
-    title: "The Mathematics of Compound Interest How the Rule of 72 and Exponential Growth Explain Why Time Is Your Most Valuable Asset",
-    description: "Albert Einstein called compound interest the eighth wonder of the world. The math is simple. The implications are profound. Here's how the rule of 72 and exponential growth work — and why starting early matters more than investing more.",
-    date: "2026-08-05",
+    slug: "json-formatter-vs-json-to-csv-format-vs-transform",
+    title: "JSON Formatter vs JSON to CSV Format vs Transform — Two JSON Tools for Different Stages of Data Processing",
+    description: "JSON formatter makes messy JSON readable. JSON to CSV converts JSON data into spreadsheet format. Both are JSON tools. But one is for debugging. One is for analysis.",
+    date: "2026-08-06",
+    category: "Developer Tools",
+    tags: ["JSON formatter", "JSON to CSV", "JSON", "data processing", "comparison"],
+    relatedTools: ["json-formatter", "json-to-csv", "csv-to-json"],
+    content: `<p>You receive a JSON file from an API. The JSON is minified — no line breaks, no indentation, just a single line of 10,000 characters. You cannot read it. You cannot debug it. You use a <a href="/en/tools/json-formatter">JSON formatter</a>. The formatter adds indentation, line breaks, and color coding. The JSON is now readable. You can see the structure. You can find the data you need. The JSON formatter is a debugging tool. It makes the invisible visible.</p>
+
+<p>Now you have the formatted JSON. You need to analyze the data in a spreadsheet. JSON is not a spreadsheet format. CSV is. You use a <a href="/en/tools/json-to-csv">JSON to CSV converter</a>. The converter takes the JSON array and transforms it into a CSV file. Each object becomes a row. Each property becomes a column. You open the CSV in Excel. You can sort, filter, and chart the data. The JSON to CSV converter is a transformation tool. It changes the data format.</p>
+
+<p>Both tools are JSON tools. But they serve different stages. The <a href="/en/tools/json-formatter">JSON formatter</a> is for the <strong>inspection</strong> stage. You need to understand what the data contains. The <a href="/en/tools/json-to-csv">JSON to CSV converter</a> is for the <strong>analysis</strong> stage. You need to work with the data in a spreadsheet. The <a href="/en/tools/csv-to-json">CSV to JSON converter</a> handles the reverse transformation. The JSON formatter is a lens. The JSON to CSV converter is a bridge. One makes JSON readable. One makes JSON analyzable.</p>`
+  },
+  {
+    slug: "temperature-converter-science-fahrenheit-celsius-kelvin",
+    title: "The Science of Temperature Conversion How Fahrenheit, Celsius, and Kelvin Scales Work and Why We Need Three Different Systems",
+    description: "Water freezes at 32°F, 0°C, or 273.15K. Three different numbers for the same physical phenomenon. Here's the science behind temperature conversion — and why three scales exist.",
+    date: "2026-08-06",
     category: "Calculator",
-    tags: ["compound interest", "rule of 72", "mathematics", "exponential growth", "investing"],
-    relatedTools: ["compound-interest", "roi-calculator", "percentage-calculator"],
-    content: `<p>Albert Einstein reportedly called compound interest the eighth wonder of the world. He may not have said it. But the sentiment is correct. Compound interest is the most powerful force in personal finance. The math is simple. The implications are profound. A <a href="/en/tools/compound-interest">compound interest calculator</a> shows you the power of exponential growth. Here is the math.</p>
+    tags: ["temperature converter", "Fahrenheit", "Celsius", "Kelvin", "science"],
+    relatedTools: ["temperature-converter", "unit-converter", "speed-converter"],
+    content: `<p>Water freezes at 32°F, 0°C, or 273.15K. Three different numbers for the same physical phenomenon. Water boils at 212°F, 100°C, or 373.15K. Again, three different numbers. A <a href="/en/tools/temperature-converter">temperature converter</a> handles the conversion instantly. But understanding why three scales exist helps you choose the right one. Here is the science behind temperature conversion.</p>
 
-<h2>The Rule of 72</h2>
+<h2>Why Three Temperature Scales?</h2>
 
-<p>The rule of 72 is a simple mental math shortcut. Divide 72 by the annual interest rate. The result is the number of years it takes for your money to double. At 6% interest: 72 ÷ 6 = 12 years. Your money doubles every 12 years. At 10% interest: 72 ÷ 10 = 7.2 years. Your money doubles every 7.2 years. The rule is approximate. It is accurate enough for planning. The <a href="/en/tools/compound-interest">compound interest calculator</a> gives you the exact numbers.</p>
+<p><strong>Fahrenheit (Daniel Fahrenheit, 1724).</strong> Fahrenheit based his scale on three fixed points: the temperature of a brine solution (0°F), the freezing point of water (32°F), and body temperature (96°F, later adjusted to 98.6°F). The scale has 180 degrees between freezing and boiling. This is useful for everyday weather — 0°F is very cold, 100°F is very hot. The <a href="/en/tools/temperature-converter">temperature converter</a> handles Fahrenheit conversions instantly.</p>
 
-<h2>Why Starting Early Matters More Than Investing More</h2>
+<p><strong>Celsius (Anders Celsius, 1742).</strong> Celsius based his scale on water: 0°C is the freezing point, 100°C is the boiling point. The scale has 100 degrees between freezing and boiling. This is useful for scientific work with water. The scale is intuitive: 0 is cold, 100 is hot. Most of the world uses Celsius. The <a href="/en/tools/temperature-converter">temperature converter</a> bridges the gap between Celsius and Fahrenheit.</p>
 
-<p>Two investors. Alice starts investing at age 25. She invests $5,000 per year for 10 years — total $50,000. Then she stops. She never invests another dollar. Bob starts investing at age 35. He invests $5,000 per year for 30 years — total $150,000. He invested three times as much. At age 65, with 7% annual returns: Alice has $564,000. Bob has $511,000. Alice invested $50,000 and ended with more than Bob, who invested $150,000. The difference is 10 years of compounding. The <a href="/en/tools/compound-interest">compound interest calculator</a> shows the numbers. The rule of 72 explains the mechanism. The lesson: start early. The <a href="/en/tools/roi-calculator">ROI calculator</a> helps you compare different investment scenarios. The <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the percentage math. The math is simple. The discipline is hard. The compound interest calculator is the tool. The rule of 72 is the shortcut. The lesson: start today.</p>`
+<p><strong>Kelvin (William Thomson, 1848).</strong> Kelvin is an absolute scale. 0K is absolute zero — the point where all molecular motion stops. There is no negative Kelvin. The scale uses the same degree size as Celsius. 0K = -273.15°C. Kelvin is essential for physics because it describes the actual energy of a system. The <a href="/en/tools/temperature-converter">temperature converter</a> handles Kelvin conversions. The <a href="/en/tools/unit-converter">unit converter</a> handles other measurement conversions. The <a href="/en/tools/speed-converter">speed converter</a> handles velocity conversions. The <a href="/en/tools/temperature-converter">temperature converter</a> is the tool. The science is the understanding. The combination is: three scales, one tool, instant conversion.</p>`
   },
 ];
 
@@ -104,4 +108,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 319->325 done.")
+print("Free station: 325->331 done.")
