@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (325→331) — August 6, 2026"""
+"""Add 6 blogs to free station (331→337) — August 7, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,94 +10,88 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "word-counter-academic-writing-word-count-requirements",
-    title: "Word Counter for Academic Writing How to Meet Word Count Requirements Without Sacrificing Quality",
-    description: "Your professor requires 2,500 words. You have 1,800. You need to expand without adding fluff. A word counter helps you track every paragraph. Here's the academic writing word count strategy.",
-    date: "2026-08-06",
+    slug: "base64-converter-developer-api-integration",
+    title: "Base64 Converter for Developers How to Encode and Decode Data for API Integration Without Copy-Paste Errors",
+    description: "An API requires an authorization header encoded in base64. You open a terminal, run a command, and get a long string. A base64 converter does it instantly in the browser. Here's the developer's base64 guide.",
+    date: "2026-08-07",
     category: "Text Tools",
-    tags: ["word counter", "academic writing", "word count", "essay", "writing tips"],
-    relatedTools: ["word-counter", "text-polish", "case-converter"],
-    content: `<p>Your professor requires 2,500 words. You have written 1,800. You need 700 more words. The deadline is tomorrow. The temptation: add fluff, repeat yourself, use long sentences. The better approach: use a <a href="/en/tools/word-counter">word counter</a> to track your progress and identify underdeveloped sections. Here is the academic writing word count strategy.</p>
+    tags: ["base64 converter", "base64", "API", "developer", "encode decode"],
+    relatedTools: ["base64-converter", "json-formatter", "url-encoder"],
+    content: `<p>You are integrating an API. The API requires an <code>Authorization</code> header: <code>Basic base64encode(username:password)</code>. You need to encode <code>admin:secret123</code> into base64. You could open a terminal and run <code>echo -n 'admin:secret123' | base64</code>. But you are on a Windows machine without base64 built in. You use a <a href="/en/tools/base64-converter">base64 converter</a> in the browser. You paste the text. The tool encodes it instantly. Here is the developer's base64 guide.</p>
 
-<h2>How to Meet Word Count Without Sacrificing Quality</h2>
+<h2>How to Use a Base64 Converter in Development</h2>
 
-<p><strong>Track paragraph by paragraph.</strong> Do not check the total word count at the end. Check each paragraph as you write. A <a href="/en/tools/word-counter">word counter</a> gives you instant feedback. If a paragraph is 50 words and the idea deserves 200 words, expand it. If a paragraph is 300 words and the idea is simple, trim it. The paragraph-level tracking keeps the essay balanced. <strong>Identify underdeveloped arguments.</strong> The word counter reveals which sections are thin. A 2,500-word essay typically has 5-7 paragraphs of 300-500 words each. If one paragraph is 100 words, the argument is underdeveloped. Add evidence, examples, or counterarguments. <strong>Use the text polisher for expansion.</strong> The <a href="/en/tools/text-polish">text polisher</a> can help you rephrase thin sentences into more substantive ones. Write a simple sentence. Run it through the polisher. The result is a more detailed version. <strong>Check character count for headlines.</strong> Some academic formats have headline character limits. The <a href="/en/tools/case-converter">case converter</a> helps with title case formatting. The word counter handles the body. The combination keeps the essay on track. The <a href="/en/tools/word-counter">word counter</a> is the tracking tool. The writer is the quality engine. The strategy is: write, check, expand, check again.</p>`
+<p><strong>Understand the use cases.</strong> Base64 appears everywhere in development: HTTP Basic authentication headers, email attachments, storing binary data in JSON, and embedding images in HTML. A <a href="/en/tools/base64-converter">base64 converter</a> handles all of these. The encode direction turns text or binary into a safe ASCII string. The decode direction turns the base64 string back into the original data. <strong>Encode for API authentication.</strong> Many APIs use Basic Auth. The header is <code>Basic</code> followed by the base64 encoding of <code>username:password</code>. Use the <a href="/en/tools/base64-converter">base64 converter</a> to encode the credential pair. The output is the header value. Copy it into your API client. <strong>Embed images in email or JSON.</strong> You can embed a small image as a data URI: <code>data:image/png;base64,AAAA...</code>. Upload the image or paste the binary, and the <a href="/en/tools/base64-converter">base64 converter</a> produces the data URI. The <a href="/en/tools/image-to-base64">image to base64</a> tool handles image inputs directly. <strong>Decode incoming data.</strong> When an API returns base64-encoded content, paste it into the converter and decode. The <a href="/en/tools/json-formatter">JSON formatter</a> helps inspect the surrounding JSON payload. The <a href="/en/tools/url-encoder">URL encoder</a> handles URL-safe variants. The <a href="/en/tools/base64-converter">base64 converter</a> is the workhorse. The developer is the engineer. The combination makes API integration faster.</p>`
   },
   {
-    slug: "password-generator-online-security-strong-memorable-passwords",
-    title: "Password Generator for Online Security How to Create Strong, Memorable Passwords for Every Account Without Reusing the Same One",
-    description: "You have 100 online accounts. You use the same password for 80 of them. One breach compromises everything. A password generator creates unique passwords for every account. Here's the online security guide.",
-    date: "2026-08-06",
+    slug: "crypto-price-checker-investor-trend-tracking",
+    title: "Crypto Price Checker for Investors How to Track Cryptocurrency Prices and Spot Trends Without Watching Charts All Day",
+    description: "You own Bitcoin and Ethereum. You check prices five times a day. You feel anxious every time. A crypto price checker gives you the data when you need it. Here's the investor's price tracking strategy.",
+    date: "2026-08-07",
+    category: "Reference",
+    tags: ["crypto price", "cryptocurrency", "investing", "Bitcoin", "Ethereum"],
+    relatedTools: ["crypto-price", "income-tax-calculator", "roi-calculator"],
+    content: `<p>You own Bitcoin and Ethereum. You check prices five times a day. Every dip makes you anxious. Every spike makes you excited. The emotional rollercoaster is exhausting. The data is the same whether you check once or five times. A <a href="/en/tools/crypto-price">crypto price checker</a> gives you the current price when you need it — without the constant checking. Here is the investor's price tracking strategy.</p>
+
+<h2>How to Track Crypto Prices Effectively</h2>
+
+<p><strong>Check once, not constantly.</strong> The price changes whether you watch or not. Checking five times a day does not change the outcome. It changes your stress level. Use the <a href="/en/tools/crypto-price">crypto price checker</a> once a day — or once a week — and make decisions from the data, not the emotion. <strong>Focus on the trend, not the day.</strong> A 3% daily dip is noise. A 30% monthly decline is a trend. The <a href="/en/tools/crypto-price">crypto price checker</a> shows the current price. Combine it with your own tracking to see the longer trend. <strong>Set a strategy before the emotion.</strong> Decide in advance: at what price do you buy more? At what price do you take profit? Write it down. When the price hits your target, execute. The <a href="/en/tools/roi-calculator">ROI calculator</a> helps you estimate returns on your position. <strong>Consider the tax impact.</strong> Crypto gains are taxable in many jurisdictions. Use the <a href="/en/tools/income-tax-calculator">income tax calculator</a> to estimate the tax on your gains before you sell. The <a href="/en/tools/crypto-price">crypto price checker</a> is the data tool. The <a href="/en/tools/roi-calculator">ROI calculator</a> is the planning tool. The <a href="/en/tools/income-tax-calculator">tax calculator</a> is the compliance tool. The investor is the decision-maker. The combination keeps emotion out of the process.</p>`
+  },
+  {
+    slug: "md5-generator-file-integrity-checksum-verification",
+    title: "MD5 Generator for Data Verification How to Verify File Integrity with Checksums After Downloads and Transfers",
+    description: "You downloaded a software installer. The download could be corrupted or tampered with. The MD5 checksum tells you. Here's how to verify file integrity with an MD5 generator.",
+    date: "2026-08-07",
     category: "Developer Tools",
-    tags: ["password generator", "online security", "strong passwords", "account security", "password manager"],
-    relatedTools: ["password-generator", "uuid-generator", "hash-generator"],
-    content: `<p>You have 100 online accounts. You use the same password for 80 of them. One service gets breached. The hacker has your email and password. They try it on your bank account. Your bank account is compromised. The problem is not the breach. The problem is password reuse. A <a href="/en/tools/password-generator">password generator</a> creates unique, strong passwords for every account. Here is the online security strategy.</p>
+    tags: ["MD5 generator", "checksum", "file integrity", "verification", "hash"],
+    relatedTools: ["md5-generator", "hash-generator", "base64-converter"],
+    content: `<p>You download a software installer from a mirror site. The file is 500MB. The download is slow. It finishes. But is the file the same as the official release? The mirror could have served a corrupted file. A malicious actor could have modified it. The MD5 checksum is the answer. The official site publishes the MD5 checksum of the file. You compute the MD5 of your downloaded file. If they match, the file is intact. Here is how to verify file integrity.</p>
 
-<h2>How to Create and Manage Strong Passwords</h2>
+<h2>How to Verify File Integrity with MD5</h2>
 
-<p><strong>Use a password generator.</strong> A <a href="/en/tools/password-generator">password generator</a> creates random strings of characters. The password includes uppercase letters, lowercase letters, numbers, and symbols. The password is 16-20 characters long. The password is impossible to guess. The password is unique to each account. The generator handles the complexity. <strong>Do not memorize passwords.</strong> You cannot remember 100 unique 16-character passwords. Do not try. Use a password manager. The password manager stores all your passwords. You only need to remember one master password. The <a href="/en/tools/password-generator">password generator</a> creates the passwords. The password manager stores them. <strong>Use a UUID for account IDs.</strong> The <a href="/en/tools/uuid-generator">UUID generator</a> creates unique identifiers for account references. The <a href="/en/tools/hash-generator">hash generator</a> can verify password integrity. The combination is a complete security toolkit. <strong>Change passwords immediately after a breach.</strong> When a service announces a breach, change the password immediately. Use the password generator to create a new one. The old password is compromised. The new password is safe. The <a href="/en/tools/password-generator">password generator</a> is the creation tool. The password manager is the storage tool. The combination is: one strong password per account, all stored securely, all unique.</p>`
+<p><strong>Understand the checksum.</strong> An MD5 checksum is a 32-character hexadecimal string computed from the file's content. Any change to the file — one bit — changes the checksum completely. It is a fingerprint of the file. The <a href="/en/tools/md5-generator">MD5 generator</a> computes the fingerprint from your input. <strong>Get the official checksum.</strong> Most software downloads publish the MD5 checksum on the official page. Copy it. <strong>Compute your file's checksum.</strong> Use the <a href="/en/tools/md5-generator">MD5 generator</a> on the file you downloaded. The tool computes the checksum of your file. Compare it to the official checksum. Match means the file is intact. Mismatch means the download is corrupted or tampered with — download again. <strong>Use it for text too.</strong> The <a href="/en/tools/md5-generator">MD5 generator</a> works on text as well. Hash a password before storing it (though stronger hashes are recommended for passwords). The <a href="/en/tools/hash-generator">hash generator</a> offers stronger algorithms. The <a href="/en/tools/base64-converter">base64 converter</a> handles encoding tasks. The <a href="/en/tools/md5-generator">MD5 generator</a> is the verification tool. The comparison is the verification step. The combination keeps your downloads safe.</p>`
   },
   {
-    slug: "calorie-calculator-meal-planning-weight-management",
-    title: "Calorie Calculator for Meal Planning How to Track Your Daily Caloric Intake for Weight Management Without Obsessive Counting",
-    description: "You want to lose weight. You need to eat fewer calories than you burn. But how many calories do you burn? A calorie calculator estimates your daily needs. Here's the meal planning guide for weight management.",
-    date: "2026-08-06",
+    slug: "mortgage-calculator-vs-loan-calculator-borrowing-decisions",
+    title: "Mortgage Calculator vs Loan Calculator Home Loan vs General Loan — Two Borrowing Calculators for Different Financial Decisions",
+    description: "Mortgage calculator models a 30-year home loan with property taxes. Loan calculator models a 3-year car loan with simple interest. Both are borrowing calculators. But one is for homes. One is for everything else.",
+    date: "2026-08-07",
     category: "Calculator",
-    tags: ["calorie calculator", "meal planning", "weight management", "calories", "nutrition"],
-    relatedTools: ["calorie-calculator", "bmi-calculator", "percentage-calculator"],
-    content: `<p>You want to lose weight. You know the principle: eat fewer calories than you burn. But how many calories do you burn? The answer depends on your age, gender, weight, height, and activity level. A <a href="/en/tools/calorie-calculator">calorie calculator</a> estimates your Total Daily Energy Expenditure (TDEE). Here is the meal planning guide for weight management.</p>
+    tags: ["mortgage calculator", "loan calculator", "comparison", "home loan", "borrowing"],
+    relatedTools: ["mortgage-calculator", "loan-calculator", "compound-interest"],
+    content: `<p>You are buying a home. The price is $350,000. You have a 20% down payment. You need a $280,000 mortgage at 6.5% for 30 years. You use a <a href="/en/tools/mortgage-calculator">mortgage calculator</a>. The calculator shows: $1,770 monthly payment (principal and interest), plus property taxes and insurance. The total monthly payment is about $2,200. The mortgage calculator is a specialized tool for home loans. It accounts for the long term, property taxes, and insurance.</p>
 
-<h2>How to Use a Calorie Calculator for Meal Planning</h2>
+<p>Now you are buying a car. The price is $25,000. You have a $5,000 trade-in. You finance $20,000 at 7% for 5 years. You use a <a href="/en/tools/loan-calculator">loan calculator</a>. The calculator shows: $396 monthly payment, total interest of $3,760. The loan calculator is a general tool. It handles car loans, personal loans, and any installment loan. It models simple amortization without the property-specific extras.</p>
 
-<p><strong>Calculate your baseline.</strong> Use the <a href="/en/tools/calorie-calculator">calorie calculator</a> to estimate your TDEE. A 30-year-old woman who is 5'5" and 150 pounds with moderate exercise burns approximately 2,100 calories per day. A 35-year-old man who is 5'10" and 180 pounds with light exercise burns approximately 2,400 calories per day. The calculator gives you the starting point. <strong>Set your goal.</strong> Weight loss: eat 300-500 calories below your TDEE. Weight gain: eat 300-500 calories above your TDEE. Weight maintenance: eat at your TDEE. The percentage is simple math. The <a href="/en/tools/percentage-calculator">percentage calculator</a> helps you calculate the exact numbers. <strong>Track for one week.</strong> Do not track forever. Track for one week to understand your eating patterns. Use a food diary app. Write down everything you eat. Compare the total to your TDEE. The <a href="/en/tools/calorie-calculator">calorie calculator</a> is the planning tool. The food diary is the tracking tool. <strong>Check your BMI.</strong> Use the <a href="/en/tools/bmi-calculator">BMI calculator</a> to track your progress over time. The BMI is a screening tool. The calorie calculator is the planning tool. The combination is a complete weight management system. The <a href="/en/tools/calorie-calculator">calorie calculator</a> gives you the numbers. The discipline gives you the results.</p>`
+<p>Both are borrowing calculators. Both tell you the monthly payment and total cost. But the use cases differ. The <a href="/en/tools/mortgage-calculator">mortgage calculator</a> is for the biggest purchase of your life — a home. It includes property taxes, insurance, and long amortization. The <a href="/en/tools/loan-calculator">loan calculator</a> is for smaller, shorter loans. It is simpler and more flexible. The <a href="/en/tools/compound-interest">compound interest calculator</a> shows how interest grows over time. Different calculators for different purchases. Both essential for responsible borrowing.</p>`
   },
   {
-    slug: "qr-code-generator-vs-qr-code-scanner-create-vs-read",
-    title: "QR Code Generator vs QR Code Scanner Create vs Read — Two QR Code Tools for Different Moments in Digital Communication",
-    description: "QR code generator creates codes from URLs. QR code scanner reads codes from images. Both are QR code tools. But one is for sending. One is for receiving.",
-    date: "2026-08-06",
+    slug: "base-converter-vs-roman-numerals-number-systems",
+    title: "Base Converter vs Roman Numerals Computer Numbers vs Ancient Numbers — Two Number System Tools for Different Eras",
+    description: "Base converter handles binary, hex, and octal for developers. Roman numerals handles MMXXVI for history buffs. Both convert numbers. But one serves computers. One serves the past.",
+    date: "2026-08-07",
     category: "Developer Tools",
-    tags: ["QR code generator", "QR code scanner", "QR code", "comparison", "digital communication"],
-    relatedTools: ["qr-code-generator", "qr-code-scanner", "url-encoder"],
-    content: `<p>You are a restaurant owner. You want customers to see your menu. You create a QR code that links to your menu page. You put the QR code on the table. Customers scan the QR code with their phones. They see the menu. The transaction is complete. The <a href="/en/tools/qr-code-generator">QR code generator</a> created the code. The customer's phone scanned it. Two different tools for two different moments.</p>
+    tags: ["base converter", "roman numerals", "number systems", "binary", "hexadecimal"],
+    relatedTools: ["base-converter", "roman-numerals", "unix-timestamp"],
+    content: `<p>A developer debugs a network packet. The protocol field is <code>0xFF</code> — hexadecimal. The developer needs to understand the binary value: 11111111. The <a href="/en/tools/base-converter">base converter</a> converts between binary, octal, decimal, and hexadecimal instantly. The developer enters <code>FF</code> in hex. The tool shows 255 in decimal and 11111111 in binary. The base converter is a computer tool. It works with the number systems computers use.</p>
 
-<p>The <a href="/en/tools/qr-code-generator">QR code generator</a> is a creation tool. You input a URL. The tool generates a QR code image. You download the image. You print it on a menu, a business card, a poster, or a product label. The QR code is a bridge. It connects the physical world to the digital world. The generator is the bridge builder.</p>
+<p>A student writes a history essay about the Roman Empire. The date is 2026. The student needs the Roman numeral: MMXXVI. The <a href="/en/tools/roman-numerals">roman numerals converter</a> converts 2026 to MMXXVI instantly. The tool also works in reverse — enter <code>MCMXCVIII</code> and get 1998. The roman numerals converter is a historical tool. It works with the number system the Romans used.</p>
 
-<p>The <a href="/en/tools/qr-code-scanner">QR code scanner</a> is a reading tool. You upload an image containing a QR code. The tool decodes the QR code. It shows you the URL or text embedded in the code. The scanner is useful when you receive a QR code in an image file and cannot scan it with your phone. You upload the image. The scanner reads the code. You get the URL. The scanner is the bridge crosser.</p>
-
-<p>Both tools are essential. The <a href="/en/tools/qr-code-generator">QR code generator</a> creates the bridge. The <a href="/en/tools/qr-code-scanner">QR code scanner</a> crosses it. The <a href="/en/tools/url-encoder">URL encoder</a> helps prepare URLs for QR code embedding. The generator is for content creators. The scanner is for content consumers. Different tools. Different moments. Both QR code tools.</p>`
+<p>Both are number conversion tools. Both convert between different representations. But the use cases are worlds apart. The <a href="/en/tools/base-converter">base converter</a> serves developers — binary, hex, and octal are the languages of computers. The <a href="/en/tools/roman-numerals">roman numerals converter</a> serves historians and students — Roman numerals appear in movie credits, building dates, and book chapters. The <a href="/en/tools/unix-timestamp">unix timestamp converter</a> handles time in developer format. The <a href="/en/tools/base-converter">base converter</a> is for the machine age. The <a href="/en/tools/roman-numerals">roman numerals converter</a> is for the ancient world. Different eras. Different tools. Both number systems worth understanding.</p>`
   },
   {
-    slug: "json-formatter-vs-json-to-csv-format-vs-transform",
-    title: "JSON Formatter vs JSON to CSV Format vs Transform — Two JSON Tools for Different Stages of Data Processing",
-    description: "JSON formatter makes messy JSON readable. JSON to CSV converts JSON data into spreadsheet format. Both are JSON tools. But one is for debugging. One is for analysis.",
-    date: "2026-08-06",
+    slug: "base64-to-image-science-binary-text-representation",
+    title: "The Science of Base64 How Text Represents Binary Image Data and Why Every Image on the Web Works This Way",
+    description: "Images are binary files. Text protocols can't carry binary directly. Base64 solves the problem by encoding binary as text. Here's how base64 to image conversion works — the invisible technology behind the web.",
+    date: "2026-08-07",
     category: "Developer Tools",
-    tags: ["JSON formatter", "JSON to CSV", "JSON", "data processing", "comparison"],
-    relatedTools: ["json-formatter", "json-to-csv", "csv-to-json"],
-    content: `<p>You receive a JSON file from an API. The JSON is minified — no line breaks, no indentation, just a single line of 10,000 characters. You cannot read it. You cannot debug it. You use a <a href="/en/tools/json-formatter">JSON formatter</a>. The formatter adds indentation, line breaks, and color coding. The JSON is now readable. You can see the structure. You can find the data you need. The JSON formatter is a debugging tool. It makes the invisible visible.</p>
+    tags: ["base64", "image", "binary", "encoding", "data URI"],
+    relatedTools: ["base64-to-image", "image-to-base64", "base64-converter"],
+    content: `<p>Every image on the web is, at its core, a string of binary data — millions of 1s and 0s. Binary data cannot travel safely through text-based protocols. Email, JSON, and many APIs are text-based. If you embed raw binary in text, it breaks. This is the problem base64 solves. A <a href="/en/tools/base64-to-image">base64 to image</a> tool demonstrates the whole process. Here is the science behind it.</p>
 
-<p>Now you have the formatted JSON. You need to analyze the data in a spreadsheet. JSON is not a spreadsheet format. CSV is. You use a <a href="/en/tools/json-to-csv">JSON to CSV converter</a>. The converter takes the JSON array and transforms it into a CSV file. Each object becomes a row. Each property becomes a column. You open the CSV in Excel. You can sort, filter, and chart the data. The JSON to CSV converter is a transformation tool. It changes the data format.</p>
+<h2>How Base64 Encoding Works</h2>
 
-<p>Both tools are JSON tools. But they serve different stages. The <a href="/en/tools/json-formatter">JSON formatter</a> is for the <strong>inspection</strong> stage. You need to understand what the data contains. The <a href="/en/tools/json-to-csv">JSON to CSV converter</a> is for the <strong>analysis</strong> stage. You need to work with the data in a spreadsheet. The <a href="/en/tools/csv-to-json">CSV to JSON converter</a> handles the reverse transformation. The JSON formatter is a lens. The JSON to CSV converter is a bridge. One makes JSON readable. One makes JSON analyzable.</p>`
-  },
-  {
-    slug: "temperature-converter-science-fahrenheit-celsius-kelvin",
-    title: "The Science of Temperature Conversion How Fahrenheit, Celsius, and Kelvin Scales Work and Why We Need Three Different Systems",
-    description: "Water freezes at 32°F, 0°C, or 273.15K. Three different numbers for the same physical phenomenon. Here's the science behind temperature conversion — and why three scales exist.",
-    date: "2026-08-06",
-    category: "Calculator",
-    tags: ["temperature converter", "Fahrenheit", "Celsius", "Kelvin", "science"],
-    relatedTools: ["temperature-converter", "unit-converter", "speed-converter"],
-    content: `<p>Water freezes at 32°F, 0°C, or 273.15K. Three different numbers for the same physical phenomenon. Water boils at 212°F, 100°C, or 373.15K. Again, three different numbers. A <a href="/en/tools/temperature-converter">temperature converter</a> handles the conversion instantly. But understanding why three scales exist helps you choose the right one. Here is the science behind temperature conversion.</p>
-
-<h2>Why Three Temperature Scales?</h2>
-
-<p><strong>Fahrenheit (Daniel Fahrenheit, 1724).</strong> Fahrenheit based his scale on three fixed points: the temperature of a brine solution (0°F), the freezing point of water (32°F), and body temperature (96°F, later adjusted to 98.6°F). The scale has 180 degrees between freezing and boiling. This is useful for everyday weather — 0°F is very cold, 100°F is very hot. The <a href="/en/tools/temperature-converter">temperature converter</a> handles Fahrenheit conversions instantly.</p>
-
-<p><strong>Celsius (Anders Celsius, 1742).</strong> Celsius based his scale on water: 0°C is the freezing point, 100°C is the boiling point. The scale has 100 degrees between freezing and boiling. This is useful for scientific work with water. The scale is intuitive: 0 is cold, 100 is hot. Most of the world uses Celsius. The <a href="/en/tools/temperature-converter">temperature converter</a> bridges the gap between Celsius and Fahrenheit.</p>
-
-<p><strong>Kelvin (William Thomson, 1848).</strong> Kelvin is an absolute scale. 0K is absolute zero — the point where all molecular motion stops. There is no negative Kelvin. The scale uses the same degree size as Celsius. 0K = -273.15°C. Kelvin is essential for physics because it describes the actual energy of a system. The <a href="/en/tools/temperature-converter">temperature converter</a> handles Kelvin conversions. The <a href="/en/tools/unit-converter">unit converter</a> handles other measurement conversions. The <a href="/en/tools/speed-converter">speed converter</a> handles velocity conversions. The <a href="/en/tools/temperature-converter">temperature converter</a> is the tool. The science is the understanding. The combination is: three scales, one tool, instant conversion.</p>`
+<p><strong>The problem.</strong> Binary data uses all 256 byte values — including bytes that mean "end of message" or "control character" in text protocols. Embedding raw binary in text corrupts the data. The solution: represent the binary using only the 64 safe characters — A-Z, a-z, 0-9, +, and /. That is why it is called <strong>base64</strong> — 64 characters. <strong>The encoding.</strong> Base64 takes 3 bytes of binary (24 bits) and splits them into 4 groups of 6 bits. Each 6-bit group maps to one of the 64 characters. The result is a text string that safely represents the binary. The <a href="/en/tools/base64-to-image">base64 to image</a> tool shows the relationship: paste a base64 string, get the image back. <strong>The data URI.</strong> On the web, images are often embedded as data URIs: <code>data:image/png;base64,iVBORw0KG...</code>. The browser decodes the base64 and renders the image. No separate file request needed. The <a href="/en/tools/image-to-base64">image to base64</a> tool creates these data URIs from image files. <strong>The trade-off.</strong> Base64 is about 33% larger than the original binary — 4 characters for every 3 bytes. That is the price of safety. The <a href="/en/tools/base64-converter">base64 converter</a> handles the general encode/decode. The <a href="/en/tools/base64-to-image">base64 to image</a> tool is the visible proof. The science is elegant. The web runs on it.</p>`
   },
 ];
 
@@ -108,4 +102,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 325->331 done.")
+print("Free station: 331->337 done.")
