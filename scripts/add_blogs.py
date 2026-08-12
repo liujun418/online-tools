@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (349→355) — August 11, 2026"""
+"""Add 6 blogs to free station (355→361) — August 12, 2026"""
 import os, sys
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
@@ -10,88 +10,88 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "zodiac-sign-calculator-sun-sign-astrology-guide",
-    title: "Zodiac Sign Calculator for Astrology Enthusiasts How to Find Your Sun Sign and Understand What It Reveals About You",
-    description: "Your birthday is August 23. Are you a Leo or a Virgo? The answer depends on the exact date and time. A zodiac sign calculator gives you the precise sun sign. Here's the beginner's astrology guide.",
-    date: "2026-08-11",
-    category: "Reference",
-    tags: ["zodiac sign", "sun sign", "astrology", "birthday", "horoscope"],
-    relatedTools: ["zodiac-sign", "random-name-generator", "reaction-test"],
-    content: `<p>Your birthday is August 23. A friend says you are a Leo. Another says you are a Virgo. Who is right? The answer depends on the exact date and time of birth. The sun moves from Leo into Virgo on or around August 23 each year — the exact moment shifts by year and timezone. A <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> gives you the precise answer. Here is the beginner's astrology guide.</p>
-
-<h2>How to Find Your Sun Sign</h2>
-
-<p><strong>Understand the sun sign.</strong> Your sun sign is the zodiac sign the sun was in at the moment of your birth. The sun spends about one month in each of the 12 signs. Your sun sign is the core of your astrological profile — it represents your essential personality. The <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> determines it from your birth date. <strong>Enter your exact birth date.</strong> The zodiac year is divided into 12 periods, each with a start and end date. If your birthday falls near a boundary, the exact year matters. August 23 could be Leo or Virgo depending on the year. The <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> handles the boundary cases. <strong>Explore the meaning.</strong> Each sign has associated traits: Aries is bold, Taurus is steady, Gemini is curious, and so on. The <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> shows your sign's dates and personality profile. <strong>Have fun with it.</strong> Astrology is entertainment for many, a belief system for some. The <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> is the tool. The <a href="/en/tools/random-name-generator">random name generator</a> can create fun astrological names. The <a href="/en/tools/reaction-test">reaction test</a> measures your reflexes. The combination is a fun way to explore your sign.</p>`
-  },
-  {
-    slug: "income-tax-calculator-freelancers-quarterly-taxes",
-    title: "Income Tax Calculator for Freelancers How to Estimate Quarterly Taxes Without an Accountant",
-    description: "You are self-employed. Taxes are not withheld from your income. You owe quarterly estimated taxes. An income tax calculator estimates what you owe. Here's the freelancer's quarterly tax guide.",
-    date: "2026-08-11",
+    slug: "discount-calculator-online-shopping-bogo-deals",
+    title: "Discount Calculator for Online Shopping How to Compare 30% Off vs Buy One Get One Deals",
+    description: "You see 30% OFF on one item and BUY ONE GET ONE on the other. Which is the better deal? The answer is not always obvious. A discount calculator reveals the real price. Here's the shopping comparison workflow.",
+    date: "2026-08-12",
     category: "Calculator",
-    tags: ["income tax calculator", "freelancer", "quarterly taxes", "self-employed", "estimated tax"],
-    relatedTools: ["income-tax-calculator", "percentage-calculator", "roi-calculator"],
-    content: `<p>You are a freelancer. Your clients pay you directly. No employer withholds income tax from your paychecks. The government expects you to pay estimated taxes quarterly. Missing a payment means penalties. An <a href="/en/tools/income-tax-calculator">income tax calculator</a> helps you estimate what you owe. Here is the freelancer's quarterly tax guide.</p>
+    tags: ["discount calculator", "buy one get one", "sale price", "online shopping", "deal"],
+    relatedTools: ["discount-calculator", "percentage-calculator", "tip-calculator"],
+    content: `<p>You are shopping online. Two deals catch your eye. One item is <strong>30% off</strong>. A second item is <strong>buy one get one</strong>. Both sound good. But which saves you more money? The answer depends on the prices. A <a href="/en/tools/discount-calculator">discount calculator</a> reveals the real cost. Here is the shopping comparison workflow.</p>
 
-<h2>How to Estimate Your Quarterly Taxes</h2>
+<h2>How to Compare Deals with a Discount Calculator</h2>
 
-<p><strong>Understand what you owe.</strong> As a freelancer, you pay income tax plus self-employment tax (Social Security and Medicare). Your clients may send 1099 forms reporting your earnings. The <a href="/en/tools/income-tax-calculator">income tax calculator</a> estimates your total tax from your annual income. <strong>Estimate your annual income.</strong> The calculator needs an estimate. Add up your expected income for the year. Subtract business expenses — equipment, software, home office, travel. The result is your taxable income. The <a href="/en/tools/income-tax-calculator">income tax calculator</a> uses this number. <strong>Calculate the quarterly payment.</strong> Divide your estimated annual tax by four. Pay that amount each quarter: April, June, September, and January. The <a href="/en/tools/percentage-calculator">percentage calculator</a> helps with the division and any percentage adjustments. <strong>Review quarterly.</strong> Your income changes. Re-estimate each quarter with the latest numbers. The <a href="/en/tools/roi-calculator">ROI calculator</a> helps you evaluate whether to set aside more. The <a href="/en/tools/income-tax-calculator">income tax calculator</a> is the estimation tool. The freelancer is the planner. The combination avoids penalties and surprises at tax time.</p>`
+<p><strong>Calculate the 30% off deal.</strong> Take the full price. Multiply by 30% to find the discount. Subtract it from the price. A $50 jacket becomes $35. The <a href="/en/tools/discount-calculator">discount calculator</a> does this instantly. Enter the price and the percent. It shows the sale price and the amount you save. <strong>Calculate the buy one get one deal.</strong> Buy one get one usually means you pay the higher price and get the lower-price item free. If both items are $50, you pay $50 for two — effectively $25 each, or <strong>50% off</strong>. If one item is $80 and the other is $30, you pay $80 for both. That is roughly 27% off the total. The <a href="/en/tools/discount-calculator">discount calculator</a> helps you compare the two scenarios side by side. <strong>Watch the wording.</strong> "Buy one get one 50% off" is not the same as "buy one get one free." The wording changes the math completely. The <a href="/en/tools/percentage-calculator">percentage calculator</a> helps you verify the true discount percentage in any wording. <strong>Factor in the tip-style extras.</strong> Shipping, taxes, and minimum-order requirements change the final cost. The <a href="/en/tools/tip-calculator">tip calculator</a> handles split-payment scenarios when you shop with friends. The <a href="/en/tools/discount-calculator">discount calculator</a> is the deal-breaker tool. The shopper is the decision maker. The combination reveals the real price before you click buy.</p>`
   },
   {
-    slug: "text-sorter-list-organization-deduplication",
-    title: "Text Sorter for List Organization How to Sort, Deduplicate, and Organize Lists in Seconds Without Spreadsheet Headaches",
-    description: "You have a 200-line list of customer names, product SKUs, or email addresses. Some are duplicated. Some are out of order. A text sorter fixes all of it. Here's the list organization workflow.",
-    date: "2026-08-11",
-    category: "Text Tools",
-    tags: ["text sorter", "sort", "deduplicate", "list", "organize"],
-    relatedTools: ["text-sorter", "remove-duplicate-lines", "text-repeater"],
-    content: `<p>You export a list of 200 customer emails from your CRM. The list is a mess: duplicates, mixed case, out of order. You need a clean, alphabetical, deduplicated list. Opening a spreadsheet feels like overkill. A <a href="/en/tools/text-sorter">text sorter</a> fixes it in seconds. Here is the list organization workflow.</p>
+    slug: "random-name-generator-game-dev-character-naming",
+    title: "Random Name Generator for Game Developers How to Name NPCs, Characters, and Locations",
+    description: "You've built your game world. Every NPC needs a name — tavern keeper, blacksmith, quest giver. Naming 50 characters by hand takes hours. A random name generator produces names in seconds. Here's the character naming workflow.",
+    date: "2026-08-12",
+    category: "Fun & Media",
+    tags: ["random name generator", "game development", "NPC", "character names", "world building"],
+    relatedTools: ["random-name-generator", "random-number-generator", "lorem-ipsum"],
+    content: `<p>You are building a game. Your world has a harbor town with 40 NPCs. The blacksmith needs a name. The tavern keeper needs a name. The quest giver, the guard, the fishmonger — each one needs a name that fits the world. Naming them by hand takes hours. A <a href="/en/tools/random-name-generator">random name generator</a> produces names in seconds. Here is the character naming workflow.</p>
 
-<h2>How to Organize Lists with a Text Sorter</h2>
+<h2>How to Name Your Game Characters</h2>
 
-<p><strong>Paste and sort.</strong> Paste the messy list into the <a href="/en/tools/text-sorter">text sorter</a>. Choose the sort order: alphabetical or reverse. The tool sorts every line instantly. The out-of-order list becomes organized. <strong>Remove duplicates.</strong> A list with duplicates wastes time and confuses data. The <a href="/en/tools/text-sorter">text sorter</a> can deduplicate — keeping only unique lines. The <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> tool handles deduplication specifically. <strong>Normalize the case.</strong> "alice@email.com" and "Alice@Email.com" are the same email to a CRM. The sorter can normalize case before sorting. <strong>Combine with other text tools.</strong> The <a href="/en/tools/text-repeater">text repeater</a> generates repeated lines when you need placeholder data. The sorter cleans up the final result. The <a href="/en/tools/text-sorter">text sorter</a> is the organization tool. The list is the raw material. The combination produces clean, usable data in seconds — no spreadsheet required.</p>`
+<p><strong>Generate a pool of candidates.</strong> Open the <a href="/en/tools/random-name-generator">random name generator</a>. Generate twenty names. The tool mixes syllables and sounds to produce fantasy, modern, or generic names. You are not committing to any of them yet. You are building a pool. <strong>Match names to roles.</strong> A blacksmith sounds different from a court mage. Generate separate pools for each culture in your world. Elven names, dwarf names, and human names should feel distinct. The <a href="/en/tools/random-name-generator">random name generator</a> helps you keep each culture consistent. <strong>Add meaning.</strong> A good name hints at the character. Combine a generated name with a descriptor: "Roran the Iron-Fisted" or "Mira the Quiet." The generator gives you the raw material. You add the story. <strong>Name locations too.</strong> The same workflow names towns, taverns, and dungeons. Generate a list, filter the weak ones, and keep the strong. The <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> creates placeholder descriptions for your characters and locations. The <a href="/en/tools/random-number-generator">random number generator</a> handles stats and dice rolls. The <a href="/en/tools/random-name-generator">random name generator</a> is the naming engine. The developer is the storyteller. The combination populates your world in minutes.</p>`
   },
   {
-    slug: "color-converter-vs-color-contrast-checker-design-tools",
-    title: "Color Converter vs Color Contrast Checker Converting Colors vs Testing Accessibility — Two Design Tools for Different Tasks",
-    description: "Color converter shifts between HEX, RGB, and HSL. Color contrast checker tests whether text is readable against a background. Both are color tools. But one is for matching. One is for accessibility.",
-    date: "2026-08-11",
-    category: "Developer Tools",
-    tags: ["color converter", "color contrast", "accessibility", "design", "comparison"],
-    relatedTools: ["color-converter", "color-contrast-checker", "css-minifier"],
-    content: `<p>Your developer says the design system uses colors in HSL. Your design tool shows colors in HEX. You need to convert. You use a <a href="/en/tools/color-converter">color converter</a>. You enter the HEX value <code>#4A90D9</code>. The tool shows the RGB (74, 144, 217) and the HSL (212, 64%, 57%). The developer gets the format they need. The color converter is a <strong>conversion</strong> tool. It translates colors between formats.</p>
+    slug: "random-quote-generator-writing-prompts",
+    title: "Random Quote Generator for Writers How to Use Daily Quotes as Writing Prompts",
+    description: "You want to write but the blank page stares back. You need a starting point. A random quote can spark the first line. Here's the writing prompt workflow.",
+    date: "2026-08-12",
+    category: "Fun & Media",
+    tags: ["random quote", "writing prompts", "inspiration", "writer", "creative writing"],
+    relatedTools: ["random-quote", "quotes", "book-of-answers"],
+    content: `<p>You sit down to write. The page is blank. Your mind is blank too. You need a starting point — anything to break the silence. A single quote can do it. A <a href="/en/tools/random-quote">random quote generator</a> serves you a line from a thinker, a writer, or an unknown voice. You take that line and make it yours. Here is the writing prompt workflow.</p>
 
-<p>Now you are choosing text colors for a website. You want light gray text on a white background. It looks stylish. But can everyone read it? You use a <a href="/en/tools/color-contrast-checker">color contrast checker</a>. The tool computes the contrast ratio between the text color and the background. The ratio is 1.9:1 — well below the WCAG AA requirement of 4.5:1 for normal text. The light gray text is unreadable for many users. You darken it. The color contrast checker is an <strong>accessibility</strong> tool. It tests whether colors are readable.</p>
+<h2>How to Use Quotes as Writing Prompts</h2>
 
-<p>Both are color tools. Both are essential for designers. But the tasks differ. The <a href="/en/tools/color-converter">color converter</a> is for <strong>format matching</strong> — translating colors between HEX, RGB, and HSL so teams communicate. The <a href="/en/tools/color-contrast-checker">color contrast checker</a> is for <strong>accessibility testing</strong> — verifying that text is readable by all users. The <a href="/en/tools/css-minifier">CSS minifier</a> optimizes the final stylesheets. The <a href="/en/tools/color-converter">color converter</a> handles the format. The <a href="/en/tools/color-contrast-checker">contrast checker</a> handles the compliance. Different tasks. Both essential.</p>`
+<p><strong>Generate a quote.</strong> Open the <a href="/en/tools/random-quote">random quote generator</a>. It shows you a quote you have never seen. Do not judge it. Take it as a starting point. <strong>Find your angle.</strong> Read the quote three times. What does it assume? What does it contradict? Who said it, and what were they pushing against? Agree with it, argue with it, or take it literally. The <a href="/en/tools/random-quote">random quote generator</a> gives you the seed. You grow the story. <strong>Write the first 200 words.</strong> The quote becomes your first sentence or your epigraph. Write without stopping. Do not edit yet. The goal is momentum. A good prompt removes the "what do I write about" question so you can focus on the writing itself. <strong>Expand the collection.</strong> The <a href="/en/tools/quotes">quotes directory</a> lets you search quotes by topic — you can deepen a prompt you love. The <a href="/en/tools/book-of-answers">book of answers</a> offers a different kind of nudge when a quote feels too heavy. The <a href="/en/tools/random-quote">random quote generator</a> is the prompt engine. The writer is the interpreter. The combination turns a blank page into a draft in minutes.</p>`
   },
   {
-    slug: "lorem-ipsum-vs-text-repeater-placeholder-vs-bulk-text",
-    title: "Lorem Ipsum vs Text Repeater Placeholder Text vs Bulk Text — Two Text Generation Tools for Different Needs",
-    description: "Lorem ipsum generates realistic placeholder text for design mockups. Text repeater duplicates a string many times for testing. Both generate text. But one is for layout. One is for load.",
-    date: "2026-08-11",
-    category: "Text Tools",
-    tags: ["lorem ipsum", "text repeater", "placeholder", "bulk text", "comparison"],
-    relatedTools: ["lorem-ipsum", "text-repeater", "text-sorter"],
-    content: `<p>You are designing a website layout. The copy is not written yet. But the design needs text to show how the layout looks with content. You use a <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a>. The tool generates realistic-looking placeholder text — the classic "Lorem ipsum dolor sit amet" style. You paste it into the mockup. The design shows how headlines, paragraphs, and lists will look. The lorem ipsum generator is a <strong>placeholder</strong> tool. It fills space with believable text.</p>
+    slug: "tip-calculator-vs-percentage-calculator-bills-vs-percentages",
+    title: "Tip Calculator vs Percentage Calculator Splitting Restaurant Bills vs Everyday Percentages",
+    description: "You're at dinner with four friends. You need to split the bill and add 18% tip. Later you need 15% off a jacket. A tip calculator handles the meal. A percentage calculator handles the shopping. Here's when each tool wins.",
+    date: "2026-08-12",
+    category: "Calculator",
+    tags: ["tip calculator", "percentage calculator", "split bill", "restaurant tip", "comparison"],
+    relatedTools: ["tip-calculator", "percentage-calculator", "discount-calculator"],
+    content: `<p>Dinner is over. The check is $84.60. Your friend used a coupon, another skipped dessert, and the group wants to add an 18% tip before splitting five ways. You reach for a <a href="/en/tools/tip-calculator">tip calculator</a>. You enter the bill, the tip percent, and the number of people. The tool shows the tip amount, the total, and each person's share. The math is done in seconds. The tip calculator is a <strong>bill-focused</strong> tool. It is built for the restaurant table: bill, tip, split.</p>
 
-<p>Now you are testing a database field. You need to verify it handles long input. You want to insert a 10,000-character string. Typing it by hand is impossible. You use a <a href="/en/tools/text-repeater">text repeater</a>. You enter a string like "Test123" and set it to repeat 1,000 times. The tool produces the 7,000-character string instantly. You paste it into the field. The text repeater is a <strong>bulk</strong> tool. It creates large volumes of repetitive text.</p>
+<p>The next day you are shopping. A jacket costs $80 with <strong>15% off</strong>. You want to know the sale price. You reach for a <a href="/en/tools/percentage-calculator">percentage calculator</a>. You enter 80 and 15. The tool shows the discount and the final price. The percentage calculator is a <strong>general-purpose</strong> tool. It handles any percentage problem: discounts, interest, growth, grade scores, tax. It works wherever "percent of" appears.</p>
 
-<p>Both are text generation tools. Both produce text quickly. But the purposes differ. The <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> is for <strong>design mockups</strong> — realistic placeholder copy that shows the layout. The <a href="/en/tools/text-repeater">text repeater</a> is for <strong>testing and data</strong> — bulk strings for load testing, padding, and filler. The <a href="/en/tools/text-sorter">text sorter</a> organizes the final data. The <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> fills the design. The <a href="/en/tools/text-repeater">text repeater</a> fills the test. Different tools for different text needs.</p>`
+<p>Both tools do math. Both handle percentages. But the workflows differ. The <a href="/en/tools/tip-calculator">tip calculator</a> is for the <strong>restaurant workflow</strong> — it combines the tip and the split into one step, so you do not chain two calculations. The <a href="/en/tools/percentage-calculator">percentage calculator</a> is for the <strong>everyday workflow</strong> — one percentage, any context, including the tip percentage itself. For shopping deals, the <a href="/en/tools/discount-calculator">discount calculator</a> adds sale-price logic on top. The <a href="/en/tools/tip-calculator">tip calculator</a> handles the meal. The <a href="/en/tools/percentage-calculator">percentage calculator</a> handles everything else. Two tools for two workflows — both essential.</p>`
   },
   {
-    slug: "unix-timestamp-science-computer-time",
-    title: "The Science of Unix Timestamps How Computers Count Every Second Since January 1, 1970",
-    description: "Unix time is a single number: 1786377600. To a computer, that number means August 11, 2026. Here's how the world's most important clock works — and why it started in 1970.",
-    date: "2026-08-11",
-    category: "Developer Tools",
-    tags: ["unix timestamp", "time", "epoch", "computer science", "Epoch"],
-    relatedTools: ["unix-timestamp", "cron-parser", "age-calculator"],
-    content: `<p>A database stores a timestamp. The value is <code>1786377600</code>. To a human, that is gibberish. To a computer, it is a precise moment: August 11, 2026, at 00:00:00 UTC. The number counts seconds since January 1, 1970 — the Unix epoch. A <a href="/en/tools/unix-timestamp">unix timestamp converter</a> translates between the number and the human date. Here is how the system works.</p>
+    slug: "coin-flip-vs-book-of-answers-decisions",
+    title: "Coin Flip vs Book of Answers Binary Decisions vs Guided Randomness",
+    description: "You can't decide between two options. A coin flip gives a binary answer. A book of answers gives a nudge. Both use randomness. But one resolves. One inspires. Here's when each fits.",
+    date: "2026-08-12",
+    category: "Fun & Media",
+    tags: ["coin flip", "book of answers", "decision making", "random", "comparison"],
+    relatedTools: ["coin-flip", "book-of-answers", "dice-roller"],
+    content: `<p>You are choosing between two apartments. Both are good. You have analyzed rent, commute, and light for a week. You are stuck. A friend says "flip a coin." You use a <a href="/en/tools/coin-flip">coin flip</a>. The coin lands on one option. The instant it lands, you feel either relief or disappointment — and that feeling tells you what you actually wanted. The coin flip is a <strong>binary</strong> tool. It forces a yes-or-no answer and reveals your gut reaction.</p>
 
-<h2>How Unix Time Works</h2>
+<p>Now you face a different kind of decision. You are not choosing between two options. You are low on ideas. You need a nudge, not a verdict. You open a <a href="/en/tools/book-of-answers">book of answers</a>. The tool gives you a phrase: "Trust the long game." It is not a literal instruction. It is a lens. You interpret it through your situation, and the interpretation sparks a direction. The book of answers is a <strong>guided</strong> tool. It feeds your thinking instead of ending it.</p>
 
-<p><strong>The epoch.</strong> January 1, 1970, at 00:00:00 UTC is the zero point — Unix epoch time <code>0</code>. Every second since then is one more number. The current time is the number of seconds that have passed since the epoch. The <a href="/en/tools/unix-timestamp">unix timestamp converter</a> shows the current value. <strong>Why one number.</strong> A single integer is simple and unambiguous. It works across timezones — the number is the same everywhere. The human date depends on the timezone, but the timestamp does not. Databases, APIs, and logs use Unix time because it is universally comparable. <strong>Why 1970.</strong> The Unix operating system was developed in the late 1960s. The developers needed a start date. 1970 was chosen as a convenient, round starting point. <strong>The 2038 problem.</strong> The classic 32-bit timestamp maxes out on January 19, 2038. Most systems now use 64-bit timestamps, which last for billions of years. The <a href="/en/tools/unix-timestamp">unix timestamp converter</a> handles both. The <a href="/en/tools/cron-parser">cron parser</a> schedules tasks in time-based expressions. The <a href="/en/tools/age-calculator">age calculator</a> works with human dates. The <a href="/en/tools/unix-timestamp">unix timestamp converter</a> is the bridge between the human clock and the computer clock.</p>`
+<p>Both tools use randomness. Both break decision paralysis. But they work differently. The <a href="/en/tools/coin-flip">coin flip</a> is for <strong>binary choices</strong> — two options, one verdict, and a gut-check that follows. The <a href="/en/tools/book-of-answers">book of answers</a> is for <strong>open questions</strong> — when you need a fresh angle, not a final answer. The <a href="/en/tools/dice-roller">dice roller</a> extends the binary case to multiple options when you have three or more choices. The <a href="/en/tools/coin-flip">coin flip</a> is the tiebreaker. The <a href="/en/tools/book-of-answers">book of answers</a> is the muse. Different tools for different kinds of stuck.</p>`
+  },
+  {
+    slug: "global-weather-science-forecasting",
+    title: "The Science of Weather Forecasting How Meteorologists Predict 7-Day Forecasts",
+    description: "The app says 70% chance of rain tomorrow. Where does that number come from? It's not a guess. Meteorologists use supercomputers, satellite data, and probability models. Here's how a 7-day forecast is actually made.",
+    date: "2026-08-12",
+    category: "Reference",
+    tags: ["global weather", "forecasting", "meteorology", "7-day forecast", "science"],
+    relatedTools: ["global-weather", "world-map", "nasa-apod"],
+    content: `<p>Your phone says there is a <strong>70% chance of rain</strong> tomorrow. That number feels specific. Where does it come from? It is not a guess. It is the output of a system that collects millions of measurements, runs them through supercomputers, and translates the results into probability. A <a href="/en/tools/global-weather">global weather checker</a> shows you the forecast. Here is the science behind that forecast.</p>
+
+<h2>How a 7-Day Forecast Is Made</h2>
+
+<p><strong>Step 1: Collect the data.</strong> Thousands of weather stations measure temperature, pressure, humidity, and wind. Satellites photograph clouds from space. Weather balloons rise through the atmosphere twice a day, radioing conditions back. Ocean buoys measure sea-surface temperature. Every measurement feeds the model. <strong>Step 2: Run the model.</strong> The atmosphere is a fluid, and its behavior follows the laws of physics. Meteorologists divide the atmosphere into a grid — each cell the size of a small city. Supercomputers solve billions of equations to simulate how air, heat, and moisture move between cells. The result is a picture of the atmosphere days ahead. <strong>Step 3: Add the probability.</strong> The forecast is not a single outcome. The model is run many times with slightly different starting conditions — an approach called ensemble forecasting. If 70 of 100 runs predict rain, the forecast says <strong>70% chance of rain</strong>. That is why meteorologists speak in probability. <strong>Step 4: Trust the trend.</strong> Forecasts get more accurate as the event approaches. The 7-day outlook gives the trend; the 48-hour outlook is the reliable number. The <a href="/en/tools/world-map">world map</a> helps you visualize conditions across regions. The <a href="/en/tools/nasa-apod">NASA picture of the day</a> shows the satellite view that makes forecasting possible. The <a href="/en/tools/global-weather">global weather checker</a> is the front door to this system. The supercomputer is the engine. The result is the forecast you check before you step outside.</p>`
   },
 ];
 
@@ -102,4 +102,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 349->355 done.")
+print("Free station: 355->361 done.")
