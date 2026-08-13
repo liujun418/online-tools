@@ -1,5 +1,5 @@
-"""Add 6 blogs to free station (355→361) — August 12, 2026"""
-import os, sys
+"""Add 6 blogs to free station (361→367) — August 13, 2026"""
+import os
 
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
@@ -10,88 +10,88 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "discount-calculator-online-shopping-bogo-deals",
-    title: "Discount Calculator for Online Shopping How to Compare 30% Off vs Buy One Get One Deals",
-    description: "You see 30% OFF on one item and BUY ONE GET ONE on the other. Which is the better deal? The answer is not always obvious. A discount calculator reveals the real price. Here's the shopping comparison workflow.",
-    date: "2026-08-12",
+    slug: "jwt-decoder-token-expiry-security",
+    title: "How to Read JWT Expiration and Security Claims Like a Developer",
+    description: "A JWT contains an exp claim that tells you when the token dies. Read it wrong and your API calls fail mysteriously. Here's how to decode and verify JWT expiration, issuer, and audience.",
+    date: "2026-08-13",
+    category: "Developer",
+    tags: ["jwt decoder", "token expiration", "exp claim", "JWT security", "API authentication"],
+    relatedTools: ["jwt-decoder", "hash-generator", "base64-converter"],
+    content: `<p>Your API starts returning <strong>401 Unauthorized</strong> at exactly 10:00 AM every day. The tokens worked an hour ago. You check the server logs. Nothing obvious. You open the token in a <a href="/en/tools/jwt-decoder">JWT decoder</a> and look at the payload. There it is: <code>"exp": 1723507200</code>. The token expired at 10:00 AM. The exp claim — a Unix timestamp — is the <strong>expiration time</strong>, and your token died on schedule.</p>
+
+<h2>How to Read a JWT Expiration Claim</h2>
+
+<p><strong>Step 1: Decode the token.</strong> Paste your JWT into the <a href="/en/tools/jwt-decoder">JWT decoder</a>. A JWT is three base64url parts separated by dots: header, payload, signature. The decoder splits them and shows the claims in plain text. <strong>Step 2: Find the exp claim.</strong> Look for <code>exp</code> in the payload. It is a Unix timestamp — seconds since January 1, 1970, UTC. The decoder converts it to a human-readable date. If the date is in the past, the token is expired. <strong>Step 3: Check the other security claims.</strong> <code>iss</code> tells you the issuer — the server that issued the token. <code>aud</code> is the audience — the service the token is meant for. <code>iat</code> is issued-at time. <code>nbf</code> (not before) means the token is not valid until a certain time. A token that fails <code>aud</code> will be rejected even if it has not expired. <strong>Step 4: Verify the signature.</strong> The signature proves the token was not tampered with. The <a href="/en/tools/hash-generator">hash generator</a> shows you how signature algorithms produce fixed-length outputs. The <a href="/en/tools/base64-converter">base64 converter</a> helps you understand the encoding layer under the claims. The <a href="/en/tools/jwt-decoder">JWT decoder</a> is the diagnostic tool. The exp claim is the expiry clock. Together they turn a confusing 401 into a fixable cause.</p>`
+  },
+  {
+    slug: "cron-parser-timezones-deployments",
+    title: "Cron Timezone Traps How a Parser Saves You From a 3AM Job",
+    description: "Your cron job runs at the wrong hour in production. The crontab looks right. The server timezone is the problem. Here's how a cron parser exposes timezone and scheduling mistakes before they fire.",
+    date: "2026-08-13",
+    category: "Developer",
+    tags: ["cron parser", "timezone", "crontab", "scheduled jobs", "deployment"],
+    relatedTools: ["cron-parser", "unix-timestamp", "stopwatch-and-timer"],
+    content: `<p>You deployed a cron job that should run at 6:00 AM. It runs at 1:00 PM instead. The crontab line reads <code>0 6 * * *</code> — correct in every book. But the server runs on UTC and you think in your local timezone. When you set the job from your local machine at 6 AM, the server interpreted it as 6 AM <strong>UTC</strong>. A <a href="/en/tools/cron-parser">cron parser</a> shows you exactly what the server will do.</p>
+
+<h2>How a Cron Parser Catches Timezone Mistakes</h2>
+
+<p><strong>Step 1: Paste the expression.</strong> Open the <a href="/en/tools/cron-parser">cron parser</a> and enter <code>0 6 * * *</code>. The parser lists the next 10 run times. <strong>Step 2: Check the timezone.</strong> The parser shows the times in a chosen timezone. Run the same expression in UTC and in your local zone. The hour shifts — that is the trap. If your job must run at 6 AM local, the crontab must account for the server's zone, or run inside a timezone-aware container. <strong>Step 3: Verify the next runs.</strong> The parser shows the actual next executions. You can see whether the job fires at the right minute, day, and month — including edge cases like day-of-month overlap with day-of-week. <strong>Step 4: Confirm with the deployment config.</strong> Many platforms (serverless schedulers, containers) inherit the host timezone. The <a href="/en/tools/unix-timestamp">unix timestamp converter</a> helps you reason about UTC offsets. The <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> is for the human side of timekeeping. The <a href="/en/tools/cron-parser">cron parser</a> is the schedule inspector. The timezone is the hidden variable. Together they keep your job firing where — and when — you expect.</p>`
+  },
+  {
+    slug: "regex-tester-extract-parse-text",
+    title: "How to Extract Data With Regex A Practical Text-Parsing Guide",
+    description: "A log file has 5,000 lines. You need every email, IP, and date. Reading by hand takes an hour. A regex tester extracts them in seconds. Here's a practical text-parsing workflow.",
+    date: "2026-08-13",
+    category: "Developer",
+    tags: ["regex tester", "text extraction", "regex patterns", "parse text", "data mining"],
+    relatedTools: ["regex-tester", "text-sorter", "remove-duplicate-lines"],
+    content: `<p>Your application writes a log file. Each line contains a user ID, an IP address, and a timestamp mixed with prose. You need to pull every IP address into a list. There are 5,000 lines. You open a <a href="/en/tools/regex-tester">regex tester</a> and write a pattern that matches IP addresses. In seconds, you have every IP extracted and ready to analyze.</p>
+
+<h2>How to Extract Data With a Regex Tester</h2>
+
+<p><strong>Step 1: Identify what you need.</strong> Define the pattern you are hunting. An IP address looks like <code>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}</code>. An email has a local part, an @, and a domain. A date follows a format like <code>2026-08-13</code>. <strong>Step 2: Write and test the pattern.</strong> Paste the pattern and a sample of your text into the <a href="/en/tools/regex-tester">regex tester</a>. The tester highlights matches live. You refine the pattern until it catches the real data and skips the false positives. <strong>Step 3: Use capture groups.</strong> Wrap the part you need in parentheses — <code>(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})</code> — to extract just that piece instead of the whole match. <strong>Step 4: Post-process the results.</strong> Export the matches and run them through the <a href="/en/tools/text-sorter">text sorter</a> to organize them, and the <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> tool to collapse repeats. The <a href="/en/tools/regex-tester">regex tester</a> is the extraction engine. The pattern is the search key. Together they turn 5,000 lines of prose into a clean dataset.</p>`
+  },
+  {
+    slug: "percentage-calculator-vs-fraction-calculator",
+    title: "Percentage vs Fraction When Each Format Tells the Truth Better",
+    description: "The same ratio looks different as a percentage or a fraction. 1/3 is exact. 33.33% is rounded. Understanding when each format matters makes your calculations clearer. Here's the difference.",
+    date: "2026-08-13",
     category: "Calculator",
-    tags: ["discount calculator", "buy one get one", "sale price", "online shopping", "deal"],
-    relatedTools: ["discount-calculator", "percentage-calculator", "tip-calculator"],
-    content: `<p>You are shopping online. Two deals catch your eye. One item is <strong>30% off</strong>. A second item is <strong>buy one get one</strong>. Both sound good. But which saves you more money? The answer depends on the prices. A <a href="/en/tools/discount-calculator">discount calculator</a> reveals the real cost. Here is the shopping comparison workflow.</p>
+    tags: ["percentage calculator", "fraction", "ratio", "percent vs fraction", "math"],
+    relatedTools: ["percentage-calculator", "unit-converter", "roi-calculator"],
+    content: `<p>You are comparing two deals. One gives 1/3 off. The other gives 33.33% off. Are they the same? Mathematically, almost — but not quite. One third is the exact value <strong>0.333...</strong>, a repeating decimal. 33.33% is a rounded approximation of it. A <a href="/en/tools/percentage-calculator">percentage calculator</a> tells you the percentage. The fraction tells you the exact ratio. Here is when each format matters.</p>
 
-<h2>How to Compare Deals with a Discount Calculator</h2>
+<h2>Percentage vs Fraction: When Each Format Wins</h2>
 
-<p><strong>Calculate the 30% off deal.</strong> Take the full price. Multiply by 30% to find the discount. Subtract it from the price. A $50 jacket becomes $35. The <a href="/en/tools/discount-calculator">discount calculator</a> does this instantly. Enter the price and the percent. It shows the sale price and the amount you save. <strong>Calculate the buy one get one deal.</strong> Buy one get one usually means you pay the higher price and get the lower-price item free. If both items are $50, you pay $50 for two — effectively $25 each, or <strong>50% off</strong>. If one item is $80 and the other is $30, you pay $80 for both. That is roughly 27% off the total. The <a href="/en/tools/discount-calculator">discount calculator</a> helps you compare the two scenarios side by side. <strong>Watch the wording.</strong> "Buy one get one 50% off" is not the same as "buy one get one free." The wording changes the math completely. The <a href="/en/tools/percentage-calculator">percentage calculator</a> helps you verify the true discount percentage in any wording. <strong>Factor in the tip-style extras.</strong> Shipping, taxes, and minimum-order requirements change the final cost. The <a href="/en/tools/tip-calculator">tip calculator</a> handles split-payment scenarios when you shop with friends. The <a href="/en/tools/discount-calculator">discount calculator</a> is the deal-breaker tool. The shopper is the decision maker. The combination reveals the real price before you click buy.</p>`
+<p><strong>Percentages win for comparison.</strong> 25% vs 30% is instantly readable. You do not mentally convert 1/4 vs 3/10. The <a href="/en/tools/percentage-calculator">percentage calculator</a> converts amounts to percentages so you can compare discounts, growth, and shares at a glance. <strong>Fractions win for exactness.</strong> 1/3 of a recipe is exact. 33.33% of it is a rounded approximation that leaves a fraction of a gram unaccounted for. When precision matters — cooking, dividing bills, splitting shares — the fraction is the truth. <strong>Fractions win for conceptual clarity.</strong> "Half" means 1/2 to everyone. "50%" needs the baseline stated. In statistics and probability, fractions show the relationship directly: 1 in 4 is clearer than 25%. <strong>Percentages win for changes.</strong> Growth from 50 to 75 is +50%, and the <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the percent-change math automatically. The <a href="/en/tools/unit-converter">unit converter</a> handles the measurement side of the same problems. The <a href="/en/tools/roi-calculator">ROI calculator</a> uses percentages to compare returns across investments. The percentage is for comparing. The fraction is for being exact. Use each where it tells the truth.</p>`
   },
   {
-    slug: "random-name-generator-game-dev-character-naming",
-    title: "Random Name Generator for Game Developers How to Name NPCs, Characters, and Locations",
-    description: "You've built your game world. Every NPC needs a name — tavern keeper, blacksmith, quest giver. Naming 50 characters by hand takes hours. A random name generator produces names in seconds. Here's the character naming workflow.",
-    date: "2026-08-12",
-    category: "Fun & Media",
-    tags: ["random name generator", "game development", "NPC", "character names", "world building"],
-    relatedTools: ["random-name-generator", "random-number-generator", "lorem-ipsum"],
-    content: `<p>You are building a game. Your world has a harbor town with 40 NPCs. The blacksmith needs a name. The tavern keeper needs a name. The quest giver, the guard, the fishmonger — each one needs a name that fits the world. Naming them by hand takes hours. A <a href="/en/tools/random-name-generator">random name generator</a> produces names in seconds. Here is the character naming workflow.</p>
+    slug: "word-counter-vs-text-sorter",
+    title: "Word Counter vs Text Sorter Counting vs Organizing Text",
+    description: "A word counter tells you how many words are in your text. A text sorter rearranges them. One measures. One organizes. Here's when each tool is the right call.",
+    date: "2026-08-13",
+    category: "Text",
+    tags: ["word counter", "text sorter", "text analysis", "organize text", "comparison"],
+    relatedTools: ["word-counter", "text-sorter", "remove-duplicate-lines"],
+    content: `<p>Your editor says the blog post is 1,200 words. You need to confirm, and you also want the reference list sorted alphabetically. Two different jobs. The <a href="/en/tools/word-counter">word counter</a> measures the text. The <a href="/en/tools/text-sorter">text sorter</a> organizes it. Here is when each is the right tool.</p>
 
-<h2>How to Name Your Game Characters</h2>
+<h2>Word Counter vs Text Sorter: Measure vs Organize</h2>
 
-<p><strong>Generate a pool of candidates.</strong> Open the <a href="/en/tools/random-name-generator">random name generator</a>. Generate twenty names. The tool mixes syllables and sounds to produce fantasy, modern, or generic names. You are not committing to any of them yet. You are building a pool. <strong>Match names to roles.</strong> A blacksmith sounds different from a court mage. Generate separate pools for each culture in your world. Elven names, dwarf names, and human names should feel distinct. The <a href="/en/tools/random-name-generator">random name generator</a> helps you keep each culture consistent. <strong>Add meaning.</strong> A good name hints at the character. Combine a generated name with a descriptor: "Roran the Iron-Fisted" or "Mira the Quiet." The generator gives you the raw material. You add the story. <strong>Name locations too.</strong> The same workflow names towns, taverns, and dungeons. Generate a list, filter the weak ones, and keep the strong. The <a href="/en/tools/lorem-ipsum">lorem ipsum generator</a> creates placeholder descriptions for your characters and locations. The <a href="/en/tools/random-number-generator">random number generator</a> handles stats and dice rolls. The <a href="/en/tools/random-name-generator">random name generator</a> is the naming engine. The developer is the storyteller. The combination populates your world in minutes.</p>`
+<p><strong>The word counter measures.</strong> It counts words, characters, sentences, and paragraphs. You use it when word count matters — a blog target, a social media limit, an essay requirement. The <a href="/en/tools/word-counter">word counter</a> also shows reading time, which helps you gauge whether the piece is the right length for the medium. <strong>The text sorter organizes.</strong> It takes a list — keywords, URLs, names — and sorts it alphabetically, numerically, or by length. You use it when order matters. The <a href="/en/tools/text-sorter">text sorter</a> can deduplicate and trim whitespace in the same pass. <strong>They solve different problems.</strong> Counting does not organize. Sorting does not measure. If you paste a jumbled list into the word counter, you learn its length but not its order. If you paste a paragraph into the text sorter, you get a sorted jumble — useless. <strong>They combine well.</strong> Sort a keyword list with the <a href="/en/tools/text-sorter">text sorter</a>, then run it through the <a href="/en/tools/word-counter">word counter</a> to check the total, and use the <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> tool to clean repeats. The counter answers "how much." The sorter answers "in what order." Pick by the question you are asking.</p>`
   },
   {
-    slug: "random-quote-generator-writing-prompts",
-    title: "Random Quote Generator for Writers How to Use Daily Quotes as Writing Prompts",
-    description: "You want to write but the blank page stares back. You need a starting point. A random quote can spark the first line. Here's the writing prompt workflow.",
-    date: "2026-08-12",
-    category: "Fun & Media",
-    tags: ["random quote", "writing prompts", "inspiration", "writer", "creative writing"],
-    relatedTools: ["random-quote", "quotes", "book-of-answers"],
-    content: `<p>You sit down to write. The page is blank. Your mind is blank too. You need a starting point — anything to break the silence. A single quote can do it. A <a href="/en/tools/random-quote">random quote generator</a> serves you a line from a thinker, a writer, or an unknown voice. You take that line and make it yours. Here is the writing prompt workflow.</p>
+    slug: "url-encoding-percent-history",
+    title: "Why URLs Use Percent Signs The History of URL Encoding",
+    description: "A space in a URL becomes %20. An ampersand becomes %26. Why percent signs? It goes back to the early internet, RFC 1738, and a simple rule about safe characters. Here's the story.",
+    date: "2026-08-13",
+    category: "Developer",
+    tags: ["url encoding", "percent encoding", "URL history", "RFC 1738", "web standards"],
+    relatedTools: ["url-encoder", "html-entities", "text-to-slug"],
+    content: `<p>You copy a link with spaces in it. The browser shows <code>%20</code> where each space should be. A filename with an ampersand becomes <code>&amp;</code> on the wire and <code>%26</code> in the URL. Why percent signs? Why not underscores or dashes? The answer is a decision made in 1994 that every URL still follows. An <a href="/en/tools/url-encoder">URL encoder</a> applies the rule; here is where the rule came from.</p>
 
-<h2>How to Use Quotes as Writing Prompts</h2>
+<h2>The History of Percent Encoding</h2>
 
-<p><strong>Generate a quote.</strong> Open the <a href="/en/tools/random-quote">random quote generator</a>. It shows you a quote you have never seen. Do not judge it. Take it as a starting point. <strong>Find your angle.</strong> Read the quote three times. What does it assume? What does it contradict? Who said it, and what were they pushing against? Agree with it, argue with it, or take it literally. The <a href="/en/tools/random-quote">random quote generator</a> gives you the seed. You grow the story. <strong>Write the first 200 words.</strong> The quote becomes your first sentence or your epigraph. Write without stopping. Do not edit yet. The goal is momentum. A good prompt removes the "what do I write about" question so you can focus on the writing itself. <strong>Expand the collection.</strong> The <a href="/en/tools/quotes">quotes directory</a> lets you search quotes by topic — you can deepen a prompt you love. The <a href="/en/tools/book-of-answers">book of answers</a> offers a different kind of nudge when a quote feels too heavy. The <a href="/en/tools/random-quote">random quote generator</a> is the prompt engine. The writer is the interpreter. The combination turns a blank page into a draft in minutes.</p>`
-  },
-  {
-    slug: "tip-calculator-vs-percentage-calculator-bills-vs-percentages",
-    title: "Tip Calculator vs Percentage Calculator Splitting Restaurant Bills vs Everyday Percentages",
-    description: "You're at dinner with four friends. You need to split the bill and add 18% tip. Later you need 15% off a jacket. A tip calculator handles the meal. A percentage calculator handles the shopping. Here's when each tool wins.",
-    date: "2026-08-12",
-    category: "Calculator",
-    tags: ["tip calculator", "percentage calculator", "split bill", "restaurant tip", "comparison"],
-    relatedTools: ["tip-calculator", "percentage-calculator", "discount-calculator"],
-    content: `<p>Dinner is over. The check is $84.60. Your friend used a coupon, another skipped dessert, and the group wants to add an 18% tip before splitting five ways. You reach for a <a href="/en/tools/tip-calculator">tip calculator</a>. You enter the bill, the tip percent, and the number of people. The tool shows the tip amount, the total, and each person's share. The math is done in seconds. The tip calculator is a <strong>bill-focused</strong> tool. It is built for the restaurant table: bill, tip, split.</p>
-
-<p>The next day you are shopping. A jacket costs $80 with <strong>15% off</strong>. You want to know the sale price. You reach for a <a href="/en/tools/percentage-calculator">percentage calculator</a>. You enter 80 and 15. The tool shows the discount and the final price. The percentage calculator is a <strong>general-purpose</strong> tool. It handles any percentage problem: discounts, interest, growth, grade scores, tax. It works wherever "percent of" appears.</p>
-
-<p>Both tools do math. Both handle percentages. But the workflows differ. The <a href="/en/tools/tip-calculator">tip calculator</a> is for the <strong>restaurant workflow</strong> — it combines the tip and the split into one step, so you do not chain two calculations. The <a href="/en/tools/percentage-calculator">percentage calculator</a> is for the <strong>everyday workflow</strong> — one percentage, any context, including the tip percentage itself. For shopping deals, the <a href="/en/tools/discount-calculator">discount calculator</a> adds sale-price logic on top. The <a href="/en/tools/tip-calculator">tip calculator</a> handles the meal. The <a href="/en/tools/percentage-calculator">percentage calculator</a> handles everything else. Two tools for two workflows — both essential.</p>`
-  },
-  {
-    slug: "coin-flip-vs-book-of-answers-decisions",
-    title: "Coin Flip vs Book of Answers Binary Decisions vs Guided Randomness",
-    description: "You can't decide between two options. A coin flip gives a binary answer. A book of answers gives a nudge. Both use randomness. But one resolves. One inspires. Here's when each fits.",
-    date: "2026-08-12",
-    category: "Fun & Media",
-    tags: ["coin flip", "book of answers", "decision making", "random", "comparison"],
-    relatedTools: ["coin-flip", "book-of-answers", "dice-roller"],
-    content: `<p>You are choosing between two apartments. Both are good. You have analyzed rent, commute, and light for a week. You are stuck. A friend says "flip a coin." You use a <a href="/en/tools/coin-flip">coin flip</a>. The coin lands on one option. The instant it lands, you feel either relief or disappointment — and that feeling tells you what you actually wanted. The coin flip is a <strong>binary</strong> tool. It forces a yes-or-no answer and reveals your gut reaction.</p>
-
-<p>Now you face a different kind of decision. You are not choosing between two options. You are low on ideas. You need a nudge, not a verdict. You open a <a href="/en/tools/book-of-answers">book of answers</a>. The tool gives you a phrase: "Trust the long game." It is not a literal instruction. It is a lens. You interpret it through your situation, and the interpretation sparks a direction. The book of answers is a <strong>guided</strong> tool. It feeds your thinking instead of ending it.</p>
-
-<p>Both tools use randomness. Both break decision paralysis. But they work differently. The <a href="/en/tools/coin-flip">coin flip</a> is for <strong>binary choices</strong> — two options, one verdict, and a gut-check that follows. The <a href="/en/tools/book-of-answers">book of answers</a> is for <strong>open questions</strong> — when you need a fresh angle, not a final answer. The <a href="/en/tools/dice-roller">dice roller</a> extends the binary case to multiple options when you have three or more choices. The <a href="/en/tools/coin-flip">coin flip</a> is the tiebreaker. The <a href="/en/tools/book-of-answers">book of answers</a> is the muse. Different tools for different kinds of stuck.</p>`
-  },
-  {
-    slug: "global-weather-science-forecasting",
-    title: "The Science of Weather Forecasting How Meteorologists Predict 7-Day Forecasts",
-    description: "The app says 70% chance of rain tomorrow. Where does that number come from? It's not a guess. Meteorologists use supercomputers, satellite data, and probability models. Here's how a 7-day forecast is actually made.",
-    date: "2026-08-12",
-    category: "Reference",
-    tags: ["global weather", "forecasting", "meteorology", "7-day forecast", "science"],
-    relatedTools: ["global-weather", "world-map", "nasa-apod"],
-    content: `<p>Your phone says there is a <strong>70% chance of rain</strong> tomorrow. That number feels specific. Where does it come from? It is not a guess. It is the output of a system that collects millions of measurements, runs them through supercomputers, and translates the results into probability. A <a href="/en/tools/global-weather">global weather checker</a> shows you the forecast. Here is the science behind that forecast.</p>
-
-<h2>How a 7-Day Forecast Is Made</h2>
-
-<p><strong>Step 1: Collect the data.</strong> Thousands of weather stations measure temperature, pressure, humidity, and wind. Satellites photograph clouds from space. Weather balloons rise through the atmosphere twice a day, radioing conditions back. Ocean buoys measure sea-surface temperature. Every measurement feeds the model. <strong>Step 2: Run the model.</strong> The atmosphere is a fluid, and its behavior follows the laws of physics. Meteorologists divide the atmosphere into a grid — each cell the size of a small city. Supercomputers solve billions of equations to simulate how air, heat, and moisture move between cells. The result is a picture of the atmosphere days ahead. <strong>Step 3: Add the probability.</strong> The forecast is not a single outcome. The model is run many times with slightly different starting conditions — an approach called ensemble forecasting. If 70 of 100 runs predict rain, the forecast says <strong>70% chance of rain</strong>. That is why meteorologists speak in probability. <strong>Step 4: Trust the trend.</strong> Forecasts get more accurate as the event approaches. The 7-day outlook gives the trend; the 48-hour outlook is the reliable number. The <a href="/en/tools/world-map">world map</a> helps you visualize conditions across regions. The <a href="/en/tools/nasa-apod">NASA picture of the day</a> shows the satellite view that makes forecasting possible. The <a href="/en/tools/global-weather">global weather checker</a> is the front door to this system. The supercomputer is the engine. The result is the forecast you check before you step outside.</p>`
+<p><strong>1994: RFC 1738 defines the URL.</strong> The early web needed a way to put arbitrary text into a URL, but URLs had reserved characters — <code>/</code>, <code>?</code>, <code>&amp;</code>, <code>=</code> — that had structural meaning. Spaces were not allowed at all. The standard chose a simple escape: a percent sign followed by two hexadecimal digits, one per byte. <code>%20</code> means "byte 0x20," which is a space. <code>%26</code> means "byte 0x26," which is an ampersand. <strong>Why percent?</strong> It was not used by any other character in URLs, so it was safe as a marker. A percent told the reader "the next two characters are a byte code, not literal text." <strong>It survives because it works.</strong> Every language, every browser, every server implements the same rule. The <a href="/en/tools/url-encoder">URL encoder</a> applies it on demand. The <a href="/en/tools/html-entities">HTML entities</a> tool handles the parallel problem for HTML — where <code>&amp;amp;</code> plays the same escaping role. The <a href="/en/tools/text-to-slug">text to slug</a> tool is the modern alternative for readable URLs. The percent sign is the escape hatch. Two hex digits are the byte. Together they let a URL carry any text, safely.</p>`
   },
 ];
 
@@ -102,4 +102,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8") as f:
     f.write(content)
 
-print("Free station: 355->361 done.")
+print("Free station: 361->367 done.")
