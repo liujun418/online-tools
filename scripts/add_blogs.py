@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (366->372) - August 14, 2026"""
+"""Add 6 blogs to free station (372->378) - August 15, 2026"""
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,158 +8,153 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "text-to-slug-seo-urls-cms-workflow",
-    title: "How to Turn Any Title Into an SEO-Friendly URL Slug (CMS Workflow)",
-    description: "Your post title is 'How To Bake Sourdough Bread \u2014 A Beginner's Guide!' and the URL should be /how-to-bake-sourdough-bread. Here's the step-by-step slug workflow for CMS editors.",
-    date: "2026-08-14",
-    category: "Text Tools",
-    tags: ["text to slug", "URL slug", "SEO", "CMS workflow", "content editing"],
-    relatedTools: ["text-to-slug", "url-encoder", "case-converter"],
-    content: `<p>You finish a post called "How To Bake Sourdough Bread \u2014 A Beginner's Guide!" and paste the title into your CMS. The URL that comes back is <code>/post/4321?title=How%20To%20Bake%20Sourdough%20Bread</code>. Nobody is going to share that. A clean URL \u2014 <code>/how-to-bake-sourdough-bread</code> \u2014 tells readers and search engines what the page is about before they click. That's what a <a href="/en/tools/text-to-slug">text to slug converter</a> does: it turns a messy title into a URL-ready slug in one step.</p>
-
-<h2>The Slug Workflow in Five Steps</h2>
-
-<p><strong>Step 1: Lowercase everything.</strong> URLs are case-sensitive. <code>How-To-Bake</code> and <code>how-to-bake</code> can be treated as different pages. Slugs are always lowercase. <strong>Step 2: Remove punctuation.</strong> The em dash, the exclamation mark, the apostrophe in "Beginner's" \u2014 all of it has to go. They break URL parsing or add noise. <strong>Step 3: Replace spaces with hyphens.</strong> Underscores are technically valid, but hyphens are the convention and search engines treat them as word separators. <strong>Step 4: Drop stop words when it helps.</strong> "A" and "The" at the start add nothing to <code>how-to-bake-sourdough-bread</code>. You usually don't need them. <strong>Step 5: Verify the result.</strong> Paste the title into the <a href="/en/tools/text-to-slug">text to slug tool</a>, copy the output, and paste it into your CMS slug field before you publish.</p>
-
-<p>If the slug still contains characters that need escaping \u2014 a non-ASCII letter, a symbol that survived \u2014 run it through the <a href="/en/tools/url-encoder">URL encoder</a> to see what the browser actually sends. The <a href="/en/tools/case-converter">case converter</a> helps when you need the title in a consistent format for the meta tag at the same time.</p>
-
-<h2>Slug Mistakes That Cost Rankings</h2>
-
-<p><strong>The common mistake: editing the URL after you publish.</strong> Changing a slug breaks every inbound link and every bookmark. The old URL returns a 404, and you lose the ranking you already earned. The fix: set the slug once, before hitting publish, and add a redirect if you ever change it later.</p>
-
-<p><strong>The counter-intuitive part: shorter is usually better.</strong> New writers think a long, descriptive slug helps SEO. In practice, a short slug with the main keyword beats a long one that buries it. <code>/how-to-bake-sourdough-bread</code> outranks <code>/baking/2026/recipes/sourdough/how-to-bake-sourdough-bread-for-beginners</code> because the keyword sits at the front and the extra words dilute it.</p>
-
-<p>For a deeper look at how slugs fit into your overall URL structure, see our guide on <a href="/en/blog/url-slug-best-practices-seo-guide">URL slug best practices</a>. When you're ready, <a href="/en/tools/text-to-slug">our text to slug converter</a> generates the clean slug in a second \u2014 no manual fixing of em dashes and apostrophes.</p>`
-  },
-  {
-    slug: "remove-duplicate-lines-csv-data-cleaning",
-    title: "How to Clean Duplicate Rows From a CSV Export Before Your CRM Import",
-    description: "You export 5,000 contacts and 800 are duplicates. Importing them all would double-send your email campaign. Here's how to dedupe a CSV before the import.",
-    date: "2026-08-14",
-    category: "Text",
-    tags: ["remove duplicate lines", "CSV cleaning", "data hygiene", "CRM import", "dedupe"],
-    relatedTools: ["remove-duplicate-lines", "text-sorter", "csv-to-json"],
-    content: `<p>You export 5,000 contacts from your old CRM to bring them into the new one. You're about to hit import when you spot the problem: the export contains the same customers twice, sometimes three times. Different columns are filled in on different rows \u2014 but the email address repeats. If you import as-is, your first email campaign goes to the same person 800 times, and your unsubscribe rate explodes. A <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> tool cleans the list before it ever touches your CRM.</p>
-
-<h2>How to Dedupe a CSV Before the Import</h2>
-
-<p><strong>Step 1: Decide what counts as a duplicate.</strong> In a contact list, the email address is almost always the key. Two rows with the same email are the same person, even when the name fields differ. <strong>Step 2: Extract the column you'll dedupe on.</strong> If the email is the first column, copy just that column into the <a href="/en/tools/remove-duplicate-lines">remove duplicate lines</a> tool. Paste it in, and the tool keeps one copy of each unique value while dropping the repeats. <strong>Step 3: Count what you lost.</strong> The tool shows the before and after. 5,000 rows down to 4,200 means 800 duplicates \u2014 exactly the people you would have emailed twice.</p>
-
-<p><strong>Step 4: Reassemble the clean list.</strong> Paste the deduped values back over the original column and save a new CSV. Run it through the <a href="/en/tools/text-sorter">text sorter</a> to sort the final list alphabetically so it matches your CRM import format, and double-check the header row is intact.</p>
-
-<h2>Why You Shouldn't Just Trust Excel</h2>
-
-<p>Excel has a Remove Duplicates feature, but it only works on exact full-row matches. In a real export, two rows for the same person rarely match exactly \u2014 one has the middle initial, the other doesn't. Row-based dedup misses those. <strong>Dedupe on a single column catches what Excel's row comparison misses.</strong> That's the counter-intuitive part: you usually want to dedupe on one field, not the whole row.</p>
-
-<p>The common mistake is deduping after the import instead of before. Once duplicates live in your CRM, you're merging records, cleaning merge fields, and untangling which phone number is current. The <a href="/en/tools/csv-to-json">CSV to JSON</a> tool helps you inspect the data in a structured way if you want to see the duplicates before you clean. We compared the full workflow against Excel's approach in <a href="/en/blog/remove-duplicate-lines-vs-excel-dedup">our Excel dedup comparison</a>. Clean first, import second \u2014 you'll never have to merge 800 records by hand. <a href="/en/tools/remove-duplicate-lines">Our dedupe tool</a> does the cleanup in seconds.</p>`
-  },
-  {
-    slug: "cron-parser-database-backup-scheduling",
-    title: "Scheduling Database Backups With Cron (And Checking the Expression Before It Runs)",
-    description: "You set a cron job to back up your database at 2am. It never ran. Here's how to write and verify cron expressions for backups and maintenance.",
-    date: "2026-08-14",
+    slug: "regex-tester-lazy-greedy-quantifiers-guide",
+    title: "Lazy vs Greedy Regex Quantifiers: Why Your Pattern Matches Too Much",
+    description: "Your regex grabbed the whole page instead of one tag. That's greedy matching by default. Here's how lazy quantifiers fix it \u2014 and the trade-off nobody mentions.",
+    date: "2026-08-15",
     category: "Developer",
-    tags: ["cron", "database backup", "cron expression", "server maintenance", "scheduling"],
-    relatedTools: ["cron-parser", "unix-timestamp", "text-diff"],
-    content: `<p>You add a cron job to back up your database every night at 2am. The next morning you check: nothing ran. You look at the expression you wrote \u2014 <code>0 2 * * *</code> \u2014 and it looks right. But it was 2pm, not 2am. A twelve-hour mistake that cost you a night of backups. Cron expressions are compact and unforgiving, and the wrong one fails silently. That's why you verify the expression before you deploy it, with a <a href="/en/tools/cron-parser">cron parser</a>.</p>
+    tags: ["regex", "regex quantifiers", "greedy vs lazy", "regex debugging", "pattern matching"],
+    relatedTools: ["regex-tester", "text-diff", "code-formatter"],
+    content: `<p>You need to pull every <code>&lt;p&gt;</code> tag out of a messy HTML export. You write the pattern <code>&lt;p&gt;(.*)&lt;/p&gt;</code>, test it, and the match swallows the whole page \u2014 from the first opening tag to the last closing one. That's not a bug in the pattern. That's how greedy quantifiers work by default. The <a href="/en/tools/regex-tester">regex tester</a> makes the behavior visible, and a lazy quantifier fixes it.</p>
 
-<h2>Reading a Cron Expression in Five Fields</h2>
+<h2>Why Greedy Quantifiers Overrun</h2>
 
-<p>A cron expression has five fields: minute, hour, day of month, month, day of week. <code>0 2 * * *</code> means "at minute 0 of hour 2, every day" \u2014 2:00am. <code>30 3 * * 1</code> means "at 3:30am on Mondays only." <code>*/15 * * * *</code> means "every 15 minutes."</p>
+<p>In most regex engines, <code>.*</code> and <code>.+</code> match as much as they can and only give characters back when the rest of the pattern demands it. Between the first <code>&lt;p&gt;</code> and the last <code>&lt;/p&gt;</code>, every tag in between is "available," so the greedy match takes all of it. It's correct behavior \u2014 the engine returns the longest possible match \u2014 but it's rarely what you want when you're extracting structure.</p>
 
-<p>The trap is that day-of-month and day-of-week combine with OR logic in most cron implementations. <code>0 2 1 * 1</code> runs on the first of the month AND on every Monday \u2014 not on Mondays that happen to be the first. That's the counter-intuitive part that catches everyone eventually.</p>
+<p>The classic fix is a lazy quantifier: <code>.*?</code>. The question mark tells the engine to match as little as possible, expanding only until the next part of the pattern fits. <code>&lt;p&gt;(.*?)&lt;/p&gt;</code> stops at the first <code>&lt;/p&gt;</code>, so each <code>&lt;p&gt;</code> tag gets its own capture. Paste both patterns into the <a href="/en/tools/regex-tester">regex tester</a> side by side and the difference is obvious in the match highlights.</p>
 
-<h2>Scheduling a Database Backup You Can Trust</h2>
+<h2>The Counter-Intuitive Trade-off</h2>
 
-<p><strong>Step 1: Pick a time when traffic is low.</strong> For most small sites, 2-3am works. Avoid the top of the hour if your host's other tenants also back up at :00 \u2014 a busy disk slows the job. <strong>Step 2: Write the expression and check it.</strong> Paste it into the <a href="/en/tools/cron-parser">cron parser</a> and confirm the next run times match what you intend. The parser shows the next five occurrences, so a wrong hour jumps out immediately. <strong>Step 3: Add logging.</strong> Redirect the job output to a file so you can see when it runs: <code>0 2 * * * /backup.sh &gt;&gt; /var/log/backup.log</code>. The <a href="/en/tools/text-diff">text diff</a> tool is handy when you compare two versions of a crontab file to spot what changed after an edit.</p>
+<p>Here's the part that trips up people who just learned lazy matching: lazy isn't always faster. A lazy pattern that fails has to try again at every single position, and patterns with nested quantifiers can collapse into catastrophic backtracking \u2014 the regex that "takes a second" runs for minutes. The real fix for the HTML problem is being specific about what you match: <code>&lt;p[^&gt;]*&gt;(.*?)&lt;/p&gt;</code> refuses to let the opening tag leak.</p>
 
-<p><strong>Step 4: Verify the day-of-week logic.</strong> The common mistake is assuming day-of-month and day-of-week mean AND. If you write <code>0 2 15 * 5</code> expecting "the 15th when it's a Friday," you actually get "the 15th OR any Friday" \u2014 about four times more often than you intended. The parser's occurrence list shows this immediately.</p>
+<p>When you're debugging a pattern, don't guess at what the engine is doing. Run the failing match through the <a href="/en/tools/regex-tester">regex tester</a> to see the actual span, compare the captured groups with the <a href="/en/tools/text-diff">text diff</a> tool, and if the expression is living inside code, drop it into the <a href="/en/tools/code-formatter">code formatter</a> so it's readable before you ship it.</p>
 
-<p>The counter-intuitive tip: test the backup script by hand first, then schedule it. A cron job can't fix a script that fails on its own. Run <code>bash /backup.sh</code>, confirm the dump file exists, then wire up the schedule. The <a href="/en/tools/unix-timestamp">Unix timestamp</a> tool helps you check timezone math when your server runs in UTC but you think in local time \u2014 2am local might be <code>18 2 * * *</code> or worse. For the fundamentals of cron syntax, read <a href="/en/blog/cron-parser-crontab-schedules-explained">our guide to crontab schedules</a>. When your expression is ready, <a href="/en/tools/cron-parser">our cron parser</a> validates it before it ever goes live.</p>`
+<p>Greedy vs lazy isn't a style preference \u2014 it's the difference between matching one paragraph and matching the entire document. Once you can predict which one the engine will pick, you stop fighting your own regexes. For the reverse case, extracting only the text that matches, our guide to <a href="/en/blog/regex-tester-extract-parse-text">extracting and parsing text with regex</a> covers the broader workflow. Test your next pattern in the <a href="/en/tools/regex-tester">regex tester</a> before it ships.</p>`
   },
   {
-    slug: "base64-converter-vs-hash-generator-reversible-vs-one-way",
-    title: "Base64 vs SHA-256: The Encoding That Reverses and the Hash That Doesn't",
-    description: "Base64 and hashing both turn text into gibberish. One reverses cleanly, the other is one-way. Here's when to use each \u2014 and why mixing them up is a security bug.",
-    date: "2026-08-14",
+    slug: "svg-minifier-web-performance-optimization",
+    title: "SVG Minification Workflow: Shaving Kilabytes Off Your Icons",
+    description: "An SVG icon left a design tool at 8KB. On the page it's an icon \u2014 it should weigh under 1KB. Here's the minify-then-verify workflow that strips the weight.",
+    date: "2026-08-15",
     category: "Developer",
-    tags: ["base64", "hash", "SHA-256", "encoding vs hashing", "security"],
-    relatedTools: ["base64-converter", "hash-generator", "md5-generator"],
-    content: `<p>You're building an API and you need to hide a token in a URL. You paste it into a base64 converter, get a clean string, and ship it. Later you read that you should "hash" passwords \u2014 and someone tells you base64 is basically the same thing. It's not. Base64 reverses. Hashing doesn't. Getting them mixed up is a security bug that's easy to make and hard to notice. Here's the difference, and when to use each.</p>
+    tags: ["svg minify", "web performance", "icon optimization", "vector graphics", "page speed"],
+    relatedTools: ["svg-minifier", "css-minifier", "html-to-markdown"],
+    content: `<p>An SVG icon leaves the design tool at 8&nbsp;KB. On your page it renders fine \u2014 but it's an icon; it should weigh under 1&nbsp;KB. The 7&nbsp;KB you're carrying is editor metadata, comments, and a path with more decimal places than the screen can show. A <a href="/en/tools/svg-minifier">SVG minifier</a> strips that weight, and the workflow is simple: minify, verify, ship.</p>
 
-<h2>Base64: Encoding You Can Reverse</h2>
+<h2>What Adds Weight to an SVG</h2>
 
-<p>Base64 takes bytes and represents them with 64 safe characters. It exists so binary data \u2014 an image, a token, a file \u2014 can travel through systems that only handle text: a JSON field, a URL, an email body. The key property: <strong>it's reversible</strong>. Run the base64 string through a decoder and you get the original bytes back, exactly. The <a href="/en/tools/base64-converter">base64 converter</a> does both directions. Base64 is not encryption and it's not a secret \u2014 anyone can decode it.</p>
+<p>Design tools export SVGs with the kitchen sink: XML namespaces you don't need, comments, layer groups, and path coordinates like <code>M 123.456789 456.789012</code> when the icon is 24&nbsp;pixels wide. None of that helps the browser render the shape. A minifier removes the unused <code>defs</code>, collapses <code>transform</code> chains, shortens color values, and rounds coordinates to the precision the viewport actually needs.</p>
 
-<h2>Hashing: One-Way by Design</h2>
+<p>The mistake most people make is skipping the verify step. Minify, paste the result into the browser, and a corrupted icon is an instant layout break. The safe workflow: run the <a href="/en/tools/svg-minifier">SVG minifier</a> on a copy, keep the original, and diff the rendered result before you replace anything.</p>
 
-<p>A hash \u2014 SHA-256, MD5, bcrypt \u2014 also turns input into a fixed-length string, but it's designed so you can't get the input back. The same input always produces the same hash, but the process is one-way. That's why passwords are stored as hashes: if the database leaks, the attacker gets <code>a2f3...</code> strings, not passwords. The <a href="/en/tools/hash-generator">hash generator</a> computes these for you, and the <a href="/en/tools/md5-generator">MD5 generator</a> covers the legacy algorithm still used for checksums.</p>
+<h2>The Counter-Intuitive Part</h2>
 
-<h2>When People Mix Them Up \u2014 and How It Bites</h2>
+<p>Minifying every SVG is not always a win. A hand-written icon with clean paths can already be optimal, and aggressive rounding can actually increase file size if the tool expands a coordinate into longer notation. More importantly, SVG size is a rounding error compared to the JavaScript and CSS a page ships. Pair the minifier with the <a href="/en/tools/css-minifier">CSS minifier</a> for your stylesheet, and if you're documenting how the icons are used, the <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> keeps the snippet readable in your docs.</p>
 
-<p>The common mistake: base64-encoding a password "for security" and storing that. Base64 is reversible, so anyone who reads the database has the password. <strong>The fix: hash passwords, encode data.</strong> If you need the original back, encode with base64. If you only need to verify it, hash it.</p>
-
-<p>The counter-intuitive part: hashing makes data unrecoverable, which is why you can't "decode" a hash to recover the original. Searching a database for the hash of a known value works \u2014 that's how attackers use rainbow tables \u2014 but reversing it is the whole point of the algorithm. For file integrity, a hash works as a fingerprint: hash the file, store the value, re-hash later and compare. Our guide to <a href="/en/blog/base64-encoding-explained">base64 encoding</a> walks through the reversible side in detail. If your data needs reversing, <a href="/en/tools/base64-converter">our base64 converter</a> handles it. If it needs fingerprinting, <a href="/en/tools/hash-generator">our hash generator</a> is the tool.</p>`
+<p>Vector icons are already the lightest way to ship a graphic \u2014 that's part of why vector graphics won, as we covered in our look at <a href="/en/blog/svg-minifier-why-vector-graphics-won-history">why vector graphics took over</a>. Minifying just closes the gap between what the file says and what the screen shows. Run your icon set through the <a href="/en/tools/svg-minifier">SVG minifier</a> and watch the bytes drop.</p>`
   },
   {
-    slug: "random-name-generator-vs-random-number-generator-creative-vs-technical",
-    title: "Random Name Generator vs Random Number Generator: Creative vs Technical Randomness",
-    description: "One picks 'Elena' out of a character list. The other picks 42 out of a range. Both are random, but they solve different problems. Here's when each fits.",
-    date: "2026-08-14",
-    category: "Fun & Media",
-    tags: ["random name generator", "random number generator", "randomness", "creative tools", "comparison"],
-    relatedTools: ["random-name-generator", "random-number-generator", "uuid-generator"],
-    content: `<p>Your role-playing group needs a name for the new blacksmith NPC. Your experiment needs a number to pick which participant gets which condition. Both problems feel like "give me something random." But the name generator and the number generator work differently and serve different purposes. Here's how to tell which one you actually need.</p>
+    slug: "html-to-markdown-docs-blog-workflow",
+    title: "HTML to Markdown: The Conversion Workflow for Docs and Blog Drafts",
+    description: "You copied a section from an old site and got a wall of <div> tags. Converting HTML to Markdown gives you clean, portable drafts. Here's the workflow \u2014 and when not to convert.",
+    date: "2026-08-15",
+    category: "Developer",
+    tags: ["html to markdown", "markdown", "documentation", "content migration", "blog writing"],
+    relatedTools: ["html-to-markdown", "markdown-preview", "text-to-slug"],
+    content: `<p>You copy a section from an old site into your new editor and get a wall of <code>&lt;div&gt;</code> tags with inline styles. The text you wanted is buried under markup you didn't ask for. Converting HTML to Markdown gives you clean, portable drafts \u2014 and it turns a copy-paste mess into something you can actually edit.</p>
 
-<h2>The Name Generator Picks From a Meaningful Set</h2>
+<h2>When HTML Becomes a Liability</h2>
 
-<p>A <a href="/en/tools/random-name-generator">random name generator</a> holds a curated list of names \u2014 first names, last names, sometimes themed lists \u2014 and picks one. It's random within the set, but the set itself is chosen by a human. That's the key: <strong>the name generator's randomness is cultural, not mathematical</strong>. It gives you "Elena" or "Marcus," not "a8f2c1." You use it when you need something that reads as a name: characters, usernames, test accounts.</p>
+<p>HTML is everywhere, but it's the worst format for a draft. Nested divs, hard-coded colors, and editor cruft make the document impossible to diff, hard to search, and fragile to move between tools. Markdown solves that: a heading is a <code>#</code>, a link is <code>[text](url)</code>, and the plain text stays readable even in a terminal. If you maintain a blog, a wiki, or docs in a Git repo, Markdown is the interchange format that keeps history clean.</p>
 
-<h2>The Number Generator Produces a Value You Can Analyze</h2>
+<h2>The Conversion Workflow</h2>
 
-<p>A <a href="/en/tools/random-number-generator">random number generator</a> produces a value from a range \u2014 1 to 100, or 0 to 1, or any bounds you set. The numbers are meant to be studied: a sample for a test, a seed for a procedure, a fair tie-breaker. <strong>Its randomness is mathematical</strong>, and that matters when the outcome feeds into a calculation or a statistical test.</p>
+<p>Step 1: paste the HTML block into the <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a>. Step 2: preview the result in the <a href="/en/tools/markdown-preview">Markdown preview</a> tool and check that headings, lists, and code blocks actually made it across. Step 3: fix the parts the converter can't infer \u2014 a heading level the original styled inline, a table that flattened into a paragraph. Step 4: when the title is ready, run it through the <a href="/en/tools/text-to-slug">text to slug converter</a> to get a filename or URL slug that matches.</p>
 
-<h2>Why the Distinction Matters</h2>
+<h2>The Counter-Intuitive Part</h2>
 
-<p>The common mistake: using a number generator when you need a name, then mapping numbers to a list by hand. "Person 7" is useless in a story. <strong>Use the name generator when the output has to look like a name, and the number generator when the output has to be analyzed.</strong></p>
+<p>Don't convert everything. A complex table with merged cells, a newsletter that depends on inline styles, or a snippet you must paste back into the CMS byte-for-byte \u2014 those should stay HTML. The converter preserves structure, not meaning: it can't recover that the red text was a warning. Convert when you want portability, not as a default for every copy-paste.</p>
 
-<p>The counter-intuitive part: true randomness is often the last thing you want. For repeatable tests you want a seedable generator \u2014 the same seed gives the same sequence. That's where a <a href="/en/tools/uuid-generator">UUID generator</a> enters the picture: it produces globally unique identifiers that are random but practically collision-free, which is what you want for database keys rather than a plain random number. For a deeper look at why random numbers aren't always fair, read <a href="/en/blog/random-number-generator-beyond-dice-rolls">our guide to random number generation</a>. When you need a character, <a href="/en/tools/random-name-generator">the name generator</a> is your tool; when you need a sample, <a href="/en/tools/random-number-generator">the number generator</a> is yours.</p>`
+<p>We've covered how the two formats round-trip in <a href="/en/blog/html-to-markdown-conversion-explained">how HTML-to-Markdown conversion works</a>. When a copy-paste turns into markup soup, run it through the <a href="/en/tools/html-to-markdown">converter</a> first \u2014 you'll spend your time writing, not untangling divs.</p>`
   },
   {
-    slug: "translate-history-machine-translation-neural",
-    title: "The History of Machine Translation: From Rule-Based Rules to Neural Networks",
-    description: "The first machine translator was a bilingual dictionary in a box. Today's neural models translate whole sentences with context. Here's how machine translation got here.",
-    date: "2026-08-14",
-    category: "Reference",
-    tags: ["machine translation", "translation history", "neural networks", "Google Translate", "NLP"],
-    relatedTools: ["translate", "case-converter", "text-to-slug"],
-    content: `<p>You paste a paragraph into an online translator and get a readable result in under a second. Fifty years ago, the same task produced word soup. The gap between then and now is the story of machine translation \u2014 from hand-written rules to the neural networks that translate with context today. Here's how the field got here.</p>
+    slug: "csv-to-json-vs-json-to-csv-conversion",
+    title: "CSV to JSON vs JSON to CSV: When Each Direction Matters",
+    description: "Two tools, one pair of formats. CSV is a table, JSON is a tree. Here's when converting one way beats the other \u2014 and why one direction quietly destroys data.",
+    date: "2026-08-15",
+    category: "Developer",
+    tags: ["csv to json", "json to csv", "data conversion", "data migration", "spreadsheets"],
+    relatedTools: ["csv-to-json", "json-to-csv", "json-formatter"],
+    content: `<p>Two tools, one pair of formats. CSV is a table: rows and columns, no nesting. JSON is a tree: objects and arrays, no fixed columns. The <a href="/en/tools/csv-to-json">CSV to JSON</a> and <a href="/en/tools/json-to-csv">JSON to CSV</a> converters both move data between the two, but each direction answers a different question \u2014 and each has its own failure mode.</p>
 
-<h2>The Rule-Based Era: Bilingual Dictionaries in Code</h2>
+<h2>CSV to JSON: When a Table Becomes a Tree</h2>
 
-<p>The earliest systems, from the 1950s through the 1990s, worked on rules. Linguists wrote dictionaries and grammar rules by hand: "for Spanish to English, the adjective follows the noun, so swap them." The output was literal and brittle. A sentence translated word-by-word lost its order and meaning. The <a href="/en/tools/translate">translate tool</a> today is nothing like those systems, but the rule-based era proved the idea was possible.</p>
+<p>You have a spreadsheet of products and an API that wants an array of objects. Converting rows into objects gives the API the nesting it expects: each row becomes an object, columns become keys. The failure mode is type guessing. A column of "001", "002" IDs becomes numbers and loses its leading zeros; a date changes format. Before you push JSON to the API, validate it in the <a href="/en/tools/json-formatter">JSON formatter</a> \u2014 that's where you catch the coercion before it breaks an integration.</p>
 
-<h2>The Statistical Turn: Let the Data Speak</h2>
+<h2>JSON to CSV: When a Tree Becomes a Table</h2>
 
-<p>In the 1990s, systems stopped hand-writing rules and started counting. Researchers aligned huge collections of already-translated documents \u2014 the Canadian parliament's bilingual Hansard records were a goldmine \u2014 and built translation from statistics: "this English word often appears with this French word." Quality jumped, but the models had no real understanding. Long sentences still fell apart, and rare words were guesswork.</p>
+<p>The reverse: an API returns nested JSON and your client wants a spreadsheet. Flattening nested objects is where the JSON-to-CSV direction breaks. A <code>user.address.city</code> field has no natural column, and a JSON array has no natural row. The common mistake is expecting the converter to invent columns for deep structures \u2014 it flattens what it can and leaves the rest, silently.</p>
 
-<h2>Neural Networks: Context Finally Arrives</h2>
+<h2>The Counter-Intuitive Part</h2>
 
-<p>Around 2016, neural machine translation replaced statistics. Instead of matching phrases, a neural network reads the whole sentence, builds an internal representation of its meaning, and generates the translation from that representation. The result reads naturally because the model learned from millions of examples how whole sentences relate across languages. The <a href="/en/tools/translate">online translator</a> you use now is built on this approach.</p>
+<p>The "simpler" direction is the harder one. CSV to JSON adds structure (it has to guess types and nesting), which is error-prone but mostly reversible. JSON to CSV destroys structure \u2014 nesting that has no column is gone for good. So the rule is: convert CSV to JSON when you're building a payload, and convert JSON to CSV only when you're sure the structure survives flattening. For how the two formats compare as data models, our breakdown of <a href="/en/blog/json-vs-csv-vs-xml-data-formats">JSON, CSV, and XML</a> shows where each belongs.</p>
 
-<h2>What Machine Translation Still Gets Wrong</h2>
+<p>Data conversion is reversible only if you know what the target format can hold. Run the conversion, inspect the result with the <a href="/en/tools/json-formatter">JSON formatter</a>, and keep the source file until you've confirmed the output.</p>`
+  },
+  {
+    slug: "qr-code-generator-vs-scanner-two-sides",
+    title: "QR Code Generator vs Scanner: The Two Sides of a Scannable Link",
+    description: "You can generate a QR code in seconds and scan one in the same. But the two tools answer different questions. Here's when each side matters \u2014 and the trust gap between them.",
+    date: "2026-08-15",
+    category: "Tools",
+    tags: ["qr code", "qr code generator", "qr scanner", "mobile scanning", "offline sharing"],
+    relatedTools: ["qr-code-generator", "qr-code-scanner", "url-encoder"],
+    content: `<p>You can generate a QR code in about two seconds and scan one in less. The two sides look like mirror images of the same trick \u2014 and they're not. A <a href="/en/tools/qr-code-generator">QR code generator</a> answers "how do I get this link into a physical square?" A <a href="/en/tools/qr-code-scanner">QR code scanner</a> answers "what is actually in this square?" Knowing which side you're on changes what you do next.</p>
 
-<p>The common mistake: assuming fluency means accuracy. A neural translation of a technical sentence can read perfectly and be subtly wrong, because idioms and culture don't survive word-for-word. We covered why in our guide to <a href="/en/blog/translate-idioms-cultural-references-accurate-translation">translating idioms and cultural references</a>. The counter-intuitive part: a missing period between two clauses can change how a neural model segments the sentence and flip the meaning. Clean text translates better.</p>
+<h2>The Generator Side: Encoding a Link Into a Square</h2>
 
-<p>Machine translation went from hand-written rules to statistical counting to neural context in seventy years. Knowing which era's weakness you're hitting \u2014 rules, statistics, or context \u2014 tells you where to double-check the output. The <a href="/en/tools/case-converter">case converter</a> and <a href="/en/tools/text-to-slug">text to slug</a> tools handle the formatting side when you work with translated content.</p>`
+<p>Generators exist because a URL in a poster, a menu, or a business card is a pain to type. You point the generator at a link, and it produces the square pattern any phone can read. The practical details: keep the URL short \u2014 every character is data capacity \u2014 and if you can't shorten it, encode the cleanest version first with the <a href="/en/tools/url-encoder">URL encoder</a> so special characters don't break the code. Print it at a size that actually scans, and test the print, not the screen.</p>
+
+<h2>The Scanner Side: Reading a Square Into Action</h2>
+
+<p>Scanners exist because a square is only useful if you trust what's behind it. Scanning opens a page, adds a wifi network, or starts a payment \u2014 so scanning is the moment you decide whether the code is safe. The <a href="/en/tools/qr-code-scanner">scanner</a> shows you the target before you act on it. That's the checkpoint the generator side can't give you.</p>
+
+<h2>The Counter-Intuitive Part</h2>
+
+<p>The generator assumes the code will be scanned; the scanner assumes the code might be malicious. Both are right. Anyone can print a QR code that points anywhere \u2014 including a phishing page \u2014 and the square gives no hint of where it leads. The security habits around scanning matter more than any feature of a code, which is why we dedicated a full post to <a href="/en/blog/qr-code-scanner-web-vs-phone-app">web vs phone scanning</a>.</p>
+
+<p>Generate when you need the link in the real world. Scan when you need to know what a stranger's square really points to. The <a href="/en/tools/qr-code-generator">QR code generator</a> handles the first half, and the <a href="/en/tools/qr-code-scanner">scanner</a> covers the second \u2014 the same square, two very different questions.</p>`
+  },
+  {
+    slug: "jwt-decoder-whats-inside-token",
+    title: "What's Actually Inside a JWT: Decoding the Three Parts",
+    description: "A JWT looks like random characters. Decode it and you find three readable parts \u2014 and the first thing people misjudge: it's signed, not encrypted.",
+    date: "2026-08-15",
+    category: "Developer",
+    tags: ["jwt", "jwt decode", "api tokens", "authentication", "token security"],
+    relatedTools: ["jwt-decoder", "base64-converter", "hash-generator"],
+    content: `<p>A JWT looks like a random string: <code>eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWxpY2UifQ.lS4Vb...</code> \u2014 three segments separated by dots. Paste it into a <a href="/en/tools/jwt-decoder">JWT decoder</a> and it's suddenly readable English. That's the first thing most people learn and the first thing they misjudge. A JWT is not encrypted. It's signed.</p>
+
+<h2>The Three Parts</h2>
+
+<p>Every JWT has header, payload, and signature. The header declares the algorithm and token type. The payload carries the claims \u2014 who the token is for, when it expires, what it allows. Both are base64url-encoded, which is why they decode to plain text so easily; the <a href="/en/tools/base64-converter">base64 converter</a> shows the same encoding trick on any data. The signature is the third part, and it's the one that actually does the security work.</p>
+
+<h2>Readable Doesn't Mean Safe</h2>
+
+<p>Because the payload is base64, anyone can read it. That's the point \u2014 the issuer wants the receiver to inspect the claims without a server round-trip. The consequence: never put secrets in a JWT payload. A password, an API key, or a personal detail in the payload is public the moment the token exists. The common mistake is assuming that because the token "looks encoded," it's protected. Encoding is not encryption.</p>
+
+<h2>What the Signature Actually Protects</h2>
+
+<p>The signature prevents tampering. The issuer computes a hash of the header and payload with a secret key, and the receiver recomputes it. Change one character in the payload and the signature stops matching \u2014 the token is rejected. It's the same one-way math behind the <a href="/en/tools/hash-generator">hash generator</a>, but wrapped in a protocol: sign, don't encrypt. If a token needs its contents hidden, it needs real encryption, not a JWT.</p>
+
+<p>Decoding a JWT tells you what's inside, not who vouched for it \u2014 that's what the signature is for. We walked through reading real tokens in our <a href="/en/blog/jwt-decoder-debug-api-tokens-guide">guide to debugging API tokens</a>. Next time you see three dotted segments, decode them in the <a href="/en/tools/jwt-decoder">JWT decoder</a> and read what the payload actually claims \u2014 then check whether the signature still checks out.</p>`
   },
 ];
-
-export function getBlogPosts(): BlogPost[]"""
+"""
 
 content = content.replace(old, new_blogs)
 
 with open(BLOG_FILE, "w", encoding="utf-8", newline="\n") as f:
     f.write(content)
 
-print("Free station: 366->372 objects done.")
+print("Free station: 372->378 objects done.")
