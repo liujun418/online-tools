@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (372->378) - August 15, 2026"""
+"""Add 6 blogs to free station (378->384) - August 17, 2026"""
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,153 +8,156 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "regex-tester-lazy-greedy-quantifiers-guide",
-    title: "Lazy vs Greedy Regex Quantifiers: Why Your Pattern Matches Too Much",
-    description: "Your regex grabbed the whole page instead of one tag. That's greedy matching by default. Here's how lazy quantifiers fix it \u2014 and the trade-off nobody mentions.",
-    date: "2026-08-15",
+    slug: "morse-code-timing-dit-dah-farnsworth-guide",
+    title: "Morse Code Timing: Why a Dit Is Never Just 'Quick' and How to Learn Faster",
+    description: "Morse code isn't dots and dashes \u2014 it's a clock. The 1:3:7 ratio, words-per-minute math, and the Farnsworth spacing trick that gets you fluent in weeks, not months.",
+    date: "2026-08-17",
     category: "Developer",
-    tags: ["regex", "regex quantifiers", "greedy vs lazy", "regex debugging", "pattern matching"],
-    relatedTools: ["regex-tester", "text-diff", "code-formatter"],
-    content: `<p>You need to pull every <code>&lt;p&gt;</code> tag out of a messy HTML export. You write the pattern <code>&lt;p&gt;(.*)&lt;/p&gt;</code>, test it, and the match swallows the whole page \u2014 from the first opening tag to the last closing one. That's not a bug in the pattern. That's how greedy quantifiers work by default. The <a href="/en/tools/regex-tester">regex tester</a> makes the behavior visible, and a lazy quantifier fixes it.</p>
+    tags: ["morse code", "morse timing", "farnsworth spacing", "learn morse code", "morse code speed"],
+    relatedTools: ["morse-code", "text-repeater", "reaction-test"],
+    content: `<p>You decided to learn Morse code. You memorized the chart, passed the test, and then you tried to copy real traffic at 20 words per minute \u2014 and your brain froze. The chart isn't the problem. Morse isn't a set of dots and dashes; it's a rhythm, and the rhythm is defined by precise timing.</p>
 
-<h2>Why Greedy Quantifiers Overrun</h2>
+<h2>Morse Code Is a Clock, Not a Chart</h2>
 
-<p>In most regex engines, <code>.*</code> and <code>.+</code> match as much as they can and only give characters back when the rest of the pattern demands it. Between the first <code>&lt;p&gt;</code> and the last <code>&lt;/p&gt;</code>, every tag in between is "available," so the greedy match takes all of it. It's correct behavior \u2014 the engine returns the longest possible match \u2014 but it's rarely what you want when you're extracting structure.</p>
+<p>The whole system is built on one time unit. A dit is 1 unit. A dah is 3 units. The gap between the parts of one letter is 1 unit, between letters is 3, and between words is 7. That's why "A" as ".-" and "N" as "-." are only distinguishable by the gap \u2014 pause too long and your "A" becomes "E T". A skilled operator isn't counting dots; they're hearing the ratio. That's also why a <a href="/en/tools/morse-code">Morse code translator</a> is a fine study tool but can't teach you rhythm \u2014 the rhythm only exists at speed.</p>
 
-<p>The classic fix is a lazy quantifier: <code>.*?</code>. The question mark tells the engine to match as little as possible, expanding only until the next part of the pattern fits. <code>&lt;p&gt;(.*?)&lt;/p&gt;</code> stops at the first <code>&lt;/p&gt;</code>, so each <code>&lt;p&gt;</code> tag gets its own capture. Paste both patterns into the <a href="/en/tools/regex-tester">regex tester</a> side by side and the difference is obvious in the match highlights.</p>
+<h2>Speed Is Measured in "PARIS" \u2014 and That's a Trap</h2>
 
-<h2>The Counter-Intuitive Trade-off</h2>
+<p>Morse speed is quoted in words per minute, but the standard "word" is PARIS \u2014 a made-up 50-unit word, not a real word. So "20 wpm" just means the 50-unit clock is sent 20 times a minute. The common mistake: drilling slowly, getting comfortable, then jumping to target speed and failing. The fix is counter-intuitive: send the characters at full target speed but stretch the gaps between characters and words. That technique has a name \u2014 Farnsworth spacing.</p>
 
-<p>Here's the part that trips up people who just learned lazy matching: lazy isn't always faster. A lazy pattern that fails has to try again at every single position, and patterns with nested quantifiers can collapse into catastrophic backtracking \u2014 the regex that "takes a second" runs for minutes. The real fix for the HTML problem is being specific about what you match: <code>&lt;p[^&gt;]*&gt;(.*?)&lt;/p&gt;</code> refuses to let the opening tag leak.</p>
+<h2>The Farnsworth Trick</h2>
 
-<p>When you're debugging a pattern, don't guess at what the engine is doing. Run the failing match through the <a href="/en/tools/regex-tester">regex tester</a> to see the actual span, compare the captured groups with the <a href="/en/tools/text-diff">text diff</a> tool, and if the expression is living inside code, drop it into the <a href="/en/tools/code-formatter">code formatter</a> so it's readable before you ship it.</p>
+<p>With Farnsworth spacing, each letter is sent at, say, 20 wpm \u2014 so your ear learns the true rhythm of the letters \u2014 while the pauses are stretched to give your brain time to catch up. Your brain builds pattern-matching circuits at real speed, then you shrink the gaps as you improve. Loop practice sentences with a <a href="/en/tools/text-repeater">text repeater</a>, and sharpen the listening-to-reaction loop with the <a href="/en/tools/reaction-test">reaction test</a> on the side. You'll copy faster in weeks than you would in months of chart drilling.</p>
 
-<p>Greedy vs lazy isn't a style preference \u2014 it's the difference between matching one paragraph and matching the entire document. Once you can predict which one the engine will pick, you stop fighting your own regexes. For the reverse case, extracting only the text that matches, our guide to <a href="/en/blog/regex-tester-extract-parse-text">extracting and parsing text with regex</a> covers the broader workflow. Test your next pattern in the <a href="/en/tools/regex-tester">regex tester</a> before it ships.</p>`
+<p>Morse survives because it's the last thing that works when nothing else does \u2014 we covered why in our guide to <a href="/en/blog/morse-code-why-180-year-old-system-still-works">why a 180-year-old system still works</a>. The way to learn it fast is the same as the way to use it: forget the chart, feel the timing.</p>`
   },
   {
-    slug: "svg-minifier-web-performance-optimization",
-    title: "SVG Minification Workflow: Shaving Kilabytes Off Your Icons",
-    description: "An SVG icon left a design tool at 8KB. On the page it's an icon \u2014 it should weigh under 1KB. Here's the minify-then-verify workflow that strips the weight.",
-    date: "2026-08-15",
+    slug: "cron-parser-dst-scheduling-gotchas-guide",
+    title: "Cron and Daylight Saving Time: When a Nightly Job Runs Twice, or Not at All",
+    description: "Your cron job ran an hour early. Then it didn't run. Daylight saving breaks naive cron expressions \u2014 and there's a second trap hiding in day-of-month vs day-of-week nobody expects.",
+    date: "2026-08-17",
     category: "Developer",
-    tags: ["svg minify", "web performance", "icon optimization", "vector graphics", "page speed"],
-    relatedTools: ["svg-minifier", "css-minifier", "html-to-markdown"],
-    content: `<p>An SVG icon leaves the design tool at 8&nbsp;KB. On your page it renders fine \u2014 but it's an icon; it should weigh under 1&nbsp;KB. The 7&nbsp;KB you're carrying is editor metadata, comments, and a path with more decimal places than the screen can show. A <a href="/en/tools/svg-minifier">SVG minifier</a> strips that weight, and the workflow is simple: minify, verify, ship.</p>
+    tags: ["cron", "cron parser", "daylight saving time", "cron scheduling", "cron gotchas"],
+    relatedTools: ["cron-parser", "unix-timestamp", "hash-generator"],
+    content: `<p>You scheduled a database backup for 2:00 a.m. every night. After the time change, it runs at 1:00 a.m. Then your site is down because a report ran twice. The crontab looks perfect. The problem isn't your expression \u2014 it's that cron doesn't know what time is.</p>
 
-<h2>What Adds Weight to an SVG</h2>
+<h2>Cron Is a Dumb Clock</h2>
 
-<p>Design tools export SVGs with the kitchen sink: XML namespaces you don't need, comments, layer groups, and path coordinates like <code>M 123.456789 456.789012</code> when the icon is 24&nbsp;pixels wide. None of that helps the browser render the shape. A minifier removes the unused <code>defs</code>, collapses <code>transform</code> chains, shortens color values, and rounds coordinates to the precision the viewport actually needs.</p>
+<p>A cron expression just says "run when the wall clock matches." It has no concept of daylight saving time. When clocks spring forward, the hour from 2:00 to 3:00 doesn't exist \u2014 a job at <code>0 2 * * *</code> simply doesn't fire. When clocks fall back, 1:30 a.m. happens twice \u2014 a job at <code>30 1 * * *</code> runs twice. Most operators hit this exactly once and then swear forever at the scheduler.</p>
 
-<p>The mistake most people make is skipping the verify step. Minify, paste the result into the browser, and a corrupted icon is an instant layout break. The safe workflow: run the <a href="/en/tools/svg-minifier">SVG minifier</a> on a copy, keep the original, and diff the rendered result before you replace anything.</p>
+<h2>The Fix Is Boring and Reliable: UTC</h2>
 
-<h2>The Counter-Intuitive Part</h2>
+<p>Counter-intuitive but true: the way to make cron immune to DST is to not use your local timezone at all. Run jobs in UTC (<code>TZ=UTC</code> in the crontab, or the platform default on managed schedulers) and the clock never jumps. If a job genuinely needs to run at a local time \u2014 "9 a.m. for the East Coast" \u2014 that's a business-time problem, and the schedule changes at DST boundaries by design. Decide up front which hours are "server time" and which are "human time," and never mix them in one crontab.</p>
 
-<p>Minifying every SVG is not always a win. A hand-written icon with clean paths can already be optimal, and aggressive rounding can actually increase file size if the tool expands a coordinate into longer notation. More importantly, SVG size is a rounding error compared to the JavaScript and CSS a page ships. Pair the minifier with the <a href="/en/tools/css-minifier">CSS minifier</a> for your stylesheet, and if you're documenting how the icons are used, the <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a> keeps the snippet readable in your docs.</p>
+<h2>The Second Trap: Day-of-Month AND Day-of-Week</h2>
 
-<p>Vector icons are already the lightest way to ship a graphic \u2014 that's part of why vector graphics won, as we covered in our look at <a href="/en/blog/svg-minifier-why-vector-graphics-won-history">why vector graphics took over</a>. Minifying just closes the gap between what the file says and what the screen shows. Run your icon set through the <a href="/en/tools/svg-minifier">SVG minifier</a> and watch the bytes drop.</p>`
+<p>The less famous gotcha lives in fields 3 and 5. In standard cron, if you restrict BOTH the day-of-month and the day-of-week, the job runs when EITHER matches \u2014 they're OR'd, not AND'd. So <code>0 2 1 * 1</code> does not mean "the first of the month when it's a Monday." It means "every first of the month AND every Monday." A real "first Monday of the month" needs extra logic. Before you deploy, run the expression through a <a href="/en/tools/cron-parser">cron parser</a> and read the exact matches it reports \u2014 and when you're thinking in epoch seconds, the <a href="/en/tools/unix-timestamp">unix timestamp</a> tool keeps the numbers straight.</p>
+
+<p>Timezone mistakes are the classic source of "why did my job run at 3 a.m." \u2014 we covered them in our guide to <a href="/en/blog/cron-parser-timezones-deployments">cron timezone traps</a>. Schedule in UTC, watch the OR logic, and verify every expression before it fires.</p>`
   },
   {
-    slug: "html-to-markdown-docs-blog-workflow",
-    title: "HTML to Markdown: The Conversion Workflow for Docs and Blog Drafts",
-    description: "You copied a section from an old site and got a wall of <div> tags. Converting HTML to Markdown gives you clean, portable drafts. Here's the workflow \u2014 and when not to convert.",
-    date: "2026-08-15",
-    category: "Developer",
-    tags: ["html to markdown", "markdown", "documentation", "content migration", "blog writing"],
-    relatedTools: ["html-to-markdown", "markdown-preview", "text-to-slug"],
-    content: `<p>You copy a section from an old site into your new editor and get a wall of <code>&lt;div&gt;</code> tags with inline styles. The text you wanted is buried under markup you didn't ask for. Converting HTML to Markdown gives you clean, portable drafts \u2014 and it turns a copy-paste mess into something you can actually edit.</p>
+    slug: "ai-tools-evaluate-before-paying-guide",
+    title: "How to Evaluate an AI Tool Before You Pay: Free Tiers, Privacy, and the Trial Trap",
+    description: "You signed up for a 7-day trial, got charged on day 8, and the tool can't do what the demo showed. Here's a checklist for vetting any AI tool \u2014 free-tier limits, data handling, and output quality \u2014 before a card touches the site.",
+    date: "2026-08-17",
+    category: "Reference",
+    tags: ["ai tools", "evaluate ai tools", "ai tool pricing", "ai privacy", "ai tool checklist"],
+    relatedTools: ["ai-tools", "password-generator", "translate"],
+    content: `<p>You watched a 90-second demo video, signed up for the "free trial," and set a calendar reminder to cancel. A week later you're paying $29 a month for a tool that writes worse than the free option you were already using. The demo was always good. The fine print was always the product. Here's how to evaluate an AI tool before your card touches the site.</p>
 
-<h2>When HTML Becomes a Liability</h2>
+<h2>The Free-Tier Test: Generate Ten, Not One</h2>
 
-<p>HTML is everywhere, but it's the worst format for a draft. Nested divs, hard-coded colors, and editor cruft make the document impossible to diff, hard to search, and fragile to move between tools. Markdown solves that: a heading is a <code>#</code>, a link is <code>[text](url)</code>, and the plain text stays readable even in a terminal. If you maintain a blog, a wiki, or docs in a Git repo, Markdown is the interchange format that keeps history clean.</p>
+<p>Almost every AI tool advertises "free," but the free tier is a teaser: a character cap, a watermark, a one-per-day limit. The common mistake is generating one pretty sample and signing up. Instead, produce ten real outputs with your real prompts on the free tier. Watch for the limits \u2014 not the ones in the marketing copy, the ones that appear when you hit the wall. If there's no free tier at all, treat an unknown tool with a price tag as a red flag, not a signal of quality.</p>
 
-<h2>The Conversion Workflow</h2>
+<h2>Privacy Is the Hidden Cost</h2>
 
-<p>Step 1: paste the HTML block into the <a href="/en/tools/html-to-markdown">HTML to Markdown converter</a>. Step 2: preview the result in the <a href="/en/tools/markdown-preview">Markdown preview</a> tool and check that headings, lists, and code blocks actually made it across. Step 3: fix the parts the converter can't infer \u2014 a heading level the original styled inline, a table that flattened into a paragraph. Step 4: when the title is ready, run it through the <a href="/en/tools/text-to-slug">text to slug converter</a> to get a filename or URL slug that matches.</p>
+<p>Your prompts are data. At some services they're training data; at others they're stored for months or shared with partners. Before you paste anything sensitive \u2014 client documents, personal photos, business plans \u2014 read the data-retention and training clauses. The rule of thumb: the "free" tier often has the worst terms, and a paid tier that promises your data won't be used for training is worth more than a faster model. If you can't find the policy, treat that as the answer.</p>
 
-<h2>The Counter-Intuitive Part</h2>
+<h2>The Cancel Test and the Trial Trap</h2>
 
-<p>Don't convert everything. A complex table with merged cells, a newsletter that depends on inline styles, or a snippet you must paste back into the CMS byte-for-byte \u2014 those should stay HTML. The converter preserves structure, not meaning: it can't recover that the red text was a warning. Convert when you want portability, not as a default for every copy-paste.</p>
+<p>Here's the counter-intuitive part: the harder a tool makes canceling, the less you want to subscribe. Before paying, find the cancel button, the renewal date, and the refund policy \u2014 the whole flow should take under a minute. Trials that auto-renew into annual plans are a known trap. When you're comparing options, a curated directory like the <a href="/en/tools/ai-tools">AI tools directory</a> narrows the field, and a fresh strong password from the <a href="/en/tools/password-generator">password generator</a> means you're not reusing a real one across signups.</p>
 
-<p>We've covered how the two formats round-trip in <a href="/en/blog/html-to-markdown-conversion-explained">how HTML-to-Markdown conversion works</a>. When a copy-paste turns into markup soup, run it through the <a href="/en/tools/html-to-markdown">converter</a> first \u2014 you'll spend your time writing, not untangling divs.</p>`
+<p>Finding the right tool is the first half \u2014 we covered how to search one in our guide to <a href="/en/blog/free-ai-tools-directory-guide">using an AI tools directory</a>. The second half is testing it like you'd test a car: drive it, read the fine print, and keep your wallet closed until it earns the tap.</p>`
   },
   {
-    slug: "csv-to-json-vs-json-to-csv-conversion",
-    title: "CSV to JSON vs JSON to CSV: When Each Direction Matters",
-    description: "Two tools, one pair of formats. CSV is a table, JSON is a tree. Here's when converting one way beats the other \u2014 and why one direction quietly destroys data.",
-    date: "2026-08-15",
+    slug: "jwt-decoder-vs-session-tokens-guide",
+    title: "JWT vs Session Tokens: Stateless, Unrevocable, and the Refresh Trade-Off",
+    description: "Your JWT is valid for 30 days and you can't revoke it. A session you can kill instantly. Here's when stateless tokens win, when they're a trap, and why refresh tokens exist.",
+    date: "2026-08-17",
     category: "Developer",
-    tags: ["csv to json", "json to csv", "data conversion", "data migration", "spreadsheets"],
-    relatedTools: ["csv-to-json", "json-to-csv", "json-formatter"],
-    content: `<p>Two tools, one pair of formats. CSV is a table: rows and columns, no nesting. JSON is a tree: objects and arrays, no fixed columns. The <a href="/en/tools/csv-to-json">CSV to JSON</a> and <a href="/en/tools/json-to-csv">JSON to CSV</a> converters both move data between the two, but each direction answers a different question \u2014 and each has its own failure mode.</p>
-
-<h2>CSV to JSON: When a Table Becomes a Tree</h2>
-
-<p>You have a spreadsheet of products and an API that wants an array of objects. Converting rows into objects gives the API the nesting it expects: each row becomes an object, columns become keys. The failure mode is type guessing. A column of "001", "002" IDs becomes numbers and loses its leading zeros; a date changes format. Before you push JSON to the API, validate it in the <a href="/en/tools/json-formatter">JSON formatter</a> \u2014 that's where you catch the coercion before it breaks an integration.</p>
-
-<h2>JSON to CSV: When a Tree Becomes a Table</h2>
-
-<p>The reverse: an API returns nested JSON and your client wants a spreadsheet. Flattening nested objects is where the JSON-to-CSV direction breaks. A <code>user.address.city</code> field has no natural column, and a JSON array has no natural row. The common mistake is expecting the converter to invent columns for deep structures \u2014 it flattens what it can and leaves the rest, silently.</p>
-
-<h2>The Counter-Intuitive Part</h2>
-
-<p>The "simpler" direction is the harder one. CSV to JSON adds structure (it has to guess types and nesting), which is error-prone but mostly reversible. JSON to CSV destroys structure \u2014 nesting that has no column is gone for good. So the rule is: convert CSV to JSON when you're building a payload, and convert JSON to CSV only when you're sure the structure survives flattening. For how the two formats compare as data models, our breakdown of <a href="/en/blog/json-vs-csv-vs-xml-data-formats">JSON, CSV, and XML</a> shows where each belongs.</p>
-
-<p>Data conversion is reversible only if you know what the target format can hold. Run the conversion, inspect the result with the <a href="/en/tools/json-formatter">JSON formatter</a>, and keep the source file until you've confirmed the output.</p>`
-  },
-  {
-    slug: "qr-code-generator-vs-scanner-two-sides",
-    title: "QR Code Generator vs Scanner: The Two Sides of a Scannable Link",
-    description: "You can generate a QR code in seconds and scan one in the same. But the two tools answer different questions. Here's when each side matters \u2014 and the trust gap between them.",
-    date: "2026-08-15",
-    category: "Tools",
-    tags: ["qr code", "qr code generator", "qr scanner", "mobile scanning", "offline sharing"],
-    relatedTools: ["qr-code-generator", "qr-code-scanner", "url-encoder"],
-    content: `<p>You can generate a QR code in about two seconds and scan one in less. The two sides look like mirror images of the same trick \u2014 and they're not. A <a href="/en/tools/qr-code-generator">QR code generator</a> answers "how do I get this link into a physical square?" A <a href="/en/tools/qr-code-scanner">QR code scanner</a> answers "what is actually in this square?" Knowing which side you're on changes what you do next.</p>
-
-<h2>The Generator Side: Encoding a Link Into a Square</h2>
-
-<p>Generators exist because a URL in a poster, a menu, or a business card is a pain to type. You point the generator at a link, and it produces the square pattern any phone can read. The practical details: keep the URL short \u2014 every character is data capacity \u2014 and if you can't shorten it, encode the cleanest version first with the <a href="/en/tools/url-encoder">URL encoder</a> so special characters don't break the code. Print it at a size that actually scans, and test the print, not the screen.</p>
-
-<h2>The Scanner Side: Reading a Square Into Action</h2>
-
-<p>Scanners exist because a square is only useful if you trust what's behind it. Scanning opens a page, adds a wifi network, or starts a payment \u2014 so scanning is the moment you decide whether the code is safe. The <a href="/en/tools/qr-code-scanner">scanner</a> shows you the target before you act on it. That's the checkpoint the generator side can't give you.</p>
-
-<h2>The Counter-Intuitive Part</h2>
-
-<p>The generator assumes the code will be scanned; the scanner assumes the code might be malicious. Both are right. Anyone can print a QR code that points anywhere \u2014 including a phishing page \u2014 and the square gives no hint of where it leads. The security habits around scanning matter more than any feature of a code, which is why we dedicated a full post to <a href="/en/blog/qr-code-scanner-web-vs-phone-app">web vs phone scanning</a>.</p>
-
-<p>Generate when you need the link in the real world. Scan when you need to know what a stranger's square really points to. The <a href="/en/tools/qr-code-generator">QR code generator</a> handles the first half, and the <a href="/en/tools/qr-code-scanner">scanner</a> covers the second \u2014 the same square, two very different questions.</p>`
-  },
-  {
-    slug: "jwt-decoder-whats-inside-token",
-    title: "What's Actually Inside a JWT: Decoding the Three Parts",
-    description: "A JWT looks like random characters. Decode it and you find three readable parts \u2014 and the first thing people misjudge: it's signed, not encrypted.",
-    date: "2026-08-15",
-    category: "Developer",
-    tags: ["jwt", "jwt decode", "api tokens", "authentication", "token security"],
+    tags: ["jwt", "session tokens", "authentication", "refresh token", "jwt vs session"],
     relatedTools: ["jwt-decoder", "base64-converter", "hash-generator"],
-    content: `<p>A JWT looks like a random string: <code>eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWxpY2UifQ.lS4Vb...</code> \u2014 three segments separated by dots. Paste it into a <a href="/en/tools/jwt-decoder">JWT decoder</a> and it's suddenly readable English. That's the first thing most people learn and the first thing they misjudge. A JWT is not encrypted. It's signed.</p>
+    content: `<p>You built your app with JWT authentication. A user logs out \u2014 and the token still works for three days. You try to block a banned account and discover the hard way: there's no switch to flip. A JWT, once issued, is valid until it expires, and the server has no built-in way to take it back. This is the stateless trade-off, and it's the most important thing to understand before you build auth.</p>
 
-<h2>The Three Parts</h2>
+<h2>What "Stateless" Actually Buys You</h2>
 
-<p>Every JWT has header, payload, and signature. The header declares the algorithm and token type. The payload carries the claims \u2014 who the token is for, when it expires, what it allows. Both are base64url-encoded, which is why they decode to plain text so easily; the <a href="/en/tools/base64-converter">base64 converter</a> shows the same encoding trick on any data. The signature is the third part, and it's the one that actually does the security work.</p>
+<p>Decode a JWT with a <a href="/en/tools/jwt-decoder">JWT decoder</a> and you'll see the three parts: header, payload, signature. The token carries its own claims \u2014 who the user is, when it expires, what they can do \u2014 and the server verifies the signature without a database lookup. That's why JWTs scale across microservices and why they're fast: no session store, no query per request. The cost is control. There is no "delete this token" endpoint because the server never kept a copy to delete.</p>
 
-<h2>Readable Doesn't Mean Safe</h2>
+<h2>The Revocation Problem</h2>
 
-<p>Because the payload is base64, anyone can read it. That's the point \u2014 the issuer wants the receiver to inspect the claims without a server round-trip. The consequence: never put secrets in a JWT payload. A password, an API key, or a personal detail in the payload is public the moment the token exists. The common mistake is assuming that because the token "looks encoded," it's protected. Encoding is not encryption.</p>
+<p>A server-side session is the opposite: the server holds the session in a store, so logging out is just a delete \u2014 instant revocation. Banning a user, ending a stolen session, kicking someone off every device \u2014 trivial with sessions, impossible with a plain JWT unless you build a blacklist. And a blacklist brings back the database you removed, which defeats the point. The common compromise: a short-lived access token \u2014 15 minutes instead of 30 days \u2014 plus a refresh token that can be revoked. The counter-intuitive lesson: a long JWT expiry isn't convenience, it's a security hole. A stolen 30-day token is a 30-day hijack that nobody can undo.</p>
 
-<h2>What the Signature Actually Protects</h2>
+<h2>Read the Token Before You Trust It</h2>
 
-<p>The signature prevents tampering. The issuer computes a hash of the header and payload with a secret key, and the receiver recomputes it. Change one character in the payload and the signature stops matching \u2014 the token is rejected. It's the same one-way math behind the <a href="/en/tools/hash-generator">hash generator</a>, but wrapped in a protocol: sign, don't encrypt. If a token needs its contents hidden, it needs real encryption, not a JWT.</p>
+<p>Whatever you choose, debug by reading the actual claims. Decode the token in the <a href="/en/tools/jwt-decoder">JWT decoder</a> and check <code>exp</code>, <code>iat</code>, and the scope claims \u2014 the payload is just base64, so the <a href="/en/tools/base64-converter">base64 converter</a> shows what's really inside. And never trust a client-sent claim like "role: admin" without verifying the signature, because a token is only as trustworthy as the key that signed it. We covered reading expiry claims in our guide to <a href="/en/blog/jwt-decoder-token-expiry-security">JWT expiration and security claims</a>.</p>
 
-<p>Decoding a JWT tells you what's inside, not who vouched for it \u2014 that's what the signature is for. We walked through reading real tokens in our <a href="/en/blog/jwt-decoder-debug-api-tokens-guide">guide to debugging API tokens</a>. Next time you see three dotted segments, decode them in the <a href="/en/tools/jwt-decoder">JWT decoder</a> and read what the payload actually claims \u2014 then check whether the signature still checks out.</p>`
+<p>Stateless or stateful isn't a style choice \u2014 it's a control trade-off. Pick JWTs when you need scale and can accept short life spans; pick sessions when you need to revoke. Just know before you build that a token you can't revoke is a promise you can't break.</p>`
+  },
+  {
+    slug: "zodiac-sign-elements-modalities-explained",
+    title: "Fire, Earth, Air, Water: What Zodiac Sign Elements and Modalities Actually Mean",
+    description: "Astrology doesn't just have 12 signs \u2014 it organizes them into a grid of elements and modalities. Here's what fire signs, cardinal signs, and the system behind them actually describe.",
+    date: "2026-08-17",
+    category: "Reference",
+    tags: ["zodiac", "zodiac elements", "fire signs", "zodiac signs explained", "astrology basics"],
+    relatedTools: ["zodiac-sign", "perpetual-calendar", "book-of-answers"],
+    content: `<p>Someone tells you "you're a fire sign, that's why you're impulsive." It sounds like astrology's version of a fortune cookie \u2014 but it's actually a coherent system. The twelve zodiac signs aren't a list; they're a grid. Four elements describe how a sign sees the world, and three modalities describe how it acts in it. Together they explain more about a sign than the date range alone.</p>
+
+<h2>The Four Elements</h2>
+
+<p>Fire signs \u2014 Aries, Leo, Sagittarius \u2014 are about energy, action, and ignition. Earth signs \u2014 Taurus, Virgo, Capricorn \u2014 are about stability, practicality, and the physical world. Air signs \u2014 Gemini, Libra, Aquarius \u2014 are about thought, communication, and ideas. Water signs \u2014 Cancer, Scorpio, Pisces \u2014 are about emotion, intuition, and depth. Each sign's element is the lens it processes everything through: the fire sign starts things, the earth sign builds them, the air sign talks about them, the water sign feels them.</p>
+
+<h2>The Three Modalities</h2>
+
+<p>On top of the elements, each sign carries a modality. Cardinal signs \u2014 Aries, Cancer, Libra, Capricorn \u2014 are the initiators; they begin their season and start things. Fixed signs \u2014 Taurus, Leo, Scorpio, Aquarius \u2014 are the sustainers; they hold the season steady. Mutable signs \u2014 Gemini, Virgo, Sagittarius, Pisces \u2014 are the adapters; they close the season and shift. Combine element with modality and each sign becomes precise: Aries is cardinal fire, the one who lights fires and moves first; Taurus is fixed earth, the unmovable ground; Gemini is mutable air, the adaptable messenger.</p>
+
+<h2>The Counter-Intuitive Part</h2>
+
+<p>Two signs sharing an element aren't automatically kindred spirits \u2014 Leo and Sagittarius can clash as hard as they bond. And signs sharing a modality \u2014 all four cardinal signs \u2014 recognize each other's drive even when their elements disagree. If you looked up your sign in a <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> and found the description only half-true, the element-and-modality reading is where the "that's so me" feeling actually comes from. A <a href="/en/tools/perpetual-calendar">perpetual calendar</a> confirms your exact birth date, and if you'd rather ask a question than read a chart, the <a href="/en/tools/book-of-answers">book of answers</a> keeps the vibe.</p>
+
+<p>We covered how to find your exact sun sign in our guide to <a href="/en/blog/zodiac-sign-calculator-sun-sign-astrology-guide">zodiac sign calculation</a>. The next time someone calls you a fire sign, you'll know exactly what the system means \u2014 and exactly what it doesn't.</p>`
+  },
+  {
+    slug: "ip-lookup-geo-blocking-vpn-detection-guide",
+    title: "Geo-Blocking and VPN Detection: How Websites Decide Where You Are",
+    description: "The same site shows you different prices than it shows your neighbor \u2014 because of your IP address. Here's how IP geolocation works, why it's sometimes wrong, and how services try to catch VPNs.",
+    date: "2026-08-17",
+    category: "Developer",
+    tags: ["ip lookup", "geo blocking", "vpn detection", "ip geolocation", "ip address location"],
+    relatedTools: ["ip-lookup", "world-map", "global-weather"],
+    content: `<p>You open a streaming site from a friend's house and the catalog is different. You check a flight price on your phone and on your laptop and the fares don't match. The website didn't guess where you are \u2014 your IP address told it. IP geolocation is how the internet decides your physical location, and once you understand how it works, a lot of weird behavior on the web makes sense.</p>
+
+<h2>How IP Geolocation Works \u2014 and Where It Fails</h2>
+
+<p>Every device on the internet gets an IP address, and that address is mapped to a location by databases built from internet registries, network data, and commercial sources. Run your address through an <a href="/en/tools/ip-lookup">IP lookup</a> and you'll usually get a city. Usually. The accuracy collapses with corporate proxies, mobile carriers that route traffic through a central gateway, and VPN exit nodes \u2014 your IP can place you in a city you've never visited. An IP address is not GPS; it's a best guess.</p>
+
+<h2>Why Sites Care So Much</h2>
+
+<p>That best guess drives real decisions. Streaming platforms geo-block content because of licensing deals. Online stores show region-specific prices and taxes. A job board shows local listings. The result: two people looking at the same URL can see completely different sites. It's not a glitch \u2014 it's geography doing its job.</p>
+
+<h2>VPN Detection: The Counter-Intuitive Game</h2>
+
+<p>If your IP determines what you can watch, a VPN should change everything \u2014 and it does, until it doesn't. Services fight back by blacklisting known VPN ranges, flagging IPs that switch too fast, and fingerprinting the connection itself. The counter-intuitive part: a VPN IP is rarely invisible. It's visible as a VPN \u2014 the question is only whether the service chooses to block it. That's the arms race: VPN providers race to get their exit nodes delisted, and the blocking side races to catch new ones.</p>
+
+<p>IP geolocation is one tool among many for "where" questions \u2014 we compared it with the <a href="/en/tools/world-map">world map</a> and the <a href="/en/tools/global-weather">global weather</a> tracker as location tools. The limits of what an IP can tell you are the most important part, and we covered them in our guide to <a href="/en/blog/ip-lookup-tool-guide">what an IP address can and cannot reveal</a>. Your IP knows more than you think \u2014 and less than it pretends.</p>`
   },
 ];
-"""
+
+export function getBlogPosts(): BlogPost[]"""
 
 content = content.replace(old, new_blogs)
 
 with open(BLOG_FILE, "w", encoding="utf-8", newline="\n") as f:
     f.write(content)
 
-print("Free station: 372->378 objects done.")
+print("Free station: 378->384 objects done.")
