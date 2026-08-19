@@ -1,4 +1,4 @@
-"""Add 6 blogs to free station (384->390) - August 18, 2026"""
+"""Add 6 blogs to free station (390->396) - August 19, 2026"""
 BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
 
 with open(BLOG_FILE, "r", encoding="utf-8") as f:
@@ -8,148 +8,148 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "income-tax-calculator-tax-refund-withholding-guide",
-    title: "Why a Big Tax Refund Means You Overpaid: Withholding Math Explained",
-    description: "Your big tax refund is a sign you overpaid all year — an interest-free loan to the government. Here's how withholding works, why refunds cost you, and how to fix your W-4.",
-    date: "2026-08-18",
+    slug: "jwt-decoder-hs256-rs256-signature-verification-guide",
+    title: "How to Verify a JWT Signature: HS256, RS256, and Why \"Signed\" Doesn't Mean Safe",
+    description: "A signed JWT can still be forged if you verify it the wrong way. Here's how to check a token's signature — HS256 vs RS256, the algorithm-swap attack, and the verification steps.",
+    date: "2026-08-19",
+    category: "Developer",
+    tags: ["JWT signature", "HS256", "RS256", "JWT verification", "token security"],
+    relatedTools: ["jwt-decoder", "hash-generator", "base64-converter"],
+    content: `<p>You open a request log and find the token that broke your API. It's a JWT — three parts separated by dots, the middle one a blob of characters. You paste it into a <a href="/en/tools/jwt-decoder">JWT decoder</a> and see the payload: a user ID, a role, an expiry. The header says the token was signed with HS256. "Signed" sounds safe. Then someone reminds you that signing alone proves nothing if you verify with the wrong key.</p>
+
+<h2>What the Signature Actually Does</h2>
+
+<p>A JWT's third segment is a signature computed over the header and payload. Anyone can read all three parts — that's the point of the format, and why decoding a token is not a security review. The signature exists so a server can confirm the token wasn't altered after it was issued. Verification is a check: recompute the signature with the secret key and see if it matches. If it does, the token came from someone who knows the key. If it doesn't, reject it. The <a href="/en/tools/hash-generator">hash generator</a> shows the same idea with ordinary checksums: a string that changes whenever the input changes.</p>
+
+<h2>HS256 vs RS256: Why the Choice Matters</h2>
+
+<p>HS256 signs with a single shared secret — one key that both signs and verifies. RS256 uses a key pair: a private key signs, a public key verifies. The counter-intuitive part: "signed" tokens fail not because the math is weak but because of how the algorithm is chosen. If the server trusts whatever algorithm the token header claims, an attacker can send a token with header {"alg":"none"} or downgrade RS256 to HS256 and sign it with the public key — which is, by design, public. The fix is a server that pins the algorithm instead of trusting the header.</p>
+
+<h2>The Verification Workflow</h2>
+
+<p>When you inspect an unfamiliar JWT, decode all three parts first and check the header's alg against what the issuing service actually uses. Then verify the signature with the right key, confirm the expiry hasn't passed, and check the issuer and audience claims — an expired-but-signed token is still an expired token. The <a href="/en/tools/base64-converter">base64 converter</a> helps when you want to look at the raw encoded segments side by side. Signature checks stop forged tokens; claim checks stop tokens that were once valid and should no longer be.</p>
+
+<p>A signed JWT is a claim that hasn't been tampered with, not a promise that it's trustworthy. We covered expiration and security claims in our guide to <a href="/en/blog/jwt-decoder-token-expiry-security">reading JWT expiration</a>. Decode it, pin the algorithm, verify with the right key — and the token you trusted becomes a token you checked.</p>`
+  },
+  {
+    slug: "quotes-famous-misattributed-sayings-guide",
+    title: "Famous Quotes That Were Never Actually Said: The Misattributions We All Repeat",
+    description: "The internet is full of quotes that sound wise and were never spoken. Why do we misattribute famous lines — and how to check before you share.",
+    date: "2026-08-19",
+    category: "Fun & Media",
+    tags: ["famous quotes", "misattributed quotes", "quote verification", "quote history", "misquotes"],
+    relatedTools: ["quotes", "random-quote", "book-of-answers"],
+    content: `<p>You shared a quote on LinkedIn — "Success is not final, failure is not fatal: it is the courage to continue that counts." You credited Winston Churchill. Someone commented with a link. The quote is from a 2008 motivational book, and the link pointed to a historian explaining that Churchill never said it. You weren't trying to be wrong. You just repeated something the internet had repeated so many times that it felt like fact.</p>
+
+<h2>The Great Misattribution Machine</h2>
+
+<p>Misquotes spread for a mechanical reason: they're useful before they're true. A pithy line attached to Einstein, Twain, or Gandhi travels further than the same line with no author, because the name is the credibility. Quote sites, social posts, and gift books all compete for shares, and attribution is the cheapest thing to skip. The result is a stable of famous lines that were never spoken — "Be yourself; everyone else is already taken" wasn't Wilde, and "The definition of insanity is doing the same thing over and over" wasn't Einstein.</p>
+
+<h2>Why We Believe the Attribution</h2>
+
+<p>The counter-intuitive part: your memory is not the problem. The framing is. When a quote arrives already dressed in a famous name, the name acts as a source signal your brain doesn't re-check. Repeated exposure makes it feel like truth even when the first instance was a joke or a misremembering. The same cognitive shortcut that makes a <a href="/en/tools/random-quote">random quote</a> feel profound also makes a misattributed one feel authentic.</p>
+
+<h2>How to Check Before You Share</h2>
+
+<p>Thirty seconds beats embarrassment. Search the exact wording plus the name; if the only results are image macros and quote sites with no citation, treat it as unverified. Check a quote-specific source like the Quote Investigator archive. And when you can't verify the speaker, do what a <a href="/en/tools/quotes">quotes directory</a> makes easy: share the line with no author attached — it's still worth reading, just not worth attributing. The <a href="/en/tools/book-of-answers">book of answers</a> is another reminder that a meaningful line doesn't need a famous name to land.</p>
+
+<p>Not every quote needs a verified source, but every shared one deserves an honest one. We compared curated and random quote tools in our guide to <a href="/en/blog/quotes-directory-vs-random-generator">quotes directory vs random generator</a>. Check the source, keep the line, drop the fake attribution.</p>`
+  },
+  {
+    slug: "discount-calculator-percentage-off-vs-flat-amount-guide",
+    title: "20% Off vs $20 Off: Which Discount Is Actually Better for You",
+    description: "A $20-off coupon and a 20%-off coupon are not the same deal — the winner depends entirely on the price. Here's the math that decides.",
+    date: "2026-08-19",
     category: "Calculator",
-    tags: ["income tax", "tax refund", "tax withholding", "W-4", "taxes explained"],
-    relatedTools: ["income-tax-calculator", "percentage-calculator", "compound-interest"],
-    content: `<p>You file your taxes in February, and in April a check for $2,800 shows up. You call it a bonus and buy something. It wasn't a bonus. It was your own money, loaned to the government for a year at 0% interest, and returned to you in a lump sum that you got to enjoy for about a week before it was spent anyway.</p>
+    tags: ["discount math", "percentage off", "coupon comparison", "sale price", "discount calculator"],
+    relatedTools: ["discount-calculator", "percentage-calculator", "tip-calculator"],
+    content: `<p>You're standing in an aisle with two offers. One coupon takes $20 off. The other takes 20% off. Both feel similar, and the store made sure both look generous. For a $200 item they're identical — $40 either way. For a $60 item they're not close: $20 off beats 20% off ($12) by a wide margin, while at $400, 20% off ($80) crushes the flat $20. The deal is decided entirely by the price.</p>
 
-<h2>Why Your Refund Is So Big</h2>
+<h2>The Math That Decides</h2>
 
-<p>A refund happens when your employer withholds more tax than you owe. Each paycheck, the withholding formula estimates your annual tax and takes a slice. If the estimate runs high — a second income, a side gig, no dependents claimed — the overpayment piles up. The result isn't a windfall; it's a forced savings plan with the government as the bank and you as the depositor who forgot the interest rate was zero.</p>
+<p>The crossover point is where the flat amount equals the percentage: for $20 off vs 20% off, that's a $100 item. Above $100, the percentage wins; below it, the flat amount wins. The common mistake is comparing offers by the number on the coupon instead of by the item you're actually buying. A <a href="/en/tools/discount-calculator">discount calculator</a> settles it in one entry: put in the price and both offers, and the cheaper price shows itself before you carry anything to the register.</p>
 
-<p>The common mistake is celebrating the refund instead of checking the cause. Run an <a href="/en/tools/income-tax-calculator">income tax calculator</a> to see what you actually owe for the year. Compare that to what was withheld, and the gap is the refund — pure overpayment.</p>
+<h2>Stacked Discounts: Order Matters</h2>
 
-<h2>The Cost of a Big Refund</h2>
+<p>The counter-intuitive part is when the store lets you stack. "Take 30% off, then $10 off" and "$10 off, then 30% off" are not the same price. The percentage is larger, so applying it first makes a bigger dent on a bigger number — 30% then $10 almost always wins over $10 then 30%. On a $150 item: 30% first gives $150 to $105 to $95. $10 first gives $150 to $140 to $98. Three dollars, free, by order of operations. The <a href="/en/tools/percentage-calculator">percentage calculator</a> handles the percent side while you think about sequence.</p>
 
-<p>Counter-intuitive but true: the bigger the refund, the worse the deal. That $2,800 sat in the Treasury all year while you paid interest on a credit card at 20% or left a savings account earning 4% untouched. Refund overpayment is a fixed, invisible cost you pay every single paycheck. The <a href="/en/tools/percentage-calculator">percentage calculator</a> shows how the small monthly over-withholding adds up to a very large annual giveaway.</p>
+<h2>Sale Price Isn't the Whole Story</h2>
 
-<h2>How to Fix Your Withholding</h2>
+<p>Finally, the deepest discount is the one attached to the item you needed. A <a href="/en/tools/tip-calculator">tip calculator</a> is a reminder that small percentage math shows up everywhere — and the same habit of checking the actual number instead of the banner applies at restaurants, in sales, and in subscription pricing. Discounts are arithmetic wearing a marketing hat.</p>
 
-<p>The fix is a W-4 update, not a gamble. Adjust your withholding to aim for a refund near zero — the money stays in your paycheck, where the <a href="/en/tools/compound-interest">compound interest</a> on what you invest beats any refund by a mile. Keep a small buffer so you never owe a penalty, and recheck once a year when your life changes: new job, marriage, baby, side income.</p>
-
-<p>We covered how tax brackets actually set your rate in our guide to <a href="/en/blog/income-tax-calculator-guide">how tax brackets and effective rates work</a>. A refund feels like free money because it arrives in a lump. Fix the withholding, keep the cash monthly, and let your own money do something for you.</p>`
+<p>We covered comparing 30% off with buy-one-get-one in our guide to <a href="/en/blog/discount-calculator-online-shopping-bogo-deals">BOGO vs percentage deals</a>. Run the numbers on the real item, mind the order of stacked discounts, and the coupon in your hand stops being a guess.</p>`
   },
   {
-    slug: "life-hacks-travel-packing-guide",
-    title: "Travel Life Hacks That Actually Work: Packing, Jet Lag, and Hotel Rooms",
-    description: "Most travel hacks are clickbait. These hold up: rolling clothes, the two-bag rule, jet-lag math with sunlight, and the free quiet-room trick at check-in.",
-    date: "2026-08-18",
-    category: "Fun & Media",
-    tags: ["travel hacks", "packing tips", "jet lag", "travel tips", "life hacks"],
-    relatedTools: ["life-hacks", "global-weather", "translate"],
-    content: `<p>It's the night before a six-day trip and your suitcase is a crime scene. You've packed four pairs of shoes, two hairdryers, and a paperback you'll never open. By the time you leave, the zipper is a suggestion. Most "travel hacks" are clickbait, but a few hold up under real luggage limits. These are the ones that actually work.</p>
-
-<h2>The Packing System That Works</h2>
-
-<p>Roll, don't fold — you've heard it, but here's why it works: rolled clothes compress into the gaps of a case and, more importantly, they don't crease where the fold lands. Pair it with the two-bag rule: everything you need for the flight in a small personal bag, everything you need for the trip in the main case. The common mistake is packing for the worst case instead of the actual trip. Spread clothes, shoes, and cables across both bags so losing one never ends the trip.</p>
-
-<h2>Jet Lag Is a Math Problem</h2>
-
-<p>The counter-intuitive part: jet lag isn't about how much you sleep, it's about when light hits your eyes. Your body clock shifts roughly an hour a day, so a nine-hour time difference takes about nine days to fix naturally. You can cheat it. Get sunlight at the destination's morning, avoid it in the late afternoon, and shift your meals to the local schedule immediately. And check the destination before you pack a single thing — a <a href="/en/tools/global-weather">global weather</a> check tells you whether that jacket is essential or dead weight.</p>
-
-<h2>Hotel Room Hacks</h2>
-
-<p>The upgrade trick that costs nothing: ask for a quiet room at check-in, not a suite. The front desk can usually move you without any compensation, and a quiet room beats a bigger one on every night you actually sleep. And the phrase you learn before landing beats any translation app — the <a href="/en/tools/translate">translate</a> tool handles the rest, but "where is the..." in the local language gets you treated like a traveler instead of a tourist.</p>
-
-<p>Why simple shortcuts feel so satisfying is covered in our guide to <a href="/en/blog/life-hacks-morning-routine-productivity-science-based">morning routine science</a>. Travel punishes mistakes fast. Pack light, respect the sun, ask for quiet — and enjoy the trip instead of managing your luggage.</p>`
-  },
-  {
-    slug: "zodiac-sign-chinese-vs-western-zodiac-guide",
-    title: "Chinese Zodiac vs Western Zodiac: 12 Animals vs 12 Constellations",
-    description: "Your Western sign says Leo, your Chinese sign says Dragon — two zodiac systems, two different logics. Here's how the Chinese zodiac works and why it's not astrology by another name.",
-    date: "2026-08-18",
+    slug: "world-map-projection-misconceptions-guide",
+    title: "Why Greenland Is Bigger Than Africa on Every Map: Map Projections Explained",
+    description: "Africa is 14 times larger than Greenland, yet every flat map makes them look similar. The Mercator projection distorted our world — here's why.",
+    date: "2026-08-19",
     category: "Reference",
-    tags: ["chinese zodiac", "zodiac animals", "chinese astrology", "lunar calendar", "western zodiac"],
-    relatedTools: ["zodiac-sign", "perpetual-calendar", "book-of-answers"],
-    content: `<p>Someone at a party asks what your sign is. You answer Leo. They nod, then ask what your Chinese sign is, and you have no idea — but somehow it's supposed to be just as important. The two systems share the word "zodiac" and almost nothing else. One runs on constellations and months, the other on animals and years. Here's what the Chinese zodiac actually is, and why it's not Western astrology wearing a costume.</p>
+    tags: ["map projections", "Mercator projection", "map distortion", "world map", "geography"],
+    relatedTools: ["world-map", "global-weather", "ip-lookup"],
+    content: `<p>You open an online world map and trace a flight from London to Cape Town. The route arcs across Europe and Africa, and it looks like a detour. Then you notice something stranger: on the map, Greenland stretches almost the full width of the Atlantic, and Africa looks only a little larger. Africa is actually 14 times bigger than Greenland. Every flat map you've seen has been lying — politely, and by design.</p>
 
-<h2>The Two Zodiacs Are Built Differently</h2>
+<h2>The Mercator Problem</h2>
 
-<p>The Western zodiac divides the sky into twelve equal slices and assigns each a slice of the calendar — your sign comes from the month you were born. The Chinese zodiac assigns an animal to each lunar year: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig. Your Western sign changes every month; your Chinese animal changes every year. So "Leo" and "Dragon" aren't two descriptions of the same person — they're two different systems answering two different questions.</p>
+<p>Most familiar maps use the Mercator projection, created in 1569 for sailors. Its genius is that straight lines on the map are constant compass bearings, which made navigation simple. Its flaw is that it preserves shapes by stretching areas: a square near the equator is roughly accurate, but the same square drawn near the poles inflates. Greenland, Russia, Canada, and Antarctica balloon; Africa, South America, and India — all straddling the equator — stay near true size. The result: the world looks like a set of huge northern countries, when the equator actually hosts most of the planet's land.</p>
 
-<h2>Year Animals Are Not Sun Signs</h2>
+<h2>Why Projections Must Lie</h2>
 
-<p>The common mistake is reading your Chinese animal like a Western sun sign: "I'm a Pig, so I'm easygoing." The Chinese zodiac is traditionally a whole personality profile, and the year animal is just the headline. The system layers in the hour of birth (the hour animal), the five elements, and a polarity of yin and yang — a much more specific reading than "your year equals your personality." It's a grid, not a list.</p>
+<p>The counter-intuitive part: no flat map can be accurate. A sphere cannot be flattened without distortion — area, shape, distance, and direction can't all be preserved at once. Every projection chooses which lie to tell. Mercator keeps shapes (and angles) and sacrifices size. Equal-area projections like Gall-Peters keep relative sizes and distort shapes. That's why a <a href="/en/tools/world-map">world map</a> view and a globe disagree: the globe shows the truth, the flat map shows a trade-off.</p>
 
-<h2>The Lunar Calendar Connection</h2>
+<h2>What This Means for How We See the World</h2>
 
-<p>The counter-intuitive part: the Chinese New Year is not January 1. It falls on the second new moon after the winter solstice, anywhere from late January to mid-February, so someone born in January could belong to the previous year's animal. A <a href="/en/tools/perpetual-calendar">perpetual calendar</a> settles your exact birth date, and a <a href="/en/tools/zodiac-sign">zodiac sign calculator</a> handles the Western side — so you can finally answer the party question with both systems. If you'd rather not do the math at all, the <a href="/en/tools/book-of-answers">book of answers</a> keeps the spirit without the charts.</p>
+<p>This isn't trivia — map bias shapes perception. Countries shown large feel important; a shrunken Africa makes its actual scale less visible in news, weather, and geography lessons. Next time you check a destination with the <a href="/en/tools/global-weather">global weather</a> tool, note the latitude: near the poles, distances on a flat map exaggerate. And the <a href="/en/tools/ip-lookup">IP lookup</a> tool is a good reminder that where things are is a data question, not just a drawing question.</p>
 
-<p>We covered how the Western zodiac actually works in our guide to <a href="/en/blog/zodiac-sign-calculator-sun-sign-astrology-guide">finding your sun sign</a>. Two zodiacs, two logics: one by month, one by year. Know which one you're using, and the party conversation stops being a trap.</p>`
+<p>We covered how maps got built across the centuries in our guide to <a href="/en/blog/world-map-history-ptolemy-to-google-maps">world map history</a>. A map is a model, not a photograph. Read the projection, and the lie stops fooling you.</p>`
   },
   {
-    slug: "lateral-thinking-workplace-techniques-guide",
-    title: "Lateral Thinking at Work: Three Techniques for When the Obvious Answer Fails",
-    description: "Stuck in a meeting where everyone agrees on the wrong idea? Three lateral thinking techniques — assumption hunting, reversal, and random input — break the logjam.",
-    date: "2026-08-18",
+    slug: "pregnancy-calculator-40-week-count-explained",
+    title: "You're Not 9 Months Pregnant: Why the 40-Week Count Confuses Everyone",
+    description: "The classic pregnancy math — nine months — doesn't match the 40-week calendar that clinics use. Here's how pregnancy calculators actually count.",
+    date: "2026-08-19",
+    category: "Calculator",
+    tags: ["pregnancy calculator", "gestational age", "40 weeks", "due date math", "pregnancy weeks"],
+    relatedTools: ["pregnancy-calculator", "age-calculator", "calorie-calculator"],
+    content: `<p>Your friend says she's six months pregnant, then sends a screenshot of a pregnancy calculator that says 25 weeks. If you do the math on six months at four weeks each, that's 24 weeks — close. But if you count calendar months, six months from her start date lands at about 26 weeks. All three numbers are "right," and none of them matches the 40-week count her clinic uses. This is the confusion at the heart of pregnancy math.</p>
+
+<h2>Why 40 Weeks Isn't 9 Months</h2>
+
+<p>A pregnancy is counted as 40 weeks from the first day of the last menstrual period, and 40 weeks is routinely called "nine months." But nine calendar months is roughly 39 weeks — and by the time the 40-week mark arrives, you're already partway into the tenth calendar month. The gap exists because calendar months average 4.3 weeks, not 4. Some months have 31 days, and the count starts before conception. The classic "nine months" is a comfortable number that doesn't match the clinical calendar.</p>
+
+<h2>How the Count Starts</h2>
+
+<p>The other counter-intuitive piece: gestational age is counted from the last menstrual period, roughly two weeks before conception even happened. So at "week two," there's no embryo yet. Clinicians use this because the last period is a date a person can actually remember, while the moment of conception is usually unknown. The <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> works the same way: it takes the start date and adds 40 weeks, with trimesters measured from that same anchor.</p>
+
+<h2>What to Say Instead of Months</h2>
+
+<p>When someone asks how far along you are, weeks are the honest unit: they map directly to the clinical timeline, and they don't wobble between 4-week and calendar months. If you need the month count for context, convert with care — roughly four weeks is a lunar month, not a calendar one. The <a href="/en/tools/age-calculator">age calculator</a> shows the same principle for regular ages: the number depends entirely on how you define the interval. And if the pregnancy is part of a health-tracking routine, the <a href="/en/tools/calorie-calculator">calorie calculator</a> is a reminder that numbers in health are only useful when you know what they're counting.</p>
+
+<p>We covered why the due date is really an estimate in our guide to <a href="/en/blog/pregnancy-calculator-due-date-accuracy">pregnancy due date accuracy</a>. The count is 40 weeks, the months are a shortcut, and knowing which one you're using keeps the confusion where it belongs — nowhere.</p>`
+  },
+  {
+    slug: "gif-search-workplace-business-communication-guide",
+    title: "GIFs at Work: Using Animated Images in Business Communication Without Sounding Unprofessional",
+    description: "A well-placed GIF can defuse a tense thread and speed up a decision. A badly placed one can cost you credibility. Here's how to use GIFs at work.",
+    date: "2026-08-19",
     category: "Fun & Media",
-    tags: ["lateral thinking", "creative problem solving", "brainstorming", "workplace productivity", "thinking techniques"],
-    relatedTools: ["lateral-thinking", "random-number-generator", "book-of-answers"],
-    content: `<p>The meeting has run forty minutes past schedule and everyone agrees on the wrong answer. Not the risky answer — the wrong one. It's obvious to you, but you can't break the consensus with logic, because logic is what built it. This is where lateral thinking earns its keep: not as a puzzle for kids, but as a set of tools for exactly this stuck-room situation.</p>
+    tags: ["GIFs at work", "workplace communication", "remote teams", "business GIFs", "team chat"],
+    relatedTools: ["gif-search", "quotes", "translate"],
+    content: `<p>The thread had been going sideways for an hour. Three engineers arguing about a naming convention, temperature rising, everyone typing longer and sharper replies. Then someone posted a GIF of a cat staring at a laptop with the caption "watching this debate unfold." The room exhaled. The tone reset, the argument resumed at normal volume, and a naming decision got made twenty minutes later. That's a GIF earning its place at work.</p>
 
-<h2>Assumption Hunting</h2>
+<h2>Where GIFs Actually Help</h2>
 
-<p>Every bad plan hides an unexamined assumption. Write down the thing everyone is treating as fixed — "we have to ship this month," "the budget is final," "the client won't budge" — then question exactly one of them out loud. The common mistake is attacking the assumption you disagree with; the technique is attacking the one everyone takes for granted. You're not looking for a wrong answer; you're looking for the rule nobody remembers making.</p>
+<p>Animated GIFs are tone language. In text, you can't hear the shrug behind "okay, sure." A GIF can carry the exact register — dry, delighted, exhausted — that a message needs, and it lands faster than a sentence of apology. They work best in low-stakes moments: celebrating a deploy, acknowledging a fix, reacting to a long email before you write the real reply. The rule is to let the GIF do the emotional work while your words do the professional work.</p>
 
-<h2>The Reversal Trick</h2>
+<h2>The Unwritten Rules</h2>
 
-<p>Take the goal and invert it. If the problem is "how do we get users to sign up," ask "how do we guarantee nobody signs up?" The answers to the reverse question come fast, and buried among them is the real friction: the three-step form, the paywall, the login wall. Inverting the goal exposes the obstacle that the forward direction keeps dancing around.</p>
+<p>Use a <a href="/en/tools/gif-search">GIF search</a> that shows the source so you know what you're sending — a reaction GIF from a movie you can't identify is a risk. Match the culture: a team that communicates dry and flat will read a string of gifs as noise, not humor. And respect the medium: one GIF per exchange, never a response to a serious complaint, and never when the person needs facts instead of mood. The counter-intuitive part is that restraint is what makes the occasional GIF effective — a tool that fires every message stops carrying information.</p>
 
-<h2>Random Input Works Because You Can't Fake It</h2>
+<h2>When to Skip the GIF</h2>
 
-<p>The counter-intuitive part: a random word, a random number, even the <a href="/en/tools/random-number-generator">random number generator</a> tool on your own desk — the point isn't that the random thing is useful. The point is that you can't control it, so your brain is forced to build a bridge between an irrelevant input and the problem. That bridge is where new solutions live. The <a href="/en/tools/book-of-answers">book of answers</a> works on the same principle: an answer you didn't engineer is an answer you couldn't have planned.</p>
+<p>Performance reviews, incident postmortems, contract talk, and anywhere the words are the deliverable. In those rooms, a GIF reads as deflection. The same discipline applies to the rest of your toolkit: a <a href="/en/tools/translate">translate</a> tool for a message in another language, or a <a href="/en/tools/quotes">quotes</a> search when you need an actual line to land, are deliberate choices. GIFs are for the human moment between the work, not a substitute for the work itself.</p>
 
-<p>Lateral thinking versus ordinary logic — two modes your brain can switch between — is covered in our guide to <a href="/en/blog/lateral-thinking-vs-vertical-logic-brain-modes">lateral thinking vs vertical logic</a>. Run a <a href="/en/tools/lateral-thinking">lateral thinking</a> session the next time a room agrees too fast. Hunt the assumptions, invert the goal, and let randomness break the consensus. The stuck meeting was never actually stuck — it just needed a different angle.</p>`
-  },
-  {
-    slug: "regex-tester-search-vscode-grep-guide",
-    title: "Regex in Your Everyday Tools: VS Code, grep, and Search That Understands Patterns",
-    description: "You already own a regex engine: the search bar. VS Code find, grep, and analytics dashboards accept patterns — here's how to search with structure instead of scrolling.",
-    date: "2026-08-18",
-    category: "Developer",
-    tags: ["regex", "regular expressions", "vscode search", "grep", "pattern matching"],
-    relatedTools: ["regex-tester", "text-diff", "word-counter"],
-    content: `<p>A log file with forty thousand lines. You need every line that mentions ERROR but only when it came from the payments service, and not when the error is a known retry. Scrolling is not an option. Regular expressions sound like a programmer's weapon, but the tools you already use — your editor, your terminal, your analytics dashboard — accept them directly. You've had a superpower on your desk all along.</p>
-
-<h2>VS Code: Find That Understands Structure</h2>
-
-<p>Open Find, click the .* icon to enable regular expressions, and search for <code>^.*payments</code> — one pass, all matches, zero scrolling. The common mistake is searching for the literal text you see in one line and missing the pattern across the other nine thousand. With regex, you search for the shape of the problem, not a single example of it. The <a href="/en/tools/regex-tester">regex tester</a> tool is the safe place to build and check a pattern before you point it at a real file.</p>
-
-<h2>grep: The Original Power Search</h2>
-
-<p>In a terminal, grep is regex made useful: <code>grep -E "^ERROR" log.txt</code> gives you exactly the matching lines, and a few pieces of syntax extend it — the dot for any character, the star for repeats, the caret for line start, the dollar for line end, square brackets for a character set. Learn those and you can query any log, config, or export file in one command instead of opening it.</p>
-
-<h2>Know When Regex Is Overkill</h2>
-
-<p>The counter-intuitive part: regex is not always the right tool. A quick count is a job for the <a href="/en/tools/word-counter">word counter</a>; comparing two versions line by line is a job for <a href="/en/tools/text-diff">text diff</a>. Regex shines when the match is structural — and that's exactly when eyeballing a list misses things. Use the right tool for the shape of the job.</p>
-
-<p>We covered when simple find-and-replace is enough in our guide to <a href="/en/blog/regex-tester-vs-ide-find-replace">regex vs find-and-replace</a>. The editor search bar is a gateway to pattern matching. Build the pattern safely, then unleash it — forty thousand lines shrink to one screen.</p>`
-  },
-  {
-    slug: "cron-parser-vs-systemd-timers-guide",
-    title: "Cron vs systemd Timers: When the Modern Scheduler Wins (and When It Doesn't)",
-    description: "systemd timers fix cron's biggest gaps — dependencies, real logs, calendar events. But cron still wins on simplicity and portability. Here's how to choose between them.",
-    date: "2026-08-18",
-    category: "Developer",
-    tags: ["cron", "systemd timers", "cron vs systemd", "linux scheduling", "automation"],
-    relatedTools: ["cron-parser", "unix-timestamp", "hash-generator"],
-    content: `<p>It's 3 a.m. and your backup job didn't run. The crontab looks right, the logs are empty, and you're about to blame the scheduler. Cron has scheduled jobs since 1975, and on most Linux systems there's a newer option that fixes exactly the problems cron is known for: systemd timers. Understanding when to use which one saves you the 3 a.m. wake-up call.</p>
-
-<h2>What systemd Timers Do Better</h2>
-
-<p>systemd timers can run a job only after another service is up — say, back up the database but only once the database is running. That's a dependency, and cron has no concept of one. Timers also give you real logs through journalctl, calendar events that describe the next run in plain terms, and the option to run once, on a schedule, or only in a specific power state. The counter-intuitive part: timers are often assumed to use cron syntax, but they use calendar events, so a <a href="/en/tools/cron-parser">cron parser</a> won't read them directly — check the syntax before you port an old job.</p>
-
-<h2>Where Cron Still Wins</h2>
-
-<p>Cron survives because it's simple and everywhere. One line, one meaning, portable across every Unix — a crontab file from a 1995 server still works today. If your job is "run this script at these times," cron is done in ten seconds, and the next person who reads it knows exactly what it does. Timers solve real problems; they also add a layer of complexity a simple job doesn't need. The <a href="/en/tools/unix-timestamp">unix timestamp</a> tool helps sanity-check the times either way, and the <a href="/en/tools/hash-generator">hash generator</a> confirms a job's output integrity when it matters.</p>
-
-<h2>How to Compare Them</h2>
-
-<p>Use cron for simple, portable, schedule-only jobs. Use systemd timers when you need dependencies, real logging, or calendar-aware scheduling. The mistake is choosing by fashion instead of need: a timer won't fix a job that never runs in cron if the problem is your timezone or your expression — we covered those traps in our guide to <a href="/en/blog/cron-parser-crontab-schedules-explained">reading crontab schedules</a>.</p>`
+<p>We covered finding and downloading the right GIF in our guide to <a href="/en/blog/gif-search-download-guide">GIF search and download</a>. Use it to reset the tone, know your source, and let your words stay the message.</p>`
   },
 ];
 
@@ -160,4 +160,4 @@ content = content.replace(old, new_blogs)
 with open(BLOG_FILE, "w", encoding="utf-8", newline="\n") as f:
     f.write(content)
 
-print("Free station: 384->390 objects done.")
+print("Free station: 390->396 objects done.")
