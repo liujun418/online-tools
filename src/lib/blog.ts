@@ -12841,6 +12841,148 @@ Slightly different coefficients, tends to overestimate by about 5% compared to M
 
 <p>We covered productivity and home-office habits in our guide to <a href="/en/blog/life-hacks-remote-workers-home-office-productivity">life hacks for remote workers</a>. Your phone is the other half of the digital day — fix the battery, free the storage, and turn off what's tracking you, and the "my phone is dying" panic goes with it.</p>`
   },
+  {
+    slug: "jwt-decoder-payload-design-security-guide",
+    title: "JWT Payload Design: 5 Mistakes That Leak Data or Break Authentication",
+    description: "The signature protects a JWT from tampering — it does not hide the contents. Here are the payload design mistakes that leak data and the claims you should always include.",
+    date: "2026-08-22",
+    category: "Developer",
+    tags: ["JWT payload", "token design", "JWT claims", "security", "authentication"],
+    relatedTools: ["jwt-decoder", "base64-converter", "hash-generator"],
+    content: `<p>You paste a token into a <a href="/en/tools/jwt-decoder">JWT decoder</a> and there it is, plain as day: the user's email, their full name, their date of birth, and the internal role string your admin panel checks against. The token is signed, so nobody can change the values — but anyone holding the token can read every one of them, because a JWT's middle section is just Base64, not encryption. That's the gap most token leaks come from: teams treat the payload like a sealed envelope when it's actually a postcard. Here's how to design a payload that doesn't turn a leaked token into a leaked database.</p>
+
+<h2>The Postcard, Not the Envelope</h2>
+
+<p>The payload is Base64-encoded JSON. A <a href="/en/tools/base64-converter">Base64 converter</a> can decode it in one step, and so can the decoder you'd paste it into — which is exactly why you should assume anyone with the token can read the payload. The rule of thumb: put nothing in the payload that you wouldn't write on the outside of an envelope. User ID, session identifier, role if your backend enforces it anyway — fine. Email, address, birth date, credit card last four — that's data that should only live on your server, and its only job in the token is to make a leak worse.</p>
+
+<h2>The Claims You Should Always Include</h2>
+
+<p>Beyond the obvious <code>exp</code> (expiration), a defensible payload carries four more registered claims. <code>iss</code> names the issuer, so a token minted by your login server is rejected by your API if it claims a different origin. <code>aud</code> names the intended audience — without it, a token meant for the mobile API silently works on the admin API if both share a secret. <code>iat</code> records when it was issued, which your <a href="/en/tools/hash-generator">hash-based</a> revocation checks can lean on. And <code>jti</code> is a unique token ID, the single most underrated claim: it gives you a way to revoke a specific token or detect a replayed one. Four short strings, and a token that's hard to misuse even when it leaks.</p>
+
+<h2>The Design Review You Run</h2>
+
+<p>The counter-intuitive part: the payload is the cheapest place to fix a security problem, because you design it once and the format doesn't change the signing. Before you ship a token format, decode your own token and read it like an attacker would — we covered what to look for in our guide to <a href="/en/blog/jwt-decoder-whats-inside-token">what's actually inside a JWT</a>. If any field makes you wince when you read it back, that's the field to move to the server. The signature proves the payload wasn't edited; it does nothing to keep it private. Design the postcard to survive being read, and a leaked token stops being an incident.</p>`
+  },
+  {
+    slug: "ai-tools-spotting-fake-ai-tools-guide",
+    title: "How to Spot a Fake AI Tool: 4 Checks Before You Trust the Magic",
+    description: "Not every product calling itself AI is actually AI. Here's how to tell a real model from a repackaged spreadsheet — before you hand it your data.",
+    date: "2026-08-22",
+    category: "Reference",
+    tags: ["fake AI", "AI tool review", "spot AI", "AI authenticity", "tech literacy"],
+    relatedTools: ["ai-tools", "crypto-price", "translate"],
+    content: `<p>A tool promises to "revolutionize your workflow with proprietary AI." The demo looks amazing, the pricing page is confident, and the only thing missing is a real model. A surprising share of products labeled AI are just a thin wrapper around something you could do in a spreadsheet — a lookup table, a template, or a hardcoded list of canned responses. The cost of mistaking them for real is worse than the subscription: you hand a fake tool your data and get nothing back. Here are four checks that separate an actual model from an impressive dashboard.</p>
+
+<h2>1. Give It the Same Input Twice</h2>
+
+<p>Real generative AI is probabilistic: ask it the same open question twice and you get two different phrasings. A fake tool built on templates returns the identical string every time. This is the fastest filter in existence — run one creative request twice, and a scripted answer gives itself away instantly. We keep a curated set of verified tools in our <a href="/en/tools/ai-tools">AI tools directory</a>, and this is the same test we apply to any new candidate before adding it.</p>
+
+<h2>2. Check the Edge Case, Not the Demo</h2>
+
+<p>Demos are rehearsed. Feed the tool something slightly outside its comfort zone — an unusual format, an odd input, a two-word prompt with no context. A real model improvises; a rule-based system either crashes or falls back to a generic line. The <a href="/en/tools/translate">translator</a> is a good model of this: throw it slang or a technical idiom and see whether it genuinely handles the ambiguity or returns a memorized phrase.</p>
+
+<h2>3. Read the Privacy Policy Like a Detective</h2>
+
+<p>This is where fake AI tools get exposed, because the marketing and the legal text rarely agree. If the landing page screams "on-device AI" and the privacy policy says "we store all inputs for model training," one of them is fiction. Real tools have a page that says what runs locally, what leaves your device, and how long it's kept. We wrote a full checklist in our guide to <a href="/en/blog/ai-tools-evaluate-before-paying-guide">evaluating a tool before you pay</a> — the privacy review is the part most people skip and the part that matters most.</p>
+
+<h2>4. Check Whether the Price Makes Sense</h2>
+
+<p>Real AI costs real compute. A tool priced like a spreadsheet subscription while promising model-grade output is either subsidizing you with investor money (fine, briefly) or faking it (more common). The <a href="/en/tools/crypto-price">crypto price tracker</a> is a useful mental model for the whole category: just because a market is crowded and hyped doesn't mean every entry is real. Crowded, hyped markets attract imitations by definition.</p>
+
+<p>The counter-intuitive part: fake AI isn't malicious by default — most of it is just overeager marketing on top of an ordinary script. But "not malicious" still means "not AI," and it still means your data went to a company that couldn't do what it claimed. Run the four checks, trust the directory, and keep the postcard rule in mind: the tools you trust with data are the ones that survive being inspected.</p>`
+  },
+  {
+    slug: "gif-search-email-marketing-guide",
+    title: "Using GIFs in Marketing Emails: 6 Rules That Keep Them From Breaking",
+    description: "A GIF can double your click-through — or get your email clipped, blocked, or stuck on a frozen frame. Here's how to use GIFs in email without breaking the client.",
+    date: "2026-08-22",
+    category: "Fun & Media",
+    tags: ["GIF email", "email marketing", "animated image", "email design", "GIF size"],
+    relatedTools: ["gif-search", "image-to-base64", "svg-minifier"],
+    content: `<p>You've seen the stat: animated GIFs in email can lift click-through by double digits. You've also seen the failure mode: the email lands in a client that doesn't animate, the GIF is 4 MB, and your beautiful product demo renders as a frozen first frame over a loading spinner — or worse, the whole message gets clipped by Gmail's 102 KB cutoff. Email is the harshest environment for GIFs on the internet, and the rules that work for a website break here. Here's how to use them without breaking the message.</p>
+
+<h2>Rule 1: Size for the 102 KB Wall</h2>
+
+<p>Gmail clips messages at 102 KB of raw HTML — and that includes embedded image bytes, not just text. An email with a 3 MB GIF gets truncated, and subscribers see "message clipped, view entire message" and never click. The fix is aggressive: your animation should usually land under 100 KB for the whole email. Start from a <a href="/en/tools/gif-search">GIF search</a> with a size filter, pick short loops, and cut frames. If you can't get there, the fallback is a static image with an animated version on your site — the honest trade-off we covered in our guide to <a href="/en/blog/gif-search-download-guide">searching and downloading GIFs</a>.</p>
+
+<h2>Rule 2: The First Frame Is the Fallback</h2>
+
+<p>Many clients — Outlook, some corporate webmail, and every client in "reduce motion" mode — never animate. They render the first frame as a static image. So the first frame has to work as a poster: readable text, the product visible, no mid-morph blur. If your GIF starts with a transition, viewers who can't animate see a smudge. Design the first frame to carry the message alone, then let the loop enhance it.</p>
+
+<h2>Rule 3: No Sound, No Text-Heavy Frames, No Flash</h2>
+
+<p>Email GIFs can't have audio — that's a given — but the subtler failures are pacing and text. A loop that flashes frames too fast is uncomfortable to watch and can fail accessibility checks for photosensitivity. Text in a GIF is trapped: it can't be selected, read aloud, or translated. Use GIFs for motion and product action, not for copy. If you need a crisp lightweight visual alongside, a small <a href="/en/tools/svg-minifier">minified SVG</a> or a compressed <a href="/en/tools/image-to-base64">Base64-embedded image</a> carries the static load so the GIF can stay short and small.</p>
+
+<h2>The Test That Saves the Send</h2>
+
+<p>Before you hit send, open the campaign in three real clients — an inbox, a webmail, and a corporate client — with animations off. The counter-intuitive part: the email that looks best in the editor often looks worst in the worst client, because editors animate everything. If the message still makes sense frame-by-frame as a static poster, you're ready. Small file, strong first frame, no trapped text — that's a GIF that earns its click-through instead of eating it.</p>`
+  },
+  {
+    slug: "discount-calculator-stacking-coupons-order-guide",
+    title: "Stacking Discounts: Why the Order of Your Coupons Changes the Final Price",
+    description: "30% off plus $10 off sounds straightforward — until you realize the order matters and one sequence is worth more than the other. Here's how stacking really works.",
+    date: "2026-08-22",
+    category: "Calculator",
+    tags: ["stacking discounts", "coupon order", "discount calculator", "percent off", "savings math"],
+    relatedTools: ["discount-calculator", "percentage-calculator", "tip-calculator"],
+    content: `<p>Your cart total is $120. You have a 30% off code and a $10 off code, and the checkout says "apply both." Great — except the order isn't symmetric: taking 30% off first then $10 off gives you $74; taking $10 off first then 30% off gives you $77. Same two discounts, three dollars apart. Stores rarely show you this math, but it's fully deterministic, and knowing which order favors you is a genuine money trick. Here's how stacking actually computes.</p>
+
+<h2>Why Order Changes the Total</h2>
+
+<p>Percentage discounts scale with the current total; fixed discounts don't. So the sequence that applies the percentage first — on the larger number — gives the bigger cut, then the fixed $10 shaves the now-smaller remainder. The reverse sequence applies the $10 first, shrinking the base the percentage then works on. The general rule: to maximize savings, apply percentage discounts before fixed ones. To check any store's quirky stacking, run both orders through a <a href="/en/tools/discount-calculator">discount calculator</a> and compare — thirty seconds of math beats trusting the store's display.</p>
+
+<h2>The Exceptions Retailers Hide</h2>
+
+<p>The clean rule has exceptions, and retailers exploit them. Some codes apply to subtotal only, excluding shipping and taxes, while others apply after taxes — which changes the base. Some stores compute each percentage off the original price rather than the running total, which caps the combined discount below what stacking math suggests. And "20% off + 20% off" is almost never 40% off; it's 36% off, because the second percentage hits a smaller number. The <a href="/en/tools/percentage-calculator">percentage calculator</a> clears up that one fast — and it's why the fine print always says "maximum discount" in tiny type.</p>
+
+<h2>When the Order Is Out of Your Hands</h2>
+
+<p>The counter-intuitive part: a store's checkout usually fixes the order for you, and it's often not the one that favors you — so your leverage is which coupon you enter first when the system lets you choose, and which codes you stack at all. Sometimes the best move isn't stacking but comparing: a single 30% off beats two codes that total less, and a buy-one-get-one structure can beat both. We compared percent-off against flat amounts in our guide to <a href="/en/blog/discount-calculator-percentage-off-vs-flat-amount-guide">20% off vs $20 off</a>. Stack when the math favors it, verify with the calculator, and remember the <a href="/en/tools/tip-calculator">tip calculator</a>-style check: any percentage applied to a smaller base is worth less than it looks.</p>`
+  },
+  {
+    slug: "random-name-generator-fictional-geography-guide",
+    title: "Naming Fictional Places: How to Generate Town, River, and Mountain Names That Feel Real",
+    description: "Real-sounding place names aren't random strings — they follow naming languages. Here's how to generate geography names that your players and readers believe.",
+    date: "2026-08-22",
+    category: "Developer",
+    tags: ["place name generator", "fictional geography", "worldbuilding", "fantasy names", "D&D locations"],
+    relatedTools: ["random-name-generator", "random-number-generator", "lorem-ipsum"],
+    content: `<p>You've built a whole fictional region — cities, a river, a mountain range — and the map looks great except for the labels, which are either "Newtown" or "Xylarath-Q'or." Both feel fake in opposite directions. The secret to believable place names is that real geography follows naming languages: English towns end in -ton, -ham, -ford, and -bury; rivers get short, old, water-rooted names like Severn or Clyde; mountains borrow from whatever language dominated the region. Generate with that structure and your map stops looking generated. Here's how to do it on purpose.</p>
+
+<h2>Give Every Region a Naming Language</h2>
+
+<p>Decide, for each culture in your world, a tiny syllable kit: a handful of prefixes, a handful of roots, and a handful of suffixes. A forest people might use "El-" and "-wen" and "Thorn"; a coastal people "Kar-" and "-port" and "-mere." Then a <a href="/en/tools/random-name-generator">random name generator</a> becomes a disciplined tool: it shuffles your kit's pieces instead of producing noise, and every output reads as coherent. The counter-intuitive part is that restriction is what makes names believable — "Karport" and "Thornmere" sound like neighbors because they share DNA, while a fully random string sounds like nothing at all.</p>
+
+<h2>Match the Name to the Geography</h2>
+
+<p>Real names carry meaning: -ford is a crossing, -dale is a valley, -mouth is an estuary. Let the terrain inform the kit — a river town gets a water suffix, a mountain keep gets a height word. Rivers are the fun one: most real rivers keep ancient, short names that predate the towns on them, so the river and the town often have unrelated naming languages. That tiny inconsistency is exactly what makes a map feel lived-in. When you need a consistent string of territory names, a <a href="/en/tools/random-number-generator">random number generator</a> can even seed the pattern so the whole region shares a recognizable rhythm.</p>
+
+<h2>Steal the Phonology, Not the Names</h2>
+
+<p>The pro move: take the sound rules of a real language family — the consonants Welsh allows, the vowel pattern of Old Norse — and build your kit from those rules without copying actual names. It gives you authenticity you can't get from any generator's default list. And once the map is labeled, the lorem-ipsum rule applies: filler names are fine in drafts, but the <a href="/en/tools/lorem-ipsum">lorem ipsum</a>-style placeholders you leave in will be spotted instantly by anyone who reads the finished work. We covered character naming in our guide to <a href="/en/blog/random-name-generator-game-dev-character-naming">naming NPCs for games</a>. Places want the same discipline one scale up: a naming language per region, names that match the terrain, and every label earning its place on the map.</p>`
+  },
+  {
+    slug: "pregnancy-calculator-vs-apps-guide",
+    title: "Pregnancy Calculator vs Pregnancy App: When the App's Extras Work Against You",
+    description: "Pregnancy apps track everything — and sell your data to pay for it. Here's why a simple calculator often beats a feature-heavy app for the dates that matter.",
+    date: "2026-08-22",
+    category: "Calculator",
+    tags: ["pregnancy app", "pregnancy calculator", "due date", "privacy", "health data"],
+    relatedTools: ["pregnancy-calculator", "age-calculator", "perpetual-calendar"],
+    content: `<p>You learn you're pregnant and, within the hour, three apps are installed: one counts the weeks, one sends daily tips, one tracks every symptom on a timeline. A week later you've got a due date from each — and they don't quite agree. Somewhere in the small print of the free apps is a line about how your health data is used, and that's the part nobody reads. The due date math itself is fifty years old and needs no app at all. Here's the honest comparison: what the apps add, what they take, and why a bare calculator wins the core job.</p>
+
+<h2>What the Calculator Does, Perfectly</h2>
+
+<p>The due-date estimate is Naegele's rule plus a bit of calendar work: 40 weeks from the first day of your last period, adjusted by cycle length. A <a href="/en/tools/pregnancy-calculator">pregnancy calculator</a> does this in one step, with zero account creation, and — the part that matters — zero data collection. The date it gives you is the same date the apps compute, because they're all running the same formula on the same input. We walked through the whole 40-week logic in our guide to <a href="/en/blog/pregnancy-calculator-due-date-week-by-week">what each week actually means</a>. The calculation is not the hard part; the hard part is what you do with the information, and a calculator stays out of your way on that.</p>
+
+<h2>What the App Adds — and Charges</h2>
+
+<p>The apps genuinely add things a calculator can't: a weekly development summary, appointment reminders, a community forum. The price is in three forms. First, your health data — the most sensitive category that exists — is the product of most free apps, and the privacy policies vary wildly on what gets shared and with whom. Second, the extras create a monitoring habit: you open the app for the due date and stay for the daily notifications, and each notification is a small anxiety event. Third, the apps disagree — different cycle-length handling produces different due dates, and now you're managing conflicting information from three sources.</p>
+
+<h2>The Hybrid That Works</h2>
+
+<p>The counter-intuitive part: the least useful feature of a pregnancy app is the one thing it's named for. The due date changes maybe twice in a pregnancy — once after the first ultrasound, which is the date your care team actually uses, and that's it. So use the free calculator for the milestone dates, use a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> to count forward to any week you care about, and let an <a href="/en/tools/age-calculator">age calculator</a> do the "how far along is that exactly" checks. Keep a note in your own documents for the rest. The due date is a fixed number; the anxiety is optional, and the data doesn't have to leave your phone.</p>`
+  },
 ];
 
 export function getBlogPosts(): BlogPost[] { return blogPosts.sort((a,b)=>new Date(b.date).getTime()-new Date(a.date).getTime()); }
