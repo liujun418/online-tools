@@ -12983,6 +12983,138 @@ Slightly different coefficients, tends to overestimate by about 5% compared to M
 
 <p>The counter-intuitive part: the least useful feature of a pregnancy app is the one thing it's named for. The due date changes maybe twice in a pregnancy — once after the first ultrasound, which is the date your care team actually uses, and that's it. So use the free calculator for the milestone dates, use a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> to count forward to any week you care about, and let an <a href="/en/tools/age-calculator">age calculator</a> do the "how far along is that exactly" checks. Keep a note in your own documents for the rest. The due date is a fixed number; the anxiety is optional, and the data doesn't have to leave your phone.</p>`
   },
+  {
+    slug: "income-tax-calculator-capital-gains-crypto-guide",
+    title: "Capital Gains Tax 101: How Selling Investments and Crypto Actually Gets Taxed",
+    description: "Every sale is a taxable event, and the rate depends on how long you held. Here's the math behind capital gains — and the mistakes that cost people real money.",
+    date: "2026-08-25",
+    category: "Calculator",
+    tags: ["capital gains tax", "crypto tax", "investment tax", "tax brackets", "cost basis"],
+    relatedTools: ["income-tax-calculator", "percentage-calculator", "roi-calculator"],
+    content: `<p>You sold a stock that tripled, dabbled in a few crypto trades, and quietly assumed the money was yours. Then tax season arrived with a number you never budgeted for. The painful truth: every sale is a taxable event, and "I only pay tax when I cash out" is half right and half expensive. The good news is the math is simple enough to plan with a calculator. Here's the version nobody explains clearly.</p>
+
+<h2>Holding Time Sets Your Rate</h2>
+
+<p>The single biggest lever is how long you held the asset. Sell after more than a year and you get long-term rates — usually 0%, 15%, or 20% depending on your income. Sell earlier and the gain is taxed at your ordinary income rate, which for many people means roughly double. That one date — day 365 vs day 366 — can change your tax bill by thousands on a big position. The counter-intuitive part: waiting a month to sell is a pure, legal discount. Run the before-and-after through an <a href="/en/tools/income-tax-calculator">income tax calculator</a> and you'll see exactly what patience is worth in your bracket.</p>
+
+<h2>Crypto Makes Every Trade a Taxable Event</h2>
+
+<p>Stocks at least reward holding — crypto doesn't give you that luxury. Swap Bitcoin for Ethereum and the tax code treats it as selling Bitcoin and buying Ethereum, so the gain is realized right then, even though you never touched cash. Every swap, every spend, even earning coins as interest is an event. Your cost basis is what you paid (or mined it for), and the taxable gain is sale price minus that basis, tracked per unit. This is where people drown in spreadsheets, and it's why a <a href="/en/tools/percentage-calculator">percentage calculator</a> earns its keep: a 300% gain on one coin is the same math as a 300% gain on any other, and knowing the percentage keeps you honest about the dollars.</p>
+
+<h2>Losses Are the One Silver Lining</h2>
+
+<p>Here's the part sellers often miss: losses offset gains. If one trade lost $3,000 and another gained $3,000, they cancel out for tax purposes — and if your losses exceed gains, up to $3,000 a year can even offset ordinary income. It's the classic reason people sell losers before year-end. Just be careful with the wash-sale rule, which disallows the deduction if you buy the same asset back within 30 days. A <a href="/en/tools/roi-calculator">ROI calculator</a> is a great habit here: figure out each position's real return before deciding what to sell, then let the tax math decide the timing. We walked through withholding in our guide to <a href="/en/blog/income-tax-calculator-tax-refund-withholding-guide">big refunds vs overpaying</a> — capital gains work the same way, where planning beats surprises every time.</p>`
+  },
+  {
+    slug: "zodiac-sign-cusp-dates-boundary-guide",
+    title: "Cusp Signs Don't Exist: What the Zodiac's Boundary Dates Actually Mean",
+    description: "Born on the 21st? Different apps give you different signs. The boundary dates are the shakiest part of the zodiac — here's what's actually going on.",
+    date: "2026-08-25",
+    category: "Reference",
+    tags: ["cusp sign", "zodiac dates", "zodiac boundary", "astrology", "sun sign"],
+    relatedTools: ["zodiac-sign", "perpetual-calendar", "random-quote"],
+    content: `<p>You were born on the 21st, so you've been told you're a Scorpio by one app and a Sagittarius by another, and a friend insists you're on the "cusp." The cusp — the idea that a birthday near a sign's boundary shares traits of both — feels like the perfect explanation. It's also not real, astronomically speaking, and even by astrology's own rules it's a symptom of a system problem. Here's what the boundary dates actually are and why they disagree.</p>
+
+<h2>There's No Such Thing as a Cusp</h2>
+
+<p>In the tropical zodiac, each sign is exactly 30 degrees of the sky, and the sun is in exactly one of them at any moment — it doesn't blend. A cusp would be like a clock reading "3 and 4 o'clock." What actually happens is simpler: the calendars disagree about where the boundary falls. Some almanacs put Virgo ending on the 22nd, others on the 23rd, because the sun's exact crossing time shifts every year and the date printed in any table is a simplification. So a "cusp" birthday is usually just a birthday that lands near a disputed boundary in a simplified table. The disagreement is in the almanacs, not in the stars.</p>
+
+<h2>Why the Dates Drift Over Decades</h2>
+
+<p>There's a second, deeper wobble. The tropical zodiac is anchored to the equinoxes, and thanks to the slow 26,000-year wobble of Earth's axis called precession, the sun crosses the March equinox a little earlier each year. The astrological signs drift against the actual constellations over time — the "Ophiuchus is the 13th sign" fuss is the visible tip of that drift. None of this matters if you treat zodiac dates as a fixed cultural convention, the way a <a href="/en/tools/zodiac-sign">zodiac sign finder</a> does: it reads the table you give it. What it means is that "the 21st is always the cusp" is not astronomy, it's a table artifact.</p>
+
+<h2>What Astrologers Actually Do About It</h2>
+
+<p>Here's the part that surprises most people: professional astrologers barely use the boundary dates at all. Your sun sign comes from the sun's precise degree position at your birth time and place, which is why a full birth chart needs a minute, not a date. That's also why two people born on the same calendar day can be different signs if one was born early in the morning and the other late at night — the sun moves. The practical takeaway: if you were born near a boundary and can't find your sign, don't take a cusp as the answer. Look up the exact crossing, and let a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> pin down the date for your year. We compared the sun sign to the rising sign in our guide to <a href="/en/blog/zodiac-sign-rising-sign-vs-sun-sign-explained">the face you show the world</a> — the boundary-date confusion is just the latest reminder that zodiac tables are tools, not truths. Treat them lightly, the way you'd treat a <a href="/en/tools/random-quote">random quote</a>: pleasant to read, not something to file a lawsuit over.</p>`
+  },
+  {
+    slug: "color-converter-modern-css-color-spaces-guide",
+    title: "HEX Isn't the Whole Rainbow: Modern CSS Color Spaces (OKLCH, Lab, HSL) Explained",
+    description: "Your 6-digit HEX only covers one slice of visible color. Here's why designers are moving to OKLCH and Lab — and what a color converter reveals.",
+    date: "2026-08-25",
+    category: "Reference",
+    tags: ["CSS color spaces", "OKLCH", "color converter", "sRGB", "web design"],
+    relatedTools: ["color-converter", "color-contrast-checker", "css-minifier"],
+    content: `<p>You pick a color, copy the #A34B7C hex code, and assume that's the color. It is — on your screen, in your browser, today. But that six-digit code is quietly lying to you: it's locked to one specific color space called sRGB, which covers only a slice of the colors your eye can actually see, and a much smaller slice than a good monitor can display. That's why the same hex can look muted on one device and vivid on another, and why a whole generation of CSS color functions has appeared over the last few years. Here's what the new ones do and why you should care.</p>
+
+<h2>HEX, RGB, and the Gamut Problem</h2>
+
+<p>A hex code is just a compact way of writing three numbers — red, green, blue, each 0 to 255 — in the sRGB space. sRGB was designed in the 1990s to match typical CRT monitors, so it's a compromise from birth. Colors outside its gamut — the vivid cyan of a modern phone screen, the deep greens of a high-end laptop — simply can't be expressed in hex. This is the same story as our guide to <a href="/en/blog/color-converter-cmyk-vs-rgb-print-screen-guide">CMYK vs RGB in print</a>: every color space is a slice, and the only real question is which slice you're drawing from. The difference now is that web standards have caught up with hardware.</p>
+
+<h2>What OKLCH and Lab Fix</h2>
+
+<p>The newer functions — oklch, oklab, lab, lch — attack two problems at once. First, they're wider: they can represent more of what modern displays show. Second, and sneakier, they're perceptually uniform: in oklch, a change of 0.1 in lightness looks like the same step whether you're at the dark end or the light end. With hex, a 20-point jump in lightness looks huge on a dark color and barely visible on a light one, which is exactly why evenly-spaced hex palettes keep looking wrong. OKLCH spells colors as lightness, chroma, and hue — oklch(0.7 0.15 30) — which lets you adjust "how saturated" and "how warm" as real dials instead of guessing at RGB numbers.</p>
+
+<h2>How to Convert Without Losing Your Mind</h2>
+
+<p>The counter-intuitive part: you don't need to memorize OKLCH math to benefit from it. You need a converter that shows the same color across spaces and a reason to switch. Start by converting your brand hexes to oklch and checking whether any are outside sRGB's reach, then adjust chroma down until they're honest for the weakest screen you support. Pair it with a <a href="/en/tools/color-contrast-checker">color contrast checker</a> so your "more saturated" red still passes on white, and run the final CSS through a <a href="/en/tools/css-minifier">CSS minifier</a> so the longer function names don't bloat the file you ship. Use the <a href="/en/tools/color-converter">color converter</a> to flip between formats for your design tokens. Modern color is a bigger rainbow than your hex picker showed you — and now the CSS knows it too.</p>`
+  },
+  {
+    slug: "lateral-thinking-job-interview-guide",
+    title: "Lateral Thinking Interview Questions: What Hiring Managers Actually Want",
+    description: "Why is a manhole cover round? They're not testing trivia — they're testing how you think. Here's how to answer brainteasers without freezing.",
+    date: "2026-08-25",
+    category: "Fun & Media",
+    tags: ["interview questions", "lateral thinking", "brainteasers", "problem solving", "job interview"],
+    relatedTools: ["lateral-thinking", "random-number-generator", "reaction-test"],
+    content: `<p>The interviewer leans in and asks why manhole covers are round. Your mind goes blank. The classic brainteaser is the most feared question in hiring — and the most misunderstood. Nearly nobody gets hired for the correct answer, because there isn't one. The question is a window into how you think, and treating it like a trivia test is the one way to fail it. Here's what's actually being measured and how to answer without freezing.</p>
+
+<h2>What the Question Is Really Testing</h2>
+
+<p>Brainteasers like "why are manhole covers round" (they can't fall through a round hole) or "how many piano tuners are in Chicago" are testing four things: whether you clarify the question before answering, whether you make reasonable assumptions and state them, whether you can break a vague problem into pieces, and whether you stay calm while doing it. None of that needs a right answer. The counter-intuitive part: a candidate who says "I don't know, but here's how I'd find out" often scores higher than one who blurts the textbook answer with no reasoning. The interviewer is watching the reasoning, not grading the fact.</p>
+
+<h2>A Structure That Never Freezes You</h2>
+
+<p>You can answer almost any brainteaser with the same three moves. First, clarify: "Round — physically round, or round in the sense of circular?" That buys time and shows rigor. Second, make an estimate or assumption out loud: "Let's say a cover is two feet across," or "Let's estimate one tuner per ten thousand pianos." Third, work in visible steps and keep the math rough. For the piano tuner question, estimate pianos in the city, estimate how often each needs tuning, divide by how many a tuner can do — and be ready for your answer to be off by 10x. The goal is a believable process, and a <a href="/en/tools/random-number-generator">random number generator</a> is a great way to practice: get comfortable making numbers up on purpose and defending them, because that's literally the skill on display.</p>
+
+<h2>Practice Like the Question's Coming</h2>
+
+<p>The best prep isn't memorizing answers, it's practicing the moves until they're automatic. Do three or four brainteasers a week out loud, and time yourself — a <a href="/en/tools/reaction-test">reaction test</a> is a fun proxy for the speed-accuracy tradeoff you're being judged on. When the real question lands, you want the structure to be reflex, not a panic. We covered lateral thinking as a workplace skill in our guide to <a href="/en/blog/lateral-thinking-workplace-techniques-guide">techniques for when the obvious answer fails</a> — the interview is the same skill under a spotlight. Answer the structure, state your assumptions, and let the <a href="/en/tools/lateral-thinking">lateral thinking</a> do the rest.</p>`
+  },
+  {
+    slug: "lorem-ipsum-placeholder-data-leak-guide",
+    title: "Dummy Text That Leaks: Why Real Names in Placeholders Are a Privacy Disaster",
+    description: "A designer pastes real customer names into a mockup, the file ships to a vendor, and suddenly private data is public. Real placeholder text done right.",
+    date: "2026-08-25",
+    category: "Text Tools",
+    tags: ["lorem ipsum", "placeholder text", "privacy", "data leak", "design workflow"],
+    relatedTools: ["lorem-ipsum", "text-repeater", "password-generator"],
+    content: `<p>Somewhere right now, a designer is building a mockup of a bank's new app and filling it with a real customer's real name, email, and balance. It looks great in the screenshot, and then that screenshot goes to the client, the vendor, the intern, and the training set of an AI tool. This is how "placeholder text" becomes a data breach — and it's shockingly common. The fix isn't to stop using dummy text; it's to use dummy text that's actually dummy. Here's the leak, and the workflow that closes it.</p>
+
+<h2>The Leak Is Real, and It's Boring</h2>
+
+<p>Nobody hacks a design file. Instead, a mockup with real names gets screen-shared in a meeting, uploaded to a collaboration tool that trains on your content, or handed to an outside agency under an NDA that doesn't cover customer data. Even a "test account" is dangerous if the test account belongs to a real person in the database. The counter-intuitive part: the most realistic-looking placeholder — real names, real addresses, real balances — is the riskiest one, because it's the one nobody flags as sensitive. Security teams review production data; they don't review Figma files. The leak isn't exotic, which is exactly why it keeps happening.</p>
+
+<h2>Use Placeholder Text That Can't Leak</h2>
+
+<p>The solution is to make your dummy content impossible to confuse with reality. A <a href="/en/tools/lorem-ipsum">lorem ipsum</a> generator is the obvious start, but go further: generate obviously-fake names like "Avery H. Winslow" for user rows, "Test Bank, N.A." for institutions, and "available for demonstration" instead of real balances. The goal is dummy data that still exercises the layout — long names that wrap, long account numbers that overflow — without carrying any real identity. If your layout needs repeated strings of the same fake text, a <a href="/en/tools/text-repeater">text repeater</a> builds the filler in one shot, and a <a href="/en/tools/password-generator">password generator</a> makes perfect fake credentials that no human could mistake for a real account.</p>
+
+<h2>When Real Data Is Actually Required</h2>
+
+<p>There's one honest exception: some testing needs real data — genuine text density, real user journeys, actual edge cases. In those cases the rule is isolation: use a clearly labeled synthetic dataset stored separately from production, never copy-paste from the live database, and scrub anything that looks like a real person before the file leaves your machine. We covered why placeholder text exists in our guide to <a href="/en/blog/lorem-ipsum-cicero-history-meaning-guide">where dummy copy comes from</a>. The short version of the lesson: placeholder text is a tool for layout, not a license to copy real people into your screenshots. Keep the dummy data dummy, and the only thing that leaks from your mockups is good design.</p>`
+  },
+  {
+    slug: "cron-parser-production-best-practices-guide",
+    title: "Cron in Production: 6 Habits That Keep Scheduled Jobs From Biting You",
+    description: "The cron line that worked on your laptop fails silently in production. These best practices — and a parser to check them — cover the common traps.",
+    date: "2026-08-25",
+    category: "Developer",
+    tags: ["cron best practices", "cron job", "production scheduling", "devops", "crontab"],
+    relatedTools: ["cron-parser", "unix-timestamp", "text-sorter"],
+    content: `<p>The cron job runs fine on your laptop for a week, so you deploy it and forget it. Three months later someone notices the nightly report stopped at midnight two weeks ago, and the job has been quietly failing ever since. Production cron fails differently from laptop cron: no desktop session, different PATH, overlapping runs, silent output. The good news is the habits that prevent this are short enough to memorize. Here are the six that matter most.</p>
+
+<h2>Make Every Job Idempotent</h2>
+
+<p>The number-one production killer is a job that runs twice. A slow nightly job that overlaps the next night's run can double-import data, double-send emails, or corrupt a state file — and the second run often looks like a success. Write every job to be safe to run again: guard it with a lockfile so a second instance exits cleanly, or make it idempotent so re-running is harmless. The counter-intuitive part: the safest schedule for a fragile job isn't "less often," it's "often but safely," so a missed run self-heals on the next tick instead of waiting a week.</p>
+
+<h2>Pin Everything to UTC</h2>
+
+<p>Server timezones lie. A job scheduled at 0 2 * * * runs at 2 AM server-local, and when someone changes the server's timezone for a deploy, the job moves with it — or worse, DST makes it run twice or skip a day. Decide once that your crontab lives in UTC and convert in the app if you need local time. This is the same discipline we covered in our guide to <a href="/en/blog/cron-parser-five-reasons-job-not-running-guide">why cron jobs silently fail</a>, and it's the cheapest insurance you'll buy.</p>
+
+<h2>Send Output Somewhere You'll See It</h2>
+
+<p>Default cron behavior is to mail job output to the owner — which on a headless server means a mailbox nobody opens. Redirect stdout and stderr to a log file per job, add a timestamp prefix, and set up an external health check that pings you only when a run doesn't finish on time. A <a href="/en/tools/cron-parser">cron parser</a> is the right first step before any of this: paste the expression in, confirm it means what you think (especially that day-of-month and day-of-week are an OR, not an AND), and check the next ten run times so a "daily at 2 AM" job doesn't turn out to be "every minute." Pair the schedule with a <a href="/en/tools/unix-timestamp">unix timestamp</a> check when you need exact wall-clock times, and use a <a href="/en/tools/text-sorter">text sorter</a> to keep log lines greppable when you finally do dig in. Six habits, one sentence each: idempotent, UTC, logged, health-checked, verified in a parser before deploy, and scheduled with the overlap risk in mind. Your future self on pager duty will thank you.</p>`
+  },
 ];
 
 export function getBlogPosts(): BlogPost[] { return blogPosts.sort((a,b)=>new Date(b.date).getTime()-new Date(a.date).getTime()); }
