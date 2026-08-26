@@ -13115,6 +13115,150 @@ Slightly different coefficients, tends to overestimate by about 5% compared to M
 
 <p>Default cron behavior is to mail job output to the owner — which on a headless server means a mailbox nobody opens. Redirect stdout and stderr to a log file per job, add a timestamp prefix, and set up an external health check that pings you only when a run doesn't finish on time. A <a href="/en/tools/cron-parser">cron parser</a> is the right first step before any of this: paste the expression in, confirm it means what you think (especially that day-of-month and day-of-week are an OR, not an AND), and check the next ten run times so a "daily at 2 AM" job doesn't turn out to be "every minute." Pair the schedule with a <a href="/en/tools/unix-timestamp">unix timestamp</a> check when you need exact wall-clock times, and use a <a href="/en/tools/text-sorter">text sorter</a> to keep log lines greppable when you finally do dig in. Six habits, one sentence each: idempotent, UTC, logged, health-checked, verified in a parser before deploy, and scheduled with the overlap risk in mind. Your future self on pager duty will thank you.</p>`
   },
+  {
+    slug: "html-entities-json-api-text-corruption-guide",
+    title: "HTML Entities in JSON and API Data: Why Your Text Shows &amp; and How to Fix It",
+    description: "Your API returns &amp; and your page shows the literal code. Here's why HTML entities leak into JSON data — and where to decode them so the text renders clean.",
+    date: "2026-08-26",
+    category: "Developer",
+    tags: ["HTML entities", "JSON escaping", "API data", "text corruption", "encoding"],
+    relatedTools: ["html-entities", "url-encoder", "markdown-preview"],
+    content: `<p>You build a page that pulls a product name from an API, and somewhere in the middle of the description it prints <code>&amp;amp;</code> at the reader. Not the ampersand — the literal six characters. You check the JSON, and sure enough, the API sent you a string that was already HTML-encoded, and your frontend dutifully rendered the escape sequence instead of the symbol. This is one of the most common text-corruption bugs on the web, and it's completely fixable once you understand which layer owns the encoding.</p>
+
+<h2>Two Different Escapes, Two Different Jobs</h2>
+
+<p>JSON and HTML both escape special characters, but for opposite reasons. JSON escapes quotes and backslashes with backslashes so the data survives parsing — <code>\u0026</code> style. HTML escapes <code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code> as entities so the browser doesn't misinterpret them as markup. The corruption starts when someone double-encodes: a backend encodes a field as HTML, stuffs it into JSON, and the frontend — which already treats JSON values as safe text — prints the raw entity. The result is a string that's escaped exactly once too many.</p>
+
+<p>The counter-intuitive part: the fix is usually at the source, not the display. If your API controls the data, stop encoding it as HTML in the first place; JSON handles its own escaping. If you're stuck with legacy data, decode the entity after you receive it — run the value through an <a href="/en/tools/html-entities">HTML entity decoder</a> once, before it hits your component. Decode at the boundary, and you never have to patch the renderer.</p>
+
+<h2>Where the Leaks Actually Show Up</h2>
+
+<p>This bug hides in the places you'd least expect. A CMS that stores rich text as encoded HTML, then serves it through an API, is a classic source. E-commerce titles with <code>&amp;</code> in the brand name, blog excerpts with curly quotes stored as <code>&rdquo;</code>, user-generated content that passed through a sanitizer — all of them arrive already encoded. The tell is that some fields render fine and others don't: the ones that look broken were encoded twice, the ones that look fine were encoded once or not at all.</p>
+
+<p>When you're debugging, check the raw value before you blame the frontend. If the field literally contains <code>&amp;amp;</code>, that's a double encode — decode once. If it contains a bare <code>&amp;</code> in the JSON text, that's an un-encoded source, and the renderer should handle it. A quick way to tell which layer is wrong is to paste the value into a <a href="/en/tools/markdown-preview">markdown preview</a> and watch how it renders as markup. And if you're dealing with URLs that got entity-encoded along the way, run them through a <a href="/en/tools/url-encoder">URL encoder/decoder</a> to normalize them back to a usable form.</p>
+
+<h2>Set One Rule and Stop Fighting It</h2>
+
+<p>The whole class of bugs disappears with one rule: HTML-encode at the moment you write HTML, and never store the encoded form. Store clean data, escape at the boundary, and let the frontend render what it receives. We covered the display side of this in our guide to <a href="/en/blog/html-entities-special-characters-cross-platform-encoding">special characters and cross-platform encoding</a>; the JSON leak is the same principle traveling backward. If you're already dealing with a corrupted feed and need to see what you're actually working with, the <a href="/en/tools/html-entities">HTML entity tool</a> will decode any batch of text in one pass — no regex, no guesswork.</p>`
+  },
+  {
+    slug: "fullscreen-text-teleprompter-presentation-guide",
+    title: "Fullscreen Text as a Teleprompter: Reading a Script Without Looking Like You're Reading",
+    description: "You're recording a video or giving a talk and the notes are too obvious. Here's how a fullscreen text display works as a free teleprompter — and the pacing tricks that make it invisible.",
+    date: "2026-08-26",
+    category: "Reference",
+    tags: ["teleprompter", "fullscreen text", "presentation", "video script", "public speaking"],
+    relatedTools: ["fullscreen-text", "text-repeater", "youtube-thumbnail"],
+    content: `<p>You record a product demo and your script is a crumpled page next to the webcam, or worse, you read straight off the monitor and your eyes are visibly darting. Viewers notice. The fix doesn't cost a teleprompter rig — a fullscreen text display on a second monitor does the same job, and you already have one. The trick isn't the tool, it's how you set up the text so your delivery stays natural.</p>
+
+<h2>Set Up the Text So Your Eyes Move Normally</h2>
+
+<p>A teleprompter only works if you can read without looking like you're reading. Put the text near the camera lens, not down on your desk — the closer it is to the lens, the less your eyes have to travel, and the more it looks like you're talking to the camera. A fullscreen text tool that renders large, high-contrast text on a dark background is ideal: your pupils won't glow, and the page won't bleed into your recording if it catches the webcam's edge.</p>
+
+<p>The counter-intuitive part: make the text big enough that you're reading phrases, not scanning lines. When lines are too wide, your eyes sweep side to side like you're reading a novel — a dead giveaway. Narrow the width, bump the font size, and you'll move your eyes in small natural shifts instead. You want the kind of reading rhythm you'd have in a conversation, and that comes from layout, not from willpower.</p>
+
+<h2>Control the Scroll With Your Own Pacing</h2>
+
+<p>Manual scroll and auto-scroll have different failure modes. Auto-scroll at a fixed speed fights you the moment you pause or ad-lib — you look down, the text is gone, and you scramble. Manual scroll gives you full control, but you need a smooth way to advance: a keyboard arrow on a tiny interval, or a mouse wheel you nudge as you finish a block. The trick is to set the display so it holds a paragraph until you choose to advance, which is exactly what a <a href="/en/tools/fullscreen-text">fullscreen text</a> display does well.</p>
+
+<p>Practice once with the layout before you record. Read the whole thing through, mark the natural pauses, and advance only at those points. If you find yourself losing your place, the fix is usually the same: fewer words on screen at once. When you need to repeat a line or run a mantra-style section, a <a href="/en/tools/text-repeater">text repeater</a> is the better tool for the job — it's built for looping content. And if you're also prepping the thumbnail or the end card for that video, keep the <a href="/en/tools/youtube-thumbnail">YouTube thumbnail size checker</a> open so your design fits the platform.</p>
+
+<h2>The Presentation Version</h2>
+
+<p>Live talks are a different setup. The screen faces you, not the audience, and the text sits below eye level on a lectern or stand. The same rules apply: big font, short lines, dark background, advance on your own timing. We covered using fullscreen displays for event signage in our guide to <a href="/en/blog/fullscreen-text-event-signage-digital-displays">digital displays at events</a>; the teleprompter case is the same tool pointed inward instead of outward. Set it up right, rehearse the pacing once, and nobody — including the recording — will know you had a script at all.</p>`
+  },
+  {
+    slug: "pet-wallpaper-multi-monitor-workplace-guide",
+    title: "Pet Wallpapers at Work: The Science of Cute on a Second Monitor",
+    description: "Two monitors, and one of them shows a rotating lineup of dogs and cats. It's not a distraction — there's research behind why it helps. Here's how to set it up without it becoming noise.",
+    date: "2026-08-26",
+    category: "Fun & Media",
+    tags: ["pet wallpaper", "animal photos", "workplace wellbeing", "stress relief", "multi-monitor"],
+    relatedTools: ["pet-wallpaper", "bing-wallpaper", "image-to-base64"],
+    content: `<p>You've got a second monitor that spends most of the day showing a spreadsheet or a near-empty chat window. Swap it to a rotating pet wallpaper and suddenly the workspace feels lighter — not because you're slacking, but because there's a measurable effect: looking at animal photos briefly lowers stress and improves focus. The research is real, and the setup is a two-minute job. The trick is to make the cute work with your workflow instead of against it.</p>
+
+<h2>Why Cute Actually Helps You Work</h2>
+
+<p>The mechanism is quick and documented: viewing animal images triggers a mild positive response, softens the heart-rate spike after a stressful email, and — the part people miss — a short break actually improves attention for the task after it. The counter-intuitive part: the wallpaper isn't a distraction from work, it's a reset that happens in the corner of your eye. A glance at a sleeping dog beats a glance at an unread inbox count, and it costs you nothing but the glance.</p>
+
+<p>The catch is that a good reset needs variety without overload. A static image goes invisible after a week — your brain stops registering it, and the benefit fades. A rapid slideshow becomes noise. The sweet spot is a slow rotation: one new image every few minutes, or a set you genuinely like cycling through the day. A <a href="/en/tools/pet-wallpaper">random pet wallpaper</a> tool does exactly this on a schedule, pulling fresh images so the surprise element stays alive without you curating anything.</p>
+
+<h2>Put It on the Right Screen</h2>
+
+<p>Screen placement matters more than you'd think. The wallpaper belongs on the monitor you glance at during a pause, not the one you read actively. If your primary monitor is where you work, keep it clean and put the pets on the second screen — the one that's otherwise dead weight between tasks. On a secondary display, the rotation doesn't compete with your reading; it fills a gap that would otherwise be a blank panel.</p>
+
+<p>If you want to blend a bit of professional polish with the cute, a curated feed like a <a href="/en/tools/bing-wallpaper">Bing wallpaper</a> gives you a daily dose of scenery, and you can mix it with your pet rotation. And if you have a favorite image from a wallpaper that you want to reuse elsewhere — say, in a presentation or a chat header — the <a href="/en/tools/image-to-base64">image to base64</a> tool turns it into a data URI you can drop straight into HTML. The psychology behind all of this, from stress reduction to why we find certain animals cute, is exactly the science we covered in our guide to <a href="/en/blog/pet-wallpaper-science-animal-cuteness-psychology">animal cuteness and the stress response</a> — same effect, now running quietly on your second monitor.</p>`
+  },
+  {
+    slug: "food-picker-team-lunch-decision-guide",
+    title: "Team Lunch, Five People, Zero Agreement: When a Random Food Picker Saves the Meeting",
+    description: "The 'what should we eat' debate can eat ten minutes of a lunch hour. Here's the case for letting a random picker break the tie — and the ground rules that keep it fair.",
+    date: "2026-08-26",
+    category: "Fun & Media",
+    tags: ["team lunch", "food picker", "decision fatigue", "group decision", "workplace"],
+    relatedTools: ["food-picker", "random-number-generator", "quotes"],
+    content: `<p>It's noon, five people, and the question is always the same: "So... where should we eat?" What follows is ten minutes of options vetoed one by one, a kitchen-cabinet negotiation over a burrito, and someone eventually saying "I don't care, you pick" while secretly caring a lot. The whole ritual is decision fatigue wearing a lunch-shaped costume. The fix that actually works — and survives group cynicism — is handing the final call to a random food picker, with a few rules agreed on first.</p>
+
+<h2>The Psychology of the Tiebreaker</h2>
+
+<p>The reason the debate drags is that nobody wants to be wrong about food, so nobody commits. A random picker removes the blame: it's not your choice, it's the wheel's. The counter-intuitive part: people accept a random result far more easily than they accept someone else's preference. A losing vote gets a shrug; a pick that came from a spinner gets a "fine, let's go" — because nobody's ego is on the line. That's why a <a href="/en/tools/food-picker">random food picker</a> isn't a cop-out, it's a decision instrument with social design built in.</p>
+
+<p>For it to work, the group has to pre-commit to the result. Agree on the shortlist first — everyone drops their vetoed options, then anything left in is fair game. Spin once, eat wherever it lands, and no second spins. The moment someone asks for a re-roll, the whole contract breaks, and you're back to negotiating with a tool that's now just another opinion.</p>
+
+<h2>Set It Up So the Shortlist Is Real</h2>
+
+<p>The quality of the result depends on the options you put in, not the randomness. A list of "every restaurant we've ever considered" is useless; a list of five places everyone could actually eat at is a decision made in seconds. Let each person contribute one option, kill the obvious no-gos together, and then let the picker choose from what's left. That structure is what separates a fair spin from a chaotic one.</p>
+
+<p>You can run the same mechanic for the parts of the decision that aren't about food. Need to decide who picks the place next time, or how to split a bill? A <a href="/en/tools/random-number-generator">random number generator</a> handles any numbered lottery. And if the debate pivots to philosophy instead of food — someone insists on "the best" place rather than a random one — a <a href="/en/tools/quotes">famous quotes directory</a> can settle the tone of the conversation faster than another round of arguments. The deeper pattern here is the one we explored in our guide to <a href="/en/blog/food-picker-psychology-decision-fatigue-daily-choices">decision fatigue and daily choices</a>: when choices are low-stakes and infinite, the random answer is often the best answer. Lunch included.</p>`
+  },
+  {
+    slug: "calorie-calculator-tdee-bmr-metabolism-guide",
+    title: "TDEE vs BMR: The Two Numbers Your Metabolism Actually Comes Down To",
+    description: "BMR is your body at rest; TDEE is your body doing a Tuesday. Mixing them up is how people overestimate what they burn. Here's how to read both — and why your 'slow metabolism' is usually something else.",
+    date: "2026-08-26",
+    category: "Calculator",
+    tags: ["TDEE", "BMR", "metabolism", "calorie calculator", "weight management"],
+    relatedTools: ["calorie-calculator", "bmi-calculator", "age-calculator"],
+    content: `<p>You hear "your metabolism" thrown around like it's one number, but it's actually two, and they're confused more than any pair in nutrition. BMR — basal metabolic rate — is the calories your body burns doing absolutely nothing: heart pumping, lungs filling, brain idling. TDEE — total daily energy expenditure — is everything on top of that: walking to the kitchen, tapping through meetings, the workout you did. People plan meals around one while tracking against the other, and the gap between them is where the miscalculation lives.</p>
+
+<h2>BMR Is Your Floor, Not Your Budget</h2>
+
+<p>BMR makes up roughly 60 to 70 percent of what you burn in a day, and it's the number most calculators default to showing. The counter-intuitive part: if you treat BMR as your daily target, you're dramatically undercounting what your body actually uses. A person with a BMR of 1,600 calories easily has a TDEE around 2,000 to 2,200 once activity is added in. Eating to BMR isn't a deficit — it's closer to starvation-mode math for an active person, and it produces exactly the fatigue and rebound that make people conclude their metabolism is broken.</p>
+
+<p>The reliable way to estimate BMR is a formula based on age, sex, weight, and height. It's a rough number — no equation knows your personal furnace — but it's consistent enough to build from. A <a href="/en/tools/calorie-calculator">calorie calculator</a> does the formula in one step, and it'll usually give you both numbers side by side if you look for the activity multiplier.</p>
+
+<h2>TDEE Is the Number You Actually Manage</h2>
+
+<p>Once you have BMR, TDEE is BMR times an activity factor — 1.2 for mostly desk-bound, 1.55 for moderately active, up to 1.9 for daily heavy training. The multiplier is where people lie to themselves: claiming 1.9 when the day is really a 1.3, then wondering why the scale doesn't move. The honest move is to pick the factor that matches an average week, not your best week, and adjust after two weeks of data. If you're losing more than expected, you were more active than you thought; less, and you overestimated.</p>
+
+<p>Here's the part that trips everyone up: body size and age shift BMR, and they shift it in ways that feel like a slow metabolism but usually aren't. Age matters because muscle mass drops and activity tends to fall with it — the same person at 45 with the same job as at 25 is moving less, and that's a TDEE problem, not a thyroid problem. The <a href="/en/tools/bmi-calculator">BMI calculator</a> gives you a quick frame for where your weight sits relative to height, and an <a href="/en/tools/age-calculator">age calculator</a> is worth a glance when you're comparing your number to a decade ago — age is baked into the equation. We covered estimating intake in real-world settings in our guide to <a href="/en/blog/calorie-calculator-restaurant-menu-estimation-strategy">estimating calories at restaurants</a>; the TDEE/BMR split is the other half of the same story, and now you know which number to trust.</p>`
+  },
+  {
+    slug: "md5-generator-hashing-basics-security-guide",
+    title: "MD5 vs SHA-256 vs UUID: Which Hash Tool Do You Actually Need",
+    description: "MD5, SHA-256, UUIDs — they all produce strings, but they're built for different jobs. Here's the honest comparison so you stop reaching for the wrong one.",
+    date: "2026-08-26",
+    category: "Developer",
+    tags: ["MD5", "SHA-256", "UUID", "hash function", "checksum"],
+    relatedTools: ["md5-generator", "hash-generator", "uuid-generator"],
+    content: `<p>You need a string that looks like a fingerprint, and you've got three tools that all make one: MD5, SHA-256, and UUID. They look interchangeable, and in a pinch they're not — each exists for a different job, and using the wrong one is how files get silently corrupted, passwords get stored insecurely, and IDs collide. Here's the honest comparison so you know which to reach for, and which to leave on the shelf.</p>
+
+<h2>MD5: Fast, Short, and Broken for Security</h2>
+
+<p>MD5 produces a 32-character hex string, runs in microseconds, and is everywhere — checksums in old software, deduplication, integrity labels. The counter-intuitive part: it's catastrophically fast, which is exactly why it's dead for security. Attackers can compute billions of MD5s per second, and real collision attacks exist. For a checksum that catches accidental corruption — a file that got truncated on a flaky USB stick — it's still serviceable, because an accidental flip is not an adversary. For anything an attacker could manipulate, it's a liability.</p>
+
+<p>If you need an integrity check and the file travels somewhere you don't fully control, step up to SHA-256. The <a href="/en/tools/hash-generator">hash generator</a> gives you both in one place, so there's no reason to type an MD5-only tool when you can grab the stronger sibling in the same click. The rule of thumb: MD5 when you only need to catch your own mistakes, SHA-256 when anyone else could touch the data.</p>
+
+<h2>SHA-256: The Security Workhorse</h2>
+
+<p>SHA-256 spits out 64 characters, and that extra length buys a lot: no practical collision attacks, resistance to tampering, and it's the basis of TLS certificates, Git commits, and password verification. It's slower than MD5 but still instant for any human-scale job. For password storage it's not the right tool either — that needs a deliberately slow, salted function — but for verifying that a download matches its checksum, or that two files are byte-identical, SHA-256 is the correct default.</p>
+
+<h2>UUIDs: Not Hashes, and That's the Point</h2>
+
+<p>The third string on the shelf is the odd one out. A UUID isn't a hash at all — it doesn't fingerprint content, it labels an entity. Two different files with identical content produce the same SHA-256 but different UUIDs, because a UUID is assigned, not derived. It's for database primary keys, event IDs, and anything that needs a globally unique identifier without coordination. The important rule: never generate a UUID from your own content, because then it's not unique anymore — it's a hash wearing a label.</p>
+
+<p>So the decision tree is short. Integrity check: MD5 for your own files, SHA-256 for anything shared. Password storage: neither — use a slow hash. Identifier: <a href="/en/tools/uuid-generator">UUID generator</a>. If you just need a fingerprint of some text right now and speed doesn't matter, the <a href="/en/tools/md5-generator">MD5 generator</a> is fine for a quick sanity check — just know it's a checksum, not a security guarantee. We covered using MD5 for file verification in our guide to <a href="/en/blog/md5-generator-file-integrity-checksum-verification">checksums and integrity checks</a>; this comparison is the part about choosing your tool wisely in the first place.</p>`
+  },
 ];
 
 export function getBlogPosts(): BlogPost[] { return blogPosts.sort((a,b)=>new Date(b.date).getTime()-new Date(a.date).getTime()); }
