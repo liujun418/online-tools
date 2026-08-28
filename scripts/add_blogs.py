@@ -1,163 +1,163 @@
-"""Add 6 blogs to free station (402->408) - August 21, 2026"""
-BLOG_FILE = r"C:\Users\jun\online-tools\src\lib\blog.ts"
+# -*- coding: utf-8 -*-
+import io
 
-with open(BLOG_FILE, "r", encoding="utf-8") as f:
+path = r"C:\Users\jun\online-tools\src\lib\blog.ts"
+with io.open(path, encoding="utf-8") as f:
     content = f.read()
 
 old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "regex-tester-lookahead-lookbehind-guide",
-    title: "Regex Lookahead and Lookbehind: Matching What Comes Next to the Match",
-    description: "You've mastered the basics — and you're still stuck writing 'password must contain a letter' checks. Lookahead and lookbehind are the tools you're missing.",
-    date: "2026-08-21",
+    slug: "regex-tester-catastrophic-backtracking-performance-guide",
+    title: "Your Regex Is Freezing: Catastrophic Backtracking, Explained",
+    description: "A regex that flies through most strings and hangs on one is usually doing the same work twice. Here's how catastrophic backtracking happens — and the pattern to spot before it eats your page.",
+    date: "2026-08-27",
     category: "Developer",
-    tags: ["regex lookahead", "regex lookbehind", "regular expressions", "password validation", "zero-width assertion"],
+    tags: ["regex", "backtracking", "ReDoS", "performance", "regular expressions"],
     relatedTools: ["regex-tester", "text-diff", "code-formatter"],
-    content: `<p>You're building a signup form and you need a rule: the password must contain at least one letter, one number, and be at least eight characters. The naive approach is three separate checks, or one giant regex that reads like a ransom note. Then a colleague mentions "lookahead" and "lookbehind," and suddenly you're supposed to write assertions that match things without consuming them. If those words make your eyes glaze over, this is the article for you — because these two zero-width assertions are the difference between fighting regex and letting it do the work.</p>
+    content: `<p>You've got a regex that validates usernames. It's been fine for months. Then one afternoon someone pastes a long string of the letter <code>a</code> into the form and the whole page hangs for ten seconds. The regex didn't get slower — it hit a pathological input, and the engine started doing the same failed work over and over. This is catastrophic backtracking, and it's the most common way a "fast" regex becomes a server-killer.</p>
 
-<h2>The Problem Lookahead Solves</h2>
+<h2>When a Regex Does the Same Work Twice</h2>
 
-<p>A normal pattern consumes characters as it matches. That's why a password check like <code>^(?=.*[a-z])</code> looks alien: the <code>(?=...)</code> is a lookahead. It looks forward, checks that the thing inside exists somewhere ahead, and then moves on without consuming anything — which is exactly what you want when you're stacking requirements. The pattern above means "at the start, somewhere ahead, there's a lowercase letter." You can chain them: <code>(?=.*[a-z])(?=.*[0-9])</code> verifies both a letter and a digit exist, anywhere, in one expression. The counter-intuitive part is that nothing is actually matched — the assertions are just checkpoints that must pass.</p>
+<p>Regex engines match by trying and failing. When a match fails at the end, the engine doesn't give up — it backtracks to the last choice point and tries another path. That's normal. The trouble starts when your pattern has two quantifiers that can match the same text. A classic is <code>(a+)+$</code> against a string of <code>a</code>s followed by an <code>X</code>. The outer <code>+</code> can split the group in a dozen ways, and for each split the inner <code>+</code> re-checks the same characters. The number of paths grows exponentially with the input length, so a 20-character string takes milliseconds and a 40-character one takes minutes. Same pattern, same task — just exponentially more work.</p>
 
-<h2>Lookbehind: The Other Direction</h2>
+<p>The counter-intuitive part: the string that breaks you often looks innocent. It's not a huge document; it's one long run of a single character, or an alternation like <code>(ab|a)+</code> where both branches can match the same prefix. The engine dutifully explores every dead end.</p>
 
-<p>Lookbehind is the mirror: it checks what came before the match position. The canonical case is prices — you want to match the number after a dollar sign without including the sign. <code>(?&lt;=\$)\d+</code> matches "49" in "$49" but not in "49", because it requires a dollar sign immediately behind. The mistake most people make is reaching for a capturing group and then writing code to strip the extra character — lookbehind removes the need for that dance entirely. Test both directions side by side in the <a href="/en/tools/regex-tester">regex tester</a> and the zero-width behavior becomes obvious: highlight the match and notice the cursor didn't advance past the assertion.</p>
+<h2>Spotting the Time Bomb (and Diffing the Fix)</h2>
 
-<h2>The Traps Nobody Warns You About</h2>
+<p>Two warning signs tell you a pattern is fragile. First, nested quantifiers — anything like <code>(x+)+</code> or <code>(x|y)+</code> where the same text can be consumed in more than one way. Second, alternations whose branches overlap at the start, like <code>(ab|a)*</code>. When you see either, test it on a long, near-match input before it ships. The fastest fix is often to restructure the pattern so the engine never has to retry: possessive quantifiers like <code>a++</code>, or an atomic group that commits once it matches. In many cases you can flatten the whole thing into a simpler token pattern that matches in one pass.</p>
 
-<p>The counter-intuitive part is that lookarounds change how you think about matching. A <code>(?!...)</code> negative lookahead is how you say "not followed by" — the classic "match <code>foo</code> not followed by <code>bar</code>." But people use it to mean "not containing," which is wrong. And lookbehind has a hard limit in most engines: fixed-length only. The <code>text-diff</code> tool compares strings line by line, but regex assertions compare positions — a different kind of diff. When you finally have an expression that passes, drop it into the <a href="/en/tools/code-formatter">code formatter</a> for the surrounding script, and future-you will thank past-you for the comments.</p>
+<p>Paste the suspicious pattern into a <a href="/en/tools/regex-tester">regex tester</a> and try it against a deliberately hostile string — if the match time balloons, you've found your bomb before your users did. When you're comparing a broken pattern against your fix, run both through a <a href="/en/tools/text-diff">text diff</a> on the same sample input so you can see exactly which construct changed the behavior. And once the fix is solid, keep the regex readable in your source with a <a href="/en/tools/code-formatter">code formatter</a> so the next person can actually review the logic instead of squinting at one long line.</p>
 
-<p>We covered the greedy-versus-lazy trap in our guide to <a href="/en/blog/regex-tester-lazy-greedy-quantifiers-guide">lazy vs greedy quantifiers</a>. Lookahead and lookbehind are the next rung — match the requirements, not the characters, and the password check writes itself.</p>`
+<h2>One Rule That Prevents Most of It</h2>
+
+<p>The habit that stops this class of bug: whenever you write a quantifier inside a group that's also quantified, pause and ask whether the engine could match the same characters more than one way. We covered the greedy-versus-lazy side of this in our guide to <a href="/en/blog/regex-tester-lazy-greedy-quantifiers-guide">lazy and greedy quantifiers</a>; catastrophic backtracking is what happens when the two of them get stacked. If a pattern ever makes you nervous, test it on the ugliest input you can invent before it goes anywhere near production.</p>`
   },
   {
-    slug: "youtube-thumbnail-file-size-export-guide",
-    title: "YouTube Thumbnail File Sizes and Export Settings: Why Your Upload Keeps Failing",
-    description: "The thumbnail looks perfect in Photoshop, but YouTube rejects it or blurs it. The problem is usually file size, format, or dimensions — here's the exact spec.",
-    date: "2026-08-21",
-    category: "Developer",
-    tags: ["youtube thumbnail", "thumbnail file size", "image export", "JPEG compression", "video thumbnails"],
-    relatedTools: ["youtube-thumbnail", "image-to-base64", "svg-minifier"],
-    content: `<p>You spend forty minutes on a thumbnail. The composition is great, the colors pop, the text is readable — it looks perfect in your editor. You drag it onto YouTube, and one of three things happens: the site says "invalid file," or it uploads and renders blurry, or it uploads fine but every text edge looks like it's wearing a halo. None of these mean your design is bad. They all mean your export settings are wrong, and the fix is a checklist you can memorize in one read-through.</p>
-
-<h2>The Spec That Almost Never Changes</h2>
-
-<p>YouTube wants a 16:9 image, 1280 by 720 pixels at minimum, in JPG, GIF, or PNG, and it recommends 2 MB or less — though in practice a photo-heavy PNG at 1280x720 blows well past that. The failure you're hitting is usually not dimensions. It's file size. A 12 MB PNG gets rejected outright; a 5 MB JPEG may upload but get aggressively re-compressed, which is where the halo around your text comes from. The counter-intuitive rule: smaller is better, because YouTube re-compresses whatever you give it, and a file that's already small and clean survives the second pass much better than a big one does.</p>
-
-<h2>Exporting That Passes the First Time</h2>
-
-<p>From your editor, export at exactly 1280x720 (or higher, always in 16:9). Use JPG with quality around 80-85 — that lands most thumbnails under 2 MB while keeping gradients smooth. If the JPG shows banding on a sky or gradient, that's the quality slider working against you; bump it, check the file size, and split the difference. A quick sanity check is to look at the actual byte size — the <a href="/en/tools/image-to-base64">image to base64</a> tool shows you the raw data weight of an image, which is a useful reality check for how much compression you're dealing with. And if you're exporting a simple graphic rather than a photo, PNG can beat JPG at the same size — JPG is for photos, PNG is for flat color.</p>
-
-<h2>What Actually Blurs Your Thumbnail</h2>
-
-<p>One more trap: the blur isn't always YouTube. If you're viewing the video at 360p, of course the thumbnail looks soft — that's the player, not the file. And if you preview it with the <a href="/en/tools/youtube-thumbnail">thumbnail preview tool</a>, you'll see exactly how it renders at every size before you commit. For most thumbnails, the <a href="/en/tools/svg-minifier">SVG minifier</a> won't help — YouTube doesn't take SVG — but the lesson it teaches applies: compress the asset, not the design. Export small, check at 720p, and your thumbnail will stop being the thing that made your video look low-budget.</p>
-
-<p>We covered the dimensions and preview workflow in our guide to <a href="/en/blog/youtube-thumbnail-size-tool-guide">thumbnail size preview</a>. This is the export half of that story — the file size and compression settings that decide whether your design survives the upload.</p>`
-  },
-  {
-    slug: "morse-code-memorize-fast-mnemonic-guide",
-    title: "How to Memorize Morse Code in an Afternoon (The Mnemonic Method)",
-    description: "Forget drilling dots and dashes for a week. There's a memory trick that maps every letter to a picture — and it works dramatically faster than repetition.",
-    date: "2026-08-21",
-    category: "Developer",
-    tags: ["morse code", "memorize morse", "mnemonics", "amateur radio", "code learning"],
-    relatedTools: ["morse-code", "text-repeater", "base-converter"],
-    content: `<p>Your uncle the ham radio operator has been after you for months: learn Morse code. You imagine weeks of flashcards and dot-dash drills. Then a friend who actually learned it tells you she did it in one weekend, and the secret isn't practice — it's pictures. Morse is just a code: a dot, a dash, and two gaps. The hard part is remembering which pattern belongs to which letter, and that's exactly the part a mnemonic system removes. Here's how the trick works and why it beats drilling every time.</p>
-
-<h2>Turn Every Letter Into a Story</h2>
-
-<p>The classic method gives each letter a word or picture whose shape echoes its code. Take <strong>M</strong> — dash dash. "Milk" starts with M, and the picture of a glass of milk has two drips? No — simpler: think of <strong>M</strong> as two dashes because "M" is two vertical strokes that look like two lines; or use the "dash-dash" mnemonic where the letter's sound carries the rhythm. The most famous system assigns each letter a word where the pattern of stressed syllables matches the dots and dashes: A (dot dash) becomes "a<b>HEAD</b>" — short-long. O (dash dash dash) is "MO-RA-TOR-IUM," three long beats. You memorize the words, and the code comes free.</p>
-
-<h2>Why the Picture Beats the Drill</h2>
-
-<p>The counter-intuitive part: you aren't memorizing Morse at all. You're memorizing a rhythm, and the rhythm is anchored to something your brain already stores well — words and pictures. That's why the mnemonic method is dramatically faster than rote repetition: instead of hundreds of exposures per letter, one vivid association does the job. The drill works for recognition speed, which matters for radio traffic — that's what Farnsworth timing is for. But recognition speed is built after recognition itself, and mnemonics build that first step in hours, not weeks.</p>
-
-<h2>Practice What You Just Learned</h2>
-
-<p>Once the associations are in, the <a href="/en/tools/morse-code">morse code translator</a> is your training partner: type a word, read the dots and dashes, say them in rhythm, check the output. Generate practice strings with the <a href="/en/tools/text-repeater">text repeater</a> and translate them cold. And if you want to see the underlying logic, the <a href="/en/tools/base-converter">base converter</a> is a reminder that Morse is one of the oldest binary codes — two symbols, like 0 and 1, just arranged by ear. Start with the ten easiest letters, build up, and by the end of the afternoon you'll be decoding your own name in your head.</p>
-
-<p>We covered the timing and pacing side in our guide to <a href="/en/blog/morse-code-timing-dit-dah-farnsworth-guide">Morse timing and the Farnsworth method</a>. Mnemonics get the code into your head; timing makes it fast. Learn the words first, and the dots and dashes become the easy part.</p>`
-  },
-  {
-    slug: "hashtag-generator-platform-rules-guide",
-    title: "Hashtags by Platform: Instagram, TikTok, and X Have Different Rules",
-    description: "Thirty hashtags works on Instagram and tanks on X. Here's the platform-by-platform playbook — and how to generate the right set for each.",
-    date: "2026-08-21",
-    category: "Text Tools",
-    tags: ["hashtag strategy", "Instagram hashtags", "TikTok hashtags", "Twitter hashtags", "social media"],
-    relatedTools: ["hashtag-generator", "fancy-text-generator", "text-to-slug"],
-    content: `<p>You found a great hashtag strategy article, followed it to the letter, and posted the same 30-tag set to Instagram, TikTok, and X. Instagram gave you a small but steady lift. TikTok did nothing. And X users replied "put the hashtags in the replies" and moved on. The article wasn't wrong — it was written for Instagram. Hashtags are not one system. Each platform runs its own ranking logic, and the same tag set that earns you reach on one feed can actively hurt you on another.</p>
-
-<h2>Instagram: Stack Them, but Realistically</h2>
-
-<p>Instagram allows up to 30 and still rewards a solid stack — though the golden range is 20-25, with a mix of broad and niche tags. The mistake is posting 30 maxed-out tags under every photo; Instagram has been quietly downranking that pattern for years. The counter-intuitive part: the tags you think are working (the big ones, millions of posts) are usually not. They bury you in a sea of content within an hour. The <a href="/en/tools/hashtag-generator">hashtag generator</a> handles the mechanical part — but on Instagram, curate down to the tags you could actually win, then rotate them per post.</p>
-
-<h2>TikTok: Fewer, Smarter, or None</h2>
-
-<p>TikTok's search and the For You feed care less about your hashtags than about watch time and completion rate. Three to five tags is the norm; some creators post with none and do fine. What matters on TikTok is the caption's first line and whether people finish the video. The mistake is dumping a 30-tag block into a TikTok caption — it reads as spam and eats caption space that should sell the hook. Tags like #fyp are effectively worthless; they're the "big tag" mistake on a platform where the algorithm ignores them.</p>
-
-<h2>X: Be Sparse or Be Punished</h2>
-
-<p>X is where hashtag hygiene matters most. One to three tags max, and they should read like words a person would say, not a keyword dump. Posts stuffed with hashtags get reduced reach, because X has always treated them as a spam signal. The counter-intuitive part: on X, the <a href="/en/tools/text-to-slug">text to slug</a> tool is closer to the right mental model than a hashtag generator — you want a clean, readable topic tag, not a keyword list. And if you're optimizing your profile's searchable bio, the <a href="/en/tools/fancy-text-generator">fancy text generator</a> handles the styling while you keep the hashtags honest.</p>
-
-<p>We covered niche versus trending tags in our guide to <a href="/en/blog/hashtag-generator-social-media-niche-vs-trending">hashtag niche strategy</a>. The platform rules are the layer above: the same philosophy, tuned per feed. Generate the set, then ask which platform you're posting to — the answer changes the stack.</p>`
-  },
-  {
-    slug: "remove-duplicate-lines-case-whitespace-guide",
-    title: "'Apple' vs 'apple' vs 'apple ': The Traps Hiding Inside 'Duplicate'",
-    description: "You dedupe a list and duplicates remain. Probably because 'Apple', 'apple', and 'apple ' are three different strings. Here's how to actually clean a list.",
-    date: "2026-08-21",
-    category: "Text Tools",
-    tags: ["deduplicate", "duplicate lines", "case sensitivity", "whitespace", "data cleaning"],
-    relatedTools: ["remove-duplicate-lines", "text-sorter", "case-converter"],
-    content: `<p>You run a membership list through a duplicate remover, watch it report "1,204 duplicates removed," and feel great. Then you spot it: "John Smith" and "john smith" both still on the list. You rerun it — nothing happens. The tool isn't broken. "John Smith" and "john smith" are different strings, and a default dedupe compares strings byte for byte. The word "duplicate" hides more traps than you'd think, and this is where most people's data-cleaning confidence dies.</p>
-
-<h2>The Three Hidden Duplicates</h2>
-
-<p>There are three kinds of near-duplicates that a naive dedupe misses. Case: "Apple" vs "apple". Whitespace: "apple " vs "apple" — a trailing space makes them different. And invisible characters: a full-width space, a tab, a non-breaking space. Each one looks identical in a spreadsheet cell and is a completely different string to a computer. The counter-intuitive part is that most dedupe tools only offer an exact match, so the list that "already cleaned" is still full of these ghosts. The fix is normalization before deduplication: decide that case and whitespace don't matter, and make them consistent first.</p>
-
-<h2>Normalize, Then Dedupe</h2>
-
-<p>The reliable workflow is three steps. First, normalize the case — convert everything to lowercase (or title case if you're keeping a display list) with the <a href="/en/tools/case-converter">case converter</a>. Second, strip the whitespace — remove leading, trailing, and doubled spaces so "apple " and "apple" become the same string. Third, run the <a href="/en/tools/remove-duplicate-lines">duplicate line remover</a> on the normalized text, then restore your formatting. The result is a list that's actually clean, not just visually clean.</p>
-
-<h2>Sorting Helps You See What's Left</h2>
-
-<p>The final check is visual, and it's the one people skip. After dedupe, run the list through the <a href="/en/tools/text-sorter">text sorter</a> — grouping identical-looking entries together makes the survivors obvious. If "Smith, John" and "Smith, John" still appear side by side, you've found a format difference, not a duplicate problem — a comma instead of a space, a period after the initial. And remember: for real data work, decide your rules once and write them down, because next month's list will be different but the traps won't be.</p>
-
-<p>We compared the browser tool to spreadsheet dedup in our guide to <a href="/en/blog/remove-duplicate-lines-vs-excel-dedup">remove duplicates vs Excel</a>. Normalization is the step both approaches share — and the step most people skip. Clean the case, clean the spaces, then dedupe for real.</p>`
-  },
-  {
-    slug: "life-hacks-smartphone-battery-storage-guide",
-    title: "Smartphone Life Hacks: Battery, Storage, and Privacy Fixes That Actually Work",
-    description: "Your phone dies by noon and storage is always full. Half the advice online is a myth. Here's what actually helps — battery, storage, and the privacy setting nobody uses.",
-    date: "2026-08-21",
+    slug: "life-hacks-notification-digital-declutter-guide",
+    title: "Stop the Ping: Notification Hacks That Quiet Your Day",
+    description: "Every ping is a tiny promise of dopamine and a tiny tax on your focus. Here's the notification-cleaning routine that takes twenty minutes and pays for itself all day.",
+    date: "2026-08-27",
     category: "Fun & Media",
-    tags: ["smartphone hacks", "battery life", "phone storage", "phone privacy", "life hacks"],
-    relatedTools: ["life-hacks", "password-generator", "qr-code-generator"],
-    content: `<p>It's 2pm and your phone is at 12%, again. You've closed all the apps, turned the brightness down, and switched to battery saver — and it still died by the time you left work. Meanwhile a friend's phone, same model, lasts until midnight. The difference isn't a magic app; it's a handful of settings that most battery advice gets backward. And the same story is true for storage and privacy: the fixes that actually work are specific, and the ones that don't are the ones everyone repeats.</p>
+    tags: ["notifications", "digital declutter", "focus", "productivity", "phone habits"],
+    relatedTools: ["life-hacks", "time-screen", "password-generator"],
+    content: `<p>Your phone pings, you glance at it, and forty minutes later you're three threads deep in a conversation you never meant to join. The ping isn't the problem — the access is. Every notification is an open invitation for your attention, and the math is brutal: a two-second glance costs about twenty minutes of focus to recover. The fix isn't willpower. It's a one-time cleanup of who's allowed to reach you, and it takes about twenty minutes.</p>
 
-<h2>Battery: Ignore the Myths, Change the Settings</h2>
+<h2>Why Every Ping Is a Tiny Tax</h2>
 
-<p>Closing background apps usually makes things worse — reopening them costs more energy than leaving them suspended. The real battery drains are screen brightness, location, and push notifications. The counter-intuitive fix: turn off "Precise Location" for apps that don't need it, and limit background refresh to the two apps you actually use in the background. Also, your phone's adaptive battery setting takes weeks to learn your habits — give it time instead of disabling it. And battery saver isn't a switch for emergencies; it's a profile you can leave on and lose almost nothing in daily use.</p>
+<p>Notifications are engineered around a slot-machine loop. Most of them are worthless, but the occasional one is genuinely important, and that unpredictability is exactly what keeps you checking. The counter-intuitive part: cutting most notifications doesn't make you miss things — it makes the ones that remain actually register. When everything pings, your brain learns to filter everything out, including the message from your kid's school that mattered. A quieter phone is a phone you trust.</p>
 
-<h2>Storage: The Two Things That Eat Everything</h2>
+<p>The second cost is fragmentation. A notification doesn't just steal the seconds you spend reading it; it pulls you out of whatever you were doing, and switching costs are real. Twenty notifications is twenty context switches, even if you ignore most of them. That's the tax nobody budgets for.</p>
 
-<p>Your "system" storage isn't bloated — it's almost always your photo library and your message attachments. The fix that works: enable "optimize storage" so full-resolution originals live in the cloud, and set messages to auto-delete attachments after 30 days. If you have thousands of screenshots, those are the real hoarders. And when you're about to buy more iCloud storage, first ask whether you actually need everything — deleting the screenshots and the 40 GIFs your group chat sent usually frees more than you think.</p>
+<h2>The Twenty-Minute Cleanup</h2>
 
-<h2>Privacy: The Setting Nobody Uses</h2>
+<p>Start with the heavy hitters: open your notification settings and turn off everything that isn't a person or a payment. Apps that want your attention for engagement — games, shopping, news — get silent at minimum, off entirely where you can. Next, batch your checks. Pick two or three windows a day when you allow yourself to look, and run a focus countdown in between so the urge has a visible end point instead of a vague "later."</p>
 
-<p>The single most useful privacy toggle is the per-app location permission — switching apps from "Always" to "While Using" kills a silent tracker you never see. Next: your phone can generate strong, unique passwords for every login, and that's the <a href="/en/tools/password-generator">password generator</a> principle applied to your life: never reuse a password, let the phone's vault remember them. And one genuinely clever hack: when you have guests, share your Wi-Fi by generating a <a href="/en/tools/qr-code-generator">QR code</a> instead of reading out a 20-character password — they scan, they're on, and you never said a word. These are the settings that make a phone feel like it has room to breathe.</p>
+<p>Finally, do a small security reset while you're in there. If you've been unsubscribing from a dozen noisy lists and deleting apps that were pulling you back in, rotate the passwords on the accounts you actually keep — a <a href="/en/tools/password-generator">password generator</a> gives you a fresh one in a single click instead of reaching for the same old string. The point of the cleanup is that you decide who reaches you, so make sure the accounts that stay are the ones you can defend. And when you need to hold the line during a work block, put a <a href="/en/tools/time-screen">fullscreen countdown</a> on your second screen — it makes the "no checking until it ends" rule concrete instead of a promise you'll break.</p>
 
-<p>We covered productivity and home-office habits in our guide to <a href="/en/blog/life-hacks-remote-workers-home-office-productivity">life hacks for remote workers</a>. Your phone is the other half of the digital day — fix the battery, free the storage, and turn off what's tracking you, and the "my phone is dying" panic goes with it.</p>`
+<h2>Build the Habit on Top of the Cleanup</h2>
+
+<p>The tools matter less than the default: new apps start silent, and you opt in to alerts only when one proves useful. We covered building better daily habits in our guide to <a href="/en/blog/life-hacks-morning-routine-productivity-science-based">science-based morning routines</a>; the notification cleanup is the evening version of the same idea — set up the environment so the right behavior is the easy one. It's twenty minutes once, and your attention is yours again.</p>`
+  },
+  {
+    slug: "morse-code-learn-by-ear-listening-guide",
+    title: "Learning Morse by Ear: Your Brain Learns to Hear, Not Memorize",
+    description: "Morse isn't a code you translate letter by letter — it's a sound your brain recognizes as a whole word. Here's the listening method that beats the flashcard approach.",
+    date: "2026-08-27",
+    category: "Developer",
+    tags: ["Morse code", "listening", "ear training", "ham radio", "learning method"],
+    relatedTools: ["morse-code", "text-repeater", "base-converter"],
+    content: `<p>Most people learn Morse the way it's printed in a handbook: a table of letters and their dot-dash patterns, memorized like a spelling list. Then they hear a real signal — dits and dahs flowing at speed — and it's just noise. The problem isn't your memory. Morse at any useful speed isn't a code you translate; it's a sound your brain learns to recognize the way it recognizes a spoken word. You don't hear "dash-dot" and think <em>n</em>. You hear the whole rhythm and know it instantly.</p>
+
+<h2>Morse Is a Sound, Not a Table</h2>
+
+<p>Here's the counter-intuitive part of learning by ear: you should start by <em>not</em> memorizing the code at all. Beginners who drill the table tend to count dots and dashes as they arrive, and counting is exactly what makes a fast signal impossible — by the time you've counted four characters, the next one is gone. Instead, play one character at a time and listen to its shape. The character <code>dit-dah-dit</code> isn't three symbols; it's the sound of the letter <code>r</code>, as distinct in Morse as the difference between the spoken words "at" and "it." Your brain builds this recognition the same way it builds word recognition in speech: not by assembling phonemes, but by hearing whole units enough times that the pattern snaps into place.</p>
+
+<h2>Train the Ear With Spacing and Repetition</h2>
+
+<p>The technique that makes this work is called Farnsworth spacing. You keep the dots and dashes at a realistic speed so each character sounds like the real thing, but you leave long gaps between characters — sometimes several seconds. The gap gives your brain time to absorb the sound as a unit, and as recognition improves you shorten the gaps until the characters flow at full speed. Sessions should be short and frequent; ten minutes a day beats an hour on Sunday, because the recognition builds during sleep.</p>
+
+<p>Practice with real words, not random letters. Start with your own name, common words, and call signs, and copy them until the sound of each one is automatic. A <a href="/en/tools/text-repeater">text repeater</a> is perfect for this — loop a short phrase and copy it until you can take it down without thinking, then swap in the next one. When you're stuck on a character, use a <a href="/en/tools/morse-code">Morse code translator</a> to hear the single character on its own, in isolation, so your ear can lock onto it before you meet it again in a stream. And if the whole thing feels abstract, it helps to know Morse is a binary code at heart — every character is a pattern of two symbols, and the same logic that powers <a href="/en/tools/base-converter">number base conversion</a> is running under the dits and dahs. The code isn't magic; it's just a language your ear can be trained to speak.</p>
+
+<h2>The Flashcard Trap</h2>
+
+<p>Flashcards teach your eyes, and Morse is a listening skill. We covered the memorization side in our guide to <a href="/en/blog/morse-code-memorize-fast-mnemonic-guide">mnemonics and fast memorization</a>, and that's a fine first day. But the moment a real signal is involved, switch to ear training — play the sound, copy it, repeat. Your brain will do the rest, and one day you'll realize you stopped counting dits a week ago.</p>`
+  },
+  {
+    slug: "ip-lookup-wrong-country-geolocation-guide",
+    title: "Why Sites Think You're in Another Country (and How to Check)",
+    description: "A store prices things in the wrong currency and a streaming catalog is missing your region. It's not a broken setting — it's how IP geolocation works. Here's what the internet thinks about you.",
+    date: "2026-08-27",
+    category: "Reference",
+    tags: ["IP geolocation", "IP lookup", "location", "streaming", "privacy"],
+    relatedTools: ["ip-lookup", "global-weather", "world-map"],
+    content: `<p>You open a store and the prices are in a currency you've never used. A streaming service is showing you a catalog that looks like it belongs to another country. Your first instinct is that a setting is wrong, so you dig through preferences and find nothing. The real explanation is boring and useful: the site isn't looking at your location at all. It's looking at your IP address, and your IP doesn't live where you do.</p>
+
+<h2>What "Your IP Location" Actually Means</h2>
+
+<p>IP geolocation doesn't triangulate your position like GPS. It looks up your IP address in a database that says "this block of addresses belongs to a company registered in X city," and X city is often the ISP's headquarters, a data center, or a registration office — not your neighborhood. The counter-intuitive part is that the more legitimately you use the internet, the more likely this is to be wrong: corporate networks route everyone through one office exit, VPNs exit from wherever their servers are, and mobile carriers hand out addresses from regional pools that can be hundreds of miles from the phone. You can be sitting in Chicago while the whole internet thinks you're in a server farm in Dallas.</p>
+
+<h2>Checking What the Internet Thinks</h2>
+
+<p>The quickest reality check is to look up your own IP and compare the reported city to where you actually are. Run an <a href="/en/tools/ip-lookup">IP lookup</a> and read the location it returns — if it says a city you've never visited, that's your geolocation database entry, not a bug in your browser. A neat way to confirm what's happening: check the weather. Pull up a <a href="/en/tools/global-weather">global weather</a> lookup for the city your IP claims, and if the forecast is clearly for somewhere else, you have visual proof that your traffic is exiting from the other location. For the full picture, a <a href="/en/tools/world-map">world map</a> view of your IP's reported position makes it obvious at a glance whether it's landing where you expect.</p>
+
+<h2>What You Can (and Can't) Do About It</h2>
+
+<p>Some mismatches you can fix, some you can't. If your ISP or VPN is routing you through the wrong region, a different exit server often clears it up. But many sites will keep geolocating you wrong no matter what you do, because the database hasn't been updated. We covered the deliberate side of this — VPNs and geo-blocking — in our guide to <a href="/en/blog/ip-lookup-geo-blocking-vpn-detection-guide">geo-blocking and VPN detection</a>. The honest takeaway: when a site shows you the wrong country, don't assume it's broken. Check your IP first, understand where the mismatch comes from, and you'll stop wasting time on settings that were never the problem.</p>`
+  },
+  {
+    slug: "time-screen-meeting-countdown-timer-guide",
+    title: "Fullscreen Countdown: Keeping Meetings and Talks On Time",
+    description: "Meetings run long because nobody watches the clock. A visible countdown changes that — here's how to run one on the screen you already have, and the human rules that make it work.",
+    date: "2026-08-27",
+    category: "Reference",
+    tags: ["countdown timer", "meetings", "time management", "presentations", "fullscreen"],
+    relatedTools: ["time-screen", "fullscreen-text", "scoreboard"],
+    content: `<p>You're in a weekly meeting that should take thirty minutes. At minute thirty-five, someone is still warming up to their point, because nobody in the room is watching the clock. Meetings run long for a boring reason: time is invisible, and an invisible deadline doesn't constrain anyone. Put a countdown on the screen, though, and the whole room changes behavior — speakers wrap up, tangents die faster, and the meeting ends when it said it would. You already have the screen; here's how to run it properly.</p>
+
+<h2>Why a Visible Timer Changes Behavior</h2>
+
+<p>Work expands to fill the time available — that's Parkinson's law, and it's why open-ended slots run long. The counter-intuitive fix is a countdown rather than a stopwatch. An elapsed timer tells you how long you've been going, which reads as "we're fine, plenty left." A countdown tells you what's left, which reads as pressure — and mild pressure is exactly what keeps people concise. The seconds visibly running out do something an agenda item never can: they make the deadline public and shared. Everyone in the room watches the same number fall, so the person who's rambling knows they're rambling, and it's the timer, not you, doing the interrupting.</p>
+
+<h2>Running It on the Screen You Already Have</h2>
+
+<p>Use a second monitor if you have one, or the room's projector, and put a <a href="/en/tools/time-screen">fullscreen countdown</a> on it — large, high-contrast digits that everyone can read from across the table. The display matters less than the rules you attach to it, and the rules are three: warn at two minutes, hard-stop at zero, and never extend for a straggler. If you extend once, you've taught the room that the countdown is a suggestion, and it stops working forever. For talks with a written agenda, you can put the topic list on the same screen next to the countdown with a <a href="/en/tools/fullscreen-text">fullscreen text</a> display, so people see what's coming and the timer together. And if the event is competitive — a game night, a quiz, a workshop with teams — a <a href="/en/tools/scoreboard">scoreboard</a> alongside the countdown keeps both the time and the score visible, which does the same job for fun that the countdown does for work.</p>
+
+<h2>When the Countdown Works Best</h2>
+
+<p>The technique shines in two places: meetings where one person tends to dominate, and presentations where the speaker has a hard time feeling the clock. We covered the difference between a clock and a stopwatch in our guide to <a href="/en/blog/time-screen-vs-stopwatch-clock-display-vs-elapsed-time">clock displays versus elapsed time</a>; the countdown is the third mode — a deadline you can see. Set it, state the rules once, and let the timer be the bad guy. Your meetings will end when they're supposed to, and everyone will quietly thank you for it.</p>`
+  },
+  {
+    slug: "mortgage-calculator-affordability-rule-guide",
+    title: "How Much House Can You Actually Afford? The 28% Rule, Tested",
+    description: "A lender says you're approved for way more than you'd borrow, and a friend quotes the 28% rule. Neither is the truth. Here's how to size a mortgage against your real budget.",
+    date: "2026-08-27",
+    category: "Calculator",
+    tags: ["mortgage", "affordability", "28% rule", "home buying", "budgeting"],
+    relatedTools: ["mortgage-calculator", "income-tax-calculator", "compound-interest"],
+    content: `<p>You get pre-approved, and the number is bigger than anything you'd ever comfortably borrow. A friend counters with the 28% rule. Both of them are answering a different question than the one you're actually asking. The lender is telling you the maximum a bank will tolerate. The rule is a rough guardrail. What you need is the number that works when your actual income, your actual bills, and an honest look at ownership costs are all in the same room — and that number is almost always lower than both.</p>
+
+<h2>What the 28% Rule Is Really For</h2>
+
+<p>The 28% rule says your housing costs should stay under 28% of gross income, and the related 36% figure caps total debt. Those numbers exist because they're the ceilings banks use when deciding whether to approve a loan — they measure risk to the lender, not comfort for you. The counter-intuitive part: the rule is a sanity check, not a target. If 28% of your gross income feels tight because you live in an expensive city or you're carrying other debt, you're allowed to aim lower. The rule was never a budgeting method; it's a filter to keep obviously bad loans from happening.</p>
+
+<h2>The Honest Way to Size a Loan</h2>
+
+<p>Start with net income, not gross. Run your pay through an <a href="/en/tools/income-tax-calculator">income tax calculator</a> so you're working with what actually lands in your account, then build the real monthly number: principal and interest, property tax, insurance, and a maintenance allowance. That's the PITI-plus number, and it's higher than the shiny "monthly payment" a calculator spits out before you add the rest. This is where a <a href="/en/tools/mortgage-calculator">mortgage calculator</a> earns its keep — not to tell you the payment, but to let you try different prices, rates, and down payments quickly and see which combination keeps your total under your real budget.</p>
+
+<p>Then stress-test it. Ask what the payment looks like at a rate one or two points higher, and whether your budget survives a lean month or a job change. Ownership is a thirty-year commitment with yearly surprises, and the math should work for the worst realistic case, not just today's. One number worth seeing before you commit: the total interest over the life of the loan. A <a href="/en/tools/compound-interest">compound interest calculator</a> shows you what that rate does across three decades, and for most people it's the moment the "affordable" monthly payment stops looking so cheap.</p>
+
+<h2>The Verdict Is Your Budget's, Not the Calculator's</h2>
+
+<p>The calculator gives you a number; your budget gives you the verdict. We walked through the basics in our guide for <a href="/en/blog/mortgage-calculator-first-time-home-buyer-guide">first-time home buyers</a>, and the same principle holds one step deeper: pre-approval is the bank's ceiling, 28% is the industry's guardrail, and the number that actually works is the one that leaves you sleeping well every month. Aim for that one.</p>`
   },
 ];
 
 export function getBlogPosts(): BlogPost[]"""
 
+assert content.count(old) == 1, "marker not found or not unique"
 content = content.replace(old, new_blogs)
-
-with open(BLOG_FILE, "w", encoding="utf-8", newline="\n") as f:
+with io.open(path, "w", encoding="utf-8", newline="\n") as f:
     f.write(content)
-
-print("Free station: 402->408 objects done.")
+print("OK free station blogs inserted")
