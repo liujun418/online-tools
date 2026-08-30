@@ -9,148 +9,136 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "regex-tester-catastrophic-backtracking-performance-guide",
-    title: "Your Regex Is Freezing: Catastrophic Backtracking, Explained",
-    description: "A regex that flies through most strings and hangs on one is usually doing the same work twice. Here's how catastrophic backtracking happens — and the pattern to spot before it eats your page.",
-    date: "2026-08-27",
-    category: "Developer",
-    tags: ["regex", "backtracking", "ReDoS", "performance", "regular expressions"],
-    relatedTools: ["regex-tester", "text-diff", "code-formatter"],
-    content: `<p>You've got a regex that validates usernames. It's been fine for months. Then one afternoon someone pastes a long string of the letter <code>a</code> into the form and the whole page hangs for ten seconds. The regex didn't get slower — it hit a pathological input, and the engine started doing the same failed work over and over. This is catastrophic backtracking, and it's the most common way a "fast" regex becomes a server-killer.</p>
-
-<h2>When a Regex Does the Same Work Twice</h2>
-
-<p>Regex engines match by trying and failing. When a match fails at the end, the engine doesn't give up — it backtracks to the last choice point and tries another path. That's normal. The trouble starts when your pattern has two quantifiers that can match the same text. A classic is <code>(a+)+$</code> against a string of <code>a</code>s followed by an <code>X</code>. The outer <code>+</code> can split the group in a dozen ways, and for each split the inner <code>+</code> re-checks the same characters. The number of paths grows exponentially with the input length, so a 20-character string takes milliseconds and a 40-character one takes minutes. Same pattern, same task — just exponentially more work.</p>
-
-<p>The counter-intuitive part: the string that breaks you often looks innocent. It's not a huge document; it's one long run of a single character, or an alternation like <code>(ab|a)+</code> where both branches can match the same prefix. The engine dutifully explores every dead end.</p>
-
-<h2>Spotting the Time Bomb (and Diffing the Fix)</h2>
-
-<p>Two warning signs tell you a pattern is fragile. First, nested quantifiers — anything like <code>(x+)+</code> or <code>(x|y)+</code> where the same text can be consumed in more than one way. Second, alternations whose branches overlap at the start, like <code>(ab|a)*</code>. When you see either, test it on a long, near-match input before it ships. The fastest fix is often to restructure the pattern so the engine never has to retry: possessive quantifiers like <code>a++</code>, or an atomic group that commits once it matches. In many cases you can flatten the whole thing into a simpler token pattern that matches in one pass.</p>
-
-<p>Paste the suspicious pattern into a <a href="/en/tools/regex-tester">regex tester</a> and try it against a deliberately hostile string — if the match time balloons, you've found your bomb before your users did. When you're comparing a broken pattern against your fix, run both through a <a href="/en/tools/text-diff">text diff</a> on the same sample input so you can see exactly which construct changed the behavior. And once the fix is solid, keep the regex readable in your source with a <a href="/en/tools/code-formatter">code formatter</a> so the next person can actually review the logic instead of squinting at one long line.</p>
-
-<h2>One Rule That Prevents Most of It</h2>
-
-<p>The habit that stops this class of bug: whenever you write a quantifier inside a group that's also quantified, pause and ask whether the engine could match the same characters more than one way. We covered the greedy-versus-lazy side of this in our guide to <a href="/en/blog/regex-tester-lazy-greedy-quantifiers-guide">lazy and greedy quantifiers</a>; catastrophic backtracking is what happens when the two of them get stacked. If a pattern ever makes you nervous, test it on the ugliest input you can invent before it goes anywhere near production.</p>`
-  },
-  {
-    slug: "life-hacks-notification-digital-declutter-guide",
-    title: "Stop the Ping: Notification Hacks That Quiet Your Day",
-    description: "Every ping is a tiny promise of dopamine and a tiny tax on your focus. Here's the notification-cleaning routine that takes twenty minutes and pays for itself all day.",
-    date: "2026-08-27",
-    category: "Fun & Media",
-    tags: ["notifications", "digital declutter", "focus", "productivity", "phone habits"],
-    relatedTools: ["life-hacks", "time-screen", "password-generator"],
-    content: `<p>Your phone pings, you glance at it, and forty minutes later you're three threads deep in a conversation you never meant to join. The ping isn't the problem — the access is. Every notification is an open invitation for your attention, and the math is brutal: a two-second glance costs about twenty minutes of focus to recover. The fix isn't willpower. It's a one-time cleanup of who's allowed to reach you, and it takes about twenty minutes.</p>
-
-<h2>Why Every Ping Is a Tiny Tax</h2>
-
-<p>Notifications are engineered around a slot-machine loop. Most of them are worthless, but the occasional one is genuinely important, and that unpredictability is exactly what keeps you checking. The counter-intuitive part: cutting most notifications doesn't make you miss things — it makes the ones that remain actually register. When everything pings, your brain learns to filter everything out, including the message from your kid's school that mattered. A quieter phone is a phone you trust.</p>
-
-<p>The second cost is fragmentation. A notification doesn't just steal the seconds you spend reading it; it pulls you out of whatever you were doing, and switching costs are real. Twenty notifications is twenty context switches, even if you ignore most of them. That's the tax nobody budgets for.</p>
-
-<h2>The Twenty-Minute Cleanup</h2>
-
-<p>Start with the heavy hitters: open your notification settings and turn off everything that isn't a person or a payment. Apps that want your attention for engagement — games, shopping, news — get silent at minimum, off entirely where you can. Next, batch your checks. Pick two or three windows a day when you allow yourself to look, and run a focus countdown in between so the urge has a visible end point instead of a vague "later."</p>
-
-<p>Finally, do a small security reset while you're in there. If you've been unsubscribing from a dozen noisy lists and deleting apps that were pulling you back in, rotate the passwords on the accounts you actually keep — a <a href="/en/tools/password-generator">password generator</a> gives you a fresh one in a single click instead of reaching for the same old string. The point of the cleanup is that you decide who reaches you, so make sure the accounts that stay are the ones you can defend. And when you need to hold the line during a work block, put a <a href="/en/tools/time-screen">fullscreen countdown</a> on your second screen — it makes the "no checking until it ends" rule concrete instead of a promise you'll break.</p>
-
-<h2>Build the Habit on Top of the Cleanup</h2>
-
-<p>The tools matter less than the default: new apps start silent, and you opt in to alerts only when one proves useful. We covered building better daily habits in our guide to <a href="/en/blog/life-hacks-morning-routine-productivity-science-based">science-based morning routines</a>; the notification cleanup is the evening version of the same idea — set up the environment so the right behavior is the easy one. It's twenty minutes once, and your attention is yours again.</p>`
-  },
-  {
-    slug: "morse-code-learn-by-ear-listening-guide",
-    title: "Learning Morse by Ear: Your Brain Learns to Hear, Not Memorize",
-    description: "Morse isn't a code you translate letter by letter — it's a sound your brain recognizes as a whole word. Here's the listening method that beats the flashcard approach.",
-    date: "2026-08-27",
-    category: "Developer",
-    tags: ["Morse code", "listening", "ear training", "ham radio", "learning method"],
-    relatedTools: ["morse-code", "text-repeater", "base-converter"],
-    content: `<p>Most people learn Morse the way it's printed in a handbook: a table of letters and their dot-dash patterns, memorized like a spelling list. Then they hear a real signal — dits and dahs flowing at speed — and it's just noise. The problem isn't your memory. Morse at any useful speed isn't a code you translate; it's a sound your brain learns to recognize the way it recognizes a spoken word. You don't hear "dash-dot" and think <em>n</em>. You hear the whole rhythm and know it instantly.</p>
-
-<h2>Morse Is a Sound, Not a Table</h2>
-
-<p>Here's the counter-intuitive part of learning by ear: you should start by <em>not</em> memorizing the code at all. Beginners who drill the table tend to count dots and dashes as they arrive, and counting is exactly what makes a fast signal impossible — by the time you've counted four characters, the next one is gone. Instead, play one character at a time and listen to its shape. The character <code>dit-dah-dit</code> isn't three symbols; it's the sound of the letter <code>r</code>, as distinct in Morse as the difference between the spoken words "at" and "it." Your brain builds this recognition the same way it builds word recognition in speech: not by assembling phonemes, but by hearing whole units enough times that the pattern snaps into place.</p>
-
-<h2>Train the Ear With Spacing and Repetition</h2>
-
-<p>The technique that makes this work is called Farnsworth spacing. You keep the dots and dashes at a realistic speed so each character sounds like the real thing, but you leave long gaps between characters — sometimes several seconds. The gap gives your brain time to absorb the sound as a unit, and as recognition improves you shorten the gaps until the characters flow at full speed. Sessions should be short and frequent; ten minutes a day beats an hour on Sunday, because the recognition builds during sleep.</p>
-
-<p>Practice with real words, not random letters. Start with your own name, common words, and call signs, and copy them until the sound of each one is automatic. A <a href="/en/tools/text-repeater">text repeater</a> is perfect for this — loop a short phrase and copy it until you can take it down without thinking, then swap in the next one. When you're stuck on a character, use a <a href="/en/tools/morse-code">Morse code translator</a> to hear the single character on its own, in isolation, so your ear can lock onto it before you meet it again in a stream. And if the whole thing feels abstract, it helps to know Morse is a binary code at heart — every character is a pattern of two symbols, and the same logic that powers <a href="/en/tools/base-converter">number base conversion</a> is running under the dits and dahs. The code isn't magic; it's just a language your ear can be trained to speak.</p>
-
-<h2>The Flashcard Trap</h2>
-
-<p>Flashcards teach your eyes, and Morse is a listening skill. We covered the memorization side in our guide to <a href="/en/blog/morse-code-memorize-fast-mnemonic-guide">mnemonics and fast memorization</a>, and that's a fine first day. But the moment a real signal is involved, switch to ear training — play the sound, copy it, repeat. Your brain will do the rest, and one day you'll realize you stopped counting dits a week ago.</p>`
-  },
-  {
-    slug: "ip-lookup-wrong-country-geolocation-guide",
-    title: "Why Sites Think You're in Another Country (and How to Check)",
-    description: "A store prices things in the wrong currency and a streaming catalog is missing your region. It's not a broken setting — it's how IP geolocation works. Here's what the internet thinks about you.",
-    date: "2026-08-27",
-    category: "Reference",
-    tags: ["IP geolocation", "IP lookup", "location", "streaming", "privacy"],
-    relatedTools: ["ip-lookup", "global-weather", "world-map"],
-    content: `<p>You open a store and the prices are in a currency you've never used. A streaming service is showing you a catalog that looks like it belongs to another country. Your first instinct is that a setting is wrong, so you dig through preferences and find nothing. The real explanation is boring and useful: the site isn't looking at your location at all. It's looking at your IP address, and your IP doesn't live where you do.</p>
-
-<h2>What "Your IP Location" Actually Means</h2>
-
-<p>IP geolocation doesn't triangulate your position like GPS. It looks up your IP address in a database that says "this block of addresses belongs to a company registered in X city," and X city is often the ISP's headquarters, a data center, or a registration office — not your neighborhood. The counter-intuitive part is that the more legitimately you use the internet, the more likely this is to be wrong: corporate networks route everyone through one office exit, VPNs exit from wherever their servers are, and mobile carriers hand out addresses from regional pools that can be hundreds of miles from the phone. You can be sitting in Chicago while the whole internet thinks you're in a server farm in Dallas.</p>
-
-<h2>Checking What the Internet Thinks</h2>
-
-<p>The quickest reality check is to look up your own IP and compare the reported city to where you actually are. Run an <a href="/en/tools/ip-lookup">IP lookup</a> and read the location it returns — if it says a city you've never visited, that's your geolocation database entry, not a bug in your browser. A neat way to confirm what's happening: check the weather. Pull up a <a href="/en/tools/global-weather">global weather</a> lookup for the city your IP claims, and if the forecast is clearly for somewhere else, you have visual proof that your traffic is exiting from the other location. For the full picture, a <a href="/en/tools/world-map">world map</a> view of your IP's reported position makes it obvious at a glance whether it's landing where you expect.</p>
-
-<h2>What You Can (and Can't) Do About It</h2>
-
-<p>Some mismatches you can fix, some you can't. If your ISP or VPN is routing you through the wrong region, a different exit server often clears it up. But many sites will keep geolocating you wrong no matter what you do, because the database hasn't been updated. We covered the deliberate side of this — VPNs and geo-blocking — in our guide to <a href="/en/blog/ip-lookup-geo-blocking-vpn-detection-guide">geo-blocking and VPN detection</a>. The honest takeaway: when a site shows you the wrong country, don't assume it's broken. Check your IP first, understand where the mismatch comes from, and you'll stop wasting time on settings that were never the problem.</p>`
-  },
-  {
-    slug: "time-screen-meeting-countdown-timer-guide",
-    title: "Fullscreen Countdown: Keeping Meetings and Talks On Time",
-    description: "Meetings run long because nobody watches the clock. A visible countdown changes that — here's how to run one on the screen you already have, and the human rules that make it work.",
-    date: "2026-08-27",
-    category: "Reference",
-    tags: ["countdown timer", "meetings", "time management", "presentations", "fullscreen"],
-    relatedTools: ["time-screen", "fullscreen-text", "scoreboard"],
-    content: `<p>You're in a weekly meeting that should take thirty minutes. At minute thirty-five, someone is still warming up to their point, because nobody in the room is watching the clock. Meetings run long for a boring reason: time is invisible, and an invisible deadline doesn't constrain anyone. Put a countdown on the screen, though, and the whole room changes behavior — speakers wrap up, tangents die faster, and the meeting ends when it said it would. You already have the screen; here's how to run it properly.</p>
-
-<h2>Why a Visible Timer Changes Behavior</h2>
-
-<p>Work expands to fill the time available — that's Parkinson's law, and it's why open-ended slots run long. The counter-intuitive fix is a countdown rather than a stopwatch. An elapsed timer tells you how long you've been going, which reads as "we're fine, plenty left." A countdown tells you what's left, which reads as pressure — and mild pressure is exactly what keeps people concise. The seconds visibly running out do something an agenda item never can: they make the deadline public and shared. Everyone in the room watches the same number fall, so the person who's rambling knows they're rambling, and it's the timer, not you, doing the interrupting.</p>
-
-<h2>Running It on the Screen You Already Have</h2>
-
-<p>Use a second monitor if you have one, or the room's projector, and put a <a href="/en/tools/time-screen">fullscreen countdown</a> on it — large, high-contrast digits that everyone can read from across the table. The display matters less than the rules you attach to it, and the rules are three: warn at two minutes, hard-stop at zero, and never extend for a straggler. If you extend once, you've taught the room that the countdown is a suggestion, and it stops working forever. For talks with a written agenda, you can put the topic list on the same screen next to the countdown with a <a href="/en/tools/fullscreen-text">fullscreen text</a> display, so people see what's coming and the timer together. And if the event is competitive — a game night, a quiz, a workshop with teams — a <a href="/en/tools/scoreboard">scoreboard</a> alongside the countdown keeps both the time and the score visible, which does the same job for fun that the countdown does for work.</p>
-
-<h2>When the Countdown Works Best</h2>
-
-<p>The technique shines in two places: meetings where one person tends to dominate, and presentations where the speaker has a hard time feeling the clock. We covered the difference between a clock and a stopwatch in our guide to <a href="/en/blog/time-screen-vs-stopwatch-clock-display-vs-elapsed-time">clock displays versus elapsed time</a>; the countdown is the third mode — a deadline you can see. Set it, state the rules once, and let the timer be the bad guy. Your meetings will end when they're supposed to, and everyone will quietly thank you for it.</p>`
-  },
-  {
-    slug: "mortgage-calculator-affordability-rule-guide",
-    title: "How Much House Can You Actually Afford? The 28% Rule, Tested",
-    description: "A lender says you're approved for way more than you'd borrow, and a friend quotes the 28% rule. Neither is the truth. Here's how to size a mortgage against your real budget.",
-    date: "2026-08-27",
+    slug: "roi-calculator-marketing-campaign-guide",
+    title: "Measuring Marketing ROI Without Guesswork",
+    description: "A campaign brought in $900 on a $500 spend, so it's profitable, right? Not necessarily. Here's how to measure marketing ROI against the alternative, not against zero.",
+    date: "2026-08-28",
     category: "Calculator",
-    tags: ["mortgage", "affordability", "28% rule", "home buying", "budgeting"],
-    relatedTools: ["mortgage-calculator", "income-tax-calculator", "compound-interest"],
-    content: `<p>You get pre-approved, and the number is bigger than anything you'd ever comfortably borrow. A friend counters with the 28% rule. Both of them are answering a different question than the one you're actually asking. The lender is telling you the maximum a bank will tolerate. The rule is a rough guardrail. What you need is the number that works when your actual income, your actual bills, and an honest look at ownership costs are all in the same room — and that number is almost always lower than both.</p>
+    tags: ["ROI calculator", "marketing ROI", "campaign tracking", "ROAS", "small business"],
+    relatedTools: ["roi-calculator", "percentage-calculator", "compound-interest"],
+    content: `<p>You run a $500 ad campaign, it brings in $900 in sales, and your first instinct is to celebrate. You just made an 80% profit. Then you remember the product cost, the shipping, the two hours you spent on the creative, and the fact that you could have simply kept that $500 in the bank. The instinct wasn't wrong about the math — it was measuring against the wrong baseline.</p>
 
-<h2>What the 28% Rule Is Really For</h2>
+<h2>The "Profit" That Isn't Profit</h2>
 
-<p>The 28% rule says your housing costs should stay under 28% of gross income, and the related 36% figure caps total debt. Those numbers exist because they're the ceilings banks use when deciding whether to approve a loan — they measure risk to the lender, not comfort for you. The counter-intuitive part: the rule is a sanity check, not a target. If 28% of your gross income feels tight because you live in an expensive city or you're carrying other debt, you're allowed to aim lower. The rule was never a budgeting method; it's a filter to keep obviously bad loans from happening.</p>
+<p>Most people measure a campaign against zero: revenue in, spend out, done. That ignores everything the revenue had to pay for before it reached you. If the $900 in sales carried $400 in product and delivery costs, your real return on that $500 is $100, not $400. The counter-intuitive part is that a campaign can look profitable and still be a bad decision, because the money could have earned a guaranteed return sitting in a high-yield account or a business savings buffer. A <a href="/en/tools/roi-calculator">ROI calculator</a> helps here because it lets you type in the full cost picture — not just the ad spend — and see the actual percentage you're earning on the money you committed.</p>
 
-<h2>The Honest Way to Size a Loan</h2>
+<h2>Compare to the Alternative, Not to Zero</h2>
 
-<p>Start with net income, not gross. Run your pay through an <a href="/en/tools/income-tax-calculator">income tax calculator</a> so you're working with what actually lands in your account, then build the real monthly number: principal and interest, property tax, insurance, and a maintenance allowance. That's the PITI-plus number, and it's higher than the shiny "monthly payment" a calculator spits out before you add the rest. This is where a <a href="/en/tools/mortgage-calculator">mortgage calculator</a> earns its keep — not to tell you the payment, but to let you try different prices, rates, and down payments quickly and see which combination keeps your total under your real budget.</p>
+<p>The upgrade that changes how you read results: compare each campaign to its alternative, not to doing nothing. Would this budget have earned more as a straight investment? Did the same spend on a different channel beat it last month? That comparison is where percentages matter, so convert every number into the same terms first with a <a href="/en/tools/percentage-calculator">percentage calculator</a> — the percentage gain on spend, the percentage each channel contributed, the percentage you lost to costs. When two campaigns both "made money," the one with the higher percentage gain on the same dollar is the one to repeat.</p>
 
-<p>Then stress-test it. Ask what the payment looks like at a rate one or two points higher, and whether your budget survives a lean month or a job change. Ownership is a thirty-year commitment with yearly surprises, and the math should work for the worst realistic case, not just today's. One number worth seeing before you commit: the total interest over the life of the loan. A <a href="/en/tools/compound-interest">compound interest calculator</a> shows you what that rate does across three decades, and for most people it's the moment the "affordable" monthly payment stops looking so cheap.</p>
+<h2>Include Time, or You're Fooling Yourself</h2>
 
-<h2>The Verdict Is Your Budget's, Not the Calculator's</h2>
+<p>The final piece is time, because a $100 gain in a week and a $100 gain in a year are completely different outcomes. Run the return through a <a href="/en/tools/compound-interest">compound interest</a> comparison to see what the same money would have done sitting invested — if the campaign beats that, it's genuinely earning its keep. We covered the difference between return calculations in our guide to <a href="/en/blog/roi-calculator-vs-manual-spreadsheet">ROI calculators versus spreadsheets</a>; the takeaway here is simpler. Measure against the alternative, include every cost, count the time, and only then trust the number the campaign hands you.</p>`
+  },
+  {
+    slug: "code-formatter-read-messy-code-guide",
+    title: "Read Someone Else's Messy Code: Format First, Understand Second",
+    description: "Inherited code that's badly formatted feels impossible to read. The fastest way in isn't to squint harder — it's to run it through a formatter before you try to understand a single line.",
+    date: "2026-08-28",
+    category: "Developer",
+    tags: ["code formatter", "legacy code", "code reading", "code review", "indentation"],
+    relatedTools: ["code-formatter", "json-formatter", "html-to-markdown"],
+    content: `<p>You inherit a file that looks like it was typed by someone holding the keyboard upside down in a hurry. Half the blocks aren't indented, closing braces sit wherever they landed, and a function that should take ten seconds to scan takes ten minutes. Your first instinct is to understand it before touching anything. That instinct is backwards. Format the code first, then read it — structure turns confusion into something you can actually follow.</p>
 
-<p>The calculator gives you a number; your budget gives you the verdict. We walked through the basics in our guide for <a href="/en/blog/mortgage-calculator-first-time-home-buyer-guide">first-time home buyers</a>, and the same principle holds one step deeper: pre-approval is the bank's ceiling, 28% is the industry's guardrail, and the number that actually works is the one that leaves you sleeping well every month. Aim for that one.</p>`
+<h2>Indentation Is Information</h2>
+
+<p>Badly formatted code hides its own shape. When indentation is missing or inconsistent, you can't see what nests inside what, and nesting is most of what you're trying to understand. Run the file through a <a href="/en/tools/code-formatter">code formatter</a> and the structure snaps into view: which block belongs to which condition, where the loop ends, which function is inside which. The counter-intuitive part is that formatting makes the code <em>easier to read without changing what it does</em> — a formatter that touches only whitespace can't alter behavior, which is exactly why it's safe to run on a file you don't understand yet.</p>
+
+<h2>Format as a Reading Aid, Not a Style Debate</h2>
+
+<p>This isn't about winning a style argument. If the team uses a different indentation style, you can reformat again later; the point right now is comprehension, not convention. The same trick scales to the data the code works with. When the file is full of nested JSON — configs, API fixtures, test data — run that through a <a href="/en/tools/json-formatter">JSON formatter</a> too, so you're reading cleanly nested structures instead of one long line. And when the messy file turns out to be HTML docs you need to understand, a <a href="/en/tools/html-to-markdown">HTML to Markdown</a> pass strips the markup noise and leaves readable content. Format every layer before you read any layer.</p>
+
+<h2>The Clean-Up That Pays for Itself</h2>
+
+<p>There's a version of this for whole codebases too, which we covered in our guide to <a href="/en/blog/code-formatter-legacy-projects-style-guide-migration">formatting legacy projects without breaking them</a>. The habit is always the same: structure first, understanding second, changes third. You'll read the file once clean instead of three times squinting, and you'll make your first real edit knowing what the code actually does — which is the whole point.</p>`
+  },
+  {
+    slug: "nasa-apod-astronomy-beginners-guide",
+    title: "How to Actually Look at an Astronomy Photo",
+    description: "The picture of the day often looks like a trippy screensaver in impossible colors. That's because it's data, not a photo. Here's how beginners learn to read any space image.",
+    date: "2026-08-28",
+    category: "Fun & Media",
+    tags: ["NASA APOD", "astronomy for beginners", "space photos", "false color", "science"],
+    relatedTools: ["nasa-apod", "bing-wallpaper", "world-map"],
+    content: `<p>You open the astronomy picture of the day and see a swirl of neon colors that looks like a screensaver from 1997. The caption mentions wavelengths and filters, and you close the tab feeling like you missed the point. You didn't miss it — nobody told you the rules for looking at these images. The first rule: a space picture is usually data dressed up as a photo, and reading it means knowing what the colors mean.</p>
+
+<h2>The Picture Is Data, Not a Photo</h2>
+
+<p>Astronomers rarely point a camera at the sky. They point sensors that record light outside what your eyes can see — infrared, radio, X-rays — and then map those invisible bands to colors you can see. That's why a nebula comes out in electric blues and fiery oranges: each color is a different wavelength, not a different paint. The counter-intuitive part is that the most famous images are often the least "realistic." The <a href="/en/tools/nasa-apod">NASA APOD</a> archive labels these, so when you open an image, read the caption first — it will usually tell you which wavelengths were mapped to which colors.</p>
+
+<h2>Three Questions for Any Space Image</h2>
+
+<p>Ask three questions and you'll get 90% of the way there. What am I looking at — a planet, a nebula, a galaxy, or a camera artifact? How big is it, really? And is this color real or mapped? For scale, this is where a quick check beats intuition: galaxies are millions of light-years wide while a nebula might be a few light-years, and your brain can't tell from a thumbnail. Pairing the image with a <a href="/en/tools/world-map">world map</a> perspective helps too — zoom out on how small our whole planet is in the same frame, and the scale of what you're seeing starts to land.</p>
+
+<h2>Start With the Familiar</h2>
+
+<p>You don't have to start with the deepest nebulae. The Moon, Jupiter, the Sun in hydrogen-alpha — these are recognizable even in false color, and recognizing them teaches you to trust the format. Comparing your own context to the daily image is also a good habit; the <a href="/en/tools/bing-wallpaper">Bing wallpaper</a> gives you a beautiful Earth view most days, a nice counterweight to the cosmic scale of APOD. We covered the two image-of-the-day sources in our guide to <a href="/en/blog/nasa-apod-vs-bing-wallpaper-daily-images">APOD versus Bing wallpaper</a>; the reading skill transfers. Look at the caption, name the wavelength, guess the scale, and the trippy screensaver becomes a story you can actually follow.</p>`
+  },
+  {
+    slug: "color-contrast-checker-data-viz-charts-guide",
+    title: "Accessible Charts: Why Your Data Viz Fails the Contrast Test",
+    description: "A dashboard that looks sharp on your monitor can be unreadable on a projector or for colorblind viewers. Chart text needs contrast checks too — here's the checklist.",
+    date: "2026-08-28",
+    category: "Developer",
+    tags: ["color contrast", "data visualization", "charts", "accessibility", "WCAG"],
+    relatedTools: ["color-contrast-checker", "color-converter", "svg-minifier"],
+    content: `<p>Your dashboard looks crisp on the office monitor. Then you present it on a projector and nobody can read the legend, or a colorblind teammate asks why two lines are the same color. You checked the body text for contrast, so what went wrong? Charts have their own contrast rules, and the labels and legends you skipped are exactly the parts that fail.</p>
+
+<h2>Contrast Isn't Just for Body Text</h2>
+
+<p>Accessibility guidance mostly talks about paragraphs, so it's easy to assume small chart labels don't matter. They do — arguably more, because a legend you can't read makes the whole chart meaningless. The rule of thumb: small text needs a 4.5:1 ratio, and large text (roughly 18pt, or 14pt bold) needs 3:1. Every label, axis tick, legend entry, and callout in your chart is text, and every one of them needs checking. A <a href="/en/tools/color-contrast-checker">color contrast checker</a> turns that from a guess into a number in seconds.</p>
+
+<h2>The Pair That Looks Distinct But Isn't</h2>
+
+<p>The trap in charts is that colors can look completely different to you and still fail contrast against each other or against the background. Two saturated blues with different hues can land at nearly the same luminance, which is exactly what a projector or a colorblind viewer loses. The counter-intuitive part: distinct colors aren't the goal — distinct <em>luminance</em> is. If you're designing a palette, convert your candidate colors through a <a href="/en/tools/color-converter">color converter</a> to see them in terms of lightness rather than hue, and prefer pairs that differ in brightness, not just in name. Then verify the whole set in the checker before you build the chart.</p>
+
+<h2>A Chart Checklist</h2>
+
+<p>Three checks before you ship any data viz. Check the text: every label against its background, small and large separately. Check the series: each line or bar against the background, not just against each other. And check the colorblind view — if the chart relies on red-green to separate series, add a second signal like a dash pattern or a direct label. When you've settled the palette, you can minify the chart's SVG with a <a href="/en/tools/svg-minifier">SVG minifier</a> before deploying so the accessible version is also the fast one. We covered the full WCAG 2.2 contrast rules in our guide to <a href="/en/blog/color-contrast-checker-wcag-2-2-new-standards">new contrast standards</a>; the chart version is the same discipline applied to every pixel with a label attached. Check the text, check the series, check the colorblind view — then your chart works for everyone, projector included.</p>`
+  },
+  {
+    slug: "roman-numerals-clock-faces-guide",
+    title: "Why Clocks Say IIII (Not IV): Reading Numerals Fast",
+    description: "Look at most analog watches and the four is written as four I's. It's not a typo — and the reason reveals how to read Roman numerals at a glance.",
+    date: "2026-08-28",
+    category: "Calculator",
+    tags: ["Roman numerals", "clock faces", "watch design", "IIII vs IV", "numeral reading"],
+    relatedTools: ["roman-numerals", "perpetual-calendar", "age-calculator"],
+    content: `<p>You glance at a classic analog watch and do a double take: the four is written as four I's, IIII, not the IV you learned in school. It looks like a factory error on every expensive watch you've ever seen. It isn't. Clock faces have used IIII for centuries, and the reason is a small lesson in why we read numerals the way we do.</p>
+
+<h2>Four I's, Not IV</h2>
+
+<p>The short answer: balance and tradition. Four I's fills the left side of the dial in a way that visually mirrors the VIII on the right, and it avoids confusing the eye with an upside-down IV. The longer answer is that ordinary people of the clock's era weren't fluent in subtractive notation — they read IIII as four strokes more naturally than IV. The counter-intuitive part is that your watch is the one place where the "wrong" Roman four is the correct one, and the format you're used to is a classroom invention. Either way, no clock is broken.</p>
+
+<h2>Reading Numerals at a Glance</h2>
+
+<p>Once you know what to expect, Roman numerals are faster to read than they look, because clocks and calendars only use a handful. I is one, V is five, X is ten, and everything smaller than forty is a combination of those three. The trick is to read left to right and watch for the subtraction pattern: a smaller numeral before a bigger one means subtract (IV is four, IX is nine), and the rest is plain addition (XII is ten plus two). Run any year or date through a <a href="/en/tools/roman-numerals">Roman numeral converter</a> a few times and the pattern becomes second nature — you'll stop counting strokes and start seeing the numbers.</p>
+
+<h2>Where the Old Numbers Still Live</h2>
+
+<p>Clocks are the daily encounter, but the numerals also show up in dates you'd otherwise misread. Cornerstones, movie release years, and book copyright pages all use them, which is where a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> comes in handy when you're dating an old document, and an <a href="/en/tools/age-calculator">age calculator</a> when a gravestone or a family record spells out a birth year you need to decode before you can calculate anything. We covered the modern survival of Roman numerals in our guide to <a href="/en/blog/roman-numerals-where-they-still-matter-guide">where they still matter</a>; the clock face is the most visible example. Look for the subtraction pattern, expect IIII on any classic dial, and the old numbers stop being a puzzle.</p>`
+  },
+  {
+    slug: "scoreboard-streaming-game-night-guide",
+    title: "Scoreboard for Game Night and Live Streams",
+    description: "Half the fun of game night is arguing about who's winning. Put a visible running score on the TV and the arguments stop — here's how to set one up for the living room or a stream.",
+    date: "2026-08-28",
+    category: "Fun & Media",
+    tags: ["scoreboard", "game night", "trivia", "live stream", "esports"],
+    relatedTools: ["scoreboard", "fullscreen-text", "reaction-test"],
+    content: `<p>You host a family game night, and a third of the evening is spent arguing about who's actually winning. Uncle Dave insists he's ahead, the kids are keeping their own private tally, and nobody agrees on the round totals. The fix isn't a referee — it's a score everyone can see. A visible running score settles more arguments than any rulebook, and it turns the same evening into something that feels like a real tournament.</p>
+
+<h2>Scores You Can See Beat Scores You Argue About</h2>
+
+<p>The counter-intuitive part of game night scoring is that the display matters more than the accuracy. Once the score is on the TV in big numbers, the debate moves from "who's winning" to "who's ahead by how much," which is a much better argument. Set up a <a href="/en/tools/scoreboard">scoreboard</a> on the television or a second screen, and keep the rules simple: one tally per team or player, updated after every round, never rewritten in secret. The visible number also creates the competitive arc — trailing teams get a comeback narrative and the last round means something.</p>
+
+<h2>The Game Night Setup</h2>
+
+<p>For a living room, one screen does the job: scoreboard on the TV with player names, and everything else kept out of the way. Pair it with a <a href="/en/tools/fullscreen-text">fullscreen text</a> display for the round number or a countdown between turns, so people aren't craning to see whose turn it is. If you're running trivia or a reaction-style party game, add a <a href="/en/tools/reaction-test">reaction test</a> as the tiebreaker round — it's quick, it's hilarious, and it hands the final point to speed instead of stubbornness.</p>
+
+<h2>Live Streams and Tournaments</h2>
+
+<p>The same setup scales to a stream, where a running score is almost required. Viewers join mid-way through and need to know the state of the match instantly; a scoreboard on the overlay answers that before they ask. Keep the tally current between every round, update it loudly, and let the chat follow along. We covered creative scoreboard uses beyond sports in our guide to <a href="/en/blog/scoreboard-beyond-sports-creative-uses">scoreboards for classrooms and trivia</a>; game night and streaming are the same principle at home. Put the number on screen, update it every round, and let the argument that remains be about strategy — not about the score.</p>`
   },
 ];
 
