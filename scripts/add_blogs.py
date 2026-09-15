@@ -9,136 +9,136 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "roi-calculator-marketing-campaign-guide",
-    title: "Measuring Marketing ROI Without Guesswork",
-    description: "A campaign brought in $900 on a $500 spend, so it's profitable, right? Not necessarily. Here's how to measure marketing ROI against the alternative, not against zero.",
-    date: "2026-08-28",
-    category: "Calculator",
-    tags: ["ROI calculator", "marketing ROI", "campaign tracking", "ROAS", "small business"],
-    relatedTools: ["roi-calculator", "percentage-calculator", "compound-interest"],
-    content: `<p>You run a $500 ad campaign, it brings in $900 in sales, and your first instinct is to celebrate. You just made an 80% profit. Then you remember the product cost, the shipping, the two hours you spent on the creative, and the fact that you could have simply kept that $500 in the bank. The instinct wasn't wrong about the math — it was measuring against the wrong baseline.</p>
-
-<h2>The "Profit" That Isn't Profit</h2>
-
-<p>Most people measure a campaign against zero: revenue in, spend out, done. That ignores everything the revenue had to pay for before it reached you. If the $900 in sales carried $400 in product and delivery costs, your real return on that $500 is $100, not $400. The counter-intuitive part is that a campaign can look profitable and still be a bad decision, because the money could have earned a guaranteed return sitting in a high-yield account or a business savings buffer. A <a href="/en/tools/roi-calculator">ROI calculator</a> helps here because it lets you type in the full cost picture — not just the ad spend — and see the actual percentage you're earning on the money you committed.</p>
-
-<h2>Compare to the Alternative, Not to Zero</h2>
-
-<p>The upgrade that changes how you read results: compare each campaign to its alternative, not to doing nothing. Would this budget have earned more as a straight investment? Did the same spend on a different channel beat it last month? That comparison is where percentages matter, so convert every number into the same terms first with a <a href="/en/tools/percentage-calculator">percentage calculator</a> — the percentage gain on spend, the percentage each channel contributed, the percentage you lost to costs. When two campaigns both "made money," the one with the higher percentage gain on the same dollar is the one to repeat.</p>
-
-<h2>Include Time, or You're Fooling Yourself</h2>
-
-<p>The final piece is time, because a $100 gain in a week and a $100 gain in a year are completely different outcomes. Run the return through a <a href="/en/tools/compound-interest">compound interest</a> comparison to see what the same money would have done sitting invested — if the campaign beats that, it's genuinely earning its keep. We covered the difference between return calculations in our guide to <a href="/en/blog/roi-calculator-vs-manual-spreadsheet">ROI calculators versus spreadsheets</a>; the takeaway here is simpler. Measure against the alternative, include every cost, count the time, and only then trust the number the campaign hands you.</p>`
-  },
-  {
-    slug: "code-formatter-read-messy-code-guide",
-    title: "Read Someone Else's Messy Code: Format First, Understand Second",
-    description: "Inherited code that's badly formatted feels impossible to read. The fastest way in isn't to squint harder — it's to run it through a formatter before you try to understand a single line.",
-    date: "2026-08-28",
+    slug: "image-to-base64-reduce-requests-speed-guide",
+    title: "Faster First Load: Using Base64 Images to Cut HTTP Requests",
+    description: "A tiny icon that takes 80ms to load can still delay your page. Embedding small images as Base64 cuts the request entirely — but only if you know where it actually helps.",
+    date: "2026-09-15",
     category: "Developer",
-    tags: ["code formatter", "legacy code", "code reading", "code review", "indentation"],
-    relatedTools: ["code-formatter", "json-formatter", "html-to-markdown"],
-    content: `<p>You inherit a file that looks like it was typed by someone holding the keyboard upside down in a hurry. Half the blocks aren't indented, closing braces sit wherever they landed, and a function that should take ten seconds to scan takes ten minutes. Your first instinct is to understand it before touching anything. That instinct is backwards. Format the code first, then read it — structure turns confusion into something you can actually follow.</p>
+    tags: ["image to base64", "page speed", "HTTP requests", "performance", "data URI"],
+    relatedTools: ["image-to-base64", "css-minifier", "svg-minifier"],
+    content: `<p>Your page has a tiny 2KB icon and it still costs you an 80ms HTTP request. The browser asks, the server answers, and for a file smaller than this paragraph, you paid a full round trip. Embedding that image as a Base64 string into your HTML or CSS cuts the request entirely — but the trick only works if you're careful about where you use it.</p>
 
-<h2>Indentation Is Information</h2>
+<h2>When Less Is More (and When It Isn't)</h2>
 
-<p>Badly formatted code hides its own shape. When indentation is missing or inconsistent, you can't see what nests inside what, and nesting is most of what you're trying to understand. Run the file through a <a href="/en/tools/code-formatter">code formatter</a> and the structure snaps into view: which block belongs to which condition, where the loop ends, which function is inside which. The counter-intuitive part is that formatting makes the code <em>easier to read without changing what it does</em> — a formatter that touches only whitespace can't alter behavior, which is exactly why it's safe to run on a file you don't understand yet.</p>
+<p>Base64 encoding adds roughly 33% to a file's size, so it only wins when the overhead of the request is bigger than the overhead of the extra bytes. For small images — icons, logos, tiny arrows, background tiles — it's almost always a win. For anything bigger than a few kilobytes, the bloated file costs more than the saved request. The counter-intuitive part: a well-cached small image might load <em>faster</em> from the browser cache than an embedded one on repeat visits, because the cached file is smaller than the encoded string. Run the image through an <a href="/en/tools/image-to-base64">image to Base64</a> tool, compare the encoded size to the original, and decide based on how many times a visitor will see it.</p>
 
-<h2>Format as a Reading Aid, Not a Style Debate</h2>
+<h2>The Right Places for Embedded Images</h2>
 
-<p>This isn't about winning a style argument. If the team uses a different indentation style, you can reformat again later; the point right now is comprehension, not convention. The same trick scales to the data the code works with. When the file is full of nested JSON — configs, API fixtures, test data — run that through a <a href="/en/tools/json-formatter">JSON formatter</a> too, so you're reading cleanly nested structures instead of one long line. And when the messy file turns out to be HTML docs you need to understand, a <a href="/en/tools/html-to-markdown">HTML to Markdown</a> pass strips the markup noise and leaves readable content. Format every layer before you read any layer.</p>
+<p>The best candidates are the images that load above the fold on a first visit and don't change between pages. A favicon, a loading spinner, a small logo, a few inline icons — these are exactly where Base64 shines. Pair the strategy with a <a href="/en/tools/css-minifier">CSS minifier</a> so you're not also shipping unminified CSS alongside the embedded image, and for vector images, run them through an <a href="/en/tools/svg-minifier">SVG minifier</a> first — a smaller SVG makes a smaller Base64 string, which makes the whole trade-off easier to justify. Small files + first load + high visibility = the sweet spot.</p>
 
-<h2>The Clean-Up That Pays for Itself</h2>
+<h2>One Rule to Avoid Regret</h2>
 
-<p>There's a version of this for whole codebases too, which we covered in our guide to <a href="/en/blog/code-formatter-legacy-projects-style-guide-migration">formatting legacy projects without breaking them</a>. The habit is always the same: structure first, understanding second, changes third. You'll read the file once clean instead of three times squinting, and you'll make your first real edit knowing what the code actually does — which is the whole point.</p>`
+<p>One simple rule keeps you from overdoing it: don't embed anything bigger than 10KB, and don't embed it more than once per page. We covered the data URI trade-offs in our guide to <a href="/en/blog/image-to-base64-data-uri-practical-guide">practical Base64 image uses</a>; the speed version is the same idea with a sharper focus. Embed the small stuff, keep the big stuff as separate files, and your first load gets faster without bloating the whole page.</p>`
   },
   {
-    slug: "nasa-apod-astronomy-beginners-guide",
-    title: "How to Actually Look at an Astronomy Photo",
-    description: "The picture of the day often looks like a trippy screensaver in impossible colors. That's because it's data, not a photo. Here's how beginners learn to read any space image.",
-    date: "2026-08-28",
-    category: "Fun & Media",
-    tags: ["NASA APOD", "astronomy for beginners", "space photos", "false color", "science"],
-    relatedTools: ["nasa-apod", "bing-wallpaper", "world-map"],
-    content: `<p>You open the astronomy picture of the day and see a swirl of neon colors that looks like a screensaver from 1997. The caption mentions wavelengths and filters, and you close the tab feeling like you missed the point. You didn't miss it — nobody told you the rules for looking at these images. The first rule: a space picture is usually data dressed up as a photo, and reading it means knowing what the colors mean.</p>
-
-<h2>The Picture Is Data, Not a Photo</h2>
-
-<p>Astronomers rarely point a camera at the sky. They point sensors that record light outside what your eyes can see — infrared, radio, X-rays — and then map those invisible bands to colors you can see. That's why a nebula comes out in electric blues and fiery oranges: each color is a different wavelength, not a different paint. The counter-intuitive part is that the most famous images are often the least "realistic." The <a href="/en/tools/nasa-apod">NASA APOD</a> archive labels these, so when you open an image, read the caption first — it will usually tell you which wavelengths were mapped to which colors.</p>
-
-<h2>Three Questions for Any Space Image</h2>
-
-<p>Ask three questions and you'll get 90% of the way there. What am I looking at — a planet, a nebula, a galaxy, or a camera artifact? How big is it, really? And is this color real or mapped? For scale, this is where a quick check beats intuition: galaxies are millions of light-years wide while a nebula might be a few light-years, and your brain can't tell from a thumbnail. Pairing the image with a <a href="/en/tools/world-map">world map</a> perspective helps too — zoom out on how small our whole planet is in the same frame, and the scale of what you're seeing starts to land.</p>
-
-<h2>Start With the Familiar</h2>
-
-<p>You don't have to start with the deepest nebulae. The Moon, Jupiter, the Sun in hydrogen-alpha — these are recognizable even in false color, and recognizing them teaches you to trust the format. Comparing your own context to the daily image is also a good habit; the <a href="/en/tools/bing-wallpaper">Bing wallpaper</a> gives you a beautiful Earth view most days, a nice counterweight to the cosmic scale of APOD. We covered the two image-of-the-day sources in our guide to <a href="/en/blog/nasa-apod-vs-bing-wallpaper-daily-images">APOD versus Bing wallpaper</a>; the reading skill transfers. Look at the caption, name the wavelength, guess the scale, and the trippy screensaver becomes a story you can actually follow.</p>`
-  },
-  {
-    slug: "color-contrast-checker-data-viz-charts-guide",
-    title: "Accessible Charts: Why Your Data Viz Fails the Contrast Test",
-    description: "A dashboard that looks sharp on your monitor can be unreadable on a projector or for colorblind viewers. Chart text needs contrast checks too — here's the checklist.",
-    date: "2026-08-28",
+    slug: "css-minifier-critical-css-first-load-guide",
+    title: "Critical CSS: How a Minifier Makes Your First Paint Faster",
+    description: "Your stylesheet is 200KB and only 10KB of it matters for the first screen. Inlining critical CSS above the fold is the fastest speed win most sites never try.",
+    date: "2026-09-15",
     category: "Developer",
-    tags: ["color contrast", "data visualization", "charts", "accessibility", "WCAG"],
-    relatedTools: ["color-contrast-checker", "color-converter", "svg-minifier"],
-    content: `<p>Your dashboard looks crisp on the office monitor. Then you present it on a projector and nobody can read the legend, or a colorblind teammate asks why two lines are the same color. You checked the body text for contrast, so what went wrong? Charts have their own contrast rules, and the labels and legends you skipped are exactly the parts that fail.</p>
+    tags: ["CSS minifier", "critical CSS", "above the fold", "first paint", "performance"],
+    relatedTools: ["css-minifier", "html-to-markdown", "json-formatter"],
+    content: `<p>You've got a 200KB stylesheet and the first screen only needs 10KB of it. The browser still downloads all 200KB before it can paint anything, because it doesn't know which rules matter yet. The fastest fix most sites never apply is to pull that 10KB — your critical CSS — inline into the page and defer the rest. A good CSS minifier is what makes the trick actually work, because every unminified byte in the critical path is a byte you didn't need.</p>
 
-<h2>Contrast Isn't Just for Body Text</h2>
+<h2>Why Critical CSS Moves the Needle</h2>
 
-<p>Accessibility guidance mostly talks about paragraphs, so it's easy to assume small chart labels don't matter. They do — arguably more, because a legend you can't read makes the whole chart meaningless. The rule of thumb: small text needs a 4.5:1 ratio, and large text (roughly 18pt, or 14pt bold) needs 3:1. Every label, axis tick, legend entry, and callout in your chart is text, and every one of them needs checking. A <a href="/en/tools/color-contrast-checker">color contrast checker</a> turns that from a guess into a number in seconds.</p>
+<p>First contentful paint is held up by render-blocking resources, and CSS is usually the biggest one. If the stylesheet is 200KB, the browser waits for all of it. If you put the 10KB the first screen needs directly in the HTML, the browser can paint as soon as it has those few kilobytes — and the rest of the stylesheet loads in the background. The counter-intuitive part is that you're technically adding bytes to the HTML, but because those bytes replace a blocking request, the page still renders faster. That's the whole trick.</p>
 
-<h2>The Pair That Looks Distinct But Isn't</h2>
+<h2>Build, Minify, Inline</h2>
 
-<p>The trap in charts is that colors can look completely different to you and still fail contrast against each other or against the background. Two saturated blues with different hues can land at nearly the same luminance, which is exactly what a projector or a colorblind viewer loses. The counter-intuitive part: distinct colors aren't the goal — distinct <em>luminance</em> is. If you're designing a palette, convert your candidate colors through a <a href="/en/tools/color-converter">color converter</a> to see them in terms of lightness rather than hue, and prefer pairs that differ in brightness, not just in name. Then verify the whole set in the checker before you build the chart.</p>
+<p>The workflow is straightforward. Identify which rules apply above the fold — either by hand for simple pages or with an automated tool for complex ones — extract them, run them through a <a href="/en/tools/css-minifier">CSS minifier</a>, and drop the minified version in a style tag at the top of the head. Load the full stylesheet asynchronously so it doesn't block rendering. Minification is non-negotiable here: whitespace and comments in the critical path are pure waste. For the HTML that carries the inline styles, keep the rest of the page lean too — a <a href="/en/tools/html-to-markdown">HTML to Markdown</a> pass can help spot markup bloat before it ships, and for any data structures riding along, a <a href="/en/tools/json-formatter">JSON formatter</a> keeps them readable during development without bloating production.</p>
 
-<h2>A Chart Checklist</h2>
+<h2>The Fastest Fix That's Free</h2>
 
-<p>Three checks before you ship any data viz. Check the text: every label against its background, small and large separately. Check the series: each line or bar against the background, not just against each other. And check the colorblind view — if the chart relies on red-green to separate series, add a second signal like a dash pattern or a direct label. When you've settled the palette, you can minify the chart's SVG with a <a href="/en/tools/svg-minifier">SVG minifier</a> before deploying so the accessible version is also the fast one. We covered the full WCAG 2.2 contrast rules in our guide to <a href="/en/blog/color-contrast-checker-wcag-2-2-new-standards">new contrast standards</a>; the chart version is the same discipline applied to every pixel with a label attached. Check the text, check the series, check the colorblind view — then your chart works for everyone, projector included.</p>`
+<p>Critical CSS is one of the highest-ROI speed improvements you can make, and it costs nothing except a little time identifying which rules matter. We covered minifier integration in our guide to <a href="/en/blog/css-minifier-build-tool-vs-online">build tools versus online minifiers</a>; the critical CSS version is the same principle aimed directly at first paint. Extract what the first screen needs, minify it, inline it, defer the rest — and watch your first paint drop.</p>`
   },
   {
-    slug: "roman-numerals-clock-faces-guide",
-    title: "Why Clocks Say IIII (Not IV): Reading Numerals Fast",
-    description: "Look at most analog watches and the four is written as four I's. It's not a typo — and the reason reveals how to read Roman numerals at a glance.",
-    date: "2026-08-28",
+    slug: "random-number-generator-fair-team-groups-guide",
+    title: "Fair Team Grouping Without Anyone Complaining",
+    description: "Picking teams by hand always produces the same complaint: the groups are rigged. A random number generator doesn't play favorites — here's how to use it so everyone trusts the result.",
+    date: "2026-09-15",
     category: "Calculator",
-    tags: ["Roman numerals", "clock faces", "watch design", "IIII vs IV", "numeral reading"],
-    relatedTools: ["roman-numerals", "perpetual-calendar", "age-calculator"],
-    content: `<p>You glance at a classic analog watch and do a double take: the four is written as four I's, IIII, not the IV you learned in school. It looks like a factory error on every expensive watch you've ever seen. It isn't. Clock faces have used IIII for centuries, and the reason is a small lesson in why we read numerals the way we do.</p>
+    tags: ["random number generator", "team grouping", "fair teams", "tournament setup", "icebreaker"],
+    relatedTools: ["random-number-generator", "dice-roller", "coin-flip"],
+    content: `<p>You need to split a group into teams, and no matter how you do it, someone says the groups are rigged. Hand-picking invites bias, picking straws feels silly, and letting people choose always produces lopsided groups. A random number generator solves it in thirty seconds — if you do it in public, out loud, so everyone sees that the machine isn't playing favorites.</p>
 
-<h2>Four I's, Not IV</h2>
+<h2>The Fairness Problem</h2>
 
-<p>The short answer: balance and tradition. Four I's fills the left side of the dial in a way that visually mirrors the VIII on the right, and it avoids confusing the eye with an upside-down IV. The longer answer is that ordinary people of the clock's era weren't fluent in subtractive notation — they read IIII as four strokes more naturally than IV. The counter-intuitive part is that your watch is the one place where the "wrong" Roman four is the correct one, and the format you're used to is a classroom invention. Either way, no clock is broken.</p>
+<p>People trust randomness more than they trust other people's judgment, even when the judgment is perfectly reasonable. The moment a real person picks the teams, every person on the weaker team sees bias, and nobody on the stronger team gets to enjoy the win. A <a href="/en/tools/random-number-generator">random number generator</a> takes you out of the equation entirely — the machine picks, and the machine has nothing to gain. The counter-intuitive part is that fairness matters less than perceived fairness. If everyone believes it's fair, it might as well be, and randomness produces that belief faster than any explanation.</p>
 
-<h2>Reading Numerals at a Glance</h2>
+<h2>How to Do It in Public</h2>
 
-<p>Once you know what to expect, Roman numerals are faster to read than they look, because clocks and calendars only use a handful. I is one, V is five, X is ten, and everything smaller than forty is a combination of those three. The trick is to read left to right and watch for the subtraction pattern: a smaller numeral before a bigger one means subtract (IV is four, IX is nine), and the rest is plain addition (XII is ten plus two). Run any year or date through a <a href="/en/tools/roman-numerals">Roman numeral converter</a> a few times and the pattern becomes second nature — you'll stop counting strokes and start seeing the numbers.</p>
+<p>Run the generator in front of everyone. List the participants with numbers, generate numbers to assign them to groups, and let anyone who doubts the result press the button again to see it's not rigged. For small groups, a coin flip is enough for a binary split, so a <a href="/en/tools/coin-flip">coin flip</a> tool works as a quick variant. For tournament-style events with more complex seeding, a <a href="/en/tools/dice-roller">dice roller</a> adds a bit of theater — physical dice feel more random than a screen, even when the odds are identical. The key is that everyone watches it happen; a result delivered after the fact always feels cooked, no matter how fair it actually is.</p>
 
-<h2>Where the Old Numbers Still Live</h2>
+<h2>One Rule for No Complaints</h2>
 
-<p>Clocks are the daily encounter, but the numerals also show up in dates you'd otherwise misread. Cornerstones, movie release years, and book copyright pages all use them, which is where a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> comes in handy when you're dating an old document, and an <a href="/en/tools/age-calculator">age calculator</a> when a gravestone or a family record spells out a birth year you need to decode before you can calculate anything. We covered the modern survival of Roman numerals in our guide to <a href="/en/blog/roman-numerals-where-they-still-matter-guide">where they still matter</a>; the clock face is the most visible example. Look for the subtraction pattern, expect IIII on any classic dial, and the old numbers stop being a puzzle.</p>`
+<p>The only rule that really matters: generate the groups once, in front of everyone, and don't regenerate. We covered randomness in decision making in our guide to <a href="/en/blog/random-number-generator-beyond-dice-rolls">uses for random number generators</a>; team grouping is one of the simplest and most satisfying. Take yourself out of the decision, run it in public, and the complaining stops before it starts.</p>`
   },
   {
-    slug: "scoreboard-streaming-game-night-guide",
-    title: "Scoreboard for Game Night and Live Streams",
-    description: "Half the fun of game night is arguing about who's winning. Put a visible running score on the TV and the arguments stop — here's how to set one up for the living room or a stream.",
-    date: "2026-08-28",
+    slug: "reaction-test-caffeine-effect-on-reflexes-guide",
+    title: "Does Coffee Actually Make You Faster? Test It Yourself",
+    description: "Everyone says coffee sharpens you up. But how much faster are you really, and does the second cup add anything? A reaction test lets you measure the difference on your own brain.",
+    date: "2026-09-15",
     category: "Fun & Media",
-    tags: ["scoreboard", "game night", "trivia", "live stream", "esports"],
-    relatedTools: ["scoreboard", "fullscreen-text", "reaction-test"],
-    content: `<p>You host a family game night, and a third of the evening is spent arguing about who's actually winning. Uncle Dave insists he's ahead, the kids are keeping their own private tally, and nobody agrees on the round totals. The fix isn't a referee — it's a score everyone can see. A visible running score settles more arguments than any rulebook, and it turns the same evening into something that feels like a real tournament.</p>
+    tags: ["reaction test", "caffeine", "coffee", "reflexes", "self-experiment"],
+    relatedTools: ["reaction-test", "stopwatch-and-timer", "scoreboard"],
+    content: `<p>Everyone knows coffee makes you faster. But how much faster, and at what point does the second cup make you jittery instead of quick? A reaction test turns a feeling — "I'm more awake now" — into a number you can actually compare. You don't need a lab. You just need a baseline and a timer.</p>
 
-<h2>Scores You Can See Beat Scores You Argue About</h2>
+<h2>The Baseline Is the Trick</h2>
 
-<p>The counter-intuitive part of game night scoring is that the display matters more than the accuracy. Once the score is on the TV in big numbers, the debate moves from "who's winning" to "who's ahead by how much," which is a much better argument. Set up a <a href="/en/tools/scoreboard">scoreboard</a> on the television or a second screen, and keep the rules simple: one tally per team or player, updated after every round, never rewritten in secret. The visible number also creates the competitive arc — trailing teams get a comeback narrative and the last round means something.</p>
+<p>The hard part of any self-experiment is knowing where you started. Before your first coffee of the day, take a <a href="/en/tools/reaction-test">reaction test</a> five times and note your average — that's your baseline, groggy brain, no caffeine. Then have your coffee, wait twenty minutes, and take the test again. The difference is the actual effect of the coffee on <em>your</em> body, not some average in a study. The counter-intuitive part: most people are surprised by how small the difference is once they measure it. The feeling of being awake is much bigger than the measurable improvement in milliseconds.</p>
 
-<h2>The Game Night Setup</h2>
+<h2>Run the Experiment Properly</h2>
 
-<p>For a living room, one screen does the job: scoreboard on the TV with player names, and everything else kept out of the way. Pair it with a <a href="/en/tools/fullscreen-text">fullscreen text</a> display for the round number or a countdown between turns, so people aren't craning to see whose turn it is. If you're running trivia or a reaction-style party game, add a <a href="/en/tools/reaction-test">reaction test</a> as the tiebreaker round — it's quick, it's hilarious, and it hands the final point to speed instead of stubbornness.</p>
+<p>To make the results mean something, control the variables. Test at the same time each day. Use the same number of practice rounds so you're not just getting better at the test itself. Use a <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> to measure the gap between the coffee and the test, and keep track of the numbers with a <a href="/en/tools/scoreboard">scoreboard</a> so you can see the trend across several days. If you really want to go deep, try the same thing with tea, energy drinks, or a cold shower and compare. The point isn't to publish a paper — it's to learn something about your own body that you can actually use.</p>
 
-<h2>Live Streams and Tournaments</h2>
+<h2>What You'll Probably Find</h2>
 
-<p>The same setup scales to a stream, where a running score is almost required. Viewers join mid-way through and need to know the state of the match instantly; a scoreboard on the overlay answers that before they ask. Keep the tally current between every round, update it loudly, and let the chat follow along. We covered creative scoreboard uses beyond sports in our guide to <a href="/en/blog/scoreboard-beyond-sports-creative-uses">scoreboards for classrooms and trivia</a>; game night and streaming are the same principle at home. Put the number on screen, update it every round, and let the argument that remains be about strategy — not about the score.</p>`
+<p>Most people see a measurable boost from one cup and diminishing returns from a second. More than three and reaction time actually gets worse, because jitteriness costs more than alertness gains. We covered reflex training in our guide to <a href="/en/blog/reaction-test-pro-gamer-f1-driver">pro gamer reaction times</a>; the home version is the same idea scaled way down. Grab a baseline, test the coffee, and find out for yourself whether your morning ritual is actually working.</p>`
+  },
+  {
+    slug: "qr-code-scanner-restaurant-menus-guide",
+    title: "QR Code Menus Are Here to Stay — Use Them Right",
+    description: "Scanning a code for the menu was pandemic-era emergency tech that never went away. Done well, it's faster and cleaner than a paper menu. Done badly, it's a frustration.",
+    date: "2026-09-15",
+    category: "Developer",
+    tags: ["QR code scanner", "restaurant menus", "contactless", "QR menus", "customer experience"],
+    relatedTools: ["qr-code-scanner", "qr-code-generator", "url-encoder"],
+    content: `<p>The QR code menu started as a pandemic stopgap and never left. Some restaurants love it — cheaper to update, cleaner, no printing costs. Some customers hate it — another app to open, bad lighting, no one to ask when the code won't scan. The truth is that QR menus work fine when they're done well and feel terrible when they're not, and most of the difference comes down to a few simple choices.</p>
+
+<h2>Why Scanning Fails</h2>
+
+<p>The biggest frustration isn't the menu — it's getting the code to scan in the first place. Dark tables, glossy laminated cards, tiny codes tucked in a corner, glare from overhead lights — these are the things that turn a two-second task into thirty seconds of waving your phone. A good <a href="/en/tools/qr-code-scanner">QR code scanner</a> works in low light, but only up to a point. The counter-intuitive part: most restaurants don't test their own code in the actual lighting of the restaurant. They design it on a bright monitor and assume it will scan by candlelight.</p>
+
+<h2>The Good QR Menu Checklist</h2>
+
+<p>If you're the one setting it up, get the basics right. Print the code big enough — at least an inch square, bigger if it's across the table. Test it with the lights dimmed, the way customers will actually encounter it. Pair the code with a printed short version — the most-ordered items, the daily specials — so people who don't want to scan still have something to look at. If you're generating the code, use a <a href="/en/tools/qr-code-generator">QR code generator</a> with a high error-correction level so smudges and crumbs don't break it, and make sure the URL it points to is clean — run it through a <a href="/en/tools/url-encoder">URL encoder</a> if there are special characters, because a garbled link in a QR code is a dead menu.</p>
+
+<h2>It's Not Going Anywhere</h2>
+
+<p>QR menus aren't going back to paper, which means the good ones are going to get better and the bad ones are going to keep frustrating people. We covered QR security in our guide to <a href="/en/blog/qr-code-scanner-security-malicious-codes">malicious QR codes</a>; the restaurant version is the same technology in a friendlier context. Print it big, test it in the dark, keep a paper backup, and your customers will use it without even thinking about it.</p>`
+  },
+  {
+    slug: "book-of-answers-hard-decisions-intuition-guide",
+    title: "When You Can't Decide: Let a Random Book Test Your Gut",
+    description: "You've been going back and forth for weeks and the decision still isn't getting easier. When logic fails, a book of answers doesn't tell you what to do — it reveals what you already want.",
+    date: "2026-09-15",
+    category: "Fun & Media",
+    tags: ["book of answers", "decision making", "intuition", "hard choices", "random answers"],
+    relatedTools: ["book-of-answers", "coin-flip", "lateral-thinking"],
+    content: `<p>You've been going back and forth for weeks. Job offers, moves, relationships — the decisions that matter most are the ones where both sides look equally reasonable, and logic never quite tips the scale. When you've listed all the pros and cons and you still can't decide, the answer was never in the list. It's already in you, and a book of answers is just a way to pull it out.</p>
+
+<h2>The Trick Isn't the Answer</h2>
+
+<p>Here's how it works. You ask your question in your head, you open a <a href="/en/tools/book-of-answers">book of answers</a>, and you get a short, cryptic line. The line itself isn't the point — the point is your reaction to it. If the answer says "go for it" and you feel a wave of relief, you already knew what you wanted. If it says "wait" and you feel disappointed, you already knew that too. The counter-intuitive part: the book doesn't give you the answer. It gives you a chance to catch yourself having one.</p>
+
+<h2>How to Use It Without Faking It</h2>
+
+<p>Ask the question out loud, or at least with specific words in your head — vague questions get vague reactions. Pick one page, one answer, and don't regenerate until you get the one you secretly want; that defeats the whole point. If the answer genuinely doesn't land, try rephrasing the question and go again, but limit yourself to two or three tries. For binary decisions, a <a href="/en/tools/coin-flip">coin flip</a> works the same way — flip it, notice how you feel about the result, and that feeling is your real answer. For decisions that need a new angle rather than a yes/no, a <a href="/en/tools/lateral-thinking">lateral thinking</a> prompt can break the loop by making you think about the problem from a direction you hadn't considered.</p>
+
+<h2>The Answer Was Already There</h2>
+
+<p>Nobody makes hard decisions by math alone. We covered the psychology of coin flip decisions in our guide to <a href="/en/blog/coin-flip-vs-book-of-answers-decisions">coin flips versus the book of answers</a>; the core idea is the same. When logic has stopped helping, the fastest way forward is to give your intuition something to push against. Ask the question, get an answer, watch your reaction — and then decide.</p>`
   },
 ];
 
