@@ -9,136 +9,136 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "image-to-base64-reduce-requests-speed-guide",
-    title: "Faster First Load: Using Base64 Images to Cut HTTP Requests",
-    description: "A tiny icon that takes 80ms to load can still delay your page. Embedding small images as Base64 cuts the request entirely — but only if you know where it actually helps.",
-    date: "2026-09-15",
-    category: "Developer",
-    tags: ["image to base64", "page speed", "HTTP requests", "performance", "data URI"],
-    relatedTools: ["image-to-base64", "css-minifier", "svg-minifier"],
-    content: `<p>Your page has a tiny 2KB icon and it still costs you an 80ms HTTP request. The browser asks, the server answers, and for a file smaller than this paragraph, you paid a full round trip. Embedding that image as a Base64 string into your HTML or CSS cuts the request entirely — but the trick only works if you're careful about where you use it.</p>
+    slug: "bing-wallpaper-workday-mood-productivity-guide",
+    title: "How Daily Bing Wallpapers Change Your Workday Mood",
+    description: "Your desktop is just there — until it isn't. A rotating daily wallpaper is a tiny free habit that shifts how your workday feels, and the science backs it up.",
+    date: "2026-09-29",
+    category: "Fun & Media",
+    tags: ["bing wallpaper", "workday mood", "productivity", "daily wallpaper", "mental reset"],
+    relatedTools: ["bing-wallpaper", "fullscreen-text", "pet-wallpaper"],
+    content: `<p>You sit down at your desk at nine and the same desktop stares back at you — same wallpaper, same icons, same feeling of déjà vu. Most people never change their wallpaper, and most people don't realize what a tiny free mood reset they're missing. A daily Bing wallpaper takes ten seconds to set up and gives you something new to look at every morning — small, but surprisingly effective at shifting the tone of the day.</p>
 
-<h2>When Less Is More (and When It Isn't)</h2>
+<h2>Why a Wallpaper Matters More Than You Think</h2>
 
-<p>Base64 encoding adds roughly 33% to a file's size, so it only wins when the overhead of the request is bigger than the overhead of the extra bytes. For small images — icons, logos, tiny arrows, background tiles — it's almost always a win. For anything bigger than a few kilobytes, the bloated file costs more than the saved request. The counter-intuitive part: a well-cached small image might load <em>faster</em> from the browser cache than an embedded one on repeat visits, because the cached file is smaller than the encoded string. Run the image through an <a href="/en/tools/image-to-base64">image to Base64</a> tool, compare the encoded size to the original, and decide based on how many times a visitor will see it.</p>
+<p>Your desktop is the background of everything you do at work. It's the last thing you see before you open a window and the first thing you see when you close one. A static image becomes invisible after a week — your brain filters it out entirely. A fresh <a href="/en/tools/bing-wallpaper">Bing wallpaper</a> every day keeps that from happening. The counter-intuitive part is that the effect isn't about beauty. It's about novelty — a new scene gives your brain a tiny micro-break between tasks, and that reset is enough to keep you from feeling like the day is one endless blur.</p>
 
-<h2>The Right Places for Embedded Images</h2>
+<h2>Match the Wallpaper to the Day</h2>
 
-<p>The best candidates are the images that load above the fold on a first visit and don't change between pages. A favicon, a loading spinner, a small logo, a few inline icons — these are exactly where Base64 shines. Pair the strategy with a <a href="/en/tools/css-minifier">CSS minifier</a> so you're not also shipping unminified CSS alongside the embedded image, and for vector images, run them through an <a href="/en/tools/svg-minifier">SVG minifier</a> first — a smaller SVG makes a smaller Base64 string, which makes the whole trade-off easier to justify. Small files + first load + high visibility = the sweet spot.</p>
+<p>The real trick is to pick intentionally, not just let it rotate randomly. On a heavy workday, go for a calm landscape — mountains, ocean, a quiet forest — something that lowers your arousal level. On a creative day, pick something colorful and unusual to spark ideas. For boring admin days, a cute animal wallpaper from a <a href="/en/tools/pet-wallpaper">pet wallpaper</a> tool gives you a tiny dopamine hit without pulling you into a full video. And when you need to focus on a single task, use a <a href="/en/tools/fullscreen-text">fullscreen text</a> display with just the task name as your wallpaper — no distractions, no novelty, just the one thing you're working on. The goal isn't a pretty desktop. It's a desktop that supports whatever kind of day you're actually having.</p>
 
-<h2>One Rule to Avoid Regret</h2>
+<h2>The Ten-Second Habit That Sticks</h2>
 
-<p>One simple rule keeps you from overdoing it: don't embed anything bigger than 10KB, and don't embed it more than once per page. We covered the data URI trade-offs in our guide to <a href="/en/blog/image-to-base64-data-uri-practical-guide">practical Base64 image uses</a>; the speed version is the same idea with a sharper focus. Embed the small stuff, keep the big stuff as separate files, and your first load gets faster without bloating the whole page.</p>`
+<p>We covered wallpaper collection in our guide to <a href="/en/blog/bing-wallpaper-4k-collection-guide">building a 4K wallpaper library</a>; the workday version is the same idea applied to mood instead of storage. Download the day's image, set it as your background, and you're done. One small change, no cost, and the difference is noticeable within a week — if only because you'll stop zoning out at a desktop you haven't looked at in six months.</p>`
   },
   {
-    slug: "css-minifier-critical-css-first-load-guide",
-    title: "Critical CSS: How a Minifier Makes Your First Paint Faster",
-    description: "Your stylesheet is 200KB and only 10KB of it matters for the first screen. Inlining critical CSS above the fold is the fastest speed win most sites never try.",
-    date: "2026-09-15",
-    category: "Developer",
-    tags: ["CSS minifier", "critical CSS", "above the fold", "first paint", "performance"],
-    relatedTools: ["css-minifier", "html-to-markdown", "json-formatter"],
-    content: `<p>You've got a 200KB stylesheet and the first screen only needs 10KB of it. The browser still downloads all 200KB before it can paint anything, because it doesn't know which rules matter yet. The fastest fix most sites never apply is to pull that 10KB — your critical CSS — inline into the page and defer the rest. A good CSS minifier is what makes the trick actually work, because every unminified byte in the critical path is a byte you didn't need.</p>
-
-<h2>Why Critical CSS Moves the Needle</h2>
-
-<p>First contentful paint is held up by render-blocking resources, and CSS is usually the biggest one. If the stylesheet is 200KB, the browser waits for all of it. If you put the 10KB the first screen needs directly in the HTML, the browser can paint as soon as it has those few kilobytes — and the rest of the stylesheet loads in the background. The counter-intuitive part is that you're technically adding bytes to the HTML, but because those bytes replace a blocking request, the page still renders faster. That's the whole trick.</p>
-
-<h2>Build, Minify, Inline</h2>
-
-<p>The workflow is straightforward. Identify which rules apply above the fold — either by hand for simple pages or with an automated tool for complex ones — extract them, run them through a <a href="/en/tools/css-minifier">CSS minifier</a>, and drop the minified version in a style tag at the top of the head. Load the full stylesheet asynchronously so it doesn't block rendering. Minification is non-negotiable here: whitespace and comments in the critical path are pure waste. For the HTML that carries the inline styles, keep the rest of the page lean too — a <a href="/en/tools/html-to-markdown">HTML to Markdown</a> pass can help spot markup bloat before it ships, and for any data structures riding along, a <a href="/en/tools/json-formatter">JSON formatter</a> keeps them readable during development without bloating production.</p>
-
-<h2>The Fastest Fix That's Free</h2>
-
-<p>Critical CSS is one of the highest-ROI speed improvements you can make, and it costs nothing except a little time identifying which rules matter. We covered minifier integration in our guide to <a href="/en/blog/css-minifier-build-tool-vs-online">build tools versus online minifiers</a>; the critical CSS version is the same principle aimed directly at first paint. Extract what the first screen needs, minify it, inline it, defer the rest — and watch your first paint drop.</p>`
-  },
-  {
-    slug: "random-number-generator-fair-team-groups-guide",
-    title: "Fair Team Grouping Without Anyone Complaining",
-    description: "Picking teams by hand always produces the same complaint: the groups are rigged. A random number generator doesn't play favorites — here's how to use it so everyone trusts the result.",
-    date: "2026-09-15",
+    slug: "roi-calculator-roas-romi-marketing-metrics-guide",
+    title: "ROI vs ROAS vs ROMI: Which Marketing Metric Actually Matters",
+    description: "Every marketing team argues about which metric to track. ROI, ROAS, ROMI — they sound similar, but they measure different things and lead to different decisions.",
+    date: "2026-09-29",
     category: "Calculator",
-    tags: ["random number generator", "team grouping", "fair teams", "tournament setup", "icebreaker"],
-    relatedTools: ["random-number-generator", "dice-roller", "coin-flip"],
-    content: `<p>You need to split a group into teams, and no matter how you do it, someone says the groups are rigged. Hand-picking invites bias, picking straws feels silly, and letting people choose always produces lopsided groups. A random number generator solves it in thirty seconds — if you do it in public, out loud, so everyone sees that the machine isn't playing favorites.</p>
+    tags: ["ROI calculator", "ROAS", "ROMI", "marketing metrics", "advertising performance"],
+    relatedTools: ["roi-calculator", "percentage-calculator", "compound-interest"],
+    content: `<p>You run a marketing campaign and it costs $5,000 and brings in $20,000 in revenue. Was it a success? Depends on who you ask. The CEO asks for ROI. The ads manager reports ROAS. The CFO wants ROMI. All three are right in their own way, and all three are measuring different things. Run the numbers through an <a href="/en/tools/roi-calculator">ROI calculator</a> and you get one answer. Do the math by hand the ROAS way and you get another. The trick isn't picking the best metric — it's knowing which one answers the question you're actually asking.</p>
 
-<h2>The Fairness Problem</h2>
+<h2>What Each Metric Actually Measures</h2>
 
-<p>People trust randomness more than they trust other people's judgment, even when the judgment is perfectly reasonable. The moment a real person picks the teams, every person on the weaker team sees bias, and nobody on the stronger team gets to enjoy the win. A <a href="/en/tools/random-number-generator">random number generator</a> takes you out of the equation entirely — the machine picks, and the machine has nothing to gain. The counter-intuitive part is that fairness matters less than perceived fairness. If everyone believes it's fair, it might as well be, and randomness produces that belief faster than any explanation.</p>
+<p>ROAS — return on ad spend — is the simplest: revenue divided by ad cost. Spend $5K, make $20K, ROAS is 4x. It tells you whether the ads themselves are paying for themselves, and nothing else. ROI — return on investment — is broader: (gain minus cost) divided by cost, usually as a percentage. It includes more than just ad spend — your time, your tools, your team. ROMI — return on marketing investment — sits between them: it's marketing-specific ROI, counting all marketing costs but not the rest of the business. The counter-intuitive part is that a campaign with great ROAS can have terrible ROI, because ROAS ignores everything that isn't the ad budget. A 4x ROAS sounds amazing until you realize the campaign also needed three people and a $10K software subscription to run.</p>
 
-<h2>How to Do It in Public</h2>
+<h2>When to Use Which</h2>
 
-<p>Run the generator in front of everyone. List the participants with numbers, generate numbers to assign them to groups, and let anyone who doubts the result press the button again to see it's not rigged. For small groups, a coin flip is enough for a binary split, so a <a href="/en/tools/coin-flip">coin flip</a> tool works as a quick variant. For tournament-style events with more complex seeding, a <a href="/en/tools/dice-roller">dice roller</a> adds a bit of theater — physical dice feel more random than a screen, even when the odds are identical. The key is that everyone watches it happen; a result delivered after the fact always feels cooked, no matter how fair it actually is.</p>
+<p>Use ROAS when you're optimizing ad campaigns day to day — it's fast, it's simple, and it tells you which campaigns to scale and which to kill. Use ROI when you're deciding whether the whole marketing function is worth it — it's the number the board cares about. Use ROMI when you're comparing marketing against other departments, because it apples-to-apples the marketing slice of the business. For quick percentage math, a <a href="/en/tools/percentage-calculator">percentage calculator</a> gets you ROAS and ROMI in the same time it takes to open a spreadsheet, and for longer-term projections where campaigns compound, a <a href="/en/tools/compound-interest">compound interest</a> calculator can model what repeated good ROAS does over a year. The wrong metric leads to the wrong decision — every time.</p>
 
-<h2>One Rule for No Complaints</h2>
+<h2>One Metric Is Never Enough</h2>
 
-<p>The only rule that really matters: generate the groups once, in front of everyone, and don't regenerate. We covered randomness in decision making in our guide to <a href="/en/blog/random-number-generator-beyond-dice-rolls">uses for random number generators</a>; team grouping is one of the simplest and most satisfying. Take yourself out of the decision, run it in public, and the complaining stops before it starts.</p>`
+<p>We covered what ROI actually measures in our guide to <a href="/en/blog/roi-calculator-irr-payback-period-difference">ROI versus IRR and payback period</a>; the marketing version is the same idea with more acronyms. Don't pick one metric and ride it everywhere. Use the fast one for daily decisions, the broad one for strategy, and the marketing-specific one for budget meetings — and never trust a single number without checking what it's actually counting.</p>`
   },
   {
-    slug: "reaction-test-caffeine-effect-on-reflexes-guide",
-    title: "Does Coffee Actually Make You Faster? Test It Yourself",
-    description: "Everyone says coffee sharpens you up. But how much faster are you really, and does the second cup add anything? A reaction test lets you measure the difference on your own brain.",
-    date: "2026-09-15",
-    category: "Fun & Media",
-    tags: ["reaction test", "caffeine", "coffee", "reflexes", "self-experiment"],
-    relatedTools: ["reaction-test", "stopwatch-and-timer", "scoreboard"],
-    content: `<p>Everyone knows coffee makes you faster. But how much faster, and at what point does the second cup make you jittery instead of quick? A reaction test turns a feeling — "I'm more awake now" — into a number you can actually compare. You don't need a lab. You just need a baseline and a timer.</p>
-
-<h2>The Baseline Is the Trick</h2>
-
-<p>The hard part of any self-experiment is knowing where you started. Before your first coffee of the day, take a <a href="/en/tools/reaction-test">reaction test</a> five times and note your average — that's your baseline, groggy brain, no caffeine. Then have your coffee, wait twenty minutes, and take the test again. The difference is the actual effect of the coffee on <em>your</em> body, not some average in a study. The counter-intuitive part: most people are surprised by how small the difference is once they measure it. The feeling of being awake is much bigger than the measurable improvement in milliseconds.</p>
-
-<h2>Run the Experiment Properly</h2>
-
-<p>To make the results mean something, control the variables. Test at the same time each day. Use the same number of practice rounds so you're not just getting better at the test itself. Use a <a href="/en/tools/stopwatch-and-timer">stopwatch and timer</a> to measure the gap between the coffee and the test, and keep track of the numbers with a <a href="/en/tools/scoreboard">scoreboard</a> so you can see the trend across several days. If you really want to go deep, try the same thing with tea, energy drinks, or a cold shower and compare. The point isn't to publish a paper — it's to learn something about your own body that you can actually use.</p>
-
-<h2>What You'll Probably Find</h2>
-
-<p>Most people see a measurable boost from one cup and diminishing returns from a second. More than three and reaction time actually gets worse, because jitteriness costs more than alertness gains. We covered reflex training in our guide to <a href="/en/blog/reaction-test-pro-gamer-f1-driver">pro gamer reaction times</a>; the home version is the same idea scaled way down. Grab a baseline, test the coffee, and find out for yourself whether your morning ritual is actually working.</p>`
-  },
-  {
-    slug: "qr-code-scanner-restaurant-menus-guide",
-    title: "QR Code Menus Are Here to Stay — Use Them Right",
-    description: "Scanning a code for the menu was pandemic-era emergency tech that never went away. Done well, it's faster and cleaner than a paper menu. Done badly, it's a frustration.",
-    date: "2026-09-15",
+    slug: "uuid-generator-version-comparison-v1-v4-v7-guide",
+    title: "UUID Versions Explained: v1, v4, v7 and When to Use Each",
+    description: "A UUID is a UUID, right? Not quite — v1, v4, and v7 generate them completely differently and have different trade-offs. Pick the wrong one and you'll regret it later.",
+    date: "2026-09-29",
     category: "Developer",
-    tags: ["QR code scanner", "restaurant menus", "contactless", "QR menus", "customer experience"],
-    relatedTools: ["qr-code-scanner", "qr-code-generator", "url-encoder"],
-    content: `<p>The QR code menu started as a pandemic stopgap and never left. Some restaurants love it — cheaper to update, cleaner, no printing costs. Some customers hate it — another app to open, bad lighting, no one to ask when the code won't scan. The truth is that QR menus work fine when they're done well and feel terrible when they're not, and most of the difference comes down to a few simple choices.</p>
+    tags: ["UUID generator", "UUID versions", "v1 UUID", "v4 UUID", "v7 UUID", "unique identifiers"],
+    relatedTools: ["uuid-generator", "random-number-generator", "hash-generator"],
+    content: `<p>Every developer has generated a UUID at some point — you run a command, you get a long string with dashes, you stick it in a database and you never think about it again. Until you do. UUIDs aren't all the same. Version 1, version 4, and version 7 generate the same shape of string using completely different methods, and they have completely different properties. A <a href="/en/tools/uuid-generator">UUID generator</a> usually defaults to v4, and that's fine — until it isn't, because you needed sortable IDs and you didn't find out until you had ten million of them.</p>
 
-<h2>Why Scanning Fails</h2>
+<h2>The Three Versions You'll Actually Use</h2>
 
-<p>The biggest frustration isn't the menu — it's getting the code to scan in the first place. Dark tables, glossy laminated cards, tiny codes tucked in a corner, glare from overhead lights — these are the things that turn a two-second task into thirty seconds of waving your phone. A good <a href="/en/tools/qr-code-scanner">QR code scanner</a> works in low light, but only up to a point. The counter-intuitive part: most restaurants don't test their own code in the actual lighting of the restaurant. They design it on a bright monitor and assume it will scan by candlelight.</p>
+<p>v1 is timestamp + MAC address — time-ordered and guaranteed unique per machine, but leaks the MAC address and has privacy issues. v4 is random — 122 bits of randomness, no information embedded, impossible to guess, but not sortable by creation time. v7 is the new one — timestamp-prefixed random, so IDs sort chronologically while still being random and unguessable. The counter-intuitive part is that v4 isn't actually random in the way a <a href="/en/tools/random-number-generator">random number generator</a> is. It's cryptographically random, which is stronger — "random" usually means uniform distribution, and UUIDs care more about uniqueness than distribution.</p>
 
-<h2>The Good QR Menu Checklist</h2>
+<h2>How to Pick</h2>
 
-<p>If you're the one setting it up, get the basics right. Print the code big enough — at least an inch square, bigger if it's across the table. Test it with the lights dimmed, the way customers will actually encounter it. Pair the code with a printed short version — the most-ordered items, the daily specials — so people who don't want to scan still have something to look at. If you're generating the code, use a <a href="/en/tools/qr-code-generator">QR code generator</a> with a high error-correction level so smudges and crumbs don't break it, and make sure the URL it points to is clean — run it through a <a href="/en/tools/url-encoder">URL encoder</a> if there are special characters, because a garbled link in a QR code is a dead menu.</p>
+<p>Use v4 for most things — user IDs, session IDs, anything where you don't want anyone to be able to guess the next one or extract information from the ID. Use v1 only when you absolutely need time-ordered IDs and privacy isn't a concern — mostly legacy systems at this point. Use v7 when you need both sortable IDs and unguessability — database primary keys, event logs, message queues, anything where chronological order helps with indexing or debugging. For hashing UUIDs into shorter formats or using them as keys in other systems, a <a href="/en/tools/hash-generator">hash generator</a> can turn a UUID into a deterministic shorter string when you need something more compact. The biggest mistake people make is picking v4 by default and then discovering six months later that they can't efficiently query by creation time without a separate index.</p>
 
-<h2>It's Not Going Anywhere</h2>
+<h2>Default to v4, Know v7 Exists</h2>
 
-<p>QR menus aren't going back to paper, which means the good ones are going to get better and the bad ones are going to keep frustrating people. We covered QR security in our guide to <a href="/en/blog/qr-code-scanner-security-malicious-codes">malicious QR codes</a>; the restaurant version is the same technology in a friendlier context. Print it big, test it in the dark, keep a paper backup, and your customers will use it without even thinking about it.</p>`
+<p>We covered UUID collision math in our guide to <a href="/en/blog/uuid-mathematics-version-4-collision-probability">UUID v4 collision probability</a>; the version comparison is the same idea with more choices. Most of the time, v4 is still the right call — it's simple, it's standard, and every language supports it. But when you're designing a new system and you know you'll want chronological ordering, reach for v7 instead — it's the best of both worlds, and the support is there if you look for it.</p>`
   },
   {
-    slug: "book-of-answers-hard-decisions-intuition-guide",
-    title: "When You Can't Decide: Let a Random Book Test Your Gut",
-    description: "You've been going back and forth for weeks and the decision still isn't getting easier. When logic fails, a book of answers doesn't tell you what to do — it reveals what you already want.",
-    date: "2026-09-15",
-    category: "Fun & Media",
-    tags: ["book of answers", "decision making", "intuition", "hard choices", "random answers"],
-    relatedTools: ["book-of-answers", "coin-flip", "lateral-thinking"],
-    content: `<p>You've been going back and forth for weeks. Job offers, moves, relationships — the decisions that matter most are the ones where both sides look equally reasonable, and logic never quite tips the scale. When you've listed all the pros and cons and you still can't decide, the answer was never in the list. It's already in you, and a book of answers is just a way to pull it out.</p>
+    slug: "text-repeater-localization-i18n-testing-guide",
+    title: "Text Repeater: The Hidden Tool for Localization Testing",
+    description: "A text repeater sounds like a spam tool. Use it for i18n testing and it becomes one of the fastest ways to find layout bugs before your translators even start.",
+    date: "2026-09-29",
+    category: "Text Tools",
+    tags: ["text repeater", "localization testing", "i18n", "internationalization", "UI testing"],
+    relatedTools: ["text-repeater", "case-converter", "word-counter"],
+    content: `<p>You've built a beautiful UI in English, everything fits, nothing wraps, and then you hand it to the translators. German comes back 30% longer. Finnish is shorter but has longer words. Japanese fits in fewer characters but needs a bigger font. Suddenly half your buttons are broken and your layouts are overflowing. Most teams discover this during translation. Smart teams test it before translation even starts, and a <a href="/en/tools/text-repeater">text repeater</a> is the fastest way to do it.</p>
 
-<h2>The Trick Isn't the Answer</h2>
+<h2>Why Translation Breaks Layouts</h2>
 
-<p>Here's how it works. You ask your question in your head, you open a <a href="/en/tools/book-of-answers">book of answers</a>, and you get a short, cryptic line. The line itself isn't the point — the point is your reaction to it. If the answer says "go for it" and you feel a wave of relief, you already knew what you wanted. If it says "wait" and you feel disappointed, you already knew that too. The counter-intuitive part: the book doesn't give you the answer. It gives you a chance to catch yourself having one.</p>
+<p>The rule of thumb is that short strings can grow up to 200% when translated — a 5-character English button label can become 15 characters in German. Longer text grows less, maybe 30%, but even that is enough to push things off screen or create awkward line breaks. The counter-intuitive part is that it's not just about length. It's about word length — Finnish and German have compound words that don't wrap cleanly, and some languages don't use spaces at all. If you only test with English text, you won't find any of these problems until it's expensive to fix them.</p>
 
-<h2>How to Use It Without Faking It</h2>
+<h2>The Repeater Testing Method</h2>
 
-<p>Ask the question out loud, or at least with specific words in your head — vague questions get vague reactions. Pick one page, one answer, and don't regenerate until you get the one you secretly want; that defeats the whole point. If the answer genuinely doesn't land, try rephrasing the question and go again, but limit yourself to two or three tries. For binary decisions, a <a href="/en/tools/coin-flip">coin flip</a> works the same way — flip it, notice how you feel about the result, and that feeling is your real answer. For decisions that need a new angle rather than a yes/no, a <a href="/en/tools/lateral-thinking">lateral thinking</a> prompt can break the loop by making you think about the problem from a direction you hadn't considered.</p>
+<p>Here's how to do it quickly. Take every user-visible string, duplicate it with a text repeater at 1.5x, 2x, and 3x the original length, and paste it into your UI. If it breaks at 2x, you know German will break it. If it survives at 3x, you're probably safe for any language. You can also test specific patterns — repeat a single wide character like W to find overflow issues, or use a <a href="/en/tools/case-converter">case converter</a> to flip everything to uppercase to catch line-height problems. For measuring exactly how much fits, a <a href="/en/tools/word-counter">word counter</a> can confirm that your expanded strings are hitting the right multiplier. The whole process takes an hour and saves you weeks of translation rework.</p>
 
-<h2>The Answer Was Already There</h2>
+<h2>Test Early, Test With Repeated Text</h2>
 
-<p>Nobody makes hard decisions by math alone. We covered the psychology of coin flip decisions in our guide to <a href="/en/blog/coin-flip-vs-book-of-answers-decisions">coin flips versus the book of answers</a>; the core idea is the same. When logic has stopped helping, the fastest way forward is to give your intuition something to push against. Ask the question, get an answer, watch your reaction — and then decide.</p>`
+<p>We covered ASCII art and patterns in our guide to <a href="/en/blog/text-repeater-creative-uses-guide">creative uses for text repeaters</a>; localization testing is the practical developer version. Don't wait for your translators to find layout bugs. Pump up the text, see what breaks, fix it now — and ship a UI that works in every language on day one.</p>`
+  },
+  {
+    slug: "world-map-time-zones-international-date-line-guide",
+    title: "Why the World Has 24 Time Zones (and a Date Line Everyone Argues About)",
+    description: "Time zones seem like an obvious idea — they weren't. The International Date Line even less so. Understanding why they exist makes a lot of travel confusion make sense.",
+    date: "2026-09-29",
+    category: "Reference",
+    tags: ["world map", "time zones", "International Date Line", "timekeeping", "history"],
+    relatedTools: ["world-map", "perpetual-calendar", "cron-parser"],
+    content: `<p>You fly west from Tokyo to Los Angeles, you cross the Pacific, and you arrive before you left. Not in a time-travel way — in a date-line way. It's the kind of thing that makes perfect sense once someone explains it and total nonsense until they do. Time zones and the International Date Line are human inventions layered on top of a spinning planet, and looking at them on a <a href="/en/tools/world-map">world map</a> makes the whole logic visible at a glance — including all the weird exceptions.</p>
+
+<h2>Before Time Zones There Was No Time</h2>
+
+<p>Before railroads, every town kept its own local noon — when the sun was highest overhead. Noon in New York was twelve minutes later than noon in Boston, and nobody cared because you couldn't travel fast enough for it to matter. Railroads changed everything — a single train schedule using local times from thirty cities was unreadable. So in 1883, the US railroad companies divided the country into four time zones and everyone just went along with it. The counter-intuitive part is that governments didn't invent time zones. Companies did, for scheduling reasons, and governments caught up later. The 24-zone global system followed within a decade.</p>
+
+<h2>The Date Line Nobody Agrees On</h2>
+
+<p>If you have 24 time zones wrapping around the planet, somewhere the day has to change. That somewhere is the International Date Line, roughly opposite the Prime Meridian — roughly, because nobody wants it running through their country. So it zigzags. It zigs east around Kiribati, which moved the whole line in 1995 so the entire country would be on the same day. It zags around Samoa, which jumped across the line in 2011 to align with Australia and lost a whole Friday. For scheduling recurring events across the date line, a <a href="/en/tools/cron-parser">cron parser</a> can help visualize when things actually fire in different time zones, and for figuring out what day it will be in three weeks, a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> keeps you from guessing. The line exists on no map the way it exists in theory — every country that touches it has bent it to their own convenience.</p>
+
+<h2>Lines on a Map, Lines on a Clock</h2>
+
+<p>We covered map projections in our guide to <a href="/en/blog/world-map-projection-misconceptions-guide">why Greenland looks bigger than Africa</a>; time zones are another case where the map version is simpler than the reality. Time zones aren't straight lines and the date line isn't straight either — they're human compromises drawn on a spinning planet, and the only thing they all agree on is that there should be twenty-four of them.</p>`
+  },
+  {
+    slug: "case-converter-api-naming-conventions-guide",
+    title: "Case Converter for APIs: snake_case, camelCase, PascalCase and When to Use Each",
+    description: "APIs talk to each other in different naming conventions, and mixing them up causes bugs you'll stare at for hours. A case converter is the fastest way to keep your data clean at the boundary.",
+    date: "2026-09-29",
+    category: "Text Tools",
+    tags: ["case converter", "API naming", "snake_case", "camelCase", "PascalCase", "data transformation"],
+    relatedTools: ["case-converter", "json-formatter", "text-sorter"],
+    content: `<p>You write JavaScript with camelCase. Your Python backend uses snake_case. Your C# API uses PascalCase. They all have opinions, and they all disagree. The worst bugs aren't the ones where something crashes — they're the ones where a field silently fails to map because it's `user_id` on one side and `userId` on the other and nobody notices for three weeks. A <a href="/en/tools/case-converter">case converter</a> is the simplest tool in the world for catching these before they hit production, because you can see the transformation in front of you instead of trusting a library to get it right.</p>
+
+<h2>Why Every Ecosystem Has Its Own Case</h2>
+
+<p>It's not just preference — each convention grew up with a language and a culture. Python uses snake_case for readability, enforced by PEP 8. JavaScript uses camelCase because Java did, and JavaScript was named to sound like Java. C# uses PascalCase for public members because Microsoft's .NET guidelines said so, and they still do. The counter-intuitive part is that none of these is technically better. They're all just strings of letters with different separators. The only thing that matters is consistency — within a codebase, across an API, between systems. Mixed case is where bugs live.</p>
+
+<h2>How to Stay Sane at the Boundary</h2>
+
+<p>Don't try to make everything match everywhere. Pick a convention per system and convert at the edges — the API boundary, the database layer, the serialization point. When you're debugging a data mismatch, paste the keys into a case converter and see what they look like on the other side — you'll catch a `userName` vs `username` bug in ten seconds. For API payloads, run them through a <a href="/en/tools/json-formatter">JSON formatter</a> first so you can actually read the structure before converting cases, and when you're comparing field lists between two systems, a <a href="/en/tools/text-sorter">text sorter</a> lines them up so you can spot missing or renamed fields instantly. The rule is simple: one case per system, explicit conversion between them, never rely on automatic magic.</p>
+
+<h2>Convert at the Edge, Not Everywhere</h2>
+
+<p>We covered naming conventions in our guide to <a href="/en/blog/case-converter-api-programmatic-naming-conventions">API programmatic case conversion</a>; the boundary version is the same principle with a sharper focus. Use the right case in the right place, convert deliberately at the edge, and you'll spend a lot less time staring at a field that should be there and isn't.</p>`
   },
 ];
 
