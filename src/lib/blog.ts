@@ -13785,7 +13785,7 @@ Slightly different coefficients, tends to overestimate by about 5% compared to M
     category: "Text Tools",
     tags: ["case converter", "API naming", "snake_case", "camelCase", "PascalCase", "data transformation"],
     relatedTools: ["case-converter", "json-formatter", "text-sorter"],
-    content: `<p>You write JavaScript with camelCase. Your Python backend uses snake_case. Your C# API uses PascalCase. They all have opinions, and they all disagree. The worst bugs aren't the ones where something crashes — they're the ones where a field silently fails to map because it's `user_id` on one side and `userId` on the other and nobody notices for three weeks. A <a href="/en/tools/case-converter">case converter</a> is the simplest tool in the world for catching these before they hit production, because you can see the transformation in front of you instead of trusting a library to get it right.</p>
+    content: `<p>You write JavaScript with camelCase. Your Python backend uses snake_case. Your C# API uses PascalCase. They all have opinions, and they all disagree. The worst bugs aren't the ones where something crashes — they're the ones where a field silently fails to map because it's <code>user_id</code> on one side and <code>userId</code> on the other and nobody notices for three weeks. A <a href="/en/tools/case-converter">case converter</a> is the simplest tool in the world for catching these before they hit production, because you can see the transformation in front of you instead of trusting a library to get it right.</p>
 
 <h2>Why Every Ecosystem Has Its Own Case</h2>
 
@@ -13793,7 +13793,7 @@ Slightly different coefficients, tends to overestimate by about 5% compared to M
 
 <h2>How to Stay Sane at the Boundary</h2>
 
-<p>Don't try to make everything match everywhere. Pick a convention per system and convert at the edges — the API boundary, the database layer, the serialization point. When you're debugging a data mismatch, paste the keys into a case converter and see what they look like on the other side — you'll catch a `userName` vs `username` bug in ten seconds. For API payloads, run them through a <a href="/en/tools/json-formatter">JSON formatter</a> first so you can actually read the structure before converting cases, and when you're comparing field lists between two systems, a <a href="/en/tools/text-sorter">text sorter</a> lines them up so you can spot missing or renamed fields instantly. The rule is simple: one case per system, explicit conversion between them, never rely on automatic magic.</p>
+<p>Don't try to make everything match everywhere. Pick a convention per system and convert at the edges — the API boundary, the database layer, the serialization point. When you're debugging a data mismatch, paste the keys into a case converter and see what they look like on the other side — you'll catch a <code>userName</code> vs <code>username</code> bug in ten seconds. For API payloads, run them through a <a href="/en/tools/json-formatter">JSON formatter</a> first so you can actually read the structure before converting cases, and when you're comparing field lists between two systems, a <a href="/en/tools/text-sorter">text sorter</a> lines them up so you can spot missing or renamed fields instantly. The rule is simple: one case per system, explicit conversion between them, never rely on automatic magic.</p>
 
 <h2>Convert at the Edge, Not Everywhere</h2>
 
