@@ -9,136 +9,136 @@ old = '\n];\n\nexport function getBlogPosts(): BlogPost[]'
 
 new_blogs = r"""
   {
-    slug: "bing-wallpaper-workday-mood-productivity-guide",
-    title: "How Daily Bing Wallpapers Change Your Workday Mood",
-    description: "Your desktop is just there — until it isn't. A rotating daily wallpaper is a tiny free habit that shifts how your workday feels, and the science backs it up.",
-    date: "2026-09-29",
-    category: "Fun & Media",
-    tags: ["bing wallpaper", "workday mood", "productivity", "daily wallpaper", "mental reset"],
-    relatedTools: ["bing-wallpaper", "fullscreen-text", "pet-wallpaper"],
-    content: `<p>You sit down at your desk at nine and the same desktop stares back at you — same wallpaper, same icons, same feeling of déjà vu. Most people never change their wallpaper, and most people don't realize what a tiny free mood reset they're missing. A daily Bing wallpaper takes ten seconds to set up and gives you something new to look at every morning — small, but surprisingly effective at shifting the tone of the day.</p>
-
-<h2>Why a Wallpaper Matters More Than You Think</h2>
-
-<p>Your desktop is the background of everything you do at work. It's the last thing you see before you open a window and the first thing you see when you close one. A static image becomes invisible after a week — your brain filters it out entirely. A fresh <a href="/en/tools/bing-wallpaper">Bing wallpaper</a> every day keeps that from happening. The counter-intuitive part is that the effect isn't about beauty. It's about novelty — a new scene gives your brain a tiny micro-break between tasks, and that reset is enough to keep you from feeling like the day is one endless blur.</p>
-
-<h2>Match the Wallpaper to the Day</h2>
-
-<p>The real trick is to pick intentionally, not just let it rotate randomly. On a heavy workday, go for a calm landscape — mountains, ocean, a quiet forest — something that lowers your arousal level. On a creative day, pick something colorful and unusual to spark ideas. For boring admin days, a cute animal wallpaper from a <a href="/en/tools/pet-wallpaper">pet wallpaper</a> tool gives you a tiny dopamine hit without pulling you into a full video. And when you need to focus on a single task, use a <a href="/en/tools/fullscreen-text">fullscreen text</a> display with just the task name as your wallpaper — no distractions, no novelty, just the one thing you're working on. The goal isn't a pretty desktop. It's a desktop that supports whatever kind of day you're actually having.</p>
-
-<h2>The Ten-Second Habit That Sticks</h2>
-
-<p>We covered wallpaper collection in our guide to <a href="/en/blog/bing-wallpaper-4k-collection-guide">building a 4K wallpaper library</a>; the workday version is the same idea applied to mood instead of storage. Download the day's image, set it as your background, and you're done. One small change, no cost, and the difference is noticeable within a week — if only because you'll stop zoning out at a desktop you haven't looked at in six months.</p>`
-  },
-  {
-    slug: "roi-calculator-roas-romi-marketing-metrics-guide",
-    title: "ROI vs ROAS vs ROMI: Which Marketing Metric Actually Matters",
-    description: "Every marketing team argues about which metric to track. ROI, ROAS, ROMI — they sound similar, but they measure different things and lead to different decisions.",
-    date: "2026-09-29",
-    category: "Calculator",
-    tags: ["ROI calculator", "ROAS", "ROMI", "marketing metrics", "advertising performance"],
-    relatedTools: ["roi-calculator", "percentage-calculator", "compound-interest"],
-    content: `<p>You run a marketing campaign and it costs $5,000 and brings in $20,000 in revenue. Was it a success? Depends on who you ask. The CEO asks for ROI. The ads manager reports ROAS. The CFO wants ROMI. All three are right in their own way, and all three are measuring different things. Run the numbers through an <a href="/en/tools/roi-calculator">ROI calculator</a> and you get one answer. Do the math by hand the ROAS way and you get another. The trick isn't picking the best metric — it's knowing which one answers the question you're actually asking.</p>
-
-<h2>What Each Metric Actually Measures</h2>
-
-<p>ROAS — return on ad spend — is the simplest: revenue divided by ad cost. Spend $5K, make $20K, ROAS is 4x. It tells you whether the ads themselves are paying for themselves, and nothing else. ROI — return on investment — is broader: (gain minus cost) divided by cost, usually as a percentage. It includes more than just ad spend — your time, your tools, your team. ROMI — return on marketing investment — sits between them: it's marketing-specific ROI, counting all marketing costs but not the rest of the business. The counter-intuitive part is that a campaign with great ROAS can have terrible ROI, because ROAS ignores everything that isn't the ad budget. A 4x ROAS sounds amazing until you realize the campaign also needed three people and a $10K software subscription to run.</p>
-
-<h2>When to Use Which</h2>
-
-<p>Use ROAS when you're optimizing ad campaigns day to day — it's fast, it's simple, and it tells you which campaigns to scale and which to kill. Use ROI when you're deciding whether the whole marketing function is worth it — it's the number the board cares about. Use ROMI when you're comparing marketing against other departments, because it apples-to-apples the marketing slice of the business. For quick percentage math, a <a href="/en/tools/percentage-calculator">percentage calculator</a> gets you ROAS and ROMI in the same time it takes to open a spreadsheet, and for longer-term projections where campaigns compound, a <a href="/en/tools/compound-interest">compound interest</a> calculator can model what repeated good ROAS does over a year. The wrong metric leads to the wrong decision — every time.</p>
-
-<h2>One Metric Is Never Enough</h2>
-
-<p>We covered what ROI actually measures in our guide to <a href="/en/blog/roi-calculator-irr-payback-period-difference">ROI versus IRR and payback period</a>; the marketing version is the same idea with more acronyms. Don't pick one metric and ride it everywhere. Use the fast one for daily decisions, the broad one for strategy, and the marketing-specific one for budget meetings — and never trust a single number without checking what it's actually counting.</p>`
-  },
-  {
-    slug: "uuid-generator-version-comparison-v1-v4-v7-guide",
-    title: "UUID Versions Explained: v1, v4, v7 and When to Use Each",
-    description: "A UUID is a UUID, right? Not quite — v1, v4, and v7 generate them completely differently and have different trade-offs. Pick the wrong one and you'll regret it later.",
-    date: "2026-09-29",
+    slug: "unix-timestamp-log-timezones-debugging-guide",
+    title: "Debugging Time Zones in Server Logs Using Unix Timestamps",
+    description: "Your server logs show the same crash at 12:34:56 in New York and at 17:34:56 in Berlin, and you're trying to figure out who hit the API when. Without Unix timestamps, you'll guess wrong.",
+    date: "2026-10-02",
     category: "Developer",
-    tags: ["UUID generator", "UUID versions", "v1 UUID", "v4 UUID", "v7 UUID", "unique identifiers"],
-    relatedTools: ["uuid-generator", "random-number-generator", "hash-generator"],
-    content: `<p>Every developer has generated a UUID at some point — you run a command, you get a long string with dashes, you stick it in a database and you never think about it again. Until you do. UUIDs aren't all the same. Version 1, version 4, and version 7 generate the same shape of string using completely different methods, and they have completely different properties. A <a href="/en/tools/uuid-generator">UUID generator</a> usually defaults to v4, and that's fine — until it isn't, because you needed sortable IDs and you didn't find out until you had ten million of them.</p>
+    tags: ["unix timestamp", "log debugging", "time zones", "UTC", "server logs"],
+    relatedTools: ["unix-timestamp", "cron-parser", "json-formatter"],
+    content: `<p>You ship a feature at 9am and someone reports a bug at 9am — but they're in Tokyo and you're in San Francisco, and the actual incidents happened twelve hours apart. Your logs show the right local time, but you've spent an hour chasing a ghost. Logging in Unix timestamps fixes this for good, and an <a href="/en/tools/unix-timestamp">Unix timestamp</a> converter lets you decode them back to whatever human time you need — no guessing, no daylight saving math, no arguing about who's correct.</p>
 
-<h2>The Three Versions You'll Actually Use</h2>
+<h2>Why Local Time in Logs Is a Trap</h2>
 
-<p>v1 is timestamp + MAC address — time-ordered and guaranteed unique per machine, but leaks the MAC address and has privacy issues. v4 is random — 122 bits of randomness, no information embedded, impossible to guess, but not sortable by creation time. v7 is the new one — timestamp-prefixed random, so IDs sort chronologically while still being random and unguessable. The counter-intuitive part is that v4 isn't actually random in the way a <a href="/en/tools/random-number-generator">random number generator</a> is. It's cryptographically random, which is stronger — "random" usually means uniform distribution, and UUIDs care more about uniqueness than distribution.</p>
+<p>The problem with logging in local time is that local time isn't actually fixed. It changes twice a year for daylight saving in most countries, the timezone itself changes when a government redraws the map, and two servers in different regions don't agree on what "now" is. The counter-intuitive part is that humans read local times better but debug them worse — local times are easy to look at and easy to misread, while Unix timestamps are unambiguous and trivial to convert. Logging the Unix time alongside the message turns log analysis into arithmetic instead of guessing.</p>
 
-<h2>How to Pick</h2>
+<h2>How to Use Unix Times Effectively</h2>
 
-<p>Use v4 for most things — user IDs, session IDs, anything where you don't want anyone to be able to guess the next one or extract information from the ID. Use v1 only when you absolutely need time-ordered IDs and privacy isn't a concern — mostly legacy systems at this point. Use v7 when you need both sortable IDs and unguessability — database primary keys, event logs, message queues, anything where chronological order helps with indexing or debugging. For hashing UUIDs into shorter formats or using them as keys in other systems, a <a href="/en/tools/hash-generator">hash generator</a> can turn a UUID into a deterministic shorter string when you need something more compact. The biggest mistake people make is picking v4 by default and then discovering six months later that they can't efficiently query by creation time without a separate index.</p>
+<p>Log every event with the Unix timestamp in milliseconds, plus the ISO 8601 string in UTC, plus the user's timezone offset at the time of the event. Three pieces of information, and you can reconstruct anything. For the timestamp conversion, an <a href="/en/tools/unix-timestamp">Unix timestamp</a> tool gives you human-readable formats instantly. For scheduled jobs that fire at specific times, a <a href="/en/tools/cron-parser">cron parser</a> lets you see exactly when each scheduled task actually ran in UTC. And for searching JSON log entries, a <a href="/en/tools/json-formatter">JSON formatter</a> lets you compare timestamps across services side by side. Once you've got consistent Unix times everywhere, you'll never have to wonder whether the user's "noon" matches the server's "noon" — they don't, and now you can prove it.</p>
 
-<h2>Default to v4, Know v7 Exists</h2>
+<h2>Log in Unix, Display in Local</h2>
 
-<p>We covered UUID collision math in our guide to <a href="/en/blog/uuid-mathematics-version-4-collision-probability">UUID v4 collision probability</a>; the version comparison is the same idea with more choices. Most of the time, v4 is still the right call — it's simple, it's standard, and every language supports it. But when you're designing a new system and you know you'll want chronological ordering, reach for v7 instead — it's the best of both worlds, and the support is there if you look for it.</p>`
+<p>We covered the basics in our guide to <a href="/en/blog/unix-timestamp-converter-explained">Unix timestamp conversion explained</a>; the logging version is the same idea applied to debugging. Store the unambiguous value, display the human value, and stop wasting time figuring out when something actually happened.</p>`
   },
   {
-    slug: "text-repeater-localization-i18n-testing-guide",
-    title: "Text Repeater: The Hidden Tool for Localization Testing",
-    description: "A text repeater sounds like a spam tool. Use it for i18n testing and it becomes one of the fastest ways to find layout bugs before your translators even start.",
-    date: "2026-09-29",
+    slug: "csv-to-json-cicd-test-fixtures-guide",
+    title: "From Spreadsheet to Test Fixtures: CSV to JSON for CI/CD Pipelines",
+    description: "Your QA team lives in spreadsheets and your tests live in JSON. You can either retype every row or you can convert the CSV to JSON once and use it everywhere — here's the workflow that actually scales.",
+    date: "2026-10-02",
+    category: "Developer",
+    tags: ["CSV to JSON", "test fixtures", "CI/CD", "QA automation", "data pipeline"],
+    relatedTools: ["csv-to-json", "json-formatter", "regex-tester"],
+    content: `<p>Your QA team has two hundred test cases in a spreadsheet. They update it constantly. Your test suite needs JSON fixtures, but nobody wants to retype two hundred rows every time someone fixes a typo. A <a href="/en/tools/csv-to-json">CSV to JSON</a> converter turns the spreadsheet into a JSON fixture on every build, the test suite reads the JSON, and the QA team keeps working in Excel. Everyone stops fighting about file types and gets back to work.</p>
+
+<h2>The Spreadsheet-to-Fixture Pipeline</h2>
+
+<p>The pattern is simple: the QA team owns a CSV file in version control, the build pipeline runs CSV to JSON conversion, and the test suite consumes the JSON output. No human touches the JSON. No human retypes data. When QA adds a row to the spreadsheet, it's automatically in the next test run. The counter-intuitive part is that spreadsheets are better than JSON files for non-developers, even though JSON is better for tests. The fix isn't to make everyone use JSON — it's to make the conversion automatic so nobody has to.</p>
+
+<h2>How to Make It Reliable</h2>
+
+<p>Three rules. First, keep the CSV header row as your schema — that's where the JSON keys come from. Second, commit the converted JSON to a build artifact directory, not to the source tree, so it's always fresh. Third, validate the JSON with a <a href="/en/tools/json-formatter">JSON formatter</a> as part of the conversion step, so a typo in the CSV doesn't quietly produce malformed test data. For testing edge cases — what happens when a cell is empty, what happens with a quote in a quote — a <a href="/en/tools/regex-tester">regex tester</a> can help verify the parsing patterns against the CSV before they hit the pipeline. The whole thing runs in CI on every PR, takes seconds, and your QA team never has to touch JSON.</p>
+
+<h2>Convert at the Edge, Not in the Code</h2>
+
+<p>We covered legacy migrations in our guide to <a href="/en/blog/csv-to-json-converter-data-migration-legacy-systems">CSV to JSON for legacy systems</a>; the CI/CD version is the same idea applied to living data. Let the humans use the tool they like, convert it at the boundary, and the pipeline stays clean.</p>`
+  },
+  {
+    slug: "html-entities-rss-xml-feed-escaping-guide",
+    title: "Escaping HTML Entities in RSS and XML Feeds: Where Decoding Goes Wrong",
+    description: "Your blog feeds have unreadable XML because half the entities are double-encoded and the other half are stripped. RSS parsers are strict — here's how to escape once and only once.",
+    date: "2026-10-02",
+    category: "Developer",
+    tags: ["HTML entities", "RSS feed", "XML escaping", "data corruption", "feed validators"],
+    relatedTools: ["html-entities", "url-encoder", "json-formatter"],
+    content: `<p>You publish an RSS feed and it looks fine in the browser, but Feed Validator screams about malformed XML. The post titles show &amp;amp; instead of & and the body has stray entities like &nbsp; that nobody can read. The fix is to escape HTML entities exactly once, in the right place, and to stop double escaping them at every step. An <a href="/en/tools/html-entities">HTML entities</a> tool helps you see what's actually in your feed versus what's supposed to be there — usually the difference is one extra round of escaping.</p>
+
+<h2>Why RSS Feeds Break So Easily</h2>
+
+<p>RSS and Atom feeds are XML, and XML has rules about which characters must be escaped. The ampersand is the big one — every & in your content needs to become &amp; in the XML, and then the & in &amp; doesn't need to be escaped again. Most CMS systems escape once on save and then escape again on feed generation, which produces &amp;amp; in the output. The counter-intuitive part is that the bug is invisible in the database (where the content is correct) and only shows up in the feed (where it's been escaped twice). Tools that read the feed see the literal text &amp;amp; and display the ampersand, but tools that read the raw XML break.</p>
+
+<h2>The Escape-Once Rule</h2>
+
+<p>Escape once at the storage layer and never again. If your database stores the literal character (your post title contains "Tom & Jerry"), escape it once when generating the feed XML. Don't escape it again on display. Don't escape it again when generating social cards. Don't escape it again when sending notifications. Use an <a href="/en/tools/html-entities">HTML entities</a> tool to spot-check your feed: paste the raw XML in, see what gets decoded, and if you see &amp;amp; in the decoded output, you've double-escaped somewhere. For the URL fields in the feed, a <a href="/en/tools/url-encoder">URL encoder</a> catches the same kind of issue for links, since ampersands in URLs also need careful handling. For the JSON-LD that lives alongside the feed, a <a href="/en/tools/json-formatter">JSON formatter</a> catches the same kind of double-encoding in structured data. The rule is one escape per source, no exceptions.</p>
+
+<h2>Escape Once, Validate Often</h2>
+
+<p>We covered API corruption in our guide to <a href="/en/blog/html-entities-json-api-text-corruption-guide">HTML entities in JSON and APIs</a>; the feed version is the same idea with stricter parsers. Escape once, validate the output, and the feed stops breaking.</p>`
+  },
+  {
+    slug: "perpetual-calendar-easter-computus-algorithm-guide",
+    title: "Why Easter Moves Every Year: The Math Behind Computus",
+    description: "Christmas is always December 25, but Easter bounces between March 22 and April 25. The reason isn't random — it's a 1,600-year-old algorithm balancing lunar cycles, equinox, and the day of the week.",
+    date: "2026-10-02",
+    category: "Calculator",
+    tags: ["perpetual calendar", "Easter date", "Computus", "lunar calendar", "moveable feast"],
+    relatedTools: ["perpetual-calendar", "unix-timestamp", "age-calculator"],
+    content: `<p>You check the calendar and Easter is on April 9 this year, March 31 the year after, and April 16 the year after that. Christmas doesn't move, Thanksgiving is the fourth Thursday of November by federal rule, but Easter drifts all over the spring. The reason is that Easter is tied to the moon, not the sun — and computing it accurately took the Catholic Church 600 years of arguing. Look it up on a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> and you can see the pattern: it never lands on the same date twice in a row.</p>
+
+<h2>The Three Rules Behind Computus</h2>
+
+<p>Easter is the first Sunday after the first full moon on or after the spring equinox. Three astronomical events — equinox, full moon, Sunday — have to line up, and they're measured in three different systems. The spring equinox is fixed by the church at March 21 for calculation purposes. The full moon is the ecclesiastical full moon, a calculated approximation based on the Metonic cycle (19 years that repeat lunar phases). Sunday is the day of the week. The counter-intuitive part is that the full moon used for Easter isn't the real astronomical full moon — it's a tabular approximation that drifts by a day or two from the actual sky. The algorithm that computes Easter is called Computus, and the most common version is the one Gauss published in 1800, refined by several people since.</p>
+
+<h2>Why It Matters Beyond Easter</h2>
+
+<p>Easter determines dozens of other moveable feasts — Carnival, Lent, Pentecost, Ascension Day, Trinity Sunday. Computing any of them means computing Easter first. For Western Easter, the algorithm is relatively simple. For Eastern Orthodox Easter, it uses the older Julian calendar and is even more constrained, which is why Orthodox Easter usually falls later. For software that needs to compute these dates, an <a href="/en/tools/unix-timestamp">Unix timestamp</a> tool lets you convert the calculated date to a precise moment, and an <a href="/en/tools/age-calculator">age calculator</a> can use the same algorithm to compute dates for historical or projected events. The 19-year Metonic cycle is also why the dates repeat in patterns — search for "easter dates 19-year cycle" and you'll see that the sequence of dates repeats with small variations every 19 years.</p>
+
+<h2>The Calendar Is Older Than the Algorithm</h2>
+
+<p>We covered perpetual calendar mathematics in our guide to <a href="/en/blog/perpetual-calendar-mathematics-february-29-2100">why February 29 skips in 2100</a>; the Easter version is the same complexity applied to a single moveable date. The math is older than most computer languages, and a few lines of code can compute any Easter date back to 325 AD.</p>`
+  },
+  {
+    slug: "text-diff-legal-contract-redline-tracking-guide",
+    title: "Text Diff for Legal Contracts: Tracking Changes Without the Original Document",
+    description: "A counterparty sends you a redlined contract as a clean PDF — no track changes, no comments, just the new version. A text diff is the only way to see what they actually changed.",
+    date: "2026-10-02",
     category: "Text Tools",
-    tags: ["text repeater", "localization testing", "i18n", "internationalization", "UI testing"],
-    relatedTools: ["text-repeater", "case-converter", "word-counter"],
-    content: `<p>You've built a beautiful UI in English, everything fits, nothing wraps, and then you hand it to the translators. German comes back 30% longer. Finnish is shorter but has longer words. Japanese fits in fewer characters but needs a bigger font. Suddenly half your buttons are broken and your layouts are overflowing. Most teams discover this during translation. Smart teams test it before translation even starts, and a <a href="/en/tools/text-repeater">text repeater</a> is the fastest way to do it.</p>
+    tags: ["text diff", "legal contracts", "redline", "change tracking", "contract review"],
+    relatedTools: ["text-diff", "word-counter", "base64-converter"],
+    content: `<p>You get a contract back from a counterparty and it's a clean version, no track changes, no comments. They say it's mostly the same as what you sent, with a few small tweaks. The truth is usually somewhere between "mostly the same" and "fundamentally rewritten" and you'll never know without doing a real comparison. A <a href="/en/tools/text-diff">text diff</a> tool is the fastest way to turn their version against yours and see every line that changed — no lawyer required, no special software, just a clean side-by-side.</p>
 
-<h2>Why Translation Breaks Layouts</h2>
+<h2>Why You Should Always Diff Incoming Contracts</h2>
 
-<p>The rule of thumb is that short strings can grow up to 200% when translated — a 5-character English button label can become 15 characters in German. Longer text grows less, maybe 30%, but even that is enough to push things off screen or create awkward line breaks. The counter-intuitive part is that it's not just about length. It's about word length — Finnish and German have compound words that don't wrap cleanly, and some languages don't use spaces at all. If you only test with English text, you won't find any of these problems until it's expensive to fix them.</p>
+<p>Most contract negotiations are honest, but the small changes that get slipped through can be significant — a clause about governing law changed from New York to Delaware, a liability cap changed from $50,000 to $500,000, an auto-renewal clause appeared where it wasn't before. The counter-intuitive part is that these changes are designed to be hard to spot. They're written in legalese, they look similar to the original, and they assume you'll skim. A text diff makes them impossible to skim past, because every change is highlighted.</p>
 
-<h2>The Repeater Testing Method</h2>
+<h2>How to Do a Real Contract Diff</h2>
 
-<p>Here's how to do it quickly. Take every user-visible string, duplicate it with a text repeater at 1.5x, 2x, and 3x the original length, and paste it into your UI. If it breaks at 2x, you know German will break it. If it survives at 3x, you're probably safe for any language. You can also test specific patterns — repeat a single wide character like W to find overflow issues, or use a <a href="/en/tools/case-converter">case converter</a> to flip everything to uppercase to catch line-height problems. For measuring exactly how much fits, a <a href="/en/tools/word-counter">word counter</a> can confirm that your expanded strings are hitting the right multiplier. The whole process takes an hour and saves you weeks of translation rework.</p>
+<p>Convert both PDFs to plain text first (a <a href="/en/tools/text-diff">text diff</a> tool needs plain text, not formatted documents). Strip headers, footers, and page numbers if they shift between versions, so the diff doesn't show a thousand irrelevant line-break differences. Then run the diff and read every change — yes, every one. For each change, ask whether it changes the meaning, the obligations, the term, or the risk. If you're tracking how the contract has evolved over multiple rounds, a <a href="/en/tools/word-counter">word counter</a> can tell you roughly how much text was added or removed between versions. For storing the redlined comparison as a portable document, a <a href="/en/tools/base64-converter">base64 converter</a> can encode the comparison result for embedding in email or chat. The whole workflow takes ten minutes and catches changes that would otherwise take a lawyer an hour to find.</p>
 
-<h2>Test Early, Test With Repeated Text</h2>
+<h2>Never Sign Without a Diff</h2>
 
-<p>We covered ASCII art and patterns in our guide to <a href="/en/blog/text-repeater-creative-uses-guide">creative uses for text repeaters</a>; localization testing is the practical developer version. Don't wait for your translators to find layout bugs. Pump up the text, see what breaks, fix it now — and ship a UI that works in every language on day one.</p>`
+<p>We covered diff in code review in our guide to <a href="/en/blog/text-diff-code-review-merge-conflict">text diff for code reviews</a>; the legal version is the same idea with higher stakes. Diff every contract, read every change, and don't trust anyone who says the changes are minor.</p>`
   },
   {
-    slug: "world-map-time-zones-international-date-line-guide",
-    title: "Why the World Has 24 Time Zones (and a Date Line Everyone Argues About)",
-    description: "Time zones seem like an obvious idea — they weren't. The International Date Line even less so. Understanding why they exist makes a lot of travel confusion make sense.",
-    date: "2026-09-29",
-    category: "Reference",
-    tags: ["world map", "time zones", "International Date Line", "timekeeping", "history"],
-    relatedTools: ["world-map", "perpetual-calendar", "cron-parser"],
-    content: `<p>You fly west from Tokyo to Los Angeles, you cross the Pacific, and you arrive before you left. Not in a time-travel way — in a date-line way. It's the kind of thing that makes perfect sense once someone explains it and total nonsense until they do. Time zones and the International Date Line are human inventions layered on top of a spinning planet, and looking at them on a <a href="/en/tools/world-map">world map</a> makes the whole logic visible at a glance — including all the weird exceptions.</p>
-
-<h2>Before Time Zones There Was No Time</h2>
-
-<p>Before railroads, every town kept its own local noon — when the sun was highest overhead. Noon in New York was twelve minutes later than noon in Boston, and nobody cared because you couldn't travel fast enough for it to matter. Railroads changed everything — a single train schedule using local times from thirty cities was unreadable. So in 1883, the US railroad companies divided the country into four time zones and everyone just went along with it. The counter-intuitive part is that governments didn't invent time zones. Companies did, for scheduling reasons, and governments caught up later. The 24-zone global system followed within a decade.</p>
-
-<h2>The Date Line Nobody Agrees On</h2>
-
-<p>If you have 24 time zones wrapping around the planet, somewhere the day has to change. That somewhere is the International Date Line, roughly opposite the Prime Meridian — roughly, because nobody wants it running through their country. So it zigzags. It zigs east around Kiribati, which moved the whole line in 1995 so the entire country would be on the same day. It zags around Samoa, which jumped across the line in 2011 to align with Australia and lost a whole Friday. For scheduling recurring events across the date line, a <a href="/en/tools/cron-parser">cron parser</a> can help visualize when things actually fire in different time zones, and for figuring out what day it will be in three weeks, a <a href="/en/tools/perpetual-calendar">perpetual calendar</a> keeps you from guessing. The line exists on no map the way it exists in theory — every country that touches it has bent it to their own convenience.</p>
-
-<h2>Lines on a Map, Lines on a Clock</h2>
-
-<p>We covered map projections in our guide to <a href="/en/blog/world-map-projection-misconceptions-guide">why Greenland looks bigger than Africa</a>; time zones are another case where the map version is simpler than the reality. Time zones aren't straight lines and the date line isn't straight either — they're human compromises drawn on a spinning planet, and the only thing they all agree on is that there should be twenty-four of them.</p>`
-  },
-  {
-    slug: "case-converter-api-naming-conventions-guide",
-    title: "Case Converter for APIs: snake_case, camelCase, PascalCase and When to Use Each",
-    description: "APIs talk to each other in different naming conventions, and mixing them up causes bugs you'll stare at for hours. A case converter is the fastest way to keep your data clean at the boundary.",
-    date: "2026-09-29",
+    slug: "fancy-text-generator-seo-unicode-serp-safety-guide",
+    title: "Fancy Text in SEO: Why Search Engines Read Your Unicode Differently Than Humans",
+    description: "Your Instagram bio has fancy text in 𝓯𝓪𝓷𝓬𝔂 fonts and it looks great. The search engine sees something completely different — sometimes nothing readable at all.",
+    date: "2026-10-02",
     category: "Text Tools",
-    tags: ["case converter", "API naming", "snake_case", "camelCase", "PascalCase", "data transformation"],
-    relatedTools: ["case-converter", "json-formatter", "text-sorter"],
-    content: `<p>You write JavaScript with camelCase. Your Python backend uses snake_case. Your C# API uses PascalCase. They all have opinions, and they all disagree. The worst bugs aren't the ones where something crashes — they're the ones where a field silently fails to map because it's `user_id` on one side and `userId` on the other and nobody notices for three weeks. A <a href="/en/tools/case-converter">case converter</a> is the simplest tool in the world for catching these before they hit production, because you can see the transformation in front of you instead of trusting a library to get it right.</p>
+    tags: ["fancy text generator", "Unicode SEO", "search ranking", "SERP", "social media"],
+    relatedTools: ["fancy-text-generator", "case-converter", "word-counter"],
+    content: `<p>You use a <a href="/en/tools/fancy-text-generator">fancy text generator</a> to make your Instagram bio stand out, your tweet more eye-catching, or your product name more memorable. It works — humans see the fancy styling and notice. But search engines see something different: they see Unicode characters, not letters, and they treat them as a different language entirely. The fancy text that looks great in the feed is invisible to Google, doesn't appear in autocomplete, and won't help you in the slightest for SEO.</p>
 
-<h2>Why Every Ecosystem Has Its Own Case</h2>
+<h2>What Search Engines Actually See</h2>
 
-<p>It's not just preference — each convention grew up with a language and a culture. Python uses snake_case for readability, enforced by PEP 8. JavaScript uses camelCase because Java did, and JavaScript was named to sound like Java. C# uses PascalCase for public members because Microsoft's .NET guidelines said so, and they still do. The counter-intuitive part is that none of these is technically better. They're all just strings of letters with different separators. The only thing that matters is consistency — within a codebase, across an API, between systems. Mixed case is where bugs live.</p>
+<p>Fancy text isn't letters — it's mathematical alphanumeric symbols from a Unicode block. The "fancy f" (𝓯) is not the letter f, it's a mathematical italic symbol that happens to look like one. Google's algorithm doesn't map these symbols to their base letters by default. Search for "𝓯𝓪𝓷𝓬𝔂" and you get zero results. Search for "fancy" and you get everything. The counter-intuitive part is that fancy text is invisible to search engines in the same way it's visible to humans — humans see letters, search engines see Unicode points. This means a brand name in fancy text gets indexed as a completely different string, and nobody searching for it will find you.</p>
 
-<h2>How to Stay Sane at the Boundary</h2>
+<h2>When to Use It and When Not To</h2>
 
-<p>Don't try to make everything match everywhere. Pick a convention per system and convert at the edges — the API boundary, the database layer, the serialization point. When you're debugging a data mismatch, paste the keys into a case converter and see what they look like on the other side — you'll catch a `userName` vs `username` bug in ten seconds. For API payloads, run them through a <a href="/en/tools/json-formatter">JSON formatter</a> first so you can actually read the structure before converting cases, and when you're comparing field lists between two systems, a <a href="/en/tools/text-sorter">text sorter</a> lines them up so you can spot missing or renamed fields instantly. The rule is simple: one case per system, explicit conversion between them, never rely on automatic magic.</p>
+<p>Use fancy text in social media bios, profile names, and short-form display text where humans see it but search engines don't matter. Don't use it in product names, blog titles, page headers, or anything that needs to rank in search. Don't use it in URLs — Unicode in URLs is a security and compatibility nightmare. If you need to maintain a fancy look for branding purposes, keep the fancy version for display and the plain ASCII version for everything that touches search, links, or metadata. For converting between cases in your plain ASCII title, a <a href="/en/tools/case-converter">case converter</a> keeps the readable version formatted consistently, and a <a href="/en/tools/word-counter">word counter</a> can tell you if the fancy version is shorter or longer than the readable version, which matters when you need them to fit the same character limit. The fancy version is for humans, the readable version is for the index.</p>
 
-<h2>Convert at the Edge, Not Everywhere</h2>
+<h2>Visible to Humans, Invisible to Search</h2>
 
-<p>We covered naming conventions in our guide to <a href="/en/blog/case-converter-api-programmatic-naming-conventions">API programmatic case conversion</a>; the boundary version is the same principle with a sharper focus. Use the right case in the right place, convert deliberately at the edge, and you'll spend a lot less time staring at a field that should be there and isn't.</p>`
+<p>We covered how fancy text works in our explainer of <a href="/en/blog/what-is-fancy-text-generator">what fancy text generators actually do</a>; the SEO version is the same idea applied to ranking. Use it for looks, keep ASCII for search, and don't confuse the two.</p>`
   },
 ];
 
